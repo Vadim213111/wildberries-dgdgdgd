@@ -39,12 +39,15 @@ jobs:
       - name: Update npm methods list
         run: bash scripts/generate-npm-methods-list.sh
 
+      - name: Update Go methods list
+        run: bash scripts/generate-go-methods-list.sh
+
       - name: Prepare Python package
         run: bash scripts/prepare-pypi-package.sh
 
       - name: Commit generated clients
         run: |
-          git add pyproject.toml README.md docs/python/README.md docs/npm/README.md clients/python clients/npm
+          git add pyproject.toml README.md docs/python/README.md docs/npm/README.md docs/go/README.md clients/python clients/npm clients/go
           if git diff --cached --quiet; then
             echo "No client changes to commit."
             exit 0

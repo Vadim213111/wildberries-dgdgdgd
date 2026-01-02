@@ -1,0 +1,2396 @@
+openapi: 3.0.1
+info:
+  description: |
+    Управление [сборочными заданиями](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz) и [метаданными](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz) заказов модели Самовывоз.
+  title: Заказы Самовывоз
+  version: instorepickup
+  x-file-name: in-store-pickup
+servers:
+- url: https://marketplace-api.wildberries.ru
+security:
+- HeaderApiKey: []
+tags:
+- description: ""
+  name: Сборочные задания Самовывоз
+- description: ""
+  name: Метаданные Самовывоз
+paths:
+  /api/v3/click-collect/orders/new:
+    get:
+      description: |
+        Метод возвращает список всех новых [сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz), которые есть у продавца на момент запроса.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                NewOrderClick:
+                  $ref: "#/components/examples/NewOrderClick"
+              schema:
+                $ref: "#/components/schemas/api.NewOrders"
+          description: Успешно
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Получить список новых сборочных заданий
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: true
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/confirm:
+    patch:
+      description: |
+        Метод переводит сборочное задание в статус `confirm` — на сборке.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Подтверждено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Перевести на сборку
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/prepare:
+    patch:
+      description: |
+        Метод переводит сборочное задание в статус `prepare` — готово к выдаче.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Подтверждено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: "Сообщить, что сборочное задание готово к выдаче"
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/client:
+    post:
+      description: |
+        Метод возвращает информацию о покупателе по ID сборочного задания.
+        <br><br>
+        Доступно только для сборочных заданий в статусах:
+          - `confirm` — на сборке
+          - `prepare` — готов к выдаче
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.OrdersRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api.OrderClientInfoResp"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Информация о покупателе
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: true
+      x-category: marketplace
+  /api/v3/click-collect/orders/client/identity:
+    post:
+      description: |
+        Метод сообщает, принадлежит ли проверяемый заказ покупателю или нет по переданному коду.
+        <br><br>
+        Доступно, если хотя бы одно сборочное задание из заказа находится в статусе prepare - готов к выдаче.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 30 запросов | 2 секунды | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.CheckIdentityRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api.CheckedIdentity"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              examples:
+                OrderNotFound:
+                  $ref: "#/components/examples/OrderNotFound"
+              schema:
+                $ref: "#/components/schemas/api.Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                InvalidPasscode:
+                  $ref: "#/components/examples/InvalidPasscode"
+              schema:
+                $ref: "#/components/schemas/api.Error"
+          description: Введён неверный проверочный код
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: "Проверить, что заказ принадлежит покупателю"
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: true
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/receive:
+    patch:
+      description: |
+        Метод переводит сборочное задание в статус `receive` — получено покупателем.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Подтверждено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: "Сообщить, что заказ принят покупателем"
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/reject:
+    patch:
+      description: |
+        Метод переводит сборочное задание в статус `reject` — отказ при получении.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Подтверждено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: "Сообщить, что покупатель отказался от заказа"
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/status:
+    post:
+      description: "Метод возвращает статусы сборочных заданий по их ID.\n<br><br>\n\
+        `supplierStatus` — статус сборочного задания. Триггер его изменения - дейс\
+        твие самого продавца.\n\nВозможные значения `supplierStatus`:\n| Статус  \
+        \ | Описание            | Как перевести сборочное задание в данный статус\
+        \ |\n| -------  | ---------           | --------------------------------------|\n\
+        | `new`      | **Новое сборочное задание** |\n| `confirm`  | **На сборке**\
+        \  | \t[Перевести сборочное задание на сборку](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1%7BorderId%7D~1confirm/patch)\n\
+        | `prepare`  | **Готов к выдаче** | \t[Сообщить, что сборочное задание гот\
+        ово к выдаче](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1%7BorderId%7D~1prepare/patch)\n\
+        | `receive`  | **Получено покупателем**   | [Сообщить, что заказ принят по\
+        купателем](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1%7BorderId%7D~1receive/patch)\n\
+        | `reject`  | **Отказ покупателя при получении**    |  \t[Сообщить, что по\
+        купатель отказался от заказа](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1%7BorderId%7D~1reject/patch)\n\
+        | `cancel`   | **Отменено продавцом**    |  \t[Отменить сборочное задание\
+        ](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1%7BorderId%7D~1cancel/patch)\n\
+        | `cancel_shelf_life` | **Отмена по истечении срока хранения**    |  \tПер\
+        еводится автоматически по возникновению события\n\n<br><br>\n`wbStatus` —\
+        \ статус системы Wildberries.\n\nВозможные значения `wbStatus`:\n- `waiting`\
+        \ - сборочное задание в работе\n- `sold` - заказ получен покупателем\n- `canceled`\
+        \ - отмена сборочного задания\n- `canceled_by_client` - покупатель отменил\
+        \ заказ при получении\n- `declined_by_client` - покупатель отменил заказ в\
+        \ первый чаc\n<br> Отмена доступна покупателю в первый час с момента заказ\
+        а, если заказ не переведён на сборку\n- `defect` - отмена заказа по причин\
+        е брака\n- `ready_for_pickup` - сборочное задание готово к выдаче\n\n<div\
+        \ class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных\
+        \ заданий Самовывоз</strong>:\n\n| Период | Лимит | Интервал | Всплеск |\n\
+        | --- | --- | --- | --- |\n| 1 минута | 300 запросов | 200 миллисекунд | 20\
+        \ запросов |\n\nОдин запрос с кодом ответа <code>409</code> учитывается ка\
+        к 10 запросов\n</div>\n"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.OrdersRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api.OrderStatuses"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Получить статусы сборочных заданий
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: true
+      x-category: marketplace
+  /api/v3/click-collect/orders:
+    get:
+      description: |
+        Метод возвращает информацию о завершённых сборочных заданиях после продажи или отмены заказа.
+
+        Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: |
+          Параметр пагинации. Устанавливает предельное количество возвращаемых
+          данных.
+        explode: true
+        in: query
+        name: limit
+        required: true
+        schema:
+          maximum: 1000
+          minimum: 1
+          type: integer
+        style: form
+      - description: |
+          Параметр пагинации. Устанавливает значение, с которого необходимо получить
+          следующий пакет данных. Для получения полного списка данных должен
+          быть равен `0` в первом запросе. Для следующих запросов необходимо
+          брать значения из одноимённого поля в ответе
+        explode: true
+        in: query
+        name: next
+        required: true
+        schema:
+          type: integer
+        style: form
+      - description: Дата начала периода в формате Unix timestamp
+        explode: true
+        in: query
+        name: dateFrom
+        required: true
+        schema:
+          type: integer
+        style: form
+      - description: Дата конца периода в формате Unix timestamp
+        explode: true
+        in: query
+        name: dateTo
+        required: true
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api.Orders"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Получить информацию о завершённых сборочных заданиях
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: true
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/cancel:
+    patch:
+      description: |
+        Метод отменяет сборочное задание и переводит в статус `cancel` — отменено продавцом.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 100 запросов | 600 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Отменено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Отменить сборочное задание
+      tags:
+      - Сборочные задания Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/meta:
+    delete:
+      description: |
+        Метод удаляет значение метаданных сборочного задания для переданного ключа.
+        Возможные метаданные: `imei`, `uin`, `gtin`, `sgtin`
+        Передается только одно значение.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      - description: |
+          Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`).
+          Передается только одно значение.
+        explode: true
+        in: query
+        name: key
+        required: true
+        schema:
+          type: string
+        style: form
+      responses:
+        "204":
+          description: Удалено
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Удалить метаданные сборочного задания
+      tags:
+      - Метаданные Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+    get:
+      description: |
+        Метод возвращает метаданные [сборочного задания](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1orders~1new/get).
+        <br><br>
+        Перечень метаданных, доступных для сборочного задания, можно получить в [списке новых сборочных заданий](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1new/get), поле `requiredMeta`.
+        <br><br>
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/api.OrdersMeta"
+          description: Успешно
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Получить метаданные сборочного задания
+      tags:
+      - Метаданные Самовывоз
+      x-readonly-method: true
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/meta/sgtin:
+    put:
+      description: |
+        Метод закрепляет за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф).
+        <br><br>
+        Закрепить код маркировки можно только, если в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1{orderId}~1meta/get) есть поле `sgtins`, а сборочное задание находится в [статусе](/openapi/in-store-pickup#tag/Sborochnye-zadaniya-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1status/post) `confirm`.
+        <br><br>
+        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/in-store-pickup#tag/Metadannye-Samovyvoz/paths/~1api~1v3~1click-collect~1orders~1{orderId}~1meta/get).
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.SGTINsRequest"
+        required: true
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки.
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Закрепить за сборочным заданием код маркировки товара
+      tags:
+      - Метаданные Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/meta/uin:
+    put:
+      description: |
+        Метод обновляет УИН сборочного задания. У одного сборочного задания может быть
+        только один УИН. Добавлять маркировку можно только для сборочных заданий в статусе
+        `confirm` и доставка которых осуществляется силами WB.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.UINRequest"
+        required: true
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки.
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+      tags:
+      - Метаданные Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/meta/imei:
+    put:
+      description: |
+        Метод обновляет IMEI сборочного задания. У одного сборочного задания может
+        быть только один IMEI. Добавлять маркировку можно только для сборочных заданий в
+        статусе `confirm` и доставка которых осуществляется силами WB.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.IMEIRequest"
+        required: true
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки.
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Закрепить за сборочным заданием IMEI
+      tags:
+      - Метаданные Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+  /api/v3/click-collect/orders/{orderId}/meta/gtin:
+    put:
+      description: |
+        Метод обновляет GTIN (уникальный ID товара в Беларуси) сборочного
+        задания. У одного сборочного задания может быть только один GTIN.
+        Добавлять маркировку можно только для сборочных заданий в статусе `confirm` и
+        доставка которых осуществляется силами WB.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/api.GTINRequest"
+        required: true
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: Доступ запрещён
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещён
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: Not Found
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки.
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Закрепить за сборочным заданием GTIN
+      tags:
+      - Метаданные Самовывоз
+      x-readonly-method: false
+      x-category: marketplace
+components:
+  examples:
+    NewOrderClick:
+      value:
+        orders:
+        - ddate: 29.10.2024
+          salePrice: 14000
+          requiredMeta:
+          - sgtin
+          article: wb1702fyjh
+          rid: 1234567673554519872.0.0
+          createdAt: 2024-10-29T10:19:30Z
+          warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+          orderCode: 23457822-6667
+          payMode: prepaid
+          skus:
+          - "2041546265353"
+          id: 1234567890
+          warehouseId: 1234567
+          nmId: 123456789
+          chrtId: 987654321
+          price: 14000
+          finalPrice: 14000
+          convertedPrice: 14000
+          convertedFinalPrice: 14000
+          currencyCode: 643
+          convertedCurrencyCode: 643
+          cargoType: 1
+          isZeroOrder: false
+    IncorrectRequestBody:
+      value:
+        code: IncorrectRequestBody
+        message: Некорректное тело запроса
+    InvalidPasscode:
+      description: Введён неправильный проверочный код
+      value:
+        code: InvalidPasscode
+    OrderNotFound:
+      description: Заказ не найден
+      value:
+        code: NotFound
+    StatusMismatch:
+      value:
+        code: StatusMismatch
+        message: "Несоответствие статусов, проверьте их правильность"
+    FailedToUpdateMeta:
+      value:
+        code: FailedToUpdateMeta
+        message: "Не удалось обновить метаданные сборочного задания. Убедитесь, чт\
+          о сборочное задание удовлетворяет всем необходимым требованиям (сборочно\
+          е задание существует, находится в статусе \"На сборке\", сборочному зада\
+          нию доступны метаданные см. описание метода **Получить метаданные сбороч\
+          ного задания**)"
+    IncorrectParameter:
+      value:
+        code: IncorrectParameter
+        message: Передан некорректный параметр
+    IncorrectRequest:
+      value:
+        code: IncorrectRequest
+        message: Переданы некорректные данные
+  responses:
+    "401":
+      content:
+        application/json:
+          example:
+            title: unauthorized
+            detail: "token problem; token is malformed: could not base64 decode signature:\
+              \ illegal base64 data at input byte 84"
+            code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+            requestId: 7b80742415072fe8b6b7f7761f1d1211
+            origin: s2s-api-auth-catalog
+            status: 401
+            statusText: Unauthorized
+            timestamp: 2024-09-30T06:52:38Z
+          schema:
+            $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+      description: Не авторизован
+    "429":
+      content:
+        application/json:
+          example:
+            title: too many requests
+            detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+            code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+            requestId: 9d3c02cc698f8b041c661a7c28bed293
+            origin: s2s-api-auth-catalog
+            status: 429
+            statusText: Too Many Requests
+            timestamp: 2024-09-30T06:52:38Z
+          schema:
+            $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_401_response"
+      description: Слишком много запросов
+    AccessDenied:
+      content:
+        application/json:
+          example:
+            code: AccessDenied
+            message: Доступ запрещён
+          schema:
+            $ref: "#/components/schemas/Error"
+      description: Доступ запрещён
+    NotFound:
+      content:
+        application/json:
+          example:
+            code: NotFound
+            message: Not Found
+          schema:
+            $ref: "#/components/schemas/Error"
+      description: Не найдено
+  schemas:
+    api.CheckedIdentity:
+      example:
+        ok: true
+      properties:
+        ok:
+          description: |
+            Принадлежит ли заказ покупателю:
+              - `true` — принадлежит
+              - `false` — значение не применяется. Если заказ не принадлежит покупателю, вы получите ответ со статус-кодом `409`
+          type: boolean
+      type: object
+    Error:
+      example:
+        code: code
+        data: "{}"
+        message: message
+      nullable: false
+      properties:
+        code:
+          description: Код ошибки
+          nullable: false
+          type: string
+        message:
+          description: Описание ошибки
+          nullable: false
+          type: string
+        data:
+          description: "Дополнительные данные, обогащающие ошибку"
+          nullable: true
+          type: object
+      type: object
+    api.CheckIdentityRequest:
+      example:
+        orderCode: 170046918-0011
+        passcode: "4567"
+      properties:
+        orderCode:
+          description: Уникальный ID заказа покупателя
+          type: string
+        passcode:
+          description: Код подтверждения
+          type: string
+      type: object
+    api.Error:
+      example:
+        code: code
+        data: "{}"
+        message: message
+      properties:
+        code:
+          type: string
+        data:
+          type: object
+        message:
+          type: string
+      type: object
+    api.GTINRequest:
+      example:
+        gtin:
+        - "1234567890123456"
+      properties:
+        gtin:
+          description: GTIN
+          type: string
+      type: object
+    api.IMEIRequest:
+      example:
+        imei:
+        - "123456789012345"
+      properties:
+        imei:
+          description: IMEI
+          type: string
+      type: object
+    api.NewOrder:
+      example:
+        cargoType: 2
+        warehouseAddress: warehouseAddress
+        ddate: ddate
+        skus:
+        - skus
+        - skus
+        salePrice: 504600
+        payMode: prepaid
+        nmId: 1
+        finalPrice: 5000
+        requiredMeta:
+        - requiredMeta
+        - requiredMeta
+        rid: rid
+        article: article
+        convertedFinalPrice: 5000
+        createdAt: 2000-01-23T04:56:07.000+00:00
+        convertedPrice: 5000
+        isZeroOrder: true
+        warehouseId: 6
+        price: 5
+        orderCode: orderCode
+        convertedCurrencyCode: 643
+        id: 0
+        chrtId: 5
+        currencyCode: 643
+      properties:
+        ddate:
+          description: Планируемая дата доставки
+          type: string
+        salePrice:
+          description: |
+            Цена продавца в валюте продажи с учётом скидки продавца, без учёта скидки WB Клуба, умноженная на 100. Предоставляется в информационных целях
+          example: 504600
+          nullable: true
+          type: integer
+        requiredMeta:
+          description: |
+            Список метаданных, доступных для сборочного задания
+          items:
+            type: string
+          nullable: true
+          type: array
+        article:
+          description: Артикул продавца
+          type: string
+        rid:
+          description: |
+            Уникальный ID заказа. <br>
+            Примечание: поле `rid` — это поле `srid` в ответах методов:
+              - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)
+              - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)
+              - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)
+              - [Отчет о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)
+              - [Отчет о продажах по реализации](./financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get)
+          type: string
+        createdAt:
+          description: Дата и время создания сборочного задания
+          format: date-time
+          type: string
+        warehouseAddress:
+          description: |
+            Адрес магазина (склада продавца), на который поступило сборочное
+            задание
+          type: string
+        orderCode:
+          description: |
+            Уникальный ID заказа покупателя
+          type: string
+        payMode:
+          description: |
+            Режим оплаты:
+              - `prepaid` — предоплатный
+              - `postpaid` — постоплатный
+              - `unknown` — неизвестный
+          example: prepaid
+          type: string
+        skus:
+          description: Массив баркодов товара
+          items:
+            type: string
+          type: array
+        id:
+          description: ID сборочного задания
+          type: integer
+        warehouseId:
+          description: |
+            ID склада продавца, на который поступило сборочное
+            задание
+          type: integer
+        nmId:
+          description: Артикул WB
+          type: integer
+        chrtId:
+          description: ID размера товара в системе WB
+          type: integer
+        price:
+          description: |
+            Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100.
+            Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях
+          type: integer
+        finalPrice:
+          description: "Сумма к оплате покупателем в валюте продажи с учетом всех\
+            \ скидок, умноженная на 100. Код валюты продажи указан в поле `currencyCode`.\
+            \ Предоставляется в информационных целях"
+          example: 5000
+          type: integer
+        convertedPrice:
+          description: "Цена в валюте страны продавца с учетом всех скидок, кроме\
+            \ скидки по WB Кошельку, умноженная на 100. Код валюты продажи указан\
+            \ в поле `currencyCode`. Предоставляется в информационных целях"
+          example: 5000
+          type: integer
+        convertedFinalPrice:
+          description: "Сумма к оплате покупателем в валюте страны продавца с учет\
+            ом всех скидок, умноженная на 100. Предоставляется в информационных це\
+            лях"
+          example: 5000
+          type: integer
+        currencyCode:
+          description: Код валюты продажи
+          example: 643
+          format: ISO 4217
+          type: integer
+        convertedCurrencyCode:
+          description: Код валюты страны продавца
+          example: 643
+          format: ISO 4217
+          type: integer
+        cargoType:
+          description: |
+            Тип товара:
+              - `1` — малогабаритный товар (МГТ)
+              - `2` — сверхгабаритный товар (СГТ)
+              - `3` — крупногабаритный товар (КГТ+)
+          enum:
+          - 1
+          - 2
+          - 3
+          nullable: false
+          type: integer
+        isZeroOrder:
+          description: |
+            Признак заказа товара с нулевым остатком:
+              - `false` — заказ сделан на товар с ненулевым остатком
+              - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену
+          type: boolean
+      type: object
+    api.NewOrders:
+      example:
+        orders:
+        - cargoType: 2
+          warehouseAddress: warehouseAddress
+          ddate: ddate
+          skus:
+          - skus
+          - skus
+          salePrice: 504600
+          payMode: prepaid
+          nmId: 1
+          finalPrice: 5000
+          requiredMeta:
+          - requiredMeta
+          - requiredMeta
+          rid: rid
+          article: article
+          convertedFinalPrice: 5000
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          convertedPrice: 5000
+          isZeroOrder: true
+          warehouseId: 6
+          price: 5
+          orderCode: orderCode
+          convertedCurrencyCode: 643
+          id: 0
+          chrtId: 5
+          currencyCode: 643
+        - cargoType: 2
+          warehouseAddress: warehouseAddress
+          ddate: ddate
+          skus:
+          - skus
+          - skus
+          salePrice: 504600
+          payMode: prepaid
+          nmId: 1
+          finalPrice: 5000
+          requiredMeta:
+          - requiredMeta
+          - requiredMeta
+          rid: rid
+          article: article
+          convertedFinalPrice: 5000
+          createdAt: 2000-01-23T04:56:07.000+00:00
+          convertedPrice: 5000
+          isZeroOrder: true
+          warehouseId: 6
+          price: 5
+          orderCode: orderCode
+          convertedCurrencyCode: 643
+          id: 0
+          chrtId: 5
+          currencyCode: 643
+      properties:
+        orders:
+          description: Список сборочных заданий
+          items:
+            $ref: "#/components/schemas/api.NewOrder"
+          type: array
+      type: object
+    api.Order:
+      example:
+        cargoType: 1
+        warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+        skus:
+        - "2043227963145"
+        payMode: prepaid
+        finalPrice: 5000
+        nmId: 1234567898765
+        rid: 5044304527347733263.0.0
+        article: wb6scpbwvp
+        convertedFinalPrice: 5000
+        createdAt: 2025-03-21T09:53:31Z
+        convertedPrice: 5000
+        isZeroOrder: false
+        warehouseId: 1162157
+        price: 5000
+        convertedCurrencyCode: 643
+        orderCode: 21117866-0006
+        id: 123456789
+        chrtId: 12345676
+        currencyCode: 643
+      properties:
+        article:
+          description: Артикул продавца
+          example: wb6scpbwvp
+          type: string
+        cargoType:
+          description: |
+            Тип товара:
+              - `1` — малогабаритный товар (МГТ)
+              - `2` — сверхгабаритный товар (СГТ)
+              - `3` — крупногабаритный товар (КГТ+)
+          enum:
+          - 1
+          - 2
+          - 3
+          example: 1
+          nullable: false
+          type: integer
+        chrtId:
+          description: ID размера товара в системе WB
+          example: 12345676
+          type: integer
+        createdAt:
+          description: Дата и время создания сборочного задания
+          example: 2025-03-21T09:53:31Z
+          format: date-time
+          type: string
+        price:
+          description: |
+            Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100.
+            Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях
+          example: 5000
+          type: integer
+        finalPrice:
+          description: "Сумма к оплате покупателем в валюте продажи с учетом всех\
+            \ скидок, умноженная на 100. Код валюты продажи указан в поле `currencyCode`.\
+            \ Предоставляется в информационных целях"
+          example: 5000
+          type: integer
+        convertedPrice:
+          description: "Цена в валюте страны продавца с учетом всех скидок, кроме\
+            \ скидки по WB Кошельку, умноженная на 100. Код валюты продажи указан\
+            \ в поле `currencyCode`. Предоставляется в информационных целях"
+          example: 5000
+          type: integer
+        convertedFinalPrice:
+          description: "Сумма к оплате покупателем в валюте страны продавца с учет\
+            ом всех скидок, умноженная на 100. Предоставляется в информационных це\
+            лях"
+          example: 5000
+          type: integer
+        currencyCode:
+          description: Код валюты продажи
+          example: 643
+          format: ISO 4217
+          type: integer
+        convertedCurrencyCode:
+          description: Код валюты страны продавца
+          example: 643
+          format: ISO 4217
+          type: integer
+        id:
+          description: ID сборочного задания
+          example: 123456789
+          type: integer
+        isZeroOrder:
+          description: |
+            Признак заказа товара с нулевым остатком:
+              - `false` — заказ сделан на товар с ненулевым остатком
+              - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену
+          example: false
+          type: boolean
+        nmId:
+          description: Артикул WB
+          example: 1234567898765
+          type: integer
+        orderCode:
+          description: |
+            Уникальный ID заказа покупателя
+          example: 21117866-0006
+          type: string
+        payMode:
+          description: |
+            Режим оплаты:
+              - `prepaid` — предоплатный
+              - `postpaid` — постоплатный
+              - `unknown` — неизвестный
+          example: prepaid
+          type: string
+        rid:
+          description: |
+            Уникальный ID заказа. <br>
+            Примечание: поле `rid` — это поле `srid` в ответах методов:
+              - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)
+              - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)
+              - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)
+              - [Отчет о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)
+              - [Отчет о продажах по реализации](./financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get)
+          example: 5044304527347733263.0.0
+          type: string
+        skus:
+          description: Массив баркодов товара
+          example:
+          - "2043227963145"
+          items:
+            type: string
+          type: array
+        warehouseAddress:
+          description: "Адрес магазина (склада продавца), на который поступило сбо\
+            рочное задание"
+          example: "Москва, район Якиманка, Софийская набережная, 4 с1"
+          type: string
+        warehouseId:
+          description: "ID склада продавца, на который поступило сборочное задание"
+          example: 1162157
+          type: integer
+      type: object
+    api.OrderClientInfo:
+      example:
+        phone: "+71111111111"
+        firstName: Иван
+        orderID: 1234567
+        phoneCode: 1234567
+      properties:
+        phone:
+          description: |
+            Телефон для связи с покупателем. Чтобы связаться с покупателем наберите
+            этот номер и введите добавочный код. Данный номер не является прямым
+            номером покупателя.
+          type: string
+        firstName:
+          description: Имя покупателя
+          type: string
+        orderID:
+          description: ID сборочного задания
+          type: integer
+        phoneCode:
+          description: Добавочный код
+          type: integer
+      type: object
+    api.OrderClientInfoResp:
+      example:
+        orders:
+        - phone: "+71111111111"
+          firstName: Иван
+          orderID: 1234567
+          phoneCode: 1234567
+        - phone: "+71111111111"
+          firstName: Иван
+          orderID: 1234567
+          phoneCode: 1234567
+      properties:
+        orders:
+          items:
+            $ref: "#/components/schemas/api.OrderClientInfo"
+          type: array
+      type: object
+    api.OrderStatus:
+      example:
+        supplierStatus: confirm
+        wbStatus: waiting
+        id: 1234567
+      properties:
+        id:
+          description: ID сборочного задания
+          type: integer
+        supplierStatus:
+          description: "Статус сборочного задания, установленный продавцом"
+          type: string
+        wbStatus:
+          description: Статус сборочного задания в системе WB
+          type: string
+      type: object
+    api.OrderStatuses:
+      example:
+        orders:
+        - supplierStatus: confirm
+          wbStatus: waiting
+          id: 1234567
+        - supplierStatus: confirm
+          wbStatus: waiting
+          id: 1234567
+      properties:
+        orders:
+          description: Список статусов сборочных заданий
+          items:
+            $ref: "#/components/schemas/api.OrderStatus"
+          type: array
+      type: object
+    api.Orders:
+      example:
+        next: 12345566
+        orders:
+        - cargoType: 1
+          warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+          skus:
+          - "2043227963145"
+          payMode: prepaid
+          finalPrice: 5000
+          nmId: 1234567898765
+          rid: 5044304527347733263.0.0
+          article: wb6scpbwvp
+          convertedFinalPrice: 5000
+          createdAt: 2025-03-21T09:53:31Z
+          convertedPrice: 5000
+          isZeroOrder: false
+          warehouseId: 1162157
+          price: 5000
+          convertedCurrencyCode: 643
+          orderCode: 21117866-0006
+          id: 123456789
+          chrtId: 12345676
+          currencyCode: 643
+        - cargoType: 1
+          warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+          skus:
+          - "2043227963145"
+          payMode: prepaid
+          finalPrice: 5000
+          nmId: 1234567898765
+          rid: 5044304527347733263.0.0
+          article: wb6scpbwvp
+          convertedFinalPrice: 5000
+          createdAt: 2025-03-21T09:53:31Z
+          convertedPrice: 5000
+          isZeroOrder: false
+          warehouseId: 1162157
+          price: 5000
+          convertedCurrencyCode: 643
+          orderCode: 21117866-0006
+          id: 123456789
+          chrtId: 12345676
+          currencyCode: 643
+      properties:
+        next:
+          description: |
+            Параметр пагинации. Содержит значение, которое необходимо указать в
+            запросе для получения следующего пакета данных
+          example: 12345566
+          type: integer
+        orders:
+          description: Список сборочных заданий
+          items:
+            $ref: "#/components/schemas/api.Order"
+          type: array
+      type: object
+    api.OrdersMeta:
+      example:
+        meta: "{}"
+      properties:
+        meta:
+          allOf:
+          - $ref: "#/components/schemas/api.baseMeta"
+          description: Метаданные сборочного задания
+          type: object
+      type: object
+    api.OrdersRequest:
+      example:
+        orders:
+        - 1234567
+      properties:
+        orders:
+          description: Список ID сборочных заданий
+          items:
+            type: integer
+          type: array
+      type: object
+    api.SGTINsRequest:
+      example:
+        sgtins:
+        - "1234567890123456"
+      properties:
+        sgtins:
+          description: Массив кодов маркировки. Допускается от 16 до 135 символов
+            для кода одной маркировки
+          items:
+            type: string
+          type: array
+      type: object
+    api.UINRequest:
+      example:
+        uin:
+        - "1234567890123456"
+      properties:
+        uin:
+          description: УИН
+          type: string
+      type: object
+    api.baseMeta:
+      properties:
+        gtin:
+          $ref: "#/components/schemas/api_baseMeta_gtin"
+        imei:
+          $ref: "#/components/schemas/api_baseMeta_imei"
+        sgtin:
+          $ref: "#/components/schemas/api_baseMeta_sgtin"
+        uin:
+          $ref: "#/components/schemas/api_baseMeta_uin"
+      type: object
+    _api_v3_click_collect_orders_new_get_401_response:
+      example:
+        code: code
+        requestId: requestId
+        origin: origin
+        statusText: statusText
+        detail: detail
+        title: title
+        status: 7.061401241503109
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        title:
+          description: Заголовок ошибки
+          type: string
+        detail:
+          description: Детали ошибки
+          type: string
+        code:
+          description: Внутренний код ошибки
+          type: string
+        requestId:
+          description: Уникальный ID запроса
+          type: string
+        origin:
+          description: ID внутреннего сервиса WB
+          type: string
+        status:
+          description: HTTP статус-код
+          type: number
+        statusText:
+          description: Расшифровка HTTP статус-кода
+          type: string
+        timestamp:
+          description: Дата и время запроса
+          format: date-time
+          type: string
+      type: object
+    api_baseMeta_gtin:
+      description: GTIN
+      properties:
+        value:
+          example: "123456789012345"
+          nullable: true
+          type: string
+      type: object
+    api_baseMeta_imei:
+      description: IMEI
+      properties:
+        value:
+          example: "123456789012345"
+          nullable: true
+          type: string
+      type: object
+    api_baseMeta_sgtin:
+      description: Код маркировки Честного знака
+      properties:
+        value:
+          example:
+          - "123456789012345"
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
+    api_baseMeta_uin:
+      description: УИН
+      properties:
+        value:
+          example: "123456789012345"
+          nullable: true
+          type: string
+      type: object
+  securitySchemes:
+    HeaderApiKey:
+      in: header
+      name: Authorization
+      type: apiKey

@@ -1,0 +1,2766 @@
+openapi: 3.0.1
+info:
+  description: "Управление [сборочными заданиями](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW)\
+    \ и [метаданными](/openapi/orders-dbw#tag/Metadannye-DBW) заказов DBW (Доставк\
+    а курьером WB)."
+  title: Заказы DBW
+  version: ordersdbw
+  x-file-name: orders-dbw
+servers:
+- url: /
+security:
+- HeaderApiKey: []
+tags:
+- description: ""
+  name: Сборочные задания DBW
+- description: ""
+  name: Метаданные DBW
+paths:
+  /api/v3/dbw/orders/new:
+    get:
+      description: "Метод возвращает список всех новых [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW),\
+        \ которые есть у продавца на момент запроса.\n\n<div class=\"description_limit\"\
+        >\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит\
+        \ запросов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n\
+        \    <li>получение и обновление списка контактов</li>\n    <li>получение и\
+        \ удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\
+        \n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1\
+        \ минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\n</div>\n"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_200_response"
+          description: Успешно
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Получить список новых сборочных заданий
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders:
+    get:
+      description: "Метод возвращает информацию о завершенных [сборочных заданиях\
+        ](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW).\n<br><br>\nМожно получ\
+        ить данные за заданный период, максимум 30 календарных дней одним запросом\
+        .\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
+        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
+        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
+        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос\
+        \ с кодом ответа <code>409</code> учитывается как 10 запросов\n</div>\n"
+      parameters:
+      - description: Параметр пагинации. Устанавливает предельное количество возвращаемых
+          данных
+        explode: true
+        in: query
+        name: limit
+        required: true
+        schema:
+          maximum: 1000
+          minimum: 1
+          type: integer
+        style: form
+      - description: "Параметр пагинации. Устанавливает значение, с которого надо\
+          \ получить следующий пакет данных. Для получения полного списка данных д\
+          олжен быть равен `0` в первом запросе. Для следующих запросов необходимо\
+          \ брать значения из одноименного поля в ответе"
+        explode: true
+        in: query
+        name: next
+        required: true
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - description: |
+          Дата начала периода в формате Unix timestamp
+        explode: true
+        in: query
+        name: dateFrom
+        required: true
+        schema:
+          type: integer
+        style: form
+      - description: Дата конца периода в формате Unix timestamp
+        explode: true
+        in: query
+        name: dateTo
+        required: true
+        schema:
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_get_200_response"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Получить информацию о завершенных сборочных заданиях
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/delivery-date:
+    post:
+      description: "Метод возвращает информацию о выбранных покупателем дате и вре\
+        мени доставки сборочных заданий.\n<br>\n\n<div class=\"description_limit\"\
+        >\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит\
+        \ запросов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n\
+        \    <li>получение и обновление списка контактов</li>\n    <li>получение и\
+        \ удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\
+        \n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1\
+        \ минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос с\
+        \ кодом ответа <code>409</code> учитывается как 10 запросов\n</div>\n"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeliveryDatesRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeliveryDatesInfoResp"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest1"
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Дата и время доставки
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/status:
+    post:
+      description: "Метод возвращает статусы сборочных заданий по их ID.\n<br><br>\n\
+        `supplierStatus` — статус сборочного задания.\nТриггер его изменения — дей\
+        ствие самого продавца.\n\nВозможные значения `supplierStatus`:\n| Статус \
+        \  | Описание            | Как перевести сборочное задание в данный статус\
+        \ |\n| -------  | ---------           | --------------------------------------|\n\
+        | `new`      | **Новое сборочное задание** | |\n| `confirm`  | **На сборке\
+        **      |  [Перевести сборочное задание на сборку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1confirm/patch)\n\
+        | `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1assemble/patch)\
+        \ |\n| `receive`  | **Получено покупателем**|  Переводится курьером\n| `reject`\
+        \   | **Отказ покупателя при получении**| Переводится курьером\n| `cancel`\
+        \   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1cancel/patch)\n\
+        | `cancel_missed_call` | **Отмена по причине недозвона**<br> | Статус меня\
+        ется автоматически |\n\n<br><br>\n`wbStatus` — статус системы Wildberries.\n\
+        \nВозможные значения `wbStatus`:\n- `waiting` — сборочное задание в работе\
+        \n- `sold` — заказ получен покупателем\n- `canceled` — отмена сборочного з\
+        адания\n- `canceled_by_client` — покупатель отменил заказ при получении\n\
+        - `declined_by_client` — покупатель отменил заказ в первый чаc\n<br>\nОтме\
+        на доступна покупателю в первый час с момента заказа, если заказ не переве\
+        ден на сборку\n- `defect` — отмена заказа по причине брака\n- `canceled_by_missed_call`\
+        \ — отмена заказа по причине недозвона\n- `postponed_delivery` — курьерска\
+        я доставка отложена\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
+        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
+        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
+        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос\
+        \ с кодом ответа <code>409</code> учитывается как 10 запросов\n</div>\n"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_v3_dbw_orders_status_post_request"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_status_post_200_response"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Получить статусы сборочных заданий
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/confirm:
+    patch:
+      description: "Метод переводит [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW)\
+        \ в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post)\
+        \ `confirm` — на сборке.\n\n<div class=\"description_limit\">\n<a href=\"\
+        /openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a>\
+        \ на один аккаунт продавца для следующих методов DBW:\n<ul>\n    <li>получ\
+        ение и обновление списка контактов</li>\n    <li>получение и удаление мета\
+        данных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\n| Период | Л\
+        имит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1 минута | 300 з\
+        апросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос с кодом ответа <code>409</code>\
+        \ учитывается как 10 запросов\n</div>\n"
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Подтверждено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Перевести на сборку
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/stickers:
+    post:
+      description: "Метод возвращает список стикеров для [сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get).\n\
+        \nМожно получить стикер в форматах:\n  - SVG\n  - ZPLV (вертикальный)\n  -\
+        \ ZPLH (горизонтальный)\n  - PNG\n\nОграничения:\n  - За один запрос можно\
+        \ получить максимум 100 стикеров.\n  - Можно получить стикеры только для с\
+        борочных заданий, находящихся на сборке — [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post)\
+        \ `confirm`.\n\nДоступны размеры:\n  - 580x400 px при `width=58&height=40`\
+        \ в запросе\n  - 400x300 px при `width=40&height=30` в запросе\n\n<div class=\"\
+        description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
+        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
+        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
+        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос\
+        \ с кодом ответа <code>409</code> учитывается как 10 запросов\n</div>\n"
+      parameters:
+      - description: Тип стикера
+        explode: true
+        in: query
+        name: type
+        required: true
+        schema:
+          enum:
+          - svg
+          - zplv
+          - zplh
+          - png
+          type: string
+        style: form
+      - description: Ширина стикера
+        explode: true
+        in: query
+        name: width
+        required: true
+        schema:
+          enum:
+          - 58
+          - 40
+          type: integer
+        style: form
+      - description: Высота стикера
+        explode: true
+        in: query
+        name: height
+        required: true
+        schema:
+          enum:
+          - 40
+          - 30
+          type: integer
+        style: form
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_v3_dbw_orders_stickers_post_request"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_stickers_post_200_response"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Получить стикеры сборочных заданий
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/assemble:
+    patch:
+      description: "Метод переводит [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get)\
+        \ в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post)\
+        \ `complete` — в доставке.\n\n<div class=\"description_limit\">\n<a href=\"\
+        /openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a>\
+        \ на один аккаунт продавца для следующих методов DBW:\n<ul>\n    <li>получ\
+        ение и обновление списка контактов</li>\n    <li>получение и удаление мета\
+        данных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\n| Период | Л\
+        имит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1 минута | 300 з\
+        апросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос с кодом ответа <code>409</code>\
+        \ учитывается как 10 запросов\n</div>\n"
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Подтверждено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Перевести в доставку
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/courier:
+    post:
+      description: "Метод возвращает контактные данные и номер автомобиля курьера\
+        \ по ID сборочного задания. <br> Для сборочных заданий в статусах `confirm`,\
+        \ `complete`.\n\n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
+        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
+        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
+        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\n</div>\n"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/OrdersRequestAPI"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/OrderCourierInfoResp"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      summary: Информация о курьере
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/cancel:
+    patch:
+      description: "Метод отменяет [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW)\
+        \ и переводит в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post)\
+        \ `cancel` — отменено продавцом.\n\n<div class=\"description_limit\">\n<a\
+        \ href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит зап\
+        росов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n    <li>п\
+        олучение и обновление списка контактов</li>\n    <li>получение и удаление\
+        \ метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\n| Пери\
+        од | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1 минута |\
+        \ 300 запросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос с кодом от\
+        вета <code>409</code> учитывается как 10 запросов\n</div>\n"
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "204":
+          description: Отменено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                StatusMismatch:
+                  $ref: "#/components/examples/StatusMismatch"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка обновления статуса
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Отменить сборочное задание
+      tags:
+      - Сборочные задания DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/meta:
+    delete:
+      description: "Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get)\
+        \ для переданного ключа.\n<br><br>\nВозможные метаданные:\n  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\n\
+        \  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)\n\
+        \  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)\n\
+        \  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
+        \nМожно передать только один ключ.\n\n<div class=\"description_limit\">\n\
+        <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит за\
+        просов</a> на один аккаунт продавца для следующих методов DBW:\n<ul>\n   \
+        \ <li>получение и обновление списка контактов</li>\n    <li>получение и уд\
+        аление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul> \n\n\n\
+        | Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n| 1 ми\
+        нута | 300 запросов | 200 миллисекунд | 20 запросов |\n\nОдин запрос с код\
+        ом ответа <code>409</code> учитывается как 10 запросов\n</div>\n"
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      - description: "Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`).\
+          \ Передается только одно значение"
+        explode: true
+        in: query
+        name: key
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "204":
+          description: Удалено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка удаления метаданных
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Удалить метаданные сборочного задания
+      tags:
+      - Метаданные DBW
+      x-readonly-method: false
+      x-category: marketplace
+    get:
+      description: "Метод возвращает метаданные [сборочного задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get).\n\
+        <br><br>\nПеречень метаданных, доступных для сборочного задания, можно пол\
+        учить в [списке новых сборочных заданий](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1new/get),\
+        \ поле `requiredMeta`.\n<br><br>\nВозможные метаданные:\n  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\n\
+        \  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)\n\
+        \  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)\n\
+        \  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)\n\
+        \n<div class=\"description_limit\">\n<a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\"\
+        >Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:\n\
+        <ul>\n    <li>получение и обновление списка контактов</li>\n    <li>получе\
+        ние и удаление метаданных</li>\n    <li>методы сборочных заданий</li>\n</ul>\
+        \ \n\n| Период | Лимит | Интервал | Всплеск |\n| --- | --- | --- | --- |\n\
+        | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |\n\n</div>\n"
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders__orderId__meta_get_200_response"
+          description: Успешно
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Получить метаданные сборочного задания
+      tags:
+      - Метаданные DBW
+      x-readonly-method: true
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/meta/sgtin:
+    put:
+      description: |
+        Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф).
+        <br><br>
+        Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
+        <br><br>
+        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных</strong> модели <strong>DBW</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_v3_dbw_orders__orderId__meta_sgtin_put_request"
+      responses:
+        "204":
+          description: Отправлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Закрепить за сборочным заданием код маркировки товара
+      tags:
+      - Метаданные DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/meta/uin:
+    put:
+      description: |
+        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер.
+        <br><br>
+        У одного сборочного задания может быть только один УИН.
+
+        Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных</strong> модели <strong>DBW</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_v3_dbw_orders__orderId__meta_uin_put_request"
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
+      tags:
+      - Метаданные DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/meta/imei:
+    put:
+      description: |
+        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
+        <br><br>
+        У одного сборочного задания может быть только один IMEI.
+
+        Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных</strong> модели <strong>DBW</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_v3_dbw_orders__orderId__meta_imei_put_request"
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Закрепить за сборочным заданием IMEI
+      tags:
+      - Метаданные DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+  /api/v3/dbw/orders/{orderId}/meta/gtin:
+    put:
+      description: |
+        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси.
+        <br><br>
+        У одного сборочного задания может быть только один GTIN.
+
+        Добавлять маркировку можно только для заказов, которые находятся в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных</strong> модели <strong>DBW</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 минута | 1000 запросов | 60 миллисекунд | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
+      parameters:
+      - description: ID сборочного задания
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          example: 5632423
+          format: int64
+          type: integer
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/_api_v3_dbw_orders__orderId__meta_gtin_put_request"
+      responses:
+        "204":
+          description: Обновлено
+        "400":
+          content:
+            application/json:
+              examples:
+                IncorrectRequestBody:
+                  $ref: "#/components/examples/IncorrectRequestBody"
+                IncorrectRequest:
+                  $ref: "#/components/examples/IncorrectRequest"
+                IncorrectParameter:
+                  $ref: "#/components/examples/IncorrectParameter"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Неправильный запрос
+        "401":
+          content:
+            application/json:
+              example:
+                title: unauthorized
+                detail: "token problem; token is malformed: could not base64 decode\
+                  \ signature: illegal base64 data at input byte 84"
+                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+                requestId: 7b80742415072fe8b6b7f7761f1d1211
+                origin: s2s-api-auth-catalog
+                status: 401
+                statusText: Unauthorized
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Не авторизован
+        "403":
+          content:
+            application/json:
+              example:
+                code: AccessDenied
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Доступ запрещен
+        "404":
+          content:
+            application/json:
+              example:
+                code: NotFound
+                message: ""
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Не найдено
+        "409":
+          content:
+            application/json:
+              examples:
+                FailedToUpdateMeta:
+                  $ref: "#/components/examples/FailedToUpdateMeta"
+              schema:
+                $ref: "#/components/schemas/Error"
+          description: Ошибка добавления маркировки
+        "429":
+          content:
+            application/json:
+              example:
+                title: too many requests
+                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+                requestId: 9d3c02cc698f8b041c661a7c28bed293
+                origin: s2s-api-auth-catalog
+                status: 429
+                statusText: Too Many Requests
+                timestamp: 2024-09-30T06:52:38Z
+              schema:
+                $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+          description: Слишком много запросов
+      security:
+      - HeaderApiKey: []
+      summary: Закрепить за сборочным заданием GTIN
+      tags:
+      - Метаданные DBW
+      x-readonly-method: false
+      x-category: marketplace
+    servers:
+    - url: https://marketplace-api.wildberries.ru
+components:
+  examples:
+    IncorrectRequestBody:
+      description: Некорректное тело запроса
+      value:
+        code: IncorrectRequestBody
+        message: ""
+    IncorrectRequest:
+      value:
+        code: IncorrectRequest
+        message: ""
+    IncorrectRequest1:
+      description: Некорректный запрос
+      value:
+        code: IncorrectRequest
+        message: ""
+    IncorrectParameter:
+      value:
+        code: IncorrectParameter
+        message: ""
+    FailedToUpdateMeta:
+      value:
+        code: FailedToUpdateMeta
+        message: ""
+    StatusMismatch:
+      value:
+        data: {}
+        code: StatusMismatch
+        message: ""
+  parameters:
+    Order:
+      description: ID сборочного задания
+      explode: false
+      in: path
+      name: orderId
+      required: true
+      schema:
+        example: 5632423
+        format: int64
+        type: integer
+      style: simple
+    Next:
+      description: "Параметр пагинации. Устанавливает значение, с которого надо по\
+        лучить следующий пакет данных. Для получения полного списка данных должен\
+        \ быть равен `0` в первом запросе. Для следующих запросов необходимо брать\
+        \ значения из одноименного поля в ответе"
+      explode: true
+      in: query
+      name: next
+      required: true
+      schema:
+        format: int64
+        type: integer
+      style: form
+    Limit:
+      description: Параметр пагинации. Устанавливает предельное количество возвращаемых
+        данных
+      explode: true
+      in: query
+      name: limit
+      required: true
+      schema:
+        maximum: 1000
+        minimum: 1
+        type: integer
+      style: form
+  responses:
+    "401":
+      content:
+        application/json:
+          example:
+            title: unauthorized
+            detail: "token problem; token is malformed: could not base64 decode signature:\
+              \ illegal base64 data at input byte 84"
+            code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
+            requestId: 7b80742415072fe8b6b7f7761f1d1211
+            origin: s2s-api-auth-catalog
+            status: 401
+            statusText: Unauthorized
+            timestamp: 2024-09-30T06:52:38Z
+          schema:
+            $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+      description: Не авторизован
+    "429":
+      content:
+        application/json:
+          example:
+            title: too many requests
+            detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
+            code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
+            requestId: 9d3c02cc698f8b041c661a7c28bed293
+            origin: s2s-api-auth-catalog
+            status: 429
+            statusText: Too Many Requests
+            timestamp: 2024-09-30T06:52:38Z
+          schema:
+            $ref: "#/components/schemas/_api_v3_dbw_orders_new_get_401_response"
+      description: Слишком много запросов
+    NotFound:
+      content:
+        application/json:
+          example:
+            code: NotFound
+            message: ""
+          schema:
+            $ref: "#/components/schemas/Error"
+      description: Не найдено
+    AccessDenied:
+      content:
+        application/json:
+          example:
+            code: AccessDenied
+            message: ""
+          schema:
+            $ref: "#/components/schemas/Error"
+      description: Доступ запрещен
+  schemas:
+    OrderCourierInfo:
+      example:
+        orderID: 2876979713
+        courierInfo: "{}"
+      properties:
+        courierInfo:
+          allOf:
+          - $ref: "#/components/schemas/CourierInfo"
+          description: Информация о курьере
+          type: object
+        orderID:
+          description: ID сборочного задания
+          example: 2876979713
+          type: integer
+      type: object
+    OrderCourierInfoResp:
+      example:
+        orders:
+        - orderID: 2876979713
+          courierInfo: "{}"
+        - orderID: 2876979713
+          courierInfo: "{}"
+      properties:
+        orders:
+          items:
+            $ref: "#/components/schemas/OrderCourierInfo"
+          type: array
+      type: object
+    CourierContactsResponse:
+      properties:
+        carNumber:
+          description: Номер автомобиля
+          example: х111хх11
+          type: string
+        fullName:
+          description: ФИО курьера
+          example: Иванов Иван Иванович
+          type: string
+        phone:
+          description: Номер телефона
+          example: "71230971931"
+          type: string
+      type: object
+    CourierInfo:
+      properties:
+        contacts:
+          allOf:
+          - $ref: "#/components/schemas/CourierContactsResponse"
+          description: Контактные данные курьера
+          nullable: true
+          type: object
+        mustBeAssigned:
+          description: |
+            Должен ли быть назначен курьер к текущему моменту:
+              - `false` — нет
+              - `true` — да
+
+
+              Если `"mustBeAssigned":true`, а `"contacts":null`, необходимо запросить контакты в [поддержке](https://seller.wildberries.ru/service-desk-v2)
+          type: boolean
+        pTimeFrom:
+          description: "Дата и время, с которого прибудет курьер"
+          example: 2025-09-06T08:00:00Z
+          format: date-time
+          nullable: true
+          type: string
+        pTimeTo:
+          description: "Дата и время, до которого прибудет курьер"
+          example: 2025-09-06T11:00:00Z
+          format: date-time
+          nullable: true
+          type: string
+        updatedAt:
+          description: "Дата и время обновления информации о курьере. <br> Если `null`,\
+            \ информация не обновлялась"
+          example: 2025-09-06T11:33:10+03:00
+          format: date-time
+          nullable: true
+          type: string
+      type: object
+    Error:
+      example:
+        code: code
+        data: "{}"
+        message: message
+      nullable: false
+      properties:
+        code:
+          description: Код ошибки
+          nullable: false
+          type: string
+        message:
+          description: Описание ошибки
+          nullable: false
+          type: string
+        data:
+          description: "Дополнительные данные, обогащающие ошибку"
+          nullable: true
+          type: object
+      type: object
+    OrdersRequestAPI:
+      example:
+        orders:
+        - 987654321
+        - 123456789
+      properties:
+        orders:
+          description: Список ID сборочных заданий
+          items:
+            type: integer
+          type: array
+      type: object
+    DeliveryDatesRequest:
+      example:
+        orders:
+        - 1234567890
+      properties:
+        orders:
+          description: Список ID сборочных заданий
+          items:
+            maxItems: 1000
+            minItems: 1
+            type: integer
+          type: array
+      type: object
+    Next:
+      description: "Параметр пагинации. Содержит значение, которое необходимо указ\
+        ать в запросе для получения следующего пакета данных"
+      example: 13833711
+      format: int64
+      nullable: false
+      type: integer
+    OrderNewDBW:
+      example:
+        cargoType: 0
+        address:
+          latitude: 40.20192
+          fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д\
+            . 10А, кв. 42"
+          longitude: 44.519068
+        skus:
+        - "6665956397512"
+        - "6665956397512"
+        salePrice: 504658
+        groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+        nmId: 123456789
+        requiredMeta:
+        - uin
+        rid: f884001e44e511edb8780242ac120002
+        article: one-ring-7548
+        createdAt: 2022-05-04T07:56:29Z
+        convertedPrice: 1014
+        orderUid: 165918930_629fbc924b984618a44354475ca58675
+        isZeroOrder: false
+        warehouseId: 658434
+        price: 1014
+        options:
+          isB2b: true
+        comment: "Упакуйте в пленку, пожалуйста"
+        colorCode: RAL 3017
+        convertedCurrencyCode: 643
+        id: 13833711
+        chrtId: 987654321
+        currencyCode: 933
+      properties:
+        address:
+          $ref: "#/components/schemas/OrderNewDBW_address"
+        salePrice:
+          description: |
+            Цена в валюте продажи с учетом скидки продавца, без учета скидки WB Клуба, умноженная на 100. Предоставляется в информационных целях
+          example: 504658
+          nullable: true
+          type: integer
+        requiredMeta:
+          description: "Список метаданных, доступных для сборочного задания. [Указ\
+            ывать IMEI](./orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)\
+            \ обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get)\
+            \ `Смартфоны`, `\"subjectId\":515`"
+          example:
+          - uin
+          items:
+            type: string
+          nullable: true
+          type: array
+        comment:
+          description: Комментарий покупателя
+          example: "Упакуйте в пленку, пожалуйста"
+          maxLength: 300
+          nullable: false
+          type: string
+        options:
+          $ref: "#/components/schemas/OrderNewDBW_options"
+        orderUid:
+          description: ID транзакции для группировки сборочных заданий. Сборочные
+            задания в одной корзине покупателя будут иметь одинаковый `orderUid`
+          example: 165918930_629fbc924b984618a44354475ca58675
+          type: string
+        groupId:
+          description: "ID группы сборочных заданий. <br> Объединяет сборочные зад\
+            ания, поступившие на один склад (`warehouseId`) в рамках одной транзак\
+            ции покупателя (`orderUid`)"
+          example: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          format: UUID
+          type: string
+        article:
+          description: Артикул продавца
+          example: one-ring-7548
+          nullable: false
+          type: string
+        colorCode:
+          description: Код цвета (только для колеруемых товаров)
+          example: RAL 3017
+          nullable: false
+          type: string
+        rid:
+          description: |
+            Уникальный ID заказа. <br>
+            Примечание: `rid` — это `srid` в ответах методов:
+              - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)
+              - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)
+              - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)
+              - [Отчет о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)
+              - [Отчет о продажах по реализации](./financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get)
+          example: f884001e44e511edb8780242ac120002
+          nullable: false
+          type: string
+        createdAt:
+          description: Дата создания сборочного задания
+          example: 2022-05-04T07:56:29Z
+          format: date-time
+          nullable: false
+          type: string
+        skus:
+          description: Массив баркодов товара
+          items:
+            example: "6665956397512"
+            type: string
+          nullable: false
+          type: array
+        id:
+          description: ID сборочного задания
+          example: 13833711
+          format: int64
+          nullable: false
+          type: integer
+        warehouseId:
+          description: "ID склада продавца, на который поступило сборочное задание"
+          example: 658434
+          nullable: false
+          type: integer
+        nmId:
+          description: Артикул WB
+          example: 123456789
+          nullable: false
+          type: integer
+        chrtId:
+          description: ID размера товара в системе WB
+          example: 987654321
+          nullable: false
+          type: integer
+        price:
+          description: "Цена в валюте продажи с учетом всех скидок, кроме скидки п\
+            о WB Кошельку, умноженная на 100. Код валюты продажи указан в поле `currencyCode`.\
+            \ Предоставляется в информационных целях"
+          example: 1014
+          nullable: false
+          type: integer
+        convertedPrice:
+          description: "Цена в валюте страны продавца с учетом всех скидок, кроме\
+            \ скидки по WB Кошельку, умноженная на 100. Предоставляется в информац\
+            ионных целях"
+          example: 1014
+          nullable: false
+          type: integer
+        currencyCode:
+          description: Код валюты продажи
+          example: 933
+          format: ISO 4217
+          nullable: false
+          type: integer
+        convertedCurrencyCode:
+          description: Код валюты страны продавца
+          example: 643
+          format: ISO 4217
+          nullable: false
+          type: integer
+        cargoType:
+          description: |
+            Тип товара:
+              - `1` — малогабаритный товар (МГТ)
+              - `2` — сверхгабаритный товар (СГТ)
+              - `3` — крупногабаритный товар (КГТ+)
+          enum:
+          - 1
+          - 2
+          - 3
+          nullable: false
+          type: integer
+        isZeroOrder:
+          description: |
+            Признак заказа товара с нулевым остатком:
+              - `false` — заказ сделан на товар с ненулевым остатком
+              - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену
+          example: false
+          type: boolean
+      type: object
+    Order:
+      example:
+        cargoType: 0
+        address:
+          latitude: 40.20192
+          fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д\
+            . 10А, кв. 42"
+          longitude: 44.519068
+        skus:
+        - "6665956397512"
+        - "6665956397512"
+        groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+        nmId: 123456789
+        rid: f884001e44e511edb8780242ac120002
+        article: one-ring-7548
+        createdAt: 2022-05-04T07:56:29Z
+        convertedPrice: 1014
+        orderUid: 165918930_629fbc924b984618a44354475ca58675
+        isZeroOrder: false
+        warehouseId: 658434
+        price: 1014
+        options:
+          isB2b: true
+        colorCode: RAL 3017
+        convertedCurrencyCode: 643
+        comment: "Упакуйте в пленку, пожалуйста"
+        id: 13833711
+        chrtId: 987654321
+        currencyCode: 933
+      properties:
+        address:
+          $ref: "#/components/schemas/OrderNewDBW_address"
+        options:
+          $ref: "#/components/schemas/OrderNewDBW_options"
+        orderUid:
+          description: ID транзакции для группировки сборочных заданий. Сборочные
+            задания в одной корзине покупателя будут иметь одинаковый `orderUid`
+          example: 165918930_629fbc924b984618a44354475ca58675
+          type: string
+        groupId:
+          description: "ID группы сборочных заданий. <br> Объединяет сборочные зад\
+            ания, поступившие на один склад (`warehouseId`) в рамках одной транзак\
+            ции покупателя (`orderUid`)"
+          example: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          format: UUID
+          type: string
+        article:
+          description: Артикул продавца
+          example: one-ring-7548
+          nullable: false
+          type: string
+        colorCode:
+          description: Код цвета (только для колеруемых товаров)
+          example: RAL 3017
+          nullable: false
+          type: string
+        rid:
+          description: |
+            Уникальный ID заказа. <br>
+            Примечание: `rid` — это `srid` в ответах методов:
+              - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)
+              - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)
+              - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)
+              - [Отчет о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)
+              - [Отчет о продажах по реализации](./financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get)
+          example: f884001e44e511edb8780242ac120002
+          nullable: false
+          type: string
+        createdAt:
+          description: Дата создания сборочного задания
+          example: 2022-05-04T07:56:29Z
+          format: date-time
+          nullable: false
+          type: string
+        skus:
+          description: Массив баркодов товара
+          items:
+            example: "6665956397512"
+            type: string
+          nullable: false
+          type: array
+        id:
+          description: ID сборочного задания
+          example: 13833711
+          format: int64
+          nullable: false
+          type: integer
+        warehouseId:
+          description: "ID склада продавца, на который поступило сборочное задание"
+          example: 658434
+          nullable: false
+          type: integer
+        nmId:
+          description: Артикул WB
+          example: 123456789
+          nullable: false
+          type: integer
+        chrtId:
+          description: ID размера товара в системе WB
+          example: 987654321
+          nullable: false
+          type: integer
+        price:
+          description: "Цена в валюте продажи с учетом всех скидок, кроме скидки п\
+            о WB Кошельку, умноженная на 100. Код валюты продажи указан в поле `currencyCode`.\
+            \ Предоставляется в информационных целях"
+          example: 1014
+          nullable: false
+          type: integer
+        convertedPrice:
+          description: "Цена в валюте страны продавца с учетом всех скидок, кроме\
+            \ скидки по WB Кошельку, умноженная на 100. Предоставляется в информац\
+            ионных целях"
+          example: 1014
+          nullable: false
+          type: integer
+        currencyCode:
+          description: Код валюты продажи
+          example: 933
+          format: ISO 4217
+          nullable: false
+          type: integer
+        convertedCurrencyCode:
+          description: Код валюты страны продавца
+          example: 643
+          format: ISO 4217
+          nullable: false
+          type: integer
+        cargoType:
+          description: |
+            Тип товара:
+              - `1` — малогабаритный товар (МГТ)
+              - `2` — сверхгабаритный товар (СГТ)
+              - `3` — крупногабаритный товар (КГТ+)
+          enum:
+          - 1
+          - 2
+          - 3
+          nullable: false
+          type: integer
+        comment:
+          description: Комментарий покупателя
+          example: "Упакуйте в пленку, пожалуйста"
+          maxLength: 300
+          nullable: false
+          type: string
+        isZeroOrder:
+          description: |
+            Признак заказа товара с нулевым остатком:
+              - `false` — заказ сделан на товар с ненулевым остатком
+              - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену
+          example: false
+          type: boolean
+      type: object
+    DeliveryDatesInfoResp:
+      example:
+        orders:
+        - dDateOld: 2025-01-28
+          dDate: 2025-02-20
+          dTimeFrom: 11:11
+          dTimeFromOld: 12:30
+          id: 1234567890
+          dTimeTo: 22:22
+          dTimeToOld: 22:30
+        - dDateOld: 2025-01-28
+          dDate: 2025-02-20
+          dTimeFrom: 11:11
+          dTimeFromOld: 12:30
+          id: 1234567890
+          dTimeTo: 22:22
+          dTimeToOld: 22:30
+      properties:
+        orders:
+          items:
+            $ref: "#/components/schemas/DeliveryDatesInfoResp_orders_inner"
+          type: array
+      type: object
+    Meta:
+      description: Метаданные сборочного задания
+      example:
+        sgtin:
+          value:
+          - "123456789012345"
+        gtin:
+          value: "123456789012345"
+        imei:
+          value: "123456789012345"
+        uin:
+          value: "123456789012345"
+      nullable: true
+      properties:
+        imei:
+          $ref: "#/components/schemas/Meta_imei"
+        uin:
+          $ref: "#/components/schemas/Meta_uin"
+        gtin:
+          $ref: "#/components/schemas/Meta_gtin"
+        sgtin:
+          $ref: "#/components/schemas/Meta_sgtin"
+      type: object
+    _api_v3_dbw_orders_new_get_200_response:
+      example:
+        orders:
+        - cargoType: 0
+          address:
+            latitude: 40.20192
+            fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
+              \ д. 10А, кв. 42"
+            longitude: 44.519068
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          salePrice: 504658
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          nmId: 123456789
+          requiredMeta:
+          - uin
+          rid: f884001e44e511edb8780242ac120002
+          article: one-ring-7548
+          createdAt: 2022-05-04T07:56:29Z
+          convertedPrice: 1014
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          isZeroOrder: false
+          warehouseId: 658434
+          price: 1014
+          options:
+            isB2b: true
+          comment: "Упакуйте в пленку, пожалуйста"
+          colorCode: RAL 3017
+          convertedCurrencyCode: 643
+          id: 13833711
+          chrtId: 987654321
+          currencyCode: 933
+        - cargoType: 0
+          address:
+            latitude: 40.20192
+            fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
+              \ д. 10А, кв. 42"
+            longitude: 44.519068
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          salePrice: 504658
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          nmId: 123456789
+          requiredMeta:
+          - uin
+          rid: f884001e44e511edb8780242ac120002
+          article: one-ring-7548
+          createdAt: 2022-05-04T07:56:29Z
+          convertedPrice: 1014
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          isZeroOrder: false
+          warehouseId: 658434
+          price: 1014
+          options:
+            isB2b: true
+          comment: "Упакуйте в пленку, пожалуйста"
+          colorCode: RAL 3017
+          convertedCurrencyCode: 643
+          id: 13833711
+          chrtId: 987654321
+          currencyCode: 933
+      nullable: false
+      properties:
+        orders:
+          description: Список новых сборочных заданий
+          items:
+            $ref: "#/components/schemas/OrderNewDBW"
+          nullable: false
+          type: array
+      type: object
+    _api_v3_dbw_orders_new_get_401_response:
+      example:
+        code: code
+        requestId: requestId
+        origin: origin
+        statusText: statusText
+        detail: detail
+        title: title
+        status: 6.027456183070403
+        timestamp: 2000-01-23T04:56:07.000+00:00
+      properties:
+        title:
+          description: Заголовок ошибки
+          type: string
+        detail:
+          description: Детали ошибки
+          type: string
+        code:
+          description: Внутренний код ошибки
+          type: string
+        requestId:
+          description: Уникальный ID запроса
+          type: string
+        origin:
+          description: ID внутреннего сервиса WB
+          type: string
+        status:
+          description: HTTP статус-код
+          type: number
+        statusText:
+          description: Расшифровка HTTP статус-кода
+          type: string
+        timestamp:
+          description: Дата и время запроса
+          format: date-time
+          type: string
+      type: object
+    _api_v3_dbw_orders_get_200_response:
+      example:
+        next: 13833711
+        orders:
+        - cargoType: 0
+          address:
+            latitude: 40.20192
+            fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
+              \ д. 10А, кв. 42"
+            longitude: 44.519068
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          nmId: 123456789
+          rid: f884001e44e511edb8780242ac120002
+          article: one-ring-7548
+          createdAt: 2022-05-04T07:56:29Z
+          convertedPrice: 1014
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          isZeroOrder: false
+          warehouseId: 658434
+          price: 1014
+          options:
+            isB2b: true
+          colorCode: RAL 3017
+          convertedCurrencyCode: 643
+          comment: "Упакуйте в пленку, пожалуйста"
+          id: 13833711
+          chrtId: 987654321
+          currencyCode: 933
+        - cargoType: 0
+          address:
+            latitude: 40.20192
+            fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
+              \ д. 10А, кв. 42"
+            longitude: 44.519068
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          nmId: 123456789
+          rid: f884001e44e511edb8780242ac120002
+          article: one-ring-7548
+          createdAt: 2022-05-04T07:56:29Z
+          convertedPrice: 1014
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          isZeroOrder: false
+          warehouseId: 658434
+          price: 1014
+          options:
+            isB2b: true
+          colorCode: RAL 3017
+          convertedCurrencyCode: 643
+          comment: "Упакуйте в пленку, пожалуйста"
+          id: 13833711
+          chrtId: 987654321
+          currencyCode: 933
+      nullable: false
+      properties:
+        next:
+          description: "Параметр пагинации. Содержит значение, которое необходимо\
+            \ указать в запросе для получения следующего пакета данных"
+          example: 13833711
+          format: int64
+          nullable: false
+          type: integer
+        orders:
+          items:
+            $ref: "#/components/schemas/Order"
+          nullable: false
+          type: array
+      type: object
+    _api_v3_dbw_orders_status_post_request:
+      properties:
+        orders:
+          description: Список ID сборочных заданий
+          items:
+            example: 5632423
+            format: int64
+            type: integer
+          maxItems: 1000
+          minItems: 1
+          type: array
+      required:
+      - orders
+      type: object
+    _api_v3_dbw_orders_status_post_200_response_orders_inner:
+      example:
+        supplierStatus: new
+        id: 5632423
+        wbStatus: wbStatus
+      properties:
+        id:
+          description: ID сборочного задания
+          example: 5632423
+          format: int64
+          nullable: false
+          type: integer
+        supplierStatus:
+          description: "Статус сборочного задания, установленный продавцом"
+          example: new
+          nullable: false
+          type: string
+        wbStatus:
+          description: Статус сборочного задания в системе Wildberries
+          nullable: false
+          type: string
+      type: object
+    _api_v3_dbw_orders_status_post_200_response:
+      example:
+        orders:
+        - supplierStatus: new
+          id: 5632423
+          wbStatus: wbStatus
+        - supplierStatus: new
+          id: 5632423
+          wbStatus: wbStatus
+      properties:
+        orders:
+          items:
+            $ref: "#/components/schemas/_api_v3_dbw_orders_status_post_200_response_orders_inner"
+          nullable: false
+          type: array
+      type: object
+    _api_v3_dbw_orders_stickers_post_request:
+      properties:
+        orders:
+          description: Список ID сборочных заданий
+          items:
+            example: 5346346
+            format: int64
+            type: integer
+          maxItems: 100
+          minItems: 1
+          type: array
+      type: object
+    _api_v3_dbw_orders_stickers_post_200_response_stickers_inner:
+      example:
+        file: !!binary |-
+          UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
+          MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
+          MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
+          ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
+          WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
+          Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
+          eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
+          YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
+          RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
+          QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
+          aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
+          YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
+          ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
+          QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
+          NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
+          T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
+          Zz09
+        orderId: 5346346
+        partA: "231648"
+        partB: "9753"
+        barcode: '!uKEtQZVx'
+      properties:
+        orderId:
+          description: ID сборочного задания
+          example: 5346346
+          format: int64
+          nullable: false
+          type: integer
+        partA:
+          description: Первая часть ID стикера (для печати подписи)
+          example: "231648"
+          nullable: false
+          type: string
+        partB:
+          description: Вторая часть ID стикера
+          example: "9753"
+          nullable: false
+          type: string
+        barcode:
+          description: Закодированное значение стикера
+          example: '!uKEtQZVx'
+          nullable: false
+          type: string
+        file:
+          description: Полное представление стикера в заданном формате (кодировка
+            base64)
+          example: !!binary |-
+            UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
+            MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
+            MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
+            ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
+            WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
+            Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
+            eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
+            YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
+            RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
+            QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
+            aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
+            YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
+            ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
+            QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
+            NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
+            T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
+            Zz09
+          format: byte
+          nullable: false
+          type: string
+      type: object
+    _api_v3_dbw_orders_stickers_post_200_response:
+      example:
+        stickers:
+        - file: !!binary |-
+            UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
+            MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
+            MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
+            ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
+            WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
+            Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
+            eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
+            YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
+            RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
+            QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
+            aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
+            YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
+            ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
+            QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
+            NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
+            T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
+            Zz09
+          orderId: 5346346
+          partA: "231648"
+          partB: "9753"
+          barcode: '!uKEtQZVx'
+        - file: !!binary |-
+            UEQ5NGJXd2dkbVZ5YzJsdmJqMGlNUzR3SWo4K0Nqd2hMUzBnUjJWdVpYSmhkR1ZrSUdKNUlGTldS
+            MjhnTFMwK0NqeHpkbWNnZDJsa2RHZzlJalF3TUNJZ2FHVnBaMmgwUFNJek1EQWlDaUFnSUNBZ2VH
+            MXNibk05SW1oMGRIQTZMeTkzZDNjdWR6TXViM0puTHpJd01EQXZjM1puSWdvZ0lDQWdJSGh0Ykc1
+            ek9uaHNhVzVyUFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eE9UazVMM2hzYVc1cklqNEtQSEps
+            WTNRZ2VEMGlNQ0lnZVQwaU1DSWdkMmxrZEdnOUlqUXdNQ0lnYUdWcFpRaUlHaGxhV2RvZEQwaU1U
+            Y3dJaUJ6ZEhsc1pUMGlabWxzYkRwaWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU16RTRJaUI1UFNJ
+            eU1DSWdkMmxrZEdnOUlqWWlJR2hsYVdkb2REMGlNVGN3SWlCemRIbHNaVDBpWm1sc2JEcGliR0Zq
+            YXlJZ0x6NEtQSEpsWTNRZ2VEMGlNekkySWlCNVBTSXlNQ0lnZDJsa2RHZzlJaklpSUdobGFXZG9k
+            RDBpTVRjd0lpQnpkSGxzWlQwaVptbHNiRHBpYkdGamF5SWdMejRLUEhKbFkzUWdlRDBpTXpNd0lp
+            QjVQU0l5TUNJZ2QybGtkR2c5SWpRaUlHaGxhV2RvZEQwaU1UY3dJaUJ6ZEhsc1pUMGlabWxzYkRw
+            aWJHRmpheUlnTHo0S1BISmxZM1FnZUQwaU1qQWlJSGs5SWpJd01DSWdkMmxrZEdnOUlqTTFNQ0ln
+            YUdWcFoyaDBQU0k1TUNJZ2MzUjViR1U5SW1acGJHdzZZbXhoWTJzaUlDOCtDangwWlhoMElIZzlJ
+            ak13SWlCNVBTSXlOREFpSUhOMGVXeGxQU0ptYVd4c09uZG9hWFJsTzJadmJuUXRjMmw2WlRvek1I
+            QjBPM1JsZUhRdFlXNWphRzl5T25OMFlYSjBJaUErTWpNeE5qUTRQQzkwWlhoMFBnbzhkR1Y0ZENC
+            NFBTSXpOVEFpSUhrOUlqSTNNQ0lnYzNSNWJHVTlJbVpwYkd3NmQyaHBkR1U3Wm05dWRDMXphWHBs
+            T2pVd2NIUTdkR1Y0ZEMxaGJtTm9iM0k2Wlc1a0lpQStPVGMxTXp3dmRHVjRkRDRLUEM5emRtYytD
+            Zz09
+          orderId: 5346346
+          partA: "231648"
+          partB: "9753"
+          barcode: '!uKEtQZVx'
+      properties:
+        stickers:
+          items:
+            $ref: "#/components/schemas/_api_v3_dbw_orders_stickers_post_200_response_stickers_inner"
+          nullable: false
+          type: array
+      type: object
+    _api_v3_dbw_orders__orderId__meta_get_200_response:
+      example:
+        meta:
+          sgtin:
+            value:
+            - "123456789012345"
+          gtin:
+            value: "123456789012345"
+          imei:
+            value: "123456789012345"
+          uin:
+            value: "123456789012345"
+      nullable: false
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+      type: object
+    _api_v3_dbw_orders__orderId__meta_sgtin_put_request:
+      properties:
+        sgtins:
+          description: Массив кодов маркировки. Допускается от 16 до 135 символов
+            для кода одной маркировки
+          items:
+            description: Код маркировки на упаковке. От 16 до 135 символов
+            example: "1234567890123456"
+            type: string
+          maxItems: 24
+          minItems: 1
+          type: array
+      type: object
+    _api_v3_dbw_orders__orderId__meta_uin_put_request:
+      properties:
+        uin:
+          description: УИН
+          example: "1234567890123456"
+          maxLength: 16
+          minLength: 16
+          type: string
+      required:
+      - uin
+      type: object
+    _api_v3_dbw_orders__orderId__meta_imei_put_request:
+      properties:
+        imei:
+          description: IMEI
+          example: "123456789012345"
+          maxLength: 15
+          minLength: 15
+          type: string
+      required:
+      - imei
+      type: object
+    _api_v3_dbw_orders__orderId__meta_gtin_put_request:
+      properties:
+        gtin:
+          description: GTIN
+          example: "1234567890123"
+          maxLength: 13
+          minLength: 13
+          type: string
+      required:
+      - gtin
+      type: object
+    OrderNewDBW_address:
+      description: Адрес покупателя для доставки
+      example:
+        latitude: 40.20192
+        fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д. 10А\
+          , кв. 42"
+        longitude: 44.519068
+      nullable: true
+      properties:
+        fullAddress:
+          description: Адрес доставки
+          example: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д. 10А\
+            , кв. 42"
+          type: string
+        longitude:
+          description: Долгота
+          example: 44.519068
+          format: float64
+          nullable: false
+          type: number
+        latitude:
+          description: Широта
+          example: 40.20192
+          format: float64
+          nullable: false
+          type: number
+      type: object
+    OrderNewDBW_options:
+      description: Опции заказа
+      example:
+        isB2b: true
+      properties:
+        isB2b:
+          description: |
+            Признак B2B-продажи:
+              - `false` — не B2B-продажа
+              - `true` — B2B-продажа
+          type: boolean
+      type: object
+    DeliveryDatesInfoResp_orders_inner:
+      example:
+        dDateOld: 2025-01-28
+        dDate: 2025-02-20
+        dTimeFrom: 11:11
+        dTimeFromOld: 12:30
+        id: 1234567890
+        dTimeTo: 22:22
+        dTimeToOld: 22:30
+      properties:
+        dTimeFrom:
+          description: Актуальное время доставки "с"
+          example: 11:11
+          nullable: true
+          type: string
+        dTimeTo:
+          description: Актуальное время доставки "по"
+          example: 22:22
+          nullable: true
+          type: string
+        dTimeFromOld:
+          description: Прежнее время доставки "с". Доступно первые сутки после изменения
+          example: 12:30
+          nullable: true
+          type: string
+        dTimeToOld:
+          description: Прежнее время доставки "по". Доступно первые сутки после изменения
+          example: 22:30
+          nullable: true
+          type: string
+        dDateOld:
+          description: Прежняя дата доставки. Доступна первые сутки после изменения
+          example: 2025-01-28
+          nullable: true
+          type: string
+        dDate:
+          description: Актуальная дата доставки
+          example: 2025-02-20
+          nullable: false
+          type: string
+        id:
+          description: ID сборочного задания
+          example: 1234567890
+          type: integer
+      type: object
+    Meta_imei:
+      description: IMEI
+      example:
+        value: "123456789012345"
+      properties:
+        value:
+          example: "123456789012345"
+          nullable: true
+          type: string
+      type: object
+    Meta_uin:
+      description: УИН
+      example:
+        value: "123456789012345"
+      properties:
+        value:
+          example: "123456789012345"
+          nullable: true
+          type: string
+      type: object
+    Meta_gtin:
+      description: GTIN
+      example:
+        value: "123456789012345"
+      properties:
+        value:
+          example: "123456789012345"
+          nullable: true
+          type: string
+      type: object
+    Meta_sgtin:
+      description: Код маркировки Честного знака
+      example:
+        value:
+        - "123456789012345"
+      properties:
+        value:
+          example:
+          - "123456789012345"
+          items:
+            type: string
+          nullable: true
+          type: array
+      type: object
+  securitySchemes:
+    HeaderApiKey:
+      in: header
+      name: Authorization
+      type: apiKey

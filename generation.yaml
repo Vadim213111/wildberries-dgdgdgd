@@ -38,3 +38,6 @@ languages:
     generator: typescript-fetch
     output_dir: clients/npm
     package_name_prefix: wildberries-sdk
+  - name: go
+    generator: go
+    output_dir: clients/go

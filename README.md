@@ -7,14 +7,23 @@
 ## Готовые пакеты
 
 ### Python
+![PyPI Downloads](https://static.pepy.tech/badge/wildberries-sdk)
+[![PyPI](https://img.shields.io/pypi/v/wildberries-sdk.svg)](https://pypi.org/project/wildberries-sdk/)
 
 - PyPI: https://pypi.org/project/wildberries-sdk/
 - README: [docs/python/README.md](docs/python/README.md)
 
 ### Node.js
+[![NPM Downloads](https://img.shields.io/npm/dt/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk)
+[![npm](https://img.shields.io/npm/v/wildberries-sdk.svg)](https://www.npmjs.com/package/wildberries-sdk)
 
 - npm: https://www.npmjs.com/package/wildberries-sdk
 - README: [docs/npm/README.md](docs/npm/README.md)
+
+### Go
+
+- README: [docs/go/README.md](docs/go/README.md)
+- Исходники: `clients/go`
 
 ## В данный момент представлены **все доступные** спецификации:
 
