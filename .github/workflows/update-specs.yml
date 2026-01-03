@@ -1,0 +1,34 @@
+name: Update specs
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  update-specs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download specs
+        run: bash scripts/download-specs-from-config.sh
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "chore: update specs"
+          title: "chore: update specs"
+          body: |
+            Automated spec sync from configured sources.
+          branch: "chore/specs-update"
+          delete-branch: true
+          add-paths: |
+            specs
+          reviewers: eslazarev
+          assignees: eslazarev
