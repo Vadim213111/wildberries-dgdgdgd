@@ -1,0 +1,21 @@
+[package]
+name = "wildberries_sdk_communications"
+version = "0.1.0"
+authors = ["OpenAPI Generator team and contributors"]
+description = "<div class=\"description_important\">     Узнать больше об общении с покупателями можно в <a href=\"https://seller.wildberries.ru/instructions/category/f7f6c465-dd12-422d-80a0-a6d9562115d5?goBackOption=prevRoute&categoryId=30817062-14cc-4a82-bc78-3600c2b0685b\">справочном центре</a> </div>  С помощью методов общения с покупателями вы можете работать с:   1. [Вопросами](/openapi/user-communication#tag/Voprosy) и [отзывами](/openapi/user-communication#tag/Otzyvy) покупателей   2. [Закреплёнными отзывами](/openapi/user-communication#tag/Zakreplyonnye-otzyvy)   3. [Чатами с покупателями](/openapi/user-communication#tag/Chat-s-pokupatelyami)   4. [Заявками покупателей на возврат](/openapi/user-communication#tag/Vozvraty-pokupatelyami) "
+# Override this license by providing a License Object in the OpenAPI.
+license = "Unlicense"
+edition = "2021"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
+serde_json = "^1.0"
+serde_repr = "^0.1"
+url = "^2.5"
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
+
+[features]
+default = ["native-tls"]
+native-tls = ["reqwest/native-tls"]
+rustls-tls = ["reqwest/rustls-tls"]

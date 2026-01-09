@@ -1,0 +1,21 @@
+[package]
+name = "wildberries_sdk_general"
+version = "0.1.0"
+authors = ["OpenAPI Generator team and contributors"]
+description = "В этом разделе:   - [общая информация о WB API](/openapi/api-information#tag/Vvedenie)   - как [начать работу с WB API](/openapi/api-information#tag/Vvedenie/Kak-nachat-rabotu-s-API)   - как [авторизоваться](/openapi/api-information#tag/Avtorizaciya) и [создавать токены](/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token)   - основные [статус-коды ответов](/openapi/api-information#tag/Vvedenie/Status-kody-HTTP)   - [лимиты запросов](/openapi/api-information#tag/Vvedenie/Limity-zaprosov)   - как обратиться в [поддержку](/openapi/api-information#tag/Vvedenie/Podderzhka)  С помощью методов этого раздела вы можете:   - проверить [подключение к WB API](/openapi/api-information#tag/Proverka-podklyucheniya-k-WB-API/paths/~1ping/get)   - получить [новости портала продавцов](/openapi/api-information#tag/API-novostej/paths/~1api~1communications~1v2~1news/get)   - получить [информацию о продавце](/openapi/api-information#tag/Informaciya-o-prodavce/paths/~1api~1v1~1seller-info/get)   - [управлять пользователями продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca) "
+# Override this license by providing a License Object in the OpenAPI.
+license = "Unlicense"
+edition = "2021"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+serde_json = "^1.0"
+serde_repr = "^0.1"
+url = "^2.5"
+uuid = { version = "^1.8", features = ["serde", "v4"] }
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
+
+[features]
+default = ["native-tls"]
+native-tls = ["reqwest/native-tls"]
+rustls-tls = ["reqwest/rustls-tls"]

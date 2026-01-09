@@ -1,0 +1,21 @@
+[package]
+name = "wildberries_sdk_orders_dbs"
+version = "0.1.0"
+authors = ["OpenAPI Generator team and contributors"]
+description = "<div class=\"description_important\">     Узнать больше о заказах DBS можно в <a href=\"https://seller.wildberries.ru/instructions/category/6572e024-7428-4db1-86a8-a4c7dbebbfcf?goBackOption=prevRoute&categoryId=5a8e1202-0865-45b7-acae-5d0afc7add56\">справочном центре</a> </div>  Управление [сборочными заданиями](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) и [метаданными](/openapi/orders-dbs#tag/Metadannye-DBS) заказов DBS (Delivery by Seller). "
+# Override this license by providing a License Object in the OpenAPI.
+license = "Unlicense"
+edition = "2021"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
+serde_json = "^1.0"
+serde_repr = "^0.1"
+url = "^2.5"
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
+
+[features]
+default = ["native-tls"]
+native-tls = ["reqwest/native-tls"]
+rustls-tls = ["reqwest/rustls-tls"]

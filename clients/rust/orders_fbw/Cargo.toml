@@ -1,0 +1,21 @@
+[package]
+name = "wildberries_sdk_orders_fbw"
+version = "0.1.0"
+authors = ["OpenAPI Generator team and contributors"]
+description = "<div class=\"description_important\">     Узнать больше о поставках FBW можно в <a href=\"https://seller.wildberries.ru/instructions/subcategory/5a8e1202-0865-45b7-acae-5d0afc7add56?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  В разделе описаны методы получения:   - [информации для формирования поставок](/openapi/orders-fbw#tag/Informaciya-dlya-formirovaniya-postavok)   - [информации о поставках](/openapi/orders-fbw#tag/Informaciya-o-postavkah) "
+# Override this license by providing a License Object in the OpenAPI.
+license = "Unlicense"
+edition = "2021"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
+serde_json = "^1.0"
+serde_repr = "^0.1"
+url = "^2.5"
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
+
+[features]
+default = ["native-tls"]
+native-tls = ["reqwest/native-tls"]
+rustls-tls = ["reqwest/rustls-tls"]

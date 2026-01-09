@@ -1,0 +1,21 @@
+[package]
+name = "wildberries_sdk_promotion"
+version = "0.1.0"
+authors = ["OpenAPI Generator team and contributors"]
+description = "<div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Настраивать [параметры](/openapi/promotion#tag/Parametry-kampanij) кампаний — кластеры фраз, продвигаемые товары и так далее.   4. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   5. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   6. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. "
+# Override this license by providing a License Object in the OpenAPI.
+license = "Unlicense"
+edition = "2021"
+
+[dependencies]
+serde = { version = "^1.0", features = ["derive"] }
+serde_with = { version = "^3.8", default-features = false, features = ["base64", "std", "macros"] }
+serde_json = "^1.0"
+serde_repr = "^0.1"
+url = "^2.5"
+reqwest = { version = "^0.12", default-features = false, features = ["json", "multipart"] }
+
+[features]
+default = ["native-tls"]
+native-tls = ["reqwest/native-tls"]
+rustls-tls = ["reqwest/rustls-tls"]
