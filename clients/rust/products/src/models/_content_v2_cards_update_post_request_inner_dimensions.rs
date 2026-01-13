@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ContentV2CardsUpdatePostRequestInnerDimensions : Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара 
+/// ContentV2CardsUpdatePostRequestInnerDimensions : Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара.<br> Синхронизация новых данных с сервисом может занимать до 30 минут 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ContentV2CardsUpdatePostRequestInnerDimensions {
     /// Длина, см
@@ -29,7 +29,7 @@ pub struct ContentV2CardsUpdatePostRequestInnerDimensions {
 }
 
 impl ContentV2CardsUpdatePostRequestInnerDimensions {
-    /// Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара 
+    /// Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара.<br> Синхронизация новых данных с сервисом может занимать до 30 минут 
     pub fn new() -> ContentV2CardsUpdatePostRequestInnerDimensions {
         ContentV2CardsUpdatePostRequestInnerDimensions {
             length: None,

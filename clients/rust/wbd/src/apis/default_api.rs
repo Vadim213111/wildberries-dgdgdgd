@@ -263,16 +263,16 @@ pub async fn content_author_get(configuration: &configuration::Configuration, se
         req_builder = req_builder.query(&[("search", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_category {
-        req_builder = req_builder.query(&[("category", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("category", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_status {
-        req_builder = req_builder.query(&[("status", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("status", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sort {
-        req_builder = req_builder.query(&[("sort", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("sort", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sort_dir {
-        req_builder = req_builder.query(&[("sort_dir", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("sort_dir", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_skip {
         req_builder = req_builder.query(&[("skip", &param_value.to_string())]);
@@ -410,9 +410,11 @@ pub async fn content_gallery(configuration: &configuration::Configuration, files
         req_builder = req_builder.header("Authorization", value);
     };
     let mut multipart_form = reqwest::multipart::Form::new();
-    for file_path in p_form_files {
-        multipart_form = multipart_form.file("files", file_path).await?;
-    }
+    let file = TokioFile::open(&p_form_files).await?;
+    let stream = FramedRead::new(file, BytesCodec::new());
+    let file_name = p_form_files.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+    let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
+    multipart_form = multipart_form.part("files", file_part);
     req_builder = req_builder.multipart(multipart_form);
 
     let req = req_builder.build()?;
@@ -1204,16 +1206,16 @@ pub async fn offers_author_get(configuration: &configuration::Configuration, sea
         req_builder = req_builder.query(&[("search", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_category {
-        req_builder = req_builder.query(&[("category", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("category", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_status {
-        req_builder = req_builder.query(&[("status", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("status", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sort {
-        req_builder = req_builder.query(&[("sort", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("sort", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sort_dir {
-        req_builder = req_builder.query(&[("sort_dir", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("sort_dir", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_skip {
         req_builder = req_builder.query(&[("skip", &param_value.to_string())]);

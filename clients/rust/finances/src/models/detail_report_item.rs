@@ -262,6 +262,12 @@ pub struct DetailReportItem {
     /// Размер дополнительной скидки по собственной акции продавца, %
     #[serde(rename = "seller_promo_discount", skip_serializing_if = "Option::is_none")]
     pub seller_promo_discount: Option<f64>,
+    /// ID скидки лояльности от продавца
+    #[serde(rename = "loyalty_id", skip_serializing_if = "Option::is_none")]
+    pub loyalty_id: Option<i32>,
+    /// Размер скидки лояльности от продавца, %
+    #[serde(rename = "loyalty_discount", skip_serializing_if = "Option::is_none")]
+    pub loyalty_discount: Option<f64>,
 }
 
 impl DetailReportItem {
@@ -350,6 +356,8 @@ impl DetailReportItem {
             delivery_method: None,
             seller_promo_id: None,
             seller_promo_discount: None,
+            loyalty_id: None,
+            loyalty_discount: None,
         }
     }
 }

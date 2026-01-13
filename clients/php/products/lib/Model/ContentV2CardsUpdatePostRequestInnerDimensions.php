@@ -35,7 +35,7 @@ use \Wildberries\\Sdk\\Products\ObjectSerializer;
  * ContentV2CardsUpdatePostRequestInnerDimensions Class Doc Comment
  *
  * @category Class
- * @description Габариты и вес товара &#x60;c упаковкой&#x60;.&lt;br&gt; Укажите в &#x60;сантиметрах&#x60; и &#x60;килограммах&#x60; для любого товара
+ * @description Габариты и вес товара &#x60;c упаковкой&#x60;.&lt;br&gt; Укажите в &#x60;сантиметрах&#x60; и &#x60;килограммах&#x60; для любого товара.&lt;br&gt; Синхронизация новых данных с сервисом может занимать до 30 минут
  * @package  Wildberries\\Sdk\\Products
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

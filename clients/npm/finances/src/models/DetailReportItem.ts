@@ -529,6 +529,18 @@ export interface DetailReportItem {
      * @memberof DetailReportItem
      */
     sellerPromoDiscount?: number;
+    /**
+     * ID скидки лояльности от продавца
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    loyaltyId?: number;
+    /**
+     * Размер скидки лояльности от продавца, %
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    loyaltyDiscount?: number;
 }
 
 
@@ -642,6 +654,8 @@ export function DetailReportItemFromJSONTyped(json: any, ignoreDiscriminator: bo
         'deliveryMethod': json['delivery_method'] == null ? undefined : json['delivery_method'],
         'sellerPromoId': json['seller_promo_id'] == null ? undefined : json['seller_promo_id'],
         'sellerPromoDiscount': json['seller_promo_discount'] == null ? undefined : json['seller_promo_discount'],
+        'loyaltyId': json['loyalty_id'] == null ? undefined : json['loyalty_id'],
+        'loyaltyDiscount': json['loyalty_discount'] == null ? undefined : json['loyalty_discount'],
     };
 }
 
@@ -739,6 +753,8 @@ export function DetailReportItemToJSONTyped(value?: DetailReportItem | null, ign
         'delivery_method': value['deliveryMethod'],
         'seller_promo_id': value['sellerPromoId'],
         'seller_promo_discount': value['sellerPromoDiscount'],
+        'loyalty_id': value['loyaltyId'],
+        'loyalty_discount': value['loyaltyDiscount'],
     };
 }
 

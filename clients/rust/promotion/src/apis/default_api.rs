@@ -540,10 +540,10 @@ pub async fn adv_v0_auction_adverts_get(configuration: &configuration::Configura
         req_builder = req_builder.query(&[("ids", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_statuses {
-        req_builder = req_builder.query(&[("statuses", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("statuses", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_payment_type {
-        req_builder = req_builder.query(&[("payment_type", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("payment_type", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -1789,16 +1789,16 @@ pub async fn adv_v1_promotion_adverts_post(configuration: &configuration::Config
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
 
     if let Some(ref param_value) = p_query_status {
-        req_builder = req_builder.query(&[("status", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("status", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_type {
-        req_builder = req_builder.query(&[("type", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("type", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_order {
-        req_builder = req_builder.query(&[("order", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("order", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_direction {
-        req_builder = req_builder.query(&[("direction", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("direction", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -2539,10 +2539,10 @@ pub async fn api_advert_v2_adverts_get(configuration: &configuration::Configurat
         req_builder = req_builder.query(&[("ids", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_statuses {
-        req_builder = req_builder.query(&[("statuses", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("statuses", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_payment_type {
-        req_builder = req_builder.query(&[("payment_type", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("payment_type", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());

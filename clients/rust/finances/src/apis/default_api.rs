@@ -285,10 +285,10 @@ pub async fn api_v1_documents_list_get(configuration: &configuration::Configurat
         req_builder = req_builder.query(&[("endTime", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_sort {
-        req_builder = req_builder.query(&[("sort", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("sort", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_order {
-        req_builder = req_builder.query(&[("order", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("order", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_category {
         req_builder = req_builder.query(&[("category", &param_value.to_string())]);
@@ -360,7 +360,7 @@ pub async fn api_v5_supplier_report_detail_by_period_get(configuration: &configu
         req_builder = req_builder.query(&[("rrdid", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_period {
-        req_builder = req_builder.query(&[("period", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("period", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());

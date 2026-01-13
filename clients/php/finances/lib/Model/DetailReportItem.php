@@ -139,7 +139,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_schedule' => 'float',
         'delivery_method' => 'string',
         'seller_promo_id' => 'int',
-        'seller_promo_discount' => 'float'
+        'seller_promo_discount' => 'float',
+        'loyalty_id' => 'int',
+        'loyalty_discount' => 'float'
     ];
 
     /**
@@ -232,7 +234,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_schedule' => 'decimal',
         'delivery_method' => null,
         'seller_promo_id' => null,
-        'seller_promo_discount' => null
+        'seller_promo_discount' => null,
+        'loyalty_id' => null,
+        'loyalty_discount' => null
     ];
 
     /**
@@ -323,7 +327,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_schedule' => false,
         'delivery_method' => false,
         'seller_promo_id' => false,
-        'seller_promo_discount' => false
+        'seller_promo_discount' => false,
+        'loyalty_id' => false,
+        'loyalty_discount' => false
     ];
 
     /**
@@ -494,7 +500,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_schedule' => 'payment_schedule',
         'delivery_method' => 'delivery_method',
         'seller_promo_id' => 'seller_promo_id',
-        'seller_promo_discount' => 'seller_promo_discount'
+        'seller_promo_discount' => 'seller_promo_discount',
+        'loyalty_id' => 'loyalty_id',
+        'loyalty_discount' => 'loyalty_discount'
     ];
 
     /**
@@ -585,7 +593,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_schedule' => 'setPaymentSchedule',
         'delivery_method' => 'setDeliveryMethod',
         'seller_promo_id' => 'setSellerPromoId',
-        'seller_promo_discount' => 'setSellerPromoDiscount'
+        'seller_promo_discount' => 'setSellerPromoDiscount',
+        'loyalty_id' => 'setLoyaltyId',
+        'loyalty_discount' => 'setLoyaltyDiscount'
     ];
 
     /**
@@ -676,7 +686,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'payment_schedule' => 'getPaymentSchedule',
         'delivery_method' => 'getDeliveryMethod',
         'seller_promo_id' => 'getSellerPromoId',
-        'seller_promo_discount' => 'getSellerPromoDiscount'
+        'seller_promo_discount' => 'getSellerPromoDiscount',
+        'loyalty_id' => 'getLoyaltyId',
+        'loyalty_discount' => 'getLoyaltyDiscount'
     ];
 
     /**
@@ -834,6 +846,8 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('delivery_method', $data ?? [], null);
         $this->setIfExists('seller_promo_id', $data ?? [], null);
         $this->setIfExists('seller_promo_discount', $data ?? [], null);
+        $this->setIfExists('loyalty_id', $data ?? [], null);
+        $this->setIfExists('loyalty_discount', $data ?? [], null);
     }
 
     /**
@@ -3141,6 +3155,60 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable seller_promo_discount cannot be null');
         }
         $this->container['seller_promo_discount'] = $seller_promo_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyalty_id
+     *
+     * @return int|null
+     */
+    public function getLoyaltyId()
+    {
+        return $this->container['loyalty_id'];
+    }
+
+    /**
+     * Sets loyalty_id
+     *
+     * @param int|null $loyalty_id ID скидки лояльности от продавца
+     *
+     * @return self
+     */
+    public function setLoyaltyId($loyalty_id)
+    {
+        if (is_null($loyalty_id)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_id cannot be null');
+        }
+        $this->container['loyalty_id'] = $loyalty_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets loyalty_discount
+     *
+     * @return float|null
+     */
+    public function getLoyaltyDiscount()
+    {
+        return $this->container['loyalty_discount'];
+    }
+
+    /**
+     * Sets loyalty_discount
+     *
+     * @param float|null $loyalty_discount Размер скидки лояльности от продавца, %
+     *
+     * @return self
+     */
+    public function setLoyaltyDiscount($loyalty_discount)
+    {
+        if (is_null($loyalty_discount)) {
+            throw new \InvalidArgumentException('non-nullable loyalty_discount cannot be null');
+        }
+        $this->container['loyalty_discount'] = $loyalty_discount;
 
         return $this;
     }

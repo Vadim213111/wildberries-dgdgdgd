@@ -13,6 +13,8 @@ use reqwest;
 use serde::{Deserialize, Serialize, de::Error as _};
 use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
+use tokio::fs::File as TokioFile;
+use tokio_util::codec::{BytesCodec, FramedRead};
 
 
 /// struct for typed errors of method [`api_feedbacks_v1_pins_count_get`]
@@ -287,10 +289,10 @@ pub async fn api_feedbacks_v1_pins_count_get(configuration: &configuration::Conf
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref param_value) = p_query_state {
-        req_builder = req_builder.query(&[("state", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("state", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_pin_on {
-        req_builder = req_builder.query(&[("pinOn", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("pinOn", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_imt_id {
         req_builder = req_builder.query(&[("imtId", &param_value.to_string())]);
@@ -407,10 +409,10 @@ pub async fn api_feedbacks_v1_pins_get(configuration: &configuration::Configurat
     let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
 
     if let Some(ref param_value) = p_query_state {
-        req_builder = req_builder.query(&[("state", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("state", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_pin_on {
-        req_builder = req_builder.query(&[("pinOn", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("pinOn", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_imt_id {
         req_builder = req_builder.query(&[("imtId", &param_value.to_string())]);
@@ -789,7 +791,7 @@ pub async fn api_v1_feedbacks_archive_get(configuration: &configuration::Configu
     req_builder = req_builder.query(&[("take", &p_query_take.to_string())]);
     req_builder = req_builder.query(&[("skip", &p_query_skip.to_string())]);
     if let Some(ref param_value) = p_query_order {
-        req_builder = req_builder.query(&[("order", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("order", &param_value.to_string())]);
     }
     if let Some(ref user_agent) = configuration.user_agent {
         req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
@@ -948,7 +950,7 @@ pub async fn api_v1_feedbacks_get(configuration: &configuration::Configuration, 
     req_builder = req_builder.query(&[("take", &p_query_take.to_string())]);
     req_builder = req_builder.query(&[("skip", &p_query_skip.to_string())]);
     if let Some(ref param_value) = p_query_order {
-        req_builder = req_builder.query(&[("order", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("order", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_date_from {
         req_builder = req_builder.query(&[("dateFrom", &param_value.to_string())]);
@@ -1491,9 +1493,11 @@ pub async fn api_v1_seller_message_post(configuration: &configuration::Configura
         multipart_form = multipart_form.text("message", param_value.to_string());
     }
     if let Some(ref param_value) = p_form_file {
-       for file_path in param_value {
-           multipart_form = multipart_form.file("file", file_path).await?;
-       }
+        let file = TokioFile::open(param_value).await?;
+        let stream = FramedRead::new(file, BytesCodec::new());
+        let file_name = param_value.file_name().map(|n| n.to_string_lossy().to_string()).unwrap_or_default();
+        let file_part = reqwest::multipart::Part::stream(reqwest::Body::wrap_stream(stream)).file_name(file_name);
+        multipart_form = multipart_form.part("file", file_part);
     }
     req_builder = req_builder.multipart(multipart_form);
 

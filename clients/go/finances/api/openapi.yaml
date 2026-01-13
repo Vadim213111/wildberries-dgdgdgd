@@ -880,8 +880,10 @@ components:
     DetailReportItem:
       example:
         ppvz_sales_commission: 23.74
+        loyalty_discount: 0
         retail_amount: 367
         ppvz_vw: 22.25
+        loyalty_id: 0
         declaration_number: ""
         retail_price: 1249
         payment_processing: Комиссия за организацию платежа с НДС
@@ -1324,6 +1326,14 @@ components:
           description: "Размер дополнительной скидки по собственной акции продавца\
             , %"
           example: 3
+          type: number
+        loyalty_id:
+          description: ID скидки лояльности от продавца
+          example: 0
+          type: integer
+        loyalty_discount:
+          description: "Размер скидки лояльности от продавца, %"
+          example: 0
           type: number
       type: object
     _api_v1_account_balance_get_200_response:

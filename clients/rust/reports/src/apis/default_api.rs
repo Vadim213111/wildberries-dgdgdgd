@@ -1556,10 +1556,10 @@ pub async fn get_deductions(configuration: &configuration::Configuration, date_t
     }
     req_builder = req_builder.query(&[("dateTo", &p_query_date_to.to_string())]);
     if let Some(ref param_value) = p_query_sort {
-        req_builder = req_builder.query(&[("sort", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("sort", &param_value.to_string())]);
     }
     if let Some(ref param_value) = p_query_order {
-        req_builder = req_builder.query(&[("order", &serde_json::to_string(param_value)?)]);
+        req_builder = req_builder.query(&[("order", &param_value.to_string())]);
     }
     req_builder = req_builder.query(&[("limit", &p_query_limit.to_string())]);
     if let Some(ref param_value) = p_query_offset {

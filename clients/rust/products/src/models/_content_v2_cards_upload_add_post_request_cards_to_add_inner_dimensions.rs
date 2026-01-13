@@ -11,7 +11,7 @@
 use crate::models;
 use serde::{Deserialize, Serialize};
 
-/// ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions : Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара. <br> Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса 
+/// ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions : Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара. <br> Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса. <br> Синхронизация данных с сервисом может занимать до 30 минут 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions {
     /// Длина, см
@@ -29,7 +29,7 @@ pub struct ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions {
 }
 
 impl ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions {
-    /// Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара. <br> Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса 
+    /// Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара. <br> Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса. <br> Синхронизация данных с сервисом может занимать до 30 минут 
     pub fn new() -> ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions {
         ContentV2CardsUploadAddPostRequestCardsToAddInnerDimensions {
             length: None,

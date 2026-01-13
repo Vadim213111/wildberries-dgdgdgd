@@ -17,7 +17,7 @@ import (
 // checks if the ContentV2CardsUpdatePostRequestInnerDimensions type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ContentV2CardsUpdatePostRequestInnerDimensions{}
 
-// ContentV2CardsUpdatePostRequestInnerDimensions Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара 
+// ContentV2CardsUpdatePostRequestInnerDimensions Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара.<br> Синхронизация новых данных с сервисом может занимать до 30 минут 
 type ContentV2CardsUpdatePostRequestInnerDimensions struct {
 	// Длина, см
 	Length *int32 `json:"length,omitempty"`

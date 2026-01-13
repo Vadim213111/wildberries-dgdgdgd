@@ -17,7 +17,7 @@ import (
 // checks if the ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions{}
 
-// ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара.<br> Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса 
+// ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара.<br> Если данные не указаны, автоматически сгенерируются нулевые значения длины, ширины, высоты и веса.<br> Синхронизация данных новой карточки с сервисом может занимать до 30 минут 
 type ContentV2CardsUploadPostRequestInnerVariantsInnerDimensions struct {
 	// Длина, см
 	Length *int32 `json:"length,omitempty"`

@@ -186,6 +186,10 @@ type DetailReportItem struct {
 	SellerPromoId *int32 `json:"seller_promo_id,omitempty"`
 	// Размер дополнительной скидки по собственной акции продавца, %
 	SellerPromoDiscount *float32 `json:"seller_promo_discount,omitempty"`
+	// ID скидки лояльности от продавца
+	LoyaltyId *int32 `json:"loyalty_id,omitempty"`
+	// Размер скидки лояльности от продавца, %
+	LoyaltyDiscount *float32 `json:"loyalty_discount,omitempty"`
 }
 
 // NewDetailReportItem instantiates a new DetailReportItem object
@@ -2862,6 +2866,70 @@ func (o *DetailReportItem) SetSellerPromoDiscount(v float32) {
 	o.SellerPromoDiscount = &v
 }
 
+// GetLoyaltyId returns the LoyaltyId field value if set, zero value otherwise.
+func (o *DetailReportItem) GetLoyaltyId() int32 {
+	if o == nil || IsNil(o.LoyaltyId) {
+		var ret int32
+		return ret
+	}
+	return *o.LoyaltyId
+}
+
+// GetLoyaltyIdOk returns a tuple with the LoyaltyId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetLoyaltyIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.LoyaltyId) {
+		return nil, false
+	}
+	return o.LoyaltyId, true
+}
+
+// HasLoyaltyId returns a boolean if a field has been set.
+func (o *DetailReportItem) HasLoyaltyId() bool {
+	if o != nil && !IsNil(o.LoyaltyId) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoyaltyId gets a reference to the given int32 and assigns it to the LoyaltyId field.
+func (o *DetailReportItem) SetLoyaltyId(v int32) {
+	o.LoyaltyId = &v
+}
+
+// GetLoyaltyDiscount returns the LoyaltyDiscount field value if set, zero value otherwise.
+func (o *DetailReportItem) GetLoyaltyDiscount() float32 {
+	if o == nil || IsNil(o.LoyaltyDiscount) {
+		var ret float32
+		return ret
+	}
+	return *o.LoyaltyDiscount
+}
+
+// GetLoyaltyDiscountOk returns a tuple with the LoyaltyDiscount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetLoyaltyDiscountOk() (*float32, bool) {
+	if o == nil || IsNil(o.LoyaltyDiscount) {
+		return nil, false
+	}
+	return o.LoyaltyDiscount, true
+}
+
+// HasLoyaltyDiscount returns a boolean if a field has been set.
+func (o *DetailReportItem) HasLoyaltyDiscount() bool {
+	if o != nil && !IsNil(o.LoyaltyDiscount) {
+		return true
+	}
+
+	return false
+}
+
+// SetLoyaltyDiscount gets a reference to the given float32 and assigns it to the LoyaltyDiscount field.
+func (o *DetailReportItem) SetLoyaltyDiscount(v float32) {
+	o.LoyaltyDiscount = &v
+}
+
 func (o DetailReportItem) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -3120,6 +3188,12 @@ func (o DetailReportItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SellerPromoDiscount) {
 		toSerialize["seller_promo_discount"] = o.SellerPromoDiscount
+	}
+	if !IsNil(o.LoyaltyId) {
+		toSerialize["loyalty_id"] = o.LoyaltyId
+	}
+	if !IsNil(o.LoyaltyDiscount) {
+		toSerialize["loyalty_discount"] = o.LoyaltyDiscount
 	}
 	return toSerialize, nil
 }
