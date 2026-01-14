@@ -890,6 +890,14 @@ components:
           type: number
           description: Размер дополнительной скидки по собственной акции продавца, %
           example: 3
+        loyalty_id:
+          type: integer
+          description: ID скидки лояльности от продавца
+          example: 0
+        loyalty_discount:
+          type: number
+          description: Размер скидки лояльности от продавца, %
+          example: 0
   responses:
     '401':
       description: Не авторизован
