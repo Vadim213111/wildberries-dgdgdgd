@@ -5132,8 +5132,8 @@ components:
       example:
         data: null
         error: true
-        errorText: Доступ запрещен
-        additionalErrors: Доступ запрещен
+        errorText: Доступ запрещён
+        additionalErrors: Доступ запрещён
     responseContentError:
       type: object
       properties:
@@ -6154,7 +6154,7 @@ components:
             code: NotFound
             message: ''
     AccessDenied:
-      description: Доступ запрещен
+      description: Доступ запрещён
       content:
         application/json:
           schema:

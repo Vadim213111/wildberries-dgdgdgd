@@ -24,7 +24,7 @@ from typing_extensions import Self
 
 class ContentV2CardsUpdatePostRequestInnerDimensions(BaseModel):
     """
-    Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара 
+    Габариты и вес товара `c упаковкой`.<br> Укажите в `сантиметрах` и `килограммах` для любого товара.<br> Синхронизация новых данных с сервисом может занимать до 30 минут 
     """ # noqa: E501
     length: Optional[StrictInt] = Field(default=None, description="Длина, см")
     width: Optional[StrictInt] = Field(default=None, description="Ширина, см")

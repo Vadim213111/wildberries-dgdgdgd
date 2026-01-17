@@ -14,13 +14,11 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.4"
+__version__ = "0.1.23"
 
 # Define package exports
 __all__ = [
-    "Api",
-    "CSVApi",
-    "Api",
+    "DefaultApi",
     "ApiResponse",
     "ApiClient",
     "Configuration",
@@ -73,6 +71,7 @@ __all__ = [
     "NmReportRetryReportResponse",
     "OrderBy",
     "OrderByGrTe",
+    "OrderByMainAndDetails",
     "OrderByMode",
     "PastPeriod",
     "Period",
@@ -188,9 +187,7 @@ __all__ = [
 ]
 
 # import apis into sdk package
-from wildberries_sdk.analytics.api.api import Api as Api
-from wildberries_sdk.analytics.api.csv_api import CSVApi as CSVApi
-from wildberries_sdk.analytics.api.api import Api as Api
+from wildberries_sdk.analytics.api.default_api import DefaultApi as DefaultApi
 
 # import ApiClient
 from wildberries_sdk.analytics.api_response import ApiResponse as ApiResponse
@@ -247,6 +244,7 @@ from wildberries_sdk.analytics.models.nm_report_retry_report_request import NmRe
 from wildberries_sdk.analytics.models.nm_report_retry_report_response import NmReportRetryReportResponse as NmReportRetryReportResponse
 from wildberries_sdk.analytics.models.order_by import OrderBy as OrderBy
 from wildberries_sdk.analytics.models.order_by_gr_te import OrderByGrTe as OrderByGrTe
+from wildberries_sdk.analytics.models.order_by_main_and_details import OrderByMainAndDetails as OrderByMainAndDetails
 from wildberries_sdk.analytics.models.order_by_mode import OrderByMode as OrderByMode
 from wildberries_sdk.analytics.models.past_period import PastPeriod as PastPeriod
 from wildberries_sdk.analytics.models.period import Period as Period

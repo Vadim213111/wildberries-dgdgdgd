@@ -9,7 +9,7 @@ info:
 
 
     В разделе заказов FBS (Fulfillment by Seller) вам доступны методы:
-      1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya): информация о сборочных заданиях, метаданные, стикеры и так далее.
+      1. Управления [сборочными заданиями](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS): информация о сборочных заданиях, метаданные, стикеры и так далее.
       2. Управления [поставками заказов](/openapi/orders-fbs#tag/Postavki-FBS) продавца на склады WB.
       3. Заказа [пропусков](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB.
     <br>
@@ -937,7 +937,7 @@ paths:
         - Метаданные FBS
       summary: Удалить метаданные сборочного задания
       description: |
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/get) для переданного ключа.
+        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1marketplace~1v3~1orders~1meta/post) для переданного ключа.
         <br><br>
         Возможные метаданные:
           - `imei` — [IMEI](/openapi/orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1imei/put)

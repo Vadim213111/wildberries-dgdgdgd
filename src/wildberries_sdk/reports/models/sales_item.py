@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
@@ -28,8 +27,8 @@ class SalesItem(BaseModel):
     """
     SalesItem
     """ # noqa: E501
-    var_date: Optional[datetime] = Field(default=None, description="Дата и время продажи. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="date")
-    last_change_date: Optional[datetime] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="lastChangeDate")
+    var_date: Optional[StrictStr] = Field(default=None, description="Дата и время продажи. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=1. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="date")
+    last_change_date: Optional[StrictStr] = Field(default=None, description="Дата и время обновления информации в сервисе. Это поле соответствует параметру `dateFrom` в запросе, если параметр `flag`=0 или не указан. Если часовой пояс не указан, то берётся Московское время (UTC+3).", alias="lastChangeDate")
     warehouse_name: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="Склад отгрузки", alias="warehouseName")
     warehouse_type: Optional[StrictStr] = Field(default=None, description="Тип склада хранения товаров", alias="warehouseType")
     country_name: Optional[Annotated[str, Field(strict=True, max_length=200)]] = Field(default=None, description="Страна", alias="countryName")
@@ -49,9 +48,9 @@ class SalesItem(BaseModel):
     discount_percent: Optional[StrictInt] = Field(default=None, description="Скидка продавца, %", alias="discountPercent")
     spp: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка WB, %")
     payment_sale_amount: Optional[StrictInt] = Field(default=None, description="Скидка за оплату WB Кошельком, ₽", alias="paymentSaleAmount")
-    for_pay: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="К перечислению продавцу", alias="forPay")
-    finished_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Фактическая цена с учетом всех скидок (к взиманию с покупателя)", alias="finishedPrice")
-    price_with_disc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена со скидкой продавца, от которой считается сумма к перечислению продавцу `forPay` (= `totalPrice` * (1 - `discountPercent`/100))", alias="priceWithDisc")
+    for_pay: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="К перечислению продавцу.<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`", alias="forPay")
+    finished_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Фактическая цена с учётом всех скидок (к взиманию с покупателя).<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`", alias="finishedPrice")
+    price_with_disc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена со скидкой продавца, в том числе со скидкой WB Клуба, от которой рассчитывается сумма к перечислению продавцу `forPay`.<br>Синхронизация данных занимает до 24 часов, в течение этого времени в поле может отображаться значение `0`", alias="priceWithDisc")
     sale_id: Optional[Annotated[str, Field(strict=True, max_length=15)]] = Field(default=None, description="Уникальный ID продажи/возврата - `S**********` — продажа - `R**********` — возврат (на склад WB) ", alias="saleID")
     sticker: Optional[StrictStr] = Field(default=None, description="ID стикера")
     g_number: Optional[Annotated[str, Field(strict=True, max_length=50)]] = Field(default=None, description="ID корзины покупателя. Заказы одной транзакции будут иметь одинаковый `gNumber`", alias="gNumber")

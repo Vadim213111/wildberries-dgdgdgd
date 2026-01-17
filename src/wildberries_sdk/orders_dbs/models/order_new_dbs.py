@@ -31,7 +31,7 @@ class OrderNewDBS(BaseModel):
     OrderNewDBS
     """ # noqa: E501
     sale_price: Optional[StrictInt] = Field(default=None, description="Цена в валюте продажи с учетом скидки продавца, без учета скидки WB Клуба, умноженная на 100. Предоставляется в информационных целях ", alias="salePrice")
-    required_meta: Optional[List[StrictStr]] = Field(default=None, description="Список метаданных, доступных для сборочного задания. [Указывать IMEI](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1v3~1dbs~1orders~1%7BorderId%7D~1meta~1imei/put) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `\"subjectId\":515`", alias="requiredMeta")
+    required_meta: Optional[List[StrictStr]] = Field(default=None, description="Список метаданных, доступных для сборочного задания. [Указывать IMEI](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post) обязательно для [предмета](./work-with-products/#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1all/get) `Смартфоны`, `\"subjectId\":515`", alias="requiredMeta")
     comment: Optional[Annotated[str, Field(strict=True, max_length=300)]] = Field(default=None, description="Комментарий покупателя")
     options: Optional[OrderNewDBSOptions] = None
     address: Optional[OrderNewDBSAddress] = None
@@ -48,8 +48,8 @@ class OrderNewDBS(BaseModel):
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
     chrt_id: Optional[StrictInt] = Field(default=None, description="ID размера товара в системе WB", alias="chrtId")
     price: Optional[StrictInt] = Field(default=None, description="Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100. Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях")
-    final_price: Optional[StrictInt] = Field(default=None, description="Cумма к оплате покупателем в валюте продажи с учетом всех скидок, умноженная на 100. Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях", alias="finalPrice")
-    converted_final_price: Optional[StrictInt] = Field(default=None, description="Cумма к оплате покупателем в валюте страны продавца с учетом всех скидок, умноженная на 100. Предоставляется в информационных целях", alias="convertedFinalPrice")
+    final_price: Optional[StrictInt] = Field(default=None, description="Сумма к оплате покупателем в валюте продажи с учетом всех скидок, умноженная на 100. Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях", alias="finalPrice")
+    converted_final_price: Optional[StrictInt] = Field(default=None, description="Сумма к оплате покупателем в валюте страны продавца с учетом всех скидок, умноженная на 100. Предоставляется в информационных целях", alias="convertedFinalPrice")
     converted_price: Optional[StrictInt] = Field(default=None, description="Цена в валюте страны продавца с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100. Предоставляется в информационных целях", alias="convertedPrice")
     currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты продажи", alias="currencyCode")
     converted_currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты страны продавца", alias="convertedCurrencyCode")
