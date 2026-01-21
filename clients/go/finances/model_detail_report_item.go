@@ -190,6 +190,10 @@ type DetailReportItem struct {
 	LoyaltyId *int32 `json:"loyalty_id,omitempty"`
 	// Размер скидки лояльности от продавца, %
 	LoyaltyDiscount *float32 `json:"loyalty_discount,omitempty"`
+	// ID промокода
+	UuidPromocode *string `json:"uuid_promocode,omitempty"`
+	// Скидка за промокод, %
+	SalePricePromocodeDiscountPrc *float32 `json:"sale_price_promocode_discount_prc,omitempty"`
 }
 
 // NewDetailReportItem instantiates a new DetailReportItem object
@@ -2930,6 +2934,70 @@ func (o *DetailReportItem) SetLoyaltyDiscount(v float32) {
 	o.LoyaltyDiscount = &v
 }
 
+// GetUuidPromocode returns the UuidPromocode field value if set, zero value otherwise.
+func (o *DetailReportItem) GetUuidPromocode() string {
+	if o == nil || IsNil(o.UuidPromocode) {
+		var ret string
+		return ret
+	}
+	return *o.UuidPromocode
+}
+
+// GetUuidPromocodeOk returns a tuple with the UuidPromocode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetUuidPromocodeOk() (*string, bool) {
+	if o == nil || IsNil(o.UuidPromocode) {
+		return nil, false
+	}
+	return o.UuidPromocode, true
+}
+
+// HasUuidPromocode returns a boolean if a field has been set.
+func (o *DetailReportItem) HasUuidPromocode() bool {
+	if o != nil && !IsNil(o.UuidPromocode) {
+		return true
+	}
+
+	return false
+}
+
+// SetUuidPromocode gets a reference to the given string and assigns it to the UuidPromocode field.
+func (o *DetailReportItem) SetUuidPromocode(v string) {
+	o.UuidPromocode = &v
+}
+
+// GetSalePricePromocodeDiscountPrc returns the SalePricePromocodeDiscountPrc field value if set, zero value otherwise.
+func (o *DetailReportItem) GetSalePricePromocodeDiscountPrc() float32 {
+	if o == nil || IsNil(o.SalePricePromocodeDiscountPrc) {
+		var ret float32
+		return ret
+	}
+	return *o.SalePricePromocodeDiscountPrc
+}
+
+// GetSalePricePromocodeDiscountPrcOk returns a tuple with the SalePricePromocodeDiscountPrc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetSalePricePromocodeDiscountPrcOk() (*float32, bool) {
+	if o == nil || IsNil(o.SalePricePromocodeDiscountPrc) {
+		return nil, false
+	}
+	return o.SalePricePromocodeDiscountPrc, true
+}
+
+// HasSalePricePromocodeDiscountPrc returns a boolean if a field has been set.
+func (o *DetailReportItem) HasSalePricePromocodeDiscountPrc() bool {
+	if o != nil && !IsNil(o.SalePricePromocodeDiscountPrc) {
+		return true
+	}
+
+	return false
+}
+
+// SetSalePricePromocodeDiscountPrc gets a reference to the given float32 and assigns it to the SalePricePromocodeDiscountPrc field.
+func (o *DetailReportItem) SetSalePricePromocodeDiscountPrc(v float32) {
+	o.SalePricePromocodeDiscountPrc = &v
+}
+
 func (o DetailReportItem) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -3194,6 +3262,12 @@ func (o DetailReportItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LoyaltyDiscount) {
 		toSerialize["loyalty_discount"] = o.LoyaltyDiscount
+	}
+	if !IsNil(o.UuidPromocode) {
+		toSerialize["uuid_promocode"] = o.UuidPromocode
+	}
+	if !IsNil(o.SalePricePromocodeDiscountPrc) {
+		toSerialize["sale_price_promocode_discount_prc"] = o.SalePricePromocodeDiscountPrc
 	}
 	return toSerialize, nil
 }

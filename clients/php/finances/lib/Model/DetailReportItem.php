@@ -141,7 +141,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_promo_id' => 'int',
         'seller_promo_discount' => 'float',
         'loyalty_id' => 'int',
-        'loyalty_discount' => 'float'
+        'loyalty_discount' => 'float',
+        'uuid_promocode' => 'string',
+        'sale_price_promocode_discount_prc' => 'float'
     ];
 
     /**
@@ -236,7 +238,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_promo_id' => null,
         'seller_promo_discount' => null,
         'loyalty_id' => null,
-        'loyalty_discount' => null
+        'loyalty_discount' => null,
+        'uuid_promocode' => null,
+        'sale_price_promocode_discount_prc' => null
     ];
 
     /**
@@ -329,7 +333,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_promo_id' => false,
         'seller_promo_discount' => false,
         'loyalty_id' => false,
-        'loyalty_discount' => false
+        'loyalty_discount' => false,
+        'uuid_promocode' => false,
+        'sale_price_promocode_discount_prc' => false
     ];
 
     /**
@@ -502,7 +508,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_promo_id' => 'seller_promo_id',
         'seller_promo_discount' => 'seller_promo_discount',
         'loyalty_id' => 'loyalty_id',
-        'loyalty_discount' => 'loyalty_discount'
+        'loyalty_discount' => 'loyalty_discount',
+        'uuid_promocode' => 'uuid_promocode',
+        'sale_price_promocode_discount_prc' => 'sale_price_promocode_discount_prc'
     ];
 
     /**
@@ -595,7 +603,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_promo_id' => 'setSellerPromoId',
         'seller_promo_discount' => 'setSellerPromoDiscount',
         'loyalty_id' => 'setLoyaltyId',
-        'loyalty_discount' => 'setLoyaltyDiscount'
+        'loyalty_discount' => 'setLoyaltyDiscount',
+        'uuid_promocode' => 'setUuidPromocode',
+        'sale_price_promocode_discount_prc' => 'setSalePricePromocodeDiscountPrc'
     ];
 
     /**
@@ -688,7 +698,9 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'seller_promo_id' => 'getSellerPromoId',
         'seller_promo_discount' => 'getSellerPromoDiscount',
         'loyalty_id' => 'getLoyaltyId',
-        'loyalty_discount' => 'getLoyaltyDiscount'
+        'loyalty_discount' => 'getLoyaltyDiscount',
+        'uuid_promocode' => 'getUuidPromocode',
+        'sale_price_promocode_discount_prc' => 'getSalePricePromocodeDiscountPrc'
     ];
 
     /**
@@ -848,6 +860,8 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('seller_promo_discount', $data ?? [], null);
         $this->setIfExists('loyalty_id', $data ?? [], null);
         $this->setIfExists('loyalty_discount', $data ?? [], null);
+        $this->setIfExists('uuid_promocode', $data ?? [], null);
+        $this->setIfExists('sale_price_promocode_discount_prc', $data ?? [], null);
     }
 
     /**
@@ -3209,6 +3223,60 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable loyalty_discount cannot be null');
         }
         $this->container['loyalty_discount'] = $loyalty_discount;
+
+        return $this;
+    }
+
+    /**
+     * Gets uuid_promocode
+     *
+     * @return string|null
+     */
+    public function getUuidPromocode()
+    {
+        return $this->container['uuid_promocode'];
+    }
+
+    /**
+     * Sets uuid_promocode
+     *
+     * @param string|null $uuid_promocode ID промокода
+     *
+     * @return self
+     */
+    public function setUuidPromocode($uuid_promocode)
+    {
+        if (is_null($uuid_promocode)) {
+            throw new \InvalidArgumentException('non-nullable uuid_promocode cannot be null');
+        }
+        $this->container['uuid_promocode'] = $uuid_promocode;
+
+        return $this;
+    }
+
+    /**
+     * Gets sale_price_promocode_discount_prc
+     *
+     * @return float|null
+     */
+    public function getSalePricePromocodeDiscountPrc()
+    {
+        return $this->container['sale_price_promocode_discount_prc'];
+    }
+
+    /**
+     * Sets sale_price_promocode_discount_prc
+     *
+     * @param float|null $sale_price_promocode_discount_prc Скидка за промокод, %
+     *
+     * @return self
+     */
+    public function setSalePricePromocodeDiscountPrc($sale_price_promocode_discount_prc)
+    {
+        if (is_null($sale_price_promocode_discount_prc)) {
+            throw new \InvalidArgumentException('non-nullable sale_price_promocode_discount_prc cannot be null');
+        }
+        $this->container['sale_price_promocode_discount_prc'] = $sale_price_promocode_discount_prc;
 
         return $this;
     }

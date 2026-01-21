@@ -1758,9 +1758,7 @@ paths:
       tags:
       - Карточки товаров
       x-readonly-method: true
-      x-category:
-      - advert
-      - content
+      x-category: content
     servers:
     - url: https://content-api.wildberries.ru
   /content/v2/cards/error/list:
@@ -2586,9 +2584,7 @@ paths:
       tags:
       - Карточки товаров
       x-readonly-method: true
-      x-category:
-      - advert
-      - content
+      x-category: content
     servers:
     - url: https://content-api.wildberries.ru
   /content/v2/cards/limits:

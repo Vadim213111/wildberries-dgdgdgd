@@ -541,6 +541,18 @@ export interface DetailReportItem {
      * @memberof DetailReportItem
      */
     loyaltyDiscount?: number;
+    /**
+     * ID промокода
+     * @type {string}
+     * @memberof DetailReportItem
+     */
+    uuidPromocode?: string;
+    /**
+     * Скидка за промокод, %
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    salePricePromocodeDiscountPrc?: number;
 }
 
 
@@ -656,6 +668,8 @@ export function DetailReportItemFromJSONTyped(json: any, ignoreDiscriminator: bo
         'sellerPromoDiscount': json['seller_promo_discount'] == null ? undefined : json['seller_promo_discount'],
         'loyaltyId': json['loyalty_id'] == null ? undefined : json['loyalty_id'],
         'loyaltyDiscount': json['loyalty_discount'] == null ? undefined : json['loyalty_discount'],
+        'uuidPromocode': json['uuid_promocode'] == null ? undefined : json['uuid_promocode'],
+        'salePricePromocodeDiscountPrc': json['sale_price_promocode_discount_prc'] == null ? undefined : json['sale_price_promocode_discount_prc'],
     };
 }
 
@@ -755,6 +769,8 @@ export function DetailReportItemToJSONTyped(value?: DetailReportItem | null, ign
         'seller_promo_discount': value['sellerPromoDiscount'],
         'loyalty_id': value['loyaltyId'],
         'loyalty_discount': value['loyaltyDiscount'],
+        'uuid_promocode': value['uuidPromocode'],
+        'sale_price_promocode_discount_prc': value['salePricePromocodeDiscountPrc'],
     };
 }
 
