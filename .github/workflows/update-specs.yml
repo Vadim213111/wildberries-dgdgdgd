@@ -18,6 +18,65 @@ jobs:
       - name: Download specs
         run: bash scripts/download-specs-from-config.sh
 
+      - name: Check for spec changes
+        id: check_changes
+        run: |
+          if git diff --quiet specs/; then
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Update CHANGELOG with OpenAI
+        if: steps.check_changes.outputs.has_changes == 'true'
+        continue-on-error: true
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL || 'gpt-4o-mini' }}
+        run: |
+          DIFF=$(git diff specs/)
+
+          PROMPT="Analyze the following OpenAPI spec diff and generate a concise changelog entry in Russian.
+          Format: Return ONLY bullet points starting with '- ' describing the changes.
+          Group by API section (e.g., Products, Orders FBS, Finances).
+          Focus on: new endpoints, removed endpoints, changed fields, updated rate limits, deprecations.
+          Be specific and technical. No headers, just bullet points.
+
+          Diff:
+          $DIFF"
+
+          RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
+            -H "Content-Type: application/json" \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            -d "$(jq -n --arg prompt "$PROMPT" --arg model "$OPENAI_MODEL" '{
+              "model": $model,
+              "messages": [{"role": "user", "content": $prompt}],
+              "temperature": 0.3
+            }')")
+
+          CHANGELOG_ENTRY=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
+
+          if [ -z "$CHANGELOG_ENTRY" ] || [ "$CHANGELOG_ENTRY" == "null" ]; then
+            echo "Failed to get changelog from OpenAI"
+            exit 1
+          fi
+
+          TODAY=$(date +%Y.%m.%d)
+
+          # Create new changelog content
+          {
+            echo "# Changelog"
+            echo ""
+            echo "## Unreleased"
+            echo "### Changed ($TODAY)"
+            echo "$CHANGELOG_ENTRY"
+            echo ""
+            # Append existing content without the first 3 lines (header + unreleased + empty line)
+            tail -n +4 CHANGELOG.md
+          } > CHANGELOG.tmp
+
+          mv CHANGELOG.tmp CHANGELOG.md
+
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
@@ -30,5 +89,6 @@ jobs:
           delete-branch: true
           add-paths: |
             specs
+            CHANGELOG.md
           reviewers: eslazarev
           assignees: eslazarev
