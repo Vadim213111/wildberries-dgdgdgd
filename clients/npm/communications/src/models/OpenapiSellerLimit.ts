@@ -20,22 +20,19 @@ import { mapValues } from '../runtime';
  */
 export interface OpenapiSellerLimit {
     /**
-     * Максимальное количество закреплённых отзывов в одной карточке или в объединённой карточке
-     * 
+     * Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек
      * @type {number}
      * @memberof OpenapiSellerLimit
      */
     perUnitLimit: number;
     /**
      * Сколько ещё отзывов можно закрепить
-     * 
      * @type {number}
      * @memberof OpenapiSellerLimit
      */
     remaining: number;
     /**
      * Общий лимит закреплений
-     * 
      * @type {number}
      * @memberof OpenapiSellerLimit
      */
@@ -51,7 +48,6 @@ export interface OpenapiSellerLimit {
     unlimited: boolean;
     /**
      * Текущее количество закреплённых отзывов
-     * 
      * @type {number}
      * @memberof OpenapiSellerLimit
      */

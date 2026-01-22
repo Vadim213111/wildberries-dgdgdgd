@@ -12,7 +12,6 @@ package communications
 
 import (
 	"encoding/json"
-	"time"
 )
 
 // checks if the ApiV1ClaimsGet200ResponseClaimsInner type satisfies the MappedNullable interface at compile time
@@ -35,13 +34,13 @@ type ApiV1ClaimsGet200ResponseClaimsInner struct {
 	// Ответ покупателю
 	WbComment NullableString `json:"wb_comment,omitempty"`
 	// Дата и время оформления заявки покупателем
-	Dt *time.Time `json:"dt,omitempty"`
+	Dt *string `json:"dt,omitempty"`
 	// Название товара
 	ImtName NullableString `json:"imt_name,omitempty"`
 	// Дата и время заказа
-	OrderDt *time.Time `json:"order_dt,omitempty"`
+	OrderDt *string `json:"order_dt,omitempty"`
 	// Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
-	DtUpdate *time.Time `json:"dt_update,omitempty"`
+	DtUpdate *string `json:"dt_update,omitempty"`
 	// Фотографии из заявки покупателя
 	Photos []string `json:"photos,omitempty"`
 	// Видео из заявки покупателя
@@ -308,9 +307,9 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) UnsetWbComment() {
 }
 
 // GetDt returns the Dt field value if set, zero value otherwise.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDt() time.Time {
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDt() string {
 	if o == nil || IsNil(o.Dt) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.Dt
@@ -318,7 +317,7 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDt() time.Time {
 
 // GetDtOk returns a tuple with the Dt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtOk() (*time.Time, bool) {
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtOk() (*string, bool) {
 	if o == nil || IsNil(o.Dt) {
 		return nil, false
 	}
@@ -334,8 +333,8 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) HasDt() bool {
 	return false
 }
 
-// SetDt gets a reference to the given time.Time and assigns it to the Dt field.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) SetDt(v time.Time) {
+// SetDt gets a reference to the given string and assigns it to the Dt field.
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) SetDt(v string) {
 	o.Dt = &v
 }
 
@@ -382,9 +381,9 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) UnsetImtName() {
 }
 
 // GetOrderDt returns the OrderDt field value if set, zero value otherwise.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetOrderDt() time.Time {
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetOrderDt() string {
 	if o == nil || IsNil(o.OrderDt) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.OrderDt
@@ -392,7 +391,7 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetOrderDt() time.Time {
 
 // GetOrderDtOk returns a tuple with the OrderDt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetOrderDtOk() (*time.Time, bool) {
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetOrderDtOk() (*string, bool) {
 	if o == nil || IsNil(o.OrderDt) {
 		return nil, false
 	}
@@ -408,15 +407,15 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) HasOrderDt() bool {
 	return false
 }
 
-// SetOrderDt gets a reference to the given time.Time and assigns it to the OrderDt field.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) SetOrderDt(v time.Time) {
+// SetOrderDt gets a reference to the given string and assigns it to the OrderDt field.
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) SetOrderDt(v string) {
 	o.OrderDt = &v
 }
 
 // GetDtUpdate returns the DtUpdate field value if set, zero value otherwise.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtUpdate() time.Time {
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtUpdate() string {
 	if o == nil || IsNil(o.DtUpdate) {
-		var ret time.Time
+		var ret string
 		return ret
 	}
 	return *o.DtUpdate
@@ -424,7 +423,7 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtUpdate() time.Time {
 
 // GetDtUpdateOk returns a tuple with the DtUpdate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtUpdateOk() (*time.Time, bool) {
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) GetDtUpdateOk() (*string, bool) {
 	if o == nil || IsNil(o.DtUpdate) {
 		return nil, false
 	}
@@ -440,8 +439,8 @@ func (o *ApiV1ClaimsGet200ResponseClaimsInner) HasDtUpdate() bool {
 	return false
 }
 
-// SetDtUpdate gets a reference to the given time.Time and assigns it to the DtUpdate field.
-func (o *ApiV1ClaimsGet200ResponseClaimsInner) SetDtUpdate(v time.Time) {
+// SetDtUpdate gets a reference to the given string and assigns it to the DtUpdate field.
+func (o *ApiV1ClaimsGet200ResponseClaimsInner) SetDtUpdate(v string) {
 	o.DtUpdate = &v
 }
 

@@ -41,7 +41,6 @@ import type {
   ApiV3SuppliesPost201Response,
   ApiV3SuppliesPostRequest,
   ApiV3SuppliesSupplyIdBarcodeGet200Response,
-  ApiV3SuppliesSupplyIdOrdersGet200Response,
   ApiV3SuppliesSupplyIdTrbxDeleteRequest,
   ApiV3SuppliesSupplyIdTrbxGet200Response,
   ApiV3SuppliesSupplyIdTrbxPost201Response,
@@ -111,8 +110,6 @@ import {
     ApiV3SuppliesPostRequestToJSON,
     ApiV3SuppliesSupplyIdBarcodeGet200ResponseFromJSON,
     ApiV3SuppliesSupplyIdBarcodeGet200ResponseToJSON,
-    ApiV3SuppliesSupplyIdOrdersGet200ResponseFromJSON,
-    ApiV3SuppliesSupplyIdOrdersGet200ResponseToJSON,
     ApiV3SuppliesSupplyIdTrbxDeleteRequestFromJSON,
     ApiV3SuppliesSupplyIdTrbxDeleteRequestToJSON,
     ApiV3SuppliesSupplyIdTrbxGet200ResponseFromJSON,
@@ -263,10 +260,6 @@ export interface ApiV3SuppliesSupplyIdDeliverPatchRequest {
 }
 
 export interface ApiV3SuppliesSupplyIdGetRequest {
-    supplyId: string;
-}
-
-export interface ApiV3SuppliesSupplyIdOrdersGetRequest {
     supplyId: string;
 }
 
@@ -1640,51 +1633,6 @@ export class FBSApi extends runtime.BaseAPI {
      */
     async apiV3SuppliesSupplyIdGet(requestParameters: ApiV3SuppliesSupplyIdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Supply> {
         const response = await this.apiV3SuppliesSupplyIdGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [17 декабря](https://dev.wildberries.ru/release-notes?id=363) 
-     * Получить сборочные задания в поставке
-     * @deprecated
-     */
-    async apiV3SuppliesSupplyIdOrdersGetRaw(requestParameters: ApiV3SuppliesSupplyIdOrdersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3SuppliesSupplyIdOrdersGet200Response>> {
-        if (requestParameters['supplyId'] == null) {
-            throw new runtime.RequiredError(
-                'supplyId',
-                'Required parameter "supplyId" was null or undefined when calling apiV3SuppliesSupplyIdOrdersGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v3/supplies/{supplyId}/orders`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV3SuppliesSupplyIdOrdersGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [17 декабря](https://dev.wildberries.ru/release-notes?id=363) 
-     * Получить сборочные задания в поставке
-     * @deprecated
-     */
-    async apiV3SuppliesSupplyIdOrdersGet(requestParameters: ApiV3SuppliesSupplyIdOrdersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3SuppliesSupplyIdOrdersGet200Response> {
-        const response = await this.apiV3SuppliesSupplyIdOrdersGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

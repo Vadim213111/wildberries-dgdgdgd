@@ -13,10 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RequestMoveNmsImtConn {
-    /// Существующий у продавца `imtID`, под которым необходимо объединить карточки товаров
+    /// Существующий `imtID`, под которым необходимо [объединить](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров
     #[serde(rename = "targetIMT")]
     pub target_imt: i32,
-    /// `nmID`, которые необходимо объединить (максимум 30)
+    /// `nmID`, которые необходимо объединить 
     #[serde(rename = "nmIDs")]
     pub nm_ids: Vec<i32>,
 }

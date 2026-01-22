@@ -21,15 +21,15 @@ var _ MappedNullable = &OpenapiSellerLimit{}
 
 // OpenapiSellerLimit struct for OpenapiSellerLimit
 type OpenapiSellerLimit struct {
-	// Максимальное количество закреплённых отзывов в одной карточке или в объединённой карточке 
+	// Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек
 	PerUnitLimit int32 `json:"perUnitLimit"`
-	// Сколько ещё отзывов можно закрепить 
+	// Сколько ещё отзывов можно закрепить
 	Remaining int32 `json:"remaining"`
-	// Общий лимит закреплений 
+	// Общий лимит закреплений
 	TotalLimit int32 `json:"totalLimit"`
 	// Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет 
 	Unlimited bool `json:"unlimited"`
-	// Текущее количество закреплённых отзывов 
+	// Текущее количество закреплённых отзывов
 	Used int32 `json:"used"`
 }
 

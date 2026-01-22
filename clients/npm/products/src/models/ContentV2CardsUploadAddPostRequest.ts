@@ -28,14 +28,14 @@ import {
  */
 export interface ContentV2CardsUploadAddPostRequest {
     /**
-     * `imtID` карточки товара, к которой присоединяется карточка товара
+     * `imtID` отдельной карточки товара или группы [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров, к которой присоединяются создаваемые карточки
      * 
      * @type {number}
      * @memberof ContentV2CardsUploadAddPostRequest
      */
     imtID?: number;
     /**
-     * Структура присоединяемой карточки товара
+     * Добавляемые карточки товаров
      * @type {Array<ContentV2CardsUploadAddPostRequestCardsToAddInner>}
      * @memberof ContentV2CardsUploadAddPostRequest
      */

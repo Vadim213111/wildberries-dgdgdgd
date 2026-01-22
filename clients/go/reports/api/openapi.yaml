@@ -1664,108 +1664,6 @@ paths:
       x-category: contentanalytics
     servers:
     - url: https://seller-analytics-api.wildberries.ru
-  /api/v1/analytics/incorrect-attachments:
-    get:
-      deprecated: true
-      description: |
-        Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
-
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 1 минута | 1 запрос | 1 минута | 10 запросов |
-        </div>
-      parameters:
-      - description: |
-          Начало отчётного периода, `ГГГГ-ММ-ДД`
-        example: 2025-02-28
-        explode: true
-        in: query
-        name: dateFrom
-        required: true
-        schema:
-          type: string
-        style: form
-      - description: |
-          Конец отчётного периода, `ГГГГ-ММ-ДД`
-        example: 2025-03-21
-        explode: true
-        in: query
-        name: dateTo
-        required: true
-        schema:
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/_api_v1_analytics_incorrect_attachments_get_200_response"
-          description: Успешно
-        "400":
-          content:
-            application/problem+json:
-              examples:
-                IncorrectDateFrom:
-                  $ref: "#/components/examples/IncorrectDateFrom"
-                MissingDateTimeFrom:
-                  $ref: "#/components/examples/MissingDateTimeFrom"
-                MissingDateTimeTo:
-                  $ref: "#/components/examples/MissingDateTimeTo"
-                IncorrectDateTimeFrom:
-                  $ref: "#/components/examples/IncorrectDateTimeFrom"
-                IncorrectDateTimeTo:
-                  $ref: "#/components/examples/IncorrectDateTimeTo"
-                DateRangeExceeded:
-                  $ref: "#/components/examples/DateRangeExceeded"
-                DateRanges:
-                  $ref: "#/components/examples/DateRanges"
-              schema:
-                $ref: "#/components/schemas/4xxResponse"
-          description: Неправильный запрос
-        "401":
-          content:
-            application/json:
-              example:
-                title: unauthorized
-                detail: "token problem; token is malformed: could not base64 decode\
-                  \ signature: illegal base64 data at input byte 84"
-                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
-                requestId: 7b80742415072fe8b6b7f7761f1d1211
-                origin: s2s-api-auth-catalog
-                status: 401
-                statusText: Unauthorized
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
-          description: Не авторизован
-        "429":
-          content:
-            application/json:
-              example:
-                title: too many requests
-                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
-                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
-                requestId: 9d3c02cc698f8b041c661a7c28bed293
-                origin: s2s-api-auth-catalog
-                status: 429
-                statusText: Too Many Requests
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
-          description: Слишком много запросов
-      security:
-      - HeaderApiKey: []
-      summary: Подмена товара
-      tags:
-      - Отчёты об удержаниях
-      x-readonly-method: true
-      x-category: contentanalytics
-    servers:
-    - url: https://seller-analytics-api.wildberries.ru
   /api/v1/analytics/goods-labeling:
     get:
       description: |
@@ -1883,121 +1781,6 @@ paths:
       x-category: contentanalytics
     servers:
     - url: https://seller-analytics-api.wildberries.ru
-  /api/v1/analytics/characteristics-change:
-    get:
-      deprecated: true
-      description: |
-        Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
-
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 1 минута | 1 запрос | 1 минута | 10 запросов |
-        </div>
-      parameters:
-      - description: "Начало отчётного периода, `ГГГГ-ММ-ДД`"
-        example: 2024-04-01
-        explode: true
-        in: query
-        name: dateFrom
-        required: true
-        schema:
-          format: date
-          type: string
-        style: form
-      - description: "Конец отчётного периода, `ГГГГ-ММ-ДД`"
-        example: 2024-04-30
-        explode: true
-        in: query
-        name: dateTo
-        required: true
-        schema:
-          format: date
-          type: string
-        style: form
-      responses:
-        "200":
-          content:
-            application/json:
-              example:
-                report:
-                - amount: 135890
-                  date: 2024-03-01T01:00:00Z
-                  newBarcode: "22222222222222"
-                  newColor: "темно-синий,голубой"
-                  newSa: "hjt13/темно-синий,голубой"
-                  newShkID: 44444444444
-                  newSize: "80"
-                  nmID: 123654789
-                  oldBarcode: "111111111111111"
-                  oldColor: "темно-синий,голубой"
-                  oldSa: "hjt13/темно-синий,голубой"
-                  oldShkID: 333333333
-                  oldSize: "43"
-              schema:
-                $ref: "#/components/schemas/_api_v1_analytics_characteristics_change_get_200_response"
-          description: Успешно
-        "400":
-          content:
-            application/problem+json:
-              examples:
-                MissingDateTimeFrom:
-                  $ref: "#/components/examples/MissingDateTimeFrom"
-                MissingDateTimeTo:
-                  $ref: "#/components/examples/MissingDateTimeTo"
-                IncorrectDateTimeFrom:
-                  $ref: "#/components/examples/IncorrectDateTimeFrom"
-                IncorrectDateTimeTo:
-                  $ref: "#/components/examples/IncorrectDateTimeTo"
-                DateRangeExceeded:
-                  $ref: "#/components/examples/DateRangeExceeded"
-                DateRanges:
-                  $ref: "#/components/examples/DateRanges"
-              schema:
-                $ref: "#/components/schemas/4xxResponse"
-          description: Неправильный запрос
-        "401":
-          content:
-            application/json:
-              example:
-                title: unauthorized
-                detail: "token problem; token is malformed: could not base64 decode\
-                  \ signature: illegal base64 data at input byte 84"
-                code: "07e4668e--a53a3d31f8b0-[UK-oWaVDUqNrKG]; 03bce=277; 84bd353bf-75"
-                requestId: 7b80742415072fe8b6b7f7761f1d1211
-                origin: s2s-api-auth-catalog
-                status: 401
-                statusText: Unauthorized
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
-          description: Не авторизован
-        "429":
-          content:
-            application/json:
-              example:
-                title: too many requests
-                detail: limited by c122a060-a7fb-4bb4-abb0-32fd4e18d489
-                code: "07e4668e-ac2242c5c8c5-[UK-4dx7JUdskGZ]"
-                requestId: 9d3c02cc698f8b041c661a7c28bed293
-                origin: s2s-api-auth-catalog
-                status: 429
-                statusText: Too Many Requests
-                timestamp: 2024-09-30T06:52:38Z
-              schema:
-                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
-          description: Слишком много запросов
-      security:
-      - HeaderApiKey: []
-      servers:
-      - url: https://seller-analytics-api.wildberries.ru
-      summary: Смена характеристик
-      tags:
-      - Отчёты об удержаниях
-      x-readonly-method: true
-      x-category: contentanalytics
   /api/v1/acceptance_report:
     get:
       description: |
@@ -3475,13 +3258,6 @@ components:
         origin: api-statistics
         requestId: 83c6b8ad24ac27a03f9166e57de31668
         title: Bad Request
-    IncorrectDateFrom:
-      description: Дата не может быть раньше 01.06.2023
-      value:
-        detail: dateFrom cannot be earlier than 2023-06-01
-        origin: api-statistics
-        requestId: c89837d6723b409df07f15df1a4e8ebe
-        title: Bad Request
     IncorrectDateFromBS:
       description: Дата не может быть раньше 01.11.2022
       value:
@@ -3848,12 +3624,6 @@ components:
           schema:
             $ref: "#/components/schemas/getDeductions_200_response"
       description: Успешно
-    SuccessIncorrectProductsResponse:
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/_api_v1_analytics_incorrect_attachments_get_200_response"
-      description: Успешно
     SuccessGoodsLabelingResponse:
       content:
         application/json:
@@ -3871,27 +3641,6 @@ components:
               sku: "4630153500834"
           schema:
             $ref: "#/components/schemas/_api_v1_analytics_goods_labeling_get_200_response"
-      description: Успешно
-    SuccessCharacteristicsTaskResponse:
-      content:
-        application/json:
-          example:
-            report:
-            - amount: 135890
-              date: 2024-03-01T01:00:00Z
-              newBarcode: "22222222222222"
-              newColor: "темно-синий,голубой"
-              newSa: "hjt13/темно-синий,голубой"
-              newShkID: 44444444444
-              newSize: "80"
-              nmID: 123654789
-              oldBarcode: "111111111111111"
-              oldColor: "темно-синий,голубой"
-              oldSa: "hjt13/темно-синий,голубой"
-              oldShkID: 333333333
-              oldSize: "43"
-          schema:
-            $ref: "#/components/schemas/_api_v1_analytics_characteristics_change_get_200_response"
       description: Успешно
     SuccessBrandsResponse:
       content:
@@ -5128,63 +4877,6 @@ components:
             $ref: "#/components/schemas/_api_v1_analytics_antifraud_details_get_200_response_details_inner"
           type: array
       type: object
-    _api_v1_analytics_incorrect_attachments_get_200_response_report_inner:
-      example:
-        date: 2023-12-15
-        photoUrl: https://mstatic.wbstatic.net/writeoff_to_the_seller/12345678911-2023-06-21T12:13:37.768Z-1.png
-        amount: 24514.5
-        lostReason: Подмена. Вместо большой железной дороги поступила маленькая коробка.
-        shkID: 14555724540
-        nmID: 123456789
-      properties:
-        amount:
-          description: "Цена, ₽"
-          example: 24514.5
-          type: number
-        date:
-          description: Дата
-          example: 2023-12-15
-          type: string
-        lostReason:
-          description: Причина удержания
-          example: Подмена. Вместо большой железной дороги поступила маленькая коробка.
-          type: string
-        nmID:
-          description: Артикул WB
-          example: 123456789
-          type: integer
-        photoUrl:
-          description: Фото
-          example: https://mstatic.wbstatic.net/writeoff_to_the_seller/12345678911-2023-06-21T12:13:37.768Z-1.png
-          type: string
-        shkID:
-          description: Штрихкод
-          example: 14555724540
-          type: integer
-      type: object
-    _api_v1_analytics_incorrect_attachments_get_200_response:
-      example:
-        report:
-        - date: 2023-12-15
-          photoUrl: https://mstatic.wbstatic.net/writeoff_to_the_seller/12345678911-2023-06-21T12:13:37.768Z-1.png
-          amount: 24514.5
-          lostReason: Подмена. Вместо большой железной дороги поступила маленькая
-            коробка.
-          shkID: 14555724540
-          nmID: 123456789
-        - date: 2023-12-15
-          photoUrl: https://mstatic.wbstatic.net/writeoff_to_the_seller/12345678911-2023-06-21T12:13:37.768Z-1.png
-          amount: 24514.5
-          lostReason: Подмена. Вместо большой железной дороги поступила маленькая
-            коробка.
-          shkID: 14555724540
-          nmID: 123456789
-      properties:
-        report:
-          items:
-            $ref: "#/components/schemas/_api_v1_analytics_incorrect_attachments_get_200_response_report_inner"
-          type: array
-      type: object
     _api_v1_analytics_goods_labeling_get_200_response_report_inner:
       example:
         date: 2000-01-23T04:56:07.000+00:00
@@ -5247,98 +4939,6 @@ components:
         report:
           items:
             $ref: "#/components/schemas/_api_v1_analytics_goods_labeling_get_200_response_report_inner"
-          type: array
-      type: object
-    _api_v1_analytics_characteristics_change_get_200_response_report_inner:
-      example:
-        date: 2000-01-23T04:56:07.000+00:00
-        oldShkID: 5
-        amount: 0
-        newColor: newColor
-        nmID: 1
-        oldSize: oldSize
-        newBarcode: newBarcode
-        oldColor: oldColor
-        newSa: newSa
-        newShkID: 6
-        newSize: newSize
-        oldBarcode: oldBarcode
-        oldSa: oldSa
-      properties:
-        amount:
-          description: Сумма штрафа в копейках
-          type: integer
-        date:
-          description: Дата изменения характеристик товара на складе
-          format: date-time
-          type: string
-        newBarcode:
-          description: Новый баркод в карточке товара
-          type: string
-        newColor:
-          description: Новый цвет
-          type: string
-        newSa:
-          description: Новый артикул продавца
-          type: string
-        newShkID:
-          description: Новый штрихкод товара в WB
-          type: integer
-        newSize:
-          description: Новый размер
-          type: string
-        nmID:
-          description: Артикул WB
-          type: integer
-        oldBarcode:
-          description: Старый баркод из карточки товара
-          type: string
-        oldColor:
-          description: Старый цвет
-          type: string
-        oldSa:
-          description: Старый артикул продавца
-          type: string
-        oldShkID:
-          description: Старый штрихкод товара в WB
-          type: integer
-        oldSize:
-          description: Старый размер
-          type: string
-      type: object
-    _api_v1_analytics_characteristics_change_get_200_response:
-      example:
-        report:
-        - date: 2000-01-23T04:56:07.000+00:00
-          oldShkID: 5
-          amount: 0
-          newColor: newColor
-          nmID: 1
-          oldSize: oldSize
-          newBarcode: newBarcode
-          oldColor: oldColor
-          newSa: newSa
-          newShkID: 6
-          newSize: newSize
-          oldBarcode: oldBarcode
-          oldSa: oldSa
-        - date: 2000-01-23T04:56:07.000+00:00
-          oldShkID: 5
-          amount: 0
-          newColor: newColor
-          nmID: 1
-          oldSize: oldSize
-          newBarcode: newBarcode
-          oldColor: oldColor
-          newSa: newSa
-          newShkID: 6
-          newSize: newSize
-          oldBarcode: oldBarcode
-          oldSa: oldSa
-      properties:
-        report:
-          items:
-            $ref: "#/components/schemas/_api_v1_analytics_characteristics_change_get_200_response_report_inner"
           type: array
       type: object
     _api_v1_acceptance_report_tasks__task_id__download_get_200_response_inner:

@@ -26,11 +26,11 @@ class OpenapiSellerLimit(BaseModel):
     """
     OpenapiSellerLimit
     """ # noqa: E501
-    per_unit_limit: StrictInt = Field(description="Максимальное количество закреплённых отзывов в одной карточке или в объединённой карточке ", alias="perUnitLimit")
-    remaining: StrictInt = Field(description="Сколько ещё отзывов можно закрепить ")
-    total_limit: StrictInt = Field(description="Общий лимит закреплений ", alias="totalLimit")
+    per_unit_limit: StrictInt = Field(description="Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек", alias="perUnitLimit")
+    remaining: StrictInt = Field(description="Сколько ещё отзывов можно закрепить")
+    total_limit: StrictInt = Field(description="Общий лимит закреплений", alias="totalLimit")
     unlimited: StrictBool = Field(description="Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет ")
-    used: StrictInt = Field(description="Текущее количество закреплённых отзывов ")
+    used: StrictInt = Field(description="Текущее количество закреплённых отзывов")
     __properties: ClassVar[List[str]] = ["perUnitLimit", "remaining", "totalLimit", "unlimited", "used"]
 
     model_config = ConfigDict(

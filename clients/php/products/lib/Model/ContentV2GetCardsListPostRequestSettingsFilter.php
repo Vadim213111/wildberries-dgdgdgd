@@ -507,7 +507,7 @@ class ContentV2GetCardsListPostRequestSettingsFilter implements ModelInterface, 
     /**
      * Sets imt_id
      *
-     * @param int|null $imt_id Поиск по ID объединённой карточки товара
+     * @param int|null $imt_id Поиск по [ID для объединённых карточек товаров](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)
      *
      * @return self
      */

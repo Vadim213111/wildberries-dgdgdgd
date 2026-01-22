@@ -315,7 +315,7 @@ class RequestMoveNmsImtConn implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets target_imt
      *
-     * @param int $target_imt Существующий у продавца `imtID`, под которым необходимо объединить карточки товаров
+     * @param int $target_imt Существующий `imtID`, под которым необходимо [объединить](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров
      *
      * @return self
      */
@@ -342,7 +342,7 @@ class RequestMoveNmsImtConn implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets nm_ids
      *
-     * @param int[] $nm_ids `nmID`, которые необходимо объединить (максимум 30)
+     * @param int[] $nm_ids `nmID`, которые необходимо объединить
      *
      * @return self
      */
@@ -351,6 +351,8 @@ class RequestMoveNmsImtConn implements ModelInterface, ArrayAccess, \JsonSeriali
         if (is_null($nm_ids)) {
             throw new \InvalidArgumentException('non-nullable nm_ids cannot be null');
         }
+
+
         $this->container['nm_ids'] = $nm_ids;
 
         return $this;

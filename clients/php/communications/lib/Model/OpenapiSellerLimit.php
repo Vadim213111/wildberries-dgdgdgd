@@ -345,7 +345,7 @@ class OpenapiSellerLimit implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets per_unit_limit
      *
-     * @param int $per_unit_limit Максимальное количество закреплённых отзывов в одной карточке или в объединённой карточке
+     * @param int $per_unit_limit Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек
      *
      * @return self
      */

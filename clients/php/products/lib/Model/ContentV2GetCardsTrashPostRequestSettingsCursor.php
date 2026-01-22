@@ -257,7 +257,7 @@ class ContentV2GetCardsTrashPostRequestSettingsCursor implements ModelInterface,
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('limit', $data ?? [], null);
+        $this->setIfExists('limit', $data ?? [], 10);
         $this->setIfExists('trashed_at', $data ?? [], null);
         $this->setIfExists('nm_id', $data ?? [], null);
     }
@@ -288,6 +288,10 @@ class ContentV2GetCardsTrashPostRequestSettingsCursor implements ModelInterface,
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        if (!is_null($this->container['limit']) && ($this->container['limit'] > 100)) {
+            $invalidProperties[] = "invalid value for 'limit', must be smaller than or equal to 100.";
+        }
 
         return $invalidProperties;
     }
@@ -326,6 +330,11 @@ class ContentV2GetCardsTrashPostRequestSettingsCursor implements ModelInterface,
         if (is_null($limit)) {
             throw new \InvalidArgumentException('non-nullable limit cannot be null');
         }
+
+        if (($limit > 100)) {
+            throw new \InvalidArgumentException('invalid value for $limit when calling ContentV2GetCardsTrashPostRequestSettingsCursor., must be smaller than or equal to 100.');
+        }
+
         $this->container['limit'] = $limit;
 
         return $this;

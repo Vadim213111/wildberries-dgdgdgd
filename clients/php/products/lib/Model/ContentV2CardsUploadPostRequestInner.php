@@ -342,7 +342,7 @@ class ContentV2CardsUploadPostRequestInner implements ModelInterface, ArrayAcces
     /**
      * Sets variants
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[] $variants Массив вариантов товара.<br> В каждой объединённой карточке товара может быть не более 30 карточек товаров
+     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadPostRequestInnerVariantsInner[] $variants [Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект
      *
      * @return self
      */

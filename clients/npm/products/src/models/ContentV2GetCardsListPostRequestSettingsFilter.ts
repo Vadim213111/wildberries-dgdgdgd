@@ -61,7 +61,7 @@ export interface ContentV2GetCardsListPostRequestSettingsFilter {
      */
     brands?: Array<string>;
     /**
-     * Поиск по ID объединённой карточки товара
+     * Поиск по [ID для объединённых карточек товаров](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)
      * @type {number}
      * @memberof ContentV2GetCardsListPostRequestSettingsFilter
      */

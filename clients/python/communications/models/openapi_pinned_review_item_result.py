@@ -31,14 +31,14 @@ class OpenapiPinnedReviewItemResult(BaseModel):
     OpenapiPinnedReviewItemResult
     """ # noqa: E501
     change_state_at: datetime = Field(description="Дата и время закрепления или открепления", alias="changeStateAt")
-    imt_id: StrictInt = Field(description="ID объединённой карточки товара", alias="imtId")
+    imt_id: StrictInt = Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров", alias="imtId")
     nm_id: StrictInt = Field(description="Артикул WB", alias="nmId")
     pin_id: StrictInt = Field(description="ID операции закрепления отзыва", alias="pinId")
     pin_method: DomainReviewPinMethod = Field(description="Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция ", alias="pinMethod")
-    pin_on: DomainReviewPinOn = Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ", alias="pinOn")
+    pin_on: DomainReviewPinOn = Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ", alias="pinOn")
     feedback_id: StrictStr = Field(description="ID отзыва", alias="feedbackId")
     state: DomainReviewState = Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")
-    unpinned_cause: Optional[StrictStr] = Field(default=None, description="Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к объединённой карточке прикреплено максимальное количество отзывов ", alias="unpinnedCause")
+    unpinned_cause: Optional[StrictStr] = Field(default=None, description="Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов ", alias="unpinnedCause")
     __properties: ClassVar[List[str]] = ["changeStateAt", "imtId", "nmId", "pinId", "pinMethod", "pinOn", "feedbackId", "state", "unpinnedCause"]
 
     @field_validator('unpinned_cause')

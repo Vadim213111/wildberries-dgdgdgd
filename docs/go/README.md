@@ -101,7 +101,6 @@
 - `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdDelete` — `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку
 - `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdDeliverPatch` — `PATCH /api/v3/supplies/{supplyId}/deliver` — Передать поставку в доставку
 - `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdGet` — `GET /api/v3/supplies/{supplyId}` — Получить информацию о поставке
-- `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdOrdersGet` — `GET /api/v3/supplies/{supplyId}/orders` — Получить сборочные задания в поставке
 - `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdTrbxDelete` — `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить короба из поставки
 - `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdTrbxGet` — `GET /api/v3/supplies/{supplyId}/trbx` — Получить список коробов поставки
 - `orders_fbs.FBSAPIService.ApiV3SuppliesSupplyIdTrbxPost` — `POST /api/v3/supplies/{supplyId}/trbx` — Добавить короба к поставке
@@ -298,10 +297,8 @@
 - `reports.DefaultApiService.ApiV1AnalyticsBrandShareBrandsGet` — `GET /api/v1/analytics/brand-share/brands` — Бренды продавца
 - `reports.DefaultApiService.ApiV1AnalyticsBrandShareGet` — `GET /api/v1/analytics/brand-share` — Получить отчёт
 - `reports.DefaultApiService.ApiV1AnalyticsBrandShareParentSubjectsGet` — `GET /api/v1/analytics/brand-share/parent-subjects` — Родительские категории бренда
-- `reports.DefaultApiService.ApiV1AnalyticsCharacteristicsChangeGet` — `GET /api/v1/analytics/characteristics-change` — Смена характеристик
 - `reports.DefaultApiService.ApiV1AnalyticsGoodsLabelingGet` — `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `reports.DefaultApiService.ApiV1AnalyticsGoodsReturnGet` — `GET /api/v1/analytics/goods-return` — Получить отчёт
-- `reports.DefaultApiService.ApiV1AnalyticsIncorrectAttachmentsGet` — `GET /api/v1/analytics/incorrect-attachments` — Подмена товара
 - `reports.DefaultApiService.ApiV1AnalyticsRegionSaleGet` — `GET /api/v1/analytics/region-sale` — Получить отчёт
 - `reports.DefaultApiService.ApiV1AnalyticsWarehouseMeasurementsGet` — `GET /api/v1/analytics/warehouse-measurements` — Занижение габаритов упаковки
 - `reports.DefaultApiService.ApiV1PaidStorageGet` — `GET /api/v1/paid_storage` — Создать отчёт

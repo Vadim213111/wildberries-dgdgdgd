@@ -23,7 +23,7 @@ var _ MappedNullable = &OpenapiPinReviewItem{}
 type OpenapiPinReviewItem struct {
 	// Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция 
 	PinMethod string `json:"pinMethod"`
-	// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+	// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
 	PinOn string `json:"pinOn"`
 	// ID отзыва
 	FeedbackId string `json:"feedbackId"`

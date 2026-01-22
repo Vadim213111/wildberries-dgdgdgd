@@ -20,6 +20,12 @@ import { mapValues } from '../runtime';
  */
 export interface ContentV2DirectoryCountriesGet200ResponseDataInner {
     /**
+     * ID страны
+     * @type {number}
+     * @memberof ContentV2DirectoryCountriesGet200ResponseDataInner
+     */
+    id?: number;
+    /**
      * Значение характеристики Страны
      * @type {string}
      * @memberof ContentV2DirectoryCountriesGet200ResponseDataInner
@@ -50,6 +56,7 @@ export function ContentV2DirectoryCountriesGet200ResponseDataInnerFromJSONTyped(
     }
     return {
         
+        'id': json['id'] == null ? undefined : json['id'],
         'name': json['name'] == null ? undefined : json['name'],
         'fullName': json['fullName'] == null ? undefined : json['fullName'],
     };
@@ -66,6 +73,7 @@ export function ContentV2DirectoryCountriesGet200ResponseDataInnerToJSONTyped(va
 
     return {
         
+        'id': value['id'],
         'name': value['name'],
         'fullName': value['fullName'],
     };

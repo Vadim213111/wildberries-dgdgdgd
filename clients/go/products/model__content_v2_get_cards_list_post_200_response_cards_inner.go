@@ -21,7 +21,7 @@ var _ MappedNullable = &ContentV2GetCardsListPost200ResponseCardsInner{}
 type ContentV2GetCardsListPost200ResponseCardsInner struct {
 	// Артикул WB
 	NmID *int32 `json:"nmID,omitempty"`
-	// ID объединённой карточки товара.<br>Един для всех артикулов WB одной объединённой карточки товара.<br>Есть у карточки товара, даже если она не объединена ни с одной другой карточкой
+	// ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>
 	ImtID *int32 `json:"imtID,omitempty"`
 	// Внутренний технический ID карточки товара
 	NmUUID *string `json:"nmUUID,omitempty"`

@@ -77,10 +77,10 @@ export interface ApiV1ClaimsGet200ResponseClaimsInner {
     wbComment?: string | null;
     /**
      * Дата и время оформления заявки покупателем
-     * @type {Date}
+     * @type {string}
      * @memberof ApiV1ClaimsGet200ResponseClaimsInner
      */
-    dt?: Date;
+    dt?: string;
     /**
      * Название товара
      * @type {string}
@@ -89,16 +89,16 @@ export interface ApiV1ClaimsGet200ResponseClaimsInner {
     imtName?: string | null;
     /**
      * Дата и время заказа
-     * @type {Date}
+     * @type {string}
      * @memberof ApiV1ClaimsGet200ResponseClaimsInner
      */
-    orderDt?: Date;
+    orderDt?: string;
     /**
      * Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
-     * @type {Date}
+     * @type {string}
      * @memberof ApiV1ClaimsGet200ResponseClaimsInner
      */
-    dtUpdate?: Date;
+    dtUpdate?: string;
     /**
      * Фотографии из заявки покупателя
      * @type {Array<string>}
@@ -171,10 +171,10 @@ export function ApiV1ClaimsGet200ResponseClaimsInnerFromJSONTyped(json: any, ign
         'nmId': json['nm_id'] == null ? undefined : json['nm_id'],
         'userComment': json['user_comment'] == null ? undefined : json['user_comment'],
         'wbComment': json['wb_comment'] == null ? undefined : json['wb_comment'],
-        'dt': json['dt'] == null ? undefined : (new Date(json['dt'])),
+        'dt': json['dt'] == null ? undefined : json['dt'],
         'imtName': json['imt_name'] == null ? undefined : json['imt_name'],
-        'orderDt': json['order_dt'] == null ? undefined : (new Date(json['order_dt'])),
-        'dtUpdate': json['dt_update'] == null ? undefined : (new Date(json['dt_update'])),
+        'orderDt': json['order_dt'] == null ? undefined : json['order_dt'],
+        'dtUpdate': json['dt_update'] == null ? undefined : json['dt_update'],
         'photos': json['photos'] == null ? undefined : json['photos'],
         'videoPaths': json['video_paths'] == null ? undefined : json['video_paths'],
         'actions': json['actions'] == null ? undefined : json['actions'],
@@ -202,10 +202,10 @@ export function ApiV1ClaimsGet200ResponseClaimsInnerToJSONTyped(value?: ApiV1Cla
         'nm_id': value['nmId'],
         'user_comment': value['userComment'],
         'wb_comment': value['wbComment'],
-        'dt': value['dt'] == null ? value['dt'] : value['dt'].toISOString(),
+        'dt': value['dt'],
         'imt_name': value['imtName'],
-        'order_dt': value['orderDt'] == null ? value['orderDt'] : value['orderDt'].toISOString(),
-        'dt_update': value['dtUpdate'] == null ? value['dtUpdate'] : value['dtUpdate'].toISOString(),
+        'order_dt': value['orderDt'],
+        'dt_update': value['dtUpdate'],
         'photos': value['photos'],
         'video_paths': value['videoPaths'],
         'actions': value['actions'],

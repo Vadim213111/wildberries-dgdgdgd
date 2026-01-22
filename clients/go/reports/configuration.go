@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.26/go",
+		UserAgent:        "OpenAPI-Generator/0.1.27/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -152,12 +152,6 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"DefaultApiService.ApiV1AnalyticsCharacteristicsChangeGet": {
-				{
-					URL: "https://seller-analytics-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
 			"DefaultApiService.ApiV1AnalyticsGoodsLabelingGet": {
 				{
 					URL: "https://seller-analytics-api.wildberries.ru",
@@ -165,12 +159,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DefaultApiService.ApiV1AnalyticsGoodsReturnGet": {
-				{
-					URL: "https://seller-analytics-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.ApiV1AnalyticsIncorrectAttachmentsGet": {
 				{
 					URL: "https://seller-analytics-api.wildberries.ru",
 					Description: "No description provided",

@@ -140,7 +140,6 @@ var_dump($response);
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdDelete` — `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdDeliverPatch` — `PATCH /api/v3/supplies/{supplyId}/deliver` — Передать поставку в доставку
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdGet` — `GET /api/v3/supplies/{supplyId}` — Получить информацию о поставке
-- `orders_fbs.FBSApi.apiV3SuppliesSupplyIdOrdersGet` — `GET /api/v3/supplies/{supplyId}/orders` — Получить сборочные задания в поставке
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxDelete` — `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить короба из поставки
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxGet` — `GET /api/v3/supplies/{supplyId}/trbx` — Получить список коробов поставки
 - `orders_fbs.FBSApi.apiV3SuppliesSupplyIdTrbxPost` — `POST /api/v3/supplies/{supplyId}/trbx` — Добавить короба к поставке
@@ -338,10 +337,8 @@ var_dump($response);
 - `reports.DefaultApi.apiV1AnalyticsBrandShareBrandsGet` — `GET /api/v1/analytics/brand-share/brands` — Бренды продавца
 - `reports.DefaultApi.apiV1AnalyticsBrandShareGet` — `GET /api/v1/analytics/brand-share` — Получить отчёт
 - `reports.DefaultApi.apiV1AnalyticsBrandShareParentSubjectsGet` — `GET /api/v1/analytics/brand-share/parent-subjects` — Родительские категории бренда
-- `reports.DefaultApi.apiV1AnalyticsCharacteristicsChangeGet` — `GET /api/v1/analytics/characteristics-change` — Смена характеристик
 - `reports.DefaultApi.apiV1AnalyticsGoodsLabelingGet` — `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `reports.DefaultApi.apiV1AnalyticsGoodsReturnGet` — `GET /api/v1/analytics/goods-return` — Получить отчёт
-- `reports.DefaultApi.apiV1AnalyticsIncorrectAttachmentsGet` — `GET /api/v1/analytics/incorrect-attachments` — Подмена товара
 - `reports.DefaultApi.apiV1AnalyticsRegionSaleGet` — `GET /api/v1/analytics/region-sale` — Получить отчёт
 - `reports.DefaultApi.apiV1AnalyticsWarehouseMeasurementsGet` — `GET /api/v1/analytics/warehouse-measurements` — Занижение габаритов упаковки
 - `reports.DefaultApi.apiV1PaidStorageGet` — `GET /api/v1/paid_storage` — Создать отчёт

@@ -28,7 +28,7 @@ class ContentV2CardsUploadPostRequestInner(BaseModel):
     ContentV2CardsUploadPostRequestInner
     """ # noqa: E501
     subject_id: StrictInt = Field(description="ID предмета", alias="subjectID")
-    variants: List[ContentV2CardsUploadPostRequestInnerVariantsInner] = Field(description="Массив вариантов товара.<br> В каждой объединённой карточке товара может быть не более 30 карточек товаров ")
+    variants: List[ContentV2CardsUploadPostRequestInnerVariantsInner] = Field(description="[Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект ")
     __properties: ClassVar[List[str]] = ["subjectID", "variants"]
 
     model_config = ConfigDict(

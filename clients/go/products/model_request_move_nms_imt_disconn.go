@@ -21,7 +21,7 @@ var _ MappedNullable = &RequestMoveNmsImtDisconn{}
 
 // RequestMoveNmsImtDisconn struct for RequestMoveNmsImtDisconn
 type RequestMoveNmsImtDisconn struct {
-	// `nmID`, которые необходимо разъединить (max 30)
+	// `nmID`, которые необходимо разъединить 
 	NmIDs []int32 `json:"nmIDs"`
 }
 

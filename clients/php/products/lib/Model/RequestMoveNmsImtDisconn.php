@@ -305,7 +305,7 @@ class RequestMoveNmsImtDisconn implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets nm_ids
      *
-     * @param int[] $nm_ids `nmID`, которые необходимо разъединить (max 30)
+     * @param int[] $nm_ids `nmID`, которые необходимо разъединить
      *
      * @return self
      */
@@ -314,6 +314,8 @@ class RequestMoveNmsImtDisconn implements ModelInterface, ArrayAccess, \JsonSeri
         if (is_null($nm_ids)) {
             throw new \InvalidArgumentException('non-nullable nm_ids cannot be null');
         }
+
+
         $this->container['nm_ids'] = $nm_ids;
 
         return $this;

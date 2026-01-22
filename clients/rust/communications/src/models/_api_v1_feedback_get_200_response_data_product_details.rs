@@ -17,7 +17,7 @@ pub struct ApiV1FeedbackGet200ResponseDataProductDetails {
     /// Артикул WB
     #[serde(rename = "nmId", skip_serializing_if = "Option::is_none")]
     pub nm_id: Option<i32>,
-    /// ID карточки товара
+    /// ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
     #[serde(rename = "imtId", skip_serializing_if = "Option::is_none")]
     pub imt_id: Option<i32>,
     /// Название товара

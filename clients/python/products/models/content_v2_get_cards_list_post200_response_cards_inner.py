@@ -33,7 +33,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner(BaseModel):
     ContentV2GetCardsListPost200ResponseCardsInner
     """ # noqa: E501
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
-    imt_id: Optional[StrictInt] = Field(default=None, description="ID объединённой карточки товара.<br>Един для всех артикулов WB одной объединённой карточки товара.<br>Есть у карточки товара, даже если она не объединена ни с одной другой карточкой", alias="imtID")
+    imt_id: Optional[StrictInt] = Field(default=None, description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>", alias="imtID")
     nm_uuid: Optional[StrictStr] = Field(default=None, description="Внутренний технический ID карточки товара", alias="nmUUID")
     subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectID")
     subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName")

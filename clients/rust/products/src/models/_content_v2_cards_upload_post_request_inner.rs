@@ -16,7 +16,7 @@ pub struct ContentV2CardsUploadPostRequestInner {
     /// ID предмета
     #[serde(rename = "subjectID")]
     pub subject_id: i32,
-    /// Массив вариантов товара.<br> В каждой объединённой карточке товара может быть не более 30 карточек товаров 
+    /// [Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект 
     #[serde(rename = "variants")]
     pub variants: Vec<models::ContentV2CardsUploadPostRequestInnerVariantsInner>,
 }

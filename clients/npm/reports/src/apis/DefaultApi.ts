@@ -23,10 +23,8 @@ import type {
   ApiV1AnalyticsBrandShareBrandsGet200Response,
   ApiV1AnalyticsBrandShareGet200Response,
   ApiV1AnalyticsBrandShareParentSubjectsGet200Response,
-  ApiV1AnalyticsCharacteristicsChangeGet200Response,
   ApiV1AnalyticsGoodsLabelingGet200Response,
   ApiV1AnalyticsGoodsReturnGet200Response,
-  ApiV1AnalyticsIncorrectAttachmentsGet200Response,
   ApiV1AnalyticsRegionSaleGet200Response,
   ApiV1AnalyticsWarehouseMeasurementsGet200Response,
   ApiV1SupplierIncomesGet400Response,
@@ -63,14 +61,10 @@ import {
     ApiV1AnalyticsBrandShareGet200ResponseToJSON,
     ApiV1AnalyticsBrandShareParentSubjectsGet200ResponseFromJSON,
     ApiV1AnalyticsBrandShareParentSubjectsGet200ResponseToJSON,
-    ApiV1AnalyticsCharacteristicsChangeGet200ResponseFromJSON,
-    ApiV1AnalyticsCharacteristicsChangeGet200ResponseToJSON,
     ApiV1AnalyticsGoodsLabelingGet200ResponseFromJSON,
     ApiV1AnalyticsGoodsLabelingGet200ResponseToJSON,
     ApiV1AnalyticsGoodsReturnGet200ResponseFromJSON,
     ApiV1AnalyticsGoodsReturnGet200ResponseToJSON,
-    ApiV1AnalyticsIncorrectAttachmentsGet200ResponseFromJSON,
-    ApiV1AnalyticsIncorrectAttachmentsGet200ResponseToJSON,
     ApiV1AnalyticsRegionSaleGet200ResponseFromJSON,
     ApiV1AnalyticsRegionSaleGet200ResponseToJSON,
     ApiV1AnalyticsWarehouseMeasurementsGet200ResponseFromJSON,
@@ -150,11 +144,6 @@ export interface ApiV1AnalyticsBrandShareParentSubjectsGetRequest {
     locale?: string;
 }
 
-export interface ApiV1AnalyticsCharacteristicsChangeGetRequest {
-    dateFrom: Date;
-    dateTo: Date;
-}
-
 export interface ApiV1AnalyticsGoodsLabelingGetRequest {
     dateFrom: Date;
     dateTo: Date;
@@ -163,11 +152,6 @@ export interface ApiV1AnalyticsGoodsLabelingGetRequest {
 export interface ApiV1AnalyticsGoodsReturnGetRequest {
     dateFrom: Date;
     dateTo: Date;
-}
-
-export interface ApiV1AnalyticsIncorrectAttachmentsGetRequest {
-    dateFrom: string;
-    dateTo: string;
 }
 
 export interface ApiV1AnalyticsRegionSaleGetRequest {
@@ -745,65 +729,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
-     * Смена характеристик
-     * @deprecated
-     */
-    async apiV1AnalyticsCharacteristicsChangeGetRaw(requestParameters: ApiV1AnalyticsCharacteristicsChangeGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1AnalyticsCharacteristicsChangeGet200Response>> {
-        if (requestParameters['dateFrom'] == null) {
-            throw new runtime.RequiredError(
-                'dateFrom',
-                'Required parameter "dateFrom" was null or undefined when calling apiV1AnalyticsCharacteristicsChangeGet().'
-            );
-        }
-
-        if (requestParameters['dateTo'] == null) {
-            throw new runtime.RequiredError(
-                'dateTo',
-                'Required parameter "dateTo" was null or undefined when calling apiV1AnalyticsCharacteristicsChangeGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['dateFrom'] != null) {
-            queryParameters['dateFrom'] = (requestParameters['dateFrom'] as any).toISOString().substring(0,10);
-        }
-
-        if (requestParameters['dateTo'] != null) {
-            queryParameters['dateTo'] = (requestParameters['dateTo'] as any).toISOString().substring(0,10);
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v1/analytics/characteristics-change`;
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1AnalyticsCharacteristicsChangeGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
-     * Смена характеристик
-     * @deprecated
-     */
-    async apiV1AnalyticsCharacteristicsChangeGet(requestParameters: ApiV1AnalyticsCharacteristicsChangeGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1AnalyticsCharacteristicsChangeGet200Response> {
-        const response = await this.apiV1AnalyticsCharacteristicsChangeGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
      * Маркировка товара
      */
@@ -914,65 +839,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async apiV1AnalyticsGoodsReturnGet(requestParameters: ApiV1AnalyticsGoodsReturnGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1AnalyticsGoodsReturnGet200Response> {
         const response = await this.apiV1AnalyticsGoodsReturnGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
-     * Подмена товара
-     * @deprecated
-     */
-    async apiV1AnalyticsIncorrectAttachmentsGetRaw(requestParameters: ApiV1AnalyticsIncorrectAttachmentsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV1AnalyticsIncorrectAttachmentsGet200Response>> {
-        if (requestParameters['dateFrom'] == null) {
-            throw new runtime.RequiredError(
-                'dateFrom',
-                'Required parameter "dateFrom" was null or undefined when calling apiV1AnalyticsIncorrectAttachmentsGet().'
-            );
-        }
-
-        if (requestParameters['dateTo'] == null) {
-            throw new runtime.RequiredError(
-                'dateTo',
-                'Required parameter "dateTo" was null or undefined when calling apiV1AnalyticsIncorrectAttachmentsGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['dateFrom'] != null) {
-            queryParameters['dateFrom'] = requestParameters['dateFrom'];
-        }
-
-        if (requestParameters['dateTo'] != null) {
-            queryParameters['dateTo'] = requestParameters['dateTo'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/api/v1/analytics/incorrect-attachments`;
-
-        const response = await this.request({
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        }, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiV1AnalyticsIncorrectAttachmentsGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
-     * Подмена товара
-     * @deprecated
-     */
-    async apiV1AnalyticsIncorrectAttachmentsGet(requestParameters: ApiV1AnalyticsIncorrectAttachmentsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV1AnalyticsIncorrectAttachmentsGet200Response> {
-        const response = await this.apiV1AnalyticsIncorrectAttachmentsGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

@@ -207,8 +207,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -237,8 +237,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -376,8 +376,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -409,8 +409,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -471,8 +471,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -1034,8 +1034,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -1066,8 +1066,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -1207,8 +1207,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -1242,8 +1242,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)
@@ -1306,8 +1306,8 @@ class DefaultApi
      * URL: https://feedbacks-api.wildberries.ru
      *
      * @param  string|null $state Закреплён ли отзыв:   - &#x60;pinned&#x60; — да   - &#x60;unpinned&#x60; — нет (optional)
-     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — объединённая карточка (optional)
-     * @param  int|null $imt_id ID объединённой карточки товара.&lt;br&gt; Все артикулы WB объединённой карточки товара имеют один и тот же &#x60;imtId&#x60;.&lt;br&gt; У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками (optional)
+     * @param  string|null $pin_on Место закрепления отзыва:   - &#x60;nm&#x60; — карточка товара   - &#x60;imt&#x60; — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров (optional)
+     * @param  int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.&lt;br&gt;Един для всех артикулов WB группы объединённых карточек.&lt;br&gt;У каждой карточки товара есть &#x60;imtId&#x60;, даже если она не объединена с другими карточками&lt;br&gt; (optional)
      * @param  int|null $nm_id Артикул WB (optional)
      * @param  int|null $feedback_id ID отзыва (optional)
      * @param  \DateTime|null $date_from Дата закрепления первого отзыва в списке (optional)

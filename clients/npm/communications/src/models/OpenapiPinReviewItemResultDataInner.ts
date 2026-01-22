@@ -52,7 +52,7 @@ export interface OpenapiPinReviewItemResultDataInner {
     /**
      * Место закрепления отзыва:
      *   - `nm` — карточка товара
-     *   - `imt` — объединённая карточка
+     *   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      * 
      * @type {string}
      * @memberof OpenapiPinReviewItemResultDataInner

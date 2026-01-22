@@ -309,7 +309,7 @@ class ContentV2CardsUploadAddPostRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets imt_id
      *
-     * @param int|null $imt_id `imtID` карточки товара, к которой присоединяется карточка товара
+     * @param int|null $imt_id `imtID` отдельной карточки товара или группы [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров, к которой присоединяются создаваемые карточки
      *
      * @return self
      */
@@ -336,7 +336,7 @@ class ContentV2CardsUploadAddPostRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets cards_to_add
      *
-     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]|null $cards_to_add Структура присоединяемой карточки товара
+     * @param \Wildberries\\Sdk\\Products\Model\ContentV2CardsUploadAddPostRequestCardsToAddInner[]|null $cards_to_add Добавляемые карточки товаров
      *
      * @return self
      */

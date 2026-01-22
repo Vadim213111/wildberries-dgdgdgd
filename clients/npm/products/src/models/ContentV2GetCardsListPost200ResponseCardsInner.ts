@@ -69,7 +69,7 @@ export interface ContentV2GetCardsListPost200ResponseCardsInner {
      */
     nmID?: number;
     /**
-     * ID объединённой карточки товара.<br>Един для всех артикулов WB одной объединённой карточки товара.<br>Есть у карточки товара, даже если она не объединена ни с одной другой карточкой
+     * ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>
      * @type {number}
      * @memberof ContentV2GetCardsListPost200ResponseCardsInner
      */

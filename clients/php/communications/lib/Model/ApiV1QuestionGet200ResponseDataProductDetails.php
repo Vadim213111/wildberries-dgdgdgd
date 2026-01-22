@@ -365,7 +365,7 @@ class ApiV1QuestionGet200ResponseDataProductDetails implements ModelInterface, A
     /**
      * Sets imt_id
      *
-     * @param int|null $imt_id ID карточки товара
+     * @param int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */

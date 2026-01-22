@@ -1624,7 +1624,7 @@ paths:
   /api/feedbacks/v1/pins:
     delete:
       description: |
-        Метод позволяет открепить отзывы в карточке товара или в объединённой карточке.<br>
+        Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br>
         Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>
 
         <div class="description_limit">
@@ -1739,7 +1739,7 @@ paths:
       - description: |
           Место закрепления отзыва:
             - `nm` — карточка товара
-            - `imt` — объединённая карточка
+            - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
         explode: true
         in: query
         name: pinOn
@@ -1752,9 +1752,7 @@ paths:
           type: string
         style: form
       - description: |
-          ID объединённой карточки товара.<br>
-          Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br>
-          У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками
+          ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br>
         explode: true
         in: query
         name: imtId
@@ -1880,7 +1878,7 @@ paths:
       x-category: questionsandfeedback
     post:
       description: |
-        Метод позволяет закрепить отзывы в карточке товара или в объединённой карточке. <br>
+        Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br>
         Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>
         <br>
         Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.
@@ -2012,7 +2010,7 @@ paths:
       - description: |
           Место закрепления отзыва:
             - `nm` — карточка товара
-            - `imt` — объединённая карточка
+            - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
         explode: true
         in: query
         name: pinOn
@@ -2025,9 +2023,7 @@ paths:
           type: string
         style: form
       - description: |
-          ID объединённой карточки товара.<br>
-          Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br>
-          У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками
+          ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br>
         explode: true
         in: query
         name: imtId
@@ -3723,7 +3719,7 @@ components:
           description: |
             Место закрепления отзыва:
               - `nm` — карточка товара
-              - `imt` — объединённая карточка
+              - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
           enum:
           - nm
           - imt
@@ -3780,7 +3776,8 @@ components:
           format: date-time
           type: string
         imtId:
-          description: ID объединённой карточки товара
+          description: "ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)\
+            \ карточек товаров"
           example: 256971531
           type: integer
         nmId:
@@ -3806,7 +3803,7 @@ components:
           description: |
             Место закрепления отзыва:
               - `nm` — карточка товара
-              - `imt` — объединённая карточка
+              - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
           example: imt
           type: string
         feedbackId:
@@ -3828,7 +3825,7 @@ components:
               - `sysTariffUnpinned` — закончилась подписка или тарифная опция
               - `sysLimitReached` — закончился общий лимит по подписке
               - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен
-              - `sysAdditionalSlot` — к карточке или к объединённой карточке прикреплено максимальное количество отзывов
+              - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов
           enum:
           - sysTariffUnpinned
           - sysLimitReached
@@ -3888,18 +3885,17 @@ components:
     openapi.SellerLimit:
       properties:
         perUnitLimit:
-          description: |
-            Максимальное количество закреплённых отзывов в одной карточке или в объединённой карточке
+          description: "Максимальное количество закреплённых отзывов в одной карто\
+            чке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)\
+            \ карточек"
           example: 2
           type: integer
         remaining:
-          description: |
-            Сколько ещё отзывов можно закрепить
+          description: Сколько ещё отзывов можно закрепить
           example: 5
           type: integer
         totalLimit:
-          description: |
-            Общий лимит закреплений
+          description: Общий лимит закреплений
           example: 15
           type: integer
         unlimited:
@@ -3910,8 +3906,7 @@ components:
           example: false
           type: boolean
         used:
-          description: |
-            Текущее количество закреплённых отзывов
+          description: Текущее количество закреплённых отзывов
           example: 10
           type: integer
       required:
@@ -4153,7 +4148,8 @@ components:
           description: Артикул WB
           type: integer
         imtId:
-          description: ID карточки товара
+          description: "ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)\
+            \ карточек товаров"
           type: integer
         productName:
           description: Название товара
@@ -4438,7 +4434,8 @@ components:
           description: Артикул WB
           type: integer
         imtId:
-          description: ID карточки товара
+          description: "ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)\
+            \ карточек товаров"
           type: integer
         productName:
           description: Название товара
@@ -4931,7 +4928,8 @@ components:
           description: Артикул WB
           type: integer
         imtId:
-          description: ID карточки товара
+          description: "ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)\
+            \ карточек товаров"
           type: integer
         productName:
           description: Название товара
@@ -5675,7 +5673,6 @@ components:
           type: string
         dt:
           description: Дата и время оформления заявки покупателем
-          format: date-time
           type: string
         imt_name:
           description: Название товара
@@ -5683,12 +5680,10 @@ components:
           type: string
         order_dt:
           description: Дата и время заказа
-          format: date-time
           type: string
         dt_update:
           description: Дата и время рассмотрения заявки. Для нерассмотренной заявки
             — дата и время оформления
-          format: date-time
           type: string
         photos:
           description: Фотографии из заявки покупателя
@@ -5876,7 +5871,8 @@ components:
           description: Артикул WB
           type: integer
         imtId:
-          description: ID карточки товара
+          description: "ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)\
+            \ карточек товаров"
           type: integer
         productName:
           description: Название товара
@@ -6166,7 +6162,7 @@ components:
           description: |
             Место закрепления отзыва:
               - `nm` — карточка товара
-              - `imt` — объединённая карточка
+              - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
           enum:
           - nm
           - imt

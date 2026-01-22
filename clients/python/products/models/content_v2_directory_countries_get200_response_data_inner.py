@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,9 +26,10 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner(BaseModel):
     """
     ContentV2DirectoryCountriesGet200ResponseDataInner
     """ # noqa: E501
+    id: Optional[StrictInt] = Field(default=None, description="ID страны")
     name: Optional[StrictStr] = Field(default=None, description="Значение характеристики Страны")
     full_name: Optional[StrictStr] = Field(default=None, description="Полное название страны", alias="fullName")
-    __properties: ClassVar[List[str]] = ["name", "fullName"]
+    __properties: ClassVar[List[str]] = ["id", "name", "fullName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,6 +82,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "id": obj.get("id"),
             "name": obj.get("name"),
             "fullName": obj.get("fullName")
         })

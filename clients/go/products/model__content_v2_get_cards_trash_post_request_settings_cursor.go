@@ -33,6 +33,8 @@ type ContentV2GetCardsTrashPostRequestSettingsCursor struct {
 // will change when the set of required properties is changed
 func NewContentV2GetCardsTrashPostRequestSettingsCursor() *ContentV2GetCardsTrashPostRequestSettingsCursor {
 	this := ContentV2GetCardsTrashPostRequestSettingsCursor{}
+	var limit int32 = 10
+	this.Limit = &limit
 	return &this
 }
 
@@ -41,6 +43,8 @@ func NewContentV2GetCardsTrashPostRequestSettingsCursor() *ContentV2GetCardsTras
 // but it doesn't guarantee that properties required by API are set
 func NewContentV2GetCardsTrashPostRequestSettingsCursorWithDefaults() *ContentV2GetCardsTrashPostRequestSettingsCursor {
 	this := ContentV2GetCardsTrashPostRequestSettingsCursor{}
+	var limit int32 = 10
+	this.Limit = &limit
 	return &this
 }
 

@@ -32,7 +32,7 @@ class ContentV2GetCardsListPostRequestSettingsFilter(BaseModel):
     allowed_categories_only: Optional[StrictBool] = Field(default=None, description="Фильтр по категории. `true` - только разрешённые, `false` - все. Не используется в песочнице", alias="allowedCategoriesOnly")
     object_ids: Optional[List[StrictInt]] = Field(default=None, description="Поиск по id предметов", alias="objectIDs")
     brands: Optional[List[StrictStr]] = Field(default=None, description="Поиск по брендам")
-    imt_id: Optional[StrictInt] = Field(default=None, description="Поиск по ID объединённой карточки товара", alias="imtID")
+    imt_id: Optional[StrictInt] = Field(default=None, description="Поиск по [ID для объединённых карточек товаров](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)", alias="imtID")
     __properties: ClassVar[List[str]] = ["withPhoto", "textSearch", "tagIDs", "allowedCategoriesOnly", "objectIDs", "brands", "imtID"]
 
     model_config = ConfigDict(

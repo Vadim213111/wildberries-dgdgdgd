@@ -455,7 +455,7 @@ class ContentV2GetCardsListPost200ResponseCardsInner implements ModelInterface, 
     /**
      * Sets imt_id
      *
-     * @param int|null $imt_id ID объединённой карточки товара.<br>Един для всех артикулов WB одной объединённой карточки товара.<br>Есть у карточки товара, даже если она не объединена ни с одной другой карточкой
+     * @param int|null $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>
      *
      * @return self
      */

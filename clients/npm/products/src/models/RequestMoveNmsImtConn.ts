@@ -20,13 +20,14 @@ import { mapValues } from '../runtime';
  */
 export interface RequestMoveNmsImtConn {
     /**
-     * Существующий у продавца `imtID`, под которым необходимо объединить карточки товаров
+     * Существующий `imtID`, под которым необходимо [объединить](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров
      * @type {number}
      * @memberof RequestMoveNmsImtConn
      */
     targetIMT: number;
     /**
-     * `nmID`, которые необходимо объединить (максимум 30)
+     * `nmID`, которые необходимо объединить
+     * 
      * @type {Array<number>}
      * @memberof RequestMoveNmsImtConn
      */

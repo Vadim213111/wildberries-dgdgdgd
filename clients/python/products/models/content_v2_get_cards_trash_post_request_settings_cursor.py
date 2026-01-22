@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class ContentV2GetCardsTrashPostRequestSettingsCursor(BaseModel):
     """
     Пагинатор
     """ # noqa: E501
-    limit: Optional[StrictInt] = Field(default=None, description="Сколько карточек товаров выдать в ответе")
+    limit: Optional[Annotated[int, Field(le=100, strict=True)]] = Field(default=10, description="Сколько карточек товаров выдать в ответе")
     trashed_at: Optional[StrictStr] = Field(default=None, description="Дата и время помещения в корзину", alias="trashedAt")
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB, с которого надо запрашивать следующий список карточек товаров", alias="nmID")
     __properties: ClassVar[List[str]] = ["limit", "trashedAt", "nmID"]
@@ -82,7 +83,7 @@ class ContentV2GetCardsTrashPostRequestSettingsCursor(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "limit": obj.get("limit"),
+            "limit": obj.get("limit") if obj.get("limit") is not None else 10,
             "trashedAt": obj.get("trashedAt"),
             "nmID": obj.get("nmID")
         })

@@ -139,7 +139,6 @@ print(feedbacks)
 - `orders_fbs.DefaultApi.api_v3_supplies_supply_id_delete` — `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку
 - `orders_fbs.DefaultApi.api_v3_supplies_supply_id_deliver_patch` — `PATCH /api/v3/supplies/{supplyId}/deliver` — Передать поставку в доставку
 - `orders_fbs.DefaultApi.api_v3_supplies_supply_id_get` — `GET /api/v3/supplies/{supplyId}` — Получить информацию о поставке
-- `orders_fbs.DefaultApi.api_v3_supplies_supply_id_orders_get` — `GET /api/v3/supplies/{supplyId}/orders` — (Deprecated) Получить сборочные задания в поставке
 - `orders_fbs.DefaultApi.api_v3_supplies_supply_id_trbx_delete` — `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить короба из поставки
 - `orders_fbs.DefaultApi.api_v3_supplies_supply_id_trbx_get` — `GET /api/v3/supplies/{supplyId}/trbx` — Получить список коробов поставки
 - `orders_fbs.DefaultApi.api_v3_supplies_supply_id_trbx_post` — `POST /api/v3/supplies/{supplyId}/trbx` — Добавить короба к поставке
@@ -336,11 +335,9 @@ print(feedbacks)
 - `reports.DefaultApi.api_v1_analytics_brand_share_brands_get` — `GET /api/v1/analytics/brand-share/brands` — Бренды продавца
 - `reports.DefaultApi.api_v1_analytics_brand_share_get` — `GET /api/v1/analytics/brand-share` — Получить отчёт
 - `reports.DefaultApi.api_v1_analytics_brand_share_parent_subjects_get` — `GET /api/v1/analytics/brand-share/parent-subjects` — Родительские категории бренда
-- `reports.DefaultApi.api_v1_analytics_characteristics_change_get` — `GET /api/v1/analytics/characteristics-change` — (Deprecated) Смена характеристик
 - `reports.DefaultApi.api_v1_analytics_excise_report_post` — `POST /api/v1/analytics/excise-report` — Получить отчёт
 - `reports.DefaultApi.api_v1_analytics_goods_labeling_get` — `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `reports.DefaultApi.api_v1_analytics_goods_return_get` — `GET /api/v1/analytics/goods-return` — Получить отчёт
-- `reports.DefaultApi.api_v1_analytics_incorrect_attachments_get` — `GET /api/v1/analytics/incorrect-attachments` — (Deprecated) Подмена товара
 - `reports.DefaultApi.api_v1_analytics_region_sale_get` — `GET /api/v1/analytics/region-sale` — Получить отчёт
 - `reports.DefaultApi.api_v1_analytics_warehouse_measurements_get` — `GET /api/v1/analytics/warehouse-measurements` — (Deprecated) Занижение габаритов упаковки
 - `reports.DefaultApi.api_v1_paid_storage_get` — `GET /api/v1/paid_storage` — Создать отчёт

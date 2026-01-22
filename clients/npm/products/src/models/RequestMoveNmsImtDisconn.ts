@@ -20,7 +20,8 @@ import { mapValues } from '../runtime';
  */
 export interface RequestMoveNmsImtDisconn {
     /**
-     * `nmID`, которые необходимо разъединить (max 30)
+     * `nmID`, которые необходимо разъединить
+     * 
      * @type {Array<number>}
      * @memberof RequestMoveNmsImtDisconn
      */

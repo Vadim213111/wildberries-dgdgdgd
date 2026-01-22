@@ -410,7 +410,7 @@ class OpenapiPinReviewItem implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets pin_on
      *
-     * @param string $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка
+     * @param string $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */

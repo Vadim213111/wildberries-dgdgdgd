@@ -13,19 +13,19 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct OpenapiSellerLimit {
-    /// Максимальное количество закреплённых отзывов в одной карточке или в объединённой карточке 
+    /// Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек
     #[serde(rename = "perUnitLimit")]
     pub per_unit_limit: i32,
-    /// Сколько ещё отзывов можно закрепить 
+    /// Сколько ещё отзывов можно закрепить
     #[serde(rename = "remaining")]
     pub remaining: i32,
-    /// Общий лимит закреплений 
+    /// Общий лимит закреплений
     #[serde(rename = "totalLimit")]
     pub total_limit: i32,
     /// Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет 
     #[serde(rename = "unlimited")]
     pub unlimited: bool,
-    /// Текущее количество закреплённых отзывов 
+    /// Текущее количество закреплённых отзывов
     #[serde(rename = "used")]
     pub used: i32,
 }

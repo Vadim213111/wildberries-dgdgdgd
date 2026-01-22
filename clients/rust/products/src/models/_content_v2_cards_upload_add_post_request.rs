@@ -13,10 +13,10 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ContentV2CardsUploadAddPostRequest {
-    /// `imtID` карточки товара, к которой присоединяется карточка товара 
+    /// `imtID` отдельной карточки товара или группы [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров, к которой присоединяются создаваемые карточки 
     #[serde(rename = "imtID", skip_serializing_if = "Option::is_none")]
     pub imt_id: Option<i32>,
-    /// Структура присоединяемой карточки товара
+    /// Добавляемые карточки товаров
     #[serde(rename = "cardsToAdd", skip_serializing_if = "Option::is_none")]
     pub cards_to_add: Option<Vec<models::ContentV2CardsUploadAddPostRequestCardsToAddInner>>,
 }

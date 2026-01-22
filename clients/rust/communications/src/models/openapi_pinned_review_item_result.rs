@@ -16,7 +16,7 @@ pub struct OpenapiPinnedReviewItemResult {
     /// Дата и время закрепления или открепления
     #[serde(rename = "changeStateAt")]
     pub change_state_at: String,
-    /// ID объединённой карточки товара
+    /// ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
     #[serde(rename = "imtId")]
     pub imt_id: i32,
     /// Артикул WB
@@ -28,7 +28,7 @@ pub struct OpenapiPinnedReviewItemResult {
     /// Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция 
     #[serde(rename = "pinMethod")]
     pub pin_method: models::DomainReviewPinMethod,
-    /// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+    /// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
     #[serde(rename = "pinOn")]
     pub pin_on: models::DomainReviewPinOn,
     /// ID отзыва
@@ -37,7 +37,7 @@ pub struct OpenapiPinnedReviewItemResult {
     /// Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
     #[serde(rename = "state")]
     pub state: models::DomainReviewState,
-    /// Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к объединённой карточке прикреплено максимальное количество отзывов 
+    /// Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов 
     #[serde(rename = "unpinnedCause", skip_serializing_if = "Option::is_none")]
     pub unpinned_cause: Option<UnpinnedCause>,
 }
@@ -57,7 +57,7 @@ impl OpenapiPinnedReviewItemResult {
         }
     }
 }
-/// Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к объединённой карточке прикреплено максимальное количество отзывов 
+/// Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum UnpinnedCause {
     #[serde(rename = "sysTariffUnpinned")]

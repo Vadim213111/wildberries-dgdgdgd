@@ -132,7 +132,6 @@
 - `DELETE /api/v3/supplies/{supplyId}` — Удалить поставку
 - `GET /api/v3/supplies/{supplyId}/barcode` — Получить QR-код поставки
 - `PATCH /api/v3/supplies/{supplyId}/deliver` — Передать поставку в доставку
-- `GET /api/v3/supplies/{supplyId}/orders` — Получить сборочные задания в поставке
 - `GET /api/v3/supplies/{supplyId}/trbx` — Получить список коробов поставки
 - `POST /api/v3/supplies/{supplyId}/trbx` — Добавить короба к поставке
 - `DELETE /api/v3/supplies/{supplyId}/trbx` — Удалить короба из поставки
@@ -332,11 +331,9 @@
 - `GET /api/v1/analytics/brand-share` — Получить отчёт
 - `GET /api/v1/analytics/brand-share/brands` — Бренды продавца
 - `GET /api/v1/analytics/brand-share/parent-subjects` — Родительские категории бренда
-- `GET /api/v1/analytics/characteristics-change` — Смена характеристик
 - `POST /api/v1/analytics/excise-report` — Получить отчёт
 - `GET /api/v1/analytics/goods-labeling` — Маркировка товара
 - `GET /api/v1/analytics/goods-return` — Получить отчёт
-- `GET /api/v1/analytics/incorrect-attachments` — Подмена товара
 - `GET /api/v1/analytics/region-sale` — Получить отчёт
 - `GET /api/v1/analytics/warehouse-measurements` — Занижение габаритов упаковки
 - `GET /api/v1/paid_storage` — Создать отчёт

@@ -23,7 +23,7 @@ var _ MappedNullable = &ContentV2CardsUploadPostRequestInner{}
 type ContentV2CardsUploadPostRequestInner struct {
 	// ID предмета
 	SubjectID int32 `json:"subjectID"`
-	// Массив вариантов товара.<br> В каждой объединённой карточке товара может быть не более 30 карточек товаров 
+	// [Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект 
 	Variants []ContentV2CardsUploadPostRequestInnerVariantsInner `json:"variants"`
 }
 

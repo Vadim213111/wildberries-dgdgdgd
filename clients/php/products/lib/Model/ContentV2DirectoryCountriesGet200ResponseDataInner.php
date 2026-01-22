@@ -57,6 +57,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'int',
         'name' => 'string',
         'full_name' => 'string'
     ];
@@ -69,6 +70,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => null,
         'name' => null,
         'full_name' => null
     ];
@@ -79,6 +81,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'id' => false,
         'name' => false,
         'full_name' => false
     ];
@@ -169,6 +172,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'name' => 'name',
         'full_name' => 'fullName'
     ];
@@ -179,6 +183,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'name' => 'setName',
         'full_name' => 'setFullName'
     ];
@@ -189,6 +194,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'name' => 'getName',
         'full_name' => 'getFullName'
     ];
@@ -250,6 +256,7 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
      */
     public function __construct(?array $data = null)
     {
+        $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('full_name', $data ?? [], null);
     }
@@ -295,6 +302,33 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner implements ModelInterfa
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return int|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param int|null $id ID страны
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        if (is_null($id)) {
+            throw new \InvalidArgumentException('non-nullable id cannot be null');
+        }
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets name

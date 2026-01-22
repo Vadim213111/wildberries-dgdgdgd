@@ -19,9 +19,9 @@ var _ MappedNullable = &ContentV2CardsUploadAddPostRequest{}
 
 // ContentV2CardsUploadAddPostRequest struct for ContentV2CardsUploadAddPostRequest
 type ContentV2CardsUploadAddPostRequest struct {
-	// `imtID` карточки товара, к которой присоединяется карточка товара 
+	// `imtID` отдельной карточки товара или группы [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров, к которой присоединяются создаваемые карточки 
 	ImtID *int32 `json:"imtID,omitempty"`
-	// Структура присоединяемой карточки товара
+	// Добавляемые карточки товаров
 	CardsToAdd []ContentV2CardsUploadAddPostRequestCardsToAddInner `json:"cardsToAdd,omitempty"`
 }
 

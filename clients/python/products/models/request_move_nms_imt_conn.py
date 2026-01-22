@@ -26,8 +26,8 @@ class RequestMoveNmsImtConn(BaseModel):
     """
     RequestMoveNmsImtConn
     """ # noqa: E501
-    target_imt: StrictInt = Field(description="Существующий у продавца `imtID`, под которым необходимо объединить карточки товаров", alias="targetIMT")
-    nm_ids: List[StrictInt] = Field(description="`nmID`, которые необходимо объединить (максимум 30)", alias="nmIDs")
+    target_imt: StrictInt = Field(description="Существующий `imtID`, под которым необходимо [объединить](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров", alias="targetIMT")
+    nm_ids: List[StrictInt] = Field(description="`nmID`, которые необходимо объединить ", alias="nmIDs")
     __properties: ClassVar[List[str]] = ["targetIMT", "nmIDs"]
 
     model_config = ConfigDict(

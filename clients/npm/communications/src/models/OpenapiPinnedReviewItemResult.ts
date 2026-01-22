@@ -48,7 +48,7 @@ export interface OpenapiPinnedReviewItemResult {
      */
     changeStateAt: Date;
     /**
-     * ID объединённой карточки товара
+     * ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      * @type {number}
      * @memberof OpenapiPinnedReviewItemResult
      */
@@ -77,7 +77,7 @@ export interface OpenapiPinnedReviewItemResult {
     /**
      * Место закрепления отзыва:
      *   - `nm` — карточка товара
-     *   - `imt` — объединённая карточка
+     *   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      * 
      * @type {DomainReviewPinOn}
      * @memberof OpenapiPinnedReviewItemResult
@@ -103,7 +103,7 @@ export interface OpenapiPinnedReviewItemResult {
      *   - `sysTariffUnpinned` — закончилась подписка или тарифная опция
      *   - `sysLimitReached` — закончился общий лимит по подписке
      *   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен
-     *   - `sysAdditionalSlot` — к карточке или к объединённой карточке прикреплено максимальное количество отзывов
+     *   - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов
      * 
      * @type {string}
      * @memberof OpenapiPinnedReviewItemResult

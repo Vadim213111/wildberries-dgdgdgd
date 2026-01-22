@@ -27,8 +27,8 @@ class ContentV2CardsUploadAddPostRequest(BaseModel):
     """
     ContentV2CardsUploadAddPostRequest
     """ # noqa: E501
-    imt_id: Optional[StrictInt] = Field(default=None, description="`imtID` карточки товара, к которой присоединяется карточка товара ", alias="imtID")
-    cards_to_add: Optional[List[ContentV2CardsUploadAddPostRequestCardsToAddInner]] = Field(default=None, description="Структура присоединяемой карточки товара", alias="cardsToAdd")
+    imt_id: Optional[StrictInt] = Field(default=None, description="`imtID` отдельной карточки товара или группы [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров, к которой присоединяются создаваемые карточки ", alias="imtID")
+    cards_to_add: Optional[List[ContentV2CardsUploadAddPostRequestCardsToAddInner]] = Field(default=None, description="Добавляемые карточки товаров", alias="cardsToAdd")
     __properties: ClassVar[List[str]] = ["imtID", "cardsToAdd"]
 
     model_config = ConfigDict(

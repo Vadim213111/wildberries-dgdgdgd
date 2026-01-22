@@ -4389,7 +4389,7 @@ ContentV2CardsDeleteTrashPost Перенос карточек товаров в 
 Метод переносит [карточки товаров в корзину](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1trash/post). При этом карточки товаров не удаляются, их можно [восстановить](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1recover/post).
 
 <div class="description_important">
-  После переноса в корзину карточке товара присваивается новый <code>imtID</code>.
+  После переноса в корзину карточке товара присваивается новый <code>imtID</code> — ID для <a href="https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov">объединённых</a> карточек товаров
 </div>
 
 Карточки товаров удаляются автоматически, если лежат в корзине больше 30 дней, и на них нет остатков. Очистка корзины происходит каждую ночь по московскому времени.<br>
@@ -4590,7 +4590,7 @@ ContentV2CardsErrorListPost Список несозданных карточек
 Метод возвращает список карточек товаров ([черновиков](https://seller.wildberries.ru/new-goods/error-cards)), при создании или редактировании которых произошли ошибки, с описанием этих ошибок.
 <br><br>
 Данные в ответе возвращаются пакетами `batch`. Один пакет содержит:
-  - все ошибки по одной объединённой карточке товара `imtID` одного запроса при [создании](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post) карточек товаров
+  - все ошибки по одному массиву `variants` одного запроса при [создании](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post) карточек товаров
   - все ошибки одного запроса при [создании с присоединением](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) или [редактировании](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров
 <br><br>
 Чтобы получить более 100 пакетов, используйте пагинацию:
@@ -4959,7 +4959,7 @@ func (r ApiContentV2CardsMoveNmPostRequest) Execute() (*ResponseCardCreate, *htt
 /*
 ContentV2CardsMoveNmPost Объединение и разъединение карточек товаров
 
-Метод объединяет и разъединяет карточки товаров. Карточки товаров считаются объединёнными, если у них одинаковый `imtID`.
+Метод [объединяет и разъединяет](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров. Карточки товаров являются объединёнными, если у них одинаковый `imtID`.
 <br><br>
 Для объединения карточек товаров сделайте запрос **с указанием** `imtID`. Можно объединять не более 30 карточек товаров.<br>
 Для разъединения карточек товаров сделайте запрос **без указания** `imtID`. Для разъединенных карточек будут сгенерированы новые `imtID`.
@@ -4970,7 +4970,7 @@ ContentV2CardsMoveNmPost Объединение и разъединение ка
 Максимальный размер запроса 10 Мб.
 
 <div class="description_important">
-  Объединить можно только карточки товаров с одинаковыми предметами.
+  Объединить можно карточки товаров только в рамках одного предмета
 </div>
 
 <div class="description_limit">
@@ -5167,7 +5167,7 @@ ContentV2CardsRecoverPost Восстановление карточек това
 Метод восстанавливает [карточки товаров из корзины](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1get~1cards~1trash/post).
 
 <div class="description_important">
-  Карточка товара сохраняет тот же <code>imtID</code>, что был присвоен ей при <a href="/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1delete~1trash/post">перемещении в корзину</a>.
+  Карточка товара сохраняет тот же <code>imtID</code> — ID для <a href="https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov">объединённых</a> карточек товаров — что был присвоен ей при <a href="/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1delete~1trash/post">перемещении в корзину</a>
 </div>
 
 <div class="description_limit">
@@ -5556,8 +5556,8 @@ func (r ApiContentV2CardsUploadAddPostRequest) Execute() (*ResponseCardCreate, *
 /*
 ContentV2CardsUploadAddPost Создание карточек товаров с присоединением
 
-Метод создаёт новые карточки товаров, присоединяя их к существующим карточкам.
-<br><br>
+Метод создаёт карточки товаров, присоединяя их к существующим отдельным карточкам и группам [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. В одной группе объединённых карточек товаров может быть не более 30 карточек, соответственно, создать с присоединением можно не более 29 карточек товаров за один запрос.
+
 Габариты товаров можно указать только в `сантиметрах`, вес товара с упаковкой — в `килограммах`.
 <br><br>
 Если ответ `Успешно` (`200`), но какие-то карточки не создались, проверьте [список несозданных карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1error~1list/post).<br>
@@ -5737,13 +5737,13 @@ ContentV2CardsUploadPost Создание карточек товаров
 Метод создаёт карточки товаров c указанием описаний и характеристик товаров.<br>
 
 <div class="description_important">
-  Есть две формы запроса: для создания отдельных и объединённых карточек товаров.
+  Есть две формы запроса: для создания отдельных и объединённых карточек товаров
 </div>
 
 Габариты товаров можно указать только в `сантиметрах`, вес товара с упаковкой — в `килограммах`.
 <br><br>
 Создание карточки товара происходит асинхронно. Синхронизация новой карточки с сервисами может занимать до 30 минут. В течение этого времени невозможно добавить остатки на склады и настроить цены. <br>
-В одном запросе можно создать максимум 100 объединённых карточек товаров (`imtID`), по 30 карточек товаров в каждой. Максимальный размер запроса 10 Мб.<br>
+Одним запросом можно создать максимум 100 отдельных карточек товаров или 100 групп [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров по 30 карточек в каждой. Максимальный размер запроса 10 Мб.<br>
 Если ответ `Успешно` (`200`), но какие-то карточки не создались, проверьте [список несозданных карточек товаров](/openapi/work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1error~1list/post).
 
 <div class="description_limit">

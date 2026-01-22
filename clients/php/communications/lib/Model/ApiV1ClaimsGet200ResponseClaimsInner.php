@@ -64,10 +64,10 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
         'nm_id' => 'int',
         'user_comment' => 'string',
         'wb_comment' => 'string',
-        'dt' => '\DateTime',
+        'dt' => 'string',
         'imt_name' => 'string',
-        'order_dt' => '\DateTime',
-        'dt_update' => '\DateTime',
+        'order_dt' => 'string',
+        'dt_update' => 'string',
         'photos' => 'string[]',
         'video_paths' => 'string[]',
         'actions' => 'string[]',
@@ -91,10 +91,10 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
         'nm_id' => null,
         'user_comment' => null,
         'wb_comment' => null,
-        'dt' => 'date-time',
+        'dt' => null,
         'imt_name' => null,
-        'order_dt' => 'date-time',
-        'dt_update' => 'date-time',
+        'order_dt' => null,
+        'dt_update' => null,
         'photos' => 'WEBP',
         'video_paths' => 'MP4',
         'actions' => null,
@@ -632,7 +632,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Gets dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDt()
     {
@@ -642,7 +642,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Sets dt
      *
-     * @param \DateTime|null $dt Дата и время оформления заявки покупателем
+     * @param string|null $dt Дата и время оформления заявки покупателем
      *
      * @return self
      */
@@ -693,7 +693,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Gets order_dt
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getOrderDt()
     {
@@ -703,7 +703,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Sets order_dt
      *
-     * @param \DateTime|null $order_dt Дата и время заказа
+     * @param string|null $order_dt Дата и время заказа
      *
      * @return self
      */
@@ -720,7 +720,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Gets dt_update
      *
-     * @return \DateTime|null
+     * @return string|null
      */
     public function getDtUpdate()
     {
@@ -730,7 +730,7 @@ class ApiV1ClaimsGet200ResponseClaimsInner implements ModelInterface, ArrayAcces
     /**
      * Sets dt_update
      *
-     * @param \DateTime|null $dt_update Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
+     * @param string|null $dt_update Дата и время рассмотрения заявки. Для нерассмотренной заявки — дата и время оформления
      *
      * @return self
      */

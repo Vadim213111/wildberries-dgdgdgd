@@ -33,6 +33,8 @@ type ContentV2GetCardsListPostRequestSettingsCursor struct {
 // will change when the set of required properties is changed
 func NewContentV2GetCardsListPostRequestSettingsCursor() *ContentV2GetCardsListPostRequestSettingsCursor {
 	this := ContentV2GetCardsListPostRequestSettingsCursor{}
+	var limit int32 = 10
+	this.Limit = &limit
 	return &this
 }
 
@@ -41,6 +43,8 @@ func NewContentV2GetCardsListPostRequestSettingsCursor() *ContentV2GetCardsListP
 // but it doesn't guarantee that properties required by API are set
 func NewContentV2GetCardsListPostRequestSettingsCursorWithDefaults() *ContentV2GetCardsListPostRequestSettingsCursor {
 	this := ContentV2GetCardsListPostRequestSettingsCursor{}
+	var limit int32 = 10
+	this.Limit = &limit
 	return &this
 }
 

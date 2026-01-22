@@ -31,7 +31,7 @@ type ContentV2GetCardsListPostRequestSettingsFilter struct {
 	ObjectIDs []int32 `json:"objectIDs,omitempty"`
 	// Поиск по брендам
 	Brands []string `json:"brands,omitempty"`
-	// Поиск по ID объединённой карточки товара
+	// Поиск по [ID для объединённых карточек товаров](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)
 	ImtID *int32 `json:"imtID,omitempty"`
 }
 

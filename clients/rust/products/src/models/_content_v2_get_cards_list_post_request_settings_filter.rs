@@ -32,7 +32,7 @@ pub struct ContentV2GetCardsListPostRequestSettingsFilter {
     /// Поиск по брендам
     #[serde(rename = "brands", skip_serializing_if = "Option::is_none")]
     pub brands: Option<Vec<String>>,
-    /// Поиск по ID объединённой карточки товара
+    /// Поиск по [ID для объединённых карточек товаров](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov)
     #[serde(rename = "imtID", skip_serializing_if = "Option::is_none")]
     pub imt_id: Option<i32>,
 }

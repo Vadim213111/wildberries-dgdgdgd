@@ -27,7 +27,7 @@ class ApiV1FeedbackGet200ResponseDataProductDetails(BaseModel):
     Product information
     """ # noqa: E501
     nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
-    imt_id: Optional[StrictInt] = Field(default=None, description="ID карточки товара", alias="imtId")
+    imt_id: Optional[StrictInt] = Field(default=None, description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров", alias="imtId")
     product_name: Optional[StrictStr] = Field(default=None, description="Название товара", alias="productName")
     supplier_article: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="supplierArticle")
     supplier_name: Optional[StrictStr] = Field(default=None, description="Имя продавца", alias="supplierName")

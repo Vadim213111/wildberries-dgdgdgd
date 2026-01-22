@@ -16,7 +16,7 @@ pub struct OpenapiPinReviewItem {
     /// Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция 
     #[serde(rename = "pinMethod")]
     pub pin_method: PinMethod,
-    /// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+    /// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
     #[serde(rename = "pinOn")]
     pub pin_on: PinOn,
     /// ID отзыва
@@ -47,7 +47,7 @@ impl Default for PinMethod {
         Self::Tariff
     }
 }
-/// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+/// Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
 pub enum PinOn {
     #[serde(rename = "nm")]

@@ -437,7 +437,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets imt_id
      *
-     * @param int $imt_id ID объединённой карточки товара
+     * @param int $imt_id ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -545,7 +545,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets pin_on
      *
-     * @param \Wildberries\\Sdk\\Communications\Model\DomainReviewPinOn $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка
+     * @param \Wildberries\\Sdk\\Communications\Model\DomainReviewPinOn $pin_on Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      *
      * @return self
      */
@@ -626,7 +626,7 @@ class OpenapiPinnedReviewItemResult implements ModelInterface, ArrayAccess, \Jso
     /**
      * Sets unpinned_cause
      *
-     * @param string|null $unpinned_cause Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к объединённой карточке прикреплено максимальное количество отзывов
+     * @param string|null $unpinned_cause Причина открепления отзыва:   - `sysTariffUnpinned` — закончилась подписка или тарифная опция   - `sysLimitReached` — закончился общий лимит по подписке   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен   - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов
      *
      * @return self
      */

@@ -21,9 +21,9 @@ var _ MappedNullable = &RequestMoveNmsImtConn{}
 
 // RequestMoveNmsImtConn struct for RequestMoveNmsImtConn
 type RequestMoveNmsImtConn struct {
-	// Существующий у продавца `imtID`, под которым необходимо объединить карточки товаров
+	// Существующий `imtID`, под которым необходимо [объединить](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров
 	TargetIMT int32 `json:"targetIMT"`
-	// `nmID`, которые необходимо объединить (максимум 30)
+	// `nmID`, которые необходимо объединить 
 	NmIDs []int32 `json:"nmIDs"`
 }
 

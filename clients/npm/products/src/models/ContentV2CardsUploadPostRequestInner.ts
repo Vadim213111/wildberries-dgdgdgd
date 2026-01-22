@@ -34,8 +34,7 @@ export interface ContentV2CardsUploadPostRequestInner {
      */
     subjectID: number;
     /**
-     * Массив вариантов товара.<br>
-     * В каждой объединённой карточке товара может быть не более 30 карточек товаров
+     * [Объединённые](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточки товаров.<br>Чтобы создать отдельную карточку, передайте только один объект
      * 
      * @type {Array<ContentV2CardsUploadPostRequestInnerVariantsInner>}
      * @memberof ContentV2CardsUploadPostRequestInner

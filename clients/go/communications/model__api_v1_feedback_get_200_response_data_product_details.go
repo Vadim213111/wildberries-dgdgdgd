@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiV1FeedbackGet200ResponseDataProductDetails{}
 type ApiV1FeedbackGet200ResponseDataProductDetails struct {
 	// Артикул WB
 	NmId *int32 `json:"nmId,omitempty"`
-	// ID карточки товара
+	// ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
 	ImtId *int32 `json:"imtId,omitempty"`
 	// Название товара
 	ProductName *string `json:"productName,omitempty"`

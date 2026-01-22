@@ -69,8 +69,8 @@ class DefaultApi:
     def api_feedbacks_v1_pins_count_get(
         self,
         state: Annotated[Optional[StrictStr], Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")] = None,
-        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ")] = None,
-        imt_id: Annotated[Optional[StrictInt], Field(description="ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками ")] = None,
+        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ")] = None,
+        imt_id: Annotated[Optional[StrictInt], Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> ")] = None,
         nm_id: Annotated[Optional[StrictInt], Field(description="Артикул WB")] = None,
         feedback_id: Annotated[Optional[StrictInt], Field(description="ID отзыва")] = None,
         date_from: Annotated[Optional[datetime], Field(description="Дата закрепления первого отзыва в списке")] = None,
@@ -94,9 +94,9 @@ class DefaultApi:
 
         :param state: Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
         :type state: str
-        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
         :type pin_on: str
-        :param imt_id: ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками 
+        :param imt_id: ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> 
         :type imt_id: int
         :param nm_id: Артикул WB
         :type nm_id: int
@@ -163,8 +163,8 @@ class DefaultApi:
     def api_feedbacks_v1_pins_count_get_with_http_info(
         self,
         state: Annotated[Optional[StrictStr], Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")] = None,
-        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ")] = None,
-        imt_id: Annotated[Optional[StrictInt], Field(description="ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками ")] = None,
+        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ")] = None,
+        imt_id: Annotated[Optional[StrictInt], Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> ")] = None,
         nm_id: Annotated[Optional[StrictInt], Field(description="Артикул WB")] = None,
         feedback_id: Annotated[Optional[StrictInt], Field(description="ID отзыва")] = None,
         date_from: Annotated[Optional[datetime], Field(description="Дата закрепления первого отзыва в списке")] = None,
@@ -188,9 +188,9 @@ class DefaultApi:
 
         :param state: Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
         :type state: str
-        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
         :type pin_on: str
-        :param imt_id: ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками 
+        :param imt_id: ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> 
         :type imt_id: int
         :param nm_id: Артикул WB
         :type nm_id: int
@@ -257,8 +257,8 @@ class DefaultApi:
     def api_feedbacks_v1_pins_count_get_without_preload_content(
         self,
         state: Annotated[Optional[StrictStr], Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")] = None,
-        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ")] = None,
-        imt_id: Annotated[Optional[StrictInt], Field(description="ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками ")] = None,
+        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ")] = None,
+        imt_id: Annotated[Optional[StrictInt], Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> ")] = None,
         nm_id: Annotated[Optional[StrictInt], Field(description="Артикул WB")] = None,
         feedback_id: Annotated[Optional[StrictInt], Field(description="ID отзыва")] = None,
         date_from: Annotated[Optional[datetime], Field(description="Дата закрепления первого отзыва в списке")] = None,
@@ -282,9 +282,9 @@ class DefaultApi:
 
         :param state: Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
         :type state: str
-        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
         :type pin_on: str
-        :param imt_id: ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками 
+        :param imt_id: ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> 
         :type imt_id: int
         :param nm_id: Артикул WB
         :type nm_id: int
@@ -479,7 +479,7 @@ class DefaultApi:
     ) -> ApiFeedbacksV1PinsDelete200Response:
         """Открепить отзывы
 
-        Метод позволяет открепить отзывы в карточке товара или в объединённой карточке.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+        Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 
         :param request_body: Список `pinId` — ID операций закрепления отзывов (required)
         :type request_body: List[int]
@@ -549,7 +549,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiFeedbacksV1PinsDelete200Response]:
         """Открепить отзывы
 
-        Метод позволяет открепить отзывы в карточке товара или в объединённой карточке.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+        Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 
         :param request_body: Список `pinId` — ID операций закрепления отзывов (required)
         :type request_body: List[int]
@@ -619,7 +619,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Открепить отзывы
 
-        Метод позволяет открепить отзывы в карточке товара или в объединённой карточке.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+        Метод позволяет открепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек.<br> Чтобы получить `pinId` — ID операций закрепления, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 
         :param request_body: Список `pinId` — ID операций закрепления отзывов (required)
         :type request_body: List[int]
@@ -751,8 +751,8 @@ class DefaultApi:
     def api_feedbacks_v1_pins_get(
         self,
         state: Annotated[Optional[StrictStr], Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")] = None,
-        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ")] = None,
-        imt_id: Annotated[Optional[StrictInt], Field(description="ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками ")] = None,
+        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ")] = None,
+        imt_id: Annotated[Optional[StrictInt], Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> ")] = None,
         nm_id: Annotated[Optional[StrictInt], Field(description="Артикул WB")] = None,
         feedback_id: Annotated[Optional[StrictInt], Field(description="ID отзыва")] = None,
         date_from: Annotated[Optional[datetime], Field(description="Дата закрепления первого отзыва в списке")] = None,
@@ -778,9 +778,9 @@ class DefaultApi:
 
         :param state: Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
         :type state: str
-        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
         :type pin_on: str
-        :param imt_id: ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками 
+        :param imt_id: ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> 
         :type imt_id: int
         :param nm_id: Артикул WB
         :type nm_id: int
@@ -853,8 +853,8 @@ class DefaultApi:
     def api_feedbacks_v1_pins_get_with_http_info(
         self,
         state: Annotated[Optional[StrictStr], Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")] = None,
-        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ")] = None,
-        imt_id: Annotated[Optional[StrictInt], Field(description="ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками ")] = None,
+        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ")] = None,
+        imt_id: Annotated[Optional[StrictInt], Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> ")] = None,
         nm_id: Annotated[Optional[StrictInt], Field(description="Артикул WB")] = None,
         feedback_id: Annotated[Optional[StrictInt], Field(description="ID отзыва")] = None,
         date_from: Annotated[Optional[datetime], Field(description="Дата закрепления первого отзыва в списке")] = None,
@@ -880,9 +880,9 @@ class DefaultApi:
 
         :param state: Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
         :type state: str
-        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
         :type pin_on: str
-        :param imt_id: ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками 
+        :param imt_id: ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> 
         :type imt_id: int
         :param nm_id: Артикул WB
         :type nm_id: int
@@ -955,8 +955,8 @@ class DefaultApi:
     def api_feedbacks_v1_pins_get_without_preload_content(
         self,
         state: Annotated[Optional[StrictStr], Field(description="Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет ")] = None,
-        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка ")] = None,
-        imt_id: Annotated[Optional[StrictInt], Field(description="ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками ")] = None,
+        pin_on: Annotated[Optional[StrictStr], Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ")] = None,
+        imt_id: Annotated[Optional[StrictInt], Field(description="ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> ")] = None,
         nm_id: Annotated[Optional[StrictInt], Field(description="Артикул WB")] = None,
         feedback_id: Annotated[Optional[StrictInt], Field(description="ID отзыва")] = None,
         date_from: Annotated[Optional[datetime], Field(description="Дата закрепления первого отзыва в списке")] = None,
@@ -982,9 +982,9 @@ class DefaultApi:
 
         :param state: Закреплён ли отзыв:   - `pinned` — да   - `unpinned` — нет 
         :type state: str
-        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — объединённая карточка 
+        :param pin_on: Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров 
         :type pin_on: str
-        :param imt_id: ID объединённой карточки товара.<br> Все артикулы WB объединённой карточки товара имеют один и тот же `imtId`.<br> У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками 
+        :param imt_id: ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtId`, даже если она не объединена с другими карточками<br> 
         :type imt_id: int
         :param nm_id: Артикул WB
         :type nm_id: int
@@ -1450,7 +1450,7 @@ class DefaultApi:
     ) -> ApiFeedbacksV1PinsPost200Response:
         """Закрепить отзывы
 
-        Метод позволяет закрепить отзывы в карточке товара или в объединённой карточке. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+        Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 
         :param openapi_pin_review_item: (required)
         :type openapi_pin_review_item: List[OpenapiPinReviewItem]
@@ -1521,7 +1521,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiFeedbacksV1PinsPost200Response]:
         """Закрепить отзывы
 
-        Метод позволяет закрепить отзывы в карточке товара или в объединённой карточке. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+        Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 
         :param openapi_pin_review_item: (required)
         :type openapi_pin_review_item: List[OpenapiPinReviewItem]
@@ -1592,7 +1592,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Закрепить отзывы
 
-        Метод позволяет закрепить отзывы в карточке товара или в объединённой карточке. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
+        Метод позволяет закрепить отзывы в карточке товара или в группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек. <br> Чтобы получить ID отзывов, используйте метод [Список закреплённых и откреплённых отзывов](/openapi/user-communication#tag/Zakreplyonnye-otzyvy/paths/~1api~1feedbacks~1v1~1pins/get).<br> <br> Метод доступен по [подписке Джем](https://seller.wildberries.ru/monetization/jam) или c [тарифной опцией](https://seller.wildberries.ru/tariff-constructor) **Закрепление отзыва**.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Вопросы и отзывы</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 секунда | 3 запроса | 333 миллисекунды | 6 запросов |  </div> 
 
         :param openapi_pin_review_item: (required)
         :type openapi_pin_review_item: List[OpenapiPinReviewItem]

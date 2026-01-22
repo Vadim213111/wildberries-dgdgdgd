@@ -19,6 +19,8 @@ var _ MappedNullable = &ContentV2DirectoryCountriesGet200ResponseDataInner{}
 
 // ContentV2DirectoryCountriesGet200ResponseDataInner struct for ContentV2DirectoryCountriesGet200ResponseDataInner
 type ContentV2DirectoryCountriesGet200ResponseDataInner struct {
+	// ID страны
+	Id *int32 `json:"id,omitempty"`
 	// Значение характеристики Страны
 	Name *string `json:"name,omitempty"`
 	// Полное название страны
@@ -40,6 +42,38 @@ func NewContentV2DirectoryCountriesGet200ResponseDataInner() *ContentV2Directory
 func NewContentV2DirectoryCountriesGet200ResponseDataInnerWithDefaults() *ContentV2DirectoryCountriesGet200ResponseDataInner {
 	this := ContentV2DirectoryCountriesGet200ResponseDataInner{}
 	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ContentV2DirectoryCountriesGet200ResponseDataInner) GetId() int32 {
+	if o == nil || IsNil(o.Id) {
+		var ret int32
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2DirectoryCountriesGet200ResponseDataInner) GetIdOk() (*int32, bool) {
+	if o == nil || IsNil(o.Id) {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *ContentV2DirectoryCountriesGet200ResponseDataInner) HasId() bool {
+	if o != nil && !IsNil(o.Id) {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given int32 and assigns it to the Id field.
+func (o *ContentV2DirectoryCountriesGet200ResponseDataInner) SetId(v int32) {
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -116,6 +150,9 @@ func (o ContentV2DirectoryCountriesGet200ResponseDataInner) MarshalJSON() ([]byt
 
 func (o ContentV2DirectoryCountriesGet200ResponseDataInner) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}

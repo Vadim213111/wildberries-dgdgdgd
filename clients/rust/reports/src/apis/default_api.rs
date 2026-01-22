@@ -106,16 +106,6 @@ pub enum ApiV1AnalyticsBrandShareParentSubjectsGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`api_v1_analytics_characteristics_change_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV1AnalyticsCharacteristicsChangeGetError {
-    Status400(models::Model4xxResponse),
-    Status401(models::ApiV1SupplierIncomesGet401Response),
-    Status429(models::ApiV1SupplierIncomesGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`api_v1_analytics_goods_labeling_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -130,16 +120,6 @@ pub enum ApiV1AnalyticsGoodsLabelingGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum ApiV1AnalyticsGoodsReturnGetError {
-    Status400(models::Model4xxResponse),
-    Status401(models::ApiV1SupplierIncomesGet401Response),
-    Status429(models::ApiV1SupplierIncomesGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`api_v1_analytics_incorrect_attachments_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum ApiV1AnalyticsIncorrectAttachmentsGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
@@ -736,55 +716,6 @@ pub async fn api_v1_analytics_brand_share_parent_subjects_get(configuration: &co
     }
 }
 
-/// Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
-#[deprecated]
-pub async fn api_v1_analytics_characteristics_change_get(configuration: &configuration::Configuration, date_from: String, date_to: String) -> Result<models::ApiV1AnalyticsCharacteristicsChangeGet200Response, Error<ApiV1AnalyticsCharacteristicsChangeGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_date_from = date_from;
-    let p_query_date_to = date_to;
-
-    let uri_str = format!("{}/api/v1/analytics/characteristics-change", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("dateFrom", &p_query_date_from.to_string())]);
-    req_builder = req_builder.query(&[("dateTo", &p_query_date_to.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiV1AnalyticsCharacteristicsChangeGet200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiV1AnalyticsCharacteristicsChangeGet200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV1AnalyticsCharacteristicsChangeGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
 /// Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
 pub async fn api_v1_analytics_goods_labeling_get(configuration: &configuration::Configuration, date_from: String, date_to: String) -> Result<models::ApiV1AnalyticsGoodsLabelingGet200Response, Error<ApiV1AnalyticsGoodsLabelingGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -877,55 +808,6 @@ pub async fn api_v1_analytics_goods_return_get(configuration: &configuration::Co
     } else {
         let content = resp.text().await?;
         let entity: Option<ApiV1AnalyticsGoodsReturnGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Метод будет отключён 20 января. Используйте [актуальный метод](/openapi/reports#tag/Otchyoty-ob-uderzhaniyah/operation/getDeductions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 1 запрос | 1 минута | 10 запросов | </div> 
-#[deprecated]
-pub async fn api_v1_analytics_incorrect_attachments_get(configuration: &configuration::Configuration, date_from: &str, date_to: &str) -> Result<models::ApiV1AnalyticsIncorrectAttachmentsGet200Response, Error<ApiV1AnalyticsIncorrectAttachmentsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_date_from = date_from;
-    let p_query_date_to = date_to;
-
-    let uri_str = format!("{}/api/v1/analytics/incorrect-attachments", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("dateFrom", &p_query_date_from.to_string())]);
-    req_builder = req_builder.query(&[("dateTo", &p_query_date_to.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiV1AnalyticsIncorrectAttachmentsGet200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiV1AnalyticsIncorrectAttachmentsGet200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<ApiV1AnalyticsIncorrectAttachmentsGetError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

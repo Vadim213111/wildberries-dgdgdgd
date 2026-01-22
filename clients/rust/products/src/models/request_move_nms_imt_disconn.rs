@@ -13,7 +13,7 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct RequestMoveNmsImtDisconn {
-    /// `nmID`, которые необходимо разъединить (max 30)
+    /// `nmID`, которые необходимо разъединить 
     #[serde(rename = "nmIDs")]
     pub nm_ids: Vec<i32>,
 }

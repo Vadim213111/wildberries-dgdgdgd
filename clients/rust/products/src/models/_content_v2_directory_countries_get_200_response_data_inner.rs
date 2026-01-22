@@ -13,6 +13,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Clone, Default, Debug, PartialEq, Serialize, Deserialize)]
 pub struct ContentV2DirectoryCountriesGet200ResponseDataInner {
+    /// ID страны
+    #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
+    pub id: Option<i32>,
     /// Значение характеристики Страны
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,
@@ -24,6 +27,7 @@ pub struct ContentV2DirectoryCountriesGet200ResponseDataInner {
 impl ContentV2DirectoryCountriesGet200ResponseDataInner {
     pub fn new() -> ContentV2DirectoryCountriesGet200ResponseDataInner {
         ContentV2DirectoryCountriesGet200ResponseDataInner {
+            id: None,
             name: None,
             full_name: None,
         }

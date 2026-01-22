@@ -26,7 +26,7 @@ export interface ResponseFeedbackInnerProductDetails {
      */
     nmId?: number;
     /**
-     * ID карточки товара
+     * ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      * @type {number}
      * @memberof ResponseFeedbackInnerProductDetails
      */

@@ -16,7 +16,7 @@ pub struct ContentV2GetCardsListPost200ResponseCardsInner {
     /// Артикул WB
     #[serde(rename = "nmID", skip_serializing_if = "Option::is_none")]
     pub nm_id: Option<i32>,
-    /// ID объединённой карточки товара.<br>Един для всех артикулов WB одной объединённой карточки товара.<br>Есть у карточки товара, даже если она не объединена ни с одной другой карточкой
+    /// ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>
     #[serde(rename = "imtID", skip_serializing_if = "Option::is_none")]
     pub imt_id: Option<i32>,
     /// Внутренний технический ID карточки товара
