@@ -16,7 +16,7 @@ pub struct ContentV2CardsUpdatePostRequestInnerCharacteristicsInner {
     /// ID характеристики
     #[serde(rename = "id")]
     pub id: i32,
-    /// Значения характеристики. <br> Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе **Характеристики предмета**. <br> Допустимое количество значений отображено в поле `maxCount` того же метода 
+    /// Значения характеристики. <br> Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get). <br> Допустимое количество значений отображено в поле `maxCount` того же метода 
     #[serde(rename = "value", deserialize_with = "Option::deserialize")]
     pub value: Option<serde_json::Value>,
 }

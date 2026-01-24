@@ -520,7 +520,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
     /**
      * Sets max_count
      *
-     * @param int|null $max_count Максимальное количество значений, которое можно присвоить характеристике при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров. <br> Используется только для характеристик с `\"charcType\":1`— массив строк. <br> Характеристикам с `\"charcType\":4`— число, можно присвоить только одно значение. <br><br> Если `\"maxCount\":0`, количество значений не ограничено
+     * @param int|null $max_count Максимальное количество значений, которое можно присвоить характеристике при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров. <br> Используется только для характеристик с `\"charcType\":1` — массив строк. <br> Характеристикам с `\"charcType\":4` — число, можно присвоить только одно значение. <br><br> Если `\"maxCount\":0`, количество значений не ограничено
      *
      * @return self
      */
@@ -574,7 +574,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
     /**
      * Sets charc_type
      *
-     * @param int|null $charc_type Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число   -  `0` — характеристика не используется
+     * @param int|null $charc_type Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется
      *
      * @return self
      */

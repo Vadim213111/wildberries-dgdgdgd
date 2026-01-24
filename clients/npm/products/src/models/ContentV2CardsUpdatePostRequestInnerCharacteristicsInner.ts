@@ -28,7 +28,7 @@ export interface ContentV2CardsUpdatePostRequestInnerCharacteristicsInner {
     /**
      * Значения характеристики.
      * <br>
-     * Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе **Характеристики предмета**.
+     * Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get).
      * <br>
      * Допустимое количество значений отображено в поле `maxCount` того же метода
      * 

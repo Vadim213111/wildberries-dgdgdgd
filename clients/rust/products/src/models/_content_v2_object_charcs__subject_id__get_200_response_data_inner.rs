@@ -31,13 +31,13 @@ pub struct ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
     /// Единица измерения
     #[serde(rename = "unitName", skip_serializing_if = "Option::is_none")]
     pub unit_name: Option<String>,
-    /// Максимальное количество значений, которое можно присвоить характеристике при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров. <br> Используется только для характеристик с `\"charcType\":1`— массив строк. <br> Характеристикам с `\"charcType\":4`— число, можно присвоить только одно значение. <br><br> Если `\"maxCount\":0`, количество значений не ограничено 
+    /// Максимальное количество значений, которое можно присвоить характеристике при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров. <br> Используется только для характеристик с `\"charcType\":1` — массив строк. <br> Характеристикам с `\"charcType\":4` — число, можно присвоить только одно значение. <br><br> Если `\"maxCount\":0`, количество значений не ограничено 
     #[serde(rename = "maxCount", skip_serializing_if = "Option::is_none")]
     pub max_count: Option<i32>,
     /// Характеристика популярна у пользователей (true - да, false - нет)
     #[serde(rename = "popular", skip_serializing_if = "Option::is_none")]
     pub popular: Option<bool>,
-    /// Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число   -  `0` — характеристика не используется 
+    /// Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется 
     #[serde(rename = "charcType", skip_serializing_if = "Option::is_none")]
     pub charc_type: Option<i32>,
 }

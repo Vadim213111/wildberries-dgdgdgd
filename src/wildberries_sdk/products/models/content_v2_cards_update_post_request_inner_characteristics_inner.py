@@ -27,7 +27,7 @@ class ContentV2CardsUpdatePostRequestInnerCharacteristicsInner(BaseModel):
     ContentV2CardsUpdatePostRequestInnerCharacteristicsInner
     """ # noqa: E501
     id: StrictInt = Field(description="ID характеристики")
-    value: Optional[Any] = Field(description="Значения характеристики. <br> Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе **Характеристики предмета**. <br> Допустимое количество значений отображено в поле `maxCount` того же метода ")
+    value: Optional[Any] = Field(description="Значения характеристики. <br> Тип данных — массив строк или число — зависит от типа характеристики, см. описание поля `charcType` в методе [Характеристики предмета](./work-with-products#tag/Kategorii-predmety-i-harakteristiki/paths/~1content~1v2~1object~1charcs~1%7BsubjectId%7D/get). <br> Допустимое количество значений отображено в поле `maxCount` того же метода ")
     __properties: ClassVar[List[str]] = ["id", "value"]
 
     model_config = ConfigDict(
