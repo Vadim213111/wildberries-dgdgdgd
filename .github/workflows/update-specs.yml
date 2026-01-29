@@ -41,25 +41,27 @@ jobs:
             exit 0
           fi
 
-          DIFF=$(git diff specs/)
+          {
+            echo "Analyze the following OpenAPI spec diff and generate a concise changelog entry in Russian."
+            echo "Format: Return ONLY bullet points starting with '- ' describing the changes."
+            echo "Group by API section (e.g., Products, Orders FBS, Finances)."
+            echo "Focus on: new endpoints, removed endpoints, changed fields, updated rate limits, deprecations."
+            echo "Be specific and technical. No headers, just bullet points."
+            echo ""
+            echo "Diff:"
+            git diff specs/
+          } > /tmp/openai_prompt.txt
 
-          PROMPT="Analyze the following OpenAPI spec diff and generate a concise changelog entry in Russian.
-          Format: Return ONLY bullet points starting with '- ' describing the changes.
-          Group by API section (e.g., Products, Orders FBS, Finances).
-          Focus on: new endpoints, removed endpoints, changed fields, updated rate limits, deprecations.
-          Be specific and technical. No headers, just bullet points.
-
-          Diff:
-          $DIFF"
+          jq -Rs --arg model "$OPENAI_MODEL" '{
+            "model": $model,
+            "messages": [{"role": "user", "content": .}],
+            "temperature": 0.3
+          }' /tmp/openai_prompt.txt > /tmp/openai_request.json
 
           RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $OPENAI_API_KEY" \
-            -d "$(jq -n --arg prompt "$PROMPT" --arg model "$OPENAI_MODEL" '{
-              "model": $model,
-              "messages": [{"role": "user", "content": $prompt}],
-              "temperature": 0.3
-            }')")
+            -d @/tmp/openai_request.json)
 
           CHANGELOG_ENTRY=$(echo "$RESPONSE" | jq -r '.choices[0].message.content')
 

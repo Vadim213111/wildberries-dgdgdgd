@@ -1,11 +1,37 @@
 # wildberries-sdk (Go)
 
 Сгенерированные Go-клиенты находятся в `clients/go/<module>`.
-Модульный путь: `github.com/eslazarev/wildberries-sdk/clients/go/<module>`.
+
+## Установка
+
+Каждая спецификация — отдельный Go-модуль. Установите нужные модули:
+
+```bash
+go get github.com/eslazarev/wildberries-sdk/clients/go/finances
+go get github.com/eslazarev/wildberries-sdk/clients/go/products
+go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
+# ... и т.д.
+```
+
+Доступные модули:
+- `github.com/eslazarev/wildberries-sdk/clients/go/general`
+- `github.com/eslazarev/wildberries-sdk/clients/go/products`
+- `github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs`
+- `github.com/eslazarev/wildberries-sdk/clients/go/orders_dbw`
+- `github.com/eslazarev/wildberries-sdk/clients/go/orders_dbs`
+- `github.com/eslazarev/wildberries-sdk/clients/go/in_store_pickup`
+- `github.com/eslazarev/wildberries-sdk/clients/go/orders_fbw`
+- `github.com/eslazarev/wildberries-sdk/clients/go/promotion`
+- `github.com/eslazarev/wildberries-sdk/clients/go/communications`
+- `github.com/eslazarev/wildberries-sdk/clients/go/tariffs`
+- `github.com/eslazarev/wildberries-sdk/clients/go/analytics`
+- `github.com/eslazarev/wildberries-sdk/clients/go/reports`
+- `github.com/eslazarev/wildberries-sdk/clients/go/finances`
+- `github.com/eslazarev/wildberries-sdk/clients/go/wbd`
 
 ## Использование
 
-Каждая спецификация - отдельный пакет. Подключайте нужный пакет через `go.mod` и импортируйте его по пути модуля.
+Импортируйте модуль и используйте API:
 
 <!-- GO_METHODS_LIST_START -->
 ## Методы API
