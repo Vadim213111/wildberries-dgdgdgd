@@ -13,6 +13,10 @@
 """  # noqa: E501
 
 # import models into model package
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info import ApiB2bClientInfo
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info_response import ApiB2bClientInfoResponse
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info_response_errors_inner import ApiB2bClientInfoResponseErrorsInner
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info_responses import ApiB2bClientInfoResponses
 from wildberries_sdk.orders_dbs.models.api_batch_error import ApiBatchError
 from wildberries_sdk.orders_dbs.models.api_batch_error_response import ApiBatchErrorResponse
 from wildberries_sdk.orders_dbs.models.api_error import ApiError

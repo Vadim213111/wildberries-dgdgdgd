@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.34"
+__version__ = "0.1.35"
 
 # Define package exports
 __all__ = [
@@ -28,6 +28,10 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "ApiB2bClientInfo",
+    "ApiB2bClientInfoResponse",
+    "ApiB2bClientInfoResponseErrorsInner",
+    "ApiB2bClientInfoResponses",
     "ApiBatchError",
     "ApiBatchErrorResponse",
     "ApiError",
@@ -100,6 +104,10 @@ from wildberries_sdk.orders_dbs.exceptions import ApiAttributeError as ApiAttrib
 from wildberries_sdk.orders_dbs.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info import ApiB2bClientInfo as ApiB2bClientInfo
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info_response import ApiB2bClientInfoResponse as ApiB2bClientInfoResponse
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info_response_errors_inner import ApiB2bClientInfoResponseErrorsInner as ApiB2bClientInfoResponseErrorsInner
+from wildberries_sdk.orders_dbs.models.api_b2b_client_info_responses import ApiB2bClientInfoResponses as ApiB2bClientInfoResponses
 from wildberries_sdk.orders_dbs.models.api_batch_error import ApiBatchError as ApiBatchError
 from wildberries_sdk.orders_dbs.models.api_batch_error_response import ApiBatchErrorResponse as ApiBatchErrorResponse
 from wildberries_sdk.orders_dbs.models.api_error import ApiError as ApiError

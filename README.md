@@ -158,6 +158,7 @@
 - `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 ### Заказы DBS (`05-orders-dbs.yaml`)
+- `POST /api/marketplace/v3/dbs/orders/b2b/info` — Информация о покупателе B2B
 - `POST /api/marketplace/v3/dbs/orders/meta/customs-declaration` — Закрепить за сборочными заданиями номер ГТД
 - `POST /api/marketplace/v3/dbs/orders/meta/delete` — Удалить метаданные сборочных заданий
 - `POST /api/marketplace/v3/dbs/orders/meta/gtin` — Закрепить GTIN за сборочными заданиями

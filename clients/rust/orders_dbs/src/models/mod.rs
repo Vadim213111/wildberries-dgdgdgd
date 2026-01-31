@@ -1,3 +1,11 @@
+pub mod api_b2b_client_info;
+pub use self::api_b2b_client_info::ApiB2bClientInfo;
+pub mod api_b2b_client_info_response;
+pub use self::api_b2b_client_info_response::ApiB2bClientInfoResponse;
+pub mod api_b2b_client_info_response_errors_inner;
+pub use self::api_b2b_client_info_response_errors_inner::ApiB2bClientInfoResponseErrorsInner;
+pub mod api_b2b_client_info_responses;
+pub use self::api_b2b_client_info_responses::ApiB2bClientInfoResponses;
 pub mod api_batch_error;
 pub use self::api_batch_error::ApiBatchError;
 pub mod api_batch_error_response;

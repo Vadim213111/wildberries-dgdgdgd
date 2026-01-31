@@ -15,6 +15,7 @@
 
 import * as runtime from '../runtime';
 import type {
+  ApiB2bClientInfoResponses,
   ApiBatchError,
   ApiError,
   ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest,
@@ -47,6 +48,8 @@ import type {
   OrdersRequestAPI,
 } from '../models/index';
 import {
+    ApiB2bClientInfoResponsesFromJSON,
+    ApiB2bClientInfoResponsesToJSON,
     ApiBatchErrorFromJSON,
     ApiBatchErrorToJSON,
     ApiErrorFromJSON,
@@ -108,6 +111,10 @@ import {
     OrdersRequestAPIFromJSON,
     OrdersRequestAPIToJSON,
 } from '../models/index';
+
+export interface ApiMarketplaceV3DbsOrdersB2bInfoPostRequest {
+    apiOrdersRequestV2: ApiOrdersRequestV2;
+}
 
 export interface ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostOperationRequest {
     apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest?: ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest;
@@ -241,6 +248,59 @@ export interface ApiV3DbsOrdersStatusPostOperationRequest {
 export class DBSApi extends runtime.BaseAPI {
 
     /**
+     * Creates request options for apiMarketplaceV3DbsOrdersB2bInfoPost without sending the request
+     */
+    async apiMarketplaceV3DbsOrdersB2bInfoPostRequestOpts(requestParameters: ApiMarketplaceV3DbsOrdersB2bInfoPostRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['apiOrdersRequestV2'] == null) {
+            throw new runtime.RequiredError(
+                'apiOrdersRequestV2',
+                'Required parameter "apiOrdersRequestV2" was null or undefined when calling apiMarketplaceV3DbsOrdersB2bInfoPost().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/marketplace/v3/dbs/orders/b2b/info`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApiOrdersRequestV2ToJSON(requestParameters['apiOrdersRequestV2']),
+        };
+    }
+
+    /**
+     * Метод возвращает данные B2B-покупателей по ID сборочных заданий:   - ИНН   - КПП   - Наименование организации  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Информация о покупателе B2B
+     */
+    async apiMarketplaceV3DbsOrdersB2bInfoPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersB2bInfoPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiB2bClientInfoResponses>> {
+        const requestOptions = await this.apiMarketplaceV3DbsOrdersB2bInfoPostRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiB2bClientInfoResponsesFromJSON(jsonValue));
+    }
+
+    /**
+     * Метод возвращает данные B2B-покупателей по ID сборочных заданий:   - ИНН   - КПП   - Наименование организации  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 минута | 300 запросов | 200 миллисекунд | 20 запросов |  </div> 
+     * Информация о покупателе B2B
+     */
+    async apiMarketplaceV3DbsOrdersB2bInfoPost(requestParameters: ApiMarketplaceV3DbsOrdersB2bInfoPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiB2bClientInfoResponses> {
+        const response = await this.apiMarketplaceV3DbsOrdersB2bInfoPostRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Creates request options for apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost without sending the request
      */
     async apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestOpts(requestParameters: ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostOperationRequest): Promise<runtime.RequestOpts> {
@@ -267,7 +327,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет номер ГТД — грузовой таможенной декларации — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post). <br><br> У одного сборочного задания может быть только один ГТД.  Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `delivery`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод обновляет номер ГТД — грузовой таможенной декларации — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post). <br><br> У одного сборочного задания может быть только один ГТД.  Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить за сборочными заданиями номер ГТД
      */
     async apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
@@ -278,7 +338,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет номер ГТД — грузовой таможенной декларации — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post). <br><br> У одного сборочного задания может быть только один ГТД.  Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `delivery`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод обновляет номер ГТД — грузовой таможенной декларации — в [метаданных сборочных заданий](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post). <br><br> У одного сборочного задания может быть только один ГТД.  Добавлять номер ГТД можно только для сборочных заданий, которые находятся в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1v3~1dbs~1orders~1status/post) `deliver`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить за сборочными заданиями номер ГТД
      */
     async apiMarketplaceV3DbsOrdersMetaCustomsDeclarationPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {

@@ -1,5 +1,9 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './ApiB2bClientInfo';
+export * from './ApiB2bClientInfoResponse';
+export * from './ApiB2bClientInfoResponseErrorsInner';
+export * from './ApiB2bClientInfoResponses';
 export * from './ApiBatchError';
 export * from './ApiBatchErrorResponse';
 export * from './ApiError';
