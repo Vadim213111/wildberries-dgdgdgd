@@ -29,7 +29,7 @@ export interface OrderByGrTe {
      *   - `openToCart` — по конверсии в корзину из поиска
      *   - `visibility` — по видимости товара
      * 
-     * @type {string}
+     * @type {OrderByGrTeFieldEnum}
      * @memberof OrderByGrTe
      */
     field: OrderByGrTeFieldEnum;
@@ -38,7 +38,7 @@ export interface OrderByGrTe {
      *   - `asc` — по возрастанию
      *   - `desc` — по убыванию
      * 
-     * @type {string}
+     * @type {OrderByGrTeModeEnum}
      * @memberof OrderByGrTe
      */
     mode: OrderByGrTeModeEnum;

@@ -170,7 +170,7 @@ export interface OrderDBS {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {OrderDBSCargoTypeEnum}
      * @memberof OrderDBS
      */
     cargoType?: OrderDBSCargoTypeEnum;

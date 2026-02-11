@@ -70,7 +70,7 @@ export interface ModelsSupply {
      *   - `5` — Принято
      *   - `6` — Отгружено на воротах
      * 
-     * @type {number}
+     * @type {ModelsSupplyStatusIDEnum}
      * @memberof ModelsSupply
      */
     statusID?: ModelsSupplyStatusIDEnum;

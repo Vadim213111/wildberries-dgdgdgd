@@ -105,7 +105,7 @@ export interface OpenapiPinnedReviewItemResult {
      *   - `sysNoratingUnpinned` — отзыв исключён из рейтинга. Например, удалён или забанен
      *   - `sysAdditionalSlot` — к карточке или к группе [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек прикреплено максимальное количество отзывов
      * 
-     * @type {string}
+     * @type {OpenapiPinnedReviewItemResultUnpinnedCauseEnum}
      * @memberof OpenapiPinnedReviewItemResult
      */
     unpinnedCause?: OpenapiPinnedReviewItemResultUnpinnedCauseEnum;

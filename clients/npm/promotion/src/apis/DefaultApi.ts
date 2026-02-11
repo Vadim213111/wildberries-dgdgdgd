@@ -2,7 +2,7 @@
 /* eslint-disable */
 /**
  * Маркетинг и продвижение
- * <div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Настраивать [параметры](/openapi/promotion#tag/Parametry-kampanij) кампаний — кластеры фраз, продвигаемые товары и так далее.   4. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   5. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   6. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. 
+ * <div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   4. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   5. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. 
  *
  * The version of the OpenAPI document: promotion
  * 
@@ -15,20 +15,12 @@
 
 import * as runtime from '../runtime';
 import type {
-  AdvV0AuctionBidsPatch200Response,
-  AdvV0AuctionBidsPatchRequest,
   AdvV0AuctionNmsPatch200Response,
   AdvV0AuctionNmsPatchRequest,
   AdvV0AuctionPlacementsPutRequest,
-  AdvV0BidsMinPost200Response,
-  AdvV0BidsMinPostRequest,
-  AdvV0BidsPatch400Response,
-  AdvV0BidsPatchRequest,
-  AdvV0ConfigGet200Response,
   AdvV0RenamePostRequest,
   AdvV1AdvertGet200Response,
   AdvV1AdvertsGet200ResponseInner,
-  AdvV1AutoUpdatenmPostRequest,
   AdvV1BalanceGet200Response,
   AdvV1BudgetDepositPost400Response,
   AdvV1BudgetDepositPostRequest,
@@ -37,18 +29,14 @@ import type {
   AdvV1PaymentsGet200ResponseInner,
   AdvV1PromotionCountGet200Response,
   AdvV1PromotionCountGet401Response,
-  AdvV1SearchSetExcludedPostRequest,
-  AdvV1SearchSetPlusPostRequest,
-  AdvV1StatWordsGet200Response,
   AdvV1StatsPost200ResponseInner,
+  AdvV1StatsPostRequestInner,
   AdvV1SupplierSubjectsGet200ResponseInner,
   AdvV1UpdGet200ResponseInner,
-  AdvV2AutoStatWordsGet200Response,
-  AdvV2FullstatsPost200Response,
-  AdvV2FullstatsPostRequestInner,
   AdvV2SeacatSaveAdPostRequest,
   AdvV2SupplierNmsPost200ResponseInner,
   ApiAdvertV1BidsMinPost200Response,
+  ApiAdvertV1BidsMinPostRequest,
   ApiAdvertV1BidsPatch200Response,
   ApiAdvertV1BidsPatchRequest,
   ApiV1CalendarPromotionsDetailsGet200Response,
@@ -60,15 +48,12 @@ import type {
   ApiV1CalendarPromotionsUploadPost200Response,
   ApiV1CalendarPromotionsUploadPost422Response,
   ApiV1CalendarPromotionsUploadPostRequest,
-  ErrorResponse,
   FullStatsError,
   FullStatsItem,
   GetAdverts,
-  GetAuctionAdverts,
   Model400Response,
   Response400,
   ResponseAdvError1,
-  ResponseInfoAdvertType8,
   ResponseWithReturn,
   StandardizedBatchError,
   V0GetNormQueryBidsRequest,
@@ -77,39 +62,22 @@ import type {
   V0GetNormQueryMinusResponse,
   V0GetNormQueryStatsRequest,
   V0GetNormQueryStatsResponse,
-  V0KeywordsStatisticsResponse,
   V0SetMinusNormQueryRequest,
   V0SetNormQueryBidsRequest,
 } from '../models/index';
 import {
-    AdvV0AuctionBidsPatch200ResponseFromJSON,
-    AdvV0AuctionBidsPatch200ResponseToJSON,
-    AdvV0AuctionBidsPatchRequestFromJSON,
-    AdvV0AuctionBidsPatchRequestToJSON,
     AdvV0AuctionNmsPatch200ResponseFromJSON,
     AdvV0AuctionNmsPatch200ResponseToJSON,
     AdvV0AuctionNmsPatchRequestFromJSON,
     AdvV0AuctionNmsPatchRequestToJSON,
     AdvV0AuctionPlacementsPutRequestFromJSON,
     AdvV0AuctionPlacementsPutRequestToJSON,
-    AdvV0BidsMinPost200ResponseFromJSON,
-    AdvV0BidsMinPost200ResponseToJSON,
-    AdvV0BidsMinPostRequestFromJSON,
-    AdvV0BidsMinPostRequestToJSON,
-    AdvV0BidsPatch400ResponseFromJSON,
-    AdvV0BidsPatch400ResponseToJSON,
-    AdvV0BidsPatchRequestFromJSON,
-    AdvV0BidsPatchRequestToJSON,
-    AdvV0ConfigGet200ResponseFromJSON,
-    AdvV0ConfigGet200ResponseToJSON,
     AdvV0RenamePostRequestFromJSON,
     AdvV0RenamePostRequestToJSON,
     AdvV1AdvertGet200ResponseFromJSON,
     AdvV1AdvertGet200ResponseToJSON,
     AdvV1AdvertsGet200ResponseInnerFromJSON,
     AdvV1AdvertsGet200ResponseInnerToJSON,
-    AdvV1AutoUpdatenmPostRequestFromJSON,
-    AdvV1AutoUpdatenmPostRequestToJSON,
     AdvV1BalanceGet200ResponseFromJSON,
     AdvV1BalanceGet200ResponseToJSON,
     AdvV1BudgetDepositPost400ResponseFromJSON,
@@ -126,30 +94,22 @@ import {
     AdvV1PromotionCountGet200ResponseToJSON,
     AdvV1PromotionCountGet401ResponseFromJSON,
     AdvV1PromotionCountGet401ResponseToJSON,
-    AdvV1SearchSetExcludedPostRequestFromJSON,
-    AdvV1SearchSetExcludedPostRequestToJSON,
-    AdvV1SearchSetPlusPostRequestFromJSON,
-    AdvV1SearchSetPlusPostRequestToJSON,
-    AdvV1StatWordsGet200ResponseFromJSON,
-    AdvV1StatWordsGet200ResponseToJSON,
     AdvV1StatsPost200ResponseInnerFromJSON,
     AdvV1StatsPost200ResponseInnerToJSON,
+    AdvV1StatsPostRequestInnerFromJSON,
+    AdvV1StatsPostRequestInnerToJSON,
     AdvV1SupplierSubjectsGet200ResponseInnerFromJSON,
     AdvV1SupplierSubjectsGet200ResponseInnerToJSON,
     AdvV1UpdGet200ResponseInnerFromJSON,
     AdvV1UpdGet200ResponseInnerToJSON,
-    AdvV2AutoStatWordsGet200ResponseFromJSON,
-    AdvV2AutoStatWordsGet200ResponseToJSON,
-    AdvV2FullstatsPost200ResponseFromJSON,
-    AdvV2FullstatsPost200ResponseToJSON,
-    AdvV2FullstatsPostRequestInnerFromJSON,
-    AdvV2FullstatsPostRequestInnerToJSON,
     AdvV2SeacatSaveAdPostRequestFromJSON,
     AdvV2SeacatSaveAdPostRequestToJSON,
     AdvV2SupplierNmsPost200ResponseInnerFromJSON,
     AdvV2SupplierNmsPost200ResponseInnerToJSON,
     ApiAdvertV1BidsMinPost200ResponseFromJSON,
     ApiAdvertV1BidsMinPost200ResponseToJSON,
+    ApiAdvertV1BidsMinPostRequestFromJSON,
+    ApiAdvertV1BidsMinPostRequestToJSON,
     ApiAdvertV1BidsPatch200ResponseFromJSON,
     ApiAdvertV1BidsPatch200ResponseToJSON,
     ApiAdvertV1BidsPatchRequestFromJSON,
@@ -172,24 +132,18 @@ import {
     ApiV1CalendarPromotionsUploadPost422ResponseToJSON,
     ApiV1CalendarPromotionsUploadPostRequestFromJSON,
     ApiV1CalendarPromotionsUploadPostRequestToJSON,
-    ErrorResponseFromJSON,
-    ErrorResponseToJSON,
     FullStatsErrorFromJSON,
     FullStatsErrorToJSON,
     FullStatsItemFromJSON,
     FullStatsItemToJSON,
     GetAdvertsFromJSON,
     GetAdvertsToJSON,
-    GetAuctionAdvertsFromJSON,
-    GetAuctionAdvertsToJSON,
     Model400ResponseFromJSON,
     Model400ResponseToJSON,
     Response400FromJSON,
     Response400ToJSON,
     ResponseAdvError1FromJSON,
     ResponseAdvError1ToJSON,
-    ResponseInfoAdvertType8FromJSON,
-    ResponseInfoAdvertType8ToJSON,
     ResponseWithReturnFromJSON,
     ResponseWithReturnToJSON,
     StandardizedBatchErrorFromJSON,
@@ -206,23 +160,11 @@ import {
     V0GetNormQueryStatsRequestToJSON,
     V0GetNormQueryStatsResponseFromJSON,
     V0GetNormQueryStatsResponseToJSON,
-    V0KeywordsStatisticsResponseFromJSON,
-    V0KeywordsStatisticsResponseToJSON,
     V0SetMinusNormQueryRequestFromJSON,
     V0SetMinusNormQueryRequestToJSON,
     V0SetNormQueryBidsRequestFromJSON,
     V0SetNormQueryBidsRequestToJSON,
 } from '../models/index';
-
-export interface AdvV0AuctionAdvertsGetRequest {
-    ids?: string;
-    statuses?: AdvV0AuctionAdvertsGetStatusesEnum;
-    paymentType?: AdvV0AuctionAdvertsGetPaymentTypeEnum;
-}
-
-export interface AdvV0AuctionBidsPatchOperationRequest {
-    advV0AuctionBidsPatchRequest: AdvV0AuctionBidsPatchRequest;
-}
 
 export interface AdvV0AuctionNmsPatchOperationRequest {
     advV0AuctionNmsPatchRequest: AdvV0AuctionNmsPatchRequest;
@@ -230,14 +172,6 @@ export interface AdvV0AuctionNmsPatchOperationRequest {
 
 export interface AdvV0AuctionPlacementsPutOperationRequest {
     advV0AuctionPlacementsPutRequest: AdvV0AuctionPlacementsPutRequest;
-}
-
-export interface AdvV0BidsMinPostOperationRequest {
-    advV0BidsMinPostRequest: AdvV0BidsMinPostRequest;
-}
-
-export interface AdvV0BidsPatchOperationRequest {
-    advV0BidsPatchRequest: AdvV0BidsPatchRequest;
 }
 
 export interface AdvV0DeleteGetRequest {
@@ -280,12 +214,6 @@ export interface AdvV0StartGetRequest {
     id: number;
 }
 
-export interface AdvV0StatsKeywordsGetRequest {
-    advertId: number;
-    from: Date;
-    to: Date;
-}
-
 export interface AdvV0StopGetRequest {
     id: number;
 }
@@ -303,20 +231,6 @@ export interface AdvV1AdvertsGetRequest {
     direction?: string;
 }
 
-export interface AdvV1AutoGetnmtoaddGetRequest {
-    id: number;
-}
-
-export interface AdvV1AutoSetExcludedPostRequest {
-    id: number;
-    advV1SearchSetExcludedPostRequest: AdvV1SearchSetExcludedPostRequest;
-}
-
-export interface AdvV1AutoUpdatenmPostOperationRequest {
-    id: number;
-    advV1AutoUpdatenmPostRequest: AdvV1AutoUpdatenmPostRequest;
-}
-
 export interface AdvV1BudgetDepositPostOperationRequest {
     id: number;
     advV1BudgetDepositPostRequest: AdvV1BudgetDepositPostRequest;
@@ -331,35 +245,8 @@ export interface AdvV1PaymentsGetRequest {
     to?: Date;
 }
 
-export interface AdvV1PromotionAdvertsPostRequest {
-    requestBody: Array<number>;
-    status?: AdvV1PromotionAdvertsPostStatusEnum;
-    type?: AdvV1PromotionAdvertsPostTypeEnum;
-    order?: AdvV1PromotionAdvertsPostOrderEnum;
-    direction?: AdvV1PromotionAdvertsPostDirectionEnum;
-}
-
-export interface AdvV1SearchSetExcludedPostOperationRequest {
-    id: number;
-    advV1SearchSetExcludedPostRequest: AdvV1SearchSetExcludedPostRequest;
-}
-
-export interface AdvV1SearchSetPlusGetRequest {
-    id: number;
-    fixed?: boolean;
-}
-
-export interface AdvV1SearchSetPlusPostOperationRequest {
-    id: number;
-    advV1SearchSetPlusPostRequest: AdvV1SearchSetPlusPostRequest;
-}
-
-export interface AdvV1StatWordsGetRequest {
-    id: number;
-}
-
 export interface AdvV1StatsPostRequest {
-    advV2FullstatsPostRequestInner: Array<AdvV2FullstatsPostRequestInner>;
+    advV1StatsPostRequestInner: Array<AdvV1StatsPostRequestInner>;
 }
 
 export interface AdvV1SupplierSubjectsGetRequest {
@@ -369,14 +256,6 @@ export interface AdvV1SupplierSubjectsGetRequest {
 export interface AdvV1UpdGetRequest {
     from: Date;
     to: Date;
-}
-
-export interface AdvV2AutoStatWordsGetRequest {
-    id: number;
-}
-
-export interface AdvV2FullstatsPostRequest {
-    advV2FullstatsPostRequestInner: Array<AdvV2FullstatsPostRequestInner>;
 }
 
 export interface AdvV2SeacatSaveAdPostOperationRequest {
@@ -393,8 +272,8 @@ export interface AdvV3FullstatsGetRequest {
     endDate: Date;
 }
 
-export interface ApiAdvertV1BidsMinPostRequest {
-    advV0BidsMinPostRequest: AdvV0BidsMinPostRequest;
+export interface ApiAdvertV1BidsMinPostOperationRequest {
+    apiAdvertV1BidsMinPostRequest: ApiAdvertV1BidsMinPostRequest;
 }
 
 export interface ApiAdvertV1BidsPatchOperationRequest {
@@ -434,120 +313,6 @@ export interface ApiV1CalendarPromotionsUploadPostOperationRequest {
  * 
  */
 export class DefaultApi extends runtime.BaseAPI {
-
-    /**
-     * Creates request options for advV0AuctionAdvertsGet without sending the request
-     * @deprecated
-     */
-    async advV0AuctionAdvertsGetRequestOpts(requestParameters: AdvV0AuctionAdvertsGetRequest): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        if (requestParameters['ids'] != null) {
-            queryParameters['ids'] = requestParameters['ids'];
-        }
-
-        if (requestParameters['statuses'] != null) {
-            queryParameters['statuses'] = requestParameters['statuses'];
-        }
-
-        if (requestParameters['paymentType'] != null) {
-            queryParameters['payment_type'] = requestParameters['paymentType'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v0/auction/adverts`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Информация о кампаниях с ручной ставкой
-     * @deprecated
-     */
-    async advV0AuctionAdvertsGetRaw(requestParameters: AdvV0AuctionAdvertsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetAuctionAdverts>> {
-        const requestOptions = await this.advV0AuctionAdvertsGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => GetAuctionAdvertsFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Информация о кампаниях с ручной ставкой
-     * @deprecated
-     */
-    async advV0AuctionAdvertsGet(requestParameters: AdvV0AuctionAdvertsGetRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetAuctionAdverts> {
-        const response = await this.advV0AuctionAdvertsGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for advV0AuctionBidsPatch without sending the request
-     * @deprecated
-     */
-    async advV0AuctionBidsPatchRequestOpts(requestParameters: AdvV0AuctionBidsPatchOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advV0AuctionBidsPatchRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV0AuctionBidsPatchRequest',
-                'Required parameter "advV0AuctionBidsPatchRequest" was null or undefined when calling advV0AuctionBidsPatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v0/auction/bids`;
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV0AuctionBidsPatchRequestToJSON(requestParameters['advV0AuctionBidsPatchRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Изменение ставок в кампаниях
-     * @deprecated
-     */
-    async advV0AuctionBidsPatchRaw(requestParameters: AdvV0AuctionBidsPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AdvV0AuctionBidsPatch200Response>> {
-        const requestOptions = await this.advV0AuctionBidsPatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => AdvV0AuctionBidsPatch200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Изменение ставок в кампаниях
-     * @deprecated
-     */
-    async advV0AuctionBidsPatch(requestParameters: AdvV0AuctionBidsPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV0AuctionBidsPatch200Response> {
-        const response = await this.advV0AuctionBidsPatchRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
 
     /**
      * Creates request options for advV0AuctionNmsPatch without sending the request
@@ -652,163 +417,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async advV0AuctionPlacementsPut(requestParameters: AdvV0AuctionPlacementsPutOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.advV0AuctionPlacementsPutRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for advV0BidsMinPost without sending the request
-     * @deprecated
-     */
-    async advV0BidsMinPostRequestOpts(requestParameters: AdvV0BidsMinPostOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advV0BidsMinPostRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV0BidsMinPostRequest',
-                'Required parameter "advV0BidsMinPostRequest" was null or undefined when calling advV0BidsMinPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v0/bids/min`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV0BidsMinPostRequestToJSON(requestParameters['advV0BidsMinPostRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Минимальные ставки для карточек товаров
-     * @deprecated
-     */
-    async advV0BidsMinPostRaw(requestParameters: AdvV0BidsMinPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AdvV0BidsMinPost200Response>> {
-        const requestOptions = await this.advV0BidsMinPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => AdvV0BidsMinPost200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Минимальные ставки для карточек товаров
-     * @deprecated
-     */
-    async advV0BidsMinPost(requestParameters: AdvV0BidsMinPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV0BidsMinPost200Response> {
-        const response = await this.advV0BidsMinPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for advV0BidsPatch without sending the request
-     * @deprecated
-     */
-    async advV0BidsPatchRequestOpts(requestParameters: AdvV0BidsPatchOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advV0BidsPatchRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV0BidsPatchRequest',
-                'Required parameter "advV0BidsPatchRequest" was null or undefined when calling advV0BidsPatch().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v0/bids`;
-
-        return {
-            path: urlPath,
-            method: 'PATCH',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV0BidsPatchRequestToJSON(requestParameters['advV0BidsPatchRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Изменение ставок
-     * @deprecated
-     */
-    async advV0BidsPatchRaw(requestParameters: AdvV0BidsPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.advV0BidsPatchRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Изменение ставок
-     * @deprecated
-     */
-    async advV0BidsPatch(requestParameters: AdvV0BidsPatchOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.advV0BidsPatchRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for advV0ConfigGet without sending the request
-     * @deprecated
-     */
-    async advV0ConfigGetRequestOpts(): Promise<runtime.RequestOpts> {
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v0/config`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Конфигурационные значения Продвижения
-     * @deprecated
-     */
-    async advV0ConfigGetRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AdvV0ConfigGet200Response>> {
-        const requestOptions = await this.advV0ConfigGetRequestOpts();
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => AdvV0ConfigGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Конфигурационные значения Продвижения
-     * @deprecated
-     */
-    async advV0ConfigGet(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV0ConfigGet200Response> {
-        const response = await this.advV0ConfigGetRaw(initOverrides);
-        return await response.value();
     }
 
     /**
@@ -1331,85 +939,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Creates request options for advV0StatsKeywordsGet without sending the request
-     * @deprecated
-     */
-    async advV0StatsKeywordsGetRequestOpts(requestParameters: AdvV0StatsKeywordsGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advertId'] == null) {
-            throw new runtime.RequiredError(
-                'advertId',
-                'Required parameter "advertId" was null or undefined when calling advV0StatsKeywordsGet().'
-            );
-        }
-
-        if (requestParameters['from'] == null) {
-            throw new runtime.RequiredError(
-                'from',
-                'Required parameter "from" was null or undefined when calling advV0StatsKeywordsGet().'
-            );
-        }
-
-        if (requestParameters['to'] == null) {
-            throw new runtime.RequiredError(
-                'to',
-                'Required parameter "to" was null or undefined when calling advV0StatsKeywordsGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['advertId'] != null) {
-            queryParameters['advert_id'] = requestParameters['advertId'];
-        }
-
-        if (requestParameters['from'] != null) {
-            queryParameters['from'] = (requestParameters['from'] as any).toISOString().substring(0,10);
-        }
-
-        if (requestParameters['to'] != null) {
-            queryParameters['to'] = (requestParameters['to'] as any).toISOString().substring(0,10);
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v0/stats/keywords`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Статистика по ключевым фразам
-     * @deprecated
-     */
-    async advV0StatsKeywordsGetRaw(requestParameters: AdvV0StatsKeywordsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<V0KeywordsStatisticsResponse>> {
-        const requestOptions = await this.advV0StatsKeywordsGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => V0KeywordsStatisticsResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Статистика по ключевым фразам
-     * @deprecated
-     */
-    async advV0StatsKeywordsGet(requestParameters: AdvV0StatsKeywordsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<V0KeywordsStatisticsResponse> {
-        const response = await this.advV0StatsKeywordsGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Creates request options for advV0StopGet without sending the request
      */
     async advV0StopGetRequestOpts(requestParameters: AdvV0StopGetRequest): Promise<runtime.RequestOpts> {
@@ -1595,195 +1124,6 @@ export class DefaultApi extends runtime.BaseAPI {
             default:
                 return await response.value();
         }
-    }
-
-    /**
-     * Creates request options for advV1AutoGetnmtoaddGet without sending the request
-     * @deprecated
-     */
-    async advV1AutoGetnmtoaddGetRequestOpts(requestParameters: AdvV1AutoGetnmtoaddGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1AutoGetnmtoaddGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/auto/getnmtoadd`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Список карточек товаров для кампании с единой ставкой
-     * @deprecated
-     */
-    async advV1AutoGetnmtoaddGetRaw(requestParameters: AdvV1AutoGetnmtoaddGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<number>>> {
-        const requestOptions = await this.advV1AutoGetnmtoaddGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse<any>(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Список карточек товаров для кампании с единой ставкой
-     * @deprecated
-     */
-    async advV1AutoGetnmtoaddGet(requestParameters: AdvV1AutoGetnmtoaddGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<number>> {
-        const response = await this.advV1AutoGetnmtoaddGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for advV1AutoSetExcludedPost without sending the request
-     * @deprecated
-     */
-    async advV1AutoSetExcludedPostRequestOpts(requestParameters: AdvV1AutoSetExcludedPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1AutoSetExcludedPost().'
-            );
-        }
-
-        if (requestParameters['advV1SearchSetExcludedPostRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV1SearchSetExcludedPostRequest',
-                'Required parameter "advV1SearchSetExcludedPostRequest" was null or undefined when calling advV1AutoSetExcludedPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/auto/set-excluded`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV1SearchSetExcludedPostRequestToJSON(requestParameters['advV1SearchSetExcludedPostRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Установка/удаление минус-фраз для кампании с единой ставкой
-     * @deprecated
-     */
-    async advV1AutoSetExcludedPostRaw(requestParameters: AdvV1AutoSetExcludedPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.advV1AutoSetExcludedPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Установка/удаление минус-фраз для кампании с единой ставкой
-     * @deprecated
-     */
-    async advV1AutoSetExcludedPost(requestParameters: AdvV1AutoSetExcludedPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.advV1AutoSetExcludedPostRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for advV1AutoUpdatenmPost without sending the request
-     * @deprecated
-     */
-    async advV1AutoUpdatenmPostRequestOpts(requestParameters: AdvV1AutoUpdatenmPostOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1AutoUpdatenmPost().'
-            );
-        }
-
-        if (requestParameters['advV1AutoUpdatenmPostRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV1AutoUpdatenmPostRequest',
-                'Required parameter "advV1AutoUpdatenmPostRequest" was null or undefined when calling advV1AutoUpdatenmPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/auto/updatenm`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV1AutoUpdatenmPostRequestToJSON(requestParameters['advV1AutoUpdatenmPostRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Изменение списка карточек товаров в кампании с единой ставкой
-     * @deprecated
-     */
-    async advV1AutoUpdatenmPostRaw(requestParameters: AdvV1AutoUpdatenmPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.advV1AutoUpdatenmPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Изменение списка карточек товаров в кампании с единой ставкой
-     * @deprecated
-     */
-    async advV1AutoUpdatenmPost(requestParameters: AdvV1AutoUpdatenmPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.advV1AutoUpdatenmPostRaw(requestParameters, initOverrides);
     }
 
     /**
@@ -2049,85 +1389,6 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Creates request options for advV1PromotionAdvertsPost without sending the request
-     * @deprecated
-     */
-    async advV1PromotionAdvertsPostRequestOpts(requestParameters: AdvV1PromotionAdvertsPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['requestBody'] == null) {
-            throw new runtime.RequiredError(
-                'requestBody',
-                'Required parameter "requestBody" was null or undefined when calling advV1PromotionAdvertsPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['status'] != null) {
-            queryParameters['status'] = requestParameters['status'];
-        }
-
-        if (requestParameters['type'] != null) {
-            queryParameters['type'] = requestParameters['type'];
-        }
-
-        if (requestParameters['order'] != null) {
-            queryParameters['order'] = requestParameters['order'];
-        }
-
-        if (requestParameters['direction'] != null) {
-            queryParameters['direction'] = requestParameters['direction'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/promotion/adverts`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: requestParameters['requestBody'],
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Информация о кампаниях
-     * @deprecated
-     */
-    async advV1PromotionAdvertsPostRaw(requestParameters: AdvV1PromotionAdvertsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ResponseInfoAdvertType8>>> {
-        const requestOptions = await this.advV1PromotionAdvertsPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ResponseInfoAdvertType8FromJSON));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Информация о кампаниях
-     * @deprecated
-     */
-    async advV1PromotionAdvertsPost(requestParameters: AdvV1PromotionAdvertsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ResponseInfoAdvertType8> | null | undefined > {
-        const response = await this.advV1PromotionAdvertsPostRaw(requestParameters, initOverrides);
-        switch (response.raw.status) {
-            case 200:
-                return await response.value();
-            case 204:
-                return null;
-            default:
-                return await response.value();
-        }
-    }
-
-    /**
      * Creates request options for advV1PromotionCountGet without sending the request
      */
     async advV1PromotionCountGetRequestOpts(): Promise<runtime.RequestOpts> {
@@ -2171,263 +1432,13 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Creates request options for advV1SearchSetExcludedPost without sending the request
-     * @deprecated
-     */
-    async advV1SearchSetExcludedPostRequestOpts(requestParameters: AdvV1SearchSetExcludedPostOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1SearchSetExcludedPost().'
-            );
-        }
-
-        if (requestParameters['advV1SearchSetExcludedPostRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV1SearchSetExcludedPostRequest',
-                'Required parameter "advV1SearchSetExcludedPostRequest" was null or undefined when calling advV1SearchSetExcludedPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/search/set-excluded`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV1SearchSetExcludedPostRequestToJSON(requestParameters['advV1SearchSetExcludedPostRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Установка/удаление минус-фраз в поиске
-     * @deprecated
-     */
-    async advV1SearchSetExcludedPostRaw(requestParameters: AdvV1SearchSetExcludedPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.advV1SearchSetExcludedPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-     * Установка/удаление минус-фраз в поиске
-     * @deprecated
-     */
-    async advV1SearchSetExcludedPost(requestParameters: AdvV1SearchSetExcludedPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.advV1SearchSetExcludedPostRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for advV1SearchSetPlusGet without sending the request
-     * @deprecated
-     */
-    async advV1SearchSetPlusGetRequestOpts(requestParameters: AdvV1SearchSetPlusGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1SearchSetPlusGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        if (requestParameters['fixed'] != null) {
-            queryParameters['fixed'] = requestParameters['fixed'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/search/set-plus`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Управление активностью фиксированных фраз
-     * @deprecated
-     */
-    async advV1SearchSetPlusGetRaw(requestParameters: AdvV1SearchSetPlusGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        const requestOptions = await this.advV1SearchSetPlusGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.VoidApiResponse(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Управление активностью фиксированных фраз
-     * @deprecated
-     */
-    async advV1SearchSetPlusGet(requestParameters: AdvV1SearchSetPlusGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
-        await this.advV1SearchSetPlusGetRaw(requestParameters, initOverrides);
-    }
-
-    /**
-     * Creates request options for advV1SearchSetPlusPost without sending the request
-     * @deprecated
-     */
-    async advV1SearchSetPlusPostRequestOpts(requestParameters: AdvV1SearchSetPlusPostOperationRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1SearchSetPlusPost().'
-            );
-        }
-
-        if (requestParameters['advV1SearchSetPlusPostRequest'] == null) {
-            throw new runtime.RequiredError(
-                'advV1SearchSetPlusPostRequest',
-                'Required parameter "advV1SearchSetPlusPostRequest" was null or undefined when calling advV1SearchSetPlusPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/search/set-plus`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: AdvV1SearchSetPlusPostRequestToJSON(requestParameters['advV1SearchSetPlusPostRequest']),
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Установка/удаление фиксированных фраз
-     * @deprecated
-     */
-    async advV1SearchSetPlusPostRaw(requestParameters: AdvV1SearchSetPlusPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<string>>> {
-        const requestOptions = await this.advV1SearchSetPlusPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse<any>(response);
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Установка/удаление фиксированных фраз
-     * @deprecated
-     */
-    async advV1SearchSetPlusPost(requestParameters: AdvV1SearchSetPlusPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<string>> {
-        const response = await this.advV1SearchSetPlusPostRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for advV1StatWordsGet without sending the request
-     * @deprecated
-     */
-    async advV1StatWordsGetRequestOpts(requestParameters: AdvV1StatWordsGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV1StatWordsGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v1/stat/words`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Статистика кампании c ручной ставкой по ключевым фразам
-     * @deprecated
-     */
-    async advV1StatWordsGetRaw(requestParameters: AdvV1StatWordsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AdvV1StatWordsGet200Response>> {
-        const requestOptions = await this.advV1StatWordsGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => AdvV1StatWordsGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-     * Статистика кампании c ручной ставкой по ключевым фразам
-     * @deprecated
-     */
-    async advV1StatWordsGet(requestParameters: AdvV1StatWordsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV1StatWordsGet200Response> {
-        const response = await this.advV1StatWordsGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
      * Creates request options for advV1StatsPost without sending the request
      */
     async advV1StatsPostRequestOpts(requestParameters: AdvV1StatsPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advV2FullstatsPostRequestInner'] == null) {
+        if (requestParameters['advV1StatsPostRequestInner'] == null) {
             throw new runtime.RequiredError(
-                'advV2FullstatsPostRequestInner',
-                'Required parameter "advV2FullstatsPostRequestInner" was null or undefined when calling advV1StatsPost().'
+                'advV1StatsPostRequestInner',
+                'Required parameter "advV1StatsPostRequestInner" was null or undefined when calling advV1StatsPost().'
             );
         }
 
@@ -2449,7 +1460,7 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters['advV2FullstatsPostRequestInner']!.map(AdvV2FullstatsPostRequestInnerToJSON),
+            body: requestParameters['advV1StatsPostRequestInner']!.map(AdvV1StatsPostRequestInnerToJSON),
         };
     }
 
@@ -2582,126 +1593,6 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async advV1UpdGet(requestParameters: AdvV1UpdGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<AdvV1UpdGet200ResponseInner>> {
         const response = await this.advV1UpdGetRaw(requestParameters, initOverrides);
-        return await response.value();
-    }
-
-    /**
-     * Creates request options for advV2AutoStatWordsGet without sending the request
-     * @deprecated
-     */
-    async advV2AutoStatWordsGetRequestOpts(requestParameters: AdvV2AutoStatWordsGetRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['id'] == null) {
-            throw new runtime.RequiredError(
-                'id',
-                'Required parameter "id" was null or undefined when calling advV2AutoStatWordsGet().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        if (requestParameters['id'] != null) {
-            queryParameters['id'] = requestParameters['id'];
-        }
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v2/auto/stat-words`;
-
-        return {
-            path: urlPath,
-            method: 'GET',
-            headers: headerParameters,
-            query: queryParameters,
-        };
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Статистика кампании с единой ставкой по кластерам фраз
-     * @deprecated
-     */
-    async advV2AutoStatWordsGetRaw(requestParameters: AdvV2AutoStatWordsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AdvV2AutoStatWordsGet200Response>> {
-        const requestOptions = await this.advV2AutoStatWordsGetRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => AdvV2AutoStatWordsGet200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-     * Статистика кампании с единой ставкой по кластерам фраз
-     * @deprecated
-     */
-    async advV2AutoStatWordsGet(requestParameters: AdvV2AutoStatWordsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV2AutoStatWordsGet200Response | null | undefined > {
-        const response = await this.advV2AutoStatWordsGetRaw(requestParameters, initOverrides);
-        switch (response.raw.status) {
-            case 200:
-                return await response.value();
-            case 204:
-                return null;
-            default:
-                return await response.value();
-        }
-    }
-
-    /**
-     * Creates request options for advV2FullstatsPost without sending the request
-     * @deprecated
-     */
-    async advV2FullstatsPostRequestOpts(requestParameters: AdvV2FullstatsPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advV2FullstatsPostRequestInner'] == null) {
-            throw new runtime.RequiredError(
-                'advV2FullstatsPostRequestInner',
-                'Required parameter "advV2FullstatsPostRequestInner" was null or undefined when calling advV2FullstatsPost().'
-            );
-        }
-
-        const queryParameters: any = {};
-
-        const headerParameters: runtime.HTTPHeaders = {};
-
-        headerParameters['Content-Type'] = 'application/json';
-
-        if (this.configuration && this.configuration.apiKey) {
-            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
-        }
-
-
-        let urlPath = `/adv/v2/fullstats`;
-
-        return {
-            path: urlPath,
-            method: 'POST',
-            headers: headerParameters,
-            query: queryParameters,
-            body: requestParameters['advV2FullstatsPostRequestInner']!.map(AdvV2FullstatsPostRequestInnerToJSON),
-        };
-    }
-
-    /**
-     * Метод будет отключён 30 сентября. Используйте [актуальный метод](/openapi/promotion#tag/Statistika/paths/~1adv~1v3~1fullstats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
-     * Статистика кампаний
-     * @deprecated
-     */
-    async advV2FullstatsPostRaw(requestParameters: AdvV2FullstatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AdvV2FullstatsPost200Response>> {
-        const requestOptions = await this.advV2FullstatsPostRequestOpts(requestParameters);
-        const response = await this.request(requestOptions, initOverrides);
-
-        return new runtime.JSONApiResponse(response, (jsonValue) => AdvV2FullstatsPost200ResponseFromJSON(jsonValue));
-    }
-
-    /**
-     * Метод будет отключён 30 сентября. Используйте [актуальный метод](/openapi/promotion#tag/Statistika/paths/~1adv~1v3~1fullstats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
-     * Статистика кампаний
-     * @deprecated
-     */
-    async advV2FullstatsPost(requestParameters: AdvV2FullstatsPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AdvV2FullstatsPost200Response> {
-        const response = await this.advV2FullstatsPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
 
@@ -2880,11 +1771,11 @@ export class DefaultApi extends runtime.BaseAPI {
     /**
      * Creates request options for apiAdvertV1BidsMinPost without sending the request
      */
-    async apiAdvertV1BidsMinPostRequestOpts(requestParameters: ApiAdvertV1BidsMinPostRequest): Promise<runtime.RequestOpts> {
-        if (requestParameters['advV0BidsMinPostRequest'] == null) {
+    async apiAdvertV1BidsMinPostRequestOpts(requestParameters: ApiAdvertV1BidsMinPostOperationRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['apiAdvertV1BidsMinPostRequest'] == null) {
             throw new runtime.RequiredError(
-                'advV0BidsMinPostRequest',
-                'Required parameter "advV0BidsMinPostRequest" was null or undefined when calling apiAdvertV1BidsMinPost().'
+                'apiAdvertV1BidsMinPostRequest',
+                'Required parameter "apiAdvertV1BidsMinPostRequest" was null or undefined when calling apiAdvertV1BidsMinPost().'
             );
         }
 
@@ -2906,7 +1797,7 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AdvV0BidsMinPostRequestToJSON(requestParameters['advV0BidsMinPostRequest']),
+            body: ApiAdvertV1BidsMinPostRequestToJSON(requestParameters['apiAdvertV1BidsMinPostRequest']),
         };
     }
 
@@ -2914,7 +1805,7 @@ export class DefaultApi extends runtime.BaseAPI {
      * Метод возвращает минимальные ставки для карточек товаров в копейках по типу оплаты и местам размещения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 5 запросов | </div> 
      * Минимальные ставки для карточек товаров
      */
-    async apiAdvertV1BidsMinPostRaw(requestParameters: ApiAdvertV1BidsMinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiAdvertV1BidsMinPost200Response>> {
+    async apiAdvertV1BidsMinPostRaw(requestParameters: ApiAdvertV1BidsMinPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiAdvertV1BidsMinPost200Response>> {
         const requestOptions = await this.apiAdvertV1BidsMinPostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
@@ -2925,7 +1816,7 @@ export class DefaultApi extends runtime.BaseAPI {
      * Метод возвращает минимальные ставки для карточек товаров в копейках по типу оплаты и местам размещения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 5 запросов | </div> 
      * Минимальные ставки для карточек товаров
      */
-    async apiAdvertV1BidsMinPost(requestParameters: ApiAdvertV1BidsMinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiAdvertV1BidsMinPost200Response> {
+    async apiAdvertV1BidsMinPost(requestParameters: ApiAdvertV1BidsMinPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiAdvertV1BidsMinPost200Response> {
         const response = await this.apiAdvertV1BidsMinPostRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -3304,62 +2195,6 @@ export class DefaultApi extends runtime.BaseAPI {
 
 }
 
-/**
- * @export
- */
-export const AdvV0AuctionAdvertsGetStatusesEnum = {
-    _1: '-1',
-    _4: '4',
-    _7: '7',
-    _8: '8',
-    _9: '9',
-    _11: '11'
-} as const;
-export type AdvV0AuctionAdvertsGetStatusesEnum = typeof AdvV0AuctionAdvertsGetStatusesEnum[keyof typeof AdvV0AuctionAdvertsGetStatusesEnum];
-/**
- * @export
- */
-export const AdvV0AuctionAdvertsGetPaymentTypeEnum = {
-    Cpm: 'cpm',
-    Cpc: 'cpc'
-} as const;
-export type AdvV0AuctionAdvertsGetPaymentTypeEnum = typeof AdvV0AuctionAdvertsGetPaymentTypeEnum[keyof typeof AdvV0AuctionAdvertsGetPaymentTypeEnum];
-/**
- * @export
- */
-export const AdvV1PromotionAdvertsPostStatusEnum = {
-    NUMBER_MINUS_1: -1,
-    NUMBER_4: 4,
-    NUMBER_7: 7,
-    NUMBER_8: 8,
-    NUMBER_9: 9,
-    NUMBER_11: 11
-} as const;
-export type AdvV1PromotionAdvertsPostStatusEnum = typeof AdvV1PromotionAdvertsPostStatusEnum[keyof typeof AdvV1PromotionAdvertsPostStatusEnum];
-/**
- * @export
- */
-export const AdvV1PromotionAdvertsPostTypeEnum = {
-    NUMBER_8: 8
-} as const;
-export type AdvV1PromotionAdvertsPostTypeEnum = typeof AdvV1PromotionAdvertsPostTypeEnum[keyof typeof AdvV1PromotionAdvertsPostTypeEnum];
-/**
- * @export
- */
-export const AdvV1PromotionAdvertsPostOrderEnum = {
-    Create: 'create',
-    Change: 'change',
-    Id: 'id'
-} as const;
-export type AdvV1PromotionAdvertsPostOrderEnum = typeof AdvV1PromotionAdvertsPostOrderEnum[keyof typeof AdvV1PromotionAdvertsPostOrderEnum];
-/**
- * @export
- */
-export const AdvV1PromotionAdvertsPostDirectionEnum = {
-    Desc: 'desc',
-    Asc: 'asc'
-} as const;
-export type AdvV1PromotionAdvertsPostDirectionEnum = typeof AdvV1PromotionAdvertsPostDirectionEnum[keyof typeof AdvV1PromotionAdvertsPostDirectionEnum];
 /**
  * @export
  */

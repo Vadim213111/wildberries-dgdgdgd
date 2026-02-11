@@ -1,7 +1,7 @@
 /*
  * Маркетинг и продвижение
  *
- * <div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Настраивать [параметры](/openapi/promotion#tag/Parametry-kampanij) кампаний — кластеры фраз, продвигаемые товары и так далее.   4. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   5. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   6. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. 
+ * <div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   4. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   5. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. 
  *
  * The version of the OpenAPI document: promotion
  * 
@@ -14,26 +14,6 @@ use serde::{Deserialize, Serialize, de::Error as _};
 use crate::{apis::ResponseContent, models};
 use super::{Error, configuration, ContentType};
 
-
-/// struct for typed errors of method [`adv_v0_auction_adverts_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV0AuctionAdvertsGetError {
-    Status400(models::Response400),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v0_auction_bids_patch`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV0AuctionBidsPatchError {
-    Status400(models::Response400),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
 
 /// struct for typed errors of method [`adv_v0_auction_nms_patch`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -50,35 +30,6 @@ pub enum AdvV0AuctionNmsPatchError {
 #[serde(untagged)]
 pub enum AdvV0AuctionPlacementsPutError {
     Status400(models::Response400),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v0_bids_min_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV0BidsMinPostError {
-    Status400(models::StandardizedBatchError),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v0_bids_patch`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV0BidsPatchError {
-    Status400(models::AdvV0BidsPatch400Response),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v0_config_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV0ConfigGetError {
     Status401(models::AdvV1PromotionCountGet401Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
@@ -193,17 +144,6 @@ pub enum AdvV0StartGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`adv_v0_stats_keywords_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV0StatsKeywordsGetError {
-    Status400(models::ErrorResponse),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status404(models::ErrorResponse),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`adv_v0_stop_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
@@ -228,36 +168,6 @@ pub enum AdvV1AdvertGetError {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum AdvV1AdvertsGetError {
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_auto_getnmtoadd_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1AutoGetnmtoaddGetError {
-    Status400(models::ResponseAdvError1),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_auto_set_excluded_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1AutoSetExcludedPostError {
-    Status400(models::Model400Response),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_auto_updatenm_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1AutoUpdatenmPostError {
-    Status400(models::ResponseAdvError1),
     Status401(models::AdvV1PromotionCountGet401Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
@@ -312,61 +222,10 @@ pub enum AdvV1PaymentsGetError {
     UnknownValue(serde_json::Value),
 }
 
-/// struct for typed errors of method [`adv_v1_promotion_adverts_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1PromotionAdvertsPostError {
-    Status400(String),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status422(String),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
 /// struct for typed errors of method [`adv_v1_promotion_count_get`]
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(untagged)]
 pub enum AdvV1PromotionCountGetError {
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_search_set_excluded_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1SearchSetExcludedPostError {
-    Status400(String),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_search_set_plus_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1SearchSetPlusGetError {
-    Status400(String),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_search_set_plus_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1SearchSetPlusPostError {
-    Status400(models::AdvV1BudgetDepositPost400Response),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v1_stat_words_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV1StatWordsGetError {
-    Status400(),
     Status401(models::AdvV1PromotionCountGet401Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
@@ -397,26 +256,6 @@ pub enum AdvV1SupplierSubjectsGetError {
 #[serde(untagged)]
 pub enum AdvV1UpdGetError {
     Status400(String),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v2_auto_stat_words_get`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV2AutoStatWordsGetError {
-    Status400(models::ResponseAdvError1),
-    Status401(models::AdvV1PromotionCountGet401Response),
-    Status429(models::AdvV1PromotionCountGet401Response),
-    UnknownValue(serde_json::Value),
-}
-
-/// struct for typed errors of method [`adv_v2_fullstats_post`]
-#[derive(Debug, Clone, Serialize, Deserialize)]
-#[serde(untagged)]
-pub enum AdvV2FullstatsPostError {
-    Status400(models::ResponseAdvError1),
     Status401(models::AdvV1PromotionCountGet401Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
@@ -525,110 +364,6 @@ pub enum ApiV1CalendarPromotionsUploadPostError {
 }
 
 
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v0_auction_adverts_get(configuration: &configuration::Configuration, ids: Option<&str>, statuses: Option<&str>, payment_type: Option<&str>) -> Result<models::GetAuctionAdverts, Error<AdvV0AuctionAdvertsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_ids = ids;
-    let p_query_statuses = statuses;
-    let p_query_payment_type = payment_type;
-
-    let uri_str = format!("{}/adv/v0/auction/adverts", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref param_value) = p_query_ids {
-        req_builder = req_builder.query(&[("ids", &param_value.to_string())]);
-    }
-    if let Some(ref param_value) = p_query_statuses {
-        req_builder = req_builder.query(&[("statuses", &param_value.to_string())]);
-    }
-    if let Some(ref param_value) = p_query_payment_type {
-        req_builder = req_builder.query(&[("payment_type", &param_value.to_string())]);
-    }
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::GetAuctionAdverts`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::GetAuctionAdverts`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV0AuctionAdvertsGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v0_auction_bids_patch(configuration: &configuration::Configuration, adv_v0_auction_bids_patch_request: models::AdvV0AuctionBidsPatchRequest) -> Result<models::AdvV0AuctionBidsPatch200Response, Error<AdvV0AuctionBidsPatchError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_adv_v0_auction_bids_patch_request = adv_v0_auction_bids_patch_request;
-
-    let uri_str = format!("{}/adv/v0/auction/bids", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v0_auction_bids_patch_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AdvV0AuctionBidsPatch200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AdvV0AuctionBidsPatch200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV0AuctionBidsPatchError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
 /// Метод добавляет и удаляет карточки товаров в кампаниях. <br><br> Для кампаний в статусах `4`, `9` и `11`. <br><br> Для добавляемых товаров устанавливается текущая минимальная ставка.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 1 запрос | </div> 
 pub async fn adv_v0_auction_nms_patch(configuration: &configuration::Configuration, adv_v0_auction_nms_patch_request: models::AdvV0AuctionNmsPatchRequest) -> Result<models::AdvV0AuctionNmsPatch200Response, Error<AdvV0AuctionNmsPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -706,133 +441,6 @@ pub async fn adv_v0_auction_placements_put(configuration: &configuration::Config
     } else {
         let content = resp.text().await?;
         let entity: Option<AdvV0AuctionPlacementsPutError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v0_bids_min_post(configuration: &configuration::Configuration, adv_v0_bids_min_post_request: models::AdvV0BidsMinPostRequest) -> Result<models::AdvV0BidsMinPost200Response, Error<AdvV0BidsMinPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_adv_v0_bids_min_post_request = adv_v0_bids_min_post_request;
-
-    let uri_str = format!("{}/adv/v0/bids/min", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v0_bids_min_post_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AdvV0BidsMinPost200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AdvV0BidsMinPost200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV0BidsMinPostError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v0_bids_patch(configuration: &configuration::Configuration, adv_v0_bids_patch_request: models::AdvV0BidsPatchRequest) -> Result<(), Error<AdvV0BidsPatchError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_adv_v0_bids_patch_request = adv_v0_bids_patch_request;
-
-    let uri_str = format!("{}/adv/v0/bids", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::PATCH, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v0_bids_patch_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV0BidsPatchError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v0_config_get(configuration: &configuration::Configuration, ) -> Result<models::AdvV0ConfigGet200Response, Error<AdvV0ConfigGetError>> {
-
-    let uri_str = format!("{}/adv/v0/config", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AdvV0ConfigGet200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AdvV0ConfigGet200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV0ConfigGetError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
@@ -1220,57 +828,6 @@ pub async fn adv_v0_start_get(configuration: &configuration::Configuration, id: 
     }
 }
 
-/// Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-#[deprecated]
-pub async fn adv_v0_stats_keywords_get(configuration: &configuration::Configuration, advert_id: i32, from: String, to: String) -> Result<models::V0KeywordsStatisticsResponse, Error<AdvV0StatsKeywordsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_advert_id = advert_id;
-    let p_query_from = from;
-    let p_query_to = to;
-
-    let uri_str = format!("{}/adv/v0/stats/keywords", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("advert_id", &p_query_advert_id.to_string())]);
-    req_builder = req_builder.query(&[("from", &p_query_from.to_string())]);
-    req_builder = req_builder.query(&[("to", &p_query_to.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::V0KeywordsStatisticsResponse`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::V0KeywordsStatisticsResponse`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV0StatsKeywordsGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
 /// Метод завершает [кампании](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) в статусах:   - `4` — готово к запуску   - `9` — активна   - `11` — пауза  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v0_stop_get(configuration: &configuration::Configuration, id: i32) -> Result<(), Error<AdvV0StopGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
@@ -1416,129 +973,6 @@ pub async fn adv_v1_adverts_get(configuration: &configuration::Configuration, st
     } else {
         let content = resp.text().await?;
         let entity: Option<AdvV1AdvertsGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-#[deprecated]
-pub async fn adv_v1_auto_getnmtoadd_get(configuration: &configuration::Configuration, id: i32) -> Result<Vec<i32>, Error<AdvV1AutoGetnmtoaddGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-
-    let uri_str = format!("{}/adv/v1/auto/getnmtoadd", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;i32&gt;`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;i32&gt;`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1AutoGetnmtoaddGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-#[deprecated]
-pub async fn adv_v1_auto_set_excluded_post(configuration: &configuration::Configuration, id: i32, adv_v1_search_set_excluded_post_request: models::AdvV1SearchSetExcludedPostRequest) -> Result<(), Error<AdvV1AutoSetExcludedPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-    let p_body_adv_v1_search_set_excluded_post_request = adv_v1_search_set_excluded_post_request;
-
-    let uri_str = format!("{}/adv/v1/auto/set-excluded", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v1_search_set_excluded_post_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1AutoSetExcludedPostError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-#[deprecated]
-pub async fn adv_v1_auto_updatenm_post(configuration: &configuration::Configuration, id: i32, adv_v1_auto_updatenm_post_request: models::AdvV1AutoUpdatenmPostRequest) -> Result<(), Error<AdvV1AutoUpdatenmPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-    let p_body_adv_v1_auto_updatenm_post_request = adv_v1_auto_updatenm_post_request;
-
-    let uri_str = format!("{}/adv/v1/auto/updatenm", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v1_auto_updatenm_post_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1AutoUpdatenmPostError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
@@ -1775,69 +1209,6 @@ pub async fn adv_v1_payments_get(configuration: &configuration::Configuration, f
     }
 }
 
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v1_promotion_adverts_post(configuration: &configuration::Configuration, request_body: Vec<i32>, status: Option<i32>, r#type: Option<i32>, order: Option<&str>, direction: Option<&str>) -> Result<Vec<models::ResponseInfoAdvertType8>, Error<AdvV1PromotionAdvertsPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_request_body = request_body;
-    let p_query_status = status;
-    let p_query_type = r#type;
-    let p_query_order = order;
-    let p_query_direction = direction;
-
-    let uri_str = format!("{}/adv/v1/promotion/adverts", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref param_value) = p_query_status {
-        req_builder = req_builder.query(&[("status", &param_value.to_string())]);
-    }
-    if let Some(ref param_value) = p_query_type {
-        req_builder = req_builder.query(&[("type", &param_value.to_string())]);
-    }
-    if let Some(ref param_value) = p_query_order {
-        req_builder = req_builder.query(&[("order", &param_value.to_string())]);
-    }
-    if let Some(ref param_value) = p_query_direction {
-        req_builder = req_builder.query(&[("direction", &param_value.to_string())]);
-    }
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_request_body);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;models::ResponseInfoAdvertType8&gt;`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;models::ResponseInfoAdvertType8&gt;`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1PromotionAdvertsPostError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
 /// Метод возвращает списки всех [рекламных кампаний](/openapi/promotion#tag/Kampanii/paths/~1api~1advert~1v2~1adverts/get) продавца с их ID. Кампании сгруппированы по типу и статусу, у каждой указана дата последнего изменения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 5 запросов | 200 мс | 5 запросов | </div> 
 pub async fn adv_v1_promotion_count_get(configuration: &configuration::Configuration, ) -> Result<models::AdvV1PromotionCountGet200Response, Error<AdvV1PromotionCountGetError>> {
 
@@ -1881,184 +1252,10 @@ pub async fn adv_v1_promotion_count_get(configuration: &configuration::Configura
     }
 }
 
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=388) 
-#[deprecated]
-pub async fn adv_v1_search_set_excluded_post(configuration: &configuration::Configuration, id: i32, adv_v1_search_set_excluded_post_request: models::AdvV1SearchSetExcludedPostRequest) -> Result<(), Error<AdvV1SearchSetExcludedPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-    let p_body_adv_v1_search_set_excluded_post_request = adv_v1_search_set_excluded_post_request;
-
-    let uri_str = format!("{}/adv/v1/search/set-excluded", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v1_search_set_excluded_post_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1SearchSetExcludedPostError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-#[deprecated]
-pub async fn adv_v1_search_set_plus_get(configuration: &configuration::Configuration, id: i32, fixed: Option<bool>) -> Result<(), Error<AdvV1SearchSetPlusGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-    let p_query_fixed = fixed;
-
-    let uri_str = format!("{}/adv/v1/search/set-plus", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref param_value) = p_query_fixed {
-        req_builder = req_builder.query(&[("fixed", &param_value.to_string())]);
-    }
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-
-    if !status.is_client_error() && !status.is_server_error() {
-        Ok(())
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1SearchSetPlusGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-#[deprecated]
-pub async fn adv_v1_search_set_plus_post(configuration: &configuration::Configuration, id: i32, adv_v1_search_set_plus_post_request: models::AdvV1SearchSetPlusPostRequest) -> Result<Vec<String>, Error<AdvV1SearchSetPlusPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-    let p_body_adv_v1_search_set_plus_post_request = adv_v1_search_set_plus_post_request;
-
-    let uri_str = format!("{}/adv/v1/search/set-plus", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body_adv_v1_search_set_plus_post_request);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `Vec&lt;String&gt;`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `Vec&lt;String&gt;`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1SearchSetPlusPostError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [15 января](https://dev.wildberries.ru/release-notes?id=385) 
-#[deprecated]
-pub async fn adv_v1_stat_words_get(configuration: &configuration::Configuration, id: i32) -> Result<models::AdvV1StatWordsGet200Response, Error<AdvV1StatWordsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-
-    let uri_str = format!("{}/adv/v1/stat/words", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AdvV1StatWordsGet200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AdvV1StatWordsGet200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV1StatWordsGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
 /// Метод формирует статистику кампаний сервиса [WB Медиа](https://cmp.wildberries.ru/cmpf/statistics). Статистику можно группировать по датам и/или интервалам.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 10 запросов | 100 мс | 10 запросов | </div> 
-pub async fn adv_v1_stats_post(configuration: &configuration::Configuration, _adv_v2_fullstats_post_request_inner: Vec<models::AdvV2FullstatsPostRequestInner>) -> Result<Vec<models::AdvV1StatsPost200ResponseInner>, Error<AdvV1StatsPostError>> {
+pub async fn adv_v1_stats_post(configuration: &configuration::Configuration, _adv_v1_stats_post_request_inner: Vec<models::AdvV1StatsPostRequestInner>) -> Result<Vec<models::AdvV1StatsPost200ResponseInner>, Error<AdvV1StatsPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body__adv_v2_fullstats_post_request_inner = _adv_v2_fullstats_post_request_inner;
+    let p_body__adv_v1_stats_post_request_inner = _adv_v1_stats_post_request_inner;
 
     let uri_str = format!("{}/adv/v1/stats", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -2074,7 +1271,7 @@ pub async fn adv_v1_stats_post(configuration: &configuration::Configuration, _ad
         };
         req_builder = req_builder.header("Authorization", value);
     };
-    req_builder = req_builder.json(&p_body__adv_v2_fullstats_post_request_inner);
+    req_builder = req_builder.json(&p_body__adv_v1_stats_post_request_inner);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;
@@ -2193,100 +1390,6 @@ pub async fn adv_v1_upd_get(configuration: &configuration::Configuration, from: 
     } else {
         let content = resp.text().await?;
         let entity: Option<AdvV1UpdGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Данный метод устарел. Он будет удалён [2 февраля](https://dev.wildberries.ru/release-notes?id=429) 
-#[deprecated]
-pub async fn adv_v2_auto_stat_words_get(configuration: &configuration::Configuration, id: i32) -> Result<models::AdvV2AutoStatWordsGet200Response, Error<AdvV2AutoStatWordsGetError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_query_id = id;
-
-    let uri_str = format!("{}/adv/v2/auto/stat-words", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::GET, &uri_str);
-
-    req_builder = req_builder.query(&[("id", &p_query_id.to_string())]);
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AdvV2AutoStatWordsGet200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AdvV2AutoStatWordsGet200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV2AutoStatWordsGetError> = serde_json::from_str(&content).ok();
-        Err(Error::ResponseError(ResponseContent { status, content, entity }))
-    }
-}
-
-/// Метод будет отключён 30 сентября. Используйте [актуальный метод](/openapi/promotion#tag/Statistika/paths/~1adv~1v3~1fullstats/get).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 5 запросов | </div> 
-#[deprecated]
-pub async fn adv_v2_fullstats_post(configuration: &configuration::Configuration, _adv_v2_fullstats_post_request_inner: Vec<models::AdvV2FullstatsPostRequestInner>) -> Result<models::AdvV2FullstatsPost200Response, Error<AdvV2FullstatsPostError>> {
-    // add a prefix to parameters to efficiently prevent name collisions
-    let p_body__adv_v2_fullstats_post_request_inner = _adv_v2_fullstats_post_request_inner;
-
-    let uri_str = format!("{}/adv/v2/fullstats", configuration.base_path);
-    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
-
-    if let Some(ref user_agent) = configuration.user_agent {
-        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
-    }
-    if let Some(ref apikey) = configuration.api_key {
-        let key = apikey.key.clone();
-        let value = match apikey.prefix {
-            Some(ref prefix) => format!("{} {}", prefix, key),
-            None => key,
-        };
-        req_builder = req_builder.header("Authorization", value);
-    };
-    req_builder = req_builder.json(&p_body__adv_v2_fullstats_post_request_inner);
-
-    let req = req_builder.build()?;
-    let resp = configuration.client.execute(req).await?;
-
-    let status = resp.status();
-    let content_type = resp
-        .headers()
-        .get("content-type")
-        .and_then(|v| v.to_str().ok())
-        .unwrap_or("application/octet-stream");
-    let content_type = super::ContentType::from(content_type);
-
-    if !status.is_client_error() && !status.is_server_error() {
-        let content = resp.text().await?;
-        match content_type {
-            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::AdvV2FullstatsPost200Response`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::AdvV2FullstatsPost200Response`")))),
-        }
-    } else {
-        let content = resp.text().await?;
-        let entity: Option<AdvV2FullstatsPostError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }
@@ -2434,9 +1537,9 @@ pub async fn adv_v3_fullstats_get(configuration: &configuration::Configuration, 
 }
 
 /// Метод возвращает минимальные ставки для карточек товаров в копейках по типу оплаты и местам размещения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 5 запросов | </div> 
-pub async fn api_advert_v1_bids_min_post(configuration: &configuration::Configuration, adv_v0_bids_min_post_request: models::AdvV0BidsMinPostRequest) -> Result<models::ApiAdvertV1BidsMinPost200Response, Error<ApiAdvertV1BidsMinPostError>> {
+pub async fn api_advert_v1_bids_min_post(configuration: &configuration::Configuration, api_advert_v1_bids_min_post_request: models::ApiAdvertV1BidsMinPostRequest) -> Result<models::ApiAdvertV1BidsMinPost200Response, Error<ApiAdvertV1BidsMinPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
-    let p_body_adv_v0_bids_min_post_request = adv_v0_bids_min_post_request;
+    let p_body_api_advert_v1_bids_min_post_request = api_advert_v1_bids_min_post_request;
 
     let uri_str = format!("{}/api/advert/v1/bids/min", configuration.base_path);
     let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
@@ -2452,7 +1555,7 @@ pub async fn api_advert_v1_bids_min_post(configuration: &configuration::Configur
         };
         req_builder = req_builder.header("Authorization", value);
     };
-    req_builder = req_builder.json(&p_body_adv_v0_bids_min_post_request);
+    req_builder = req_builder.json(&p_body_api_advert_v1_bids_min_post_request);
 
     let req = req_builder.build()?;
     let resp = configuration.client.execute(req).await?;

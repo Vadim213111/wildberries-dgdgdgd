@@ -77,7 +77,7 @@ export interface ProductSearchTextsRequest {
      *   - `orders` — заказали товаров
      *   - `cartToOrder` — конверсия в заказ
      * 
-     * @type {string}
+     * @type {ProductSearchTextsRequestTopOrderByEnum}
      * @memberof ProductSearchTextsRequest
      */
     topOrderBy: ProductSearchTextsRequestTopOrderByEnum;

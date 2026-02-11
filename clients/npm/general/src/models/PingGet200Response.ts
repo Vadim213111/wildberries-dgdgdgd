@@ -27,7 +27,7 @@ export interface PingGet200Response {
     tS?: string;
     /**
      * Статус
-     * @type {string}
+     * @type {PingGet200ResponseStatusEnum}
      * @memberof PingGet200Response
      */
     status?: PingGet200ResponseStatusEnum;

@@ -52,7 +52,7 @@ export interface UploadInitRequest {
      * - `2` — Аудиоконтент
      * - `4` — Документ
      * 
-     * @type {number}
+     * @type {UploadInitRequestCatalogIdEnum}
      * @memberof UploadInitRequest
      */
     catalogId: UploadInitRequestCatalogIdEnum;
@@ -67,7 +67,7 @@ export interface UploadInitRequest {
      *     - `application/epub+zip`
      *     - `text/plain`
      * 
-     * @type {string}
+     * @type {UploadInitRequestContentTypeEnum}
      * @memberof UploadInitRequest
      */
     contentType: UploadInitRequestContentTypeEnum;

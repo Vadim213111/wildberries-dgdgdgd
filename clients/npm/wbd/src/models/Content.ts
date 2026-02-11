@@ -62,7 +62,7 @@ export interface Content {
      *     - `application/epub+zip`
      *     - `text/plain`
      * 
-     * @type {string}
+     * @type {ContentContentTypeEnum}
      * @memberof Content
      */
     contentType: ContentContentTypeEnum;
@@ -114,7 +114,7 @@ export interface Content {
      * - `2` — Аудиоконтент
      * - `4` — Документ
      * 
-     * @type {number}
+     * @type {ContentCategoryIdEnum}
      * @memberof Content
      */
     categoryId: ContentCategoryIdEnum;

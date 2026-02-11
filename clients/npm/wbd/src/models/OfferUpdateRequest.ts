@@ -62,7 +62,7 @@ export interface OfferUpdateRequest {
     gallery?: Array<string> | null;
     /**
      * Возрастное ограничение. Это система, которая используется для определения, подходит ли ваше предложение для определенной возрастной группы.
-     * @type {string}
+     * @type {OfferUpdateRequestAgeRatingEnum}
      * @memberof OfferUpdateRequest
      */
     ageRating?: OfferUpdateRequestAgeRatingEnum;
@@ -84,7 +84,7 @@ export interface OfferUpdateRequest {
      * - `2` — Приостановить продажу
      * - `3` — Удалить
      * 
-     * @type {number}
+     * @type {OfferUpdateRequestStatusEnum}
      * @memberof OfferUpdateRequest
      */
     status?: OfferUpdateRequestStatusEnum | null;

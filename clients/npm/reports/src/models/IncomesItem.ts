@@ -93,7 +93,7 @@ export interface IncomesItem {
     nmId?: number;
     /**
      * Текущий статус поставки
-     * @type {string}
+     * @type {IncomesItemStatusEnum}
      * @memberof IncomesItem
      */
     status?: IncomesItemStatusEnum;

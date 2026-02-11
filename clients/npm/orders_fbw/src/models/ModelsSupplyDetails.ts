@@ -34,7 +34,7 @@ export interface ModelsSupplyDetails {
      *   - `5` — Принято
      *   - `6` — Отгружено на воротах
      * 
-     * @type {number}
+     * @type {ModelsSupplyDetailsStatusIDEnum}
      * @memberof ModelsSupplyDetails
      */
     statusID?: ModelsSupplyDetailsStatusIDEnum;

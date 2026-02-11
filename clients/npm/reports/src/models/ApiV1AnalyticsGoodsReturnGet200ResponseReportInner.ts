@@ -61,7 +61,7 @@ export interface ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
      *   * `0` — архивный
      *   * `1` — активный
      * 
-     * @type {number}
+     * @type {ApiV1AnalyticsGoodsReturnGet200ResponseReportInnerIsStatusActiveEnum}
      * @memberof ApiV1AnalyticsGoodsReturnGet200ResponseReportInner
      */
     isStatusActive?: ApiV1AnalyticsGoodsReturnGet200ResponseReportInnerIsStatusActiveEnum;

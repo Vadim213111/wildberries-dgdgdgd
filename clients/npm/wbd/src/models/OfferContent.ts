@@ -87,7 +87,7 @@ export interface OfferContent {
      * - `2` — Аудиоконтент
      * - `4` — Документ
      * 
-     * @type {number}
+     * @type {OfferContentCategoryIdEnum}
      * @memberof OfferContent
      */
     categoryId?: OfferContentCategoryIdEnum;

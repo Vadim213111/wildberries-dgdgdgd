@@ -69,7 +69,7 @@ export interface OfferCreateRequest {
      * - `12` — Купоны и развлечения
      * - `13` — Подарочные сертификаты
      * 
-     * @type {number}
+     * @type {OfferCreateRequestSectionEnum}
      * @memberof OfferCreateRequest
      */
     section: OfferCreateRequestSectionEnum;
@@ -83,7 +83,7 @@ export interface OfferCreateRequest {
     catalogPath: Array<number>;
     /**
      * Возрастное ограничение. Это система, которая используется для определения, подходит ли ваше предложение для определенной возрастной группы.
-     * @type {string}
+     * @type {OfferCreateRequestAgeRatingEnum}
      * @memberof OfferCreateRequest
      */
     ageRating: OfferCreateRequestAgeRatingEnum;
@@ -128,7 +128,7 @@ export interface OfferCreateRequest {
      * - `0` — Добавить в черновик
      * - `1` — Опубликовать
      * 
-     * @type {number}
+     * @type {OfferCreateRequestStatusEnum}
      * @memberof OfferCreateRequest
      */
     status?: OfferCreateRequestStatusEnum;

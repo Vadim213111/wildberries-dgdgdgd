@@ -454,7 +454,7 @@ export interface DetailReportItem {
      *   - `2` — для уведомления о выкупе
      *   - `3`, `4` — для уведомления о выкупе для Грузии
      * 
-     * @type {number}
+     * @type {DetailReportItemReportTypeEnum}
      * @memberof DetailReportItem
      */
     reportType?: DetailReportItemReportTypeEnum;

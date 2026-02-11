@@ -64,7 +64,7 @@ export interface Supply {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {SupplyCargoTypeEnum}
      * @memberof Supply
      */
     cargoType?: SupplyCargoTypeEnum;
@@ -74,7 +74,7 @@ export interface Supply {
      *   - `1` — кроссбордер
      *   - `null` — значение отсутствует
      * 
-     * @type {number}
+     * @type {SupplyCrossBorderTypeEnum}
      * @memberof Supply
      */
     crossBorderType?: SupplyCrossBorderTypeEnum | null;

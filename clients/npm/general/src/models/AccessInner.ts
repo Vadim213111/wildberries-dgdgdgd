@@ -36,7 +36,7 @@ export interface AccessInner {
      * * `feedbacks` — Просмотр и ответы на отзывы покупателей
      * * `wbPoint` — WB Point
      * 
-     * @type {string}
+     * @type {AccessInnerCodeEnum}
      * @memberof AccessInner
      */
     code: AccessInnerCodeEnum;

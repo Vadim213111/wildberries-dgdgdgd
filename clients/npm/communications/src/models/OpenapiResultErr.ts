@@ -39,7 +39,7 @@ export interface OpenapiResultErr {
     requestId: string;
     /**
      * Статус
-     * @type {string}
+     * @type {OpenapiResultErrStatusEnum}
      * @memberof OpenapiResultErr
      */
     status: OpenapiResultErrStatusEnum;

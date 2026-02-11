@@ -149,7 +149,7 @@ export interface Order {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {OrderCargoTypeEnum}
      * @memberof Order
      */
     cargoType?: OrderCargoTypeEnum;

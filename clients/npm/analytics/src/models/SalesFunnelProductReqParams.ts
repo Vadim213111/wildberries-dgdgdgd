@@ -70,7 +70,7 @@ export interface SalesFunnelProductReqParams {
      *   * `week` — по неделям
      *   * `month` — по месяцам
      * 
-     * @type {string}
+     * @type {SalesFunnelProductReqParamsAggregationLevelEnum}
      * @memberof SalesFunnelProductReqParams
      */
     aggregationLevel?: SalesFunnelProductReqParamsAggregationLevelEnum;

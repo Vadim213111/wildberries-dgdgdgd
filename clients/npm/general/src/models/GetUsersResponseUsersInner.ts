@@ -45,7 +45,7 @@ export interface GetUsersResponseUsersInner {
      *   * `user` — пользователь, который активировал доступ
      *   * ` ` (пустая строка) — пользователь, который не активировал доступ
      * 
-     * @type {string}
+     * @type {GetUsersResponseUsersInnerRoleEnum}
      * @memberof GetUsersResponseUsersInner
      */
     role: GetUsersResponseUsersInnerRoleEnum;

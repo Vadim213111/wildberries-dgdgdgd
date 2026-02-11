@@ -31,7 +31,7 @@ export interface OrderByMainAndDetails {
      *   - `minPrice` — по минимальной цене
      *   - `maxPrice` — по максимальной цене
      * 
-     * @type {string}
+     * @type {OrderByMainAndDetailsFieldEnum}
      * @memberof OrderByMainAndDetails
      */
     field: OrderByMainAndDetailsFieldEnum;
@@ -40,7 +40,7 @@ export interface OrderByMainAndDetails {
      *   - `asc` — по возрастанию
      *   - `desc` — по убыванию
      * 
-     * @type {string}
+     * @type {OrderByMainAndDetailsModeEnum}
      * @memberof OrderByMainAndDetails
      */
     mode: OrderByMainAndDetailsModeEnum;

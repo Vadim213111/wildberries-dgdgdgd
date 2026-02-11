@@ -50,7 +50,7 @@ export interface Order {
      * Тип доставки:
      * - `fbs` — доставка на склад Wildberries (FBS)
      * 
-     * @type {string}
+     * @type {OrderDeliveryTypeEnum}
      * @memberof Order
      */
     deliveryType?: OrderDeliveryTypeEnum;
@@ -170,7 +170,7 @@ export interface Order {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {OrderCargoTypeEnum}
      * @memberof Order
      */
     cargoType?: OrderCargoTypeEnum;
@@ -179,7 +179,7 @@ export interface Order {
      *   - `0` — не кроссбордер
      *   - `1` — кроссбордер
      * 
-     * @type {number}
+     * @type {OrderCrossBorderTypeEnum}
      * @memberof Order
      */
     crossBorderType?: OrderCrossBorderTypeEnum;

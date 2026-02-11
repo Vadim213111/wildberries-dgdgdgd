@@ -165,7 +165,7 @@ export interface ApiNewOrder {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {ApiNewOrderCargoTypeEnum}
      * @memberof ApiNewOrder
      */
     cargoType?: ApiNewOrderCargoTypeEnum;

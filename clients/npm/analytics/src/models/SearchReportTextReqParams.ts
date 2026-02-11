@@ -93,7 +93,7 @@ export interface SearchReportTextReqParams {
      *   - `orders` — заказали товаров
      *   - `cartToOrder` — конверсия в заказ
      * 
-     * @type {string}
+     * @type {SearchReportTextReqParamsTopOrderByEnum}
      * @memberof SearchReportTextReqParams
      */
     topOrderBy: SearchReportTextReqParamsTopOrderByEnum;

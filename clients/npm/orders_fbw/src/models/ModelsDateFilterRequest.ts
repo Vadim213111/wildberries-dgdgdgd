@@ -38,7 +38,7 @@ export interface ModelsDateFilterRequest {
      *   - `supplyDate` — плановая дата отгрузки поставки
      *   - `updatedDate` — дата изменения поставки
      * 
-     * @type {string}
+     * @type {ModelsDateFilterRequestTypeEnum}
      * @memberof ModelsDateFilterRequest
      */
     type: ModelsDateFilterRequestTypeEnum;

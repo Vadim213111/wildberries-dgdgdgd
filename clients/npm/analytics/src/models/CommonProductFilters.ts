@@ -98,7 +98,7 @@ export interface CommonProductFilters {
      *   - `nonLiquid` — Неликвид
      *   - `invalidData` — Не рассчитано
      * 
-     * @type {Array<string>}
+     * @type {Array<CommonProductFiltersAvailabilityFiltersEnum>}
      * @memberof CommonProductFilters
      */
     availabilityFilters: Array<CommonProductFiltersAvailabilityFiltersEnum>;

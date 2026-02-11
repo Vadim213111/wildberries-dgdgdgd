@@ -46,7 +46,7 @@ export interface OrderBy {
      *   - `wbClub.avgOrderCountPerDay` — Среднее количество заказов в день с WB Клубом, шт
      *   - `wbClub.cancelCount` — Отменили товаров с WB Клубом, шт
      * 
-     * @type {string}
+     * @type {OrderByFieldEnum}
      * @memberof OrderBy
      */
     field: OrderByFieldEnum;
@@ -55,7 +55,7 @@ export interface OrderBy {
      *   - `asc` — по возрастанию
      *   - `desc` — по убыванию
      * 
-     * @type {string}
+     * @type {OrderByModeEnum}
      * @memberof OrderBy
      */
     mode: OrderByModeEnum;

@@ -39,7 +39,7 @@ export interface OrdersItem {
     warehouseName?: string;
     /**
      * Тип склада хранения товаров
-     * @type {string}
+     * @type {OrdersItemWarehouseTypeEnum}
      * @memberof OrdersItem
      */
     warehouseType?: OrdersItemWarehouseTypeEnum;

@@ -93,7 +93,7 @@ export interface TableDetailsRequest {
      *   - `secondHundred` — от 101 до 200
      *   - `below` — от 201 и ниже
      * 
-     * @type {string}
+     * @type {TableDetailsRequestPositionClusterEnum}
      * @memberof TableDetailsRequest
      */
     positionCluster: TableDetailsRequestPositionClusterEnum;

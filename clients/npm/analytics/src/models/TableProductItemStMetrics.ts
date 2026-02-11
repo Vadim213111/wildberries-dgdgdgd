@@ -190,7 +190,7 @@ export interface TableProductItemStMetrics {
      *   - `nonLiquid` — Неликвид
      *   - `invalidData` — Не рассчитано
      * 
-     * @type {string}
+     * @type {TableProductItemStMetricsAvailabilityEnum}
      * @memberof TableProductItemStMetrics
      */
     availability: TableProductItemStMetricsAvailabilityEnum;

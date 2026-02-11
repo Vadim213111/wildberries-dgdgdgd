@@ -61,7 +61,7 @@ export interface Office {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {OfficeCargoTypeEnum}
      * @memberof Office
      */
     cargoType?: OfficeCargoTypeEnum;
@@ -73,7 +73,7 @@ export interface Office {
      *   - `5` — самовывоз (C&C)
      *   - `6` — экспресс-доставка силами продавца (ЕDBS)
      * 
-     * @type {number}
+     * @type {OfficeDeliveryTypeEnum}
      * @memberof Office
      */
     deliveryType?: OfficeDeliveryTypeEnum;

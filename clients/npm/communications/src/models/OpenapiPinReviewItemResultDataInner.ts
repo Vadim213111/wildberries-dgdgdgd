@@ -45,7 +45,7 @@ export interface OpenapiPinReviewItemResultDataInner {
      *   - `subscription` — подписка Джем
      *   - `tariff` — тарифная опция
      * 
-     * @type {string}
+     * @type {OpenapiPinReviewItemResultDataInnerPinMethodEnum}
      * @memberof OpenapiPinReviewItemResultDataInner
      */
     pinMethod: OpenapiPinReviewItemResultDataInnerPinMethodEnum;
@@ -54,7 +54,7 @@ export interface OpenapiPinReviewItemResultDataInner {
      *   - `nm` — карточка товара
      *   - `imt` — группа [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров
      * 
-     * @type {string}
+     * @type {OpenapiPinReviewItemResultDataInnerPinOnEnum}
      * @memberof OpenapiPinReviewItemResultDataInner
      */
     pinOn: OpenapiPinReviewItemResultDataInnerPinOnEnum;

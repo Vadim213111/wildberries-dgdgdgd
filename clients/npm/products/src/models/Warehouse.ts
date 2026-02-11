@@ -43,7 +43,7 @@ export interface Warehouse {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {WarehouseCargoTypeEnum}
      * @memberof Warehouse
      */
     cargoType?: WarehouseCargoTypeEnum;
@@ -55,7 +55,7 @@ export interface Warehouse {
      *   - `5` — самовывоз (C&C)
      *   - `6` — экспресс-доставка силами продавца (ЕDBS)
      * 
-     * @type {number}
+     * @type {WarehouseDeliveryTypeEnum}
      * @memberof Warehouse
      */
     deliveryType?: WarehouseDeliveryTypeEnum;

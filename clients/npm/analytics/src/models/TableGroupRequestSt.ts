@@ -92,7 +92,7 @@ export interface TableGroupRequestSt {
      *   - `nonLiquid` — Неликвид
      *   - `invalidData` — Не рассчитано
      * 
-     * @type {Array<string>}
+     * @type {Array<TableGroupRequestStAvailabilityFiltersEnum>}
      * @memberof TableGroupRequestSt
      */
     availabilityFilters: Array<TableGroupRequestStAvailabilityFiltersEnum>;

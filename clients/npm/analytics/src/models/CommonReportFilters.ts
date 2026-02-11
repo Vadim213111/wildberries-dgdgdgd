@@ -92,7 +92,7 @@ export interface CommonReportFilters {
      *   - `nonLiquid` — Неликвид
      *   - `invalidData` — Не рассчитано
      * 
-     * @type {Array<string>}
+     * @type {Array<CommonReportFiltersAvailabilityFiltersEnum>}
      * @memberof CommonReportFilters
      */
     availabilityFilters: Array<CommonReportFiltersAvailabilityFiltersEnum>;

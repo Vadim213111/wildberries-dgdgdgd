@@ -64,7 +64,7 @@ export interface OfferResponse {
      * - `12` — Купоны и развлечения
      * - `13` — Подарочные сертификаты
      * 
-     * @type {number}
+     * @type {OfferResponseSectionEnum}
      * @memberof OfferResponse
      */
     section?: OfferResponseSectionEnum;
@@ -139,7 +139,7 @@ export interface OfferResponse {
      * - `0` — Добавить в черновик
      * - `1` — Опубликовать
      * 
-     * @type {number}
+     * @type {OfferResponseStatusEnum}
      * @memberof OfferResponse
      */
     status?: OfferResponseStatusEnum | null;
@@ -163,7 +163,7 @@ export interface OfferResponse {
     adult?: boolean;
     /**
      * Возрастное ограничение. Это система, которая используется для определения, подходит ли ваше предложение для определенной возрастной группы
-     * @type {string}
+     * @type {OfferResponseAgeRatingEnum}
      * @memberof OfferResponse
      */
     ageRating?: OfferResponseAgeRatingEnum;

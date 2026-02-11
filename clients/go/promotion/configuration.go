@@ -1,7 +1,7 @@
 /*
 Маркетинг и продвижение
 
-<div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Настраивать [параметры](/openapi/promotion#tag/Parametry-kampanij) кампаний — кластеры фраз, продвигаемые товары и так далее.   4. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   5. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   6. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. 
+<div class=\"description_important\">     Узнать больше о маркетинге и продвижении можно в <a href=\"https://seller.wildberries.ru/instructions/category/59d92bd3-6ea0-40f2-b762-ca8835d7d42e?goBackOption=prevRoute&categoryId=479385c6-de01-4b4d-ad4e-ed941e65582e\">справочном центре</a> </div>  Методы маркетинга и продвижения позволяют:   1. Получать информацию о кампаниях [продвижения](/openapi/promotion#tag/Kampanii) и [медиакампаниях](/openapi/promotion#tag/Media).   2. [Создавать](/openapi/promotion#tag/Sozdanie-kampanij) и [управлять](/openapi/promotion#tag/Upravlenie-kampaniyami) кампаниями.   3. Управлять [финансами](/openapi/promotion#tag/Finansy) кампаний.   4. Выгружать [статистику](/openapi/promotion#tag/Statistika) кампаний продвижения и медиакампаний.   5. Работать с [календарём акций](/openapi/promotion#tag/Kalendar-akcij).  Данные синхронизируются с базой раз в 3 минуты. Статусы кампаний меняются раз в минуту. Ставки кампаний меняются раз в 30 секунд. 
 
 API version: promotion
 */
@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "OpenAPI-Generator/0.1.38/go",
+		UserAgent:        "OpenAPI-Generator/0.1.39/go",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -98,18 +98,6 @@ func NewConfiguration() *Configuration {
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{
-			"DefaultApiService.AdvV0AuctionAdvertsGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV0AuctionBidsPatch": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
 			"DefaultApiService.AdvV0AuctionNmsPatch": {
 				{
 					URL: "https://advert-api.wildberries.ru",
@@ -117,24 +105,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DefaultApiService.AdvV0AuctionPlacementsPut": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV0BidsMinPost": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV0BidsPatch": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV0ConfigGet": {
 				{
 					URL: "https://advert-api.wildberries.ru",
 					Description: "No description provided",
@@ -200,12 +170,6 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"DefaultApiService.AdvV0StatsKeywordsGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
 			"DefaultApiService.AdvV0StopGet": {
 				{
 					URL: "https://advert-api.wildberries.ru",
@@ -221,24 +185,6 @@ func NewConfiguration() *Configuration {
 			"DefaultApiService.AdvV1AdvertsGet": {
 				{
 					URL: "https://advert-media-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1AutoGetnmtoaddGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1AutoSetExcludedPost": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1AutoUpdatenmPost": {
-				{
-					URL: "https://advert-api.wildberries.ru",
 					Description: "No description provided",
 				},
 			},
@@ -272,37 +218,7 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"DefaultApiService.AdvV1PromotionAdvertsPost": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
 			"DefaultApiService.AdvV1PromotionCountGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1SearchSetExcludedPost": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1SearchSetPlusGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1SearchSetPlusPost": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV1StatWordsGet": {
 				{
 					URL: "https://advert-api.wildberries.ru",
 					Description: "No description provided",
@@ -321,18 +237,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DefaultApiService.AdvV1UpdGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV2AutoStatWordsGet": {
-				{
-					URL: "https://advert-api.wildberries.ru",
-					Description: "No description provided",
-				},
-			},
-			"DefaultApiService.AdvV2FullstatsPost": {
 				{
 					URL: "https://advert-api.wildberries.ru",
 					Description: "No description provided",

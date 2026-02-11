@@ -21,7 +21,7 @@ import { mapValues } from '../runtime';
 export interface OfferStatusUpdateRequest {
     /**
      * 
-     * @type {number}
+     * @type {OfferStatusUpdateRequestStatusEnum}
      * @memberof OfferStatusUpdateRequest
      */
     status: OfferStatusUpdateRequestStatusEnum;

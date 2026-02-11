@@ -98,7 +98,7 @@ export interface TableProductRequest {
      *   - `nonLiquid` — Неликвид
      *   - `invalidData` — Не рассчитано
      * 
-     * @type {Array<string>}
+     * @type {Array<TableProductRequestAvailabilityFiltersEnum>}
      * @memberof TableProductRequest
      */
     availabilityFilters: Array<TableProductRequestAvailabilityFiltersEnum>;

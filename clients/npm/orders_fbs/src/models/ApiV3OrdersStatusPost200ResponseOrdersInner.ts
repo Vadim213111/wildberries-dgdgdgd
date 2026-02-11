@@ -27,13 +27,13 @@ export interface ApiV3OrdersStatusPost200ResponseOrdersInner {
     id?: number;
     /**
      * Статус сборочного задания, установленный продавцом
-     * @type {string}
+     * @type {ApiV3OrdersStatusPost200ResponseOrdersInnerSupplierStatusEnum}
      * @memberof ApiV3OrdersStatusPost200ResponseOrdersInner
      */
     supplierStatus?: ApiV3OrdersStatusPost200ResponseOrdersInnerSupplierStatusEnum;
     /**
      * Статус сборочного задания в системе Wildberries
-     * @type {string}
+     * @type {ApiV3OrdersStatusPost200ResponseOrdersInnerWbStatusEnum}
      * @memberof ApiV3OrdersStatusPost200ResponseOrdersInner
      */
     wbStatus?: ApiV3OrdersStatusPost200ResponseOrdersInnerWbStatusEnum;

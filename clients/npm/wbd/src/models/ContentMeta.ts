@@ -34,7 +34,7 @@ export interface ContentMeta {
     sourceFileName?: string;
     /**
      * Возрастное ограничение
-     * @type {string}
+     * @type {ContentMetaRatingEnum}
      * @memberof ContentMeta
      */
     rating?: ContentMetaRatingEnum;

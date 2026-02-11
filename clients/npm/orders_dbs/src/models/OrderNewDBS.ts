@@ -113,7 +113,7 @@ export interface OrderNewDBS {
      *   - `dbs` — доставка силами продавца
      *   - `edbs` — экспресс-доставка силами продавца
      * 
-     * @type {string}
+     * @type {OrderNewDBSDeliveryTypeEnum}
      * @memberof OrderNewDBS
      */
     deliveryType?: OrderNewDBSDeliveryTypeEnum;
@@ -189,7 +189,7 @@ export interface OrderNewDBS {
      *   - `2` — сверхгабаритный товар (СГТ)
      *   - `3` — крупногабаритный товар (КГТ+)
      * 
-     * @type {number}
+     * @type {OrderNewDBSCargoTypeEnum}
      * @memberof OrderNewDBS
      */
     cargoType?: OrderNewDBSCargoTypeEnum;

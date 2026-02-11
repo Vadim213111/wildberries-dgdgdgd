@@ -39,7 +39,7 @@ export interface SalesItem {
     warehouseName?: string;
     /**
      * Тип склада хранения товаров
-     * @type {string}
+     * @type {SalesItemWarehouseTypeEnum}
      * @memberof SalesItem
      */
     warehouseType?: SalesItemWarehouseTypeEnum;
