@@ -2806,6 +2806,7 @@ components:
         scanPrice:
           type: number
           format: uint32
+          nullable: true
           description: Цена приёмки в копейках. Отображается после фактической приёмки заказа
           example: 1500
         deliveryType:

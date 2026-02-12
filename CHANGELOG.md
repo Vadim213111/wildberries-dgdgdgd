@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.12)
+- Orders FBS: поле `scanPrice` (number, uint32) помечено как `nullable: true` — теперь может возвращаться `null` до фактической приёмки заказа.
+
 ### Changed (2026.02.11)
 - Продвижение / Кампании: удалены устаревшие методы получения информации о кампаниях `/adv/v1/promotion/adverts` (POST) и `/adv/v0/auction/adverts` (GET) (ранее помечены deprecated)
 - Продвижение / Создание кампаний: удалён устаревший конфиг-метод `/adv/v0/config` (GET)
