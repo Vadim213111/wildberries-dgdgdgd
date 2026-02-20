@@ -1,6 +1,18 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.02.20)
+- Products: ужесточены лимиты запросов для двух методов раздела — с 100 запросов/мин (интервал 600 мс) до 3 запросов/мин (интервал 20 сек), всплеск без изменений (5 запросов)
+- Orders DBS: добавлен новый endpoint `POST /api/marketplace/v3/dbs/orders/stickers` для получения PDF-стикеров (только `type=pdf`, `width=58`, `height=40`; до 100 `orderId` в запросе) для сборочных заданий с доставкой в ПВЗ в статусах `confirm` и `deliver`; ответ содержит `stickers[]` с `orderId`, `partA`, `partB`, `barcode`, `file` (base64)
+- Orders DBS: расширен enum `deliveryType` — добавлено значение `dbsPickupPoint` (доставка силами продавца в ПВЗ)
+- Orders DBS: уточнено поле `address` в моделях заказов — при доставке в ПВЗ возвращается адрес ПВЗ
+- Orders DBS: добавлены поля, специфичные для ПВЗ: `wbStickerId` (ID стикера, только для заказов в ПВЗ) и `scanPrice` (цена приёмки в ПВЗ, в копейках, nullable; только для заказов в ПВЗ)
+- Analytics: в CSV-аналитике добавлен новый тип отчёта `STOCK_HISTORY_DAILY_CSV` (схема запроса `InventoryHistoryReportReq`, пример ответа `InventoryHistoryReportRes`) для отчёта по истории остатков по дням
+- Analytics: переименована/уточнена модель запроса для `STOCK_HISTORY_REPORT_CSV`: `StocksReportReq` → `InventoryMetricsReportReq`, описание изменено с «истории остатков» на «статистике остатков»; обновлены соответствующие примеры ответа (`StocksReportRes` → `InventoryMetricsReportRes`)
+- Analytics: заменён компонент периода `PeriodSt` → `PeriodInv` во всех связанных схемах фильтров остатков
+- Analytics: обновлены тексты документации/ограничений: отчёты за период до года привязаны к типам `DETAIL_HISTORY_REPORT` и `GROUPED_HISTORY_REPORT` и доступны только по подписке «Джем»; отчёты по остаткам без подписки — типы `STOCK_HISTORY_REPORT_CSV` и `STOCK_HISTORY_DAILY_CSV`
+- Analytics: параметр `skipDeletedNm` переописан как «Скрыть удалённые товары» (вместо «карточки товаров»/«nmID»); уточнены описания `stockType` (приведение к нижнему регистру в тексте) и пример сообщения о старте генерации отчёта (было `Created`, стало «Началось формирование файла/отчета»)
+
 ### Changed (2026.02.19)
 - Products: в ответах ошибок для метода управления остатками/складом удалены примеры `SubjectDBSRestriction` и `SubjectFBSRestriction`; добавлены новые примеры ошибок `ProductPropertyConflict` (оптовый товар доступен только по схеме DBS) и `DeliveryTypeRestriction` (категория недоступна для выбранного типа доставки, возвращает `data` со `sku/chrtId/amount`).
 - Orders FBW (Поставки): удалён (ранее `deprecated`) endpoint `GET /api/v1/acceptance/coefficients` на домене `supplies-api.wildberries.ru` (коэффициенты приёмки; в описании был указан перенос в Tariffs API).
