@@ -2648,6 +2648,10 @@ func (r ApiApiMarketplaceV3DbsOrdersStickersPostRequest) Execute() (*ApiMarketpl
 /*
 ApiMarketplaceV3DbsOrdersStickersPost Получить стикеры для сборочных заданий с доставкой в ПВЗ
 
+<div class="description_auth">
+Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token">токены</a> для категории <strong>Маркетплейс</strong>
+</div>
+
 Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):
   - `confirm` — на сборке
   - `deliver` — в доставке
