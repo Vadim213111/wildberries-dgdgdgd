@@ -769,6 +769,8 @@ paths:
                       quantity: 134
                     - warehouseName: Коледино
                       quantity: 133
+        '204':
+          description: Нет данных
         '400':
           description: Неправильный запрос
           content:
@@ -1345,6 +1347,8 @@ paths:
                       type: number
                       description: Суммарная стоимость приёмки, ₽ с копейками
                       example: 873.04
+        '204':
+          description: Нет данных
         '400':
           description: Неправильный запрос
           content:
@@ -1581,6 +1585,8 @@ paths:
                   loyaltyDiscount: 10
                   tariffFixDate: '2023-10-01'
                   tariffLowerDate: '2023-11-01'
+        '204':
+          description: Нет данных
         '400':
           description: Неправильный запрос
           content:
