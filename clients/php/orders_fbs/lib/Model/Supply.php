@@ -58,6 +58,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'id' => 'string',
+        'is_b2b' => 'bool',
         'done' => 'bool',
         'created_at' => '\DateTime',
         'closed_at' => '\DateTime',
@@ -77,6 +78,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'id' => null,
+        'is_b2b' => null,
         'done' => null,
         'created_at' => 'date-time',
         'closed_at' => 'date-time',
@@ -94,6 +96,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'id' => false,
+        'is_b2b' => true,
         'done' => false,
         'created_at' => false,
         'closed_at' => true,
@@ -191,6 +194,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'id' => 'id',
+        'is_b2b' => 'isB2b',
         'done' => 'done',
         'created_at' => 'createdAt',
         'closed_at' => 'closedAt',
@@ -208,6 +212,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'id' => 'setId',
+        'is_b2b' => 'setIsB2b',
         'done' => 'setDone',
         'created_at' => 'setCreatedAt',
         'closed_at' => 'setClosedAt',
@@ -225,6 +230,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'id' => 'getId',
+        'is_b2b' => 'getIsB2b',
         'done' => 'getDone',
         'created_at' => 'getCreatedAt',
         'closed_at' => 'getClosedAt',
@@ -327,6 +333,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     public function __construct(?array $data = null)
     {
         $this->setIfExists('id', $data ?? [], null);
+        $this->setIfExists('is_b2b', $data ?? [], null);
         $this->setIfExists('done', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('closed_at', $data ?? [], null);
@@ -420,6 +427,40 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable id cannot be null');
         }
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_b2b
+     *
+     * @return bool|null
+     */
+    public function getIsB2b()
+    {
+        return $this->container['is_b2b'];
+    }
+
+    /**
+     * Sets is_b2b
+     *
+     * @param bool|null $is_b2b Признак B2B-продажи:   - `true` — B2B-продажа   - `false` — не B2B-продажа   - `null` — признак отсутствует, сборочные задания не добавлены к поставке
+     *
+     * @return self
+     */
+    public function setIsB2b($is_b2b)
+    {
+        if (is_null($is_b2b)) {
+            array_push($this->openAPINullablesSetToNull, 'is_b2b');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('is_b2b', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['is_b2b'] = $is_b2b;
 
         return $this;
     }

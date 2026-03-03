@@ -29,7 +29,7 @@ class ApiStatusSetResponse(BaseModel):
     """ # noqa: E501
     errors: Optional[List[ApiBatchErrorResponse]] = Field(default=None, description="Детали ошибки")
     is_error: Optional[StrictBool] = Field(default=None, description="Есть ли ошибки", alias="isError")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания с успешно обновлёнными метаданными", alias="orderId")
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания с успешно обновлёнными данными", alias="orderId")
     __properties: ClassVar[List[str]] = ["errors", "isError", "orderId"]
 
     model_config = ConfigDict(

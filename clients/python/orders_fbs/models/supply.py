@@ -28,6 +28,7 @@ class Supply(BaseModel):
     Supply
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="ID поставки")
+    is_b2b: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи:   - `true` — B2B-продажа   - `false` — не B2B-продажа   - `null` — признак отсутствует, сборочные задания не добавлены к поставке ", alias="isB2b")
     done: Optional[StrictBool] = Field(default=None, description="Флаг закрытия поставки:   - `true` — закрыта   - `false` — открыта ")
     created_at: Optional[datetime] = Field(default=None, description="Дата создания поставки (RFC3339)", alias="createdAt")
     closed_at: Optional[datetime] = Field(default=None, description="Дата закрытия поставки (RFC3339)", alias="closedAt")
@@ -36,7 +37,7 @@ class Supply(BaseModel):
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
     cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует ", alias="crossBorderType")
     destination_office_id: Optional[StrictInt] = Field(default=None, description="ID склада назначения поставки. Если `null`, склад назначения не указан", alias="destinationOfficeId")
-    __properties: ClassVar[List[str]] = ["id", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId"]
+    __properties: ClassVar[List[str]] = ["id", "isB2b", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId"]
 
     @field_validator('cargo_type')
     def cargo_type_validate_enum(cls, value):
@@ -98,6 +99,11 @@ class Supply(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if is_b2b (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_b2b is None and "is_b2b" in self.model_fields_set:
+            _dict['isB2b'] = None
+
         # set to None if closed_at (nullable) is None
         # and model_fields_set contains the field
         if self.closed_at is None and "closed_at" in self.model_fields_set:
@@ -131,6 +137,7 @@ class Supply(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
+            "isB2b": obj.get("isB2b"),
             "done": obj.get("done"),
             "createdAt": obj.get("createdAt"),
             "closedAt": obj.get("closedAt"),

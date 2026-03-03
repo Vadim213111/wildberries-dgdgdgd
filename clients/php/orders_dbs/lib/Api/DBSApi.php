@@ -4814,7 +4814,7 @@ class DBSApi
      *
      * @throws \Wildberries\Sdk\OrdersDbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response
+     * @return \Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200Response|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response
      */
     public function apiMarketplaceV3DbsOrdersStatusReceivePost($api_orders_code_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbsOrdersStatusReceivePost'][0])
     {
@@ -4838,7 +4838,7 @@ class DBSApi
      *
      * @throws \Wildberries\Sdk\OrdersDbs\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponses|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200Response|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response|\Wildberries\Sdk\OrdersDbs\Model\ApiBatchError|\Wildberries\Sdk\OrdersDbs\Model\ApiV3DbsOrdersNewGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiMarketplaceV3DbsOrdersStatusReceivePostWithHttpInfo($api_orders_code_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbsOrdersStatusReceivePost'][0])
     {
@@ -4870,7 +4870,7 @@ class DBSApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponses',
+                        '\Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200Response',
                         $request,
                         $response,
                     );
@@ -4916,7 +4916,7 @@ class DBSApi
             }
 
             return $this->handleResponseWithDataType(
-                '\Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponses',
+                '\Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200Response',
                 $request,
                 $response,
             );
@@ -4925,7 +4925,7 @@ class DBSApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponses',
+                        '\Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5015,7 +5015,7 @@ class DBSApi
      */
     public function apiMarketplaceV3DbsOrdersStatusReceivePostAsyncWithHttpInfo($api_orders_code_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiMarketplaceV3DbsOrdersStatusReceivePost'][0])
     {
-        $returnType = '\Wildberries\Sdk\OrdersDbs\Model\ApiStatusSetResponses';
+        $returnType = '\Wildberries\Sdk\OrdersDbs\Model\ApiMarketplaceV3DbsOrdersStatusReceivePost200Response';
         $request = $this->apiMarketplaceV3DbsOrdersStatusReceivePostRequest($api_orders_code_request, $hostIndex, $variables, $contentType);
 
         return $this->client

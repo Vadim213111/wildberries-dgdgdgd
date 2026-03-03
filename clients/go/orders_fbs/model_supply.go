@@ -22,6 +22,8 @@ var _ MappedNullable = &Supply{}
 type Supply struct {
 	// ID поставки
 	Id *string `json:"id,omitempty"`
+	// Признак B2B-продажи:   - `true` — B2B-продажа   - `false` — не B2B-продажа   - `null` — признак отсутствует, сборочные задания не добавлены к поставке 
+	IsB2b NullableBool `json:"isB2b,omitempty"`
 	// Флаг закрытия поставки:   - `true` — закрыта   - `false` — открыта 
 	Done *bool `json:"done,omitempty"`
 	// Дата создания поставки (RFC3339)
@@ -87,6 +89,48 @@ func (o *Supply) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *Supply) SetId(v string) {
 	o.Id = &v
+}
+
+// GetIsB2b returns the IsB2b field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Supply) GetIsB2b() bool {
+	if o == nil || IsNil(o.IsB2b.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.IsB2b.Get()
+}
+
+// GetIsB2bOk returns a tuple with the IsB2b field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *Supply) GetIsB2bOk() (*bool, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.IsB2b.Get(), o.IsB2b.IsSet()
+}
+
+// HasIsB2b returns a boolean if a field has been set.
+func (o *Supply) HasIsB2b() bool {
+	if o != nil && o.IsB2b.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsB2b gets a reference to the given NullableBool and assigns it to the IsB2b field.
+func (o *Supply) SetIsB2b(v bool) {
+	o.IsB2b.Set(&v)
+}
+// SetIsB2bNil sets the value for IsB2b to be an explicit nil
+func (o *Supply) SetIsB2bNil() {
+	o.IsB2b.Set(nil)
+}
+
+// UnsetIsB2b ensures that no value is present for IsB2b, not even an explicit nil
+func (o *Supply) UnsetIsB2b() {
+	o.IsB2b.Unset()
 }
 
 // GetDone returns the Done field value if set, zero value otherwise.
@@ -397,6 +441,9 @@ func (o Supply) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
+	}
+	if o.IsB2b.IsSet() {
+		toSerialize["isB2b"] = o.IsB2b.Get()
 	}
 	if !IsNil(o.Done) {
 		toSerialize["done"] = o.Done

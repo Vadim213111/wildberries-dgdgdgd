@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiBatchErrorResponse{}
 type ApiBatchErrorResponse struct {
 	// Код ошибки
 	Code *int32 `json:"code,omitempty"`
-	// - `not found` — сборочное задание не найдено - `status conflict` — операция невозможна для этого статуса сборочного задания 
+	// - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания 
 	Detail *string `json:"detail,omitempty"`
 }
 

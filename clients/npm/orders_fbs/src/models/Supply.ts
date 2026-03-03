@@ -26,6 +26,16 @@ export interface Supply {
      */
     id?: string;
     /**
+     * Признак B2B-продажи:
+     *   - `true` — B2B-продажа
+     *   - `false` — не B2B-продажа
+     *   - `null` — признак отсутствует, сборочные задания не добавлены к поставке
+     * 
+     * @type {boolean}
+     * @memberof Supply
+     */
+    isB2b?: boolean | null;
+    /**
      * Флаг закрытия поставки:
      *   - `true` — закрыта
      *   - `false` — открыта
@@ -126,6 +136,7 @@ export function SupplyFromJSONTyped(json: any, ignoreDiscriminator: boolean): Su
     return {
         
         'id': json['id'] == null ? undefined : json['id'],
+        'isB2b': json['isB2b'] == null ? undefined : json['isB2b'],
         'done': json['done'] == null ? undefined : json['done'],
         'createdAt': json['createdAt'] == null ? undefined : (new Date(json['createdAt'])),
         'closedAt': json['closedAt'] == null ? undefined : (new Date(json['closedAt'])),
@@ -149,6 +160,7 @@ export function SupplyToJSONTyped(value?: Supply | null, ignoreDiscriminator: bo
     return {
         
         'id': value['id'],
+        'isB2b': value['isB2b'],
         'done': value['done'],
         'createdAt': value['createdAt'] == null ? value['createdAt'] : value['createdAt'].toISOString(),
         'closedAt': value['closedAt'] == null ? value['closedAt'] : value['closedAt'].toISOString(),

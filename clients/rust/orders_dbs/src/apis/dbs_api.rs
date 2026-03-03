@@ -660,7 +660,7 @@ pub async fn api_marketplace_v3_dbs_orders_meta_info_post(configuration: &config
     }
 }
 
-/// Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+/// Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 pub async fn api_marketplace_v3_dbs_orders_meta_sgtin_post(configuration: &configuration::Configuration, api_orders_sgtins_set_request: Option<models::ApiOrdersSgtinsSetRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersMetaSgtinPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_orders_sgtins_set_request = api_orders_sgtins_set_request;
@@ -937,7 +937,7 @@ pub async fn api_marketplace_v3_dbs_orders_status_info_post(configuration: &conf
 }
 
 /// Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
-pub async fn api_marketplace_v3_dbs_orders_status_receive_post(configuration: &configuration::Configuration, api_orders_code_request: Option<models::ApiOrdersCodeRequest>) -> Result<models::ApiStatusSetResponses, Error<ApiMarketplaceV3DbsOrdersStatusReceivePostError>> {
+pub async fn api_marketplace_v3_dbs_orders_status_receive_post(configuration: &configuration::Configuration, api_orders_code_request: Option<models::ApiOrdersCodeRequest>) -> Result<models::ApiMarketplaceV3DbsOrdersStatusReceivePost200Response, Error<ApiMarketplaceV3DbsOrdersStatusReceivePostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_orders_code_request = api_orders_code_request;
 
@@ -972,8 +972,8 @@ pub async fn api_marketplace_v3_dbs_orders_status_receive_post(configuration: &c
         let content = resp.text().await?;
         match content_type {
             ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
-            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiStatusSetResponses`"))),
-            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiStatusSetResponses`")))),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::ApiMarketplaceV3DbsOrdersStatusReceivePost200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::ApiMarketplaceV3DbsOrdersStatusReceivePost200Response`")))),
         }
     } else {
         let content = resp.text().await?;

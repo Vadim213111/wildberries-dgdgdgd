@@ -3998,6 +3998,7 @@ components:
         cargoType: 0
         createdAt: 2022-05-04T07:56:29Z
         scanDt: 2022-05-04T07:56:29Z
+        isB2b: true
         name: Тестовая поставка
         destinationOfficeId: 123
         crossBorderType: 1
@@ -4010,6 +4011,14 @@ components:
           example: WB-GI-1234567
           nullable: false
           type: string
+        isB2b:
+          description: |
+            Признак B2B-продажи:
+              - `true` — B2B-продажа
+              - `false` — не B2B-продажа
+              - `null` — признак отсутствует, сборочные задания не добавлены к поставке
+          nullable: true
+          type: boolean
         done:
           description: |
             Флаг закрытия поставки:
@@ -5532,6 +5541,7 @@ components:
         - cargoType: 0
           createdAt: 2022-05-04T07:56:29Z
           scanDt: 2022-05-04T07:56:29Z
+          isB2b: true
           name: Тестовая поставка
           destinationOfficeId: 123
           crossBorderType: 1
@@ -5541,6 +5551,7 @@ components:
         - cargoType: 0
           createdAt: 2022-05-04T07:56:29Z
           scanDt: 2022-05-04T07:56:29Z
+          isB2b: true
           name: Тестовая поставка
           destinationOfficeId: 123
           crossBorderType: 1

@@ -40,7 +40,7 @@ export interface ApiStatusSetResponse {
      */
     isError?: boolean;
     /**
-     * ID сборочного задания с успешно обновлёнными метаданными
+     * ID сборочного задания с успешно обновлёнными данными
      * @type {number}
      * @memberof ApiStatusSetResponse
      */

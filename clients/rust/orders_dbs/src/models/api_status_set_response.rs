@@ -19,7 +19,7 @@ pub struct ApiStatusSetResponse {
     /// Есть ли ошибки
     #[serde(rename = "isError", skip_serializing_if = "Option::is_none")]
     pub is_error: Option<bool>,
-    /// ID сборочного задания с успешно обновлёнными метаданными
+    /// ID сборочного задания с успешно обновлёнными данными
     #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<i32>,
 }

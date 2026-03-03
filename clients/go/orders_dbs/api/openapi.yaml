@@ -1095,7 +1095,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/api.StatusSetResponses"
+                $ref: "#/components/schemas/_api_marketplace_v3_dbs_orders_status_receive_post_200_response"
           description: Успешно
         "400":
           content:
@@ -1691,6 +1691,8 @@ paths:
                   $ref: "#/components/examples/StatusMismatch"
                 InvalidWBCode:
                   $ref: "#/components/examples/InvalidWBCode"
+                SGTINIsNotFilled:
+                  $ref: "#/components/examples/SGTINIsNotFilled"
               schema:
                 $ref: "#/components/schemas/Error"
           description: Ошибка обновления статуса
@@ -2026,7 +2028,7 @@ paths:
     post:
       description: |
         Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
-        Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.
+        Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
         <br><br>
         Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).
 
@@ -3141,6 +3143,12 @@ components:
       value:
         code: InvalidWBCode
         message: ""
+    SGTINIsNotFilled:
+      description: "Обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)\
+        \ не указан"
+      value:
+        code: 409
+        message: SGTINIsNotFilled
   parameters:
     OrderDBS:
       description: ID сборочного задания
@@ -4020,7 +4028,7 @@ components:
           example: true
           type: boolean
         orderId:
-          description: ID сборочного задания с успешно обновлёнными метаданными
+          description: ID сборочного задания с успешно обновлёнными данными
           example: 123456
           type: integer
       type: object
@@ -4192,9 +4200,9 @@ components:
           type: integer
         detail:
           description: |
-            - `not found` — сборочное задание не найдено
-            - `status conflict` — операция невозможна для этого статуса сборочного задания
-          example: not found
+            - `NotFound` — сборочное задание не найдено
+            - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
+          example: NotFound
           type: string
       type: object
     api.Error:
@@ -4551,6 +4559,57 @@ components:
           items:
             $ref: "#/components/schemas/_api_marketplace_v3_dbs_orders_stickers_post_200_response_stickers_inner"
           nullable: false
+          type: array
+      type: object
+    _api_marketplace_v3_dbs_orders_status_receive_post_200_response_results_inner_errors_inner:
+      properties:
+        code:
+          description: Код ошибки
+          example: 404
+          type: integer
+        detail:
+          description: |
+            - `NotFound` — сборочное задание не найдено
+            - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
+            - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
+          example: NotFound
+          type: string
+      type: object
+    _api_marketplace_v3_dbs_orders_status_receive_post_200_response_results_inner:
+      properties:
+        errors:
+          description: Детали ошибки
+          items:
+            $ref: "#/components/schemas/_api_marketplace_v3_dbs_orders_status_receive_post_200_response_results_inner_errors_inner"
+          type: array
+        isError:
+          description: Есть ли ошибки
+          example: true
+          type: boolean
+        orderId:
+          description: ID сборочного задания с успешно обновлёнными данными
+          example: 123456
+          type: integer
+      type: object
+    _api_marketplace_v3_dbs_orders_status_receive_post_200_response:
+      example:
+        requestId: 03615778-eb9e-4f55-b4Of-fd3ac0fad2сc
+        results:
+        - orderId: 4299281547
+          isError: true
+          errors:
+          - code: 404
+            detail: NotFound
+        - orderId: 4279781545
+          isError: false
+      properties:
+        requestId:
+          description: Уникальный ID запроса
+          example: f1787bd2d1fdс35d6f537316514у4a05
+          type: string
+        results:
+          items:
+            $ref: "#/components/schemas/_api_marketplace_v3_dbs_orders_status_receive_post_200_response_results_inner"
           type: array
       type: object
     _api_v3_dbs_orders_status_post_request:

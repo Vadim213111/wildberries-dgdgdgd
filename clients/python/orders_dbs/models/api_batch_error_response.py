@@ -27,7 +27,7 @@ class ApiBatchErrorResponse(BaseModel):
     ApiBatchErrorResponse
     """ # noqa: E501
     code: Optional[StrictInt] = Field(default=None, description="Код ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="- `not found` — сборочное задание не найдено - `status conflict` — операция невозможна для этого статуса сборочного задания ")
+    detail: Optional[StrictStr] = Field(default=None, description="- `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания ")
     __properties: ClassVar[List[str]] = ["code", "detail"]
 
     model_config = ConfigDict(

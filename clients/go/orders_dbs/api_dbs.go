@@ -1164,7 +1164,7 @@ func (r ApiApiMarketplaceV3DbsOrdersMetaSgtinPostRequest) Execute() (*ApiStatusS
 ApiMarketplaceV3DbsOrdersMetaSgtinPost Закрепить коды маркировки за сборочными заданиями
 
 Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br>
-Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`.
+Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке.
 <br><br>
 Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).
 
@@ -2270,7 +2270,7 @@ func (r ApiApiMarketplaceV3DbsOrdersStatusReceivePostRequest) ApiOrdersCodeReque
 	return r
 }
 
-func (r ApiApiMarketplaceV3DbsOrdersStatusReceivePostRequest) Execute() (*ApiStatusSetResponses, *http.Response, error) {
+func (r ApiApiMarketplaceV3DbsOrdersStatusReceivePostRequest) Execute() (*ApiMarketplaceV3DbsOrdersStatusReceivePost200Response, *http.Response, error) {
 	return r.ApiService.ApiMarketplaceV3DbsOrdersStatusReceivePostExecute(r)
 }
 
@@ -2301,13 +2301,13 @@ func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersStatusReceivePost(ctx context.C
 }
 
 // Execute executes the request
-//  @return ApiStatusSetResponses
-func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersStatusReceivePostExecute(r ApiApiMarketplaceV3DbsOrdersStatusReceivePostRequest) (*ApiStatusSetResponses, *http.Response, error) {
+//  @return ApiMarketplaceV3DbsOrdersStatusReceivePost200Response
+func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersStatusReceivePostExecute(r ApiApiMarketplaceV3DbsOrdersStatusReceivePostRequest) (*ApiMarketplaceV3DbsOrdersStatusReceivePost200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiStatusSetResponses
+		localVarReturnValue  *ApiMarketplaceV3DbsOrdersStatusReceivePost200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DBSAPIService.ApiMarketplaceV3DbsOrdersStatusReceivePost")

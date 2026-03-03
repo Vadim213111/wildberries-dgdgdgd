@@ -23,7 +23,7 @@ type ApiStatusSetResponse struct {
 	Errors []ApiBatchErrorResponse `json:"errors,omitempty"`
 	// Есть ли ошибки
 	IsError *bool `json:"isError,omitempty"`
-	// ID сборочного задания с успешно обновлёнными метаданными
+	// ID сборочного задания с успешно обновлёнными данными
 	OrderId *int32 `json:"orderId,omitempty"`
 }
 

@@ -19,6 +19,7 @@ import type {
   ApiBatchError,
   ApiError,
   ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequest,
+  ApiMarketplaceV3DbsOrdersStatusReceivePost200Response,
   ApiMarketplaceV3DbsOrdersStickersPost200Response,
   ApiMarketplaceV3DbsOrdersStickersPostRequest,
   ApiOrderGroupInner,
@@ -58,6 +59,8 @@ import {
     ApiErrorToJSON,
     ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestFromJSON,
     ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestToJSON,
+    ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseFromJSON,
+    ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseToJSON,
     ApiMarketplaceV3DbsOrdersStickersPost200ResponseFromJSON,
     ApiMarketplaceV3DbsOrdersStickersPost200ResponseToJSON,
     ApiMarketplaceV3DbsOrdersStickersPostRequestFromJSON,
@@ -569,7 +572,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить коды маркировки за сборочными заданиями
      */
     async apiMarketplaceV3DbsOrdersMetaSgtinPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
@@ -580,7 +583,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm`. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод обновляет код маркировки [Честный знак](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) нескольких сборочных заданий.<br> Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `confirm` — на сборке. <br><br> Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1info/post).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 500 запросов | 120 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Закрепить коды маркировки за сборочными заданиями
      */
     async apiMarketplaceV3DbsOrdersMetaSgtinPost(requestParameters: ApiMarketplaceV3DbsOrdersMetaSgtinPostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
@@ -848,18 +851,18 @@ export class DBSApi extends runtime.BaseAPI {
      * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Сообщить о получении заказов
      */
-    async apiMarketplaceV3DbsOrdersStatusReceivePostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusReceivePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiStatusSetResponses>> {
+    async apiMarketplaceV3DbsOrdersStatusReceivePostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStatusReceivePostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiMarketplaceV3DbsOrdersStatusReceivePost200Response>> {
         const requestOptions = await this.apiMarketplaceV3DbsOrdersStatusReceivePostRequestOpts(requestParameters);
         const response = await this.request(requestOptions, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiStatusSetResponsesFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseFromJSON(jsonValue));
     }
 
     /**
      * Метод переводит [сборочные задания](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS) из [статуса](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post) `deliver` в статус `receive` — получено покупателем.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Сообщить о получении заказов
      */
-    async apiMarketplaceV3DbsOrdersStatusReceivePost(requestParameters: ApiMarketplaceV3DbsOrdersStatusReceivePostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiStatusSetResponses> {
+    async apiMarketplaceV3DbsOrdersStatusReceivePost(requestParameters: ApiMarketplaceV3DbsOrdersStatusReceivePostRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiMarketplaceV3DbsOrdersStatusReceivePost200Response> {
         const response = await this.apiMarketplaceV3DbsOrdersStatusReceivePostRaw(requestParameters, initOverrides);
         return await response.value();
     }

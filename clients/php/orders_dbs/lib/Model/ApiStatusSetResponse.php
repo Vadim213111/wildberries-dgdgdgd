@@ -370,7 +370,7 @@ class ApiStatusSetResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets order_id
      *
-     * @param int|null $order_id ID сборочного задания с успешно обновлёнными метаданными
+     * @param int|null $order_id ID сборочного задания с успешно обновлёнными данными
      *
      * @return self
      */

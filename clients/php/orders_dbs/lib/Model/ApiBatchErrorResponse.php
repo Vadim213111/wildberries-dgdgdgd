@@ -336,7 +336,7 @@ class ApiBatchErrorResponse implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Sets detail
      *
-     * @param string|null $detail - `not found` — сборочное задание не найдено - `status conflict` — операция невозможна для этого статуса сборочного задания
+     * @param string|null $detail - `NotFound` — сборочное задание не найдено - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
      *
      * @return self
      */

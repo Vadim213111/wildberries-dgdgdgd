@@ -26,8 +26,8 @@ export interface ApiBatchErrorResponse {
      */
     code?: number;
     /**
-     * - `not found` — сборочное задание не найдено
-     * - `status conflict` — операция невозможна для этого статуса сборочного задания
+     * - `NotFound` — сборочное задание не найдено
+     * - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
      * 
      * @type {string}
      * @memberof ApiBatchErrorResponse
