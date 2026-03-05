@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -31,6 +31,7 @@ __all__ = [
     "ApiV3DbwOrdersGet200Response",
     "ApiV3DbwOrdersNewGet200Response",
     "ApiV3DbwOrdersNewGet401Response",
+    "ApiV3DbwOrdersNewGet402Response",
     "ApiV3DbwOrdersOrderIdMetaGet200Response",
     "ApiV3DbwOrdersOrderIdMetaGtinPutRequest",
     "ApiV3DbwOrdersOrderIdMetaImeiPutRequest",
@@ -80,6 +81,7 @@ from wildberries_sdk.orders_dbw.exceptions import ApiException as ApiException
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_get200_response import ApiV3DbwOrdersGet200Response as ApiV3DbwOrdersGet200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_new_get200_response import ApiV3DbwOrdersNewGet200Response as ApiV3DbwOrdersNewGet200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_new_get401_response import ApiV3DbwOrdersNewGet401Response as ApiV3DbwOrdersNewGet401Response
+from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_new_get402_response import ApiV3DbwOrdersNewGet402Response as ApiV3DbwOrdersNewGet402Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_get200_response import ApiV3DbwOrdersOrderIdMetaGet200Response as ApiV3DbwOrdersOrderIdMetaGet200Response
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_gtin_put_request import ApiV3DbwOrdersOrderIdMetaGtinPutRequest as ApiV3DbwOrdersOrderIdMetaGtinPutRequest
 from wildberries_sdk.orders_dbw.models.api_v3_dbw_orders_order_id_meta_imei_put_request import ApiV3DbwOrdersOrderIdMetaImeiPutRequest as ApiV3DbwOrdersOrderIdMetaImeiPutRequest

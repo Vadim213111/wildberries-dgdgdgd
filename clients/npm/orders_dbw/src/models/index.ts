@@ -3,6 +3,7 @@
 export * from './ApiV3DbwOrdersGet200Response';
 export * from './ApiV3DbwOrdersNewGet200Response';
 export * from './ApiV3DbwOrdersNewGet401Response';
+export * from './ApiV3DbwOrdersNewGet402Response';
 export * from './ApiV3DbwOrdersOrderIdMetaGet200Response';
 export * from './ApiV3DbwOrdersOrderIdMetaGtinPutRequest';
 export * from './ApiV3DbwOrdersOrderIdMetaImeiPutRequest';

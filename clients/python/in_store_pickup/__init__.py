@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -75,6 +75,7 @@ __all__ = [
     "ApiUIN",
     "ApiUINRequest",
     "ApiV3ClickCollectOrdersNewGet401Response",
+    "ApiV3ClickCollectOrdersNewGet402Response",
     "Error",
 ]
 
@@ -140,5 +141,6 @@ from wildberries_sdk.in_store_pickup.models.api_status_set_responses import ApiS
 from wildberries_sdk.in_store_pickup.models.api_uin import ApiUIN as ApiUIN
 from wildberries_sdk.in_store_pickup.models.api_uin_request import ApiUINRequest as ApiUINRequest
 from wildberries_sdk.in_store_pickup.models.api_v3_click_collect_orders_new_get401_response import ApiV3ClickCollectOrdersNewGet401Response as ApiV3ClickCollectOrdersNewGet401Response
+from wildberries_sdk.in_store_pickup.models.api_v3_click_collect_orders_new_get402_response import ApiV3ClickCollectOrdersNewGet402Response as ApiV3ClickCollectOrdersNewGet402Response
 from wildberries_sdk.in_store_pickup.models.error import Error as Error
 

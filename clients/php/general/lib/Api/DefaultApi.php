@@ -523,7 +523,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response
+     * @return \Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet402Response|\Wildberries\Sdk\General\Model\PingGet401Response
      */
     public function apiV1SellerInfoGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SellerInfoGet'][0])
     {
@@ -546,7 +546,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\General\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\General\Model\ApiV1SellerInfoGet200Response|\Wildberries\Sdk\General\Model\PingGet401Response|\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet402Response|\Wildberries\Sdk\General\Model\PingGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1SellerInfoGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SellerInfoGet'][0])
     {
@@ -585,6 +585,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\General\Model\PingGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet402Response',
                         $request,
                         $response,
                     );
@@ -630,6 +636,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\General\Model\PingGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\General\Model\ApiV1SellerInfoGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

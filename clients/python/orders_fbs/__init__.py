@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -50,6 +50,7 @@ __all__ = [
     "ApiV3OrdersStickersPost200Response",
     "ApiV3OrdersStickersPost200ResponseStickersInner",
     "ApiV3OrdersStickersPostRequest",
+    "ApiV3PassesGet402Response",
     "ApiV3PassesOfficesGet401Response",
     "ApiV3PassesPassIdPutRequest",
     "ApiV3PassesPost201Response",
@@ -130,6 +131,7 @@ from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_cross_border_post_
 from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_post200_response import ApiV3OrdersStickersPost200Response as ApiV3OrdersStickersPost200Response
 from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_post200_response_stickers_inner import ApiV3OrdersStickersPost200ResponseStickersInner as ApiV3OrdersStickersPost200ResponseStickersInner
 from wildberries_sdk.orders_fbs.models.api_v3_orders_stickers_post_request import ApiV3OrdersStickersPostRequest as ApiV3OrdersStickersPostRequest
+from wildberries_sdk.orders_fbs.models.api_v3_passes_get402_response import ApiV3PassesGet402Response as ApiV3PassesGet402Response
 from wildberries_sdk.orders_fbs.models.api_v3_passes_offices_get401_response import ApiV3PassesOfficesGet401Response as ApiV3PassesOfficesGet401Response
 from wildberries_sdk.orders_fbs.models.api_v3_passes_pass_id_put_request import ApiV3PassesPassIdPutRequest as ApiV3PassesPassIdPutRequest
 from wildberries_sdk.orders_fbs.models.api_v3_passes_post201_response import ApiV3PassesPost201Response as ApiV3PassesPost201Response

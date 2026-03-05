@@ -4174,7 +4174,7 @@ class DefaultApi:
     ) -> ApiMarketplaceV3DbsOrdersStickersPost200Response:
         """Получить стикеры для сборочных заданий с доставкой в ПВЗ
 
-        <div class=\"description_auth\"> Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токены</a> для категории <strong>Маркетплейс</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+        <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 
         :param type: Формат стикера (required)
         :type type: str
@@ -4257,7 +4257,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiMarketplaceV3DbsOrdersStickersPost200Response]:
         """Получить стикеры для сборочных заданий с доставкой в ПВЗ
 
-        <div class=\"description_auth\"> Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токены</a> для категории <strong>Маркетплейс</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+        <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 
         :param type: Формат стикера (required)
         :type type: str
@@ -4340,7 +4340,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить стикеры для сборочных заданий с доставкой в ПВЗ
 
-        <div class=\"description_auth\"> Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токены</a> для категории <strong>Маркетплейс</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+        <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 
         :param type: Формат стикера (required)
         :type type: str
@@ -4840,6 +4840,7 @@ class DefaultApi:
             '200': "DbsOnlyClientInfoResp",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -4912,6 +4913,7 @@ class DefaultApi:
             '200': "DbsOnlyClientInfoResp",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -4984,6 +4986,7 @@ class DefaultApi:
             '200': "DbsOnlyClientInfoResp",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -5133,6 +5136,7 @@ class DefaultApi:
             '200': "DeliveryDatesInfoResp",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5204,6 +5208,7 @@ class DefaultApi:
             '200': "DeliveryDatesInfoResp",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5275,6 +5280,7 @@ class DefaultApi:
             '200': "DeliveryDatesInfoResp",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5435,6 +5441,7 @@ class DefaultApi:
             '200': "ApiV3DbsOrdersGet200Response",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5518,6 +5525,7 @@ class DefaultApi:
             '200': "ApiV3DbsOrdersGet200Response",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5601,6 +5609,7 @@ class DefaultApi:
             '200': "ApiV3DbsOrdersGet200Response",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5748,6 +5757,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3DbsOrdersNewGet200Response",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5814,6 +5824,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3DbsOrdersNewGet200Response",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -5880,6 +5891,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3DbsOrdersNewGet200Response",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -6013,6 +6025,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6087,6 +6100,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6161,6 +6175,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6299,6 +6314,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6373,6 +6389,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6447,6 +6464,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6585,6 +6603,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6659,6 +6678,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6733,6 +6753,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6875,6 +6896,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -6952,6 +6974,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -7029,6 +7052,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -7170,6 +7194,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3DbsOrdersOrderIdMetaGet200Response",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -7242,6 +7267,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3DbsOrdersOrderIdMetaGet200Response",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -7314,6 +7340,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3DbsOrdersOrderIdMetaGet200Response",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
@@ -7455,6 +7482,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7533,6 +7561,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7611,6 +7640,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7769,6 +7799,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7847,6 +7878,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7925,6 +7957,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8083,6 +8116,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8161,6 +8195,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8239,6 +8274,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8397,6 +8433,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8475,6 +8512,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8553,6 +8591,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8711,6 +8750,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8789,6 +8829,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8867,6 +8908,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -9025,6 +9067,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -9103,6 +9146,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -9181,6 +9225,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -9335,6 +9380,7 @@ class DefaultApi:
             '200': "ApiV3DbsOrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -9407,6 +9453,7 @@ class DefaultApi:
             '200': "ApiV3DbsOrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }
@@ -9479,6 +9526,7 @@ class DefaultApi:
             '200': "ApiV3DbsOrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3DbsOrdersNewGet401Response",
+            '402': "ApiV3DbsOrdersNewGet402Response",
             '403': "Error",
             '429': "ApiV3DbsOrdersNewGet401Response",
         }

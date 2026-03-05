@@ -9398,6 +9398,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsDetailsGet200Response",
             '400': "ApiV1CalendarPromotionsGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -9468,6 +9469,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsDetailsGet200Response",
             '400': "ApiV1CalendarPromotionsGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -9538,6 +9540,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsDetailsGet200Response",
             '400': "ApiV1CalendarPromotionsGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -9691,6 +9694,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsGet200Response",
             '400': "ApiV1CalendarPromotionsGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -9777,6 +9781,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsGet200Response",
             '400': "ApiV1CalendarPromotionsGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -9863,6 +9868,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsGet200Response",
             '400': "ApiV1CalendarPromotionsGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -10049,6 +10055,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsNomenclaturesGet200Response",
             '400': "ApiV1CalendarPromotionsNomenclaturesGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '422': "ApiV1CalendarPromotionsNomenclaturesGet422Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -10132,6 +10139,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsNomenclaturesGet200Response",
             '400': "ApiV1CalendarPromotionsNomenclaturesGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '422': "ApiV1CalendarPromotionsNomenclaturesGet422Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -10215,6 +10223,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsNomenclaturesGet200Response",
             '400': "ApiV1CalendarPromotionsNomenclaturesGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '422': "ApiV1CalendarPromotionsNomenclaturesGet422Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -10367,6 +10376,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsUploadPost200Response",
             '400': "ApiV1CalendarPromotionsNomenclaturesGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '422': "ApiV1CalendarPromotionsUploadPost422Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -10438,6 +10448,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsUploadPost200Response",
             '400': "ApiV1CalendarPromotionsNomenclaturesGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '422': "ApiV1CalendarPromotionsUploadPost422Response",
             '429': "AdvV1PromotionCountGet401Response",
         }
@@ -10509,6 +10520,7 @@ class DefaultApi:
             '200': "ApiV1CalendarPromotionsUploadPost200Response",
             '400': "ApiV1CalendarPromotionsNomenclaturesGet400Response",
             '401': "AdvV1PromotionCountGet401Response",
+            '402': "ApiV1CalendarPromotionsGet402Response",
             '422': "ApiV1CalendarPromotionsUploadPost422Response",
             '429': "AdvV1PromotionCountGet401Response",
         }

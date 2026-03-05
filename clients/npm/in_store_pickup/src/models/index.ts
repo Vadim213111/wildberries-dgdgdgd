@@ -47,4 +47,5 @@ export * from './ApiStatusSetResponses';
 export * from './ApiUIN';
 export * from './ApiUINRequest';
 export * from './ApiV3ClickCollectOrdersNewGet401Response';
+export * from './ApiV3ClickCollectOrdersNewGet402Response';
 export * from './ModelError';

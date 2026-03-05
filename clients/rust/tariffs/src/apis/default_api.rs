@@ -33,6 +33,7 @@ pub enum ApiTariffsV1AcceptanceCoefficientsGetError {
 pub enum ApiV1TariffsBoxGetError {
     Status400(models::BadRequest),
     Status401(models::ApiV1TariffsCommissionGet401Response),
+    Status402(models::ApiV1TariffsCommissionGet402Response),
     Status429(models::ApiV1TariffsCommissionGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -43,6 +44,7 @@ pub enum ApiV1TariffsBoxGetError {
 pub enum ApiV1TariffsCommissionGetError {
     Status400(models::BadRequest),
     Status401(models::ApiV1TariffsCommissionGet401Response),
+    Status402(models::ApiV1TariffsCommissionGet402Response),
     Status429(models::ApiV1TariffsCommissionGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -53,6 +55,7 @@ pub enum ApiV1TariffsCommissionGetError {
 pub enum ApiV1TariffsPalletGetError {
     Status400(models::BadRequest),
     Status401(models::ApiV1TariffsCommissionGet401Response),
+    Status402(models::ApiV1TariffsCommissionGet402Response),
     Status429(models::ApiV1TariffsCommissionGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -63,6 +66,7 @@ pub enum ApiV1TariffsPalletGetError {
 pub enum ApiV1TariffsReturnGetError {
     Status400(models::BadRequest),
     Status401(models::ApiV1TariffsCommissionGet401Response),
+    Status402(models::ApiV1TariffsCommissionGet402Response),
     Status429(models::ApiV1TariffsCommissionGet401Response),
     UnknownValue(serde_json::Value),
 }

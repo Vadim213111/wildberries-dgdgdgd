@@ -92,5 +92,7 @@ pub mod api_uin_request;
 pub use self::api_uin_request::ApiUinRequest;
 pub mod _api_v3_click_collect_orders_new_get_401_response;
 pub use self::_api_v3_click_collect_orders_new_get_401_response::ApiV3ClickCollectOrdersNewGet401Response;
+pub mod _api_v3_click_collect_orders_new_get_402_response;
+pub use self::_api_v3_click_collect_orders_new_get_402_response::ApiV3ClickCollectOrdersNewGet402Response;
 pub mod error;
 pub use self::error::Error;

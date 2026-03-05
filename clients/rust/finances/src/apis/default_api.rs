@@ -20,6 +20,7 @@ use super::{Error, configuration, ContentType};
 #[serde(untagged)]
 pub enum ApiV1AccountBalanceGetError {
     Status401(models::ApiV1AccountBalanceGet401Response),
+    Status402(models::ApiV1AccountBalanceGet402Response),
     Status429(models::ApiV1AccountBalanceGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -39,6 +40,7 @@ pub enum ApiV1DocumentsCategoriesGetError {
 pub enum ApiV1DocumentsDownloadAllPostError {
     Status400(models::ApiV1DocumentsListGet400Response),
     Status401(models::ApiV1AccountBalanceGet401Response),
+    Status402(models::ApiV1AccountBalanceGet402Response),
     Status429(models::ApiV1AccountBalanceGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -49,6 +51,7 @@ pub enum ApiV1DocumentsDownloadAllPostError {
 pub enum ApiV1DocumentsDownloadGetError {
     Status400(models::ApiV1DocumentsListGet400Response),
     Status401(models::ApiV1AccountBalanceGet401Response),
+    Status402(models::ApiV1AccountBalanceGet402Response),
     Status429(models::ApiV1AccountBalanceGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -59,6 +62,7 @@ pub enum ApiV1DocumentsDownloadGetError {
 pub enum ApiV1DocumentsListGetError {
     Status400(models::ApiV1DocumentsListGet400Response),
     Status401(models::ApiV1AccountBalanceGet401Response),
+    Status402(models::ApiV1AccountBalanceGet402Response),
     Status429(models::ApiV1AccountBalanceGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -69,6 +73,7 @@ pub enum ApiV1DocumentsListGetError {
 pub enum ApiV5SupplierReportDetailByPeriodGetError {
     Status400(models::ApiV5SupplierReportDetailByPeriodGet400Response),
     Status401(models::ApiV1AccountBalanceGet401Response),
+    Status402(models::ApiV1AccountBalanceGet402Response),
     Status429(models::ApiV1AccountBalanceGet401Response),
     UnknownValue(serde_json::Value),
 }

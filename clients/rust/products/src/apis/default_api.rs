@@ -78,6 +78,7 @@ pub enum ApiV2HistoryTasksGetError {
 pub enum ApiV2ListGoodsFilterGetError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -89,6 +90,7 @@ pub enum ApiV2ListGoodsFilterGetError {
 pub enum ApiV2ListGoodsFilterPostError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -100,6 +102,7 @@ pub enum ApiV2ListGoodsFilterPostError {
 pub enum ApiV2ListGoodsSizeNmGetError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -111,6 +114,7 @@ pub enum ApiV2ListGoodsSizeNmGetError {
 pub enum ApiV2QuarantineGoodsGetError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status422(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -123,6 +127,7 @@ pub enum ApiV2QuarantineGoodsGetError {
 pub enum ApiV2UploadTaskClubDiscountPostError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status422(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -135,6 +140,7 @@ pub enum ApiV2UploadTaskClubDiscountPostError {
 pub enum ApiV2UploadTaskPostError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status422(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -147,6 +153,7 @@ pub enum ApiV2UploadTaskPostError {
 pub enum ApiV2UploadTaskSizePostError {
     Status400(models::ResponseError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseError),
     Status422(models::ResponseError),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -159,6 +166,7 @@ pub enum ApiV2UploadTaskSizePostError {
 pub enum ApiV3DbwWarehousesWarehouseIdContactsGetError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -170,6 +178,7 @@ pub enum ApiV3DbwWarehousesWarehouseIdContactsGetError {
 pub enum ApiV3DbwWarehousesWarehouseIdContactsPutError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -191,6 +200,7 @@ pub enum ApiV3OfficesGetError {
 pub enum ApiV3StocksWarehouseIdDeleteError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -204,6 +214,7 @@ pub enum ApiV3StocksWarehouseIdDeleteError {
 pub enum ApiV3StocksWarehouseIdPostError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -216,6 +227,7 @@ pub enum ApiV3StocksWarehouseIdPostError {
 pub enum ApiV3StocksWarehouseIdPutError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status406(models::ApiV3StocksWarehouseIdPut406Response),
@@ -240,6 +252,7 @@ pub enum ApiV3WarehousesGetError {
 pub enum ApiV3WarehousesPostError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -252,6 +265,7 @@ pub enum ApiV3WarehousesPostError {
 #[serde(untagged)]
 pub enum ApiV3WarehousesWarehouseIdDeleteError {
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -264,6 +278,7 @@ pub enum ApiV3WarehousesWarehouseIdDeleteError {
 pub enum ApiV3WarehousesWarehouseIdPutError {
     Status400(models::Error),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -276,6 +291,7 @@ pub enum ApiV3WarehousesWarehouseIdPutError {
 #[serde(untagged)]
 pub enum ContentV2BarcodesPostError {
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -287,6 +303,7 @@ pub enum ContentV2BarcodesPostError {
 pub enum ContentV2CardsDeleteTrashPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -319,6 +336,7 @@ pub enum ContentV2CardsLimitsGetError {
 pub enum ContentV2CardsMoveNmPostError {
     Status400(models::ContentV2CardsMoveNmPost400Response),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseCardCreate),
     Status413(String),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -331,6 +349,7 @@ pub enum ContentV2CardsMoveNmPostError {
 pub enum ContentV2CardsRecoverPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -342,6 +361,7 @@ pub enum ContentV2CardsRecoverPostError {
 pub enum ContentV2CardsUpdatePostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status413(models::ContentV2CardsUpdatePost413Response),
     Status429(models::ContentV2ObjectParentAllGet401Response),
@@ -354,6 +374,7 @@ pub enum ContentV2CardsUpdatePostError {
 pub enum ContentV2CardsUploadAddPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status413(models::ContentV2CardsUpdatePost413Response),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -365,6 +386,7 @@ pub enum ContentV2CardsUploadAddPostError {
 pub enum ContentV2CardsUploadPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status413(models::ContentV2CardsUpdatePost413Response),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -442,6 +464,7 @@ pub enum ContentV2DirectoryVatGetError {
 pub enum ContentV2GetCardsListPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -453,6 +476,7 @@ pub enum ContentV2GetCardsListPostError {
 pub enum ContentV2GetCardsTrashPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -495,6 +519,7 @@ pub enum ContentV2ObjectParentAllGetError {
 pub enum ContentV2TagIdDeleteError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -506,6 +531,7 @@ pub enum ContentV2TagIdDeleteError {
 pub enum ContentV2TagIdPatchError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -517,6 +543,7 @@ pub enum ContentV2TagIdPatchError {
 pub enum ContentV2TagNomenclatureLinkPostError {
     Status400(models::ResponseContentError),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -528,6 +555,7 @@ pub enum ContentV2TagNomenclatureLinkPostError {
 pub enum ContentV2TagPostError {
     Status400(models::ResponseBodyContentError400),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -538,6 +566,7 @@ pub enum ContentV2TagPostError {
 #[serde(untagged)]
 pub enum ContentV2TagsGetError {
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::ResponseBodyContentError403),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -549,6 +578,7 @@ pub enum ContentV2TagsGetError {
 pub enum ContentV3MediaFilePostError {
     Status400(models::MediaErrors),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::MediaErrors),
     Status429(models::ContentV2ObjectParentAllGet401Response),
     UnknownValue(serde_json::Value),
@@ -560,6 +590,7 @@ pub enum ContentV3MediaFilePostError {
 pub enum ContentV3MediaSavePostError {
     Status400(models::MediaErrors),
     Status401(models::ContentV2ObjectParentAllGet401Response),
+    Status402(models::ContentV2TagsGet402Response),
     Status403(models::MediaErrors),
     Status409(models::MediaErrors),
     Status422(models::MediaErrors),

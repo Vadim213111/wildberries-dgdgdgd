@@ -1637,6 +1637,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsFilterGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -1716,6 +1717,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsFilterGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -1795,6 +1797,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsFilterGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -1942,6 +1945,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsFilterGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -2013,6 +2017,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsFilterGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -2084,6 +2089,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsFilterGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -2240,6 +2246,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsSizeNmGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -2319,6 +2326,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsSizeNmGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -2398,6 +2406,7 @@ class DefaultApi:
             '200': "ApiV2ListGoodsSizeNmGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -2549,6 +2558,7 @@ class DefaultApi:
             '200': "ApiV2QuarantineGoodsGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -2625,6 +2635,7 @@ class DefaultApi:
             '200': "ApiV2QuarantineGoodsGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -2701,6 +2712,7 @@ class DefaultApi:
             '200': "ApiV2QuarantineGoodsGet200Response",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -2845,6 +2857,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -2918,6 +2931,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -2991,6 +3005,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3141,6 +3156,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3214,6 +3230,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3287,6 +3304,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3437,6 +3455,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3510,6 +3529,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3583,6 +3603,7 @@ class DefaultApi:
             '208': "RequestAlreadyExistsError",
             '400': "ResponseError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseError",
             '422': "ResponseError",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -3732,6 +3753,7 @@ class DefaultApi:
             '200': "ApiV3DbwWarehousesWarehouseIdContactsGet200Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -3803,6 +3825,7 @@ class DefaultApi:
             '200': "ApiV3DbwWarehousesWarehouseIdContactsGet200Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -3874,6 +3897,7 @@ class DefaultApi:
             '200': "ApiV3DbwWarehousesWarehouseIdContactsGet200Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -4013,6 +4037,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -4088,6 +4113,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -4163,6 +4189,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -4577,6 +4604,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -4654,6 +4682,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -4731,6 +4760,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -4888,6 +4918,7 @@ class DefaultApi:
             '200': "ApiV3StocksWarehouseIdPost200Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -4964,6 +4995,7 @@ class DefaultApi:
             '200': "ApiV3StocksWarehouseIdPost200Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -5040,6 +5072,7 @@ class DefaultApi:
             '200': "ApiV3StocksWarehouseIdPost200Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -5196,6 +5229,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '406': "ApiV3StocksWarehouseIdPut406Response",
@@ -5274,6 +5308,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '406': "ApiV3StocksWarehouseIdPut406Response",
@@ -5352,6 +5387,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '406': "ApiV3StocksWarehouseIdPut406Response",
@@ -5765,6 +5801,7 @@ class DefaultApi:
             '201': "ApiV3WarehousesPost201Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -5838,6 +5875,7 @@ class DefaultApi:
             '201': "ApiV3WarehousesPost201Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -5911,6 +5949,7 @@ class DefaultApi:
             '201': "ApiV3WarehousesPost201Response",
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6060,6 +6099,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -6131,6 +6171,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -6202,6 +6243,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -6342,6 +6384,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6419,6 +6462,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6496,6 +6540,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -6648,6 +6693,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ContentV2BarcodesPost200Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -6718,6 +6764,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ContentV2BarcodesPost200Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -6788,6 +6835,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ContentV2BarcodesPost200Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -6936,6 +6984,7 @@ class DefaultApi:
             '200': "ContentV2CardsDeleteTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -7007,6 +7056,7 @@ class DefaultApi:
             '200': "ContentV2CardsDeleteTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -7078,6 +7128,7 @@ class DefaultApi:
             '200': "ContentV2CardsDeleteTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -7792,6 +7843,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ContentV2CardsMoveNmPost400Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseCardCreate",
             '413': "str",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -7864,6 +7916,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ContentV2CardsMoveNmPost400Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseCardCreate",
             '413': "str",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -7936,6 +7989,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ContentV2CardsMoveNmPost400Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseCardCreate",
             '413': "str",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -8085,6 +8139,7 @@ class DefaultApi:
             '200': "ContentV2CardsDeleteTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -8156,6 +8211,7 @@ class DefaultApi:
             '200': "ContentV2CardsDeleteTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -8227,6 +8283,7 @@ class DefaultApi:
             '200': "ContentV2CardsDeleteTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -8375,6 +8432,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -8447,6 +8505,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -8519,6 +8578,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
@@ -8669,6 +8729,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -8740,6 +8801,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -8811,6 +8873,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -8959,6 +9022,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -9030,6 +9094,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -9101,6 +9166,7 @@ class DefaultApi:
             '200': "ResponseCardCreate",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '413': "ContentV2CardsUpdatePost413Response",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -10962,6 +11028,7 @@ class DefaultApi:
             '200': "ContentV2GetCardsListPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -11037,6 +11104,7 @@ class DefaultApi:
             '200': "ContentV2GetCardsListPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -11112,6 +11180,7 @@ class DefaultApi:
             '200': "ContentV2GetCardsListPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -11270,6 +11339,7 @@ class DefaultApi:
             '200': "ContentV2GetCardsTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -11345,6 +11415,7 @@ class DefaultApi:
             '200': "ContentV2GetCardsTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -11420,6 +11491,7 @@ class DefaultApi:
             '200': "ContentV2GetCardsTrashPost200Response",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -12488,6 +12560,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -12559,6 +12632,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -12630,6 +12704,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -12769,6 +12844,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -12844,6 +12920,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -12919,6 +12996,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13070,6 +13148,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseContentError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13141,6 +13220,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseContentError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13212,6 +13292,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseContentError",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13360,6 +13441,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13431,6 +13513,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13502,6 +13585,7 @@ class DefaultApi:
             '200': "ResponseContentError",
             '400': "ResponseBodyContentError400",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13645,6 +13729,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ContentV2TagsGet200Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13711,6 +13796,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ContentV2TagsGet200Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13777,6 +13863,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ContentV2TagsGet200Response",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "ResponseBodyContentError403",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13917,6 +14004,7 @@ class DefaultApi:
             '200': "ContentV3MediaFilePost200Response",
             '400': "MediaErrors",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "MediaErrors",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -13996,6 +14084,7 @@ class DefaultApi:
             '200': "ContentV3MediaFilePost200Response",
             '400': "MediaErrors",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "MediaErrors",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -14075,6 +14164,7 @@ class DefaultApi:
             '200': "ContentV3MediaFilePost200Response",
             '400': "MediaErrors",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "MediaErrors",
             '429': "ContentV2ObjectParentAllGet401Response",
         }
@@ -14230,6 +14320,7 @@ class DefaultApi:
             '200': "ContentV3MediaFilePost200Response",
             '400': "MediaErrors",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "MediaErrors",
             '409': "MediaErrors",
             '422': "MediaErrors",
@@ -14303,6 +14394,7 @@ class DefaultApi:
             '200': "ContentV3MediaFilePost200Response",
             '400': "MediaErrors",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "MediaErrors",
             '409': "MediaErrors",
             '422': "MediaErrors",
@@ -14376,6 +14468,7 @@ class DefaultApi:
             '200': "ContentV3MediaFilePost200Response",
             '400': "MediaErrors",
             '401': "ContentV2ObjectParentAllGet401Response",
+            '402': "ContentV2TagsGet402Response",
             '403': "MediaErrors",
             '409': "MediaErrors",
             '422': "MediaErrors",

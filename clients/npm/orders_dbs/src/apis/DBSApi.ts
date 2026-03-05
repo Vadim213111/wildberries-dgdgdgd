@@ -37,6 +37,7 @@ import type {
   ApiV3DbsOrdersGet200Response,
   ApiV3DbsOrdersNewGet200Response,
   ApiV3DbsOrdersNewGet401Response,
+  ApiV3DbsOrdersNewGet402Response,
   ApiV3DbsOrdersOrderIdMetaGet200Response,
   ApiV3DbsOrdersOrderIdMetaGtinPutRequest,
   ApiV3DbsOrdersOrderIdMetaImeiPutRequest,
@@ -95,6 +96,8 @@ import {
     ApiV3DbsOrdersNewGet200ResponseToJSON,
     ApiV3DbsOrdersNewGet401ResponseFromJSON,
     ApiV3DbsOrdersNewGet401ResponseToJSON,
+    ApiV3DbsOrdersNewGet402ResponseFromJSON,
+    ApiV3DbsOrdersNewGet402ResponseToJSON,
     ApiV3DbsOrdersOrderIdMetaGet200ResponseFromJSON,
     ApiV3DbsOrdersOrderIdMetaGet200ResponseToJSON,
     ApiV3DbsOrdersOrderIdMetaGtinPutRequestFromJSON,
@@ -973,7 +976,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * <div class=\"description_auth\"> Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токены</a> для категории <strong>Маркетплейс</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
      * Получить стикеры для сборочных заданий с доставкой в ПВЗ
      */
     async apiMarketplaceV3DbsOrdersStickersPostRaw(requestParameters: ApiMarketplaceV3DbsOrdersStickersPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiMarketplaceV3DbsOrdersStickersPost200Response>> {
@@ -984,7 +987,7 @@ export class DBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * <div class=\"description_auth\"> Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токены</a> для категории <strong>Маркетплейс</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
      * Получить стикеры для сборочных заданий с доставкой в ПВЗ
      */
     async apiMarketplaceV3DbsOrdersStickersPost(requestParameters: ApiMarketplaceV3DbsOrdersStickersPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiMarketplaceV3DbsOrdersStickersPost200Response> {

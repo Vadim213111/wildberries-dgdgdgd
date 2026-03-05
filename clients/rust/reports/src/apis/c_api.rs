@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiV1AnalyticsExciseReportPostError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }

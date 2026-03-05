@@ -381,6 +381,7 @@ class DefaultApi:
             '200': "TariffsBoxResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -451,6 +452,7 @@ class DefaultApi:
             '200': "TariffsBoxResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -521,6 +523,7 @@ class DefaultApi:
             '200': "TariffsBoxResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -657,6 +660,7 @@ class DefaultApi:
             '200': "ApiV1TariffsCommissionGet200Response",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -727,6 +731,7 @@ class DefaultApi:
             '200': "ApiV1TariffsCommissionGet200Response",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -797,6 +802,7 @@ class DefaultApi:
             '200': "ApiV1TariffsCommissionGet200Response",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -933,6 +939,7 @@ class DefaultApi:
             '200': "TariffsPalletResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1003,6 +1010,7 @@ class DefaultApi:
             '200': "TariffsPalletResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1073,6 +1081,7 @@ class DefaultApi:
             '200': "TariffsPalletResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1209,6 +1218,7 @@ class DefaultApi:
             '200': "ReturnTariffsResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1279,6 +1289,7 @@ class DefaultApi:
             '200': "ReturnTariffsResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1349,6 +1360,7 @@ class DefaultApi:
             '200': "ReturnTariffsResponse",
             '400': "BadRequest",
             '401': "ApiV1TariffsCommissionGet401Response",
+            '402': "ApiV1TariffsCommissionGet402Response",
             '429': "ApiV1TariffsCommissionGet401Response",
         }
         response_data = self.api_client.call_api(

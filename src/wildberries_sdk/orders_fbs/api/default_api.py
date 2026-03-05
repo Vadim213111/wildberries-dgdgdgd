@@ -735,6 +735,7 @@ class DefaultApi:
             '200': "V3SupplyOrderIDsAPI",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -807,6 +808,7 @@ class DefaultApi:
             '200': "V3SupplyOrderIDsAPI",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -879,6 +881,7 @@ class DefaultApi:
             '200': "V3SupplyOrderIDsAPI",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -929,7 +932,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -1324,6 +1328,7 @@ class DefaultApi:
             '200': "CrossborderTurkeyClientInfoResp",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1396,6 +1401,7 @@ class DefaultApi:
             '200': "CrossborderTurkeyClientInfoResp",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1468,6 +1474,7 @@ class DefaultApi:
             '200': "CrossborderTurkeyClientInfoResp",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -1518,7 +1525,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -1628,6 +1636,7 @@ class DefaultApi:
             '200': "ApiV3OrdersGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -1711,6 +1720,7 @@ class DefaultApi:
             '200': "ApiV3OrdersGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -1794,6 +1804,7 @@ class DefaultApi:
             '200': "ApiV3OrdersGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -1860,7 +1871,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -1940,6 +1952,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3OrdersNewGet200Response",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2006,6 +2019,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3OrdersNewGet200Response",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2072,6 +2086,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV3OrdersNewGet200Response",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -2118,7 +2133,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -2203,6 +2219,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2276,6 +2293,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2349,6 +2367,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2400,7 +2419,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -2489,6 +2509,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -2565,6 +2586,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -2641,6 +2663,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -2696,7 +2719,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -2785,6 +2809,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2862,6 +2887,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2939,6 +2965,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -2993,7 +3020,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -3095,6 +3123,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3171,6 +3200,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3247,6 +3277,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3300,7 +3331,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -3402,6 +3434,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3478,6 +3511,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3554,6 +3588,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -3607,7 +3642,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -3709,6 +3745,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -3786,6 +3823,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -3863,6 +3901,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -3917,7 +3956,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -4019,6 +4059,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4095,6 +4136,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4171,6 +4213,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '409': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4224,7 +4267,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -4322,6 +4366,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusHistoryPost200Response",
             '400': None,
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4394,6 +4439,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusHistoryPost200Response",
             '400': None,
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4466,6 +4512,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusHistoryPost200Response",
             '400': None,
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -4516,7 +4563,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -4614,6 +4662,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -4685,6 +4734,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -4756,6 +4806,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStatusPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -4805,7 +4856,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -4903,6 +4955,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersCrossBorderPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -4974,6 +5027,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersCrossBorderPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5045,6 +5099,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersCrossBorderPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5094,7 +5149,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -5204,6 +5260,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5287,6 +5344,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5370,6 +5428,7 @@ class DefaultApi:
             '200': "ApiV3OrdersStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5434,7 +5493,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -5527,6 +5587,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelPass]",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5593,6 +5654,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelPass]",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5659,6 +5721,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ModelPass]",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -5705,7 +5768,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -6047,6 +6111,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6118,6 +6183,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6189,6 +6255,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '204': None,
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6239,7 +6306,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -6328,6 +6396,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6404,6 +6473,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6480,6 +6550,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6533,7 +6604,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -6631,6 +6703,7 @@ class DefaultApi:
             '201': "ApiV3PassesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6703,6 +6776,7 @@ class DefaultApi:
             '201': "ApiV3PassesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6775,6 +6849,7 @@ class DefaultApi:
             '201': "ApiV3PassesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -6825,7 +6900,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -6927,6 +7003,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7002,6 +7079,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7077,6 +7155,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7133,7 +7212,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -7214,6 +7294,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesOrdersReshipmentGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7281,6 +7362,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesOrdersReshipmentGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7348,6 +7430,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesOrdersReshipmentGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7394,7 +7477,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -7479,6 +7563,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7550,6 +7635,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7621,6 +7707,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
         }
@@ -7670,7 +7757,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -7772,6 +7860,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdBarcodeGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7849,6 +7938,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdBarcodeGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7926,6 +8016,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdBarcodeGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -7982,7 +8073,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -8067,6 +8159,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8140,6 +8233,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8213,6 +8307,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8264,7 +8359,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -8349,6 +8445,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8422,6 +8519,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8495,6 +8593,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '409': "Error",
@@ -8546,7 +8645,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -8631,6 +8731,7 @@ class DefaultApi:
             '200': "Supply",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -8703,6 +8804,7 @@ class DefaultApi:
             '200': "Supply",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -8775,6 +8877,7 @@ class DefaultApi:
             '200': "Supply",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -8825,7 +8928,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -8914,6 +9018,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -8990,6 +9095,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9066,6 +9172,7 @@ class DefaultApi:
             '204': None,
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9119,7 +9226,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -9217,6 +9325,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9289,6 +9398,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9361,6 +9471,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxGet200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9411,7 +9522,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -9500,6 +9612,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesSupplyIdTrbxPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9576,6 +9689,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesSupplyIdTrbxPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9652,6 +9766,7 @@ class DefaultApi:
             '201': "ApiV3SuppliesSupplyIdTrbxPost201Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9705,7 +9820,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 
@@ -9811,6 +9927,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9891,6 +10008,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -9971,6 +10089,7 @@ class DefaultApi:
             '200': "ApiV3SuppliesSupplyIdTrbxStickersPost200Response",
             '400': "Error",
             '401': "ApiV3PassesOfficesGet401Response",
+            '402': "ApiV3PassesGet402Response",
             '403': "Error",
             '404': "Error",
             '429': "ApiV3PassesOfficesGet401Response",
@@ -10029,7 +10148,8 @@ class DefaultApi:
         if 'Accept' not in _header_params:
             _header_params['Accept'] = self.api_client.select_header_accept(
                 [
-                    'application/json'
+                    'application/json', 
+                    'application/problem+json'
                 ]
             )
 

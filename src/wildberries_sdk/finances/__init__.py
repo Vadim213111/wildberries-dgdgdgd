@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -30,6 +30,7 @@ __all__ = [
     "ApiException",
     "ApiV1AccountBalanceGet200Response",
     "ApiV1AccountBalanceGet401Response",
+    "ApiV1AccountBalanceGet402Response",
     "ApiV1DocumentsListGet400Response",
     "ApiV5SupplierReportDetailByPeriodGet400Response",
     "DetailReportItem",
@@ -64,6 +65,7 @@ from wildberries_sdk.finances.exceptions import ApiException as ApiException
 # import models into sdk package
 from wildberries_sdk.finances.models.api_v1_account_balance_get200_response import ApiV1AccountBalanceGet200Response as ApiV1AccountBalanceGet200Response
 from wildberries_sdk.finances.models.api_v1_account_balance_get401_response import ApiV1AccountBalanceGet401Response as ApiV1AccountBalanceGet401Response
+from wildberries_sdk.finances.models.api_v1_account_balance_get402_response import ApiV1AccountBalanceGet402Response as ApiV1AccountBalanceGet402Response
 from wildberries_sdk.finances.models.api_v1_documents_list_get400_response import ApiV1DocumentsListGet400Response as ApiV1DocumentsListGet400Response
 from wildberries_sdk.finances.models.api_v5_supplier_report_detail_by_period_get400_response import ApiV5SupplierReportDetailByPeriodGet400Response as ApiV5SupplierReportDetailByPeriodGet400Response
 from wildberries_sdk.finances.models.detail_report_item import DetailReportItem as DetailReportItem

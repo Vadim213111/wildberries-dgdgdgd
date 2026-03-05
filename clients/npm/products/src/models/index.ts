@@ -97,6 +97,7 @@ export * from './ContentV2TagNomenclatureLinkPostRequest';
 export * from './ContentV2TagPostRequest';
 export * from './ContentV2TagsGet200Response';
 export * from './ContentV2TagsGet200ResponseData';
+export * from './ContentV2TagsGet402Response';
 export * from './ContentV3MediaFilePost200Response';
 export * from './ContentV3MediaSavePostRequest';
 export * from './Good';

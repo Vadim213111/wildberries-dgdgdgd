@@ -205,6 +205,7 @@ pub enum ApiV3DbsGroupsInfoPostError {
 pub enum ApiV3DbsOrdersClientPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -217,6 +218,7 @@ pub enum ApiV3DbsOrdersClientPostError {
 pub enum ApiV3DbsOrdersDeliveryDatePostError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -228,6 +230,7 @@ pub enum ApiV3DbsOrdersDeliveryDatePostError {
 pub enum ApiV3DbsOrdersGetError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -238,6 +241,7 @@ pub enum ApiV3DbsOrdersGetError {
 #[serde(untagged)]
 pub enum ApiV3DbsOrdersNewGetError {
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -249,6 +253,7 @@ pub enum ApiV3DbsOrdersNewGetError {
 pub enum ApiV3DbsOrdersOrderIdCancelPatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -262,6 +267,7 @@ pub enum ApiV3DbsOrdersOrderIdCancelPatchError {
 pub enum ApiV3DbsOrdersOrderIdConfirmPatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -275,6 +281,7 @@ pub enum ApiV3DbsOrdersOrderIdConfirmPatchError {
 pub enum ApiV3DbsOrdersOrderIdDeliverPatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -288,6 +295,7 @@ pub enum ApiV3DbsOrdersOrderIdDeliverPatchError {
 pub enum ApiV3DbsOrdersOrderIdMetaDeleteError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -299,6 +307,7 @@ pub enum ApiV3DbsOrdersOrderIdMetaDeleteError {
 #[serde(untagged)]
 pub enum ApiV3DbsOrdersOrderIdMetaGetError {
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
@@ -311,6 +320,7 @@ pub enum ApiV3DbsOrdersOrderIdMetaGetError {
 pub enum ApiV3DbsOrdersOrderIdMetaGtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -324,6 +334,7 @@ pub enum ApiV3DbsOrdersOrderIdMetaGtinPutError {
 pub enum ApiV3DbsOrdersOrderIdMetaImeiPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -337,6 +348,7 @@ pub enum ApiV3DbsOrdersOrderIdMetaImeiPutError {
 pub enum ApiV3DbsOrdersOrderIdMetaSgtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -350,6 +362,7 @@ pub enum ApiV3DbsOrdersOrderIdMetaSgtinPutError {
 pub enum ApiV3DbsOrdersOrderIdMetaUinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -363,6 +376,7 @@ pub enum ApiV3DbsOrdersOrderIdMetaUinPutError {
 pub enum ApiV3DbsOrdersOrderIdReceivePatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -376,6 +390,7 @@ pub enum ApiV3DbsOrdersOrderIdReceivePatchError {
 pub enum ApiV3DbsOrdersOrderIdRejectPatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -389,6 +404,7 @@ pub enum ApiV3DbsOrdersOrderIdRejectPatchError {
 pub enum ApiV3DbsOrdersStatusPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbsOrdersNewGet401Response),
+    Status402(models::ApiV3DbsOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbsOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -1028,7 +1044,7 @@ pub async fn api_marketplace_v3_dbs_orders_status_reject_post(configuration: &co
     }
 }
 
-/// <div class=\"description_auth\"> Для доступа к методу используйте <strong>Персональный</strong> и <strong>Сервисный</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Kak-sozdat-personalnyj-bazovyj-ili-testovyj-token\">токены</a> для категории <strong>Маркетплейс</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
+/// <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает стикеры для сборочных заданий с доставкой в ПВЗ в [статусах](/openapi/orders-dbs#tag/Sborochnye-zadaniya-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1status~1info/post):   - `confirm` — на сборке   - `deliver` — в доставке  Получить стикеры можно только в размере 580x400 px в формате PDF.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий DBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  </div> 
 pub async fn api_marketplace_v3_dbs_orders_stickers_post(configuration: &configuration::Configuration, r#type: &str, width: i32, height: i32, api_marketplace_v3_dbs_orders_stickers_post_request: Option<models::ApiMarketplaceV3DbsOrdersStickersPostRequest>) -> Result<models::ApiMarketplaceV3DbsOrdersStickersPost200Response, Error<ApiMarketplaceV3DbsOrdersStickersPostError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_type = r#type;

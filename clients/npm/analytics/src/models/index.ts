@@ -60,6 +60,7 @@ export * from './PostSalesFunnelGroupedHistory200Response';
 export * from './PostSalesFunnelProducts200Response';
 export * from './PostSalesFunnelProducts200ResponseData';
 export * from './PostSalesFunnelProducts401Response';
+export * from './PostSalesFunnelProducts402Response';
 export * from './Product';
 export * from './ProductHistoryRequest';
 export * from './ProductHistoryResponseInner';

@@ -60,5 +60,6 @@ from wildberries_sdk.in_store_pickup.models.api_status_set_responses import ApiS
 from wildberries_sdk.in_store_pickup.models.api_uin import ApiUIN
 from wildberries_sdk.in_store_pickup.models.api_uin_request import ApiUINRequest
 from wildberries_sdk.in_store_pickup.models.api_v3_click_collect_orders_new_get401_response import ApiV3ClickCollectOrdersNewGet401Response
+from wildberries_sdk.in_store_pickup.models.api_v3_click_collect_orders_new_get402_response import ApiV3ClickCollectOrdersNewGet402Response
 from wildberries_sdk.in_store_pickup.models.error import Error
 

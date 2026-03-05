@@ -11669,7 +11669,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsDetailsGet($promotion_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsDetailsGet'][0])
     {
@@ -11693,7 +11693,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsDetailsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsDetailsGetWithHttpInfo($promotion_ids, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsDetailsGet'][0])
     {
@@ -11738,6 +11738,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $request,
                         $response,
                     );
@@ -11791,6 +11797,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12052,7 +12066,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsGet($start_date_time, $end_date_time, $all_promo, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsGet'][0])
     {
@@ -12080,7 +12094,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsGetWithHttpInfo($start_date_time, $end_date_time, $all_promo, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsGet'][0])
     {
@@ -12125,6 +12139,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $request,
                         $response,
                     );
@@ -12178,6 +12198,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12505,7 +12533,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsNomenclaturesGet($promotion_id, $in_action, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'][0])
     {
@@ -12532,7 +12560,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsNomenclaturesGetWithHttpInfo($promotion_id, $in_action, $limit = null, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsNomenclaturesGet'][0])
     {
@@ -12577,6 +12605,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $request,
                         $response,
                     );
@@ -12636,6 +12670,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -12949,7 +12991,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
+     * @return \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response
      */
     public function apiV1CalendarPromotionsUploadPost($api_v1_calendar_promotions_upload_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsUploadPost'][0])
     {
@@ -12973,7 +13015,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Promotion\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost200Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsNomenclaturesGet400Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response|\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsUploadPost422Response|\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV1CalendarPromotionsUploadPostWithHttpInfo($api_v1_calendar_promotions_upload_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1CalendarPromotionsUploadPost'][0])
     {
@@ -13018,6 +13060,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $request,
                         $response,
                     );
@@ -13077,6 +13125,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Promotion\Model\AdvV1PromotionCountGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Promotion\Model\ApiV1CalendarPromotionsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

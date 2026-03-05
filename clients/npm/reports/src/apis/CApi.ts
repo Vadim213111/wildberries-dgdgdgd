@@ -16,6 +16,7 @@
 import * as runtime from '../runtime';
 import type {
   ApiV1SupplierIncomesGet401Response,
+  ApiV1SupplierIncomesGet402Response,
   ExciseReportRequest,
   ExciseReportResponse,
   Model4xxResponse,
@@ -23,6 +24,8 @@ import type {
 import {
     ApiV1SupplierIncomesGet401ResponseFromJSON,
     ApiV1SupplierIncomesGet401ResponseToJSON,
+    ApiV1SupplierIncomesGet402ResponseFromJSON,
+    ApiV1SupplierIncomesGet402ResponseToJSON,
     ExciseReportRequestFromJSON,
     ExciseReportRequestToJSON,
     ExciseReportResponseFromJSON,

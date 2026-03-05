@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiV3DbwOrdersCourierPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -32,6 +33,7 @@ pub enum ApiV3DbwOrdersCourierPostError {
 pub enum ApiV3DbwOrdersDeliveryDatePostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -43,6 +45,7 @@ pub enum ApiV3DbwOrdersDeliveryDatePostError {
 pub enum ApiV3DbwOrdersGetError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -53,6 +56,7 @@ pub enum ApiV3DbwOrdersGetError {
 #[serde(untagged)]
 pub enum ApiV3DbwOrdersNewGetError {
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -64,6 +68,7 @@ pub enum ApiV3DbwOrdersNewGetError {
 pub enum ApiV3DbwOrdersOrderIdAssemblePatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -77,6 +82,7 @@ pub enum ApiV3DbwOrdersOrderIdAssemblePatchError {
 pub enum ApiV3DbwOrdersOrderIdCancelPatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -90,6 +96,7 @@ pub enum ApiV3DbwOrdersOrderIdCancelPatchError {
 pub enum ApiV3DbwOrdersOrderIdConfirmPatchError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -103,6 +110,7 @@ pub enum ApiV3DbwOrdersOrderIdConfirmPatchError {
 pub enum ApiV3DbwOrdersOrderIdMetaDeleteError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
@@ -115,6 +123,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaDeleteError {
 pub enum ApiV3DbwOrdersOrderIdMetaGetError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
@@ -127,6 +136,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaGetError {
 pub enum ApiV3DbwOrdersOrderIdMetaGtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -140,6 +150,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaGtinPutError {
 pub enum ApiV3DbwOrdersOrderIdMetaImeiPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -153,6 +164,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaImeiPutError {
 pub enum ApiV3DbwOrdersOrderIdMetaSgtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -166,6 +178,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaSgtinPutError {
 pub enum ApiV3DbwOrdersOrderIdMetaUinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -179,6 +192,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaUinPutError {
 pub enum ApiV3DbwOrdersStatusPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -190,6 +204,7 @@ pub enum ApiV3DbwOrdersStatusPostError {
 pub enum ApiV3DbwOrdersStickersPostError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3DbwOrdersNewGet401Response),
     UnknownValue(serde_json::Value),

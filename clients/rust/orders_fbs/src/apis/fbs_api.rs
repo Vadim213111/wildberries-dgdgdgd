@@ -46,6 +46,7 @@ pub enum ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutError {
 pub enum ApiMarketplaceV3SuppliesSupplyIdOrderIdsGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -71,6 +72,7 @@ pub enum ApiMarketplaceV3SuppliesSupplyIdOrdersPatchError {
 pub enum ApiV3OrdersClientPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -83,6 +85,7 @@ pub enum ApiV3OrdersClientPostError {
 pub enum ApiV3OrdersGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -93,6 +96,7 @@ pub enum ApiV3OrdersGetError {
 #[serde(untagged)]
 pub enum ApiV3OrdersNewGetError {
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -104,6 +108,7 @@ pub enum ApiV3OrdersNewGetError {
 pub enum ApiV3OrdersOrderIdCancelPatchError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -117,6 +122,7 @@ pub enum ApiV3OrdersOrderIdCancelPatchError {
 pub enum ApiV3OrdersOrderIdMetaDeleteError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -129,6 +135,7 @@ pub enum ApiV3OrdersOrderIdMetaDeleteError {
 pub enum ApiV3OrdersOrderIdMetaExpirationPutError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -142,6 +149,7 @@ pub enum ApiV3OrdersOrderIdMetaExpirationPutError {
 pub enum ApiV3OrdersOrderIdMetaGtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -154,6 +162,7 @@ pub enum ApiV3OrdersOrderIdMetaGtinPutError {
 pub enum ApiV3OrdersOrderIdMetaImeiPutError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -166,6 +175,7 @@ pub enum ApiV3OrdersOrderIdMetaImeiPutError {
 pub enum ApiV3OrdersOrderIdMetaSgtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -179,6 +189,7 @@ pub enum ApiV3OrdersOrderIdMetaSgtinPutError {
 pub enum ApiV3OrdersOrderIdMetaUinPutError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status409(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -191,6 +202,7 @@ pub enum ApiV3OrdersOrderIdMetaUinPutError {
 pub enum ApiV3OrdersStatusHistoryPostError {
     Status400(),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -203,6 +215,7 @@ pub enum ApiV3OrdersStatusHistoryPostError {
 pub enum ApiV3OrdersStatusPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -214,6 +227,7 @@ pub enum ApiV3OrdersStatusPostError {
 pub enum ApiV3OrdersStickersCrossBorderPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -225,6 +239,7 @@ pub enum ApiV3OrdersStickersCrossBorderPostError {
 pub enum ApiV3OrdersStickersPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -235,6 +250,7 @@ pub enum ApiV3OrdersStickersPostError {
 #[serde(untagged)]
 pub enum ApiV3PassesGetError {
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -255,6 +271,7 @@ pub enum ApiV3PassesOfficesGetError {
 #[serde(untagged)]
 pub enum ApiV3PassesPassIdDeleteError {
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -267,6 +284,7 @@ pub enum ApiV3PassesPassIdDeleteError {
 pub enum ApiV3PassesPassIdPutError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -279,6 +297,7 @@ pub enum ApiV3PassesPassIdPutError {
 pub enum ApiV3PassesPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -291,6 +310,7 @@ pub enum ApiV3PassesPostError {
 pub enum ApiV3SuppliesGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -302,6 +322,7 @@ pub enum ApiV3SuppliesGetError {
 pub enum ApiV3SuppliesOrdersReshipmentGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -313,6 +334,7 @@ pub enum ApiV3SuppliesOrdersReshipmentGetError {
 pub enum ApiV3SuppliesPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
     UnknownValue(serde_json::Value),
@@ -324,6 +346,7 @@ pub enum ApiV3SuppliesPostError {
 pub enum ApiV3SuppliesSupplyIdBarcodeGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -337,6 +360,7 @@ pub enum ApiV3SuppliesSupplyIdBarcodeGetError {
 pub enum ApiV3SuppliesSupplyIdDeleteError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -350,6 +374,7 @@ pub enum ApiV3SuppliesSupplyIdDeleteError {
 pub enum ApiV3SuppliesSupplyIdDeliverPatchError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -363,6 +388,7 @@ pub enum ApiV3SuppliesSupplyIdDeliverPatchError {
 pub enum ApiV3SuppliesSupplyIdGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -375,6 +401,7 @@ pub enum ApiV3SuppliesSupplyIdGetError {
 pub enum ApiV3SuppliesSupplyIdTrbxDeleteError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -387,6 +414,7 @@ pub enum ApiV3SuppliesSupplyIdTrbxDeleteError {
 pub enum ApiV3SuppliesSupplyIdTrbxGetError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -399,6 +427,7 @@ pub enum ApiV3SuppliesSupplyIdTrbxGetError {
 pub enum ApiV3SuppliesSupplyIdTrbxPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),
@@ -411,6 +440,7 @@ pub enum ApiV3SuppliesSupplyIdTrbxPostError {
 pub enum ApiV3SuppliesSupplyIdTrbxStickersPostError {
     Status400(models::Error),
     Status401(models::ApiV3PassesOfficesGet401Response),
+    Status402(models::ApiV3PassesGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3PassesOfficesGet401Response),

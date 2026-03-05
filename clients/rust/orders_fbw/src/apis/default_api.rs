@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiV1AcceptanceOptionsPostError {
     Status400(models::ModelsErrorModel),
     Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status402(models::ApiV1AcceptanceOptionsPost402Response),
     Status403(),
     Status404(),
     Status429(models::ApiV1AcceptanceOptionsPost401Response),
@@ -33,6 +34,7 @@ pub enum ApiV1AcceptanceOptionsPostError {
 pub enum ApiV1SuppliesIdGetError {
     Status400(models::ModelsErrorModel),
     Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status402(models::ApiV1AcceptanceOptionsPost402Response),
     Status404(models::ModelsErrorModel),
     Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
@@ -44,6 +46,7 @@ pub enum ApiV1SuppliesIdGetError {
 pub enum ApiV1SuppliesIdGoodsGetError {
     Status400(models::ModelsErrorModel),
     Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status402(models::ApiV1AcceptanceOptionsPost402Response),
     Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
@@ -54,6 +57,7 @@ pub enum ApiV1SuppliesIdGoodsGetError {
 pub enum ApiV1SuppliesIdPackageGetError {
     Status400(models::ModelsErrorModel),
     Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status402(models::ApiV1AcceptanceOptionsPost402Response),
     Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }
@@ -64,6 +68,7 @@ pub enum ApiV1SuppliesIdPackageGetError {
 pub enum ApiV1SuppliesPostError {
     Status400(models::ModelsErrorModel),
     Status401(models::ApiV1AcceptanceOptionsPost401Response),
+    Status402(models::ApiV1AcceptanceOptionsPost402Response),
     Status429(models::ApiV1AcceptanceOptionsPost401Response),
     UnknownValue(serde_json::Value),
 }

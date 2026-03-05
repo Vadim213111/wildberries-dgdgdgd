@@ -17,6 +17,7 @@ import * as runtime from '../runtime';
 import type {
   ApiV1AccountBalanceGet200Response,
   ApiV1AccountBalanceGet401Response,
+  ApiV1AccountBalanceGet402Response,
   ApiV1DocumentsListGet400Response,
   ApiV5SupplierReportDetailByPeriodGet400Response,
   DetailReportItem,
@@ -31,6 +32,8 @@ import {
     ApiV1AccountBalanceGet200ResponseToJSON,
     ApiV1AccountBalanceGet401ResponseFromJSON,
     ApiV1AccountBalanceGet401ResponseToJSON,
+    ApiV1AccountBalanceGet402ResponseFromJSON,
+    ApiV1AccountBalanceGet402ResponseToJSON,
     ApiV1DocumentsListGet400ResponseFromJSON,
     ApiV1DocumentsListGet400ResponseToJSON,
     ApiV5SupplierReportDetailByPeriodGet400ResponseFromJSON,

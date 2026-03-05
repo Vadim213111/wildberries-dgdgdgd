@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -57,6 +57,7 @@ __all__ = [
     "ApiV1NewFeedbacksQuestionsGet200Response",
     "ApiV1NewFeedbacksQuestionsGet200ResponseData",
     "ApiV1NewFeedbacksQuestionsGet401Response",
+    "ApiV1NewFeedbacksQuestionsGet402Response",
     "ApiV1QuestionGet200Response",
     "ApiV1QuestionGet200ResponseData",
     "ApiV1QuestionGet200ResponseDataAnswer",
@@ -157,6 +158,7 @@ from wildberries_sdk.communications.models.api_v1_feedbacks_order_return_post_re
 from wildberries_sdk.communications.models.api_v1_new_feedbacks_questions_get200_response import ApiV1NewFeedbacksQuestionsGet200Response as ApiV1NewFeedbacksQuestionsGet200Response
 from wildberries_sdk.communications.models.api_v1_new_feedbacks_questions_get200_response_data import ApiV1NewFeedbacksQuestionsGet200ResponseData as ApiV1NewFeedbacksQuestionsGet200ResponseData
 from wildberries_sdk.communications.models.api_v1_new_feedbacks_questions_get401_response import ApiV1NewFeedbacksQuestionsGet401Response as ApiV1NewFeedbacksQuestionsGet401Response
+from wildberries_sdk.communications.models.api_v1_new_feedbacks_questions_get402_response import ApiV1NewFeedbacksQuestionsGet402Response as ApiV1NewFeedbacksQuestionsGet402Response
 from wildberries_sdk.communications.models.api_v1_question_get200_response import ApiV1QuestionGet200Response as ApiV1QuestionGet200Response
 from wildberries_sdk.communications.models.api_v1_question_get200_response_data import ApiV1QuestionGet200ResponseData as ApiV1QuestionGet200ResponseData
 from wildberries_sdk.communications.models.api_v1_question_get200_response_data_answer import ApiV1QuestionGet200ResponseDataAnswer as ApiV1QuestionGet200ResponseDataAnswer

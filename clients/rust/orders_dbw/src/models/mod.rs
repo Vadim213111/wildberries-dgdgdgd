@@ -4,6 +4,8 @@ pub mod _api_v3_dbw_orders_new_get_200_response;
 pub use self::_api_v3_dbw_orders_new_get_200_response::ApiV3DbwOrdersNewGet200Response;
 pub mod _api_v3_dbw_orders_new_get_401_response;
 pub use self::_api_v3_dbw_orders_new_get_401_response::ApiV3DbwOrdersNewGet401Response;
+pub mod _api_v3_dbw_orders_new_get_402_response;
+pub use self::_api_v3_dbw_orders_new_get_402_response::ApiV3DbwOrdersNewGet402Response;
 pub mod _api_v3_dbw_orders__order_id__meta_get_200_response;
 pub use self::_api_v3_dbw_orders__order_id__meta_get_200_response::ApiV3DbwOrdersOrderIdMetaGet200Response;
 pub mod _api_v3_dbw_orders__order_id__meta_gtin_put_request;

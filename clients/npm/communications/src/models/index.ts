@@ -29,6 +29,7 @@ export * from './ApiV1FeedbacksOrderReturnPostRequest';
 export * from './ApiV1NewFeedbacksQuestionsGet200Response';
 export * from './ApiV1NewFeedbacksQuestionsGet200ResponseData';
 export * from './ApiV1NewFeedbacksQuestionsGet401Response';
+export * from './ApiV1NewFeedbacksQuestionsGet402Response';
 export * from './ApiV1QuestionGet200Response';
 export * from './ApiV1QuestionGet200ResponseData';
 export * from './ApiV1QuestionGet200ResponseDataAnswer';

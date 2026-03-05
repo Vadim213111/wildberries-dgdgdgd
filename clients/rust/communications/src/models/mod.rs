@@ -56,6 +56,8 @@ pub mod _api_v1_new_feedbacks_questions_get_200_response_data;
 pub use self::_api_v1_new_feedbacks_questions_get_200_response_data::ApiV1NewFeedbacksQuestionsGet200ResponseData;
 pub mod _api_v1_new_feedbacks_questions_get_401_response;
 pub use self::_api_v1_new_feedbacks_questions_get_401_response::ApiV1NewFeedbacksQuestionsGet401Response;
+pub mod _api_v1_new_feedbacks_questions_get_402_response;
+pub use self::_api_v1_new_feedbacks_questions_get_402_response::ApiV1NewFeedbacksQuestionsGet402Response;
 pub mod _api_v1_question_get_200_response;
 pub use self::_api_v1_question_get_200_response::ApiV1QuestionGet200Response;
 pub mod _api_v1_question_get_200_response_data;

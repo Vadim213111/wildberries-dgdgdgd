@@ -8,6 +8,8 @@ pub mod _api_communications_v2_news_get_200_response_data_inner_types_inner;
 pub use self::_api_communications_v2_news_get_200_response_data_inner_types_inner::ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner;
 pub mod _api_v1_seller_info_get_200_response;
 pub use self::_api_v1_seller_info_get_200_response::ApiV1SellerInfoGet200Response;
+pub mod _api_v1_seller_info_get_402_response;
+pub use self::_api_v1_seller_info_get_402_response::ApiV1SellerInfoGet402Response;
 pub mod create_invite_request;
 pub use self::create_invite_request::CreateInviteRequest;
 pub mod create_invite_request_invite;

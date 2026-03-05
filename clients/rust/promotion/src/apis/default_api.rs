@@ -347,6 +347,7 @@ pub enum ApiAdvertV2AdvertsGetError {
 pub enum ApiV1CalendarPromotionsDetailsGetError {
     Status400(models::ApiV1CalendarPromotionsGet400Response),
     Status401(models::AdvV1PromotionCountGet401Response),
+    Status402(models::ApiV1CalendarPromotionsGet402Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -357,6 +358,7 @@ pub enum ApiV1CalendarPromotionsDetailsGetError {
 pub enum ApiV1CalendarPromotionsGetError {
     Status400(models::ApiV1CalendarPromotionsGet400Response),
     Status401(models::AdvV1PromotionCountGet401Response),
+    Status402(models::ApiV1CalendarPromotionsGet402Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -367,6 +369,7 @@ pub enum ApiV1CalendarPromotionsGetError {
 pub enum ApiV1CalendarPromotionsNomenclaturesGetError {
     Status400(models::ApiV1CalendarPromotionsNomenclaturesGet400Response),
     Status401(models::AdvV1PromotionCountGet401Response),
+    Status402(models::ApiV1CalendarPromotionsGet402Response),
     Status422(models::ApiV1CalendarPromotionsNomenclaturesGet422Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),
@@ -378,6 +381,7 @@ pub enum ApiV1CalendarPromotionsNomenclaturesGetError {
 pub enum ApiV1CalendarPromotionsUploadPostError {
     Status400(models::ApiV1CalendarPromotionsNomenclaturesGet400Response),
     Status401(models::AdvV1PromotionCountGet401Response),
+    Status402(models::ApiV1CalendarPromotionsGet402Response),
     Status422(models::ApiV1CalendarPromotionsUploadPost422Response),
     Status429(models::AdvV1PromotionCountGet401Response),
     UnknownValue(serde_json::Value),

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -30,6 +30,7 @@ __all__ = [
     "ApiException",
     "ApiV1TariffsCommissionGet200Response",
     "ApiV1TariffsCommissionGet401Response",
+    "ApiV1TariffsCommissionGet402Response",
     "BadRequest",
     "Commission",
     "CommissionChina",
@@ -74,6 +75,7 @@ from wildberries_sdk.tariffs.exceptions import ApiException as ApiException
 # import models into sdk package
 from wildberries_sdk.tariffs.models.api_v1_tariffs_commission_get200_response import ApiV1TariffsCommissionGet200Response as ApiV1TariffsCommissionGet200Response
 from wildberries_sdk.tariffs.models.api_v1_tariffs_commission_get401_response import ApiV1TariffsCommissionGet401Response as ApiV1TariffsCommissionGet401Response
+from wildberries_sdk.tariffs.models.api_v1_tariffs_commission_get402_response import ApiV1TariffsCommissionGet402Response as ApiV1TariffsCommissionGet402Response
 from wildberries_sdk.tariffs.models.bad_request import BadRequest as BadRequest
 from wildberries_sdk.tariffs.models.commission import Commission as Commission
 from wildberries_sdk.tariffs.models.commission_china import CommissionChina as CommissionChina

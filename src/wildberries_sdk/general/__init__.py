@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -33,6 +33,7 @@ __all__ = [
     "ApiCommunicationsV2NewsGet200ResponseDataInner",
     "ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner",
     "ApiV1SellerInfoGet200Response",
+    "ApiV1SellerInfoGet402Response",
     "CreateInviteRequest",
     "CreateInviteRequestInvite",
     "CreateInviteResponse",
@@ -66,6 +67,7 @@ from wildberries_sdk.general.models.api_communications_v2_news_get200_response i
 from wildberries_sdk.general.models.api_communications_v2_news_get200_response_data_inner import ApiCommunicationsV2NewsGet200ResponseDataInner as ApiCommunicationsV2NewsGet200ResponseDataInner
 from wildberries_sdk.general.models.api_communications_v2_news_get200_response_data_inner_types_inner import ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner as ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner
 from wildberries_sdk.general.models.api_v1_seller_info_get200_response import ApiV1SellerInfoGet200Response as ApiV1SellerInfoGet200Response
+from wildberries_sdk.general.models.api_v1_seller_info_get402_response import ApiV1SellerInfoGet402Response as ApiV1SellerInfoGet402Response
 from wildberries_sdk.general.models.create_invite_request import CreateInviteRequest as CreateInviteRequest
 from wildberries_sdk.general.models.create_invite_request_invite import CreateInviteRequestInvite as CreateInviteRequestInvite
 from wildberries_sdk.general.models.create_invite_response import CreateInviteResponse as CreateInviteResponse

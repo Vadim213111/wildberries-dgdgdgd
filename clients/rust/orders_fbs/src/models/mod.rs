@@ -42,6 +42,8 @@ pub mod _api_v3_orders_stickers_post_200_response_stickers_inner;
 pub use self::_api_v3_orders_stickers_post_200_response_stickers_inner::ApiV3OrdersStickersPost200ResponseStickersInner;
 pub mod _api_v3_orders_stickers_post_request;
 pub use self::_api_v3_orders_stickers_post_request::ApiV3OrdersStickersPostRequest;
+pub mod _api_v3_passes_get_402_response;
+pub use self::_api_v3_passes_get_402_response::ApiV3PassesGet402Response;
 pub mod _api_v3_passes_offices_get_401_response;
 pub use self::_api_v3_passes_offices_get_401_response::ApiV3PassesOfficesGet401Response;
 pub mod _api_v3_passes__pass_id__put_request;

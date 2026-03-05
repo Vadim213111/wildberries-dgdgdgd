@@ -74,6 +74,8 @@ pub mod _api_v3_dbs_orders_new_get_200_response;
 pub use self::_api_v3_dbs_orders_new_get_200_response::ApiV3DbsOrdersNewGet200Response;
 pub mod _api_v3_dbs_orders_new_get_401_response;
 pub use self::_api_v3_dbs_orders_new_get_401_response::ApiV3DbsOrdersNewGet401Response;
+pub mod _api_v3_dbs_orders_new_get_402_response;
+pub use self::_api_v3_dbs_orders_new_get_402_response::ApiV3DbsOrdersNewGet402Response;
 pub mod _api_v3_dbs_orders__order_id__meta_get_200_response;
 pub use self::_api_v3_dbs_orders__order_id__meta_get_200_response::ApiV3DbsOrdersOrderIdMetaGet200Response;
 pub mod _api_v3_dbs_orders__order_id__meta_gtin_put_request;

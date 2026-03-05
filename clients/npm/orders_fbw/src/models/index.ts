@@ -1,6 +1,7 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './ApiV1AcceptanceOptionsPost401Response';
+export * from './ApiV1AcceptanceOptionsPost402Response';
 export * from './ModelsAcceptanceCoefficient';
 export * from './ModelsBox';
 export * from './ModelsDateFilterRequest';

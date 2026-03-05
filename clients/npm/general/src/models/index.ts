@@ -5,6 +5,7 @@ export * from './ApiCommunicationsV2NewsGet200Response';
 export * from './ApiCommunicationsV2NewsGet200ResponseDataInner';
 export * from './ApiCommunicationsV2NewsGet200ResponseDataInnerTypesInner';
 export * from './ApiV1SellerInfoGet200Response';
+export * from './ApiV1SellerInfoGet402Response';
 export * from './CreateInviteRequest';
 export * from './CreateInviteRequestInvite';
 export * from './CreateInviteResponse';

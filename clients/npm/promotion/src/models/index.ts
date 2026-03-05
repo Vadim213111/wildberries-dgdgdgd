@@ -55,6 +55,7 @@ export * from './ApiV1CalendarPromotionsGet200Response';
 export * from './ApiV1CalendarPromotionsGet200ResponseData';
 export * from './ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner';
 export * from './ApiV1CalendarPromotionsGet400Response';
+export * from './ApiV1CalendarPromotionsGet402Response';
 export * from './ApiV1CalendarPromotionsNomenclaturesGet200Response';
 export * from './ApiV1CalendarPromotionsNomenclaturesGet200ResponseData';
 export * from './ApiV1CalendarPromotionsNomenclaturesGet400Response';

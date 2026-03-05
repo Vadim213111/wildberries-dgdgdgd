@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiV2SearchReportProductOrdersPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -32,6 +33,7 @@ pub enum ApiV2SearchReportProductOrdersPostError {
 pub enum ApiV2SearchReportProductSearchTextsPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -43,6 +45,7 @@ pub enum ApiV2SearchReportProductSearchTextsPostError {
 pub enum ApiV2SearchReportReportPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -54,6 +57,7 @@ pub enum ApiV2SearchReportReportPostError {
 pub enum ApiV2SearchReportTableDetailsPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -65,6 +69,7 @@ pub enum ApiV2SearchReportTableDetailsPostError {
 pub enum ApiV2SearchReportTableGroupsPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -76,6 +81,7 @@ pub enum ApiV2SearchReportTableGroupsPostError {
 pub enum ApiV2StocksReportOfficesPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -87,6 +93,7 @@ pub enum ApiV2StocksReportOfficesPostError {
 pub enum ApiV2StocksReportProductsGroupsPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -98,6 +105,7 @@ pub enum ApiV2StocksReportProductsGroupsPostError {
 pub enum ApiV2StocksReportProductsProductsPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -109,6 +117,7 @@ pub enum ApiV2StocksReportProductsProductsPostError {
 pub enum ApiV2StocksReportProductsSizesPostError {
     Status400(models::ErrorObject400),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject403),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -120,6 +129,7 @@ pub enum ApiV2StocksReportProductsSizesPostError {
 pub enum PostSalesFunnelGroupedHistoryError {
     Status400(models::ErrorObject),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -131,6 +141,7 @@ pub enum PostSalesFunnelGroupedHistoryError {
 pub enum PostSalesFunnelProductsError {
     Status400(models::ErrorObject),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -142,6 +153,7 @@ pub enum PostSalesFunnelProductsError {
 pub enum PostSalesFunnelProductsHistoryError {
     Status400(models::ErrorObject),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ErrorObject),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),

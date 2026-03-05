@@ -1141,6 +1141,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1237,6 +1247,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1335,6 +1355,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1437,6 +1467,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1531,6 +1571,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1739,6 +1789,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2048,6 +2108,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2183,6 +2253,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2294,6 +2374,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2393,6 +2483,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2570,6 +2670,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2737,6 +2847,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -2848,6 +2968,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "413":
           content:
             application/json:
@@ -2997,6 +3127,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "413":
           content:
             application/json:
@@ -3130,6 +3270,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -3248,6 +3398,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -3378,6 +3538,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -3512,6 +3682,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -3626,6 +3806,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4169,6 +4359,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4252,6 +4452,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4367,6 +4577,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4475,6 +4695,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4584,6 +4814,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4702,6 +4942,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -4807,6 +5057,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -5083,6 +5343,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -5175,6 +5445,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -5279,6 +5559,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -5381,6 +5671,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -5477,6 +5777,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -6206,6 +6516,15 @@ components:
           schema:
             $ref: "#/components/schemas/_content_v2_object_parent_all_get_401_response"
       description: Не авторизован
+    "402":
+      content:
+        application/problem+json:
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+          schema:
+            $ref: "#/components/schemas/_content_v2_tags_get_402_response"
+      description: Требуется платёж
     "429":
       content:
         application/problem+json:
@@ -8004,6 +8323,15 @@ components:
           description: Дополнительные ошибки
           example: ""
           nullable: true
+          type: string
+      type: object
+    _content_v2_tags_get_402_response:
+      properties:
+        title:
+          description: Заголовок ошибки
+          type: string
+        detail:
+          description: Детали ошибки
           type: string
       type: object
     _content_v2_tag_post_request:

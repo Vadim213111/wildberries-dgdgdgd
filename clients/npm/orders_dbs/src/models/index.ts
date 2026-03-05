@@ -38,6 +38,7 @@ export * from './ApiUIN';
 export * from './ApiV3DbsOrdersGet200Response';
 export * from './ApiV3DbsOrdersNewGet200Response';
 export * from './ApiV3DbsOrdersNewGet401Response';
+export * from './ApiV3DbsOrdersNewGet402Response';
 export * from './ApiV3DbsOrdersOrderIdMetaGet200Response';
 export * from './ApiV3DbsOrdersOrderIdMetaGtinPutRequest';
 export * from './ApiV3DbsOrdersOrderIdMetaImeiPutRequest';

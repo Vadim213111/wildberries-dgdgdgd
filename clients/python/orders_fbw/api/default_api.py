@@ -107,6 +107,7 @@ class DefaultApi:
             '200': "ModelsOptionsResultModel",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '403': None,
             '404': None,
             '429': "ApiV1AcceptanceOptionsPost401Response",
@@ -183,6 +184,7 @@ class DefaultApi:
             '200': "ModelsOptionsResultModel",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '403': None,
             '404': None,
             '429': "ApiV1AcceptanceOptionsPost401Response",
@@ -259,6 +261,7 @@ class DefaultApi:
             '200': "ModelsOptionsResultModel",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '403': None,
             '404': None,
             '429': "ApiV1AcceptanceOptionsPost401Response",
@@ -418,6 +421,7 @@ class DefaultApi:
             '200': "ModelsSupplyDetails",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '404': "ModelsErrorModel",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
@@ -493,6 +497,7 @@ class DefaultApi:
             '200': "ModelsSupplyDetails",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '404': "ModelsErrorModel",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
@@ -568,6 +573,7 @@ class DefaultApi:
             '200': "ModelsSupplyDetails",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '404': "ModelsErrorModel",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
@@ -720,6 +726,7 @@ class DefaultApi:
             '200': "List[ModelsGoodInSupply]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -802,6 +809,7 @@ class DefaultApi:
             '200': "List[ModelsGoodInSupply]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -884,6 +892,7 @@ class DefaultApi:
             '200': "List[ModelsGoodInSupply]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -1033,6 +1042,7 @@ class DefaultApi:
             '200': "List[ModelsBox]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -1103,6 +1113,7 @@ class DefaultApi:
             '200': "List[ModelsBox]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -1173,6 +1184,7 @@ class DefaultApi:
             '200': "List[ModelsBox]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -1315,6 +1327,7 @@ class DefaultApi:
             '200': "List[ModelsSupply]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -1393,6 +1406,7 @@ class DefaultApi:
             '200': "List[ModelsSupply]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(
@@ -1471,6 +1485,7 @@ class DefaultApi:
             '200': "List[ModelsSupply]",
             '400': "ModelsErrorModel",
             '401': "ApiV1AcceptanceOptionsPost401Response",
+            '402': "ApiV1AcceptanceOptionsPost402Response",
             '429': "ApiV1AcceptanceOptionsPost401Response",
         }
         response_data = self.api_client.call_api(

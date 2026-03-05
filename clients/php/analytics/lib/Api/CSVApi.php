@@ -150,7 +150,7 @@ class CSVApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response
+     * @return \SplFileObject|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response
      */
     public function apiV2NmReportDownloadsFileDownloadIdGet($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2NmReportDownloadsFileDownloadIdGet'][0])
     {
@@ -174,7 +174,7 @@ class CSVApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2NmReportDownloadsFileDownloadIdGetWithHttpInfo($download_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2NmReportDownloadsFileDownloadIdGet'][0])
     {
@@ -219,6 +219,12 @@ class CSVApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $request,
                         $response,
                     );
@@ -278,6 +284,14 @@ class CSVApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -917,7 +931,7 @@ class CSVApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Analytics\Model\NmReportCreateReportResponse|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsPost429Response
+     * @return \Wildberries\Sdk\Analytics\Model\NmReportCreateReportResponse|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsPost429Response
      */
     public function apiV2NmReportDownloadsPost($api_v2_nm_report_downloads_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2NmReportDownloadsPost'][0])
     {
@@ -941,7 +955,7 @@ class CSVApi
      *
      * @throws \Wildberries\Sdk\Analytics\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Analytics\Model\NmReportCreateReportResponse|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsPost429Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Analytics\Model\NmReportCreateReportResponse|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet400Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response|\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsGet403Response|\Wildberries\Sdk\Analytics\Model\ApiV2NmReportDownloadsPost429Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2NmReportDownloadsPostWithHttpInfo($api_v2_nm_report_downloads_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2NmReportDownloadsPost'][0])
     {
@@ -986,6 +1000,12 @@ class CSVApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $request,
                         $response,
                     );
@@ -1045,6 +1065,14 @@ class CSVApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Analytics\Model\PostSalesFunnelProducts402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

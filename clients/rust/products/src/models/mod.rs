@@ -192,6 +192,8 @@ pub mod _content_v2_tags_get_200_response;
 pub use self::_content_v2_tags_get_200_response::ContentV2TagsGet200Response;
 pub mod _content_v2_tags_get_200_response_data;
 pub use self::_content_v2_tags_get_200_response_data::ContentV2TagsGet200ResponseData;
+pub mod _content_v2_tags_get_402_response;
+pub use self::_content_v2_tags_get_402_response::ContentV2TagsGet402Response;
 pub mod _content_v3_media_file_post_200_response;
 pub use self::_content_v3_media_file_post_200_response::ContentV3MediaFilePost200Response;
 pub mod _content_v3_media_save_post_request;

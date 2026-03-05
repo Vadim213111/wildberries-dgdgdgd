@@ -2,6 +2,7 @@
 /* eslint-disable */
 export * from './ApiV1TariffsCommissionGet200Response';
 export * from './ApiV1TariffsCommissionGet401Response';
+export * from './ApiV1TariffsCommissionGet402Response';
 export * from './BadRequest';
 export * from './Commission';
 export * from './CommissionChina';

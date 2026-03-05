@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -88,6 +88,7 @@ __all__ = [
     "PostSalesFunnelProducts200Response",
     "PostSalesFunnelProducts200ResponseData",
     "PostSalesFunnelProducts401Response",
+    "PostSalesFunnelProducts402Response",
     "Product",
     "ProductHistoryRequest",
     "ProductHistoryResponseInner",
@@ -263,6 +264,7 @@ from wildberries_sdk.analytics.models.post_sales_funnel_grouped_history200_respo
 from wildberries_sdk.analytics.models.post_sales_funnel_products200_response import PostSalesFunnelProducts200Response as PostSalesFunnelProducts200Response
 from wildberries_sdk.analytics.models.post_sales_funnel_products200_response_data import PostSalesFunnelProducts200ResponseData as PostSalesFunnelProducts200ResponseData
 from wildberries_sdk.analytics.models.post_sales_funnel_products401_response import PostSalesFunnelProducts401Response as PostSalesFunnelProducts401Response
+from wildberries_sdk.analytics.models.post_sales_funnel_products402_response import PostSalesFunnelProducts402Response as PostSalesFunnelProducts402Response
 from wildberries_sdk.analytics.models.product import Product as Product
 from wildberries_sdk.analytics.models.product_history_request import ProductHistoryRequest as ProductHistoryRequest
 from wildberries_sdk.analytics.models.product_history_response_inner import ProductHistoryResponseInner as ProductHistoryResponseInner

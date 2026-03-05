@@ -40,6 +40,10 @@ func (r ApiApiV1InvitePostRequest) Execute() (*CreateInviteResponse, *http.Respo
 /*
 ApiV1InvitePost Создать приглашение для нового пользователя
 
+<div class="description_token">
+Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+</div>
+
 Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br>
 Как выдаются права доступа:
 - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`)
@@ -314,6 +318,17 @@ func (a *DefaultApiService) ApiV1SellerInfoGetExecute(r ApiApiV1SellerInfoGetReq
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
+		if localVarHTTPResponse.StatusCode == 402 {
+			var v ApiV1SellerInfoGet402Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
 		if localVarHTTPResponse.StatusCode == 429 {
 			var v PingGet401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -357,6 +372,10 @@ func (r ApiApiV1UserDeleteRequest) Execute() (*http.Response, error) {
 
 /*
 ApiV1UserDelete Удалить пользователя
+
+<div class="description_token">
+Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+</div>
 
 Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.
 
@@ -510,6 +529,10 @@ func (r ApiApiV1UsersAccessPutRequest) Execute() (*http.Response, error) {
 
 /*
 ApiV1UsersAccessPut Изменить права доступа пользователей
+
+<div class="description_token">
+Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+</div>
 
 Метод меняет права доступа одному или нескольким пользователям.<br>
 <br>
@@ -681,6 +704,10 @@ func (r ApiApiV1UsersGetRequest) Execute() (*GetUsersResponse, *http.Response, e
 
 /*
 ApiV1UsersGet Получить список активных или приглашённых пользователей продавца
+
+<div class="description_token">
+Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+</div>
 
 Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br>
 Чтобы выбрать список, укажите значение параметра `isInviteOnly`:

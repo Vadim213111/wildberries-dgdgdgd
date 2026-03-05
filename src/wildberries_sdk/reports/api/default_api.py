@@ -122,6 +122,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -196,6 +197,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -270,6 +272,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -412,6 +415,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -484,6 +488,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -556,6 +561,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -968,6 +974,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsAntifraudDetailsGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1038,6 +1045,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsAntifraudDetailsGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1108,6 +1116,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsAntifraudDetailsGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1248,6 +1257,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBannedProductsBlockedGet200Response",
             '400': "ApiV1AnalyticsBannedProductsBlockedGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1322,6 +1332,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBannedProductsBlockedGet200Response",
             '400': "ApiV1AnalyticsBannedProductsBlockedGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1396,6 +1407,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBannedProductsBlockedGet200Response",
             '400': "ApiV1AnalyticsBannedProductsBlockedGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1541,6 +1553,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBannedProductsShadowedGet200Response",
             '400': "ApiV1AnalyticsBannedProductsBlockedGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1615,6 +1628,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBannedProductsShadowedGet200Response",
             '400': "ApiV1AnalyticsBannedProductsBlockedGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1689,6 +1703,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBannedProductsShadowedGet200Response",
             '400': "ApiV1AnalyticsBannedProductsBlockedGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1825,6 +1840,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1AnalyticsBrandShareBrandsGet200Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1890,6 +1906,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1AnalyticsBrandShareBrandsGet200Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -1955,6 +1972,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1AnalyticsBrandShareBrandsGet200Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2098,6 +2116,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBrandShareGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2180,6 +2199,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBrandShareGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2262,6 +2282,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBrandShareGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2425,6 +2446,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBrandShareParentSubjectsGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2507,6 +2529,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBrandShareParentSubjectsGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2589,6 +2612,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsBrandShareParentSubjectsGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2748,6 +2772,7 @@ class DefaultApi:
             '200': "ExciseReportResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2826,6 +2851,7 @@ class DefaultApi:
             '200': "ExciseReportResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -2904,6 +2930,7 @@ class DefaultApi:
             '200': "ExciseReportResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3065,6 +3092,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsGoodsLabelingGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3139,6 +3167,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsGoodsLabelingGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3213,6 +3242,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsGoodsLabelingGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3376,6 +3406,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsGoodsReturnGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3450,6 +3481,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsGoodsReturnGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3524,6 +3556,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsGoodsReturnGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3687,6 +3720,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsRegionSaleGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3761,6 +3795,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsRegionSaleGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3835,6 +3870,7 @@ class DefaultApi:
             '200': "ApiV1AnalyticsRegionSaleGet200Response",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -3980,6 +4016,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4054,6 +4091,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4128,6 +4166,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4270,6 +4309,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -4342,6 +4382,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -4414,6 +4455,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -4827,6 +4869,7 @@ class DefaultApi:
             '200': "List[IncomesItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4898,6 +4941,7 @@ class DefaultApi:
             '200': "List[IncomesItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -4969,6 +5013,7 @@ class DefaultApi:
             '200': "List[IncomesItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5118,6 +5163,7 @@ class DefaultApi:
             '200': "List[OrdersItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5192,6 +5238,7 @@ class DefaultApi:
             '200': "List[OrdersItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5266,6 +5313,7 @@ class DefaultApi:
             '200': "List[OrdersItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5420,6 +5468,7 @@ class DefaultApi:
             '200': "List[SalesItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5494,6 +5543,7 @@ class DefaultApi:
             '200': "List[SalesItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5568,6 +5618,7 @@ class DefaultApi:
             '200': "List[SalesItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5718,6 +5769,7 @@ class DefaultApi:
             '200': "List[StocksItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5788,6 +5840,7 @@ class DefaultApi:
             '200': "List[StocksItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -5858,6 +5911,7 @@ class DefaultApi:
             '200': "List[StocksItem]",
             '400': "ApiV1SupplierIncomesGet400Response",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6035,6 +6089,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6137,6 +6192,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6239,6 +6295,7 @@ class DefaultApi:
             '200': "CreateTaskResponse",
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -6416,6 +6473,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -6488,6 +6546,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }
@@ -6560,6 +6619,7 @@ class DefaultApi:
             '204': None,
             '400': "Model4xxResponse",
             '401': "ApiV1SupplierIncomesGet401Response",
+            '402': "ApiV1SupplierIncomesGet402Response",
             '404': "Model4xxResponse",
             '429': "ApiV1SupplierIncomesGet401Response",
         }

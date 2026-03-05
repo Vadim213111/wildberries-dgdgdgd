@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -49,6 +49,7 @@ __all__ = [
     "ApiV1AnalyticsRegionSaleGet200ResponseReportInner",
     "ApiV1SupplierIncomesGet400Response",
     "ApiV1SupplierIncomesGet401Response",
+    "ApiV1SupplierIncomesGet402Response",
     "ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner",
     "ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner",
     "CreateTaskResponse",
@@ -116,6 +117,7 @@ from wildberries_sdk.reports.models.api_v1_analytics_region_sale_get200_response
 from wildberries_sdk.reports.models.api_v1_analytics_region_sale_get200_response_report_inner import ApiV1AnalyticsRegionSaleGet200ResponseReportInner as ApiV1AnalyticsRegionSaleGet200ResponseReportInner
 from wildberries_sdk.reports.models.api_v1_supplier_incomes_get400_response import ApiV1SupplierIncomesGet400Response as ApiV1SupplierIncomesGet400Response
 from wildberries_sdk.reports.models.api_v1_supplier_incomes_get401_response import ApiV1SupplierIncomesGet401Response as ApiV1SupplierIncomesGet401Response
+from wildberries_sdk.reports.models.api_v1_supplier_incomes_get402_response import ApiV1SupplierIncomesGet402Response as ApiV1SupplierIncomesGet402Response
 from wildberries_sdk.reports.models.api_v1_warehouse_remains_tasks_task_id_download_get200_response_inner import ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner as ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner
 from wildberries_sdk.reports.models.api_v1_warehouse_remains_tasks_task_id_download_get200_response_inner_warehouses_inner import ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner as ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner
 from wildberries_sdk.reports.models.create_task_response import CreateTaskResponse as CreateTaskResponse

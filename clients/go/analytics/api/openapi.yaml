@@ -107,6 +107,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -215,6 +225,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -328,6 +348,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -712,6 +742,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1125,6 +1165,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1224,6 +1274,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1306,6 +1366,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1392,6 +1462,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1475,6 +1555,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1552,6 +1642,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1631,6 +1731,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1710,6 +1820,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1795,6 +1915,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1874,6 +2004,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+          description: Требуется платёж
         "403":
           content:
             application/json:
@@ -1959,8 +2099,8 @@ components:
         41058/прозрачный,Чехол для телефона прозрачный111,5870243,Чехлы для телефонов,Arizona.kz,-,20964883,Коледино,1,1,1
         41058/прозрачный,Чехол для телефона прозрачный111,5870243,Чехлы для телефонов,Arizona.kz,-,20964883,Маркетплейс,1000,997,923
         wb59toaotq,Брюки,12862180,Болеро,,O,39533928,Маркетплейс,6,8,4
-        451263124,Брюки фывфыв 123,12862181,Брюки,DUB,A,39533929,Маркетплейс,11,10,11
-        wb33q6504x,ПАЗЛ,13088345,Пазлы,паззззлы,-,40030565,Маркетплейс,2,28,54
+        451263124,Брюки 123,12862181,Брюки,DUB,A,39533929,Маркетплейс,11,10,11
+        wb33q6504x,ПАЗЛ,13088345,Пазлы,CoolPuzzles,-,40030565,Маркетплейс,2,28,54
         4854554654/0,Альбом,13480414,Альбомы для коллекционирования,Эконом,-,40873579,Маркетплейс,25,20,19
         14053651Черный,Дубленка 333334,14652473,Дубленки,SARTORI DODICI,48,43253666,Маркетплейс,30,30,30
         HGF56X,Чай,14986284,Чай,Lipton,-,43804848,Коледино,154,254,223
@@ -1983,6 +2123,15 @@ components:
           schema:
             $ref: "#/components/schemas/postSalesFunnelProducts_401_response"
       description: Не авторизован
+    "402":
+      content:
+        application/problem+json:
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+          schema:
+            $ref: "#/components/schemas/postSalesFunnelProducts_402_response"
+      description: Требуется платёж
     "429":
       content:
         application/problem+json:
@@ -7135,6 +7284,15 @@ components:
         timestamp:
           description: Дата и время запроса
           format: date-time
+          type: string
+      type: object
+    postSalesFunnelProducts_402_response:
+      properties:
+        title:
+          description: Заголовок ошибки
+          type: string
+        detail:
+          description: Детали ошибки
           type: string
       type: object
     postSalesFunnelGroupedHistory_200_response:

@@ -16,6 +16,7 @@
 import * as runtime from '../runtime';
 import type {
   ApiV1AcceptanceOptionsPost401Response,
+  ApiV1AcceptanceOptionsPost402Response,
   ModelsBox,
   ModelsErrorModel,
   ModelsGood,
@@ -30,6 +31,8 @@ import type {
 import {
     ApiV1AcceptanceOptionsPost401ResponseFromJSON,
     ApiV1AcceptanceOptionsPost401ResponseToJSON,
+    ApiV1AcceptanceOptionsPost402ResponseFromJSON,
+    ApiV1AcceptanceOptionsPost402ResponseToJSON,
     ModelsBoxFromJSON,
     ModelsBoxToJSON,
     ModelsErrorModelFromJSON,

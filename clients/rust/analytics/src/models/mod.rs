@@ -118,6 +118,8 @@ pub mod post_sales_funnel_products_200_response_data;
 pub use self::post_sales_funnel_products_200_response_data::PostSalesFunnelProducts200ResponseData;
 pub mod post_sales_funnel_products_401_response;
 pub use self::post_sales_funnel_products_401_response::PostSalesFunnelProducts401Response;
+pub mod post_sales_funnel_products_402_response;
+pub use self::post_sales_funnel_products_402_response::PostSalesFunnelProducts402Response;
 pub mod product;
 pub use self::product::Product;
 pub mod product_history_request;

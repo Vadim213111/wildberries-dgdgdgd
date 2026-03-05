@@ -41,6 +41,7 @@ import type {
   ApiStatusSetResponses,
   ApiUINRequest,
   ApiV3ClickCollectOrdersNewGet401Response,
+  ApiV3ClickCollectOrdersNewGet402Response,
 } from '../models/index';
 import {
     ApiBatchErrorFromJSON,
@@ -95,6 +96,8 @@ import {
     ApiUINRequestToJSON,
     ApiV3ClickCollectOrdersNewGet401ResponseFromJSON,
     ApiV3ClickCollectOrdersNewGet401ResponseToJSON,
+    ApiV3ClickCollectOrdersNewGet402ResponseFromJSON,
+    ApiV3ClickCollectOrdersNewGet402ResponseToJSON,
 } from '../models/index';
 
 export interface ApiMarketplaceV3ClickCollectOrdersMetaDeletePostRequest {

@@ -366,7 +366,7 @@ class DefaultApi:
     ) -> CreateInviteResponse:
         """Создать приглашение для нового пользователя
 
-        Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param create_invite_request: (required)
         :type create_invite_request: CreateInviteRequest
@@ -436,7 +436,7 @@ class DefaultApi:
     ) -> ApiResponse[CreateInviteResponse]:
         """Создать приглашение для нового пользователя
 
-        Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param create_invite_request: (required)
         :type create_invite_request: CreateInviteRequest
@@ -506,7 +506,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Создать приглашение для нового пользователя
 
-        Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br> Как выдаются права доступа: - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`) - Если в `access` указана часть разделов профиля, то кроме тех доступов, что указаны в запросе, также выдаются все доступы по умолчанию - Если в `access` перечислены все возможные разделы, доступы будут выданы согласно запросу, без доступов по умолчанию - Если в `access` дважды указан один и тот же раздел (`code`):   - при разных значениях `disabled` (`true` и `false`) доступ не будет выдан   - при одинаковых значениях `\"disabled\": true` доступ не будет выдан   - при одинаковых значениях `\"disabled\": false` доступ будет выдан  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param create_invite_request: (required)
         :type create_invite_request: CreateInviteRequest
@@ -686,6 +686,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1SellerInfoGet200Response",
             '401': "PingGet401Response",
+            '402': "ApiV1SellerInfoGet402Response",
             '429': "PingGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -751,6 +752,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1SellerInfoGet200Response",
             '401': "PingGet401Response",
+            '402': "ApiV1SellerInfoGet402Response",
             '429': "PingGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -816,6 +818,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ApiV1SellerInfoGet200Response",
             '401': "PingGet401Response",
+            '402': "ApiV1SellerInfoGet402Response",
             '429': "PingGet401Response",
         }
         response_data = self.api_client.call_api(
@@ -909,7 +912,7 @@ class DefaultApi:
     ) -> None:
         """Удалить пользователя
 
-        Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
 
         :param deleted_user_id: ID пользователя, которому будет закрыт доступ (required)
         :type deleted_user_id: int
@@ -979,7 +982,7 @@ class DefaultApi:
     ) -> ApiResponse[None]:
         """Удалить пользователя
 
-        Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
 
         :param deleted_user_id: ID пользователя, которому будет закрыт доступ (required)
         :type deleted_user_id: int
@@ -1049,7 +1052,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Удалить пользователя
 
-        Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 10 запросов | </div> 
 
         :param deleted_user_id: ID пользователя, которому будет закрыт доступ (required)
         :type deleted_user_id: int
@@ -1185,7 +1188,7 @@ class DefaultApi:
     ) -> None:
         """Изменить права доступа пользователей
 
-        Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param update_user_access_request: (required)
         :type update_user_access_request: UpdateUserAccessRequest
@@ -1255,7 +1258,7 @@ class DefaultApi:
     ) -> ApiResponse[None]:
         """Изменить права доступа пользователей
 
-        Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param update_user_access_request: (required)
         :type update_user_access_request: UpdateUserAccessRequest
@@ -1325,7 +1328,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Изменить права доступа пользователей
 
-        Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод меняет права доступа одному или нескольким пользователям.<br> <br> Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param update_user_access_request: (required)
         :type update_user_access_request: UpdateUserAccessRequest
@@ -1474,7 +1477,7 @@ class DefaultApi:
     ) -> GetUsersResponse:
         """Получить список активных или приглашённых пользователей продавца
 
-        Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param limit: Количество активных или приглашённых пользователей в ответе
         :type limit: int
@@ -1552,7 +1555,7 @@ class DefaultApi:
     ) -> ApiResponse[GetUsersResponse]:
         """Получить список активных или приглашённых пользователей продавца
 
-        Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param limit: Количество активных или приглашённых пользователей в ответе
         :type limit: int
@@ -1630,7 +1633,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить список активных или приглашённых пользователей продавца
 
-        Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
+        <div class=\"description_token\"> Метод доступен по<strong> Персональному</strong> <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">токену</a> </div>  Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br> Чтобы выбрать список, укажите значение параметра `isInviteOnly`:   - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ   - `isInviteOnly=false` или не указан — список активных пользователей  По каждому пользователю можно получить:   - роль пользователя   - разделы, к которым есть доступы   - статус приглашения  Список приглашённых пользователей в ответе всегда отсортирован по дате создания: от новых до старых.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
 
         :param limit: Количество активных или приглашённых пользователей в ответе
         :type limit: int

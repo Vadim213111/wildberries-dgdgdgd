@@ -17,6 +17,7 @@ import * as runtime from '../runtime';
 import type {
   ApiV1TariffsCommissionGet200Response,
   ApiV1TariffsCommissionGet401Response,
+  ApiV1TariffsCommissionGet402Response,
   BadRequest,
   ModelsAcceptanceCoefficient,
   ModelsErrorModel,
@@ -29,6 +30,8 @@ import {
     ApiV1TariffsCommissionGet200ResponseToJSON,
     ApiV1TariffsCommissionGet401ResponseFromJSON,
     ApiV1TariffsCommissionGet401ResponseToJSON,
+    ApiV1TariffsCommissionGet402ResponseFromJSON,
+    ApiV1TariffsCommissionGet402ResponseToJSON,
     BadRequestFromJSON,
     BadRequestToJSON,
     ModelsAcceptanceCoefficientFromJSON,

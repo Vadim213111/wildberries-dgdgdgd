@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiV1AcceptanceReportGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -31,6 +32,7 @@ pub enum ApiV1AcceptanceReportGetError {
 pub enum ApiV1AcceptanceReportTasksTaskIdDownloadGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status404(models::Model4xxResponse),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
@@ -53,6 +55,7 @@ pub enum ApiV1AcceptanceReportTasksTaskIdStatusGetError {
 pub enum ApiV1AnalyticsAntifraudDetailsGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -63,6 +66,7 @@ pub enum ApiV1AnalyticsAntifraudDetailsGetError {
 pub enum ApiV1AnalyticsBannedProductsBlockedGetError {
     Status400(models::ApiV1AnalyticsBannedProductsBlockedGet400Response),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -73,6 +77,7 @@ pub enum ApiV1AnalyticsBannedProductsBlockedGetError {
 pub enum ApiV1AnalyticsBannedProductsShadowedGetError {
     Status400(models::ApiV1AnalyticsBannedProductsBlockedGet400Response),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -82,6 +87,7 @@ pub enum ApiV1AnalyticsBannedProductsShadowedGetError {
 #[serde(untagged)]
 pub enum ApiV1AnalyticsBrandShareBrandsGetError {
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -92,6 +98,7 @@ pub enum ApiV1AnalyticsBrandShareBrandsGetError {
 pub enum ApiV1AnalyticsBrandShareGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -102,6 +109,7 @@ pub enum ApiV1AnalyticsBrandShareGetError {
 pub enum ApiV1AnalyticsBrandShareParentSubjectsGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -112,6 +120,7 @@ pub enum ApiV1AnalyticsBrandShareParentSubjectsGetError {
 pub enum ApiV1AnalyticsGoodsLabelingGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -122,6 +131,7 @@ pub enum ApiV1AnalyticsGoodsLabelingGetError {
 pub enum ApiV1AnalyticsGoodsReturnGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -132,6 +142,7 @@ pub enum ApiV1AnalyticsGoodsReturnGetError {
 pub enum ApiV1AnalyticsRegionSaleGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -142,6 +153,7 @@ pub enum ApiV1AnalyticsRegionSaleGetError {
 pub enum ApiV1PaidStorageGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -152,6 +164,7 @@ pub enum ApiV1PaidStorageGetError {
 pub enum ApiV1PaidStorageTasksTaskIdDownloadGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status404(models::Model4xxResponse),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
@@ -174,6 +187,7 @@ pub enum ApiV1PaidStorageTasksTaskIdStatusGetError {
 pub enum ApiV1SupplierIncomesGetError {
     Status400(models::ApiV1SupplierIncomesGet400Response),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -184,6 +198,7 @@ pub enum ApiV1SupplierIncomesGetError {
 pub enum ApiV1SupplierOrdersGetError {
     Status400(models::ApiV1SupplierIncomesGet400Response),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -194,6 +209,7 @@ pub enum ApiV1SupplierOrdersGetError {
 pub enum ApiV1SupplierSalesGetError {
     Status400(models::ApiV1SupplierIncomesGet400Response),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -204,6 +220,7 @@ pub enum ApiV1SupplierSalesGetError {
 pub enum ApiV1SupplierStocksGetError {
     Status400(models::ApiV1SupplierIncomesGet400Response),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -214,6 +231,7 @@ pub enum ApiV1SupplierStocksGetError {
 pub enum ApiV1WarehouseRemainsGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),
 }
@@ -224,6 +242,7 @@ pub enum ApiV1WarehouseRemainsGetError {
 pub enum ApiV1WarehouseRemainsTasksTaskIdDownloadGetError {
     Status400(models::Model4xxResponse),
     Status401(models::ApiV1SupplierIncomesGet401Response),
+    Status402(models::ApiV1SupplierIncomesGet402Response),
     Status404(models::Model4xxResponse),
     Status429(models::ApiV1SupplierIncomesGet401Response),
     UnknownValue(serde_json::Value),

@@ -21,6 +21,7 @@ use super::{Error, configuration, ContentType};
 pub enum ApiV2NmReportDownloadsFileDownloadIdGetError {
     Status400(models::ApiV2NmReportDownloadsGet400Response),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ApiV2NmReportDownloadsGet403Response),
     Status429(models::PostSalesFunnelProducts401Response),
     UnknownValue(serde_json::Value),
@@ -43,6 +44,7 @@ pub enum ApiV2NmReportDownloadsGetError {
 pub enum ApiV2NmReportDownloadsPostError {
     Status400(models::ApiV2NmReportDownloadsGet400Response),
     Status401(models::PostSalesFunnelProducts401Response),
+    Status402(models::PostSalesFunnelProducts402Response),
     Status403(models::ApiV2NmReportDownloadsGet403Response),
     Status429(models::ApiV2NmReportDownloadsPost429Response),
     UnknownValue(serde_json::Value),

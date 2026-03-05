@@ -153,6 +153,7 @@ pub enum ApiMarketplaceV3ClickCollectOrdersStatusRejectPostError {
 pub enum ApiV3ClickCollectOrdersClientIdentityPostError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::ApiError),
     Status409(models::ApiError),
@@ -166,6 +167,7 @@ pub enum ApiV3ClickCollectOrdersClientIdentityPostError {
 pub enum ApiV3ClickCollectOrdersClientPostError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3ClickCollectOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -177,6 +179,7 @@ pub enum ApiV3ClickCollectOrdersClientPostError {
 pub enum ApiV3ClickCollectOrdersGetError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3ClickCollectOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -187,6 +190,7 @@ pub enum ApiV3ClickCollectOrdersGetError {
 #[serde(untagged)]
 pub enum ApiV3ClickCollectOrdersNewGetError {
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3ClickCollectOrdersNewGet401Response),
     UnknownValue(serde_json::Value),
@@ -198,6 +202,7 @@ pub enum ApiV3ClickCollectOrdersNewGetError {
 pub enum ApiV3ClickCollectOrdersOrderIdCancelPatchError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -211,6 +216,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdCancelPatchError {
 pub enum ApiV3ClickCollectOrdersOrderIdConfirmPatchError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -223,6 +229,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdConfirmPatchError {
 #[serde(untagged)]
 pub enum ApiV3ClickCollectOrdersOrderIdMetaDeleteError {
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3ClickCollectOrdersNewGet401Response),
@@ -234,6 +241,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdMetaDeleteError {
 #[serde(untagged)]
 pub enum ApiV3ClickCollectOrdersOrderIdMetaGetError {
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status429(models::ApiV3ClickCollectOrdersNewGet401Response),
@@ -246,6 +254,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdMetaGetError {
 pub enum ApiV3ClickCollectOrdersOrderIdMetaGtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -259,6 +268,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdMetaGtinPutError {
 pub enum ApiV3ClickCollectOrdersOrderIdMetaImeiPutError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -272,6 +282,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdMetaImeiPutError {
 pub enum ApiV3ClickCollectOrdersOrderIdMetaSgtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -285,6 +296,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdMetaSgtinPutError {
 pub enum ApiV3ClickCollectOrdersOrderIdMetaUinPutError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -298,6 +310,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdMetaUinPutError {
 pub enum ApiV3ClickCollectOrdersOrderIdPreparePatchError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -311,6 +324,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdPreparePatchError {
 pub enum ApiV3ClickCollectOrdersOrderIdReceivePatchError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -324,6 +338,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdReceivePatchError {
 pub enum ApiV3ClickCollectOrdersOrderIdRejectPatchError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
@@ -337,6 +352,7 @@ pub enum ApiV3ClickCollectOrdersOrderIdRejectPatchError {
 pub enum ApiV3ClickCollectOrdersStatusPostError {
     Status400(models::Error),
     Status401(models::ApiV3ClickCollectOrdersNewGet401Response),
+    Status402(models::ApiV3ClickCollectOrdersNewGet402Response),
     Status403(models::Error),
     Status429(models::ApiV3ClickCollectOrdersNewGet401Response),
     UnknownValue(serde_json::Value),

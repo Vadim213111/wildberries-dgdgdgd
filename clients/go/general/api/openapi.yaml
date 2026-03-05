@@ -279,6 +279,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_ping_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_seller_info_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -306,6 +316,10 @@ paths:
   /api/v1/invite:
     post:
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br>
         Как выдаются права доступа:
         - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`)
@@ -380,11 +394,17 @@ paths:
       - Управление пользователями продавца
       x-readonly-method: false
       x-category: usermanagement
+      x-token-types:
+      - personal
     servers:
     - url: https://user-management-api.wildberries.ru
   /api/v1/users:
     get:
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br>
         Чтобы выбрать список, укажите значение параметра `isInviteOnly`:
           - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ
@@ -683,11 +703,17 @@ paths:
       - Управление пользователями продавца
       x-readonly-method: true
       x-category: usermanagement
+      x-token-types:
+      - personal
     servers:
     - url: https://user-management-api.wildberries.ru
   /api/v1/users/access:
     put:
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод меняет права доступа одному или нескольким пользователям.<br>
         <br>
         Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.
@@ -752,11 +778,17 @@ paths:
       - Управление пользователями продавца
       x-readonly-method: false
       x-category: usermanagement
+      x-token-types:
+      - personal
     servers:
     - url: https://user-management-api.wildberries.ru
   /api/v1/user:
     delete:
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.
 
         <div class="description_limit">
@@ -823,6 +855,8 @@ paths:
       - Управление пользователями продавца
       x-readonly-method: false
       x-category: usermanagement
+      x-token-types:
+      - personal
     servers:
     - url: https://user-management-api.wildberries.ru
 components:
@@ -843,6 +877,15 @@ components:
           schema:
             $ref: "#/components/schemas/_ping_get_401_response"
       description: Не авторизован
+    "402":
+      content:
+        application/problem+json:
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+          schema:
+            $ref: "#/components/schemas/_api_v1_seller_info_get_402_response"
+      description: Требуется платёж
     "429":
       content:
         application/problem+json:
@@ -1233,6 +1276,15 @@ components:
           type: string
         tradeMark:
           description: Торговое наименование продавца
+          type: string
+      type: object
+    _api_v1_seller_info_get_402_response:
+      properties:
+        title:
+          description: Заголовок ошибки
+          type: string
+        detail:
+          description: Детали ошибки
           type: string
       type: object
     Access_inner:

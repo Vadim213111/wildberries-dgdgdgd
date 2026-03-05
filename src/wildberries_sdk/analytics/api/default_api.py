@@ -124,6 +124,7 @@ class DefaultApi:
             '200': "bytes",
             '400': "ApiV2NmReportDownloadsGet400Response",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ApiV2NmReportDownloadsGet403Response",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -195,6 +196,7 @@ class DefaultApi:
             '200': "bytes",
             '400': "ApiV2NmReportDownloadsGet400Response",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ApiV2NmReportDownloadsGet403Response",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -266,6 +268,7 @@ class DefaultApi:
             '200': "bytes",
             '400': "ApiV2NmReportDownloadsGet400Response",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ApiV2NmReportDownloadsGet403Response",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -682,6 +685,7 @@ class DefaultApi:
             '200': "NmReportCreateReportResponse",
             '400': "ApiV2NmReportDownloadsGet400Response",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ApiV2NmReportDownloadsGet403Response",
             '429': "ApiV2NmReportDownloadsPost429Response",
         }
@@ -753,6 +757,7 @@ class DefaultApi:
             '200': "NmReportCreateReportResponse",
             '400': "ApiV2NmReportDownloadsGet400Response",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ApiV2NmReportDownloadsGet403Response",
             '429': "ApiV2NmReportDownloadsPost429Response",
         }
@@ -824,6 +829,7 @@ class DefaultApi:
             '200': "NmReportCreateReportResponse",
             '400': "ApiV2NmReportDownloadsGet400Response",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ApiV2NmReportDownloadsGet403Response",
             '429': "ApiV2NmReportDownloadsPost429Response",
         }
@@ -1262,6 +1268,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportProductOrdersPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1333,6 +1340,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportProductOrdersPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1404,6 +1412,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportProductOrdersPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1552,6 +1561,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportProductSearchTextsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1623,6 +1633,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportProductSearchTextsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1694,6 +1705,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportProductSearchTextsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1842,6 +1854,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportReportPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1913,6 +1926,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportReportPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -1984,6 +1998,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportReportPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2132,6 +2147,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportTableDetailsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2203,6 +2219,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportTableDetailsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2274,6 +2291,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportTableDetailsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2422,6 +2440,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportTableGroupsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2493,6 +2512,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportTableGroupsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2564,6 +2584,7 @@ class DefaultApi:
             '200': "ApiV2SearchReportTableGroupsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2712,6 +2733,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportOfficesPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2783,6 +2805,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportOfficesPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -2854,6 +2877,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportOfficesPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3002,6 +3026,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsGroupsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3073,6 +3098,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsGroupsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3144,6 +3170,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsGroupsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3292,6 +3319,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsProductsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3363,6 +3391,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsProductsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3434,6 +3463,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsProductsPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3582,6 +3612,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsSizesPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3653,6 +3684,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsSizesPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3724,6 +3756,7 @@ class DefaultApi:
             '200': "ApiV2StocksReportProductsSizesPost200Response",
             '400': "ErrorObject400",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject403",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3872,6 +3905,7 @@ class DefaultApi:
             '200': "PostSalesFunnelGroupedHistory200Response",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -3943,6 +3977,7 @@ class DefaultApi:
             '200': "PostSalesFunnelGroupedHistory200Response",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4014,6 +4049,7 @@ class DefaultApi:
             '200': "PostSalesFunnelGroupedHistory200Response",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4162,6 +4198,7 @@ class DefaultApi:
             '200': "PostSalesFunnelProducts200Response",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4233,6 +4270,7 @@ class DefaultApi:
             '200': "PostSalesFunnelProducts200Response",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4304,6 +4342,7 @@ class DefaultApi:
             '200': "PostSalesFunnelProducts200Response",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4452,6 +4491,7 @@ class DefaultApi:
             '200': "List[ProductHistoryResponseInner]",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4523,6 +4563,7 @@ class DefaultApi:
             '200': "List[ProductHistoryResponseInner]",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }
@@ -4594,6 +4635,7 @@ class DefaultApi:
             '200': "List[ProductHistoryResponseInner]",
             '400': "ErrorObject",
             '401': "PostSalesFunnelProducts401Response",
+            '402': "PostSalesFunnelProducts402Response",
             '403': "ErrorObject",
             '429': "PostSalesFunnelProducts401Response",
         }

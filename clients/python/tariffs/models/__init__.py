@@ -15,6 +15,7 @@
 # import models into model package
 from wildberries_sdk.tariffs.models.api_v1_tariffs_commission_get200_response import ApiV1TariffsCommissionGet200Response
 from wildberries_sdk.tariffs.models.api_v1_tariffs_commission_get401_response import ApiV1TariffsCommissionGet401Response
+from wildberries_sdk.tariffs.models.api_v1_tariffs_commission_get402_response import ApiV1TariffsCommissionGet402Response
 from wildberries_sdk.tariffs.models.bad_request import BadRequest
 from wildberries_sdk.tariffs.models.commission import Commission
 from wildberries_sdk.tariffs.models.commission_china import CommissionChina

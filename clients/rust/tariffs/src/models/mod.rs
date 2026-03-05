@@ -2,6 +2,8 @@ pub mod _api_v1_tariffs_commission_get_200_response;
 pub use self::_api_v1_tariffs_commission_get_200_response::ApiV1TariffsCommissionGet200Response;
 pub mod _api_v1_tariffs_commission_get_401_response;
 pub use self::_api_v1_tariffs_commission_get_401_response::ApiV1TariffsCommissionGet401Response;
+pub mod _api_v1_tariffs_commission_get_402_response;
+pub use self::_api_v1_tariffs_commission_get_402_response::ApiV1TariffsCommissionGet402Response;
 pub mod bad_request;
 pub use self::bad_request::BadRequest;
 pub mod commission;

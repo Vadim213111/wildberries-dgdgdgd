@@ -2321,7 +2321,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2ListGoodsFilterGet($limit, $offset = null, $filter_nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2ListGoodsFilterGet'][0])
     {
@@ -2347,7 +2347,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2ListGoodsFilterGetWithHttpInfo($limit, $offset = null, $filter_nm_id = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2ListGoodsFilterGet'][0])
     {
@@ -2392,6 +2392,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -2451,6 +2457,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2742,7 +2756,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2ListGoodsFilterPost($api_v2_list_goods_filter_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2ListGoodsFilterPost'][0])
     {
@@ -2766,7 +2780,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV2ListGoodsFilterGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2ListGoodsFilterPostWithHttpInfo($api_v2_list_goods_filter_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2ListGoodsFilterPost'][0])
     {
@@ -2811,6 +2825,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -2870,6 +2890,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3129,7 +3157,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV2ListGoodsSizeNmGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV2ListGoodsSizeNmGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2ListGoodsSizeNmGet($limit, $nm_id, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2ListGoodsSizeNmGet'][0])
     {
@@ -3155,7 +3183,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV2ListGoodsSizeNmGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV2ListGoodsSizeNmGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2ListGoodsSizeNmGetWithHttpInfo($limit, $nm_id, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2ListGoodsSizeNmGet'][0])
     {
@@ -3200,6 +3228,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -3259,6 +3293,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3557,7 +3599,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV2QuarantineGoodsGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV2QuarantineGoodsGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2QuarantineGoodsGet($limit, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2QuarantineGoodsGet'][0])
     {
@@ -3582,7 +3624,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV2QuarantineGoodsGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV2QuarantineGoodsGet200Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2QuarantineGoodsGetWithHttpInfo($limit, $offset = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2QuarantineGoodsGet'][0])
     {
@@ -3627,6 +3669,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -3692,6 +3740,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3978,7 +4034,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2UploadTaskClubDiscountPost($api_v2_upload_task_club_discount_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskClubDiscountPost'][0])
     {
@@ -4002,7 +4058,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2UploadTaskClubDiscountPostWithHttpInfo($api_v2_upload_task_club_discount_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskClubDiscountPost'][0])
     {
@@ -4053,6 +4109,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -4126,6 +4188,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4391,7 +4461,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2UploadTaskPost($api_v2_upload_task_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskPost'][0])
     {
@@ -4415,7 +4485,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2UploadTaskPostWithHttpInfo($api_v2_upload_task_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskPost'][0])
     {
@@ -4466,6 +4536,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -4539,6 +4615,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4804,7 +4888,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV2UploadTaskSizePost($api_v2_upload_task_size_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskSizePost'][0])
     {
@@ -4828,7 +4912,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\TaskCreated|\Wildberries\Sdk\Products\Model\RequestAlreadyExistsError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ResponseError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV2UploadTaskSizePostWithHttpInfo($api_v2_upload_task_size_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV2UploadTaskSizePost'][0])
     {
@@ -4879,6 +4963,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -4952,6 +5042,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5217,7 +5315,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV3DbwWarehousesWarehouseIdContactsGet($warehouse_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3DbwWarehousesWarehouseIdContactsGet'][0])
     {
@@ -5241,7 +5339,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV3DbwWarehousesWarehouseIdContactsGet200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3DbwWarehousesWarehouseIdContactsGetWithHttpInfo($warehouse_id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3DbwWarehousesWarehouseIdContactsGet'][0])
     {
@@ -5286,6 +5384,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -5345,6 +5449,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5672,6 +5784,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -6359,6 +6479,14 @@ class DefaultApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -6634,7 +6762,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPost200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPost200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV3StocksWarehouseIdPost($warehouse_id, $api_v3_stocks_warehouse_id_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3StocksWarehouseIdPost'][0])
     {
@@ -6659,7 +6787,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPost200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV3StocksWarehouseIdPost200Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3StocksWarehouseIdPostWithHttpInfo($warehouse_id, $api_v3_stocks_warehouse_id_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3StocksWarehouseIdPost'][0])
     {
@@ -6704,6 +6832,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -6769,6 +6903,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7121,6 +7263,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -7753,7 +7903,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ApiV3WarehousesPost201Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ApiV3WarehousesPost201Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function apiV3WarehousesPost($api_v3_warehouses_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3WarehousesPost'][0])
     {
@@ -7777,7 +7927,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ApiV3WarehousesPost201Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ApiV3WarehousesPost201Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\Error|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function apiV3WarehousesPostWithHttpInfo($api_v3_warehouses_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV3WarehousesPost'][0])
     {
@@ -7822,6 +7972,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -7893,6 +8049,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -8229,6 +8393,14 @@ class DefaultApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -8551,6 +8723,14 @@ class DefaultApi
                     );
                     $e->setResponseObject($data);
                     throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
@@ -8825,7 +9005,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV2BarcodesPost200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV2BarcodesPost200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2BarcodesPost($content_v2_barcodes_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2BarcodesPost'][0])
     {
@@ -8849,7 +9029,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV2BarcodesPost200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV2BarcodesPost200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2BarcodesPostWithHttpInfo($content_v2_barcodes_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2BarcodesPost'][0])
     {
@@ -8888,6 +9068,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -8939,6 +9125,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -9196,7 +9390,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2CardsDeleteTrashPost($content_v2_cards_delete_trash_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsDeleteTrashPost'][0])
     {
@@ -9220,7 +9414,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2CardsDeleteTrashPostWithHttpInfo($content_v2_cards_delete_trash_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsDeleteTrashPost'][0])
     {
@@ -9265,6 +9459,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -9324,6 +9524,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10333,7 +10541,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ContentV2CardsMoveNmPost400Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseCardCreate|string|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ContentV2CardsMoveNmPost400Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseCardCreate|string|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2CardsMoveNmPost($content_v2_cards_move_nm_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsMoveNmPost'][0])
     {
@@ -10357,7 +10565,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ContentV2CardsMoveNmPost400Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseCardCreate|string|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ContentV2CardsMoveNmPost400Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseCardCreate|string|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2CardsMoveNmPostWithHttpInfo($content_v2_cards_move_nm_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsMoveNmPost'][0])
     {
@@ -10402,6 +10610,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -10467,6 +10681,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -10726,7 +10948,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2CardsRecoverPost($content_v2_cards_delete_trash_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsRecoverPost'][0])
     {
@@ -10750,7 +10972,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV2CardsDeleteTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2CardsRecoverPostWithHttpInfo($content_v2_cards_delete_trash_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsRecoverPost'][0])
     {
@@ -10795,6 +11017,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -10854,6 +11082,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11111,7 +11347,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2CardsUpdatePost($content_v2_cards_update_post_request_inner = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsUpdatePost'][0])
     {
@@ -11135,7 +11371,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2CardsUpdatePostWithHttpInfo($content_v2_cards_update_post_request_inner = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsUpdatePost'][0])
     {
@@ -11180,6 +11416,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -11245,6 +11487,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11504,7 +11754,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2CardsUploadAddPost($content_v2_cards_upload_add_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsUploadAddPost'][0])
     {
@@ -11528,7 +11778,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2CardsUploadAddPostWithHttpInfo($content_v2_cards_upload_add_post_request = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsUploadAddPost'][0])
     {
@@ -11573,6 +11823,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -11632,6 +11888,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -11883,7 +12147,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2CardsUploadPost($content_v2_cards_upload_post_request_inner = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsUploadPost'][0])
     {
@@ -11907,7 +12171,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseCardCreate|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ContentV2CardsUpdatePost413Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2CardsUploadPostWithHttpInfo($content_v2_cards_upload_post_request_inner = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2CardsUploadPost'][0])
     {
@@ -11952,6 +12216,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -12011,6 +12281,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14585,7 +14863,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2GetCardsListPost($content_v2_get_cards_list_post_request, $locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2GetCardsListPost'][0])
     {
@@ -14610,7 +14888,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV2GetCardsListPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2GetCardsListPostWithHttpInfo($content_v2_get_cards_list_post_request, $locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2GetCardsListPost'][0])
     {
@@ -14655,6 +14933,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -14714,6 +14998,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -14985,7 +15277,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2GetCardsTrashPost($content_v2_get_cards_trash_post_request, $locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2GetCardsTrashPost'][0])
     {
@@ -15010,7 +15302,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV2GetCardsTrashPost200Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2GetCardsTrashPostWithHttpInfo($content_v2_get_cards_trash_post_request, $locale = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2GetCardsTrashPost'][0])
     {
@@ -15055,6 +15347,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -15114,6 +15412,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16579,7 +16885,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2TagIdDelete($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagIdDelete'][0])
     {
@@ -16603,7 +16909,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2TagIdDeleteWithHttpInfo($id, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagIdDelete'][0])
     {
@@ -16648,6 +16954,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -16707,6 +17019,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -16966,7 +17286,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2TagIdPatch($id, $content_v2_tag_id_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagIdPatch'][0])
     {
@@ -16991,7 +17311,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2TagIdPatchWithHttpInfo($id, $content_v2_tag_id_patch_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagIdPatch'][0])
     {
@@ -17036,6 +17356,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -17095,6 +17421,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17370,7 +17704,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2TagNomenclatureLinkPost($content_v2_tag_nomenclature_link_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagNomenclatureLinkPost'][0])
     {
@@ -17394,7 +17728,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2TagNomenclatureLinkPostWithHttpInfo($content_v2_tag_nomenclature_link_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagNomenclatureLinkPost'][0])
     {
@@ -17439,6 +17773,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -17498,6 +17838,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -17755,7 +18103,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2TagPost($content_v2_tag_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagPost'][0])
     {
@@ -17779,7 +18127,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ResponseContentError|\Wildberries\Sdk\Products\Model\ResponseBodyContentError400|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2TagPostWithHttpInfo($content_v2_tag_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagPost'][0])
     {
@@ -17824,6 +18172,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -17883,6 +18237,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18139,7 +18501,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV2TagsGet200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV2TagsGet200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV2TagsGet(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagsGet'][0])
     {
@@ -18162,7 +18524,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV2TagsGet200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV2TagsGet200Response|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\ResponseBodyContentError403|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV2TagsGetWithHttpInfo(?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV2TagsGet'][0])
     {
@@ -18201,6 +18563,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -18252,6 +18620,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18494,7 +18870,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV3MediaFilePost($x_nm_id, $x_photo_number, $uploadfile = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV3MediaFilePost'][0])
     {
@@ -18520,7 +18896,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV3MediaFilePostWithHttpInfo($x_nm_id, $x_photo_number, $uploadfile = null, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV3MediaFilePost'][0])
     {
@@ -18565,6 +18941,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -18624,6 +19006,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -18906,7 +19296,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
+     * @return \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response
      */
     public function contentV3MediaSavePost($content_v3_media_save_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV3MediaSavePost'][0])
     {
@@ -18930,7 +19320,7 @@ class DefaultApi
      *
      * @throws \Wildberries\Sdk\Products\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Products\Model\ContentV3MediaFilePost200Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response|\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\MediaErrors|\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function contentV3MediaSavePostWithHttpInfo($content_v3_media_save_post_request, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['contentV3MediaSavePost'][0])
     {
@@ -18975,6 +19365,12 @@ class DefaultApi
                 case 401:
                     return $this->handleResponseWithDataType(
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 402:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $request,
                         $response,
                     );
@@ -19046,6 +19442,14 @@ class DefaultApi
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
                         '\Wildberries\Sdk\Products\Model\ContentV2ObjectParentAllGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 402:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Products\Model\ContentV2TagsGet402Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

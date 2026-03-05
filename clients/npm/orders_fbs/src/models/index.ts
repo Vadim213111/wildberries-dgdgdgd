@@ -22,6 +22,7 @@ export * from './ApiV3OrdersStickersCrossBorderPostRequest';
 export * from './ApiV3OrdersStickersPost200Response';
 export * from './ApiV3OrdersStickersPost200ResponseStickersInner';
 export * from './ApiV3OrdersStickersPostRequest';
+export * from './ApiV3PassesGet402Response';
 export * from './ApiV3PassesOfficesGet401Response';
 export * from './ApiV3PassesPassIdPutRequest';
 export * from './ApiV3PassesPost201Response';

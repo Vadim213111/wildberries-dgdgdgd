@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.49"
+__version__ = "0.1.50"
 
 # Define package exports
 __all__ = [
@@ -83,6 +83,7 @@ __all__ = [
     "ApiV1CalendarPromotionsGet200ResponseData",
     "ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner",
     "ApiV1CalendarPromotionsGet400Response",
+    "ApiV1CalendarPromotionsGet402Response",
     "ApiV1CalendarPromotionsNomenclaturesGet200Response",
     "ApiV1CalendarPromotionsNomenclaturesGet200ResponseData",
     "ApiV1CalendarPromotionsNomenclaturesGet400Response",
@@ -223,6 +224,7 @@ from wildberries_sdk.promotion.models.api_v1_calendar_promotions_get200_response
 from wildberries_sdk.promotion.models.api_v1_calendar_promotions_get200_response_data import ApiV1CalendarPromotionsGet200ResponseData as ApiV1CalendarPromotionsGet200ResponseData
 from wildberries_sdk.promotion.models.api_v1_calendar_promotions_get200_response_data_promotions_inner import ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner as ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner
 from wildberries_sdk.promotion.models.api_v1_calendar_promotions_get400_response import ApiV1CalendarPromotionsGet400Response as ApiV1CalendarPromotionsGet400Response
+from wildberries_sdk.promotion.models.api_v1_calendar_promotions_get402_response import ApiV1CalendarPromotionsGet402Response as ApiV1CalendarPromotionsGet402Response
 from wildberries_sdk.promotion.models.api_v1_calendar_promotions_nomenclatures_get200_response import ApiV1CalendarPromotionsNomenclaturesGet200Response as ApiV1CalendarPromotionsNomenclaturesGet200Response
 from wildberries_sdk.promotion.models.api_v1_calendar_promotions_nomenclatures_get200_response_data import ApiV1CalendarPromotionsNomenclaturesGet200ResponseData as ApiV1CalendarPromotionsNomenclaturesGet200ResponseData
 from wildberries_sdk.promotion.models.api_v1_calendar_promotions_nomenclatures_get400_response import ApiV1CalendarPromotionsNomenclaturesGet400Response as ApiV1CalendarPromotionsNomenclaturesGet400Response

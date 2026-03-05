@@ -118,6 +118,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -240,6 +250,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -390,6 +410,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -545,6 +575,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -646,6 +686,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -824,6 +874,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -1027,6 +1087,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "404":
           content:
             application/problem+json:
@@ -1508,6 +1578,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -1625,6 +1705,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -1729,6 +1819,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -1913,6 +2013,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "404":
           content:
             application/problem+json:
@@ -2038,6 +2148,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -2244,6 +2364,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "404":
           content:
             application/problem+json:
@@ -2356,6 +2486,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -2419,6 +2559,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -2559,6 +2709,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -2702,6 +2862,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -2810,6 +2980,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -2918,6 +3098,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -3019,6 +3209,16 @@ paths:
               schema:
                 $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
           description: Не авторизован
+        "402":
+          content:
+            application/problem+json:
+              example:
+                title: payment required
+                detail: please top up your balance in your company personal account
+                  https://dev.wildberries.ru/company
+              schema:
+                $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+          description: Требуется платёж
         "429":
           content:
             application/problem+json:
@@ -3354,6 +3554,15 @@ components:
           schema:
             $ref: "#/components/schemas/_api_v1_supplier_incomes_get_401_response"
       description: Не авторизован
+    "402":
+      content:
+        application/problem+json:
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
+          schema:
+            $ref: "#/components/schemas/_api_v1_supplier_incomes_get_402_response"
+      description: Требуется платёж
     "429":
       content:
         application/problem+json:
@@ -4267,6 +4476,15 @@ components:
         timestamp:
           description: Дата и время запроса
           format: date-time
+          type: string
+      type: object
+    _api_v1_supplier_incomes_get_402_response:
+      properties:
+        title:
+          description: Заголовок ошибки
+          type: string
+        detail:
+          description: Детали ошибки
           type: string
       type: object
     _api_v1_warehouse_remains_tasks__task_id__download_get_200_response_inner_warehouses_inner:

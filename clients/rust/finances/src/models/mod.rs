@@ -2,6 +2,8 @@ pub mod _api_v1_account_balance_get_200_response;
 pub use self::_api_v1_account_balance_get_200_response::ApiV1AccountBalanceGet200Response;
 pub mod _api_v1_account_balance_get_401_response;
 pub use self::_api_v1_account_balance_get_401_response::ApiV1AccountBalanceGet401Response;
+pub mod _api_v1_account_balance_get_402_response;
+pub use self::_api_v1_account_balance_get_402_response::ApiV1AccountBalanceGet402Response;
 pub mod _api_v1_documents_list_get_400_response;
 pub use self::_api_v1_documents_list_get_400_response::ApiV1DocumentsListGet400Response;
 pub mod _api_v5_supplier_report_detail_by_period_get_400_response;

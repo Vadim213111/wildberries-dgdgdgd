@@ -24,6 +24,7 @@ import type {
   NmReportRetryReportRequest,
   NmReportRetryReportResponse,
   PostSalesFunnelProducts401Response,
+  PostSalesFunnelProducts402Response,
 } from '../models/index';
 import {
     ApiV2NmReportDownloadsGet400ResponseFromJSON,
@@ -44,6 +45,8 @@ import {
     NmReportRetryReportResponseToJSON,
     PostSalesFunnelProducts401ResponseFromJSON,
     PostSalesFunnelProducts401ResponseToJSON,
+    PostSalesFunnelProducts402ResponseFromJSON,
+    PostSalesFunnelProducts402ResponseToJSON,
 } from '../models/index';
 
 export interface ApiV2NmReportDownloadsFileDownloadIdGetRequest {
