@@ -266,6 +266,8 @@ paths:
                 tradeMark: Flax Store
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/invite:
@@ -274,12 +276,18 @@ paths:
     post:
       x-readonly-method: false
       x-category: usermanagement
+      x-token-types:
+        - personal
       tags:
         - Управление пользователями продавца
       security:
         - HeaderApiKey: []
       summary: Создать приглашение для нового пользователя
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод создаёт приглашение для нового пользователя с настройкой доступов к разделам профиля продавца.<br>
         Как выдаются права доступа:
         - Если `access` пустой (`[]`) или не указан — по умолчанию выдаются все доступы, кроме доступов к витрине (`showcase`) и **Джем** (`changeJam`)
@@ -326,12 +334,18 @@ paths:
     get:
       x-readonly-method: true
       x-category: usermanagement
+      x-token-types:
+        - personal
       tags:
         - Управление пользователями продавца
       security:
         - HeaderApiKey: []
       summary: Получить список активных или приглашённых пользователей продавца
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод возвращает список активных или приглашённых пользователей профиля продавца.<br><br>
         Чтобы выбрать список, укажите значение параметра `isInviteOnly`:
           - `isInviteOnly=true` — список приглашённых пользователей, которые ещё не активировали доступ
@@ -593,12 +607,18 @@ paths:
     put:
       x-readonly-method: false
       x-category: usermanagement
+      x-token-types:
+        - personal
       tags:
         - Управление пользователями продавца
       security:
         - HeaderApiKey: []
       summary: Изменить права доступа пользователей
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод меняет права доступа одному или нескольким пользователям.<br>
         <br>
         Обновляются только права доступа, переданные в параметрах запроса. Остальные поля остаются без изменений.
@@ -635,12 +655,18 @@ paths:
     delete:
       x-readonly-method: false
       x-category: usermanagement
+      x-token-types:
+        - personal
       tags:
         - Управление пользователями продавца
       security:
         - HeaderApiKey: []
       summary: Удалить пользователя
       description: |
+        <div class="description_token">
+        Метод доступен по<strong> Персональному</strong> <a href="/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API">токену</a>
+        </div>
+
         Метод удаляет пользователя из [списка сотрудников продавца](/openapi/api-information#tag/Upravlenie-polzovatelyami-prodavca/paths/~1api~1v1~1users/get). Этому пользователю будет закрыт доступ в профиль продавца.
 
         <div class="description_limit">
@@ -1009,6 +1035,22 @@ components:
             status: 401
             statusText: Unauthorized
             timestamp: '2024-09-30T06:52:38Z'
+    '402':
+      description: Требуется платёж
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Заголовок ошибки
+              detail:
+                type: string
+                description: Детали ошибки
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:

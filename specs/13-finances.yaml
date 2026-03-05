@@ -63,6 +63,8 @@ paths:
                     description: Сумма, доступная к выводу
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v5/supplier/reportDetailByPeriod:
@@ -164,6 +166,8 @@ paths:
           $ref: '#/components/responses/response400rDBP'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/documents/categories:
@@ -305,6 +309,8 @@ paths:
           $ref: '#/components/responses/Responses400List'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/documents/download:
@@ -354,6 +360,8 @@ paths:
           $ref: '#/components/responses/Responses400Download'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/documents/download/all:
@@ -399,6 +407,8 @@ paths:
           $ref: '#/components/responses/Responses400DownloadAll'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
 components:
@@ -950,6 +960,22 @@ components:
             status: 401
             statusText: Unauthorized
             timestamp: '2024-09-30T06:52:38Z'
+    '402':
+      description: Требуется платёж
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Заголовок ошибки
+              detail:
+                type: string
+                description: Детали ошибки
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:

@@ -1,6 +1,22 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.03.05)
+- Управление пользователями продавца: для методов `/api/v1/invite` (POST), `/api/v1/users` (GET), `/api/v1/users` (PUT), `/api/v1/users` (DELETE) явно задан тип токена `x-token-types: [personal]` и обновлено описание авторизации (методы доступны только по персональному токену)
+- Общие изменения: добавлен новый тип ошибки `402 Payment Required` (components/responses/402, `application/problem+json` с полями `title`, `detail`); `402` добавлен в ответы ряда методов (в т.ч. в 01-general.yaml)
+- Products: для множества методов добавлен ответ `402 Payment Required` (ссылка на `#/components/responses/402`), добавлено описание/схема ошибки `402` в components
+- Orders FBS: для всех основных методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Orders DBW: для всех основных методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Orders DBS: добавлен ответ `402 Payment Required` для методов; для метода получения стикеров для сборочных заданий с доставкой в ПВЗ добавлен `x-token-types: [personal, service]` и обновлён блок описания авторизации (без изменения доступных типов токенов)
+- In-store pickup: для методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Orders FBW: для методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Promotion: для методов календаря промо добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Communications: для методов добавлен ответ `402 Payment Required`; для `/api/v1/seller/download/{id}` дополнительно явно добавлены ответы `401/402/429` (ранее отсутствовали в описании); добавлено описание/схема ошибки `402` в components
+- Tariffs: для методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Analytics: для методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components; обновлены примеры данных в одном из CSV-ответов (изменены значения в строках примера)
+- Reports: для методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+- Finances: для методов добавлен ответ `402 Payment Required`, добавлено описание/схема ошибки `402` в components
+
 ### Changed (2026.03.03)
 - Orders FBS: в схему поставки добавлено поле `isB2b: boolean|null` — признак B2B-продажи (`true/false/null`, где `null` означает отсутствие признака, т.к. сборочные задания не добавлены к поставке).
 - Orders DBS: изменён формат ответа для метода обновления статуса/данных (ранее `$ref api.StatusSetResponses`) — теперь явно описан объект с `requestId` и массивом `results[]` (элементы: `orderId`, `isError`, `errors[] {code, detail}`).
