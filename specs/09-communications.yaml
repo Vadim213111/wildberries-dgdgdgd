@@ -91,6 +91,8 @@ paths:
                     example: null
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -160,6 +162,8 @@ paths:
                     example: null
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -258,6 +262,8 @@ paths:
                   $ref: '#/components/examples/DateToErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -479,6 +485,8 @@ paths:
                   $ref: '#/components/examples/FeedbackErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -618,6 +626,8 @@ paths:
                   $ref: '#/components/examples/FeedbackErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -780,6 +790,8 @@ paths:
                 additionalErrors: null
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -859,6 +871,8 @@ paths:
                     example: null
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -957,6 +971,8 @@ paths:
                   $ref: '#/components/examples/DateToErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1143,6 +1159,8 @@ paths:
                   $ref: '#/components/examples/FeedbackErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1219,6 +1237,8 @@ paths:
                   $ref: '#/components/examples/invalidJsonSyntax'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
     patch:
@@ -1270,6 +1290,8 @@ paths:
           description: Успешно
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/feedbacks/order/return:
@@ -1346,6 +1368,8 @@ paths:
                   $ref: '#/components/examples/RequestIDErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '422':
           description: Ошибка обработки параметров запроса
           content:
@@ -1653,6 +1677,8 @@ paths:
                 additionalErrors: null
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '422':
           description: Ошибка обработки параметров запроса
           content:
@@ -1811,6 +1837,8 @@ paths:
                   $ref: '#/components/examples/FeedbackErr400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2270,6 +2298,8 @@ paths:
                 $ref: '#/components/schemas/ChatsResponse'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/seller/events:
@@ -2424,6 +2454,8 @@ paths:
                     error: Invalid value for "next"
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/seller/message:
@@ -2548,6 +2580,8 @@ paths:
                     error: Invalid value for "message"
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/seller/download/{id}:
@@ -2647,6 +2681,12 @@ paths:
                     detail: invalid fileID
                     requestId: 62f59a4ce21064f20b1bbc28c85f38d8
                     error: invalid fileID
+        '401':
+          $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
+        '429':
+          $ref: '#/components/responses/429'
         '451':
           description: Файл не прошёл модерацию
           content:
@@ -3722,6 +3762,22 @@ components:
             status: 401
             statusText: Unauthorized
             timestamp: '2024-09-30T06:52:38Z'
+    '402':
+      description: Требуется платёж
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Заголовок ошибки
+              detail:
+                type: string
+                description: Детали ошибки
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:

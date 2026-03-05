@@ -111,6 +111,8 @@ paths:
                   $ref: '#/components/examples/DateFromValueNotValidated'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/supplier/stocks:
@@ -206,6 +208,8 @@ paths:
                   $ref: '#/components/examples/DateFromValueNotValidated'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/supplier/orders:
@@ -312,6 +316,8 @@ paths:
                   $ref: '#/components/examples/DateFromValueNotValidated'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/supplier/sales:
@@ -423,6 +429,8 @@ paths:
                   $ref: '#/components/examples/DateFromValueNotValidated'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/excise-report:
@@ -475,6 +483,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/warehouse_remains:
@@ -599,6 +609,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/warehouse_remains/tasks/{task_id}/status:
@@ -784,6 +796,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '404':
           description: Не найдено
           content:
@@ -1096,6 +1110,8 @@ paths:
                   $ref: '#/components/examples/IncorrectDate'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/goods-labeling:
@@ -1150,6 +1166,8 @@ paths:
                   $ref: '#/components/examples/DateRanges'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/acceptance_report:
@@ -1209,6 +1227,8 @@ paths:
                   $ref: '#/components/examples/DateRanges'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/acceptance_report/tasks/{task_id}/status:
@@ -1362,6 +1382,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '404':
           description: Не найдено
           content:
@@ -1456,6 +1478,8 @@ paths:
                   $ref: '#/components/examples/DateRanges'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/paid_storage/tasks/{task_id}/status:
@@ -1600,6 +1624,8 @@ paths:
                 title: Bad Request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '404':
           description: Не найдено
           content:
@@ -1663,6 +1689,8 @@ paths:
                   $ref: '#/components/examples/DateRanges'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/brand-share/brands:
@@ -1695,6 +1723,8 @@ paths:
           $ref: '#/components/responses/SuccessBrandsResponse'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/brand-share/parent-subjects:
@@ -1771,6 +1801,8 @@ paths:
                   $ref: '#/components/examples/MissingBrand'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/brand-share:
@@ -1843,6 +1875,8 @@ paths:
                   $ref: '#/components/examples/MissingBrand'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/banned-products/blocked:
@@ -1963,6 +1997,8 @@ paths:
                 origin: banreportsvc-api
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/banned-products/shadowed:
@@ -2083,6 +2119,8 @@ paths:
                 origin: banreportsvc-api
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
   /api/v1/analytics/goods-return:
@@ -2247,6 +2285,8 @@ paths:
                   $ref: '#/components/examples/DateRanges'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '429':
           $ref: '#/components/responses/429'
 components:
@@ -3347,6 +3387,22 @@ components:
             status: 401
             statusText: Unauthorized
             timestamp: '2024-09-30T06:52:38Z'
+    '402':
+      description: Требуется платёж
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Заголовок ошибки
+              detail:
+                type: string
+                description: Детали ошибки
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:

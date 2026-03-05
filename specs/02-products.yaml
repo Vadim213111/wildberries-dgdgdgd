@@ -1048,6 +1048,8 @@ paths:
                 additionalErrors: ''
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1135,6 +1137,8 @@ paths:
                   $ref: '#/components/examples/responseBodyNameNotExist'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1221,6 +1225,8 @@ paths:
                   $ref: '#/components/examples/responseBody400LenName'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1287,6 +1293,8 @@ paths:
                   $ref: '#/components/examples/responseBodyTagNotExist'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1367,6 +1375,8 @@ paths:
                   $ref: '#/components/examples/IncorrectRequestNm'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -1779,6 +1789,8 @@ paths:
               example: Request body can not be decoded
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2122,6 +2134,8 @@ paths:
                 $ref: '#/components/schemas/responseBodyContentError400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2256,6 +2270,8 @@ paths:
                   $ref: '#/components/examples/responseIncorrectEndDate'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2364,6 +2380,8 @@ paths:
                 $ref: '#/components/schemas/responseBodyContentError400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2458,6 +2476,8 @@ paths:
                 $ref: '#/components/schemas/responseBodyContentError400'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2767,6 +2787,8 @@ paths:
               example: Request body can not be decoded
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -2925,6 +2947,8 @@ paths:
                     example: ''
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -3103,6 +3127,8 @@ paths:
                   $ref: '#/components/examples/ThisCategoryDoesNotExist'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '413':
           description: Превышен лимит объёма данных в запросе
           content:
@@ -3355,6 +3381,8 @@ paths:
                   $ref: '#/components/examples/ThisCategoryDoesNotExist'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '413':
           description: Превышен лимит объёма данных в запросе
           content:
@@ -3465,6 +3493,8 @@ paths:
               example: Invalid 'boundary' for 'multipart/form-data' request
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -3538,6 +3568,8 @@ paths:
                 $ref: '#/components/schemas/mediaErrors'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -3624,6 +3656,8 @@ paths:
                   $ref: '#/components/examples/AllItemNosAreSpecifiedIncorrectlyOrPricesAndDiscounts'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -3714,6 +3748,8 @@ paths:
                   $ref: '#/components/examples/AllItemNosAreSpecifiedIncorrectlyOrPrices'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -3784,6 +3820,8 @@ paths:
                   $ref: '#/components/examples/InvalidDiscountValue'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -4069,6 +4107,8 @@ paths:
                   $ref: '#/components/examples/InvalidRequestParameters'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -4121,6 +4161,8 @@ paths:
                   $ref: '#/components/examples/InvalidRequestParameters'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -4176,6 +4218,8 @@ paths:
                   $ref: '#/components/examples/InvalidRequestParameters'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -4216,6 +4260,8 @@ paths:
                   $ref: '#/components/examples/InvalidRequestParameters'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           description: Доступ запрещён
           content:
@@ -4313,6 +4359,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -4420,6 +4468,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -4536,6 +4586,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -4695,6 +4747,8 @@ paths:
                   $ref: '#/components/examples/WarehouseNameInvalid'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -4775,6 +4829,8 @@ paths:
                   $ref: '#/components/examples/WarehouseNameInvalid'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -4814,6 +4870,8 @@ paths:
           description: Удалено
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -4888,6 +4946,8 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -4952,6 +5012,8 @@ paths:
                   $ref: '#/components/examples/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '429':
@@ -6134,6 +6196,22 @@ components:
             status: 401
             statusText: Unauthorized
             timestamp: '2024-09-30T06:52:38Z'
+    '402':
+      description: Требуется платёж
+      content:
+        application/problem+json:
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                description: Заголовок ошибки
+              detail:
+                type: string
+                description: Детали ошибки
+          example:
+            title: payment required
+            detail: please top up your balance in your company personal account https://dev.wildberries.ru/company
     '429':
       description: Слишком много запросов
       content:
