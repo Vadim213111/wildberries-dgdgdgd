@@ -232,72 +232,72 @@ paths:
           schema:
             type: string
             format: date
-            description: Начало периода. Только вместе с `endTime`
             example: '2024-07-09'
+          description: Начало периода. Только вместе с `endTime`
         - in: query
           name: endTime
           schema:
             type: string
             format: date
-            description: Конец периода. Только вместе с `beginTime`
             example: '2024-07-15'
+          description: Конец периода. Только вместе с `beginTime`
         - in: query
           name: sort
           schema:
             type: string
-            description: |
-              Сортировка:
-                - `date` — по дате создания документа
-                - `category` — по категории (только при `locale=ru`)
-
-              Только вместе с `order`
             enum:
               - date
               - category
             default: date
             example: category
+          description: |
+            Сортировка:
+              - `date` — по дате создания документа
+              - `category` — по категории (только при `locale=ru`)
+
+            Только вместе с `order`
         - in: query
           name: order
           schema:
             type: string
-            description: |
-              Сортировка:
-                - `desc` — по убыванию
-                - `asc` — по возрастанию
-
-              Только вместе с `sort`
             enum:
               - desc
               - asc
             default: desc
             example: asc
+          description: |
+            Сортировка:
+              - `desc` — по убыванию
+              - `asc` — по возрастанию
+
+            Только вместе с `sort`
         - in: query
           name: category
           schema:
             type: string
-            description: ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`
             example: redeem-notification
+          description: ID [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля `name`
         - in: query
           name: serviceName
           schema:
             type: string
-            description: Уникальный ID документа
             example: redeem-notification-44841941
+          description: Уникальный ID документа
         - in: query
           name: limit
           schema:
             type: integer
-            description: Максимальное количество строк ответа
             default: 50
             maximum: 50
             example: 10
+          description: Максимальное количество строк ответа
         - in: query
           name: offset
           schema:
             type: integer
-            description: После какой строки выдавать данные
             default: 0
             example: 90
+          description: После какой строки выдавать данные
       responses:
         '200':
           description: Успешно
@@ -340,15 +340,15 @@ paths:
           name: serviceName
           schema:
             type: string
-            description: Уникальный ID документа
             example: redeem-notification-44841941
+          description: Уникальный ID документа
         - in: query
           required: true
           name: extension
           schema:
             type: string
-            description: Формат документа
             example: zip
+          description: Формат документа
       responses:
         '200':
           description: Успешно
@@ -972,7 +972,7 @@ components:
                 description: Заголовок ошибки
               detail:
                 type: string
-                description: Детали ошибки
+                description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
             detail: please top up your balance in your company personal account https://dev.wildberries.ru/company

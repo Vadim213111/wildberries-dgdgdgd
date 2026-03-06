@@ -2569,7 +2569,7 @@ components:
           description: |
             Список `id` (ID узла). Путь до элемента каталога.
           example: null
-          x-nullable: true
+          nullable: true
           items:
             x-omitempty: false
             type: integer

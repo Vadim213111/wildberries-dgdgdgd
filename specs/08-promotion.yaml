@@ -156,13 +156,6 @@ paths:
             - `9` — активна
             - `11` — на паузе
           schema:
-            enum:
-              - '-1'
-              - '4'
-              - '7'
-              - '8'
-              - '9'
-              - '11'
             type: string
             example: '-1,4,8'
         - name: payment_type
@@ -5021,7 +5014,7 @@ components:
       name: promotionIDs
       required: true
       schema:
-        type: string
+        type: array
         items:
           type: integer
         example:
@@ -5170,7 +5163,7 @@ components:
                 description: Заголовок ошибки
               detail:
                 type: string
-                description: Детали ошибки
+                description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
             detail: please top up your balance in your company personal account https://dev.wildberries.ru/company

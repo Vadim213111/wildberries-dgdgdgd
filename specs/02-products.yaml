@@ -174,14 +174,14 @@ paths:
             type: integer
             example: 1000
             default: 30
-            description: Количество предметов, максимум 1000
+          description: Количество предметов, максимум 1000
         - name: offset
           in: query
           schema:
             type: integer
             example: 5000
             default: 0
-            description: Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
+          description: Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
         - name: parentID
           in: query
           schema:
@@ -4323,7 +4323,7 @@ paths:
                   type: array
                   minItems: 1
                   maxItems: 1000
-                  description: Массив баркодов товаров и их остатков
+                  description: Массив ID размеров товаров и их остатков
                   items:
                     type: object
                     properties:
@@ -4331,11 +4331,6 @@ paths:
                         type: integer
                         description: ID размера товара
                         example: 12345678
-                      sku:
-                        type: string
-                        description: Баркод. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-                        deprecated: true
-                        example: SKUTest123
                       amount:
                         type: integer
                         maximum: 100000
@@ -4437,17 +4432,6 @@ paths:
                     type: integer
                     nullable: false
                     example: 123456789
-                skus:
-                  type: array
-                  nullable: false
-                  minItems: 1
-                  maxItems: 1000
-                  description: Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-                  deprecated: true
-                  items:
-                    type: string
-                    nullable: false
-                    example: SKUTest123
               required:
                 - chrtIds
       responses:
@@ -4531,15 +4515,6 @@ paths:
                   items:
                     type: integer
                     example: 12345678
-                skus:
-                  type: array
-                  description: Массив баркодов. Параметр будет отключен [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-                  deprecated: true
-                  minItems: 1
-                  maxItems: 1000
-                  items:
-                    type: string
-                    example: SKUTest123
               required:
                 - chrtIds
       responses:
@@ -4560,12 +4535,6 @@ paths:
                           type: integer
                           description: ID размера товара
                           example: 12345678
-                        sku:
-                          type: string
-                          nullable: false
-                          description: Баркод. Поле будет отключено [9 февраля](https://dev.wildberries.ru/release-notes?id=386)
-                          deprecated: true
-                          example: SKUTest123
                         amount:
                           type: integer
                           nullable: false
@@ -5318,6 +5287,9 @@ components:
                 sku:
                   type: string
                   description: Баркод
+                chrtId:
+                  type: integer
+                  description: ID размера товара
                 amount:
                   type: integer
                   description: Остаток
@@ -6208,7 +6180,7 @@ components:
                 description: Заголовок ошибки
               detail:
                 type: string
-                description: Детали ошибки
+                description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
             detail: please top up your balance in your company personal account https://dev.wildberries.ru/company

@@ -689,7 +689,6 @@ paths:
                           example: '!uKEtQZVx'
                         file:
                           type: string
-                          format: byte
                           nullable: false
                           description: Полное представление стикера, кодировка base64
                           example: JVBER...ZWYKMTM5MQolJUVPRg==
@@ -2208,8 +2207,8 @@ components:
     SGTINIsNotFilled:
       description: Обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
       value:
-        code: 409
-        message: SGTINIsNotFilled
+        code: SGTINIsNotFilled
+        message: ''
   responses:
     '401':
       description: Не авторизован
@@ -2264,7 +2263,7 @@ components:
                 description: Заголовок ошибки
               detail:
                 type: string
-                description: Детали ошибки
+                description: Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
           example:
             title: payment required
             detail: please top up your balance in your company personal account https://dev.wildberries.ru/company

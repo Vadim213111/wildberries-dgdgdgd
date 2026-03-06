@@ -1,6 +1,21 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.03.06)
+- Общие: уточнено описание поля `detail` в ошибке (Payment Required) — теперь явно указывает на недостаток средств на балансе сервиса из Каталога бизнес‑решений; правки описания query-параметра `fromDate` (без изменения контракта)
+- Товары: в ответах/моделях остатков изменена семантика массива — теперь «массив ID размеров (chrtId) и их остатков» вместо «баркодов и остатков»; удалены deprecated-поля/параметры, связанные с баркодами: `sku` (в элементах массива) и `skus` (массив баркодов) — ранее помечались как отключаемые 9 февраля; в компонентной модели добавлено поле `chrtId` (ID размера товара) рядом с `sku` и `amount`; уточнено описание `detail` для Payment Required
+- Заказы FBS: уточнено описание `detail` для ошибки Payment Required (недостаточно средств на балансе сервиса)
+- Заказы DBW: в ответе со стикером поле `file` больше не имеет `format: byte` (остается `string` с base64); пример `phone` приведён к строке (в кавычках); уточнено описание `detail` для Payment Required
+- Заказы DBS: в ответе со стикером поле `file` больше не имеет `format: byte` (остается `string` с base64); изменён пример ошибки `SGTINIsNotFilled` — `code` теперь строковый (`SGTINIsNotFilled`), `message` пустая строка (вместо `code: 409`, `message: SGTINIsNotFilled`); уточнено описание `detail` для Payment Required
+- Заказы FBW: удалена модель `models.AcceptanceCoefficient` и связанные примеры/ответы (`ResponseCoefficients`, `Response400CoefficientsNew`) — из спецификации исключено описание структуры коэффициентов приёмки; уточнено описание `detail` для Payment Required
+- Продвижение: для query-параметра `status` убран фиксированный `enum` (остался `string`, пример `-1,4,8`); параметр `promotionIDs` изменён с `string` на `array<integer>`; уточнено описание `detail` для Payment Required
+- Коммуникации: уточнено описание `detail` для ошибки Payment Required
+- Тарифы: уточнено описание `detail` для ошибки Payment Required
+- Аналитика: уточнено описание `detail` для ошибки Payment Required
+- Отчёты: правки описаний query-параметров (перенос `description` на уровень параметра) без изменения контракта; уточнено описание `detail` для Payment Required
+- Финансы: правки описаний query-параметров (перенос `description` на уровень параметра) без изменения контракта; уточнено описание `detail` для Payment Required
+- WBD: поле `path` (список `id`) — заменено `x-nullable: true` на стандартное `nullable: true` (контракт по nullable сохранён)
+
 ### Changed (2026.03.05)
 - Управление пользователями продавца: для методов `/api/v1/invite` (POST), `/api/v1/users` (GET), `/api/v1/users` (PUT), `/api/v1/users` (DELETE) явно задан тип токена `x-token-types: [personal]` и обновлено описание авторизации (методы доступны только по персональному токену)
 - Общие изменения: добавлен новый тип ошибки `402 Payment Required` (components/responses/402, `application/problem+json` с полями `title`, `detail`); `402` добавлен в ответы ряда методов (в т.ч. в 01-general.yaml)
