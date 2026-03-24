@@ -1279,6 +1279,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for apiV1SupplierStocksGet without sending the request
+     * @deprecated
      */
     async apiV1SupplierStocksGetRequestOpts(requestParameters: ApiV1SupplierStocksGetRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dateFrom'] == null) {
@@ -1312,8 +1313,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает остатки товаров на складах WB.  <div class=\"description_important\">   Данные этого отчёта могут обновляться с задержкой в несколько часов относительно реальных изменений </div>  Не рекомендуем использовать данный отчёт для оперативного переключения между FBW и FBS логистикой. Для контроля актуальных остатков используйте [Отчёт об остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah).<br><br>  Сервис не хранит историю наличия товаров на складах, поэтому вы можете получить данные об остатках только в режиме реального времени.<br><br>  Для одного ответа в системе установлено условное ограничение 60000 строк. Поэтому, чтобы получить все остатки, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все остатки уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+     * Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
      * Склады
+     * @deprecated
      */
     async apiV1SupplierStocksGetRaw(requestParameters: ApiV1SupplierStocksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<StocksItem>>> {
         const requestOptions = await this.apiV1SupplierStocksGetRequestOpts(requestParameters);
@@ -1323,8 +1325,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает остатки товаров на складах WB.  <div class=\"description_important\">   Данные этого отчёта могут обновляться с задержкой в несколько часов относительно реальных изменений </div>  Не рекомендуем использовать данный отчёт для оперативного переключения между FBW и FBS логистикой. Для контроля актуальных остатков используйте [Отчёт об остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah).<br><br>  Сервис не хранит историю наличия товаров на складах, поэтому вы можете получить данные об остатках только в режиме реального времени.<br><br>  Для одного ответа в системе установлено условное ограничение 60000 строк. Поэтому, чтобы получить все остатки, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все остатки уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+     * Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
      * Склады
+     * @deprecated
      */
     async apiV1SupplierStocksGet(requestParameters: ApiV1SupplierStocksGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<StocksItem>> {
         const response = await this.apiV1SupplierStocksGetRaw(requestParameters, initOverrides);

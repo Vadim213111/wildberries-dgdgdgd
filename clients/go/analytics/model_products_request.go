@@ -36,7 +36,7 @@ type ProductsRequest struct {
 	OrderBy *OrderBy `json:"orderBy,omitempty"`
 	// Количество карточек товара в ответе
 	Limit *int32 `json:"limit,omitempty"`
-	// Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
+	// Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
 	Offset *int32 `json:"offset,omitempty"`
 }
 

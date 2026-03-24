@@ -5437,9 +5437,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> List[StocksItem]:
-        """Склады
+        """(Deprecated) Склады
 
-        Метод возвращает остатки товаров на складах WB.  <div class=\"description_important\">   Данные этого отчёта могут обновляться с задержкой в несколько часов относительно реальных изменений </div>  Не рекомендуем использовать данный отчёт для оперативного переключения между FBW и FBS логистикой. Для контроля актуальных остатков используйте [Отчёт об остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah).<br><br>  Сервис не хранит историю наличия товаров на складах, поэтому вы можете получить данные об остатках только в режиме реального времени.<br><br>  Для одного ответа в системе установлено условное ограничение 60000 строк. Поэтому, чтобы получить все остатки, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все остатки уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
 
         :param date_from: Дата и время последнего изменения по товару. <br> Для получения полного остатка следует указывать максимально раннее значение. <br> Например, `2019-06-20` <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
@@ -5464,6 +5464,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /api/v1/supplier/stocks is deprecated.", DeprecationWarning)
 
         _param = self._api_v1_supplier_stocks_get_serialize(
             date_from=date_from,
@@ -5508,9 +5509,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> ApiResponse[List[StocksItem]]:
-        """Склады
+        """(Deprecated) Склады
 
-        Метод возвращает остатки товаров на складах WB.  <div class=\"description_important\">   Данные этого отчёта могут обновляться с задержкой в несколько часов относительно реальных изменений </div>  Не рекомендуем использовать данный отчёт для оперативного переключения между FBW и FBS логистикой. Для контроля актуальных остатков используйте [Отчёт об остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah).<br><br>  Сервис не хранит историю наличия товаров на складах, поэтому вы можете получить данные об остатках только в режиме реального времени.<br><br>  Для одного ответа в системе установлено условное ограничение 60000 строк. Поэтому, чтобы получить все остатки, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все остатки уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
 
         :param date_from: Дата и время последнего изменения по товару. <br> Для получения полного остатка следует указывать максимально раннее значение. <br> Например, `2019-06-20` <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
@@ -5535,6 +5536,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /api/v1/supplier/stocks is deprecated.", DeprecationWarning)
 
         _param = self._api_v1_supplier_stocks_get_serialize(
             date_from=date_from,
@@ -5579,9 +5581,9 @@ class DefaultApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=1)] = 0,
     ) -> RESTResponseType:
-        """Склады
+        """(Deprecated) Склады
 
-        Метод возвращает остатки товаров на складах WB.  <div class=\"description_important\">   Данные этого отчёта могут обновляться с задержкой в несколько часов относительно реальных изменений </div>  Не рекомендуем использовать данный отчёт для оперативного переключения между FBW и FBS логистикой. Для контроля актуальных остатков используйте [Отчёт об остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah).<br><br>  Сервис не хранит историю наличия товаров на складах, поэтому вы можете получить данные об остатках только в режиме реального времени.<br><br>  Для одного ответа в системе установлено условное ограничение 60000 строк. Поэтому, чтобы получить все остатки, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все остатки уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+        Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
 
         :param date_from: Дата и время последнего изменения по товару. <br> Для получения полного остатка следует указывать максимально раннее значение. <br> Например, `2019-06-20` <br> Дата в формате RFC3339. Можно передать дату или дату со временем. Время можно указывать с точностью до [секунд](./api-information#tag/Vvedenie/Limity-zaprosov) или миллисекунд. <br> Время передаётся в часовом поясе Москва (UTC+3). <br>Примеры:   - `2019-06-20`   - `2019-06-20T23:59:59`   - `2019-06-20T00:00:00.12345`   - `2017-03-25T00:00:00`  (required)
         :type date_from: datetime
@@ -5606,6 +5608,7 @@ class DefaultApi:
         :type _host_index: int, optional
         :return: Returns the result object.
         """ # noqa: E501
+        warnings.warn("GET /api/v1/supplier/stocks is deprecated.", DeprecationWarning)
 
         _param = self._api_v1_supplier_stocks_get_serialize(
             date_from=date_from,

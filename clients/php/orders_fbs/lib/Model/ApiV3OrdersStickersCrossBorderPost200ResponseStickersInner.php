@@ -45,17 +45,17 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = '_api_v3_orders_stickers_cross_border_post_200_response_stickers_inner';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'file' => 'string',
         'order_id' => 'int',
@@ -63,12 +63,12 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'file' => 'byte',
         'order_id' => null,
@@ -76,10 +76,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'file' => false,
         'order_id' => false,
@@ -87,10 +87,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -262,14 +262,14 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {

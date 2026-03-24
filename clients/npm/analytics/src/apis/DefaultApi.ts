@@ -30,11 +30,13 @@ import type {
   ErrorObject400,
   ErrorObject403,
   GroupedHistoryRequest,
+  InventoryRequest,
   MainRequest,
   PostSalesFunnelGroupedHistory200Response,
   PostSalesFunnelProducts200Response,
   PostSalesFunnelProducts401Response,
   PostSalesFunnelProducts402Response,
+  PostV1StocksReportWbWarehouses200Response,
   ProductHistoryRequest,
   ProductHistoryResponseInner,
   ProductOrdersRequest,
@@ -76,6 +78,8 @@ import {
     ErrorObject403ToJSON,
     GroupedHistoryRequestFromJSON,
     GroupedHistoryRequestToJSON,
+    InventoryRequestFromJSON,
+    InventoryRequestToJSON,
     MainRequestFromJSON,
     MainRequestToJSON,
     PostSalesFunnelGroupedHistory200ResponseFromJSON,
@@ -86,6 +90,8 @@ import {
     PostSalesFunnelProducts401ResponseToJSON,
     PostSalesFunnelProducts402ResponseFromJSON,
     PostSalesFunnelProducts402ResponseToJSON,
+    PostV1StocksReportWbWarehouses200ResponseFromJSON,
+    PostV1StocksReportWbWarehouses200ResponseToJSON,
     ProductHistoryRequestFromJSON,
     ProductHistoryRequestToJSON,
     ProductHistoryResponseInnerFromJSON,
@@ -152,6 +158,10 @@ export interface PostSalesFunnelProductsRequest {
 
 export interface PostSalesFunnelProductsHistoryRequest {
     productHistoryRequest: ProductHistoryRequest;
+}
+
+export interface PostV1StocksReportWbWarehousesRequest {
+    inventoryRequest: InventoryRequest;
 }
 
 /**
@@ -792,6 +802,59 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async postSalesFunnelProductsHistory(requestParameters: PostSalesFunnelProductsHistoryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ProductHistoryResponseInner>> {
         const response = await this.postSalesFunnelProductsHistoryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * Creates request options for postV1StocksReportWbWarehouses without sending the request
+     */
+    async postV1StocksReportWbWarehousesRequestOpts(requestParameters: PostV1StocksReportWbWarehousesRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['inventoryRequest'] == null) {
+            throw new runtime.RequiredError(
+                'inventoryRequest',
+                'Required parameter "inventoryRequest" was null or undefined when calling postV1StocksReportWbWarehouses().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/analytics/v1/stocks-report/wb-warehouses`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: InventoryRequestToJSON(requestParameters['inventoryRequest']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает текущие остатки товаров на складах WB. <br><br> Данные обновляются 1 раз в 30 минут. <br><br> 1 строка ответа — данные об 1 размере товара на 1 складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос | </div> 
+     * Остатки на складах WB
+     */
+    async postV1StocksReportWbWarehousesRaw(requestParameters: PostV1StocksReportWbWarehousesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PostV1StocksReportWbWarehouses200Response>> {
+        const requestOptions = await this.postV1StocksReportWbWarehousesRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PostV1StocksReportWbWarehouses200ResponseFromJSON(jsonValue));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает текущие остатки товаров на складах WB. <br><br> Данные обновляются 1 раз в 30 минут. <br><br> 1 строка ответа — данные об 1 размере товара на 1 складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос | </div> 
+     * Остатки на складах WB
+     */
+    async postV1StocksReportWbWarehouses(requestParameters: PostV1StocksReportWbWarehousesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PostV1StocksReportWbWarehouses200Response> {
+        const response = await this.postV1StocksReportWbWarehousesRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

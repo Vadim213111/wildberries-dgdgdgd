@@ -45,17 +45,17 @@ class ApiV1AnalyticsBrandShareGet200ResponseReportInner implements ModelInterfac
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = '_api_v1_analytics_brand_share_get_200_response_report_inner';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'apply_date' => 'string',
         'brand_rating' => 'int',
@@ -64,12 +64,12 @@ class ApiV1AnalyticsBrandShareGet200ResponseReportInner implements ModelInterfac
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'apply_date' => 'ГГГГ-ММ-ДД',
         'brand_rating' => null,
@@ -78,10 +78,10 @@ class ApiV1AnalyticsBrandShareGet200ResponseReportInner implements ModelInterfac
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'apply_date' => false,
         'brand_rating' => false,
@@ -90,10 +90,10 @@ class ApiV1AnalyticsBrandShareGet200ResponseReportInner implements ModelInterfac
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -269,14 +269,14 @@ class ApiV1AnalyticsBrandShareGet200ResponseReportInner implements ModelInterfac
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {

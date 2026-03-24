@@ -7070,6 +7070,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \Wildberries\Sdk\Reports\Model\StocksItem[]|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet400Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response
+     * @deprecated
      */
     public function apiV1SupplierStocksGet($date_from, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SupplierStocksGet'][0])
     {
@@ -7094,6 +7095,7 @@ class DefaultApi
      * @throws \Wildberries\Sdk\Reports\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \Wildberries\Sdk\Reports\Model\StocksItem[]|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet400Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet402Response|\Wildberries\Sdk\Reports\Model\ApiV1SupplierStocksGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV1SupplierStocksGetWithHttpInfo($date_from, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SupplierStocksGet'][0])
     {
@@ -7240,6 +7242,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV1SupplierStocksGetAsync($date_from, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SupplierStocksGet'][0])
     {
@@ -7267,6 +7270,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV1SupplierStocksGetAsyncWithHttpInfo($date_from, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SupplierStocksGet'][0])
     {
@@ -7323,6 +7327,7 @@ class DefaultApi
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV1SupplierStocksGetRequest($date_from, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV1SupplierStocksGet'][0])
     {

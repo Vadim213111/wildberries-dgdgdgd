@@ -46,17 +46,17 @@ class ApiV1FeedbackGet200ResponseDataVideo implements ModelInterface, ArrayAcces
     public const DISCRIMINATOR = null;
 
     /**
-      * The original name of the model.
-      *
-      * @var string
-      */
+     * The original name of the model.
+     *
+     * @var string
+     */
     protected static $openAPIModelName = '_api_v1_feedback_get_200_response_data_video';
 
     /**
-      * Array of property to type mappings. Used for (de)serialization
-      *
-      * @var string[]
-      */
+     * Array of property to type mappings. Used for (de)serialization
+     *
+     * @var string[]
+     */
     protected static $openAPITypes = [
         'preview_image' => 'string',
         'link' => 'string',
@@ -64,12 +64,12 @@ class ApiV1FeedbackGet200ResponseDataVideo implements ModelInterface, ArrayAcces
     ];
 
     /**
-      * Array of property to format mappings. Used for (de)serialization
-      *
-      * @var string[]
-      * @phpstan-var array<string, string|null>
-      * @psalm-var array<string, string|null>
-      */
+     * Array of property to format mappings. Used for (de)serialization
+     *
+     * @var string[]
+     * @phpstan-var array<string, string|null>
+     * @psalm-var array<string, string|null>
+     */
     protected static $openAPIFormats = [
         'preview_image' => null,
         'link' => null,
@@ -77,10 +77,10 @@ class ApiV1FeedbackGet200ResponseDataVideo implements ModelInterface, ArrayAcces
     ];
 
     /**
-      * Array of nullable properties. Used for (de)serialization
-      *
-      * @var boolean[]
-      */
+     * Array of nullable properties. Used for (de)serialization
+     *
+     * @var boolean[]
+     */
     protected static array $openAPINullables = [
         'preview_image' => false,
         'link' => false,
@@ -88,10 +88,10 @@ class ApiV1FeedbackGet200ResponseDataVideo implements ModelInterface, ArrayAcces
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
+     * If a nullable field gets set to null, insert it here
+     *
+     * @var boolean[]
+     */
     protected array $openAPINullablesSetToNull = [];
 
     /**
@@ -263,14 +263,14 @@ class ApiV1FeedbackGet200ResponseDataVideo implements ModelInterface, ArrayAcces
     }
 
     /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
+     * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
+     * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
+     * $this->openAPINullablesSetToNull array
+     *
+     * @param string $variableName
+     * @param array  $fields
+     * @param mixed  $defaultValue
+     */
     private function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {

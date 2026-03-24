@@ -309,6 +309,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `analytics.DefaultApiService.PostSalesFunnelGroupedHistory` — `POST /api/analytics/v3/sales-funnel/grouped/history` — Статистика групп карточек товаров по дням
 - `analytics.DefaultApiService.PostSalesFunnelProducts` — `POST /api/analytics/v3/sales-funnel/products` — Статистика карточек товаров за период
 - `analytics.DefaultApiService.PostSalesFunnelProductsHistory` — `POST /api/analytics/v3/sales-funnel/products/history` — Статистика карточек товаров по дням
+- `analytics.DefaultApiService.PostV1StocksReportWbWarehouses` — `POST /api/analytics/v1/stocks-report/wb-warehouses` — Остатки на складах WB
 - `analytics.CSVAPIService.ApiV2NmReportDownloadsFileDownloadIdGet` — `GET /api/v2/nm-report/downloads/file/{downloadId}` — Получить отчёт
 - `analytics.CSVAPIService.ApiV2NmReportDownloadsGet` — `GET /api/v2/nm-report/downloads` — Получить список отчётов
 - `analytics.CSVAPIService.ApiV2NmReportDownloadsPost` — `POST /api/v2/nm-report/downloads` — Создать отчёт

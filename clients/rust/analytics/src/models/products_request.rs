@@ -37,7 +37,7 @@ pub struct ProductsRequest {
     /// Количество карточек товара в ответе
     #[serde(rename = "limit", skip_serializing_if = "Option::is_none")]
     pub limit: Option<i32>,
-    /// Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента
+    /// Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента
     #[serde(rename = "offset", skip_serializing_if = "Option::is_none")]
     pub offset: Option<i32>,
 }

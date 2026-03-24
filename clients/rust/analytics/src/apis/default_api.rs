@@ -159,6 +159,17 @@ pub enum PostSalesFunnelProductsHistoryError {
     UnknownValue(serde_json::Value),
 }
 
+/// struct for typed errors of method [`post_v1_stocks_report_wb_warehouses`]
+#[derive(Debug, Clone, Serialize, Deserialize)]
+#[serde(untagged)]
+pub enum PostV1StocksReportWbWarehousesError {
+    Status400(models::ErrorObject400),
+    Status401(models::PostSalesFunnelProducts401Response),
+    Status403(models::ErrorObject403),
+    Status429(models::PostSalesFunnelProducts401Response),
+    UnknownValue(serde_json::Value),
+}
+
 
 /// Метод формирует данные для таблицы по количеству заказов и позиций в поиске по запросам покупателя. Данные указаны в рамках периода для [запрошенного товара](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram/paths/~1api~1v2~1search-report~1product~1search-texts/post).<br><br>  Данные отчёта обновляются 1 раз в час.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 3 запроса | </div> 
 pub async fn api_v2_search_report_product_orders_post(configuration: &configuration::Configuration, product_orders_request: models::ProductOrdersRequest) -> Result<models::ApiV2SearchReportProductOrdersPost200Response, Error<ApiV2SearchReportProductOrdersPostError>> {
@@ -708,6 +719,52 @@ pub async fn post_sales_funnel_products_history(configuration: &configuration::C
     } else {
         let content = resp.text().await?;
         let entity: Option<PostSalesFunnelProductsHistoryError> = serde_json::from_str(&content).ok();
+        Err(Error::ResponseError(ResponseContent { status, content, entity }))
+    }
+}
+
+/// <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает текущие остатки товаров на складах WB. <br><br> Данные обновляются 1 раз в 30 минут. <br><br> 1 строка ответа — данные об 1 размере товара на 1 складе WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос | </div> 
+pub async fn post_v1_stocks_report_wb_warehouses(configuration: &configuration::Configuration, inventory_request: models::InventoryRequest) -> Result<models::PostV1StocksReportWbWarehouses200Response, Error<PostV1StocksReportWbWarehousesError>> {
+    // add a prefix to parameters to efficiently prevent name collisions
+    let p_body_inventory_request = inventory_request;
+
+    let uri_str = format!("{}/api/analytics/v1/stocks-report/wb-warehouses", configuration.base_path);
+    let mut req_builder = configuration.client.request(reqwest::Method::POST, &uri_str);
+
+    if let Some(ref user_agent) = configuration.user_agent {
+        req_builder = req_builder.header(reqwest::header::USER_AGENT, user_agent.clone());
+    }
+    if let Some(ref apikey) = configuration.api_key {
+        let key = apikey.key.clone();
+        let value = match apikey.prefix {
+            Some(ref prefix) => format!("{} {}", prefix, key),
+            None => key,
+        };
+        req_builder = req_builder.header("Authorization", value);
+    };
+    req_builder = req_builder.json(&p_body_inventory_request);
+
+    let req = req_builder.build()?;
+    let resp = configuration.client.execute(req).await?;
+
+    let status = resp.status();
+    let content_type = resp
+        .headers()
+        .get("content-type")
+        .and_then(|v| v.to_str().ok())
+        .unwrap_or("application/octet-stream");
+    let content_type = super::ContentType::from(content_type);
+
+    if !status.is_client_error() && !status.is_server_error() {
+        let content = resp.text().await?;
+        match content_type {
+            ContentType::Json => serde_json::from_str(&content).map_err(Error::from),
+            ContentType::Text => return Err(Error::from(serde_json::Error::custom("Received `text/plain` content type response that cannot be converted to `models::PostV1StocksReportWbWarehouses200Response`"))),
+            ContentType::Unsupported(unknown_type) => return Err(Error::from(serde_json::Error::custom(format!("Received `{unknown_type}` content type response that cannot be converted to `models::PostV1StocksReportWbWarehouses200Response`")))),
+        }
+    } else {
+        let content = resp.text().await?;
+        let entity: Option<PostV1StocksReportWbWarehousesError> = serde_json::from_str(&content).ok();
         Err(Error::ResponseError(ResponseContent { status, content, entity }))
     }
 }

@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.55"
+__version__ = "0.1.56"
 
 # Define package exports
 __all__ = [
@@ -64,6 +64,9 @@ __all__ = [
     "InventoryHistoryReportReq",
     "InventoryHistoryReportReqParams",
     "InventoryMetricsReportReq",
+    "InventoryRequest",
+    "InventoryWbResponse",
+    "InventoryWbResponseItemsInner",
     "Level",
     "MainRequest",
     "MainResponse",
@@ -89,6 +92,7 @@ __all__ = [
     "PostSalesFunnelProducts200ResponseData",
     "PostSalesFunnelProducts401Response",
     "PostSalesFunnelProducts402Response",
+    "PostV1StocksReportWbWarehouses200Response",
     "Product",
     "ProductHistoryRequest",
     "ProductHistoryResponseInner",
@@ -240,6 +244,9 @@ from wildberries_sdk.analytics.models.history_product import HistoryProduct as H
 from wildberries_sdk.analytics.models.inventory_history_report_req import InventoryHistoryReportReq as InventoryHistoryReportReq
 from wildberries_sdk.analytics.models.inventory_history_report_req_params import InventoryHistoryReportReqParams as InventoryHistoryReportReqParams
 from wildberries_sdk.analytics.models.inventory_metrics_report_req import InventoryMetricsReportReq as InventoryMetricsReportReq
+from wildberries_sdk.analytics.models.inventory_request import InventoryRequest as InventoryRequest
+from wildberries_sdk.analytics.models.inventory_wb_response import InventoryWbResponse as InventoryWbResponse
+from wildberries_sdk.analytics.models.inventory_wb_response_items_inner import InventoryWbResponseItemsInner as InventoryWbResponseItemsInner
 from wildberries_sdk.analytics.models.level import Level as Level
 from wildberries_sdk.analytics.models.main_request import MainRequest as MainRequest
 from wildberries_sdk.analytics.models.main_response import MainResponse as MainResponse
@@ -265,6 +272,7 @@ from wildberries_sdk.analytics.models.post_sales_funnel_products200_response imp
 from wildberries_sdk.analytics.models.post_sales_funnel_products200_response_data import PostSalesFunnelProducts200ResponseData as PostSalesFunnelProducts200ResponseData
 from wildberries_sdk.analytics.models.post_sales_funnel_products401_response import PostSalesFunnelProducts401Response as PostSalesFunnelProducts401Response
 from wildberries_sdk.analytics.models.post_sales_funnel_products402_response import PostSalesFunnelProducts402Response as PostSalesFunnelProducts402Response
+from wildberries_sdk.analytics.models.post_v1_stocks_report_wb_warehouses200_response import PostV1StocksReportWbWarehouses200Response as PostV1StocksReportWbWarehouses200Response
 from wildberries_sdk.analytics.models.product import Product as Product
 from wildberries_sdk.analytics.models.product_history_request import ProductHistoryRequest as ProductHistoryRequest
 from wildberries_sdk.analytics.models.product_history_response_inner import ProductHistoryResponseInner as ProductHistoryResponseInner

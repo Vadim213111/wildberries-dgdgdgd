@@ -325,6 +325,7 @@ print(feedbacks)
 - `analytics.DefaultApi.post_sales_funnel_grouped_history` — `POST /api/analytics/v3/sales-funnel/grouped/history` — Статистика групп карточек товаров по дням
 - `analytics.DefaultApi.post_sales_funnel_products` — `POST /api/analytics/v3/sales-funnel/products` — Статистика карточек товаров за период
 - `analytics.DefaultApi.post_sales_funnel_products_history` — `POST /api/analytics/v3/sales-funnel/products/history` — Статистика карточек товаров по дням
+- `analytics.DefaultApi.post_v1_stocks_report_wb_warehouses` — `POST /api/analytics/v1/stocks-report/wb-warehouses` — Остатки на складах WB
 
 ### reports (`reports`)
 - `reports.DefaultApi.api_v1_acceptance_report_get` — `GET /api/v1/acceptance_report` — Создать отчёт
@@ -345,7 +346,7 @@ print(feedbacks)
 - `reports.DefaultApi.api_v1_paid_storage_tasks_task_id_status_get` — `GET /api/v1/paid_storage/tasks/{task_id}/status` — Проверить статус
 - `reports.DefaultApi.api_v1_supplier_orders_get` — `GET /api/v1/supplier/orders` — Заказы
 - `reports.DefaultApi.api_v1_supplier_sales_get` — `GET /api/v1/supplier/sales` — Продажи
-- `reports.DefaultApi.api_v1_supplier_stocks_get` — `GET /api/v1/supplier/stocks` — Склады
+- `reports.DefaultApi.api_v1_supplier_stocks_get` — `GET /api/v1/supplier/stocks` — (Deprecated) Склады
 - `reports.DefaultApi.api_v1_warehouse_remains_get` — `GET /api/v1/warehouse_remains` — Создать отчёт
 - `reports.DefaultApi.api_v1_warehouse_remains_tasks_task_id_download_get` — `GET /api/v1/warehouse_remains/tasks/{task_id}/download` — Получить отчёт
 - `reports.DefaultApi.api_v1_warehouse_remains_tasks_task_id_status_get` — `GET /api/v1/warehouse_remains/tasks/{task_id}/status` — Проверить статус

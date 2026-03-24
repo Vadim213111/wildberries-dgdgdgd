@@ -40,7 +40,7 @@ class ProductsRequest(BaseModel):
     skip_deleted_nm: Optional[StrictBool] = Field(default=None, description="Скрыть удалённые товары", alias="skipDeletedNm")
     order_by: Optional[OrderBy] = Field(default=None, alias="orderBy")
     limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = Field(default=50, description="Количество карточек товара в ответе")
-    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнется с 11 элемента")
+    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")
     __properties: ClassVar[List[str]] = ["selectedPeriod", "pastPeriod", "nmIds", "brandNames", "subjectIds", "tagIds", "skipDeletedNm", "orderBy", "limit", "offset"]
 
     model_config = ConfigDict(

@@ -3234,17 +3234,7 @@ func (r ApiApiV1SupplierStocksGetRequest) Execute() ([]StocksItem, *http.Respons
 /*
 ApiV1SupplierStocksGet Склады
 
-Метод возвращает остатки товаров на складах WB.
-
-<div class="description_important">
-  Данные этого отчёта могут обновляться с задержкой в несколько часов относительно реальных изменений
-</div>
-
-Не рекомендуем использовать данный отчёт для оперативного переключения между FBW и FBS логистикой. Для контроля актуальных остатков используйте [Отчёт об остатках на складах](/openapi/reports#tag/Otchyot-ob-ostatkah-na-skladah).<br><br>
-
-Сервис не хранит историю наличия товаров на складах, поэтому вы можете получить данные об остатках только в режиме реального времени.<br><br>
-
-Для одного ответа в системе установлено условное ограничение 60000 строк. Поэтому, чтобы получить все остатки, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все остатки уже выгружены.
+Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)
 
 <div class="description_limit">
   <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца:
@@ -3257,6 +3247,8 @@ ApiV1SupplierStocksGet Склады
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiApiV1SupplierStocksGetRequest
+
+Deprecated
 */
 func (a *DefaultApiService) ApiV1SupplierStocksGet(ctx context.Context) ApiApiV1SupplierStocksGetRequest {
 	return ApiApiV1SupplierStocksGetRequest{
@@ -3267,6 +3259,7 @@ func (a *DefaultApiService) ApiV1SupplierStocksGet(ctx context.Context) ApiApiV1
 
 // Execute executes the request
 //  @return []StocksItem
+// Deprecated
 func (a *DefaultApiService) ApiV1SupplierStocksGetExecute(r ApiApiV1SupplierStocksGetRequest) ([]StocksItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
