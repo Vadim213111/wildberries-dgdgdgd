@@ -1,6 +1,11 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.03.24)
+- Аналитика / История остатков: добавлен новый read-only endpoint `POST /api/analytics/v1/stocks-report/wb-warehouses` (токены: personal, service) для получения текущих остатков по складам WB; обновление данных раз в 30 минут; лимит 3 запроса/мин (интервал 20 сек, всплеск 1 запрос).
+- Аналитика / История остатков: добавлены схемы `InventoryRequest` (фильтры `nmIds` до 1000, опционально `chrtIds`, пагинация `limit` до 250000 и `offset`) и `InventoryWbResponse` (поля по размеру и складу: `nmId`, `chrtId`, `warehouseId`, `warehouseName`, `regionName`, `quantity`, `inWayToClient`, `inWayFromClient`).
+- Отчёты / Склады: метод «Склады» помечен как `deprecated: true`; в описании указано, что будет удалён 23 июня (ссылка на release notes).
+
 ### Changed (2026.03.21)
 - Общие: в ответе с данными продавца добавлено поле `tin` (string) — ИНН
 - Товары (Контент / Карточки товаров): добавлены новые методы `POST /content/v2/cards/delete/trash` (перенос карточек в корзину) и `POST /content/v2/cards/recover` (восстановление карточек из корзины)
