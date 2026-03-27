@@ -10052,7 +10052,7 @@ class DefaultApi
         $formDataProcessor = new FormDataProcessor();
 
         $formData = $formDataProcessor->prepare([
-            'reply_sign' => $reply_sign,
+            'replySign' => $reply_sign,
             'message' => $message,
             'file' => $file,
         ]);

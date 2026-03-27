@@ -248,6 +248,8 @@ class AccessInner implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CODE_POINTS_FOR_REVIEWS = 'pointsForReviews';
     public const CODE_FEEDBACKS = 'feedbacks';
     public const CODE_WB_POINT = 'wbPoint';
+    public const CODE_OLD_ANALYTICS_REPORTS = 'oldAnalyticsReports';
+    public const CODE_MARKETPLACE = 'marketplace';
 
     /**
      * Gets allowable values of the enum
@@ -271,6 +273,8 @@ class AccessInner implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CODE_POINTS_FOR_REVIEWS,
             self::CODE_FEEDBACKS,
             self::CODE_WB_POINT,
+            self::CODE_OLD_ANALYTICS_REPORTS,
+            self::CODE_MARKETPLACE,
         ];
     }
 
@@ -363,7 +367,7 @@ class AccessInner implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets code
      *
-     * @param string $code Код раздела профиля продавца, к которому пользователь получит доступ: * `balance` — Просмотр баланса и вывод средств * `brands` — Управление брендами * `changeJam` — Доступ к подключению подписки **Джем**: **А/Б тесты**, отметки на фото, автозапуски видео, сравнение карточек * `discountPrice` — Изменение цен на товары, управление скидками и акциями * `finance` — Финансовая аналитика. Статистика по балансу, финансовые отчёты, история платежей * `showcase` — Управление витриной магазина * `suppliersDocuments` — Просмотр и скачивание документов по работе с площадкой * `supply` — Создание и управление поставками FBW * `feedbacksQuestions` — Просмотр и ответы на вопросы и отзывы покупателей, жалобы на отзывы * `questions` — Просмотр и ответы на вопросы покупателей * `pinFeedbacks` — Возможность закреплять и откреплять отзывы * `pointsForReviews` — Баллы за отзывы * `feedbacks` — Просмотр и ответы на отзывы покупателей * `wbPoint` — WB Point
+     * @param string $code Код раздела профиля продавца, к которому пользователь получит доступ: * `balance` — Просмотр баланса и вывод средств * `brands` — Управление брендами * `changeJam` — Доступ к подключению подписки **Джем**: **А/Б тесты**, отметки на фото, автозапуски видео, сравнение карточек * `discountPrice` — Изменение цен на товары, управление скидками и акциями * `finance` — Финансовая аналитика. Статистика по балансу, финансовые отчёты, история платежей * `showcase` — Управление витриной магазина * `suppliersDocuments` — Просмотр и скачивание документов по работе с площадкой * `supply` — Создание и управление поставками FBW * `feedbacksQuestions` — Просмотр и ответы на вопросы и отзывы покупателей, жалобы на отзывы * `questions` — Просмотр и ответы на вопросы покупателей * `pinFeedbacks` — Возможность закреплять и откреплять отзывы * `pointsForReviews` — Баллы за отзывы * `feedbacks` — Просмотр и ответы на отзывы покупателей * `wbPoint` — WB Point * `oldAnalyticsReports` — Отчёты * `marketplace` — Свой склад
      *
      * @return self
      */

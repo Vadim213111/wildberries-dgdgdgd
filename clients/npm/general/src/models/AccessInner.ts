@@ -35,6 +35,8 @@ export interface AccessInner {
      * * `pointsForReviews` — Баллы за отзывы
      * * `feedbacks` — Просмотр и ответы на отзывы покупателей
      * * `wbPoint` — WB Point
+     * * `oldAnalyticsReports` — Отчёты
+     * * `marketplace` — Свой склад
      * 
      * @type {AccessInnerCodeEnum}
      * @memberof AccessInner
@@ -68,7 +70,9 @@ export const AccessInnerCodeEnum = {
     PinFeedbacks: 'pinFeedbacks',
     PointsForReviews: 'pointsForReviews',
     Feedbacks: 'feedbacks',
-    WbPoint: 'wbPoint'
+    WbPoint: 'wbPoint',
+    OldAnalyticsReports: 'oldAnalyticsReports',
+    Marketplace: 'marketplace'
 } as const;
 export type AccessInnerCodeEnum = typeof AccessInnerCodeEnum[keyof typeof AccessInnerCodeEnum];
 
