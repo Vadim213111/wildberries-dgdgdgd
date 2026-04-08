@@ -416,7 +416,7 @@ class GetUsersResponseUsersInner implements ModelInterface, ArrayAccess, \JsonSe
             $invalidProperties[] = "'is_invitee' can't be null";
         }
         if ($this->container['invitee_info'] === null && !$this->isNullableSetToNull('invitee_info')) {
-            $invalidProperties[] = "'invitee_info' can't be null";
+            $invalidProperties[] = "'invitee_info' is required";
         }
         if ($this->container['access'] === null) {
             $invalidProperties[] = "'access' can't be null";

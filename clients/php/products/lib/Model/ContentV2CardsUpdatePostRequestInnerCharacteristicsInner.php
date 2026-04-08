@@ -285,7 +285,7 @@ class ContentV2CardsUpdatePostRequestInnerCharacteristicsInner implements ModelI
             $invalidProperties[] = "'id' can't be null";
         }
         if ($this->container['value'] === null && !$this->isNullableSetToNull('value')) {
-            $invalidProperties[] = "'value' can't be null";
+            $invalidProperties[] = "'value' is required";
         }
         return $invalidProperties;
     }

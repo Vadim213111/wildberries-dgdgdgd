@@ -554,6 +554,32 @@ export interface DetailReportItem {
      * @memberof DetailReportItem
      */
     salePricePromocodeDiscountPrc?: number;
+    /**
+     * ID подменного артикула
+     * @type {string}
+     * @memberof DetailReportItem
+     */
+    articleSubstitution?: string;
+    /**
+     * Скидка по подменному артикулу, %
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    salePriceAffiliatedDiscountPrc?: number;
+    /**
+     * Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br>
+     * Поле будет в ответе при наличии значения
+     * 
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    agencyVat?: number;
+    /**
+     * Оптовая скидка для бизнеса, %
+     * @type {number}
+     * @memberof DetailReportItem
+     */
+    salePriceWholesaleDiscountPrc?: number;
 }
 
 
@@ -673,6 +699,10 @@ export function DetailReportItemFromJSONTyped(json: any, ignoreDiscriminator: bo
         'loyaltyDiscount': json['loyalty_discount'] == null ? undefined : json['loyalty_discount'],
         'uuidPromocode': json['uuid_promocode'] == null ? undefined : json['uuid_promocode'],
         'salePricePromocodeDiscountPrc': json['sale_price_promocode_discount_prc'] == null ? undefined : json['sale_price_promocode_discount_prc'],
+        'articleSubstitution': json['article_substitution'] == null ? undefined : json['article_substitution'],
+        'salePriceAffiliatedDiscountPrc': json['sale_price_affiliated_discount_prc'] == null ? undefined : json['sale_price_affiliated_discount_prc'],
+        'agencyVat': json['agency_vat'] == null ? undefined : json['agency_vat'],
+        'salePriceWholesaleDiscountPrc': json['sale_price_wholesale_discount_prc'] == null ? undefined : json['sale_price_wholesale_discount_prc'],
     };
 }
 
@@ -774,6 +804,10 @@ export function DetailReportItemToJSONTyped(value?: DetailReportItem | null, ign
         'loyalty_discount': value['loyaltyDiscount'],
         'uuid_promocode': value['uuidPromocode'],
         'sale_price_promocode_discount_prc': value['salePricePromocodeDiscountPrc'],
+        'article_substitution': value['articleSubstitution'],
+        'sale_price_affiliated_discount_prc': value['salePriceAffiliatedDiscountPrc'],
+        'agency_vat': value['agencyVat'],
+        'sale_price_wholesale_discount_prc': value['salePriceWholesaleDiscountPrc'],
     };
 }
 

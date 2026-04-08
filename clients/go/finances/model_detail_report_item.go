@@ -194,6 +194,14 @@ type DetailReportItem struct {
 	UuidPromocode *string `json:"uuid_promocode,omitempty"`
 	// Скидка за промокод, %
 	SalePricePromocodeDiscountPrc *float32 `json:"sale_price_promocode_discount_prc,omitempty"`
+	// ID подменного артикула
+	ArticleSubstitution *string `json:"article_substitution,omitempty"`
+	// Скидка по подменному артикулу, %
+	SalePriceAffiliatedDiscountPrc *float32 `json:"sale_price_affiliated_discount_prc,omitempty"`
+	// Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br> Поле будет в ответе при наличии значения 
+	AgencyVat *float32 `json:"agency_vat,omitempty"`
+	// Оптовая скидка для бизнеса, %
+	SalePriceWholesaleDiscountPrc *float32 `json:"sale_price_wholesale_discount_prc,omitempty"`
 }
 
 // NewDetailReportItem instantiates a new DetailReportItem object
@@ -2998,6 +3006,134 @@ func (o *DetailReportItem) SetSalePricePromocodeDiscountPrc(v float32) {
 	o.SalePricePromocodeDiscountPrc = &v
 }
 
+// GetArticleSubstitution returns the ArticleSubstitution field value if set, zero value otherwise.
+func (o *DetailReportItem) GetArticleSubstitution() string {
+	if o == nil || IsNil(o.ArticleSubstitution) {
+		var ret string
+		return ret
+	}
+	return *o.ArticleSubstitution
+}
+
+// GetArticleSubstitutionOk returns a tuple with the ArticleSubstitution field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetArticleSubstitutionOk() (*string, bool) {
+	if o == nil || IsNil(o.ArticleSubstitution) {
+		return nil, false
+	}
+	return o.ArticleSubstitution, true
+}
+
+// HasArticleSubstitution returns a boolean if a field has been set.
+func (o *DetailReportItem) HasArticleSubstitution() bool {
+	if o != nil && !IsNil(o.ArticleSubstitution) {
+		return true
+	}
+
+	return false
+}
+
+// SetArticleSubstitution gets a reference to the given string and assigns it to the ArticleSubstitution field.
+func (o *DetailReportItem) SetArticleSubstitution(v string) {
+	o.ArticleSubstitution = &v
+}
+
+// GetSalePriceAffiliatedDiscountPrc returns the SalePriceAffiliatedDiscountPrc field value if set, zero value otherwise.
+func (o *DetailReportItem) GetSalePriceAffiliatedDiscountPrc() float32 {
+	if o == nil || IsNil(o.SalePriceAffiliatedDiscountPrc) {
+		var ret float32
+		return ret
+	}
+	return *o.SalePriceAffiliatedDiscountPrc
+}
+
+// GetSalePriceAffiliatedDiscountPrcOk returns a tuple with the SalePriceAffiliatedDiscountPrc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetSalePriceAffiliatedDiscountPrcOk() (*float32, bool) {
+	if o == nil || IsNil(o.SalePriceAffiliatedDiscountPrc) {
+		return nil, false
+	}
+	return o.SalePriceAffiliatedDiscountPrc, true
+}
+
+// HasSalePriceAffiliatedDiscountPrc returns a boolean if a field has been set.
+func (o *DetailReportItem) HasSalePriceAffiliatedDiscountPrc() bool {
+	if o != nil && !IsNil(o.SalePriceAffiliatedDiscountPrc) {
+		return true
+	}
+
+	return false
+}
+
+// SetSalePriceAffiliatedDiscountPrc gets a reference to the given float32 and assigns it to the SalePriceAffiliatedDiscountPrc field.
+func (o *DetailReportItem) SetSalePriceAffiliatedDiscountPrc(v float32) {
+	o.SalePriceAffiliatedDiscountPrc = &v
+}
+
+// GetAgencyVat returns the AgencyVat field value if set, zero value otherwise.
+func (o *DetailReportItem) GetAgencyVat() float32 {
+	if o == nil || IsNil(o.AgencyVat) {
+		var ret float32
+		return ret
+	}
+	return *o.AgencyVat
+}
+
+// GetAgencyVatOk returns a tuple with the AgencyVat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetAgencyVatOk() (*float32, bool) {
+	if o == nil || IsNil(o.AgencyVat) {
+		return nil, false
+	}
+	return o.AgencyVat, true
+}
+
+// HasAgencyVat returns a boolean if a field has been set.
+func (o *DetailReportItem) HasAgencyVat() bool {
+	if o != nil && !IsNil(o.AgencyVat) {
+		return true
+	}
+
+	return false
+}
+
+// SetAgencyVat gets a reference to the given float32 and assigns it to the AgencyVat field.
+func (o *DetailReportItem) SetAgencyVat(v float32) {
+	o.AgencyVat = &v
+}
+
+// GetSalePriceWholesaleDiscountPrc returns the SalePriceWholesaleDiscountPrc field value if set, zero value otherwise.
+func (o *DetailReportItem) GetSalePriceWholesaleDiscountPrc() float32 {
+	if o == nil || IsNil(o.SalePriceWholesaleDiscountPrc) {
+		var ret float32
+		return ret
+	}
+	return *o.SalePriceWholesaleDiscountPrc
+}
+
+// GetSalePriceWholesaleDiscountPrcOk returns a tuple with the SalePriceWholesaleDiscountPrc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DetailReportItem) GetSalePriceWholesaleDiscountPrcOk() (*float32, bool) {
+	if o == nil || IsNil(o.SalePriceWholesaleDiscountPrc) {
+		return nil, false
+	}
+	return o.SalePriceWholesaleDiscountPrc, true
+}
+
+// HasSalePriceWholesaleDiscountPrc returns a boolean if a field has been set.
+func (o *DetailReportItem) HasSalePriceWholesaleDiscountPrc() bool {
+	if o != nil && !IsNil(o.SalePriceWholesaleDiscountPrc) {
+		return true
+	}
+
+	return false
+}
+
+// SetSalePriceWholesaleDiscountPrc gets a reference to the given float32 and assigns it to the SalePriceWholesaleDiscountPrc field.
+func (o *DetailReportItem) SetSalePriceWholesaleDiscountPrc(v float32) {
+	o.SalePriceWholesaleDiscountPrc = &v
+}
+
 func (o DetailReportItem) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -3268,6 +3404,18 @@ func (o DetailReportItem) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.SalePricePromocodeDiscountPrc) {
 		toSerialize["sale_price_promocode_discount_prc"] = o.SalePricePromocodeDiscountPrc
+	}
+	if !IsNil(o.ArticleSubstitution) {
+		toSerialize["article_substitution"] = o.ArticleSubstitution
+	}
+	if !IsNil(o.SalePriceAffiliatedDiscountPrc) {
+		toSerialize["sale_price_affiliated_discount_prc"] = o.SalePriceAffiliatedDiscountPrc
+	}
+	if !IsNil(o.AgencyVat) {
+		toSerialize["agency_vat"] = o.AgencyVat
+	}
+	if !IsNil(o.SalePriceWholesaleDiscountPrc) {
+		toSerialize["sale_price_wholesale_discount_prc"] = o.SalePriceWholesaleDiscountPrc
 	}
 	return toSerialize, nil
 }

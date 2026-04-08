@@ -115,7 +115,11 @@ class DetailReportItem(BaseModel):
     loyalty_discount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Размер скидки лояльности от продавца, %")
     uuid_promocode: Optional[StrictStr] = Field(default=None, description="ID промокода")
     sale_price_promocode_discount_prc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка за промокод, %")
-    __properties: ClassVar[List[str]] = ["realizationreport_id", "date_from", "date_to", "create_dt", "currency_name", "suppliercontract_code", "rrd_id", "gi_id", "dlv_prc", "fix_tariff_date_from", "fix_tariff_date_to", "subject_name", "nm_id", "brand_name", "sa_name", "ts_name", "barcode", "doc_type_name", "quantity", "retail_price", "retail_amount", "sale_percent", "commission_percent", "office_name", "supplier_oper_name", "order_dt", "sale_dt", "rr_dt", "shk_id", "retail_price_withdisc_rub", "delivery_amount", "return_amount", "delivery_rub", "gi_box_type_name", "product_discount_for_report", "supplier_promo", "ppvz_spp_prc", "ppvz_kvw_prc_base", "ppvz_kvw_prc", "sup_rating_prc_up", "is_kgvp_v2", "ppvz_sales_commission", "ppvz_for_pay", "ppvz_reward", "acquiring_fee", "acquiring_percent", "payment_processing", "acquiring_bank", "ppvz_vw", "ppvz_vw_nds", "ppvz_office_name", "ppvz_office_id", "ppvz_supplier_id", "ppvz_supplier_name", "ppvz_inn", "declaration_number", "bonus_type_name", "sticker_id", "site_country", "srv_dbs", "penalty", "additional_payment", "rebill_logistic_cost", "rebill_logistic_org", "storage_fee", "deduction", "acceptance", "assembly_id", "kiz", "srid", "report_type", "is_legal_entity", "trbx_id", "installment_cofinancing_amount", "wibes_wb_discount_percent", "cashback_amount", "cashback_discount", "cashback_commission_change", "order_uid", "payment_schedule", "delivery_method", "seller_promo_id", "seller_promo_discount", "loyalty_id", "loyalty_discount", "uuid_promocode", "sale_price_promocode_discount_prc"]
+    article_substitution: Optional[StrictStr] = Field(default=None, description="ID подменного артикула")
+    sale_price_affiliated_discount_prc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка по подменному артикулу, %")
+    agency_vat: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br> Поле будет в ответе при наличии значения ")
+    sale_price_wholesale_discount_prc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Оптовая скидка для бизнеса, %")
+    __properties: ClassVar[List[str]] = ["realizationreport_id", "date_from", "date_to", "create_dt", "currency_name", "suppliercontract_code", "rrd_id", "gi_id", "dlv_prc", "fix_tariff_date_from", "fix_tariff_date_to", "subject_name", "nm_id", "brand_name", "sa_name", "ts_name", "barcode", "doc_type_name", "quantity", "retail_price", "retail_amount", "sale_percent", "commission_percent", "office_name", "supplier_oper_name", "order_dt", "sale_dt", "rr_dt", "shk_id", "retail_price_withdisc_rub", "delivery_amount", "return_amount", "delivery_rub", "gi_box_type_name", "product_discount_for_report", "supplier_promo", "ppvz_spp_prc", "ppvz_kvw_prc_base", "ppvz_kvw_prc", "sup_rating_prc_up", "is_kgvp_v2", "ppvz_sales_commission", "ppvz_for_pay", "ppvz_reward", "acquiring_fee", "acquiring_percent", "payment_processing", "acquiring_bank", "ppvz_vw", "ppvz_vw_nds", "ppvz_office_name", "ppvz_office_id", "ppvz_supplier_id", "ppvz_supplier_name", "ppvz_inn", "declaration_number", "bonus_type_name", "sticker_id", "site_country", "srv_dbs", "penalty", "additional_payment", "rebill_logistic_cost", "rebill_logistic_org", "storage_fee", "deduction", "acceptance", "assembly_id", "kiz", "srid", "report_type", "is_legal_entity", "trbx_id", "installment_cofinancing_amount", "wibes_wb_discount_percent", "cashback_amount", "cashback_discount", "cashback_commission_change", "order_uid", "payment_schedule", "delivery_method", "seller_promo_id", "seller_promo_discount", "loyalty_id", "loyalty_discount", "uuid_promocode", "sale_price_promocode_discount_prc", "article_substitution", "sale_price_affiliated_discount_prc", "agency_vat", "sale_price_wholesale_discount_prc"]
 
     @field_validator('report_type')
     def report_type_validate_enum(cls, value):
@@ -269,7 +273,11 @@ class DetailReportItem(BaseModel):
             "loyalty_id": obj.get("loyalty_id"),
             "loyalty_discount": obj.get("loyalty_discount"),
             "uuid_promocode": obj.get("uuid_promocode"),
-            "sale_price_promocode_discount_prc": obj.get("sale_price_promocode_discount_prc")
+            "sale_price_promocode_discount_prc": obj.get("sale_price_promocode_discount_prc"),
+            "article_substitution": obj.get("article_substitution"),
+            "sale_price_affiliated_discount_prc": obj.get("sale_price_affiliated_discount_prc"),
+            "agency_vat": obj.get("agency_vat"),
+            "sale_price_wholesale_discount_prc": obj.get("sale_price_wholesale_discount_prc")
         })
         return _obj
 

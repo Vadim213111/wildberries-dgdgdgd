@@ -305,7 +305,7 @@ class ResponsePublicViewerPublicErrorsTableListV2 implements ModelInterface, Arr
             $invalidProperties[] = "'error_text' can't be null";
         }
         if ($this->container['additional_errors'] === null && !$this->isNullableSetToNull('additional_errors')) {
-            $invalidProperties[] = "'additional_errors' can't be null";
+            $invalidProperties[] = "'additional_errors' is required";
         }
         return $invalidProperties;
     }

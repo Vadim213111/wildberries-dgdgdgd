@@ -282,7 +282,7 @@ class ApiStatusSetResponses implements ModelInterface, ArrayAccess, \JsonSeriali
         $invalidProperties = [];
 
         if ($this->container['request_id'] === null && !$this->isNullableSetToNull('request_id')) {
-            $invalidProperties[] = "'request_id' can't be null";
+            $invalidProperties[] = "'request_id' is required";
         }
         if ($this->container['results'] === null) {
             $invalidProperties[] = "'results' can't be null";

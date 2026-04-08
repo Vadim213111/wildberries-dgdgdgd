@@ -275,7 +275,7 @@ class V0GetNormQueryListResponse implements ModelInterface, ArrayAccess, \JsonSe
         $invalidProperties = [];
 
         if ($this->container['items'] === null && !$this->isNullableSetToNull('items')) {
-            $invalidProperties[] = "'items' can't be null";
+            $invalidProperties[] = "'items' is required";
         }
         return $invalidProperties;
     }

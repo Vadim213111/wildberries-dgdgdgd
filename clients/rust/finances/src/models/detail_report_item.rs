@@ -274,6 +274,18 @@ pub struct DetailReportItem {
     /// Скидка за промокод, %
     #[serde(rename = "sale_price_promocode_discount_prc", skip_serializing_if = "Option::is_none")]
     pub sale_price_promocode_discount_prc: Option<f64>,
+    /// ID подменного артикула
+    #[serde(rename = "article_substitution", skip_serializing_if = "Option::is_none")]
+    pub article_substitution: Option<String>,
+    /// Скидка по подменному артикулу, %
+    #[serde(rename = "sale_price_affiliated_discount_prc", skip_serializing_if = "Option::is_none")]
+    pub sale_price_affiliated_discount_prc: Option<f64>,
+    /// Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br> Поле будет в ответе при наличии значения 
+    #[serde(rename = "agency_vat", skip_serializing_if = "Option::is_none")]
+    pub agency_vat: Option<f64>,
+    /// Оптовая скидка для бизнеса, %
+    #[serde(rename = "sale_price_wholesale_discount_prc", skip_serializing_if = "Option::is_none")]
+    pub sale_price_wholesale_discount_prc: Option<f64>,
 }
 
 impl DetailReportItem {
@@ -366,6 +378,10 @@ impl DetailReportItem {
             loyalty_discount: None,
             uuid_promocode: None,
             sale_price_promocode_discount_prc: None,
+            article_substitution: None,
+            sale_price_affiliated_discount_prc: None,
+            agency_vat: None,
+            sale_price_wholesale_discount_prc: None,
         }
     }
 }

@@ -303,7 +303,7 @@ class Timestamps implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = "'updated' can't be null";
         }
         if ($this->container['started'] === null && !$this->isNullableSetToNull('started')) {
-            $invalidProperties[] = "'started' can't be null";
+            $invalidProperties[] = "'started' is required";
         }
         if ($this->container['deleted'] === null) {
             $invalidProperties[] = "'deleted' can't be null";

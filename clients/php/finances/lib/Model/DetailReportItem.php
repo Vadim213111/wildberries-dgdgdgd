@@ -143,7 +143,11 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'loyalty_id' => 'int',
         'loyalty_discount' => 'float',
         'uuid_promocode' => 'string',
-        'sale_price_promocode_discount_prc' => 'float'
+        'sale_price_promocode_discount_prc' => 'float',
+        'article_substitution' => 'string',
+        'sale_price_affiliated_discount_prc' => 'float',
+        'agency_vat' => 'float',
+        'sale_price_wholesale_discount_prc' => 'float'
     ];
 
     /**
@@ -240,7 +244,11 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'loyalty_id' => null,
         'loyalty_discount' => null,
         'uuid_promocode' => null,
-        'sale_price_promocode_discount_prc' => null
+        'sale_price_promocode_discount_prc' => null,
+        'article_substitution' => null,
+        'sale_price_affiliated_discount_prc' => null,
+        'agency_vat' => null,
+        'sale_price_wholesale_discount_prc' => null
     ];
 
     /**
@@ -335,7 +343,11 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'loyalty_id' => false,
         'loyalty_discount' => false,
         'uuid_promocode' => false,
-        'sale_price_promocode_discount_prc' => false
+        'sale_price_promocode_discount_prc' => false,
+        'article_substitution' => false,
+        'sale_price_affiliated_discount_prc' => false,
+        'agency_vat' => false,
+        'sale_price_wholesale_discount_prc' => false
     ];
 
     /**
@@ -510,7 +522,11 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'loyalty_id' => 'loyalty_id',
         'loyalty_discount' => 'loyalty_discount',
         'uuid_promocode' => 'uuid_promocode',
-        'sale_price_promocode_discount_prc' => 'sale_price_promocode_discount_prc'
+        'sale_price_promocode_discount_prc' => 'sale_price_promocode_discount_prc',
+        'article_substitution' => 'article_substitution',
+        'sale_price_affiliated_discount_prc' => 'sale_price_affiliated_discount_prc',
+        'agency_vat' => 'agency_vat',
+        'sale_price_wholesale_discount_prc' => 'sale_price_wholesale_discount_prc'
     ];
 
     /**
@@ -605,7 +621,11 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'loyalty_id' => 'setLoyaltyId',
         'loyalty_discount' => 'setLoyaltyDiscount',
         'uuid_promocode' => 'setUuidPromocode',
-        'sale_price_promocode_discount_prc' => 'setSalePricePromocodeDiscountPrc'
+        'sale_price_promocode_discount_prc' => 'setSalePricePromocodeDiscountPrc',
+        'article_substitution' => 'setArticleSubstitution',
+        'sale_price_affiliated_discount_prc' => 'setSalePriceAffiliatedDiscountPrc',
+        'agency_vat' => 'setAgencyVat',
+        'sale_price_wholesale_discount_prc' => 'setSalePriceWholesaleDiscountPrc'
     ];
 
     /**
@@ -700,7 +720,11 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         'loyalty_id' => 'getLoyaltyId',
         'loyalty_discount' => 'getLoyaltyDiscount',
         'uuid_promocode' => 'getUuidPromocode',
-        'sale_price_promocode_discount_prc' => 'getSalePricePromocodeDiscountPrc'
+        'sale_price_promocode_discount_prc' => 'getSalePricePromocodeDiscountPrc',
+        'article_substitution' => 'getArticleSubstitution',
+        'sale_price_affiliated_discount_prc' => 'getSalePriceAffiliatedDiscountPrc',
+        'agency_vat' => 'getAgencyVat',
+        'sale_price_wholesale_discount_prc' => 'getSalePriceWholesaleDiscountPrc'
     ];
 
     /**
@@ -866,6 +890,10 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('loyalty_discount', $data ?? [], null);
         $this->setIfExists('uuid_promocode', $data ?? [], null);
         $this->setIfExists('sale_price_promocode_discount_prc', $data ?? [], null);
+        $this->setIfExists('article_substitution', $data ?? [], null);
+        $this->setIfExists('sale_price_affiliated_discount_prc', $data ?? [], null);
+        $this->setIfExists('agency_vat', $data ?? [], null);
+        $this->setIfExists('sale_price_wholesale_discount_prc', $data ?? [], null);
     }
 
     /**
@@ -3281,6 +3309,114 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable sale_price_promocode_discount_prc cannot be null');
         }
         $this->container['sale_price_promocode_discount_prc'] = $sale_price_promocode_discount_prc;
+
+        return $this;
+    }
+
+    /**
+     * Gets article_substitution
+     *
+     * @return string|null
+     */
+    public function getArticleSubstitution()
+    {
+        return $this->container['article_substitution'];
+    }
+
+    /**
+     * Sets article_substitution
+     *
+     * @param string|null $article_substitution ID подменного артикула
+     *
+     * @return self
+     */
+    public function setArticleSubstitution($article_substitution)
+    {
+        if (is_null($article_substitution)) {
+            throw new \InvalidArgumentException('non-nullable article_substitution cannot be null');
+        }
+        $this->container['article_substitution'] = $article_substitution;
+
+        return $this;
+    }
+
+    /**
+     * Gets sale_price_affiliated_discount_prc
+     *
+     * @return float|null
+     */
+    public function getSalePriceAffiliatedDiscountPrc()
+    {
+        return $this->container['sale_price_affiliated_discount_prc'];
+    }
+
+    /**
+     * Sets sale_price_affiliated_discount_prc
+     *
+     * @param float|null $sale_price_affiliated_discount_prc Скидка по подменному артикулу, %
+     *
+     * @return self
+     */
+    public function setSalePriceAffiliatedDiscountPrc($sale_price_affiliated_discount_prc)
+    {
+        if (is_null($sale_price_affiliated_discount_prc)) {
+            throw new \InvalidArgumentException('non-nullable sale_price_affiliated_discount_prc cannot be null');
+        }
+        $this->container['sale_price_affiliated_discount_prc'] = $sale_price_affiliated_discount_prc;
+
+        return $this;
+    }
+
+    /**
+     * Gets agency_vat
+     *
+     * @return float|null
+     */
+    public function getAgencyVat()
+    {
+        return $this->container['agency_vat'];
+    }
+
+    /**
+     * Sets agency_vat
+     *
+     * @param float|null $agency_vat Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br> Поле будет в ответе при наличии значения
+     *
+     * @return self
+     */
+    public function setAgencyVat($agency_vat)
+    {
+        if (is_null($agency_vat)) {
+            throw new \InvalidArgumentException('non-nullable agency_vat cannot be null');
+        }
+        $this->container['agency_vat'] = $agency_vat;
+
+        return $this;
+    }
+
+    /**
+     * Gets sale_price_wholesale_discount_prc
+     *
+     * @return float|null
+     */
+    public function getSalePriceWholesaleDiscountPrc()
+    {
+        return $this->container['sale_price_wholesale_discount_prc'];
+    }
+
+    /**
+     * Sets sale_price_wholesale_discount_prc
+     *
+     * @param float|null $sale_price_wholesale_discount_prc Оптовая скидка для бизнеса, %
+     *
+     * @return self
+     */
+    public function setSalePriceWholesaleDiscountPrc($sale_price_wholesale_discount_prc)
+    {
+        if (is_null($sale_price_wholesale_discount_prc)) {
+            throw new \InvalidArgumentException('non-nullable sale_price_wholesale_discount_prc cannot be null');
+        }
+        $this->container['sale_price_wholesale_discount_prc'] = $sale_price_wholesale_discount_prc;
 
         return $this;
     }

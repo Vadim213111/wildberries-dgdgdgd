@@ -941,6 +941,7 @@ components:
         ppvz_sales_commission: 23.74
         sale_price_promocode_discount_prc: 0
         loyalty_discount: 0
+        agency_vat: 0
         retail_amount: 367
         ppvz_vw: 22.25
         loyalty_id: 0
@@ -997,6 +998,7 @@ components:
         ppvz_kvw_prc: 1.81
         seller_promo_id: 14350
         ppvz_for_pay: 376.99
+        sale_price_affiliated_discount_prc: 0
         ppvz_vw_nds: 4.45
         wibes_wb_discount_percent: 1
         delivery_method: "FBS, (МГТ)"
@@ -1010,6 +1012,7 @@ components:
         currency_name: руб
         quantity: 1
         suppliercontract_code: "{}"
+        article_substitution: ""
         rrd_id: 1232610467
         shk_id: 1239159661
         supplier_promo: 0
@@ -1017,6 +1020,7 @@ components:
         additional_payment: 0
         doc_type_name: Продажа
         uuid_promocode: ""
+        sale_price_wholesale_discount_prc: 0
         order_uid: id375f16c4bec295d9995393af803ff7b
         office_name: Коледино
         retail_price_withdisc_rub: 399.68
@@ -1405,6 +1409,24 @@ components:
           type: string
         sale_price_promocode_discount_prc:
           description: "Скидка за промокод, %"
+          example: 0
+          type: number
+        article_substitution:
+          description: ID подменного артикула
+          example: ""
+          type: string
+        sale_price_affiliated_discount_prc:
+          description: "Скидка по подменному артикулу, %"
+          example: 0
+          type: number
+        agency_vat:
+          description: |
+            Удержание Агентского НДС, %. Только для продавцов из Кыргызстана.<br>
+            Поле будет в ответе при наличии значения
+          example: 0
+          type: number
+        sale_price_wholesale_discount_prc:
+          description: "Оптовая скидка для бизнеса, %"
           example: 0
           type: number
       type: object
