@@ -26,17 +26,17 @@ export interface ApiV3OrdersStickersPost200ResponseStickersInner {
      */
     orderId?: number;
     /**
-     * Первая часть ID стикера (для печати подписи)
-     * @type {number}
+     * Первая часть ID стикера для печати подписи
+     * @type {string}
      * @memberof ApiV3OrdersStickersPost200ResponseStickersInner
      */
-    partA?: number;
+    partA?: string;
     /**
-     * Вторая часть ID стикера
-     * @type {number}
+     * Вторая часть ID стикера для печати подписи
+     * @type {string}
      * @memberof ApiV3OrdersStickersPost200ResponseStickersInner
      */
-    partB?: number;
+    partB?: string;
     /**
      * Закодированное значение стикера
      * @type {string}

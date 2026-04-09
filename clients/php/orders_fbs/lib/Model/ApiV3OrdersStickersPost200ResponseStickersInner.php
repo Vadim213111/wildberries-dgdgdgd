@@ -58,8 +58,8 @@ class ApiV3OrdersStickersPost200ResponseStickersInner implements ModelInterface,
      */
     protected static $openAPITypes = [
         'order_id' => 'int',
-        'part_a' => 'int',
-        'part_b' => 'int',
+        'part_a' => 'string',
+        'part_b' => 'string',
         'barcode' => 'string',
         'file' => 'string'
     ];
@@ -347,7 +347,7 @@ class ApiV3OrdersStickersPost200ResponseStickersInner implements ModelInterface,
     /**
      * Gets part_a
      *
-     * @return int|null
+     * @return string|null
      */
     public function getPartA()
     {
@@ -357,7 +357,7 @@ class ApiV3OrdersStickersPost200ResponseStickersInner implements ModelInterface,
     /**
      * Sets part_a
      *
-     * @param int|null $part_a Первая часть ID стикера (для печати подписи)
+     * @param string|null $part_a Первая часть ID стикера для печати подписи
      *
      * @return self
      */
@@ -374,7 +374,7 @@ class ApiV3OrdersStickersPost200ResponseStickersInner implements ModelInterface,
     /**
      * Gets part_b
      *
-     * @return int|null
+     * @return string|null
      */
     public function getPartB()
     {
@@ -384,7 +384,7 @@ class ApiV3OrdersStickersPost200ResponseStickersInner implements ModelInterface,
     /**
      * Sets part_b
      *
-     * @param int|null $part_b Вторая часть ID стикера
+     * @param string|null $part_b Вторая часть ID стикера для печати подписи
      *
      * @return self
      */

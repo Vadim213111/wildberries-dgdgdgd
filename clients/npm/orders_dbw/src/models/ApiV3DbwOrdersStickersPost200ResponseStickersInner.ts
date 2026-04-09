@@ -26,13 +26,13 @@ export interface ApiV3DbwOrdersStickersPost200ResponseStickersInner {
      */
     orderId?: number;
     /**
-     * Первая часть ID стикера (для печати подписи)
+     * Первая часть ID стикера для печати подписи
      * @type {string}
      * @memberof ApiV3DbwOrdersStickersPost200ResponseStickersInner
      */
     partA?: string;
     /**
-     * Вторая часть ID стикера
+     * Вторая часть ID стикера для печати подписи
      * @type {string}
      * @memberof ApiV3DbwOrdersStickersPost200ResponseStickersInner
      */

@@ -21,9 +21,9 @@ var _ MappedNullable = &ApiV3DbwOrdersStickersPost200ResponseStickersInner{}
 type ApiV3DbwOrdersStickersPost200ResponseStickersInner struct {
 	// ID сборочного задания
 	OrderId *int64 `json:"orderId,omitempty"`
-	// Первая часть ID стикера (для печати подписи)
+	// Первая часть ID стикера для печати подписи
 	PartA *string `json:"partA,omitempty"`
-	// Вторая часть ID стикера
+	// Вторая часть ID стикера для печати подписи
 	PartB *string `json:"partB,omitempty"`
 	// Закодированное значение стикера
 	Barcode *string `json:"barcode,omitempty"`

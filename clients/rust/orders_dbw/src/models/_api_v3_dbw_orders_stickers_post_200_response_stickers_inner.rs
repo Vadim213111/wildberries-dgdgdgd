@@ -16,10 +16,10 @@ pub struct ApiV3DbwOrdersStickersPost200ResponseStickersInner {
     /// ID сборочного задания
     #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<i64>,
-    /// Первая часть ID стикера (для печати подписи)
+    /// Первая часть ID стикера для печати подписи
     #[serde(rename = "partA", skip_serializing_if = "Option::is_none")]
     pub part_a: Option<String>,
-    /// Вторая часть ID стикера
+    /// Вторая часть ID стикера для печати подписи
     #[serde(rename = "partB", skip_serializing_if = "Option::is_none")]
     pub part_b: Option<String>,
     /// Закодированное значение стикера

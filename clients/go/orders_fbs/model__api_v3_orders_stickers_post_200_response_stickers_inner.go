@@ -21,10 +21,10 @@ var _ MappedNullable = &ApiV3OrdersStickersPost200ResponseStickersInner{}
 type ApiV3OrdersStickersPost200ResponseStickersInner struct {
 	// ID сборочного задания
 	OrderId *int64 `json:"orderId,omitempty"`
-	// Первая часть ID стикера (для печати подписи)
-	PartA *int32 `json:"partA,omitempty"`
-	// Вторая часть ID стикера
-	PartB *int32 `json:"partB,omitempty"`
+	// Первая часть ID стикера для печати подписи
+	PartA *string `json:"partA,omitempty"`
+	// Вторая часть ID стикера для печати подписи
+	PartB *string `json:"partB,omitempty"`
 	// Закодированное значение стикера
 	Barcode *string `json:"barcode,omitempty"`
 	// Полное представление стикера в заданном формате (кодировка base64)
@@ -81,9 +81,9 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetOrderId(v int64) {
 }
 
 // GetPartA returns the PartA field value if set, zero value otherwise.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartA() int32 {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartA() string {
 	if o == nil || IsNil(o.PartA) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.PartA
@@ -91,7 +91,7 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartA() int32 {
 
 // GetPartAOk returns a tuple with the PartA field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartAOk() (*int32, bool) {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartAOk() (*string, bool) {
 	if o == nil || IsNil(o.PartA) {
 		return nil, false
 	}
@@ -107,15 +107,15 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) HasPartA() bool {
 	return false
 }
 
-// SetPartA gets a reference to the given int32 and assigns it to the PartA field.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartA(v int32) {
+// SetPartA gets a reference to the given string and assigns it to the PartA field.
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartA(v string) {
 	o.PartA = &v
 }
 
 // GetPartB returns the PartB field value if set, zero value otherwise.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartB() int32 {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartB() string {
 	if o == nil || IsNil(o.PartB) {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.PartB
@@ -123,7 +123,7 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartB() int32 {
 
 // GetPartBOk returns a tuple with the PartB field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartBOk() (*int32, bool) {
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) GetPartBOk() (*string, bool) {
 	if o == nil || IsNil(o.PartB) {
 		return nil, false
 	}
@@ -139,8 +139,8 @@ func (o *ApiV3OrdersStickersPost200ResponseStickersInner) HasPartB() bool {
 	return false
 }
 
-// SetPartB gets a reference to the given int32 and assigns it to the PartB field.
-func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartB(v int32) {
+// SetPartB gets a reference to the given string and assigns it to the PartB field.
+func (o *ApiV3OrdersStickersPost200ResponseStickersInner) SetPartB(v string) {
 	o.PartB = &v
 }
 

@@ -60,7 +60,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         'order_id' => 'int',
         'status' => 'string',
         'parcel_id' => 'string',
-        'file' => 'string'
+        'file' => 'string',
+        'part_a' => 'string',
+        'part_b' => 'string',
+        'barcode' => 'string'
     ];
 
     /**
@@ -74,7 +77,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         'order_id' => null,
         'status' => null,
         'parcel_id' => null,
-        'file' => 'byte'
+        'file' => 'byte',
+        'part_a' => null,
+        'part_b' => null,
+        'barcode' => null
     ];
 
     /**
@@ -86,7 +92,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         'order_id' => false,
         'status' => false,
         'parcel_id' => false,
-        'file' => false
+        'file' => false,
+        'part_a' => false,
+        'part_b' => false,
+        'barcode' => false
     ];
 
     /**
@@ -178,7 +187,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         'order_id' => 'orderId',
         'status' => 'status',
         'parcel_id' => 'parcelId',
-        'file' => 'file'
+        'file' => 'file',
+        'part_a' => 'partA',
+        'part_b' => 'partB',
+        'barcode' => 'barcode'
     ];
 
     /**
@@ -190,7 +202,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         'order_id' => 'setOrderId',
         'status' => 'setStatus',
         'parcel_id' => 'setParcelId',
-        'file' => 'setFile'
+        'file' => 'setFile',
+        'part_a' => 'setPartA',
+        'part_b' => 'setPartB',
+        'barcode' => 'setBarcode'
     ];
 
     /**
@@ -202,7 +217,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         'order_id' => 'getOrderId',
         'status' => 'getStatus',
         'parcel_id' => 'getParcelId',
-        'file' => 'getFile'
+        'file' => 'getFile',
+        'part_a' => 'getPartA',
+        'part_b' => 'getPartB',
+        'barcode' => 'getBarcode'
     ];
 
     /**
@@ -281,6 +299,9 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
         $this->setIfExists('status', $data ?? [], null);
         $this->setIfExists('parcel_id', $data ?? [], null);
         $this->setIfExists('file', $data ?? [], null);
+        $this->setIfExists('part_a', $data ?? [], null);
+        $this->setIfExists('part_b', $data ?? [], null);
+        $this->setIfExists('barcode', $data ?? [], null);
     }
 
     /**
@@ -448,6 +469,87 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner implements Mode
             throw new \InvalidArgumentException('non-nullable file cannot be null');
         }
         $this->container['file'] = $file;
+
+        return $this;
+    }
+
+    /**
+     * Gets part_a
+     *
+     * @return string|null
+     */
+    public function getPartA()
+    {
+        return $this->container['part_a'];
+    }
+
+    /**
+     * Sets part_a
+     *
+     * @param string|null $part_a Первая часть ID стикера для печати подписи
+     *
+     * @return self
+     */
+    public function setPartA($part_a)
+    {
+        if (is_null($part_a)) {
+            throw new \InvalidArgumentException('non-nullable part_a cannot be null');
+        }
+        $this->container['part_a'] = $part_a;
+
+        return $this;
+    }
+
+    /**
+     * Gets part_b
+     *
+     * @return string|null
+     */
+    public function getPartB()
+    {
+        return $this->container['part_b'];
+    }
+
+    /**
+     * Sets part_b
+     *
+     * @param string|null $part_b Вторая часть ID стикера для печати подписи
+     *
+     * @return self
+     */
+    public function setPartB($part_b)
+    {
+        if (is_null($part_b)) {
+            throw new \InvalidArgumentException('non-nullable part_b cannot be null');
+        }
+        $this->container['part_b'] = $part_b;
+
+        return $this;
+    }
+
+    /**
+     * Gets barcode
+     *
+     * @return string|null
+     */
+    public function getBarcode()
+    {
+        return $this->container['barcode'];
+    }
+
+    /**
+     * Sets barcode
+     *
+     * @param string|null $barcode Закодированное значение стикера
+     *
+     * @return self
+     */
+    public function setBarcode($barcode)
+    {
+        if (is_null($barcode)) {
+            throw new \InvalidArgumentException('non-nullable barcode cannot be null');
+        }
+        $this->container['barcode'] = $barcode;
 
         return $this;
     }

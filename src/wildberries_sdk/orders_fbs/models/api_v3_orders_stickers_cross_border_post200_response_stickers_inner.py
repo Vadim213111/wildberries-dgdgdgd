@@ -31,7 +31,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner(BaseModel):
     status: Optional[StrictStr] = Field(default=None, description="Статус генерации стикера:   - `awaitingTrackNumber` — стикер не готов. Ожидается трек-номер от перевозчика.   - `ready` — стикер готов ")
     parcel_id: Optional[StrictStr] = Field(default=None, description="Трек-номер в стикере для отслеживания сборочного задания", alias="parcelId")
     file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Стикер в формате PDF, кодировка base64")
-    __properties: ClassVar[List[str]] = ["orderId", "status", "parcelId", "file"]
+    part_a: Optional[StrictStr] = Field(default=None, description="Первая часть ID стикера для печати подписи", alias="partA")
+    part_b: Optional[StrictStr] = Field(default=None, description="Вторая часть ID стикера для печати подписи", alias="partB")
+    barcode: Optional[StrictStr] = Field(default=None, description="Закодированное значение стикера")
+    __properties: ClassVar[List[str]] = ["orderId", "status", "parcelId", "file", "partA", "partB", "barcode"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -97,7 +100,10 @@ class ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner(BaseModel):
             "orderId": obj.get("orderId"),
             "status": obj.get("status"),
             "parcelId": obj.get("parcelId"),
-            "file": obj.get("file")
+            "file": obj.get("file"),
+            "partA": obj.get("partA"),
+            "partB": obj.get("partB"),
+            "barcode": obj.get("barcode")
         })
         return _obj
 

@@ -29,6 +29,15 @@ pub struct ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
     #[serde_as(as = "Option<serde_with::base64::Base64>")]
     #[serde(rename = "file", skip_serializing_if = "Option::is_none")]
     pub file: Option<Vec<u8>>,
+    /// Первая часть ID стикера для печати подписи
+    #[serde(rename = "partA", skip_serializing_if = "Option::is_none")]
+    pub part_a: Option<String>,
+    /// Вторая часть ID стикера для печати подписи
+    #[serde(rename = "partB", skip_serializing_if = "Option::is_none")]
+    pub part_b: Option<String>,
+    /// Закодированное значение стикера
+    #[serde(rename = "barcode", skip_serializing_if = "Option::is_none")]
+    pub barcode: Option<String>,
 }
 
 impl ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
@@ -38,6 +47,9 @@ impl ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
             status: None,
             parcel_id: None,
             file: None,
+            part_a: None,
+            part_b: None,
+            barcode: None,
         }
     }
 }

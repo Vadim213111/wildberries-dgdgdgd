@@ -46,6 +46,24 @@ export interface ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner {
      * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
      */
     file?: string;
+    /**
+     * Первая часть ID стикера для печати подписи
+     * @type {string}
+     * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
+     */
+    partA?: string;
+    /**
+     * Вторая часть ID стикера для печати подписи
+     * @type {string}
+     * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
+     */
+    partB?: string;
+    /**
+     * Закодированное значение стикера
+     * @type {string}
+     * @memberof ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner
+     */
+    barcode?: string;
 }
 
 
@@ -80,6 +98,9 @@ export function ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerFromJS
         'status': json['status'] == null ? undefined : json['status'],
         'parcelId': json['parcelId'] == null ? undefined : json['parcelId'],
         'file': json['file'] == null ? undefined : json['file'],
+        'partA': json['partA'] == null ? undefined : json['partA'],
+        'partB': json['partB'] == null ? undefined : json['partB'],
+        'barcode': json['barcode'] == null ? undefined : json['barcode'],
     };
 }
 
@@ -98,6 +119,9 @@ export function ApiV3OrdersStickersCrossBorderPost200ResponseStickersInnerToJSON
         'status': value['status'],
         'parcelId': value['parcelId'],
         'file': value['file'],
+        'partA': value['partA'],
+        'partB': value['partB'],
+        'barcode': value['barcode'],
     };
 }
 

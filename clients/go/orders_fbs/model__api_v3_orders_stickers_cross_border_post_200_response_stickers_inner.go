@@ -27,6 +27,12 @@ type ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner struct {
 	ParcelId *string `json:"parcelId,omitempty"`
 	// Стикер в формате PDF, кодировка base64
 	File *string `json:"file,omitempty"`
+	// Первая часть ID стикера для печати подписи
+	PartA *string `json:"partA,omitempty"`
+	// Вторая часть ID стикера для печати подписи
+	PartB *string `json:"partB,omitempty"`
+	// Закодированное значение стикера
+	Barcode *string `json:"barcode,omitempty"`
 }
 
 // NewApiV3OrdersStickersCrossBorderPost200ResponseStickersInner instantiates a new ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner object
@@ -174,6 +180,102 @@ func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetFile(v s
 	o.File = &v
 }
 
+// GetPartA returns the PartA field value if set, zero value otherwise.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetPartA() string {
+	if o == nil || IsNil(o.PartA) {
+		var ret string
+		return ret
+	}
+	return *o.PartA
+}
+
+// GetPartAOk returns a tuple with the PartA field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetPartAOk() (*string, bool) {
+	if o == nil || IsNil(o.PartA) {
+		return nil, false
+	}
+	return o.PartA, true
+}
+
+// HasPartA returns a boolean if a field has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) HasPartA() bool {
+	if o != nil && !IsNil(o.PartA) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartA gets a reference to the given string and assigns it to the PartA field.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetPartA(v string) {
+	o.PartA = &v
+}
+
+// GetPartB returns the PartB field value if set, zero value otherwise.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetPartB() string {
+	if o == nil || IsNil(o.PartB) {
+		var ret string
+		return ret
+	}
+	return *o.PartB
+}
+
+// GetPartBOk returns a tuple with the PartB field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetPartBOk() (*string, bool) {
+	if o == nil || IsNil(o.PartB) {
+		return nil, false
+	}
+	return o.PartB, true
+}
+
+// HasPartB returns a boolean if a field has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) HasPartB() bool {
+	if o != nil && !IsNil(o.PartB) {
+		return true
+	}
+
+	return false
+}
+
+// SetPartB gets a reference to the given string and assigns it to the PartB field.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetPartB(v string) {
+	o.PartB = &v
+}
+
+// GetBarcode returns the Barcode field value if set, zero value otherwise.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetBarcode() string {
+	if o == nil || IsNil(o.Barcode) {
+		var ret string
+		return ret
+	}
+	return *o.Barcode
+}
+
+// GetBarcodeOk returns a tuple with the Barcode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) GetBarcodeOk() (*string, bool) {
+	if o == nil || IsNil(o.Barcode) {
+		return nil, false
+	}
+	return o.Barcode, true
+}
+
+// HasBarcode returns a boolean if a field has been set.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) HasBarcode() bool {
+	if o != nil && !IsNil(o.Barcode) {
+		return true
+	}
+
+	return false
+}
+
+// SetBarcode gets a reference to the given string and assigns it to the Barcode field.
+func (o *ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) SetBarcode(v string) {
+	o.Barcode = &v
+}
+
 func (o ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -195,6 +297,15 @@ func (o ApiV3OrdersStickersCrossBorderPost200ResponseStickersInner) ToMap() (map
 	}
 	if !IsNil(o.File) {
 		toSerialize["file"] = o.File
+	}
+	if !IsNil(o.PartA) {
+		toSerialize["partA"] = o.PartA
+	}
+	if !IsNil(o.PartB) {
+		toSerialize["partB"] = o.PartB
+	}
+	if !IsNil(o.Barcode) {
+		toSerialize["barcode"] = o.Barcode
 	}
 	return toSerialize, nil
 }

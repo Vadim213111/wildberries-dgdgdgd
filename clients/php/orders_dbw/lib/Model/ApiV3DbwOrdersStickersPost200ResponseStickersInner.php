@@ -357,7 +357,7 @@ class ApiV3DbwOrdersStickersPost200ResponseStickersInner implements ModelInterfa
     /**
      * Sets part_a
      *
-     * @param string|null $part_a Первая часть ID стикера (для печати подписи)
+     * @param string|null $part_a Первая часть ID стикера для печати подписи
      *
      * @return self
      */
@@ -384,7 +384,7 @@ class ApiV3DbwOrdersStickersPost200ResponseStickersInner implements ModelInterfa
     /**
      * Sets part_b
      *
-     * @param string|null $part_b Вторая часть ID стикера
+     * @param string|null $part_b Вторая часть ID стикера для печати подписи
      *
      * @return self
      */
