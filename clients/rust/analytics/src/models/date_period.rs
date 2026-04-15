@@ -15,14 +15,14 @@ use serde::{Deserialize, Serialize};
 pub struct DatePeriod {
     /// Начало периода
     #[serde(rename = "start")]
-    pub start: String,
+    pub start: chrono::NaiveDate,
     /// Конец периода
     #[serde(rename = "end")]
-    pub end: String,
+    pub end: chrono::NaiveDate,
 }
 
 impl DatePeriod {
-    pub fn new(start: String, end: String) -> DatePeriod {
+    pub fn new(start: chrono::NaiveDate, end: chrono::NaiveDate) -> DatePeriod {
         DatePeriod {
             start,
             end,

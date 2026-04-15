@@ -1284,7 +1284,7 @@ pub async fn adv_v1_normquery_stats_post(configuration: &configuration::Configur
 }
 
 /// Метод возвращает историю пополнений счёта **WB Продвижение** за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
-pub async fn adv_v1_payments_get(configuration: &configuration::Configuration, from: Option<String>, to: Option<String>) -> Result<Vec<models::AdvV1PaymentsGet200ResponseInner>, Error<AdvV1PaymentsGetError>> {
+pub async fn adv_v1_payments_get(configuration: &configuration::Configuration, from: Option<chrono::NaiveDate>, to: Option<chrono::NaiveDate>) -> Result<Vec<models::AdvV1PaymentsGet200ResponseInner>, Error<AdvV1PaymentsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_from = from;
     let p_query_to = to;
@@ -1473,7 +1473,7 @@ pub async fn adv_v1_supplier_subjects_get(configuration: &configuration::Configu
 }
 
 /// Метод формирует список фактических затрат на рекламные кампании за заданный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 сек | 1 запрос | 1 сек | 5 запросов | </div> 
-pub async fn adv_v1_upd_get(configuration: &configuration::Configuration, from: String, to: String) -> Result<Vec<models::AdvV1UpdGet200ResponseInner>, Error<AdvV1UpdGetError>> {
+pub async fn adv_v1_upd_get(configuration: &configuration::Configuration, from: chrono::NaiveDate, to: chrono::NaiveDate) -> Result<Vec<models::AdvV1UpdGet200ResponseInner>, Error<AdvV1UpdGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_from = from;
     let p_query_to = to;
@@ -1613,7 +1613,7 @@ pub async fn adv_v2_supplier_nms_post(configuration: &configuration::Configurati
 }
 
 /// Метод формирует статистику для кампаний независимо от типа. <br><br> Максимальный период в запросе — 31 день. <br><br> Для кампаний в статусах `7`, `9` и `11`.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 3 запроса | 20 сек | 1 запрос | </div> 
-pub async fn adv_v3_fullstats_get(configuration: &configuration::Configuration, ids: &str, begin_date: String, end_date: String) -> Result<Vec<models::FullStatsItem>, Error<AdvV3FullstatsGetError>> {
+pub async fn adv_v3_fullstats_get(configuration: &configuration::Configuration, ids: &str, begin_date: chrono::NaiveDate, end_date: chrono::NaiveDate) -> Result<Vec<models::FullStatsItem>, Error<AdvV3FullstatsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_ids = ids;
     let p_query_begin_date = begin_date;
@@ -1908,7 +1908,7 @@ pub async fn api_v1_calendar_promotions_details_get(configuration: &configuratio
 }
 
 /// Метод возвращает список [акций](/openapi/promotion#tag/Kalendar-akcij/paths/~1api~1v1~1calendar~1promotions~1details/get) в WB с датами и временем проведения.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов категории <strong>Календарь акций</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 6 сек | 10 запросов | 600 мс | 5 запросов |  </div> 
-pub async fn api_v1_calendar_promotions_get(configuration: &configuration::Configuration, start_date_time: String, end_date_time: String, all_promo: bool, limit: Option<i32>, offset: Option<i32>) -> Result<models::ApiV1CalendarPromotionsGet200Response, Error<ApiV1CalendarPromotionsGetError>> {
+pub async fn api_v1_calendar_promotions_get(configuration: &configuration::Configuration, start_date_time: chrono::DateTime<chrono::FixedOffset>, end_date_time: chrono::DateTime<chrono::FixedOffset>, all_promo: bool, limit: Option<i32>, offset: Option<i32>) -> Result<models::ApiV1CalendarPromotionsGet200Response, Error<ApiV1CalendarPromotionsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_start_date_time = start_date_time;
     let p_query_end_date_time = end_date_time;

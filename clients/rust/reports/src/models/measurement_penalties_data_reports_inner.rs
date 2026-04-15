@@ -54,13 +54,13 @@ pub struct MeasurementPenaltiesDataReportsInner {
     pub photo_urls: Option<Vec<String>>,
     /// Дата штрафа
     #[serde(rename = "dtBonus", skip_serializing_if = "Option::is_none")]
-    pub dt_bonus: Option<String>,
+    pub dt_bonus: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Статус обмера:   - `false` — отменён   - `true` — подтверждён 
     #[serde(rename = "isValid", skip_serializing_if = "Option::is_none")]
     pub is_valid: Option<bool>,
     /// Дата и время подтверждения или отмены обмера
     #[serde(rename = "isValidDt", skip_serializing_if = "Option::is_none")]
-    pub is_valid_dt: Option<String>,
+    pub is_valid_dt: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Сумма сторно
     #[serde(rename = "reversalAmount", skip_serializing_if = "Option::is_none")]
     pub reversal_amount: Option<f64>,

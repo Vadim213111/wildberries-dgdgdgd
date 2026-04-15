@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 pub struct History {
     /// Дата сбора статистики
     #[serde(rename = "date")]
-    pub date: String,
+    pub date: chrono::NaiveDate,
     /// Количество переходов в карточку товара
     #[serde(rename = "openCount")]
     pub open_count: i32,
@@ -49,7 +49,7 @@ pub struct History {
 }
 
 impl History {
-    pub fn new(date: String, open_count: i32, cart_count: i32, order_count: i32, order_sum: i32, buyout_count: i32, buyout_sum: i32, buyout_percent: i32, add_to_cart_conversion: i32, cart_to_order_conversion: i32, add_to_wishlist_count: i32) -> History {
+    pub fn new(date: chrono::NaiveDate, open_count: i32, cart_count: i32, order_count: i32, order_sum: i32, buyout_count: i32, buyout_sum: i32, buyout_percent: i32, add_to_cart_conversion: i32, cart_to_order_conversion: i32, add_to_wishlist_count: i32) -> History {
         History {
             date,
             open_count,

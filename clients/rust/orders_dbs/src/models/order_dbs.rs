@@ -37,7 +37,7 @@ pub struct OrderDbs {
     pub rid: Option<String>,
     /// Дата создания сборочного задания
     #[serde(rename = "createdAt", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    pub created_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Массив баркодов товара
     #[serde(rename = "skus", skip_serializing_if = "Option::is_none")]
     pub skus: Option<Vec<String>>,

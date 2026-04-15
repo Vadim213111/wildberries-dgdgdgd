@@ -18,7 +18,7 @@ pub struct ApiCommunicationsV2NewsGet200ResponseDataInner {
     pub content: Option<String>,
     /// Дата и время публикации новости
     #[serde(rename = "date", skip_serializing_if = "Option::is_none")]
-    pub date: Option<String>,
+    pub date: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Заголовок новости
     #[serde(rename = "header", skip_serializing_if = "Option::is_none")]
     pub header: Option<String>,

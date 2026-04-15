@@ -16,15 +16,15 @@ use serde::{Deserialize, Serialize};
 pub struct PeriodOrdersRequest {
     /// Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня
     #[serde(rename = "start")]
-    pub start: String,
+    pub start: chrono::NaiveDate,
     /// Дата окончания периода. Не ранее 365 суток от сегодня
     #[serde(rename = "end")]
-    pub end: String,
+    pub end: chrono::NaiveDate,
 }
 
 impl PeriodOrdersRequest {
     /// Текущий период. Максимум 7 суток
-    pub fn new(start: String, end: String) -> PeriodOrdersRequest {
+    pub fn new(start: chrono::NaiveDate, end: chrono::NaiveDate) -> PeriodOrdersRequest {
         PeriodOrdersRequest {
             start,
             end,

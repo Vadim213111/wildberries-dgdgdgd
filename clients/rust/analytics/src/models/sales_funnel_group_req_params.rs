@@ -25,10 +25,10 @@ pub struct SalesFunnelGroupReqParams {
     pub tag_ids: Option<Vec<i64>>,
     /// Начало периода
     #[serde(rename = "startDate")]
-    pub start_date: String,
+    pub start_date: chrono::NaiveDate,
     /// Конец периода
     #[serde(rename = "endDate")]
-    pub end_date: String,
+    pub end_date: chrono::NaiveDate,
     /// Временная зона, по умолчанию Europe/Moscow 
     #[serde(rename = "timezone", skip_serializing_if = "Option::is_none")]
     pub timezone: Option<String>,
@@ -42,7 +42,7 @@ pub struct SalesFunnelGroupReqParams {
 
 impl SalesFunnelGroupReqParams {
     /// Параметры отчёта
-    pub fn new(start_date: String, end_date: String) -> SalesFunnelGroupReqParams {
+    pub fn new(start_date: chrono::NaiveDate, end_date: chrono::NaiveDate) -> SalesFunnelGroupReqParams {
         SalesFunnelGroupReqParams {
             subject_ids: None,
             brand_names: None,

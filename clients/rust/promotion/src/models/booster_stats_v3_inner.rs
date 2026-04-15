@@ -18,14 +18,14 @@ pub struct BoosterStatsV3Inner {
     pub avg_position: i32,
     /// Дата, за которую предоставлены данные
     #[serde(rename = "date")]
-    pub date: String,
+    pub date: chrono::NaiveDate,
     /// Артикул WB
     #[serde(rename = "nm")]
     pub nm: i32,
 }
 
 impl BoosterStatsV3Inner {
-    pub fn new(avg_position: i32, date: String, nm: i32) -> BoosterStatsV3Inner {
+    pub fn new(avg_position: i32, date: chrono::NaiveDate, nm: i32) -> BoosterStatsV3Inner {
         BoosterStatsV3Inner {
             avg_position,
             date,

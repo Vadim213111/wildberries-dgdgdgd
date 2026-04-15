@@ -1,7 +1,7 @@
 /*
  * Заказы FBS
  *
- * С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуска](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/127\">инструкции</a> по работе с <strong>заказами FBS</strong> </div>  <div class=\"description_important\">   Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+ * С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуска](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-0771-7571-aea9-11d5b597f34c/zakazy-fbs\">инструкции</a> по работе с <strong>заказами FBS</strong> </div>  <div class=\"description_important\">   Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
  *
  * The version of the OpenAPI document: order
  * 
@@ -24,13 +24,13 @@ pub struct Supply {
     pub done: Option<bool>,
     /// Дата создания поставки (RFC3339)
     #[serde(rename = "createdAt", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    pub created_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата закрытия поставки (RFC3339)
     #[serde(rename = "closedAt", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub closed_at: Option<Option<String>>,
+    pub closed_at: Option<Option<chrono::DateTime<chrono::FixedOffset>>>,
     /// Дата скана поставки (RFC3339)
     #[serde(rename = "scanDt", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub scan_dt: Option<Option<String>>,
+    pub scan_dt: Option<Option<chrono::DateTime<chrono::FixedOffset>>>,
     /// Наименование поставки
     #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
     pub name: Option<String>,

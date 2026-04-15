@@ -30,7 +30,7 @@ pub struct AdvV1AdvertGet200Response {
     pub status: Option<i32>,
     /// Время создания медиакампании
     #[serde(rename = "createTime", skip_serializing_if = "Option::is_none")]
-    pub create_time: Option<String>,
+    pub create_time: Option<chrono::DateTime<chrono::FixedOffset>>,
     #[serde(rename = "extended", skip_serializing_if = "Option::is_none")]
     pub extended: Option<Box<models::AdvV1AdvertGet200ResponseExtended>>,
     /// Информация о баннере. <br> Наличие в ответе тех или иных полей зависит от конфигурации медиакампании. 

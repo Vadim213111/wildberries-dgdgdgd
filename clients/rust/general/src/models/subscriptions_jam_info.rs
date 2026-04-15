@@ -25,15 +25,15 @@ pub struct SubscriptionsJamInfo {
     pub level: Level,
     /// Дата и время первой активации подписки. Не меняется при продлении или повторной активации
     #[serde(rename = "since")]
-    pub since: String,
+    pub since: chrono::DateTime<chrono::FixedOffset>,
     /// Дата и время окончания подписки
     #[serde(rename = "till")]
-    pub till: String,
+    pub till: chrono::DateTime<chrono::FixedOffset>,
 }
 
 impl SubscriptionsJamInfo {
     /// Информация о подписке Джем
-    pub fn new(state: State, activation_source: ActivationSource, level: Level, since: String, till: String) -> SubscriptionsJamInfo {
+    pub fn new(state: State, activation_source: ActivationSource, level: Level, since: chrono::DateTime<chrono::FixedOffset>, till: chrono::DateTime<chrono::FixedOffset>) -> SubscriptionsJamInfo {
         SubscriptionsJamInfo {
             state,
             activation_source,

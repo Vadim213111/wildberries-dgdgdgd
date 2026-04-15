@@ -18,7 +18,7 @@ pub struct ApiV1AcceptanceReportTasksTaskIdDownloadGet200ResponseInner {
     pub count: Option<i32>,
     /// Дата создания поставки
     #[serde(rename = "giCreateDate", skip_serializing_if = "Option::is_none")]
-    pub gi_create_date: Option<String>,
+    pub gi_create_date: Option<chrono::NaiveDate>,
     /// Номер поставки
     #[serde(rename = "incomeId", skip_serializing_if = "Option::is_none")]
     pub income_id: Option<i32>,
@@ -27,7 +27,7 @@ pub struct ApiV1AcceptanceReportTasksTaskIdDownloadGet200ResponseInner {
     pub nm_id: Option<i32>,
     /// Дата приёмки
     #[serde(rename = "shkCreateDate", skip_serializing_if = "Option::is_none")]
-    pub shk_create_date: Option<String>,
+    pub shk_create_date: Option<chrono::NaiveDate>,
     /// Предмет
     #[serde(rename = "subjectName", skip_serializing_if = "Option::is_none")]
     pub subject_name: Option<String>,

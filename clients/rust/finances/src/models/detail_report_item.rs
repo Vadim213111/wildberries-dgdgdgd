@@ -18,13 +18,13 @@ pub struct DetailReportItem {
     pub realizationreport_id: Option<i32>,
     /// Дата начала отчётного периода
     #[serde(rename = "date_from", skip_serializing_if = "Option::is_none")]
-    pub date_from: Option<String>,
+    pub date_from: Option<chrono::NaiveDate>,
     /// Дата конца отчётного периода
     #[serde(rename = "date_to", skip_serializing_if = "Option::is_none")]
-    pub date_to: Option<String>,
+    pub date_to: Option<chrono::NaiveDate>,
     /// Дата формирования отчёта
     #[serde(rename = "create_dt", skip_serializing_if = "Option::is_none")]
-    pub create_dt: Option<String>,
+    pub create_dt: Option<chrono::NaiveDate>,
     /// Валюта отчёта
     #[serde(rename = "currency_name", skip_serializing_if = "Option::is_none")]
     pub currency_name: Option<String>,
@@ -42,10 +42,10 @@ pub struct DetailReportItem {
     pub dlv_prc: Option<f64>,
     /// Дата начала действия фиксации
     #[serde(rename = "fix_tariff_date_from", skip_serializing_if = "Option::is_none")]
-    pub fix_tariff_date_from: Option<String>,
+    pub fix_tariff_date_from: Option<chrono::NaiveDate>,
     /// Дата конца действия фиксации
     #[serde(rename = "fix_tariff_date_to", skip_serializing_if = "Option::is_none")]
-    pub fix_tariff_date_to: Option<String>,
+    pub fix_tariff_date_to: Option<chrono::NaiveDate>,
     /// Предмет
     #[serde(rename = "subject_name", skip_serializing_if = "Option::is_none")]
     pub subject_name: Option<String>,
@@ -90,13 +90,13 @@ pub struct DetailReportItem {
     pub supplier_oper_name: Option<String>,
     /// Дата заказа. <br>Присылается с явным указанием часового пояса
     #[serde(rename = "order_dt", skip_serializing_if = "Option::is_none")]
-    pub order_dt: Option<String>,
+    pub order_dt: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата продажи. <br>Присылается с явным указанием часового пояса
     #[serde(rename = "sale_dt", skip_serializing_if = "Option::is_none")]
-    pub sale_dt: Option<String>,
+    pub sale_dt: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата операции
     #[serde(rename = "rr_dt", skip_serializing_if = "Option::is_none")]
-    pub rr_dt: Option<String>,
+    pub rr_dt: Option<chrono::NaiveDate>,
     /// Штрихкод
     #[serde(rename = "shk_id", skip_serializing_if = "Option::is_none")]
     pub shk_id: Option<i32>,

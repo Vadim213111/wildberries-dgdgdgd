@@ -15,16 +15,16 @@ use serde::{Deserialize, Serialize};
 pub struct V0GetNormQueryStatsRequest {
     /// Дата начала периода
     #[serde(rename = "from")]
-    pub from: String,
+    pub from: chrono::NaiveDate,
     /// Дата окончания периода
     #[serde(rename = "to")]
-    pub to: String,
+    pub to: chrono::NaiveDate,
     #[serde(rename = "items")]
     pub items: Vec<models::V0GetNormQueryStatsRequestItemsInner>,
 }
 
 impl V0GetNormQueryStatsRequest {
-    pub fn new(from: String, to: String, items: Vec<models::V0GetNormQueryStatsRequestItemsInner>) -> V0GetNormQueryStatsRequest {
+    pub fn new(from: chrono::NaiveDate, to: chrono::NaiveDate, items: Vec<models::V0GetNormQueryStatsRequestItemsInner>) -> V0GetNormQueryStatsRequest {
         V0GetNormQueryStatsRequest {
             from,
             to,

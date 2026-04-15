@@ -16,10 +16,10 @@ use serde::{Deserialize, Serialize};
 pub struct StatIntervalInterval {
     /// Начало периода
     #[serde(rename = "begin", skip_serializing_if = "Option::is_none")]
-    pub begin: Option<String>,
+    pub begin: Option<chrono::NaiveDate>,
     /// Конец периода
     #[serde(rename = "end", skip_serializing_if = "Option::is_none")]
-    pub end: Option<String>,
+    pub end: Option<chrono::NaiveDate>,
 }
 
 impl StatIntervalInterval {

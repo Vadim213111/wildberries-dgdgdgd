@@ -15,14 +15,14 @@ use serde::{Deserialize, Serialize};
 pub struct ProductsRequestSelectedPeriod {
     /// Начало периода
     #[serde(rename = "start")]
-    pub start: String,
+    pub start: chrono::NaiveDate,
     /// Конец периода
     #[serde(rename = "end")]
-    pub end: String,
+    pub end: chrono::NaiveDate,
 }
 
 impl ProductsRequestSelectedPeriod {
-    pub fn new(start: String, end: String) -> ProductsRequestSelectedPeriod {
+    pub fn new(start: chrono::NaiveDate, end: chrono::NaiveDate) -> ProductsRequestSelectedPeriod {
         ProductsRequestSelectedPeriod {
             start,
             end,

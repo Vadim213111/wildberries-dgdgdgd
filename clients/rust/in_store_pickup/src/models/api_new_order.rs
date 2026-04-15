@@ -30,7 +30,7 @@ pub struct ApiNewOrder {
     pub rid: Option<String>,
     /// Дата и время создания сборочного задания
     #[serde(rename = "createdAt", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    pub created_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Адрес магазина (склада продавца), на который поступило сборочное задание 
     #[serde(rename = "warehouseAddress", skip_serializing_if = "Option::is_none")]
     pub warehouse_address: Option<String>,

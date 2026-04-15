@@ -21,7 +21,7 @@ pub struct ModelsTransitTariff {
     pub destination_warehouse_name: Option<String>,
     /// С какого числа доступно транзитное направление
     #[serde(rename = "activeFrom", skip_serializing_if = "Option::is_none")]
-    pub active_from: Option<String>,
+    pub active_from: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Тариф за транзит коробов. Если `null`, транзит для коробов недоступен
     #[serde(rename = "boxTariff", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub box_tariff: Option<Option<Vec<models::ModelsVolumeTariff>>>,

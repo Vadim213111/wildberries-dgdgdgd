@@ -16,15 +16,15 @@ use serde::{Deserialize, Serialize};
 pub struct PastPeriod {
     /// Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня
     #[serde(rename = "start")]
-    pub start: String,
+    pub start: chrono::NaiveDate,
     /// Дата окончания периода. Не позднее даты перед датой начала `currentPeriod`. Не ранее 365 суток от сегодня
     #[serde(rename = "end")]
-    pub end: String,
+    pub end: chrono::NaiveDate,
 }
 
 impl PastPeriod {
     /// Прошлый период для сравнения. Количество дней — меньше или равно `currentPeriod`
-    pub fn new(start: String, end: String) -> PastPeriod {
+    pub fn new(start: chrono::NaiveDate, end: chrono::NaiveDate) -> PastPeriod {
         PastPeriod {
             start,
             end,

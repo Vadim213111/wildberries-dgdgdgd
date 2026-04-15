@@ -1,7 +1,7 @@
 /*
  * Заказы DBW
  *
- * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/241\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
+ * С помощью методов Заказы DBW (Доставка курьером WB) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW), управлять статусами и отменять сборочные задания   - получать, добавлять, редактировать и удалять [метаданные](/openapi/orders-dbw#tag/Metadannye-DBW) сборочных заданий  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-036a-7721-98e8-bed5f1a4f72d/zakazy-dbw\">инструкции</a> по работе с <strong>заказами DBW</strong> </div> 
  *
  * The version of the OpenAPI document: ordersdbw
  * 
@@ -21,7 +21,7 @@ pub struct CourierInfo {
     pub must_be_assigned: Option<bool>,
     /// Дата и время обновления информации о курьере. <br> Если `null`, информация не обновлялась
     #[serde(rename = "updatedAt", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<Option<String>>,
+    pub updated_at: Option<Option<chrono::DateTime<chrono::FixedOffset>>>,
 }
 
 impl CourierInfo {

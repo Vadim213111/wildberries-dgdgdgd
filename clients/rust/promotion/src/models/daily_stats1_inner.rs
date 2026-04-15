@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 pub struct DailyStats1Inner {
     /// Дата
     #[serde(rename = "date", skip_serializing_if = "Option::is_none")]
-    pub date: Option<String>,
+    pub date: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Статистика по платформам
     #[serde(rename = "app_type_stats", skip_serializing_if = "Option::is_none")]
     pub app_type_stats: Option<Vec<models::DailyStats1InnerAppTypeStatsInner>>,

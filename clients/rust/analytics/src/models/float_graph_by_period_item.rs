@@ -16,10 +16,10 @@ use serde::{Deserialize, Serialize};
 pub struct FloatGraphByPeriodItem {
     /// Начало месяца
     #[serde(rename = "start")]
-    pub start: String,
+    pub start: chrono::NaiveDate,
     /// Конец месяца
     #[serde(rename = "end")]
-    pub end: String,
+    pub end: chrono::NaiveDate,
     /// Среднее количество заказов
     #[serde(rename = "value")]
     pub value: f64,
@@ -27,7 +27,7 @@ pub struct FloatGraphByPeriodItem {
 
 impl FloatGraphByPeriodItem {
     /// Среднее количество заказов за месяц
-    pub fn new(start: String, end: String, value: f64) -> FloatGraphByPeriodItem {
+    pub fn new(start: chrono::NaiveDate, end: chrono::NaiveDate, value: f64) -> FloatGraphByPeriodItem {
         FloatGraphByPeriodItem {
             start,
             end,

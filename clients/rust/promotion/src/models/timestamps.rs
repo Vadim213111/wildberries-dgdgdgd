@@ -16,21 +16,21 @@ use serde::{Deserialize, Serialize};
 pub struct Timestamps {
     /// Время создания кампании
     #[serde(rename = "created")]
-    pub created: String,
+    pub created: chrono::DateTime<chrono::FixedOffset>,
     /// Время последнего изменения кампании
     #[serde(rename = "updated")]
-    pub updated: String,
+    pub updated: chrono::DateTime<chrono::FixedOffset>,
     /// Время последнего запуска кампании
     #[serde(rename = "started", deserialize_with = "Option::deserialize")]
-    pub started: Option<String>,
+    pub started: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Время удаления кампании. Если кампания не удалена, время указывается в будущем
     #[serde(rename = "deleted")]
-    pub deleted: String,
+    pub deleted: chrono::DateTime<chrono::FixedOffset>,
 }
 
 impl Timestamps {
     /// Временные отметки
-    pub fn new(created: String, updated: String, started: Option<String>, deleted: String) -> Timestamps {
+    pub fn new(created: chrono::DateTime<chrono::FixedOffset>, updated: chrono::DateTime<chrono::FixedOffset>, started: Option<chrono::DateTime<chrono::FixedOffset>>, deleted: chrono::DateTime<chrono::FixedOffset>) -> Timestamps {
         Timestamps {
             created,
             updated,

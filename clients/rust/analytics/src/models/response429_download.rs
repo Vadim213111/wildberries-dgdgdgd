@@ -37,7 +37,7 @@ pub struct Response429Download {
     pub status_text: Option<String>,
     /// Дата и время запроса
     #[serde(rename = "timestamp", skip_serializing_if = "Option::is_none")]
-    pub timestamp: Option<String>,
+    pub timestamp: Option<chrono::DateTime<chrono::FixedOffset>>,
 }
 
 impl Response429Download {

@@ -24,7 +24,7 @@ pub struct DaysV3Inner {
     pub canceled: i32,
     /// Дата, за которую представлены данные
     #[serde(rename = "date")]
-    pub date: String,
+    pub date: chrono::DateTime<chrono::FixedOffset>,
     /// Количество кликов
     #[serde(rename = "clicks")]
     pub clicks: i32,
@@ -55,7 +55,7 @@ pub struct DaysV3Inner {
 }
 
 impl DaysV3Inner {
-    pub fn new(apps: Vec<models::DaysV3InnerAppsInner>, atbs: i32, canceled: i32, date: String, clicks: i32, cpc: f64, cr: f64, ctr: f64, orders: i32, shks: i32, sum: f64, sum_price: f64, views: i32) -> DaysV3Inner {
+    pub fn new(apps: Vec<models::DaysV3InnerAppsInner>, atbs: i32, canceled: i32, date: chrono::DateTime<chrono::FixedOffset>, clicks: i32, cpc: f64, cr: f64, ctr: f64, orders: i32, shks: i32, sum: f64, sum_price: f64, views: i32) -> DaysV3Inner {
         DaysV3Inner {
             apps,
             atbs,

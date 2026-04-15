@@ -19,7 +19,7 @@ pub struct CreateInviteResponse {
     pub invite_id: uuid::Uuid,
     /// Дата и время окончания срока действия приглашения
     #[serde(rename = "expiredAt")]
-    pub expired_at: String,
+    pub expired_at: chrono::DateTime<chrono::FixedOffset>,
     /// - `true` — приглашение создано успешно - `false` — повторите запрос 
     #[serde(rename = "isSuccess")]
     pub is_success: bool,
@@ -30,7 +30,7 @@ pub struct CreateInviteResponse {
 
 impl CreateInviteResponse {
     /// Данные приглашения
-    pub fn new(invite_id: uuid::Uuid, expired_at: String, is_success: bool, invite_url: String) -> CreateInviteResponse {
+    pub fn new(invite_id: uuid::Uuid, expired_at: chrono::DateTime<chrono::FixedOffset>, is_success: bool, invite_url: String) -> CreateInviteResponse {
         CreateInviteResponse {
             invite_id,
             expired_at,

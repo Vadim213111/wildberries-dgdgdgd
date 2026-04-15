@@ -1,7 +1,7 @@
 /*
  * Работа с товарами
  *
- * С помощью методов этого раздела вы можете:   - [создавать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получать [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загружать [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настраивать [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - устанавливать [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции</a> по <strong>работе с товарами</strong>   </div> 
+ * С помощью методов этого раздела вы можете:   - [создавать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получать [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загружать [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настраивать [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - устанавливать [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami\">инструкции</a> по <strong>работе с товарами</strong>   </div> 
  *
  * The version of the OpenAPI document: products
  * 
@@ -16,7 +16,7 @@ pub struct ContentV2GetCardsListPost200ResponseCardsInner {
     /// Артикул WB
     #[serde(rename = "nmID", skip_serializing_if = "Option::is_none")]
     pub nm_id: Option<i32>,
-    /// ID для [объединённых](https://dev.wildberries.ru/news/101#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>
+    /// ID для [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров.<br>Един для всех артикулов WB группы объединённых карточек.<br>У каждой карточки товара есть `imtID`, даже если она не объединена с другими карточками<br>
     #[serde(rename = "imtID", skip_serializing_if = "Option::is_none")]
     pub imt_id: Option<i32>,
     /// Внутренний технический ID карточки товара

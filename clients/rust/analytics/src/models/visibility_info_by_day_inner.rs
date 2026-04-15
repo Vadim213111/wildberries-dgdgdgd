@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 pub struct VisibilityInfoByDayInner {
     /// Дата
     #[serde(rename = "dt")]
-    pub dt: String,
+    pub dt: chrono::NaiveDate,
     /// Видимость карточки в результатах поиска, %
     #[serde(rename = "visibility")]
     pub visibility: i32,
@@ -25,7 +25,7 @@ pub struct VisibilityInfoByDayInner {
 }
 
 impl VisibilityInfoByDayInner {
-    pub fn new(dt: String, visibility: i32, open: i32) -> VisibilityInfoByDayInner {
+    pub fn new(dt: chrono::NaiveDate, visibility: i32, open: i32) -> VisibilityInfoByDayInner {
         VisibilityInfoByDayInner {
             dt,
             visibility,

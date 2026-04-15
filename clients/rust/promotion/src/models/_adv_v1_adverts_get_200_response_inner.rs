@@ -30,10 +30,10 @@ pub struct AdvV1AdvertsGet200ResponseInner {
     pub status: Option<i32>,
     /// Время создания медиакампании
     #[serde(rename = "createTime", skip_serializing_if = "Option::is_none")]
-    pub create_time: Option<String>,
+    pub create_time: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Время завершения медиакампании
     #[serde(rename = "endTime", skip_serializing_if = "Option::is_none")]
-    pub end_time: Option<String>,
+    pub end_time: Option<chrono::DateTime<chrono::FixedOffset>>,
 }
 
 impl AdvV1AdvertsGet200ResponseInner {

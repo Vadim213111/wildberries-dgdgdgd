@@ -39,7 +39,7 @@ pub struct WhmDataReportsInner {
     pub photo_urls: Option<Vec<String>>,
     /// Дата и время
     #[serde(rename = "dt", skip_serializing_if = "Option::is_none")]
-    pub dt: Option<String>,
+    pub dt: Option<chrono::DateTime<chrono::FixedOffset>>,
 }
 
 impl WhmDataReportsInner {

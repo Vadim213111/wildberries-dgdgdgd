@@ -265,7 +265,7 @@ pub async fn api_v1_documents_download_get(configuration: &configuration::Config
 }
 
 /// Метод возвращает список документов продавца. Вы можете получить [один](/openapi/financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1download/get) или [несколько](/openapi/financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1download~1all/post) документов из полученного списка.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 10 сек | 1 запрос | 10 сек | 5 запросов | </div> 
-pub async fn api_v1_documents_list_get(configuration: &configuration::Configuration, locale: Option<&str>, begin_time: Option<String>, end_time: Option<String>, sort: Option<&str>, order: Option<&str>, category: Option<&str>, service_name: Option<&str>, limit: Option<i32>, offset: Option<i32>) -> Result<models::GetList, Error<ApiV1DocumentsListGetError>> {
+pub async fn api_v1_documents_list_get(configuration: &configuration::Configuration, locale: Option<&str>, begin_time: Option<chrono::NaiveDate>, end_time: Option<chrono::NaiveDate>, sort: Option<&str>, order: Option<&str>, category: Option<&str>, service_name: Option<&str>, limit: Option<i32>, offset: Option<i32>) -> Result<models::GetList, Error<ApiV1DocumentsListGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_locale = locale;
     let p_query_begin_time = begin_time;
@@ -345,7 +345,7 @@ pub async fn api_v1_documents_list_get(configuration: &configuration::Configurat
 }
 
 /// Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements). <br><br> Данные доступны с 29 января 2024 года.  <div class=\"description_important\">   Вы можете выгрузить данные в <a href=\"https://dev.wildberries.ru/ru/cases/1\">Google Таблицы</a> </div>  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
-pub async fn api_v5_supplier_report_detail_by_period_get(configuration: &configuration::Configuration, date_from: String, date_to: String, limit: Option<i32>, rrdid: Option<i32>, period: Option<&str>) -> Result<Vec<models::DetailReportItem>, Error<ApiV5SupplierReportDetailByPeriodGetError>> {
+pub async fn api_v5_supplier_report_detail_by_period_get(configuration: &configuration::Configuration, date_from: chrono::DateTime<chrono::FixedOffset>, date_to: chrono::DateTime<chrono::FixedOffset>, limit: Option<i32>, rrdid: Option<i32>, period: Option<&str>) -> Result<Vec<models::DetailReportItem>, Error<ApiV5SupplierReportDetailByPeriodGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
     let p_query_date_to = date_to;

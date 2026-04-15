@@ -18,7 +18,7 @@ pub struct ApiV1AnalyticsGoodsLabelingGet200ResponseReportInner {
     pub amount: Option<f64>,
     /// Дата
     #[serde(rename = "date", skip_serializing_if = "Option::is_none")]
-    pub date: Option<String>,
+    pub date: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Номер поставки
     #[serde(rename = "incomeId", skip_serializing_if = "Option::is_none")]
     pub income_id: Option<i32>,

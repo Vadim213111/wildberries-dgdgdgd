@@ -21,10 +21,10 @@ pub struct ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner {
     pub name: Option<String>,
     /// Начало акции
     #[serde(rename = "startDateTime", skip_serializing_if = "Option::is_none")]
-    pub start_date_time: Option<String>,
+    pub start_date_time: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Конец акции
     #[serde(rename = "endDateTime", skip_serializing_if = "Option::is_none")]
-    pub end_date_time: Option<String>,
+    pub end_date_time: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Тип акции:   - `regular` — акция   - `auto` — автоакция 
     #[serde(rename = "type", skip_serializing_if = "Option::is_none")]
     pub r#type: Option<Type>,

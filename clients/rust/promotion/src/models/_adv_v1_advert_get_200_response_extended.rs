@@ -21,13 +21,13 @@ pub struct AdvV1AdvertGet200ResponseExtended {
     pub expenses: Option<i32>,
     /// Дата и время начала показа медиакампании
     #[serde(rename = "from", skip_serializing_if = "Option::is_none")]
-    pub from: Option<String>,
+    pub from: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата и время окончания показа медиакампании
     #[serde(rename = "to", skip_serializing_if = "Option::is_none")]
-    pub to: Option<String>,
+    pub to: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата и время изменения кампании
     #[serde(rename = "updated_at", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
+    pub updated_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Стоимость размещения по дням для типа `1`
     #[serde(rename = "price", skip_serializing_if = "Option::is_none")]
     pub price: Option<i32>,

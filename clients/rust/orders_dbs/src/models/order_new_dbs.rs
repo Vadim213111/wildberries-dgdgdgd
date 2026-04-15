@@ -43,7 +43,7 @@ pub struct OrderNewDbs {
     pub rid: Option<String>,
     /// Дата создания сборочного задания
     #[serde(rename = "createdAt", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    pub created_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Тип доставки:   - `dbs` — доставка силами продавца   - `dbsPickupPoint` — доставка силами продавца в ПВЗ   - `edbs` — экспресс-доставка силами продавца 
     #[serde(rename = "deliveryType", skip_serializing_if = "Option::is_none")]
     pub delivery_type: Option<DeliveryType>,

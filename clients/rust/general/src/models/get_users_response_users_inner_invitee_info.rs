@@ -25,7 +25,7 @@ pub struct GetUsersResponseUsersInnerInviteeInfo {
     pub invite_uuid: Option<uuid::Uuid>,
     /// Дата и время окончания срока действия приглашения
     #[serde(rename = "expiredAt", skip_serializing_if = "Option::is_none")]
-    pub expired_at: Option<String>,
+    pub expired_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// - `true` — приглашение активно - `false` — приглашение неактивно 
     #[serde(rename = "isActive", skip_serializing_if = "Option::is_none")]
     pub is_active: Option<bool>,

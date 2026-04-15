@@ -16,15 +16,15 @@ use serde::{Deserialize, Serialize};
 pub struct PeriodInv {
     /// Дата начала периода. Не позднее `end`. Не ранее 3 месяцев от текущей даты
     #[serde(rename = "start")]
-    pub start: String,
+    pub start: chrono::NaiveDate,
     /// Дата окончания периода. Не ранее 3 месяцев от текущей даты
     #[serde(rename = "end")]
-    pub end: String,
+    pub end: chrono::NaiveDate,
 }
 
 impl PeriodInv {
     /// Период
-    pub fn new(start: String, end: String) -> PeriodInv {
+    pub fn new(start: chrono::NaiveDate, end: chrono::NaiveDate) -> PeriodInv {
         PeriodInv {
             start,
             end,

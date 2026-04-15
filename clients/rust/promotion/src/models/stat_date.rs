@@ -15,14 +15,14 @@ use serde::{Deserialize, Serialize};
 pub struct StatDate {
     /// Даты, за которые нужно получить информацию
     #[serde(rename = "dates")]
-    pub dates: Vec<String>,
+    pub dates: Vec<chrono::NaiveDate>,
     /// Блок статистики
     #[serde(rename = "stats", skip_serializing_if = "Option::is_none")]
     pub stats: Option<Vec<models::StatsBlok2>>,
 }
 
 impl StatDate {
-    pub fn new(dates: Vec<String>) -> StatDate {
+    pub fn new(dates: Vec<chrono::NaiveDate>) -> StatDate {
         StatDate {
             dates,
             stats: None,

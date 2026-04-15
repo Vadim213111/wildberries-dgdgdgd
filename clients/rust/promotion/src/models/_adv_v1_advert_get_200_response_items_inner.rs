@@ -45,16 +45,16 @@ pub struct AdvV1AdvertGet200ResponseItemsInner {
     pub advert_type: Option<i32>,
     /// Дата создания баннера
     #[serde(rename = "created_at", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    pub created_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата и время обновления баннера
     #[serde(rename = "updated_at", skip_serializing_if = "Option::is_none")]
-    pub updated_at: Option<String>,
+    pub updated_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата начала работы баннера
     #[serde(rename = "date_from", skip_serializing_if = "Option::is_none")]
-    pub date_from: Option<String>,
+    pub date_from: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата завершения работы баннера
     #[serde(rename = "date_to", skip_serializing_if = "Option::is_none")]
-    pub date_to: Option<String>,
+    pub date_to: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Подборка артикулов WB
     #[serde(rename = "nms", skip_serializing_if = "Option::is_none")]
     pub nms: Option<Vec<i32>>,

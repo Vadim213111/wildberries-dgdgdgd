@@ -30,14 +30,14 @@ pub struct NmReportGetReportsResponseDataInner {
     pub size: i32,
     /// Начало периода
     #[serde(rename = "startDate")]
-    pub start_date: String,
+    pub start_date: chrono::NaiveDate,
     /// Конец периода
     #[serde(rename = "endDate")]
-    pub end_date: String,
+    pub end_date: chrono::NaiveDate,
 }
 
 impl NmReportGetReportsResponseDataInner {
-    pub fn new(id: uuid::Uuid, created_at: String, status: String, name: String, size: i32, start_date: String, end_date: String) -> NmReportGetReportsResponseDataInner {
+    pub fn new(id: uuid::Uuid, created_at: String, status: String, name: String, size: i32, start_date: chrono::NaiveDate, end_date: chrono::NaiveDate) -> NmReportGetReportsResponseDataInner {
         NmReportGetReportsResponseDataInner {
             id,
             created_at,

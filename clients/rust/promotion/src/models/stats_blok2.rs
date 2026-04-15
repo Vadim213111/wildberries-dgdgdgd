@@ -42,10 +42,10 @@ pub struct StatsBlok2 {
     pub ctr: Option<f64>,
     /// Время начала размещения
     #[serde(rename = "date_from", skip_serializing_if = "Option::is_none")]
-    pub date_from: Option<String>,
+    pub date_from: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Время завершения размещения
     #[serde(rename = "date_to", skip_serializing_if = "Option::is_none")]
-    pub date_to: Option<String>,
+    pub date_to: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Родительская категория предмета
     #[serde(rename = "subject_name", skip_serializing_if = "Option::is_none")]
     pub subject_name: Option<String>,

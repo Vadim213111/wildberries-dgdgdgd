@@ -18,11 +18,11 @@ pub struct RequestWithDate {
     pub id: i32,
     /// Даты, за которые нужно получить информацию
     #[serde(rename = "dates")]
-    pub dates: Vec<String>,
+    pub dates: Vec<chrono::NaiveDate>,
 }
 
 impl RequestWithDate {
-    pub fn new(id: i32, dates: Vec<String>) -> RequestWithDate {
+    pub fn new(id: i32, dates: Vec<chrono::NaiveDate>) -> RequestWithDate {
         RequestWithDate {
             id,
             dates,

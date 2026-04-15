@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 pub struct ProductOrdersMetrics {
     /// Дата сбора статистики
     #[serde(rename = "dt")]
-    pub dt: String,
+    pub dt: chrono::NaiveDate,
     /// Средняя позиция товара в результатах поиска
     #[serde(rename = "avgPosition")]
     pub avg_position: i32,
@@ -25,7 +25,7 @@ pub struct ProductOrdersMetrics {
 }
 
 impl ProductOrdersMetrics {
-    pub fn new(dt: String, avg_position: i32, orders: i32) -> ProductOrdersMetrics {
+    pub fn new(dt: chrono::NaiveDate, avg_position: i32, orders: i32) -> ProductOrdersMetrics {
         ProductOrdersMetrics {
             dt,
             avg_position,

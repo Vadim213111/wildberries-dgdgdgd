@@ -714,7 +714,7 @@ pub async fn api_v1_analytics_brand_share_parent_subjects_get(configuration: &co
 }
 
 /// Метод возвращает отчёт о штрафах за отсутствие обязательной маркировки товаров.<br>  В отчёте представлены фотографии товаров, на которых маркировка отсутствует либо не считывается.<br><br>  Можно получить данные максимум за 31 день. Данные доступны с марта 2024.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
-pub async fn api_v1_analytics_goods_labeling_get(configuration: &configuration::Configuration, date_from: String, date_to: String) -> Result<models::ApiV1AnalyticsGoodsLabelingGet200Response, Error<ApiV1AnalyticsGoodsLabelingGetError>> {
+pub async fn api_v1_analytics_goods_labeling_get(configuration: &configuration::Configuration, date_from: chrono::NaiveDate, date_to: chrono::NaiveDate) -> Result<models::ApiV1AnalyticsGoodsLabelingGet200Response, Error<ApiV1AnalyticsGoodsLabelingGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
     let p_query_date_to = date_to;
@@ -762,7 +762,7 @@ pub async fn api_v1_analytics_goods_labeling_get(configuration: &configuration::
 }
 
 /// Метод возвращает отчёт о [возвратах товаров продавцу](https://seller.wildberries.ru/analytics-reports/goods-return). <br><br>  Можно получить отчёт максимум за 31 день.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 10 запросов | </div> 
-pub async fn api_v1_analytics_goods_return_get(configuration: &configuration::Configuration, date_from: String, date_to: String) -> Result<models::ApiV1AnalyticsGoodsReturnGet200Response, Error<ApiV1AnalyticsGoodsReturnGetError>> {
+pub async fn api_v1_analytics_goods_return_get(configuration: &configuration::Configuration, date_from: chrono::NaiveDate, date_to: chrono::NaiveDate) -> Result<models::ApiV1AnalyticsGoodsReturnGet200Response, Error<ApiV1AnalyticsGoodsReturnGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
     let p_query_date_to = date_to;
@@ -996,7 +996,7 @@ pub async fn api_v1_paid_storage_tasks_task_id_status_get(configuration: &config
 }
 
 /// Метод возвращает информацию о заказах.<br>Данные обновляются раз в 30 минут.<br><br>  1 строка = 1 заказ = 1 сборочное задание = 1 единица товара.<br>Для определения заказа рекомендуем использовать поле `srid`.<br><br>  Информация о заказе хранится 90 дней с момента оформления.<br><br>  В ответах могут отсутствовать заказы, по которым не подтверждена оплата. Например, заказы с отложенными платежами или оплатой в рассрочку. При этом, если по таким заказам есть продажи, вы можете получить их с помощью [детализаций к отчётам реализации](/openapi/financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get).<br> Чтобы получить все оформленные заказы, используйте [Ленту заказов](https://seller.wildberries.ru/content-analytics/order-feed) в личном кабинете.  <div class=\"description_important\">   Данные этого отчёта являются предварительными и служат для оперативного мониторинга </div>  Для одного ответа на запрос с `flag=0` или без `flag` в системе установлено условное ограничение 80000 строк. Поэтому, чтобы получить все заказы, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom` используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все заказы уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
-pub async fn api_v1_supplier_orders_get(configuration: &configuration::Configuration, date_from: String, flag: Option<i32>) -> Result<Vec<models::OrdersItem>, Error<ApiV1SupplierOrdersGetError>> {
+pub async fn api_v1_supplier_orders_get(configuration: &configuration::Configuration, date_from: chrono::DateTime<chrono::FixedOffset>, flag: Option<i32>) -> Result<Vec<models::OrdersItem>, Error<ApiV1SupplierOrdersGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
     let p_query_flag = flag;
@@ -1046,7 +1046,7 @@ pub async fn api_v1_supplier_orders_get(configuration: &configuration::Configura
 }
 
 /// Метод возвращает информацию о продажах и возвратах.<br>Данные обновляются раз в 30 минут.<br><br>  1 строка = 1 заказ = 1 сборочное задание = 1 единица товара.<br>Для определения заказа рекомендуем использовать поле `srid`.<br><br>  Информация о заказе хранится 90 дней с момента оформления.  <div class=\"description_important\">   Данные этого отчёта являются предварительными и служат для оперативного мониторинга </div>    - В ответах могут отсутствовать заказы, по которым не подтверждена оплата, даже если эти заказы есть в детализациях к отчётам реализации. Например, заказы с отложенными платежами или оплатой в рассрочку   - Значения полей `priceWithDisc` и `forPay` рассчитываются по упрощённой логике и могут отличаться от `retail_price_withdisc_rub` и `ppvz_for_pay` соответственно в детализациях к отчётам реализации   - Поля `finishedPrice`, `priceWithDisc`, `forPay` могут временно иметь значение `0`: данные заполняются асинхронно, актуализируются в течение 24 часов   - Для заказов, которые оплачены в валюте, отличной от валюты продавца, возможны округления цен из-за конвертации валют  Для точных финансовых расчётов, сверки и отчётности используйте [детализации к отчётам реализации](/openapi/financial-reports-and-accounting#tag/Finansovye-otchyoty/paths/~1api~1v5~1supplier~1reportDetailByPeriod/get).<br><br>  Для одного ответа на запрос с `flag=0` или без `flag` в системе установлено условное ограничение 80000 строк. Поэтому, чтобы получить все продажи и возвраты, может потребоваться более, чем один запрос. Во втором и далее запросе в параметре `dateFrom `используйте полное значение поля `lastChangeDate` из последней строки ответа на предыдущий запрос.<br> Если в ответе отдаётся пустой массив `[]`, все продажи и возвраты уже выгружены.  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
-pub async fn api_v1_supplier_sales_get(configuration: &configuration::Configuration, date_from: String, flag: Option<i32>) -> Result<Vec<models::SalesItem>, Error<ApiV1SupplierSalesGetError>> {
+pub async fn api_v1_supplier_sales_get(configuration: &configuration::Configuration, date_from: chrono::DateTime<chrono::FixedOffset>, flag: Option<i32>) -> Result<Vec<models::SalesItem>, Error<ApiV1SupplierSalesGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
     let p_query_flag = flag;
@@ -1097,7 +1097,7 @@ pub async fn api_v1_supplier_sales_get(configuration: &configuration::Configurat
 
 /// Данный метод устарел. Он будет удалён [23 июня](https://dev.wildberries.ru/release-notes?id=494)  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
 #[deprecated]
-pub async fn api_v1_supplier_stocks_get(configuration: &configuration::Configuration, date_from: String) -> Result<Vec<models::StocksItem>, Error<ApiV1SupplierStocksGetError>> {
+pub async fn api_v1_supplier_stocks_get(configuration: &configuration::Configuration, date_from: chrono::DateTime<chrono::FixedOffset>) -> Result<Vec<models::StocksItem>, Error<ApiV1SupplierStocksGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_from = date_from;
 
@@ -1313,7 +1313,7 @@ pub async fn api_v1_warehouse_remains_tasks_task_id_status_get(configuration: &c
 }
 
 /// Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
-pub async fn get_deductions(configuration: &configuration::Configuration, date_to: String, limit: i32, date_from: Option<String>, sort: Option<&str>, order: Option<&str>, offset: Option<i32>) -> Result<models::GetDeductions200Response, Error<GetDeductionsError>> {
+pub async fn get_deductions(configuration: &configuration::Configuration, date_to: chrono::DateTime<chrono::FixedOffset>, limit: i32, date_from: Option<chrono::DateTime<chrono::FixedOffset>>, sort: Option<&str>, order: Option<&str>, offset: Option<i32>) -> Result<models::GetDeductions200Response, Error<GetDeductionsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_to = date_to;
     let p_query_limit = limit;
@@ -1377,7 +1377,7 @@ pub async fn get_deductions(configuration: &configuration::Configuration, date_t
 }
 
 /// Метод возвращает отчёт об [удержаниях за занижение габаритов упаковки](https://seller.wildberries.ru/analytics-reports/dimensions-penalties)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
-pub async fn get_measurement_penalties(configuration: &configuration::Configuration, date_to: String, limit: i32, date_from: Option<String>, offset: Option<i32>) -> Result<models::MeasurementPenalties, Error<GetMeasurementPenaltiesError>> {
+pub async fn get_measurement_penalties(configuration: &configuration::Configuration, date_to: chrono::DateTime<chrono::FixedOffset>, limit: i32, date_from: Option<chrono::DateTime<chrono::FixedOffset>>, offset: Option<i32>) -> Result<models::MeasurementPenalties, Error<GetMeasurementPenaltiesError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_to = date_to;
     let p_query_limit = limit;
@@ -1433,7 +1433,7 @@ pub async fn get_measurement_penalties(configuration: &configuration::Configurat
 }
 
 /// Метод возвращает отчёт о [замерах склада](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/warehouse-measurements)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
-pub async fn get_warehouse_measurements(configuration: &configuration::Configuration, date_to: String, limit: i32, date_from: Option<String>, offset: Option<i32>) -> Result<models::Whm, Error<GetWarehouseMeasurementsError>> {
+pub async fn get_warehouse_measurements(configuration: &configuration::Configuration, date_to: chrono::DateTime<chrono::FixedOffset>, limit: i32, date_from: Option<chrono::DateTime<chrono::FixedOffset>>, offset: Option<i32>) -> Result<models::Whm, Error<GetWarehouseMeasurementsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_to = date_to;
     let p_query_limit = limit;

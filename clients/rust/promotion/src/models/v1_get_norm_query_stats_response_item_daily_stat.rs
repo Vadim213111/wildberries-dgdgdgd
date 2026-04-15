@@ -15,13 +15,13 @@ use serde::{Deserialize, Serialize};
 pub struct V1GetNormQueryStatsResponseItemDailyStat {
     /// Дата
     #[serde(rename = "date")]
-    pub date: String,
+    pub date: chrono::NaiveDate,
     #[serde(rename = "stat", skip_serializing_if = "Option::is_none")]
     pub stat: Option<Box<models::V1GetNormQueryStatsResponseItemStat>>,
 }
 
 impl V1GetNormQueryStatsResponseItemDailyStat {
-    pub fn new(date: String) -> V1GetNormQueryStatsResponseItemDailyStat {
+    pub fn new(date: chrono::NaiveDate) -> V1GetNormQueryStatsResponseItemDailyStat {
         V1GetNormQueryStatsResponseItemDailyStat {
             date,
             stat: None,

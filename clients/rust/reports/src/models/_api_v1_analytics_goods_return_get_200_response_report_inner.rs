@@ -39,7 +39,7 @@ pub struct ApiV1AnalyticsGoodsReturnGet200ResponseReportInner {
     pub nm_id: Option<i32>,
     /// Дата заказа на возврат
     #[serde(rename = "orderDt", skip_serializing_if = "Option::is_none")]
-    pub order_dt: Option<String>,
+    pub order_dt: Option<chrono::NaiveDate>,
     /// Номер сборочного задания
     #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<i32>,

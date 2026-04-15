@@ -24,7 +24,7 @@ pub struct ApiOrder {
     pub chrt_id: Option<i32>,
     /// Дата и время создания сборочного задания
     #[serde(rename = "createdAt", skip_serializing_if = "Option::is_none")]
-    pub created_at: Option<String>,
+    pub created_at: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100. Код валюты продажи указан в поле `currencyCode`. Предоставляется в информационных целях 
     #[serde(rename = "price", skip_serializing_if = "Option::is_none")]
     pub price: Option<i32>,

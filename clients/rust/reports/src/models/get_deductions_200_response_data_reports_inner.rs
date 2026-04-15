@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 pub struct GetDeductions200ResponseDataReportsInner {
     /// Дата и время удержания
     #[serde(rename = "dtBonus", skip_serializing_if = "Option::is_none")]
-    pub dt_bonus: Option<String>,
+    pub dt_bonus: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Артикул WB
     #[serde(rename = "nmId", skip_serializing_if = "Option::is_none")]
     pub nm_id: Option<i32>,

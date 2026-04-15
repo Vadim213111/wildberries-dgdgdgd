@@ -1,7 +1,7 @@
 /*
  * Работа с товарами
  *
- * С помощью методов этого раздела вы можете:   - [создавать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получать [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загружать [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настраивать [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - устанавливать [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/101\">инструкции</a> по <strong>работе с товарами</strong>   </div> 
+ * С помощью методов этого раздела вы можете:   - [создавать](/openapi/work-with-products#tag/Sozdanie-kartochek-tovarov) и [редактировать](/openapi/work-with-products#tag/Kartochki-tovarov) карточки товаров   - получать [категории, предметы, характеристики и бренды товаров](/openapi/work-with-products#tag/Kategorii-predmety-i-harakteristiki)   - загружать [медиафайлы](/openapi/work-with-products#tag/Mediafajly) в карточки товаров   - настраивать [ярлыки](/openapi/work-with-products#tag/Yarlyki) для поиска товаров   - устанавливать [цены и скидки](/openapi/work-with-products#tag/Ceny-i-skidki)   - управлять [остатками товаров](/openapi/work-with-products#tag/Ostatki-na-skladah-prodavca) и [складами](/openapi/work-with-products#tag/Sklady-prodavca), если вы работаете по модели продаж со склада продавца    <div class=\"description_ref\">     Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami\">инструкции</a> по <strong>работе с товарами</strong>   </div> 
  *
  * The version of the OpenAPI document: products
  * 
@@ -22,10 +22,10 @@ pub struct SupplierTaskMetadata {
     pub status: Option<i32>,
     /// Дата и время, когда загрузка создана
     #[serde(rename = "uploadDate", skip_serializing_if = "Option::is_none")]
-    pub upload_date: Option<String>,
+    pub upload_date: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Дата и время, когда загрузка отправляется в обработку
     #[serde(rename = "activationDate", skip_serializing_if = "Option::is_none")]
-    pub activation_date: Option<String>,
+    pub activation_date: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Всего товаров
     #[serde(rename = "overAllGoodsNumber", skip_serializing_if = "Option::is_none")]
     pub over_all_goods_number: Option<i32>,

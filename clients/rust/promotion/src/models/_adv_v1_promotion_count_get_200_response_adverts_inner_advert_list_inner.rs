@@ -18,7 +18,7 @@ pub struct AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner {
     pub advert_id: Option<i32>,
     /// Дата и время последнего изменения кампании
     #[serde(rename = "changeTime", skip_serializing_if = "Option::is_none")]
-    pub change_time: Option<String>,
+    pub change_time: Option<chrono::DateTime<chrono::FixedOffset>>,
 }
 
 impl AdvV1PromotionCountGet200ResponseAdvertsInnerAdvertListInner {

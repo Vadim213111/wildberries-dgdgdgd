@@ -1,7 +1,7 @@
 /*
  * Заказы FBS
  *
- * С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуска](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/news/127\">инструкции</a> по работе с <strong>заказами FBS</strong> </div>  <div class=\"description_important\">   Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
+ * С помощью методов раздела Заказы FBS (Fulfillment by Seller) вы можете:   - получать информацию о [сборочных заданиях](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS) и их статусах, отменять сборочные задания, получать стикеры   - добавлять, редактировать и удалять [метаданные](/openapi/orders-fbs#tag/Metadannye-FBS) сборочных заданий   - управлять [поставками](/openapi/orders-fbs#tag/Postavki-FBS)   - создавать, редактировать и удалять [пропуска](/openapi/orders-fbs#tag/Propuska-FBS) на склады WB  <div class=\"description_ref\">   Узнать, как использовать методы в бизнес-кейсах, можно в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-0771-7571-aea9-11d5b597f34c/zakazy-fbs\">инструкции</a> по работе с <strong>заказами FBS</strong> </div>  <div class=\"description_important\">   Узнать больше о заказах FBS можно в <a href=\"https://seller.wildberries.ru/instructions/ru/ru/category/b3e60238-fd4c-49ce-8668-ff688725a12d\">справочном центре</a> </div> 
  *
  * The version of the OpenAPI document: order
  * 
@@ -15,7 +15,7 @@ use serde::{Deserialize, Serialize};
 pub struct ApiV3OrdersStatusHistoryPost200ResponseOrdersInner {
     /// Планируемая дата доставки, [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)
     #[serde(rename = "deliveryDate", skip_serializing_if = "Option::is_none")]
-    pub delivery_date: Option<String>,
+    pub delivery_date: Option<chrono::DateTime<chrono::FixedOffset>>,
     /// Статусы
     #[serde(rename = "statuses", skip_serializing_if = "Option::is_none")]
     pub statuses: Option<Vec<models::ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner>>,
