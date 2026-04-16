@@ -284,19 +284,19 @@ export interface DetailReportItem {
      */
     ppvzReward?: number;
     /**
-     * Эквайринг/Комиссии за организацию платежей
+     * Компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов
      * @type {number}
      * @memberof DetailReportItem
      */
     acquiringFee?: number;
     /**
-     * Размер комиссии за эквайринг/Комиссии за организацию платежей, %
+     * Размер компенсации платёжных услуг/Комиссии за интеграцию платёжных сервисов, %
      * @type {number}
      * @memberof DetailReportItem
      */
     acquiringPercent?: number;
     /**
-     * Тип платежа за Эквайринг/Комиссии за организацию платежей
+     * Тип платежа: компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов
      * @type {string}
      * @memberof DetailReportItem
      */
@@ -450,9 +450,9 @@ export interface DetailReportItem {
     srid?: string;
     /**
      * Тип отчёта:
-     *   - `1` — стандартный
-     *   - `2` — для уведомления о выкупе
-     *   - `3`, `4` — для уведомления о выкупе для Грузии
+     *   - `1` — основной
+     *   - `2` — по выкупам
+     *   - `3` — по выкупам для Грузии
      * 
      * @type {DetailReportItemReportTypeEnum}
      * @memberof DetailReportItem
@@ -589,8 +589,7 @@ export interface DetailReportItem {
 export const DetailReportItemReportTypeEnum = {
     NUMBER_1: 1,
     NUMBER_2: 2,
-    NUMBER_3: 3,
-    NUMBER_4: 4
+    NUMBER_3: 3
 } as const;
 export type DetailReportItemReportTypeEnum = typeof DetailReportItemReportTypeEnum[keyof typeof DetailReportItemReportTypeEnum];
 

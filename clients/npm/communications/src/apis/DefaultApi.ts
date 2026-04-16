@@ -1529,7 +1529,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/seller/download/{id}`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        urlPath = urlPath.replace('{id}', encodeURIComponent(String(requestParameters['id'])));
 
         return {
             path: urlPath,

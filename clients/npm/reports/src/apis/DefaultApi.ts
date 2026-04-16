@@ -317,7 +317,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/acceptance_report/tasks/{task_id}/download`;
-        urlPath = urlPath.replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId'])));
+        urlPath = urlPath.replace('{task_id}', encodeURIComponent(String(requestParameters['taskId'])));
 
         return {
             path: urlPath,
@@ -375,7 +375,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/acceptance_report/tasks/{task_id}/status`;
-        urlPath = urlPath.replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId'])));
+        urlPath = urlPath.replace('{task_id}', encodeURIComponent(String(requestParameters['taskId'])));
 
         return {
             path: urlPath,
@@ -1073,7 +1073,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/paid_storage/tasks/{task_id}/download`;
-        urlPath = urlPath.replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId'])));
+        urlPath = urlPath.replace('{task_id}', encodeURIComponent(String(requestParameters['taskId'])));
 
         return {
             path: urlPath,
@@ -1131,7 +1131,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/paid_storage/tasks/{task_id}/status`;
-        urlPath = urlPath.replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId'])));
+        urlPath = urlPath.replace('{task_id}', encodeURIComponent(String(requestParameters['taskId'])));
 
         return {
             path: urlPath,
@@ -1434,7 +1434,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/warehouse_remains/tasks/{task_id}/download`;
-        urlPath = urlPath.replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId'])));
+        urlPath = urlPath.replace('{task_id}', encodeURIComponent(String(requestParameters['taskId'])));
 
         return {
             path: urlPath,
@@ -1492,7 +1492,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/warehouse_remains/tasks/{task_id}/status`;
-        urlPath = urlPath.replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId'])));
+        urlPath = urlPath.replace('{task_id}', encodeURIComponent(String(requestParameters['taskId'])));
 
         return {
             path: urlPath,

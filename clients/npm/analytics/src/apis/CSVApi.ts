@@ -91,7 +91,7 @@ export class CSVApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v2/nm-report/downloads/file/{downloadId}`;
-        urlPath = urlPath.replace(`{${"downloadId"}}`, encodeURIComponent(String(requestParameters['downloadId'])));
+        urlPath = urlPath.replace('{downloadId}', encodeURIComponent(String(requestParameters['downloadId'])));
 
         return {
             path: urlPath,

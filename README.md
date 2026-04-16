@@ -353,6 +353,12 @@
 - `GET /api/v1/warehouse_remains/tasks/{task_id}/status` — Проверить статус
 
 ### Документы и бухгалтерия (`13-finances.yaml`)
+- `POST /api/finance/v1/acquiring/detailed` — Детализации к отчётам об издержках на приём платежей за период (postV1AcquiringDetailed)
+- `POST /api/finance/v1/acquiring/detailed/{reportId}` — Детализации к отчётам об издержках на приём платежей по ID отчётов (postV1AcquiringDetailedReportId)
+- `POST /api/finance/v1/acquiring/list` — Список отчётов об издержках на приём платежей (postV1AcquiringList)
+- `POST /api/finance/v1/sales-reports/detailed` — Детализации к отчётам реализации за период (postV1SalesReportsDetailed)
+- `POST /api/finance/v1/sales-reports/detailed/{reportId}` — Детализации к отчётам реализации по ID отчётов (postV1SalesReportsDetailedReportId)
+- `POST /api/finance/v1/sales-reports/list` — Список отчётов реализации (postV1SalesReportsList)
 - `GET /api/v1/account/balance` — Получить баланс продавца
 - `GET /api/v1/documents/categories` — Категории документов
 - `GET /api/v1/documents/download` — Получить документ

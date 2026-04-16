@@ -15,19 +15,36 @@
 
 import * as runtime from '../runtime';
 import type {
+  AcquiringReportListReq,
+  AcquiringReportListRes,
+  AcquiringReportsDetailedReq,
+  AcquiringReportsDetailedRes,
   ApiV1AccountBalanceGet200Response,
   ApiV1AccountBalanceGet401Response,
   ApiV1AccountBalanceGet402Response,
   ApiV1DocumentsListGet400Response,
-  ApiV5SupplierReportDetailByPeriodGet400Response,
   DetailReportItem,
+  FinancialReportsDetailedReportIdReq,
   GetCategories,
   GetDoc,
   GetDocs,
   GetList,
+  PostV1SalesReportsList400Response,
   RequestDownload,
+  SalesReportListReq,
+  SalesReportListRes,
+  SalesReportsDetailedReq,
+  SalesReportsDetailedRes,
 } from '../models/index';
 import {
+    AcquiringReportListReqFromJSON,
+    AcquiringReportListReqToJSON,
+    AcquiringReportListResFromJSON,
+    AcquiringReportListResToJSON,
+    AcquiringReportsDetailedReqFromJSON,
+    AcquiringReportsDetailedReqToJSON,
+    AcquiringReportsDetailedResFromJSON,
+    AcquiringReportsDetailedResToJSON,
     ApiV1AccountBalanceGet200ResponseFromJSON,
     ApiV1AccountBalanceGet200ResponseToJSON,
     ApiV1AccountBalanceGet401ResponseFromJSON,
@@ -36,10 +53,10 @@ import {
     ApiV1AccountBalanceGet402ResponseToJSON,
     ApiV1DocumentsListGet400ResponseFromJSON,
     ApiV1DocumentsListGet400ResponseToJSON,
-    ApiV5SupplierReportDetailByPeriodGet400ResponseFromJSON,
-    ApiV5SupplierReportDetailByPeriodGet400ResponseToJSON,
     DetailReportItemFromJSON,
     DetailReportItemToJSON,
+    FinancialReportsDetailedReportIdReqFromJSON,
+    FinancialReportsDetailedReportIdReqToJSON,
     GetCategoriesFromJSON,
     GetCategoriesToJSON,
     GetDocFromJSON,
@@ -48,8 +65,18 @@ import {
     GetDocsToJSON,
     GetListFromJSON,
     GetListToJSON,
+    PostV1SalesReportsList400ResponseFromJSON,
+    PostV1SalesReportsList400ResponseToJSON,
     RequestDownloadFromJSON,
     RequestDownloadToJSON,
+    SalesReportListReqFromJSON,
+    SalesReportListReqToJSON,
+    SalesReportListResFromJSON,
+    SalesReportListResToJSON,
+    SalesReportsDetailedReqFromJSON,
+    SalesReportsDetailedReqToJSON,
+    SalesReportsDetailedResFromJSON,
+    SalesReportsDetailedResToJSON,
 } from '../models/index';
 
 export interface ApiV1DocumentsCategoriesGetRequest {
@@ -83,6 +110,32 @@ export interface ApiV5SupplierReportDetailByPeriodGetRequest {
     limit?: number;
     rrdid?: number;
     period?: ApiV5SupplierReportDetailByPeriodGetPeriodEnum;
+}
+
+export interface PostV1AcquiringDetailedRequest {
+    acquiringReportsDetailedReq: AcquiringReportsDetailedReq;
+}
+
+export interface PostV1AcquiringDetailedReportIdRequest {
+    reportId: number;
+    financialReportsDetailedReportIdReq: FinancialReportsDetailedReportIdReq;
+}
+
+export interface PostV1AcquiringListRequest {
+    acquiringReportListReq: AcquiringReportListReq;
+}
+
+export interface PostV1SalesReportsDetailedRequest {
+    salesReportsDetailedReq: SalesReportsDetailedReq;
+}
+
+export interface PostV1SalesReportsDetailedReportIdRequest {
+    reportId: number;
+    financialReportsDetailedReportIdReq: FinancialReportsDetailedReportIdReq;
+}
+
+export interface PostV1SalesReportsListRequest {
+    salesReportListReq: SalesReportListReq;
 }
 
 /**
@@ -372,6 +425,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
     /**
      * Creates request options for apiV5SupplierReportDetailByPeriodGet without sending the request
+     * @deprecated
      */
     async apiV5SupplierReportDetailByPeriodGetRequestOpts(requestParameters: ApiV5SupplierReportDetailByPeriodGetRequest): Promise<runtime.RequestOpts> {
         if (requestParameters['dateFrom'] == null) {
@@ -428,8 +482,9 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements). <br><br> Данные доступны с 29 января 2024 года.  <div class=\"description_important\">   Вы можете выгрузить данные в <a href=\"https://dev.wildberries.ru/ru/cases/1\">Google Таблицы</a> </div>  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+     * Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
      * Отчёт о продажах по реализации
+     * @deprecated
      */
     async apiV5SupplierReportDetailByPeriodGetRaw(requestParameters: ApiV5SupplierReportDetailByPeriodGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<DetailReportItem>>> {
         const requestOptions = await this.apiV5SupplierReportDetailByPeriodGetRequestOpts(requestParameters);
@@ -439,11 +494,388 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements). <br><br> Данные доступны с 29 января 2024 года.  <div class=\"description_important\">   Вы можете выгрузить данные в <a href=\"https://dev.wildberries.ru/ru/cases/1\">Google Таблицы</a> </div>  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
+     * Данный метод устарел. Он будет удалён [15 июля](https://dev.wildberries.ru/release-notes?id=498).  <div class=\"description_limit\">   <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:    | Период | Лимит | Интервал | Всплеск |   | --- | --- | --- | --- |   | 1 минута | 1 запрос | 1 минута | 1 запрос | </div> 
      * Отчёт о продажах по реализации
+     * @deprecated
      */
     async apiV5SupplierReportDetailByPeriodGet(requestParameters: ApiV5SupplierReportDetailByPeriodGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<DetailReportItem> | null | undefined > {
         const response = await this.apiV5SupplierReportDetailByPeriodGetRaw(requestParameters, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Creates request options for postV1AcquiringDetailed without sending the request
+     */
+    async postV1AcquiringDetailedRequestOpts(requestParameters: PostV1AcquiringDetailedRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['acquiringReportsDetailedReq'] == null) {
+            throw new runtime.RequiredError(
+                'acquiringReportsDetailedReq',
+                'Required parameter "acquiringReportsDetailedReq" was null or undefined when calling postV1AcquiringDetailed().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/finance/v1/acquiring/detailed`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: AcquiringReportsDetailedReqToJSON(requestParameters['acquiringReportsDetailedReq']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает детализации к [отчётам об издержках на приём платежей](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports) за указанный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам об издержках на приём платежей за период
+     */
+    async postV1AcquiringDetailedRaw(requestParameters: PostV1AcquiringDetailedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<AcquiringReportsDetailedRes>>> {
+        const requestOptions = await this.postV1AcquiringDetailedRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(AcquiringReportsDetailedResFromJSON));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает детализации к [отчётам об издержках на приём платежей](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports) за указанный период.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам об издержках на приём платежей за период
+     */
+    async postV1AcquiringDetailed(requestParameters: PostV1AcquiringDetailedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<AcquiringReportsDetailedRes> | null | undefined > {
+        const response = await this.postV1AcquiringDetailedRaw(requestParameters, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Creates request options for postV1AcquiringDetailedReportId without sending the request
+     */
+    async postV1AcquiringDetailedReportIdRequestOpts(requestParameters: PostV1AcquiringDetailedReportIdRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['reportId'] == null) {
+            throw new runtime.RequiredError(
+                'reportId',
+                'Required parameter "reportId" was null or undefined when calling postV1AcquiringDetailedReportId().'
+            );
+        }
+
+        if (requestParameters['financialReportsDetailedReportIdReq'] == null) {
+            throw new runtime.RequiredError(
+                'financialReportsDetailedReportIdReq',
+                'Required parameter "financialReportsDetailedReportIdReq" was null or undefined when calling postV1AcquiringDetailedReportId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/finance/v1/acquiring/detailed/{reportId}`;
+        urlPath = urlPath.replace('{reportId}', encodeURIComponent(String(requestParameters['reportId'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: FinancialReportsDetailedReportIdReqToJSON(requestParameters['financialReportsDetailedReportIdReq']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает детализации к [отчётам об издержках на приём платежей](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports) по ID отчётов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам об издержках на приём платежей по ID отчётов
+     */
+    async postV1AcquiringDetailedReportIdRaw(requestParameters: PostV1AcquiringDetailedReportIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<AcquiringReportsDetailedRes>>> {
+        const requestOptions = await this.postV1AcquiringDetailedReportIdRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(AcquiringReportsDetailedResFromJSON));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает детализации к [отчётам об издержках на приём платежей](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports) по ID отчётов.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам об издержках на приём платежей по ID отчётов
+     */
+    async postV1AcquiringDetailedReportId(requestParameters: PostV1AcquiringDetailedReportIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<AcquiringReportsDetailedRes> | null | undefined > {
+        const response = await this.postV1AcquiringDetailedReportIdRaw(requestParameters, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Creates request options for postV1AcquiringList without sending the request
+     */
+    async postV1AcquiringListRequestOpts(requestParameters: PostV1AcquiringListRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['acquiringReportListReq'] == null) {
+            throw new runtime.RequiredError(
+                'acquiringReportListReq',
+                'Required parameter "acquiringReportListReq" was null or undefined when calling postV1AcquiringList().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/finance/v1/acquiring/list`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: AcquiringReportListReqToJSON(requestParameters['acquiringReportListReq']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает список отчётов об издержках на приём платежей по формату [таблицы отчётов](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Список отчётов об издержках на приём платежей
+     */
+    async postV1AcquiringListRaw(requestParameters: PostV1AcquiringListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<AcquiringReportListRes>>> {
+        const requestOptions = await this.postV1AcquiringListRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(AcquiringReportListResFromJSON));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает список отчётов об издержках на приём платежей по формату [таблицы отчётов](https://seller.wildberries.ru/suppliers-mutual-settlements/reports-implementations/acquiring-reports).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Список отчётов об издержках на приём платежей
+     */
+    async postV1AcquiringList(requestParameters: PostV1AcquiringListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<AcquiringReportListRes> | null | undefined > {
+        const response = await this.postV1AcquiringListRaw(requestParameters, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Creates request options for postV1SalesReportsDetailed without sending the request
+     */
+    async postV1SalesReportsDetailedRequestOpts(requestParameters: PostV1SalesReportsDetailedRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['salesReportsDetailedReq'] == null) {
+            throw new runtime.RequiredError(
+                'salesReportsDetailedReq',
+                'Required parameter "salesReportsDetailedReq" was null or undefined when calling postV1SalesReportsDetailed().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/finance/v1/sales-reports/detailed`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SalesReportsDetailedReqToJSON(requestParameters['salesReportsDetailedReq']),
+        };
+    }
+
+    /**
+     * Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements) за указанный период. <br><br> Данные доступны с 29 января 2024 года.  <div class=\"description_important\">   Вы можете выгрузить данные в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-650c-7b04-9596-ba441936f9d3\">Google Таблицы</a> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам реализации за период
+     */
+    async postV1SalesReportsDetailedRaw(requestParameters: PostV1SalesReportsDetailedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<SalesReportsDetailedRes>>> {
+        const requestOptions = await this.postV1SalesReportsDetailedRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(SalesReportsDetailedResFromJSON));
+    }
+
+    /**
+     * Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements) за указанный период. <br><br> Данные доступны с 29 января 2024 года.  <div class=\"description_important\">   Вы можете выгрузить данные в <a href=\"https://dev.wildberries.ru/knowledge-base/articles/019d49a4-650c-7b04-9596-ba441936f9d3\">Google Таблицы</a> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам реализации за период
+     */
+    async postV1SalesReportsDetailed(requestParameters: PostV1SalesReportsDetailedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<SalesReportsDetailedRes> | null | undefined > {
+        const response = await this.postV1SalesReportsDetailedRaw(requestParameters, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Creates request options for postV1SalesReportsDetailedReportId without sending the request
+     */
+    async postV1SalesReportsDetailedReportIdRequestOpts(requestParameters: PostV1SalesReportsDetailedReportIdRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['reportId'] == null) {
+            throw new runtime.RequiredError(
+                'reportId',
+                'Required parameter "reportId" was null or undefined when calling postV1SalesReportsDetailedReportId().'
+            );
+        }
+
+        if (requestParameters['financialReportsDetailedReportIdReq'] == null) {
+            throw new runtime.RequiredError(
+                'financialReportsDetailedReportIdReq',
+                'Required parameter "financialReportsDetailedReportIdReq" was null or undefined when calling postV1SalesReportsDetailedReportId().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/finance/v1/sales-reports/detailed/{reportId}`;
+        urlPath = urlPath.replace('{reportId}', encodeURIComponent(String(requestParameters['reportId'])));
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: FinancialReportsDetailedReportIdReqToJSON(requestParameters['financialReportsDetailedReportIdReq']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements) по ID отчётов. <br><br> Данные доступны с 1 января 2025 года.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам реализации по ID отчётов
+     */
+    async postV1SalesReportsDetailedReportIdRaw(requestParameters: PostV1SalesReportsDetailedReportIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<SalesReportsDetailedRes>>> {
+        const requestOptions = await this.postV1SalesReportsDetailedReportIdRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(SalesReportsDetailedResFromJSON));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает детализации к [отчётам реализации](https://seller.wildberries.ru/suppliers-mutual-settlements) по ID отчётов. <br><br> Данные доступны с 1 января 2025 года.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Детализации к отчётам реализации по ID отчётов
+     */
+    async postV1SalesReportsDetailedReportId(requestParameters: PostV1SalesReportsDetailedReportIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<SalesReportsDetailedRes> | null | undefined > {
+        const response = await this.postV1SalesReportsDetailedReportIdRaw(requestParameters, initOverrides);
+        switch (response.raw.status) {
+            case 200:
+                return await response.value();
+            case 204:
+                return null;
+            default:
+                return await response.value();
+        }
+    }
+
+    /**
+     * Creates request options for postV1SalesReportsList without sending the request
+     */
+    async postV1SalesReportsListRequestOpts(requestParameters: PostV1SalesReportsListRequest): Promise<runtime.RequestOpts> {
+        if (requestParameters['salesReportListReq'] == null) {
+            throw new runtime.RequiredError(
+                'salesReportListReq',
+                'Required parameter "salesReportListReq" was null or undefined when calling postV1SalesReportsList().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (this.configuration && this.configuration.apiKey) {
+            headerParameters["Authorization"] = await this.configuration.apiKey("Authorization"); // HeaderApiKey authentication
+        }
+
+
+        let urlPath = `/api/finance/v1/sales-reports/list`;
+
+        return {
+            path: urlPath,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: SalesReportListReqToJSON(requestParameters['salesReportListReq']),
+        };
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает список отчётов релизации по формату [таблицы отчётов](https://seller.wildberries.ru/suppliers-mutual-settlements). <br><br> Данные доступны с 1 января 2025 года.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Список отчётов реализации
+     */
+    async postV1SalesReportsListRaw(requestParameters: PostV1SalesReportsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<SalesReportListRes>>> {
+        const requestOptions = await this.postV1SalesReportsListRequestOpts(requestParameters);
+        const response = await this.request(requestOptions, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(SalesReportListResFromJSON));
+    }
+
+    /**
+     * <div class=\"description_token\">Метод доступен по <a href=\"/openapi/api-information#tag/Avtorizaciya/Pravila-ispolzovaniya-tokenov-dostupa-k-API\">типам токенов</a>:<strong> Персональный</strong>,<strong> Сервисный</strong> </div>  Метод возвращает список отчётов релизации по формату [таблицы отчётов](https://seller.wildberries.ru/suppliers-mutual-settlements). <br><br> Данные доступны с 1 января 2025 года.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+     * Список отчётов реализации
+     */
+    async postV1SalesReportsList(requestParameters: PostV1SalesReportsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<SalesReportListRes> | null | undefined > {
+        const response = await this.postV1SalesReportsListRaw(requestParameters, initOverrides);
         switch (response.raw.status) {
             case 200:
                 return await response.value();

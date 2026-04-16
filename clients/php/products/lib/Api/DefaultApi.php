@@ -5649,7 +5649,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -5981,7 +5981,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -6688,7 +6688,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -7121,7 +7121,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -7478,7 +7478,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -8584,7 +8584,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -8932,7 +8932,7 @@ class DefaultApi
         // path params
         if ($warehouse_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'warehouseId' . '}',
+                '{warehouseId}',
                 ObjectSerializer::toPathValue($warehouse_id),
                 $resourcePath
             );
@@ -16438,7 +16438,7 @@ class DefaultApi
         // path params
         if ($subject_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'subjectId' . '}',
+                '{subjectId}',
                 ObjectSerializer::toPathValue($subject_id),
                 $resourcePath
             );
@@ -17219,7 +17219,7 @@ class DefaultApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
+                '{id}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -17631,7 +17631,7 @@ class DefaultApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'id' . '}',
+                '{id}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );

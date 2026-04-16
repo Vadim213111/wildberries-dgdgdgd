@@ -1159,7 +1159,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/warehouses/{warehouseId}/contacts`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -1219,7 +1219,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/warehouses/{warehouseId}/contacts`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -1322,7 +1322,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/stocks/{warehouseId}`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -1382,7 +1382,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/stocks/{warehouseId}`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -1436,7 +1436,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/stocks/{warehouseId}`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -1583,7 +1583,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/warehouses/{warehouseId}`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -1642,7 +1642,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/warehouses/{warehouseId}`;
-        urlPath = urlPath.replace(`{${"warehouseId"}}`, encodeURIComponent(String(requestParameters['warehouseId'])));
+        urlPath = urlPath.replace('{warehouseId}', encodeURIComponent(String(requestParameters['warehouseId'])));
 
         return {
             path: urlPath,
@@ -2614,7 +2614,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/content/v2/object/charcs/{subjectId}`;
-        urlPath = urlPath.replace(`{${"subjectId"}}`, encodeURIComponent(String(requestParameters['subjectId'])));
+        urlPath = urlPath.replace('{subjectId}', encodeURIComponent(String(requestParameters['subjectId'])));
 
         return {
             path: urlPath,
@@ -2712,7 +2712,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/content/v2/tag/{id}`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        urlPath = urlPath.replace('{id}', encodeURIComponent(String(requestParameters['id'])));
 
         return {
             path: urlPath,
@@ -2772,7 +2772,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/content/v2/tag/{id}`;
-        urlPath = urlPath.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id'])));
+        urlPath = urlPath.replace('{id}', encodeURIComponent(String(requestParameters['id'])));
 
         return {
             path: urlPath,

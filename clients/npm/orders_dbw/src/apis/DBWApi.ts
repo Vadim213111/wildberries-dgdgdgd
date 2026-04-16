@@ -459,7 +459,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/assemble`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -509,7 +509,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/cancel`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -559,7 +559,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/confirm`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -613,7 +613,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/meta`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -663,7 +663,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/meta`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -716,7 +716,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/meta/gtin`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -769,7 +769,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/meta/imei`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -822,7 +822,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/meta/sgtin`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -875,7 +875,7 @@ export class DBWApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/dbw/orders/{orderId}/meta/uin`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,

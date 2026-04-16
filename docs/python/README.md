@@ -362,5 +362,11 @@ print(feedbacks)
 - `finances.DefaultApi.api_v1_documents_download_all_post` — `POST /api/v1/documents/download/all` — Получить документы
 - `finances.DefaultApi.api_v1_documents_download_get` — `GET /api/v1/documents/download` — Получить документ
 - `finances.DefaultApi.api_v1_documents_list_get` — `GET /api/v1/documents/list` — Список документов
-- `finances.DefaultApi.api_v5_supplier_report_detail_by_period_get` — `GET /api/v5/supplier/reportDetailByPeriod` — Отчёт о продажах по реализации
+- `finances.DefaultApi.api_v5_supplier_report_detail_by_period_get` — `GET /api/v5/supplier/reportDetailByPeriod` — (Deprecated) Отчёт о продажах по реализации
+- `finances.DefaultApi.post_v1_acquiring_detailed` — `POST /api/finance/v1/acquiring/detailed` — Детализации к отчётам об издержках на приём платежей за период
+- `finances.DefaultApi.post_v1_acquiring_detailed_report_id` — `POST /api/finance/v1/acquiring/detailed/{reportId}` — Детализации к отчётам об издержках на приём платежей по ID отчётов
+- `finances.DefaultApi.post_v1_acquiring_list` — `POST /api/finance/v1/acquiring/list` — Список отчётов об издержках на приём платежей
+- `finances.DefaultApi.post_v1_sales_reports_detailed` — `POST /api/finance/v1/sales-reports/detailed` — Детализации к отчётам реализации за период
+- `finances.DefaultApi.post_v1_sales_reports_detailed_report_id` — `POST /api/finance/v1/sales-reports/detailed/{reportId}` — Детализации к отчётам реализации по ID отчётов
+- `finances.DefaultApi.post_v1_sales_reports_list` — `POST /api/finance/v1/sales-reports/list` — Список отчётов реализации
 <!-- PY_METHODS_LIST_END -->

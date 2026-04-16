@@ -169,7 +169,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/supplies/{ID}`;
-        urlPath = urlPath.replace(`{${"ID"}}`, encodeURIComponent(String(requestParameters['iD'])));
+        urlPath = urlPath.replace('{ID}', encodeURIComponent(String(requestParameters['iD'])));
 
         return {
             path: urlPath,
@@ -232,7 +232,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/supplies/{ID}/goods`;
-        urlPath = urlPath.replace(`{${"ID"}}`, encodeURIComponent(String(requestParameters['iD'])));
+        urlPath = urlPath.replace('{ID}', encodeURIComponent(String(requestParameters['iD'])));
 
         return {
             path: urlPath,
@@ -283,7 +283,7 @@ export class DefaultApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v1/supplies/{ID}/package`;
-        urlPath = urlPath.replace(`{${"ID"}}`, encodeURIComponent(String(requestParameters['iD'])));
+        urlPath = urlPath.replace('{ID}', encodeURIComponent(String(requestParameters['iD'])));
 
         return {
             path: urlPath,

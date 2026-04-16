@@ -1494,7 +1494,7 @@ ApiMarketplaceV3ClickCollectOrdersStatusInfoPost Получить статусы
 - `declined_by_client` - покупатель отменил заказ в первый чаc
 <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку
 - `defect` - отмена заказа по причине брака
-- `ready_for_pickup` - сборочное задание готово к выдаче
+- `ready_for_pickup` - заказ готов к выдаче
 
 <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий Самовывоз</strong>:

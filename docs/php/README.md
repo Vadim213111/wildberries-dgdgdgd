@@ -364,4 +364,10 @@ var_dump($response);
 - `finances.DefaultApi.apiV1DocumentsDownloadGet` — `GET /api/v1/documents/download` — Получить документ
 - `finances.DefaultApi.apiV1DocumentsListGet` — `GET /api/v1/documents/list` — Список документов
 - `finances.DefaultApi.apiV5SupplierReportDetailByPeriodGet` — `GET /api/v5/supplier/reportDetailByPeriod` — Отчёт о продажах по реализации
+- `finances.DefaultApi.postV1AcquiringDetailed` — `POST /api/finance/v1/acquiring/detailed` — Детализации к отчётам об издержках на приём платежей за период
+- `finances.DefaultApi.postV1AcquiringDetailedReportId` — `POST /api/finance/v1/acquiring/detailed/{reportId}` — Детализации к отчётам об издержках на приём платежей по ID отчётов
+- `finances.DefaultApi.postV1AcquiringList` — `POST /api/finance/v1/acquiring/list` — Список отчётов об издержках на приём платежей
+- `finances.DefaultApi.postV1SalesReportsDetailed` — `POST /api/finance/v1/sales-reports/detailed` — Детализации к отчётам реализации за период
+- `finances.DefaultApi.postV1SalesReportsDetailedReportId` — `POST /api/finance/v1/sales-reports/detailed/{reportId}` — Детализации к отчётам реализации по ID отчётов
+- `finances.DefaultApi.postV1SalesReportsList` — `POST /api/finance/v1/sales-reports/list` — Список отчётов реализации
 <!-- PHP_METHODS_LIST_END -->

@@ -350,4 +350,10 @@ main().catch(console.error);
 - `finances.DefaultApi.apiV1DocumentsDownloadGet` — Получить документ
 - `finances.DefaultApi.apiV1DocumentsListGet` — Список документов
 - `finances.DefaultApi.apiV5SupplierReportDetailByPeriodGet` — Отчёт о продажах по реализации
+- `finances.DefaultApi.postV1AcquiringDetailed` — Детализации к отчётам об издержках на приём платежей за период
+- `finances.DefaultApi.postV1AcquiringDetailedReportId` — Детализации к отчётам об издержках на приём платежей по ID отчётов
+- `finances.DefaultApi.postV1AcquiringList` — Список отчётов об издержках на приём платежей
+- `finances.DefaultApi.postV1SalesReportsDetailed` — Детализации к отчётам реализации за период
+- `finances.DefaultApi.postV1SalesReportsDetailedReportId` — Детализации к отчётам реализации по ID отчётов
+- `finances.DefaultApi.postV1SalesReportsList` — Список отчётов реализации
 <!-- NPM_METHODS_LIST_END -->

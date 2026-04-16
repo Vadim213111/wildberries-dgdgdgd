@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.65"
+__version__ = "0.1.66"
 
 # Define package exports
 __all__ = [
@@ -28,12 +28,16 @@ __all__ = [
     "ApiKeyError",
     "ApiAttributeError",
     "ApiException",
+    "AcquiringReportListReq",
+    "AcquiringReportListRes",
+    "AcquiringReportsDetailedReq",
+    "AcquiringReportsDetailedRes",
     "ApiV1AccountBalanceGet200Response",
     "ApiV1AccountBalanceGet401Response",
     "ApiV1AccountBalanceGet402Response",
     "ApiV1DocumentsListGet400Response",
-    "ApiV5SupplierReportDetailByPeriodGet400Response",
     "DetailReportItem",
+    "FinancialReportsDetailedReportIdReq",
     "GetCategories",
     "GetCategoriesData",
     "GetCategoriesDataCategoriesInner",
@@ -44,8 +48,13 @@ __all__ = [
     "GetList",
     "GetListData",
     "GetListDataDocumentsInner",
+    "PostV1SalesReportsList400Response",
     "RequestDownload",
     "RequestDownloadParamsInner",
+    "SalesReportListReq",
+    "SalesReportListRes",
+    "SalesReportsDetailedReq",
+    "SalesReportsDetailedRes",
 ]
 
 # import apis into sdk package
@@ -63,12 +72,16 @@ from wildberries_sdk.finances.exceptions import ApiAttributeError as ApiAttribut
 from wildberries_sdk.finances.exceptions import ApiException as ApiException
 
 # import models into sdk package
+from wildberries_sdk.finances.models.acquiring_report_list_req import AcquiringReportListReq as AcquiringReportListReq
+from wildberries_sdk.finances.models.acquiring_report_list_res import AcquiringReportListRes as AcquiringReportListRes
+from wildberries_sdk.finances.models.acquiring_reports_detailed_req import AcquiringReportsDetailedReq as AcquiringReportsDetailedReq
+from wildberries_sdk.finances.models.acquiring_reports_detailed_res import AcquiringReportsDetailedRes as AcquiringReportsDetailedRes
 from wildberries_sdk.finances.models.api_v1_account_balance_get200_response import ApiV1AccountBalanceGet200Response as ApiV1AccountBalanceGet200Response
 from wildberries_sdk.finances.models.api_v1_account_balance_get401_response import ApiV1AccountBalanceGet401Response as ApiV1AccountBalanceGet401Response
 from wildberries_sdk.finances.models.api_v1_account_balance_get402_response import ApiV1AccountBalanceGet402Response as ApiV1AccountBalanceGet402Response
 from wildberries_sdk.finances.models.api_v1_documents_list_get400_response import ApiV1DocumentsListGet400Response as ApiV1DocumentsListGet400Response
-from wildberries_sdk.finances.models.api_v5_supplier_report_detail_by_period_get400_response import ApiV5SupplierReportDetailByPeriodGet400Response as ApiV5SupplierReportDetailByPeriodGet400Response
 from wildberries_sdk.finances.models.detail_report_item import DetailReportItem as DetailReportItem
+from wildberries_sdk.finances.models.financial_reports_detailed_report_id_req import FinancialReportsDetailedReportIdReq as FinancialReportsDetailedReportIdReq
 from wildberries_sdk.finances.models.get_categories import GetCategories as GetCategories
 from wildberries_sdk.finances.models.get_categories_data import GetCategoriesData as GetCategoriesData
 from wildberries_sdk.finances.models.get_categories_data_categories_inner import GetCategoriesDataCategoriesInner as GetCategoriesDataCategoriesInner
@@ -79,6 +92,11 @@ from wildberries_sdk.finances.models.get_docs_data import GetDocsData as GetDocs
 from wildberries_sdk.finances.models.get_list import GetList as GetList
 from wildberries_sdk.finances.models.get_list_data import GetListData as GetListData
 from wildberries_sdk.finances.models.get_list_data_documents_inner import GetListDataDocumentsInner as GetListDataDocumentsInner
+from wildberries_sdk.finances.models.post_v1_sales_reports_list400_response import PostV1SalesReportsList400Response as PostV1SalesReportsList400Response
 from wildberries_sdk.finances.models.request_download import RequestDownload as RequestDownload
 from wildberries_sdk.finances.models.request_download_params_inner import RequestDownloadParamsInner as RequestDownloadParamsInner
+from wildberries_sdk.finances.models.sales_report_list_req import SalesReportListReq as SalesReportListReq
+from wildberries_sdk.finances.models.sales_report_list_res import SalesReportListRes as SalesReportListRes
+from wildberries_sdk.finances.models.sales_reports_detailed_req import SalesReportsDetailedReq as SalesReportsDetailedReq
+from wildberries_sdk.finances.models.sales_reports_detailed_res import SalesReportsDetailedRes as SalesReportsDetailedRes
 

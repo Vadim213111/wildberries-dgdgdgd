@@ -1,11 +1,15 @@
 /* tslint:disable */
 /* eslint-disable */
+export * from './AcquiringReportListReq';
+export * from './AcquiringReportListRes';
+export * from './AcquiringReportsDetailedReq';
+export * from './AcquiringReportsDetailedRes';
 export * from './ApiV1AccountBalanceGet200Response';
 export * from './ApiV1AccountBalanceGet401Response';
 export * from './ApiV1AccountBalanceGet402Response';
 export * from './ApiV1DocumentsListGet400Response';
-export * from './ApiV5SupplierReportDetailByPeriodGet400Response';
 export * from './DetailReportItem';
+export * from './FinancialReportsDetailedReportIdReq';
 export * from './GetCategories';
 export * from './GetCategoriesData';
 export * from './GetCategoriesDataCategoriesInner';
@@ -16,5 +20,10 @@ export * from './GetDocsData';
 export * from './GetList';
 export * from './GetListData';
 export * from './GetListDataDocumentsInner';
+export * from './PostV1SalesReportsList400Response';
 export * from './RequestDownload';
 export * from './RequestDownloadParamsInner';
+export * from './SalesReportListReq';
+export * from './SalesReportListRes';
+export * from './SalesReportsDetailedReq';
+export * from './SalesReportsDetailedRes';

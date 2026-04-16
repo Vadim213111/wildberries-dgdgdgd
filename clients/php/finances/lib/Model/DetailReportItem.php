@@ -771,7 +771,6 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     public const REPORT_TYPE_NUMBER_1 = 1;
     public const REPORT_TYPE_NUMBER_2 = 2;
     public const REPORT_TYPE_NUMBER_3 = 3;
-    public const REPORT_TYPE_NUMBER_4 = 4;
 
     /**
      * Gets allowable values of the enum
@@ -784,7 +783,6 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
             self::REPORT_TYPE_NUMBER_1,
             self::REPORT_TYPE_NUMBER_2,
             self::REPORT_TYPE_NUMBER_3,
-            self::REPORT_TYPE_NUMBER_4,
         ];
     }
 
@@ -2155,7 +2153,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquiring_fee
      *
-     * @param float|null $acquiring_fee Эквайринг/Комиссии за организацию платежей
+     * @param float|null $acquiring_fee Компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов
      *
      * @return self
      */
@@ -2182,7 +2180,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets acquiring_percent
      *
-     * @param float|null $acquiring_percent Размер комиссии за эквайринг/Комиссии за организацию платежей, %
+     * @param float|null $acquiring_percent Размер компенсации платёжных услуг/Комиссии за интеграцию платёжных сервисов, %
      *
      * @return self
      */
@@ -2209,7 +2207,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets payment_processing
      *
-     * @param string|null $payment_processing Тип платежа за Эквайринг/Комиссии за организацию платежей
+     * @param string|null $payment_processing Тип платежа: компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов
      *
      * @return self
      */
@@ -2857,7 +2855,7 @@ class DetailReportItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets report_type
      *
-     * @param int|null $report_type Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии
+     * @param int|null $report_type Тип отчёта:   - `1` — основной   - `2` — по выкупам   - `3` — по выкупам для Грузии
      *
      * @return self
      */

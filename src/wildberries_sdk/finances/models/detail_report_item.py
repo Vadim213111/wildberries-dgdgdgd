@@ -72,9 +72,9 @@ class DetailReportItem(BaseModel):
     ppvz_sales_commission: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Вознаграждение с продаж до вычета услуг поверенного, без НДС")
     ppvz_for_pay: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="К перечислению продавцу за реализованный товар")
     ppvz_reward: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Возмещение за выдачу и возврат товаров на ПВЗ")
-    acquiring_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Эквайринг/Комиссии за организацию платежей")
-    acquiring_percent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Размер комиссии за эквайринг/Комиссии за организацию платежей, %")
-    payment_processing: Optional[StrictStr] = Field(default=None, description="Тип платежа за Эквайринг/Комиссии за организацию платежей")
+    acquiring_fee: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов")
+    acquiring_percent: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Размер компенсации платёжных услуг/Комиссии за интеграцию платёжных сервисов, %")
+    payment_processing: Optional[StrictStr] = Field(default=None, description="Тип платежа: компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов")
     acquiring_bank: Optional[StrictStr] = Field(default=None, description="Наименование банка-эквайера")
     ppvz_vw: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Вознаграждение Вайлдберриз (ВВ), без НДС")
     ppvz_vw_nds: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="НДС с вознаграждения Вайлдберриз")
@@ -98,7 +98,7 @@ class DetailReportItem(BaseModel):
     assembly_id: Optional[StrictInt] = Field(default=None, description="Номер сборочного задания")
     kiz: Optional[StrictStr] = Field(default=None, description="Код маркировки.<br> Поле будет в ответе при наличии значения ")
     srid: Optional[StrictStr] = Field(default=None, description="Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. ")
-    report_type: Optional[StrictInt] = Field(default=None, description="Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии ")
+    report_type: Optional[StrictInt] = Field(default=None, description="Тип отчёта:   - `1` — основной   - `2` — по выкупам   - `3` — по выкупам для Грузии ")
     is_legal_entity: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи")
     trbx_id: Optional[StrictStr] = Field(default=None, description="Номер короба для обработки товара")
     installment_cofinancing_amount: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Скидка по программе софинансирования")
@@ -127,8 +127,8 @@ class DetailReportItem(BaseModel):
         if value is None:
             return value
 
-        if value not in set([1, 2, 3, 4]):
-            raise ValueError("must be one of enum values (1, 2, 3, 4)")
+        if value not in set([1, 2, 3]):
+            raise ValueError("must be one of enum values (1, 2, 3)")
         return value
 
     model_config = ConfigDict(

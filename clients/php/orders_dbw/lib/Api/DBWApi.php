@@ -2433,7 +2433,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -2769,7 +2769,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3105,7 +3105,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3448,7 +3448,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3862,7 +3862,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4204,7 +4204,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4553,7 +4553,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4902,7 +4902,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -5251,7 +5251,7 @@ class DBWApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );

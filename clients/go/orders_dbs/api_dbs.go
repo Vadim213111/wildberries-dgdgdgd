@@ -2085,7 +2085,7 @@ ApiMarketplaceV3DbsOrdersStatusInfoPost Получить статусы сбор
 - `declined_by_client` — покупатель отменил заказ в первый чаc
 <br> Отмена доступна покупателю в первый час с момента заказа, если заказ не переведен на сборку
 - `defect` — отмена заказа по причине брака
-- `ready_for_pickup` — сборочное задание прибыло на ПВЗ
+- `ready_for_pickup` — заказ прибыл на ПВЗ
 - `canceled_by_missed_call` — отмена по причине недозвона
 
 <div class="description_limit">

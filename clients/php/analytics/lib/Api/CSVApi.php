@@ -442,7 +442,7 @@ class CSVApi
         // path params
         if ($download_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'downloadId' . '}',
+                '{downloadId}',
                 ObjectSerializer::toPathValue($download_id),
                 $resourcePath
             );

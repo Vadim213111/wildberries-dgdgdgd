@@ -19,20 +19,21 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
 
-class ApiV5SupplierReportDetailByPeriodGet400Response(BaseModel):
+class AcquiringReportsDetailedReq(BaseModel):
     """
-    ApiV5SupplierReportDetailByPeriodGet400Response
+    Параметры запроса
     """ # noqa: E501
-    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код")
-    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
-    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса")
-    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB")
-    __properties: ClassVar[List[str]] = ["status", "title", "detail", "request_id", "origin"]
+    date_from: StrictStr = Field(description="Начальная дата отчёта.<br>Можно передать дату или дату со временем. Время можно указывать с точностью до секунд или миллисекунд.<br>Дата передаётся в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339), время — в часовом поясе Москва `UTC+3`.<br>Примеры:   - `2025-06-20`   - `2025-06-20T23:59:59`   - `2025-06-20T00:00:00.12345`   - `2025-06-20T00:00:00` ", alias="dateFrom")
+    date_to: StrictStr = Field(description="Конечная дата отчёта.<br>Дата в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339). Можно передать дату или дату со временем. Время можно указывать с точностью до секунд или миллисекунд.<br>Время передаётся в часовом поясе Москва `UTC+3`.<br>Примеры:   - `2025-06-20`   - `2025-06-20T23:59:59`   - `2025-06-20T00:00:00.12345`   - `2025-06-20T00:00:00` ", alias="dateTo")
+    limit: Optional[Annotated[int, Field(le=100000, strict=True)]] = Field(default=100000, description="Количество строк в ответе")
+    rrd_id: Optional[StrictInt] = Field(default=0, description="ID строки ответа. Необходим для получения отчёта частями.<br>Начинайте загрузку отчёта с `\"rrdid\":0`. В последующих запросах передавайте значение `rrdId` из последней строки предыдущего ответа.<br>Повторяйте запрос, пока не получите ответ `204` ", alias="rrdId")
+    fields: Optional[List[StrictStr]] = Field(default=None, description="Список полей, которые вернутся в ответе. Если параметр не указан, возвращаются все поля")
+    __properties: ClassVar[List[str]] = ["dateFrom", "dateTo", "limit", "rrdId", "fields"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -52,7 +53,7 @@ class ApiV5SupplierReportDetailByPeriodGet400Response(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiV5SupplierReportDetailByPeriodGet400Response from a JSON string"""
+        """Create an instance of AcquiringReportsDetailedReq from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,7 +78,7 @@ class ApiV5SupplierReportDetailByPeriodGet400Response(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiV5SupplierReportDetailByPeriodGet400Response from a dict"""
+        """Create an instance of AcquiringReportsDetailedReq from a dict"""
         if obj is None:
             return None
 
@@ -85,11 +86,11 @@ class ApiV5SupplierReportDetailByPeriodGet400Response(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "status": obj.get("status"),
-            "title": obj.get("title"),
-            "detail": obj.get("detail"),
-            "request_id": obj.get("request_id"),
-            "origin": obj.get("origin")
+            "dateFrom": obj.get("dateFrom"),
+            "dateTo": obj.get("dateTo"),
+            "limit": obj.get("limit") if obj.get("limit") is not None else 100000,
+            "rrdId": obj.get("rrdId") if obj.get("rrdId") is not None else 0,
+            "fields": obj.get("fields")
         })
         return _obj
 

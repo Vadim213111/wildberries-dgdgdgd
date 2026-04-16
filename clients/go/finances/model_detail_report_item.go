@@ -108,11 +108,11 @@ type DetailReportItem struct {
 	PpvzForPay *float32 `json:"ppvz_for_pay,omitempty"`
 	// Возмещение за выдачу и возврат товаров на ПВЗ
 	PpvzReward *float32 `json:"ppvz_reward,omitempty"`
-	// Эквайринг/Комиссии за организацию платежей
+	// Компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов
 	AcquiringFee *float32 `json:"acquiring_fee,omitempty"`
-	// Размер комиссии за эквайринг/Комиссии за организацию платежей, %
+	// Размер компенсации платёжных услуг/Комиссии за интеграцию платёжных сервисов, %
 	AcquiringPercent *float32 `json:"acquiring_percent,omitempty"`
-	// Тип платежа за Эквайринг/Комиссии за организацию платежей
+	// Тип платежа: компенсация платёжных услуг/Комиссия за интеграцию платёжных сервисов
 	PaymentProcessing *string `json:"payment_processing,omitempty"`
 	// Наименование банка-эквайера
 	AcquiringBank *string `json:"acquiring_bank,omitempty"`
@@ -160,7 +160,7 @@ type DetailReportItem struct {
 	Kiz *string `json:"kiz,omitempty"`
 	// Уникальный ID заказа.  Примечание для использующих API Marketplace: `srid` равен `rid` в ответах методов сборочных заданий. 
 	Srid *string `json:"srid,omitempty"`
-	// Тип отчёта:   - `1` — стандартный   - `2` — для уведомления о выкупе   - `3`, `4` — для уведомления о выкупе для Грузии 
+	// Тип отчёта:   - `1` — основной   - `2` — по выкупам   - `3` — по выкупам для Грузии 
 	ReportType *int32 `json:"report_type,omitempty"`
 	// Признак B2B-продажи
 	IsLegalEntity *bool `json:"is_legal_entity,omitempty"`

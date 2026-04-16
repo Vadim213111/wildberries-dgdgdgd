@@ -351,4 +351,10 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `finances.DefaultApiService.ApiV1DocumentsDownloadGet` — `GET /api/v1/documents/download` — Получить документ
 - `finances.DefaultApiService.ApiV1DocumentsListGet` — `GET /api/v1/documents/list` — Список документов
 - `finances.DefaultApiService.ApiV5SupplierReportDetailByPeriodGet` — `GET /api/v5/supplier/reportDetailByPeriod` — Отчёт о продажах по реализации
+- `finances.DefaultApiService.PostV1AcquiringDetailed` — `POST /api/finance/v1/acquiring/detailed` — Детализации к отчётам об издержках на приём платежей за период
+- `finances.DefaultApiService.PostV1AcquiringDetailedReportId` — `POST /api/finance/v1/acquiring/detailed/{reportId}` — Детализации к отчётам об издержках на приём платежей по ID отчётов
+- `finances.DefaultApiService.PostV1AcquiringList` — `POST /api/finance/v1/acquiring/list` — Список отчётов об издержках на приём платежей
+- `finances.DefaultApiService.PostV1SalesReportsDetailed` — `POST /api/finance/v1/sales-reports/detailed` — Детализации к отчётам реализации за период
+- `finances.DefaultApiService.PostV1SalesReportsDetailedReportId` — `POST /api/finance/v1/sales-reports/detailed/{reportId}` — Детализации к отчётам реализации по ID отчётов
+- `finances.DefaultApiService.PostV1SalesReportsList` — `POST /api/finance/v1/sales-reports/list` — Список отчётов реализации
 <!-- GO_METHODS_LIST_END -->

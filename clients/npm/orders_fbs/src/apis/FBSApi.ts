@@ -363,7 +363,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/marketplace/v3/orders/{orderId}/meta/customs-declaration`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -414,7 +414,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/marketplace/v3/supplies/{supplyId}/order-ids`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -474,7 +474,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/marketplace/v3/supplies/{supplyId}/orders`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -694,7 +694,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/cancel`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -748,7 +748,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/meta`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -800,7 +800,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/meta/expiration`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -853,7 +853,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/meta/gtin`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -906,7 +906,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/meta/imei`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -959,7 +959,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/meta/sgtin`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -1012,7 +1012,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/orders/{orderId}/meta/uin`;
-        urlPath = urlPath.replace(`{${"orderId"}}`, encodeURIComponent(String(requestParameters['orderId'])));
+        urlPath = urlPath.replace('{orderId}', encodeURIComponent(String(requestParameters['orderId'])));
 
         return {
             path: urlPath,
@@ -1115,7 +1115,7 @@ export class FBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает статусы [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`:  | Статус   | Описание            | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | `new`      | **Новое сборочное задание** |  | | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch) | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) | | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)| | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для кроссбордера   | Переводится перевозчиком |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sorted` — сборочное задание отсортировано - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на пункт выдачи заказов (ПВЗ) - `accepted_by_carrier` — продавец передал заказ в службу доставки в своей стране - `sent_to_carrier` — заказ отправлен на склад службы доставки в стране продавца - `canceled_by_carrier` — заказ отменён перевозчиком. Только для кроссбордера  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод возвращает статусы [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`:  | Статус   | Описание            | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | `new`      | **Новое сборочное задание** |  | | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch) | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) | | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)| | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для кроссбордера   | Переводится перевозчиком |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sorted` — сборочное задание отсортировано - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — заказ прибыл на пункт выдачи заказов (ПВЗ) - `accepted_by_carrier` — продавец передал заказ в службу доставки в своей стране - `sent_to_carrier` — заказ отправлен на склад службы доставки в стране продавца - `canceled_by_carrier` — заказ отменён перевозчиком. Только для кроссбордера  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Получить статусы сборочных заданий
      */
     async apiV3OrdersStatusPostRaw(requestParameters: ApiV3OrdersStatusPostOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiV3OrdersStatusPost200Response>> {
@@ -1126,7 +1126,7 @@ export class FBSApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает статусы [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`:  | Статус   | Описание            | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | `new`      | **Новое сборочное задание** |  | | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch) | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) | | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)| | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для кроссбордера   | Переводится перевозчиком |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sorted` — сборочное задание отсортировано - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — сборочное задание прибыло на пункт выдачи заказов (ПВЗ) - `accepted_by_carrier` — продавец передал заказ в службу доставки в своей стране - `sent_to_carrier` — заказ отправлен на склад службы доставки в стране продавца - `canceled_by_carrier` — заказ отменён перевозчиком. Только для кроссбордера  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+     * Метод возвращает статусы [сборочных заданий](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders/get) по их ID. <br><br> `supplierStatus` — статус сборочного задания. Триггер его изменения — действие самого продавца.  Возможные значения `supplierStatus`:  | Статус   | Описание            | Как перевести сборочное задание в данный статус | |-------|----------------------|--------------------------------------| | `new`      | **Новое сборочное задание** |  | | `confirm`  | **На сборке** |[Добавить сборочное задание к поставке](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1marketplace~1v3~1supplies~1%7BsupplyId%7D~1orders/patch) | `complete` | **В доставке** | [Передать поставку в доставку](/openapi/orders-fbs#tag/Postavki-FBS/paths/~1api~1v3~1supplies~1%7BsupplyId%7D~1deliver/patch) | | `cancel`   | **Отменено продавцом**   | [Отменить сборочное задание](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1cancel/patch)| | `cancel_carrier`   | **Отменено перевозчиком** <br>Только для кроссбордера   | Переводится перевозчиком |  <br><br> `wbStatus` — статус системы Wildberries.  Возможные значения `wbStatus`: - `waiting` — сборочное задание в работе - `sorted` — сборочное задание отсортировано - `sold` — заказ получен покупателем - `canceled` — отмена сборочного задания - `canceled_by_client` — покупатель отменил заказ при получении - `declined_by_client` — покупатель отменил заказ. Отмена доступна покупателю в первый час с момента заказа, если заказ не переведён на сборку - `defect` — отмена заказа по причине брака - `ready_for_pickup` — заказ прибыл на пункт выдачи заказов (ПВЗ) - `accepted_by_carrier` — продавец передал заказ в службу доставки в своей стране - `sent_to_carrier` — заказ отправлен на склад службы доставки в стране продавца - `canceled_by_carrier` — заказ отменён перевозчиком. Только для кроссбордера  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
      * Получить статусы сборочных заданий
      */
     async apiV3OrdersStatusPost(requestParameters: ApiV3OrdersStatusPostOperationRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiV3OrdersStatusPost200Response> {
@@ -1366,7 +1366,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/passes/{passId}`;
-        urlPath = urlPath.replace(`{${"passId"}}`, encodeURIComponent(String(requestParameters['passId'])));
+        urlPath = urlPath.replace('{passId}', encodeURIComponent(String(requestParameters['passId'])));
 
         return {
             path: urlPath,
@@ -1425,7 +1425,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/passes/{passId}`;
-        urlPath = urlPath.replace(`{${"passId"}}`, encodeURIComponent(String(requestParameters['passId'])));
+        urlPath = urlPath.replace('{passId}', encodeURIComponent(String(requestParameters['passId'])));
 
         return {
             path: urlPath,
@@ -1701,7 +1701,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}/barcode`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -1752,7 +1752,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -1802,7 +1802,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}/deliver`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -1852,7 +1852,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -1905,7 +1905,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}/trbx`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -1956,7 +1956,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}/trbx`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -2009,7 +2009,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}/trbx`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,
@@ -2074,7 +2074,7 @@ export class FBSApi extends runtime.BaseAPI {
 
 
         let urlPath = `/api/v3/supplies/{supplyId}/trbx/stickers`;
-        urlPath = urlPath.replace(`{${"supplyId"}}`, encodeURIComponent(String(requestParameters['supplyId'])));
+        urlPath = urlPath.replace('{supplyId}', encodeURIComponent(String(requestParameters['supplyId'])));
 
         return {
             path: urlPath,

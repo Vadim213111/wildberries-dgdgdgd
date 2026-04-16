@@ -859,7 +859,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -1280,7 +1280,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -1620,7 +1620,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -3200,7 +3200,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3543,7 +3543,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -3885,7 +3885,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4226,7 +4226,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4567,7 +4567,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -4916,7 +4916,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -5257,7 +5257,7 @@ class FBSApi
         // path params
         if ($order_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'orderId' . '}',
+                '{orderId}',
                 ObjectSerializer::toPathValue($order_id),
                 $resourcePath
             );
@@ -7937,7 +7937,7 @@ class FBSApi
         // path params
         if ($pass_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'passId' . '}',
+                '{passId}',
                 ObjectSerializer::toPathValue($pass_id),
                 $resourcePath
             );
@@ -8277,7 +8277,7 @@ class FBSApi
         // path params
         if ($pass_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'passId' . '}',
+                '{passId}',
                 ObjectSerializer::toPathValue($pass_id),
                 $resourcePath
             );
@@ -10353,7 +10353,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -10689,7 +10689,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -11025,7 +11025,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -11439,7 +11439,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -11773,7 +11773,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -12194,7 +12194,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -12614,7 +12614,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );
@@ -13062,7 +13062,7 @@ class FBSApi
         // path params
         if ($supply_id !== null) {
             $resourcePath = str_replace(
-                '{' . 'supplyId' . '}',
+                '{supplyId}',
                 ObjectSerializer::toPathValue($supply_id),
                 $resourcePath
             );

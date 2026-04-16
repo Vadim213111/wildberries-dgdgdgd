@@ -869,7 +869,7 @@ class DefaultApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'ID' . '}',
+                '{ID}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -1306,7 +1306,7 @@ class DefaultApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'ID' . '}',
+                '{ID}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
@@ -1692,7 +1692,7 @@ class DefaultApi
         // path params
         if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'ID' . '}',
+                '{ID}',
                 ObjectSerializer::toPathValue($id),
                 $resourcePath
             );

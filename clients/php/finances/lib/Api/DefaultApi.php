@@ -92,6 +92,24 @@ class DefaultApi
         'apiV5SupplierReportDetailByPeriodGet' => [
             'application/json',
         ],
+        'postV1AcquiringDetailed' => [
+            'application/json',
+        ],
+        'postV1AcquiringDetailedReportId' => [
+            'application/json',
+        ],
+        'postV1AcquiringList' => [
+            'application/json',
+        ],
+        'postV1SalesReportsDetailed' => [
+            'application/json',
+        ],
+        'postV1SalesReportsDetailedReportId' => [
+            'application/json',
+        ],
+        'postV1SalesReportsList' => [
+            'application/json',
+        ],
     ];
 
     /**
@@ -2149,14 +2167,15 @@ class DefaultApi
      * @param  \DateTime $date_to Конечная дата отчёта (required)
      * @param  int|null $limit Количество строк в ответе (optional, default to 100000)
      * @param  int|null $rrdid Уникальный ID строки отчёта. Необходим для получения отчёта частями. &lt;br&gt; Загрузку отчёта нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова. &lt;br&gt; Таким образом, для загрузки одного отчёта может понадобиться вызывать API до тех пор, пока не вернётся ответ 204. (optional, default to 0)
-     * @param  string|null $period Периодичность отчёта:   - &#x60;weekly&#x60; — еженедельный   - &#x60;daily&#x60; — ежедневный (optional, default to 'weekly')
+     * @param  string|null $period Периодичность отчётов:   - &#x60;weekly&#x60; — еженедельные   - &#x60;daily&#x60; — ежедневные (optional, default to 'weekly')
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV5SupplierReportDetailByPeriodGet'] to see the possible values for this operation
      *
      * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \Wildberries\Sdk\Finances\Model\DetailReportItem[]|\Wildberries\Sdk\Finances\Model\ApiV5SupplierReportDetailByPeriodGet400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet402Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     * @return \Wildberries\Sdk\Finances\Model\DetailReportItem[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet402Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     * @deprecated
      */
     public function apiV5SupplierReportDetailByPeriodGet($date_from, $date_to, $limit = 100000, $rrdid = 0, $period = 'weekly', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV5SupplierReportDetailByPeriodGet'][0])
     {
@@ -2177,14 +2196,15 @@ class DefaultApi
      * @param  \DateTime $date_to Конечная дата отчёта (required)
      * @param  int|null $limit Количество строк в ответе (optional, default to 100000)
      * @param  int|null $rrdid Уникальный ID строки отчёта. Необходим для получения отчёта частями. &lt;br&gt; Загрузку отчёта нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова. &lt;br&gt; Таким образом, для загрузки одного отчёта может понадобиться вызывать API до тех пор, пока не вернётся ответ 204. (optional, default to 0)
-     * @param  string|null $period Периодичность отчёта:   - &#x60;weekly&#x60; — еженедельный   - &#x60;daily&#x60; — ежедневный (optional, default to 'weekly')
+     * @param  string|null $period Периодичность отчётов:   - &#x60;weekly&#x60; — еженедельные   - &#x60;daily&#x60; — ежедневные (optional, default to 'weekly')
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV5SupplierReportDetailByPeriodGet'] to see the possible values for this operation
      *
      * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \Wildberries\Sdk\Finances\Model\DetailReportItem[]|\Wildberries\Sdk\Finances\Model\ApiV5SupplierReportDetailByPeriodGet400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet402Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Wildberries\Sdk\Finances\Model\DetailReportItem[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet402Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     * @deprecated
      */
     public function apiV5SupplierReportDetailByPeriodGetWithHttpInfo($date_from, $date_to, $limit = 100000, $rrdid = 0, $period = 'weekly', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV5SupplierReportDetailByPeriodGet'][0])
     {
@@ -2222,7 +2242,7 @@ class DefaultApi
                     );
                 case 400:
                     return $this->handleResponseWithDataType(
-                        '\Wildberries\Sdk\Finances\Model\ApiV5SupplierReportDetailByPeriodGet400Response',
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
                         $request,
                         $response,
                     );
@@ -2279,7 +2299,7 @@ class DefaultApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Wildberries\Sdk\Finances\Model\ApiV5SupplierReportDetailByPeriodGet400Response',
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2328,13 +2348,14 @@ class DefaultApi
      * @param  \DateTime $date_to Конечная дата отчёта (required)
      * @param  int|null $limit Количество строк в ответе (optional, default to 100000)
      * @param  int|null $rrdid Уникальный ID строки отчёта. Необходим для получения отчёта частями. &lt;br&gt; Загрузку отчёта нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова. &lt;br&gt; Таким образом, для загрузки одного отчёта может понадобиться вызывать API до тех пор, пока не вернётся ответ 204. (optional, default to 0)
-     * @param  string|null $period Периодичность отчёта:   - &#x60;weekly&#x60; — еженедельный   - &#x60;daily&#x60; — ежедневный (optional, default to 'weekly')
+     * @param  string|null $period Периодичность отчётов:   - &#x60;weekly&#x60; — еженедельные   - &#x60;daily&#x60; — ежедневные (optional, default to 'weekly')
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV5SupplierReportDetailByPeriodGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV5SupplierReportDetailByPeriodGetAsync($date_from, $date_to, $limit = 100000, $rrdid = 0, $period = 'weekly', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV5SupplierReportDetailByPeriodGet'][0])
     {
@@ -2359,13 +2380,14 @@ class DefaultApi
      * @param  \DateTime $date_to Конечная дата отчёта (required)
      * @param  int|null $limit Количество строк в ответе (optional, default to 100000)
      * @param  int|null $rrdid Уникальный ID строки отчёта. Необходим для получения отчёта частями. &lt;br&gt; Загрузку отчёта нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова. &lt;br&gt; Таким образом, для загрузки одного отчёта может понадобиться вызывать API до тех пор, пока не вернётся ответ 204. (optional, default to 0)
-     * @param  string|null $period Периодичность отчёта:   - &#x60;weekly&#x60; — еженедельный   - &#x60;daily&#x60; — ежедневный (optional, default to 'weekly')
+     * @param  string|null $period Периодичность отчётов:   - &#x60;weekly&#x60; — еженедельные   - &#x60;daily&#x60; — ежедневные (optional, default to 'weekly')
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV5SupplierReportDetailByPeriodGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
+     * @deprecated
      */
     public function apiV5SupplierReportDetailByPeriodGetAsyncWithHttpInfo($date_from, $date_to, $limit = 100000, $rrdid = 0, $period = 'weekly', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV5SupplierReportDetailByPeriodGet'][0])
     {
@@ -2419,13 +2441,14 @@ class DefaultApi
      * @param  \DateTime $date_to Конечная дата отчёта (required)
      * @param  int|null $limit Количество строк в ответе (optional, default to 100000)
      * @param  int|null $rrdid Уникальный ID строки отчёта. Необходим для получения отчёта частями. &lt;br&gt; Загрузку отчёта нужно начинать с &#x60;rrdid &#x3D; 0&#x60; и при последующих вызовах API передавать в запросе значение &#x60;rrd_id&#x60; из последней строки, полученной в результате предыдущего вызова. &lt;br&gt; Таким образом, для загрузки одного отчёта может понадобиться вызывать API до тех пор, пока не вернётся ответ 204. (optional, default to 0)
-     * @param  string|null $period Периодичность отчёта:   - &#x60;weekly&#x60; — еженедельный   - &#x60;daily&#x60; — ежедневный (optional, default to 'weekly')
+     * @param  string|null $period Периодичность отчётов:   - &#x60;weekly&#x60; — еженедельные   - &#x60;daily&#x60; — ежедневные (optional, default to 'weekly')
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV5SupplierReportDetailByPeriodGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
+     * @deprecated
      */
     public function apiV5SupplierReportDetailByPeriodGetRequest($date_from, $date_to, $limit = 100000, $rrdid = 0, $period = 'weekly', ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['apiV5SupplierReportDetailByPeriodGet'][0])
     {
@@ -2587,6 +2610,2272 @@ class DefaultApi
         return [
             [
                 "url" => "https://statistics-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1AcquiringDetailed
+     *
+     * Детализации к отчётам об издержках на приём платежей за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedReq $acquiring_reports_detailed_req acquiring_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailed'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     */
+    public function postV1AcquiringDetailed($acquiring_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailed'][0])
+    {
+        list($response) = $this->postV1AcquiringDetailedWithHttpInfo($acquiring_reports_detailed_req, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedWithHttpInfo
+     *
+     * Детализации к отчётам об издержках на приём платежей за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedReq $acquiring_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailed'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1AcquiringDetailedWithHttpInfo($acquiring_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailed'][0])
+    {
+        $request = $this->postV1AcquiringDetailedRequest($acquiring_reports_detailed_req, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedAsync
+     *
+     * Детализации к отчётам об издержках на приём платежей за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedReq $acquiring_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailed'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1AcquiringDetailedAsync($acquiring_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailed'][0])
+    {
+        return $this->postV1AcquiringDetailedAsyncWithHttpInfo($acquiring_reports_detailed_req, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedAsyncWithHttpInfo
+     *
+     * Детализации к отчётам об издержках на приём платежей за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedReq $acquiring_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailed'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1AcquiringDetailedAsyncWithHttpInfo($acquiring_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailed'][0])
+    {
+        $returnType = '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]';
+        $request = $this->postV1AcquiringDetailedRequest($acquiring_reports_detailed_req, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1AcquiringDetailed'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedReq $acquiring_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailed'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1AcquiringDetailedRequest($acquiring_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailed'][0])
+    {
+
+        // verify the required parameter 'acquiring_reports_detailed_req' is set
+        if ($acquiring_reports_detailed_req === null || (is_array($acquiring_reports_detailed_req) && count($acquiring_reports_detailed_req) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $acquiring_reports_detailed_req when calling postV1AcquiringDetailed'
+            );
+        }
+
+
+        $resourcePath = '/api/finance/v1/acquiring/detailed';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($acquiring_reports_detailed_req)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($acquiring_reports_detailed_req));
+            } else {
+                $httpBody = $acquiring_reports_detailed_req;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1AcquiringDetailed();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = $this->config->isHostOverridden()
+            ? $this->config->getHost()
+            : Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1AcquiringDetailed
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1AcquiringDetailed(): array
+    {
+        return [
+            [
+                "url" => "https://finance-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedReportId
+     *
+     * Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     */
+    public function postV1AcquiringDetailedReportId($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailedReportId'][0])
+    {
+        list($response) = $this->postV1AcquiringDetailedReportIdWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedReportIdWithHttpInfo
+     *
+     * Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1AcquiringDetailedReportIdWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailedReportId'][0])
+    {
+        $request = $this->postV1AcquiringDetailedReportIdRequest($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedReportIdAsync
+     *
+     * Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1AcquiringDetailedReportIdAsync($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailedReportId'][0])
+    {
+        return $this->postV1AcquiringDetailedReportIdAsyncWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1AcquiringDetailedReportIdAsyncWithHttpInfo
+     *
+     * Детализации к отчётам об издержках на приём платежей по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1AcquiringDetailedReportIdAsyncWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailedReportId'][0])
+    {
+        $returnType = '\Wildberries\Sdk\Finances\Model\AcquiringReportsDetailedRes[]';
+        $request = $this->postV1AcquiringDetailedReportIdRequest($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1AcquiringDetailedReportId'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1AcquiringDetailedReportIdRequest($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringDetailedReportId'][0])
+    {
+
+        // verify the required parameter 'report_id' is set
+        if ($report_id === null || (is_array($report_id) && count($report_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $report_id when calling postV1AcquiringDetailedReportId'
+            );
+        }
+
+        // verify the required parameter 'financial_reports_detailed_report_id_req' is set
+        if ($financial_reports_detailed_report_id_req === null || (is_array($financial_reports_detailed_report_id_req) && count($financial_reports_detailed_report_id_req) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $financial_reports_detailed_report_id_req when calling postV1AcquiringDetailedReportId'
+            );
+        }
+
+
+        $resourcePath = '/api/finance/v1/acquiring/detailed/{reportId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($report_id !== null) {
+            $resourcePath = str_replace(
+                '{reportId}',
+                ObjectSerializer::toPathValue($report_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($financial_reports_detailed_report_id_req)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($financial_reports_detailed_report_id_req));
+            } else {
+                $httpBody = $financial_reports_detailed_report_id_req;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1AcquiringDetailedReportId();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = $this->config->isHostOverridden()
+            ? $this->config->getHost()
+            : Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1AcquiringDetailedReportId
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1AcquiringDetailedReportId(): array
+    {
+        return [
+            [
+                "url" => "https://finance-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1AcquiringList
+     *
+     * Список отчётов об издержках на приём платежей
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportListReq $acquiring_report_list_req acquiring_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringList'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\Finances\Model\AcquiringReportListRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     */
+    public function postV1AcquiringList($acquiring_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringList'][0])
+    {
+        list($response) = $this->postV1AcquiringListWithHttpInfo($acquiring_report_list_req, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1AcquiringListWithHttpInfo
+     *
+     * Список отчётов об издержках на приём платежей
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportListReq $acquiring_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringList'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\Finances\Model\AcquiringReportListRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1AcquiringListWithHttpInfo($acquiring_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringList'][0])
+    {
+        $request = $this->postV1AcquiringListRequest($acquiring_report_list_req, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\AcquiringReportListRes[]',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\Finances\Model\AcquiringReportListRes[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\AcquiringReportListRes[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1AcquiringListAsync
+     *
+     * Список отчётов об издержках на приём платежей
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportListReq $acquiring_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1AcquiringListAsync($acquiring_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringList'][0])
+    {
+        return $this->postV1AcquiringListAsyncWithHttpInfo($acquiring_report_list_req, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1AcquiringListAsyncWithHttpInfo
+     *
+     * Список отчётов об издержках на приём платежей
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportListReq $acquiring_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1AcquiringListAsyncWithHttpInfo($acquiring_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringList'][0])
+    {
+        $returnType = '\Wildberries\Sdk\Finances\Model\AcquiringReportListRes[]';
+        $request = $this->postV1AcquiringListRequest($acquiring_report_list_req, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1AcquiringList'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\AcquiringReportListReq $acquiring_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1AcquiringList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1AcquiringListRequest($acquiring_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1AcquiringList'][0])
+    {
+
+        // verify the required parameter 'acquiring_report_list_req' is set
+        if ($acquiring_report_list_req === null || (is_array($acquiring_report_list_req) && count($acquiring_report_list_req) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $acquiring_report_list_req when calling postV1AcquiringList'
+            );
+        }
+
+
+        $resourcePath = '/api/finance/v1/acquiring/list';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($acquiring_report_list_req)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($acquiring_report_list_req));
+            } else {
+                $httpBody = $acquiring_report_list_req;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1AcquiringList();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = $this->config->isHostOverridden()
+            ? $this->config->getHost()
+            : Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1AcquiringList
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1AcquiringList(): array
+    {
+        return [
+            [
+                "url" => "https://finance-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailed
+     *
+     * Детализации к отчётам реализации за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportsDetailedReq $sales_reports_detailed_req sales_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailed'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     */
+    public function postV1SalesReportsDetailed($sales_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailed'][0])
+    {
+        list($response) = $this->postV1SalesReportsDetailedWithHttpInfo($sales_reports_detailed_req, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedWithHttpInfo
+     *
+     * Детализации к отчётам реализации за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportsDetailedReq $sales_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailed'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1SalesReportsDetailedWithHttpInfo($sales_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailed'][0])
+    {
+        $request = $this->postV1SalesReportsDetailedRequest($sales_reports_detailed_req, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedAsync
+     *
+     * Детализации к отчётам реализации за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportsDetailedReq $sales_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailed'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1SalesReportsDetailedAsync($sales_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailed'][0])
+    {
+        return $this->postV1SalesReportsDetailedAsyncWithHttpInfo($sales_reports_detailed_req, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedAsyncWithHttpInfo
+     *
+     * Детализации к отчётам реализации за период
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportsDetailedReq $sales_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailed'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1SalesReportsDetailedAsyncWithHttpInfo($sales_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailed'][0])
+    {
+        $returnType = '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]';
+        $request = $this->postV1SalesReportsDetailedRequest($sales_reports_detailed_req, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1SalesReportsDetailed'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportsDetailedReq $sales_reports_detailed_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailed'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1SalesReportsDetailedRequest($sales_reports_detailed_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailed'][0])
+    {
+
+        // verify the required parameter 'sales_reports_detailed_req' is set
+        if ($sales_reports_detailed_req === null || (is_array($sales_reports_detailed_req) && count($sales_reports_detailed_req) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sales_reports_detailed_req when calling postV1SalesReportsDetailed'
+            );
+        }
+
+
+        $resourcePath = '/api/finance/v1/sales-reports/detailed';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($sales_reports_detailed_req)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($sales_reports_detailed_req));
+            } else {
+                $httpBody = $sales_reports_detailed_req;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1SalesReportsDetailed();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = $this->config->isHostOverridden()
+            ? $this->config->getHost()
+            : Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1SalesReportsDetailed
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1SalesReportsDetailed(): array
+    {
+        return [
+            [
+                "url" => "https://finance-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedReportId
+     *
+     * Детализации к отчётам реализации по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта.&lt;br&gt;Для ежедневных отчётов вместо стандартной десериализации рекомендуем использовать нестандартные библиотеки с поддержкой [BigInt](https://www.npmjs.com/package/json-bigint) (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     */
+    public function postV1SalesReportsDetailedReportId($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailedReportId'][0])
+    {
+        list($response) = $this->postV1SalesReportsDetailedReportIdWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedReportIdWithHttpInfo
+     *
+     * Детализации к отчётам реализации по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта.&lt;br&gt;Для ежедневных отчётов вместо стандартной десериализации рекомендуем использовать нестандартные библиотеки с поддержкой [BigInt](https://www.npmjs.com/package/json-bigint) (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1SalesReportsDetailedReportIdWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailedReportId'][0])
+    {
+        $request = $this->postV1SalesReportsDetailedReportIdRequest($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedReportIdAsync
+     *
+     * Детализации к отчётам реализации по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта.&lt;br&gt;Для ежедневных отчётов вместо стандартной десериализации рекомендуем использовать нестандартные библиотеки с поддержкой [BigInt](https://www.npmjs.com/package/json-bigint) (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1SalesReportsDetailedReportIdAsync($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailedReportId'][0])
+    {
+        return $this->postV1SalesReportsDetailedReportIdAsyncWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1SalesReportsDetailedReportIdAsyncWithHttpInfo
+     *
+     * Детализации к отчётам реализации по ID отчётов
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта.&lt;br&gt;Для ежедневных отчётов вместо стандартной десериализации рекомендуем использовать нестандартные библиотеки с поддержкой [BigInt](https://www.npmjs.com/package/json-bigint) (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1SalesReportsDetailedReportIdAsyncWithHttpInfo($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailedReportId'][0])
+    {
+        $returnType = '\Wildberries\Sdk\Finances\Model\SalesReportsDetailedRes[]';
+        $request = $this->postV1SalesReportsDetailedReportIdRequest($report_id, $financial_reports_detailed_report_id_req, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1SalesReportsDetailedReportId'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  int $report_id ID отчёта.&lt;br&gt;Для ежедневных отчётов вместо стандартной десериализации рекомендуем использовать нестандартные библиотеки с поддержкой [BigInt](https://www.npmjs.com/package/json-bigint) (required)
+     * @param  \Wildberries\Sdk\Finances\Model\FinancialReportsDetailedReportIdReq $financial_reports_detailed_report_id_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsDetailedReportId'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1SalesReportsDetailedReportIdRequest($report_id, $financial_reports_detailed_report_id_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsDetailedReportId'][0])
+    {
+
+        // verify the required parameter 'report_id' is set
+        if ($report_id === null || (is_array($report_id) && count($report_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $report_id when calling postV1SalesReportsDetailedReportId'
+            );
+        }
+
+        // verify the required parameter 'financial_reports_detailed_report_id_req' is set
+        if ($financial_reports_detailed_report_id_req === null || (is_array($financial_reports_detailed_report_id_req) && count($financial_reports_detailed_report_id_req) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $financial_reports_detailed_report_id_req when calling postV1SalesReportsDetailedReportId'
+            );
+        }
+
+
+        $resourcePath = '/api/finance/v1/sales-reports/detailed/{reportId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($report_id !== null) {
+            $resourcePath = str_replace(
+                '{reportId}',
+                ObjectSerializer::toPathValue($report_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($financial_reports_detailed_report_id_req)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($financial_reports_detailed_report_id_req));
+            } else {
+                $httpBody = $financial_reports_detailed_report_id_req;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1SalesReportsDetailedReportId();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = $this->config->isHostOverridden()
+            ? $this->config->getHost()
+            : Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1SalesReportsDetailedReportId
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1SalesReportsDetailedReportId(): array
+    {
+        return [
+            [
+                "url" => "https://finance-api.wildberries.ru",
+                "description" => "No description provided",
+            ]
+        ];
+    }
+
+    /**
+     * Operation postV1SalesReportsList
+     *
+     * Список отчётов реализации
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportListReq $sales_report_list_req sales_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsList'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \Wildberries\Sdk\Finances\Model\SalesReportListRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response
+     */
+    public function postV1SalesReportsList($sales_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsList'][0])
+    {
+        list($response) = $this->postV1SalesReportsListWithHttpInfo($sales_report_list_req, $hostIndex, $variables, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation postV1SalesReportsListWithHttpInfo
+     *
+     * Список отчётов реализации
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportListReq $sales_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsList'] to see the possible values for this operation
+     *
+     * @throws \Wildberries\Sdk\Finances\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \Wildberries\Sdk\Finances\Model\SalesReportListRes[]|\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response|\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function postV1SalesReportsListWithHttpInfo($sales_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsList'][0])
+    {
+        $request = $this->postV1SalesReportsListRequest($sales_report_list_req, $hostIndex, $variables, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\SalesReportListRes[]',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\Wildberries\Sdk\Finances\Model\SalesReportListRes[]',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\SalesReportListRes[]',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\PostV1SalesReportsList400Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Wildberries\Sdk\Finances\Model\ApiV1AccountBalanceGet401Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation postV1SalesReportsListAsync
+     *
+     * Список отчётов реализации
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportListReq $sales_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1SalesReportsListAsync($sales_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsList'][0])
+    {
+        return $this->postV1SalesReportsListAsyncWithHttpInfo($sales_report_list_req, $hostIndex, $variables, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation postV1SalesReportsListAsyncWithHttpInfo
+     *
+     * Список отчётов реализации
+     *
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportListReq $sales_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function postV1SalesReportsListAsyncWithHttpInfo($sales_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsList'][0])
+    {
+        $returnType = '\Wildberries\Sdk\Finances\Model\SalesReportListRes[]';
+        $request = $this->postV1SalesReportsListRequest($sales_report_list_req, $hostIndex, $variables, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'postV1SalesReportsList'
+     *
+    * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+    * if needed, use the 'variables' parameter to pass variables to the host.
+     * URL: https://finance-api.wildberries.ru
+     *
+     * @param  \Wildberries\Sdk\Finances\Model\SalesReportListReq $sales_report_list_req (required)
+     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
+     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['postV1SalesReportsList'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function postV1SalesReportsListRequest($sales_report_list_req, ?int $hostIndex = null, array $variables = [], string $contentType = self::contentTypes['postV1SalesReportsList'][0])
+    {
+
+        // verify the required parameter 'sales_report_list_req' is set
+        if ($sales_report_list_req === null || (is_array($sales_report_list_req) && count($sales_report_list_req) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $sales_report_list_req when calling postV1SalesReportsList'
+            );
+        }
+
+
+        $resourcePath = '/api/finance/v1/sales-reports/list';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', 'application/problem+json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($sales_report_list_req)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($sales_report_list_req));
+            } else {
+                $httpBody = $sales_report_list_req;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('Authorization');
+        if ($apiKey !== null) {
+            $headers['Authorization'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        # Preserve the original behavior of server indexing.
+        if ($hostIndex === null) {
+            $hostIndex = $this->hostIndex;
+        }
+
+        $hostSettings = $this->getHostSettingsForpostV1SalesReportsList();
+
+        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
+            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
+        }
+        $operationHost = $this->config->isHostOverridden()
+            ? $this->config->getHost()
+            : Configuration::getHostString($hostSettings, $hostIndex, $variables);
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Returns an array of host settings for Operation postV1SalesReportsList
+     *
+     * @return array an array of host settings
+     */
+    protected function getHostSettingsForpostV1SalesReportsList(): array
+    {
+        return [
+            [
+                "url" => "https://finance-api.wildberries.ru",
                 "description" => "No description provided",
             ]
         ];
