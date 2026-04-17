@@ -3544,6 +3544,16 @@ ApiV3ClickCollectOrdersOrderIdMetaGet Получить метаданные сб
 
 Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
 
+<div class="description_limit">
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+| Период | Лимит | Интервал | Всплеск |
+| --- | --- | --- | --- |
+| 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+</div>
+
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId ID сборочного задания
@@ -4315,6 +4325,16 @@ func (r ApiApiV3ClickCollectOrdersOrderIdMetaUinPutRequest) Execute() (*http.Res
 ApiV3ClickCollectOrdersOrderIdMetaUinPut Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
+
+<div class="description_limit">
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+| Период | Лимит | Интервал | Всплеск |
+| --- | --- | --- | --- |
+| 1 мин | 1000 запросов | 60 мс | 20 запросов |
+
+Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+</div>
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().

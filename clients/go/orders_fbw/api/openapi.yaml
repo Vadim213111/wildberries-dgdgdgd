@@ -96,8 +96,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v1_acceptance_options_post_402_response"
           description: Требуется платёж
@@ -379,8 +379,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v1_acceptance_options_post_402_response"
           description: Требуется платёж
@@ -482,8 +482,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v1_acceptance_options_post_402_response"
           description: Требуется платёж
@@ -620,8 +620,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v1_acceptance_options_post_402_response"
           description: Требуется платёж
@@ -711,8 +711,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v1_acceptance_options_post_402_response"
           description: Требуется платёж
@@ -927,8 +927,8 @@ components:
         application/problem+json:
           example:
             title: payment required
-            detail: "please top up your balance in your company personal account https://dev.{{\
-              \ .baseDomain }}/company"
+            detail: wb solution for business has insufficient funds on its balance.
+              please top up the balance in the company's personal account https://dev.wildberries.ru/company
           schema:
             $ref: "#/components/schemas/_api_v1_acceptance_options_post_402_response"
       description: Требуется платёж
@@ -1528,9 +1528,8 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
-            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
-            но средств"
+          description: "Детали ошибки. Ошибка возвращается только сервисам из [Кат\
+            алога решений для бизнеса](https://dev.wildberries.ru/business-solutions)"
           type: string
       type: object
     models_OptionsResultModel_result_inner_error:

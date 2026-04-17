@@ -5567,7 +5567,7 @@ class DefaultApi:
     ) -> ApiOrdersMeta:
         """(Deprecated) Получить метаданные сборочного задания
 
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -5640,7 +5640,7 @@ class DefaultApi:
     ) -> ApiResponse[ApiOrdersMeta]:
         """(Deprecated) Получить метаданные сборочного задания
 
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -5713,7 +5713,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """(Deprecated) Получить метаданные сборочного задания
 
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -6790,7 +6790,7 @@ class DefaultApi:
     ) -> None:
         """(Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -6869,7 +6869,7 @@ class DefaultApi:
     ) -> ApiResponse[None]:
         """(Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int
@@ -6948,7 +6948,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """(Deprecated) Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474) 
+        Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1000 запросов | 60 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param order_id: ID сборочного задания (required)
         :type order_id: int

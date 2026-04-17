@@ -60,8 +60,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -309,8 +309,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -408,8 +408,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -521,8 +521,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -614,8 +614,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -881,8 +881,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -980,8 +980,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -1182,8 +1182,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -1310,8 +1310,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -1475,8 +1475,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2088,8 +2088,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2135,6 +2135,16 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
       - description: ID сборочного задания
         explode: false
@@ -2172,8 +2182,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2272,8 +2282,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2329,6 +2339,16 @@ paths:
       deprecated: true
       description: |
         Данный метод устарел. Он будет удалён [19 мая](https://dev.wildberries.ru/release-notes?id=474)
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных Самовывоз</strong>:
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 1000 запросов | 60 мс | 20 запросов |
+
+        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+        </div>
       parameters:
       - description: ID сборочного задания
         explode: false
@@ -2381,8 +2401,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2490,8 +2510,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2599,8 +2619,8 @@ paths:
             application/problem+json:
               example:
                 title: payment required
-                detail: "please top up your balance in your company personal account\
-                  \ https://dev.{{ .baseDomain }}/company"
+                detail: wb solution for business has insufficient funds on its balance.
+                  please top up the balance in the company's personal account https://dev.wildberries.ru/company
               schema:
                 $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
           description: Требуется платёж
@@ -2734,8 +2754,8 @@ components:
         application/problem+json:
           example:
             title: payment required
-            detail: "please top up your balance in your company personal account https://dev.{{\
-              \ .baseDomain }}/company"
+            detail: wb solution for business has insufficient funds on its balance.
+              please top up the balance in the company's personal account https://dev.wildberries.ru/company
           schema:
             $ref: "#/components/schemas/_api_v3_click_collect_orders_new_get_402_response"
       description: Требуется платёж
@@ -3892,9 +3912,8 @@ components:
           description: Заголовок ошибки
           type: string
         detail:
-          description: "Детали ошибки. Ошибка означает, что на балансе сервиса из\
-            \ [Каталога](https://dev.wildberries.ru/business-solutions) недостаточ\
-            но средств"
+          description: "Детали ошибки. Ошибка возвращается только сервисам из [Кат\
+            алога решений для бизнеса](https://dev.wildberries.ru/business-solutions)"
           type: string
       type: object
     api_baseMeta_gtin:

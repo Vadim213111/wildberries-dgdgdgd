@@ -408,7 +408,7 @@ func (r ApiApiV2NmReportDownloadsPostRequest) Execute() (*NmReportCreateReportRe
 /*
 ApiV2NmReportDownloadsPost Создать отчёт
 
-Метод создаёт задание на генерацию отчёта с расширенной аналитикой продавца.<br><br>
+Метод создаёт задание на генерацию отчёта с расширенной аналитикой продавца. <br><br>
 
 Вы можете создать CSV-версии отчётов по [воронке продаж](/openapi/analytics#tag/Voronka-prodazh) или [параметрам поиска](/openapi/analytics#tag/Poiskovye-zaprosy-po-vashim-tovaram) с группировкой по:
   * артикулам WB

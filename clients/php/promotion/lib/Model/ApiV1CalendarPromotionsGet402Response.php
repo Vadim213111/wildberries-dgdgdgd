@@ -336,7 +336,7 @@ class ApiV1CalendarPromotionsGet402Response implements ModelInterface, ArrayAcce
     /**
      * Sets detail
      *
-     * @param string|null $detail Детали ошибки. Ошибка означает, что на балансе сервиса из [Каталога](https://dev.wildberries.ru/business-solutions) недостаточно средств
+     * @param string|null $detail Детали ошибки. Ошибка возвращается только сервисам из [Каталога решений для бизнеса](https://dev.wildberries.ru/business-solutions)
      *
      * @return self
      */
