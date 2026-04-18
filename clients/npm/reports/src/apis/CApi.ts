@@ -94,7 +94,7 @@ export class CApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
+     * Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Сервисный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
      * Получить отчёт
      */
     async apiV1AnalyticsExciseReportPostRaw(requestParameters: ApiV1AnalyticsExciseReportPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ExciseReportResponse>> {
@@ -105,7 +105,7 @@ export class CApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
+     * Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Сервисный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
      * Получить отчёт
      */
     async apiV1AnalyticsExciseReportPost(requestParameters: ApiV1AnalyticsExciseReportPostRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ExciseReportResponse> {

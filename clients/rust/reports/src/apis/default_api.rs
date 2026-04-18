@@ -1312,7 +1312,7 @@ pub async fn api_v1_warehouse_remains_tasks_task_id_status_get(configuration: &c
     }
 }
 
-/// Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+/// Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
 pub async fn get_deductions(configuration: &configuration::Configuration, date_to: chrono::DateTime<chrono::FixedOffset>, limit: i32, date_from: Option<chrono::DateTime<chrono::FixedOffset>>, sort: Option<&str>, order: Option<&str>, offset: Option<i32>) -> Result<models::GetDeductions200Response, Error<GetDeductionsError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_date_to = date_to;

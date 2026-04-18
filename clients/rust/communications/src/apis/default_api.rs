@@ -581,7 +581,7 @@ pub async fn api_feedbacks_v1_pins_post(configuration: &configuration::Configura
     }
 }
 
-/// Метод отправляет ответ на [заявку](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get) покупателя на возврат товаров.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 10 запросов | </div> 
+/// Метод отправляет ответ на [заявку](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get) покупателя на возврат товаров.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 20 запросов | 3 сек | 10 запросов | | Сервисный | 1 мин | 20 запросов | 3 сек | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_v1_claim_patch(configuration: &configuration::Configuration, api_v1_claim_patch_request: models::ApiV1ClaimPatchRequest) -> Result<(), Error<ApiV1ClaimPatchError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_body_api_v1_claim_patch_request = api_v1_claim_patch_request;
@@ -616,7 +616,7 @@ pub async fn api_v1_claim_patch(configuration: &configuration::Configuration, ap
     }
 }
 
-/// Метод возвращает заявки покупателей на возврат товаров за последние 14 дней. Вы можете [отвечать на эти заявки](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claim/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 20 запросов | 3 сек | 10 запросов | </div> 
+/// Метод возвращает заявки покупателей на возврат товаров за последние 14 дней. Вы можете [отвечать на эти заявки](/openapi/user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claim/patch).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 20 запросов | 3 сек | 10 запросов | | Сервисный | 1 мин | 20 запросов | 3 сек | 10 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
 pub async fn api_v1_claims_get(configuration: &configuration::Configuration, is_archive: bool, id: Option<&str>, limit: Option<i32>, offset: Option<i32>, nm_id: Option<i32>) -> Result<models::ApiV1ClaimsGet200Response, Error<ApiV1ClaimsGetError>> {
     // add a prefix to parameters to efficiently prevent name collisions
     let p_query_is_archive = is_archive;

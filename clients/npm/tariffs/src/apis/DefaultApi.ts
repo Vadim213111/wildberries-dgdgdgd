@@ -153,7 +153,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Для остатков товаров, которые поставляются на склад в коробах, метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories) на:   - доставку со склада или пункта приёма до покупателя   - доставку от покупателя до пункта приёма   - хранение на складе WB  <div class=\"description_important\">   Тарифы для коробов совпадают с тарифами для <strong>Суперсейфа</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+     * Для остатков товаров, которые поставляются на склад в коробах, метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories) на:   - доставку со склада или пункта приёма до покупателя   - доставку от покупателя до пункта приёма   - хранение на складе WB  <div class=\"description_important\">   Тарифы для коробов совпадают с тарифами для <strong>Суперсейфа</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Сервисный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Тарифы для коробов
      */
     async apiV1TariffsBoxGetRaw(requestParameters: ApiV1TariffsBoxGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TariffsBoxResponse>> {
@@ -164,7 +164,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Для остатков товаров, которые поставляются на склад в коробах, метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories) на:   - доставку со склада или пункта приёма до покупателя   - доставку от покупателя до пункта приёма   - хранение на складе WB  <div class=\"description_important\">   Тарифы для коробов совпадают с тарифами для <strong>Суперсейфа</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+     * Для остатков товаров, которые поставляются на склад в коробах, метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories) на:   - доставку со склада или пункта приёма до покупателя   - доставку от покупателя до пункта приёма   - хранение на складе WB  <div class=\"description_important\">   Тарифы для коробов совпадают с тарифами для <strong>Суперсейфа</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Сервисный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Тарифы для коробов
      */
     async apiV1TariffsBoxGet(requestParameters: ApiV1TariffsBoxGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TariffsBoxResponse> {
@@ -254,7 +254,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Для товаров, которые поставляются на склад WB на монопаллетах, метод возвращает [стоимость](https://seller.wildberries.ru/dynamic-product-categories):   - доставки со склада до покупателя   - доставки от покупателя до склада   - хранения на складе WB  <div class=\"description_important\">   Тарифы для монопаллет совпадают с тарифами для <strong>Поштучных паллет</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+     * Для товаров, которые поставляются на склад WB на монопаллетах, метод возвращает [стоимость](https://seller.wildberries.ru/dynamic-product-categories):   - доставки со склада до покупателя   - доставки от покупателя до склада   - хранения на складе WB  <div class=\"description_important\">   Тарифы для монопаллет совпадают с тарифами для <strong>Поштучных паллет</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Сервисный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Тарифы для монопаллет
      */
     async apiV1TariffsPalletGetRaw(requestParameters: ApiV1TariffsPalletGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TariffsPalletResponse>> {
@@ -265,7 +265,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Для товаров, которые поставляются на склад WB на монопаллетах, метод возвращает [стоимость](https://seller.wildberries.ru/dynamic-product-categories):   - доставки со склада до покупателя   - доставки от покупателя до склада   - хранения на складе WB  <div class=\"description_important\">   Тарифы для монопаллет совпадают с тарифами для <strong>Поштучных паллет</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+     * Для товаров, которые поставляются на склад WB на монопаллетах, метод возвращает [стоимость](https://seller.wildberries.ru/dynamic-product-categories):   - доставки со склада до покупателя   - доставки от покупателя до склада   - хранения на складе WB  <div class=\"description_important\">   Тарифы для монопаллет совпадают с тарифами для <strong>Поштучных паллет</strong> </div>  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Сервисный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Тарифы для монопаллет
      */
     async apiV1TariffsPalletGet(requestParameters: ApiV1TariffsPalletGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TariffsPalletResponse> {
@@ -308,7 +308,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories/return-cost):   - на перевозку товаров со склада WB или из пункта приёма до продавца   - на обратную перевозку возвратов, которые не забрал продавец  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+     * Метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories/return-cost):   - на перевозку товаров со склада WB или из пункта приёма до продавца   - на обратную перевозку возвратов, которые не забрал продавец  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Сервисный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Тарифы на возврат
      */
     async apiV1TariffsReturnGetRaw(requestParameters: ApiV1TariffsReturnGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ReturnTariffsResponse>> {
@@ -319,7 +319,7 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
-     * Метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories/return-cost):   - на перевозку товаров со склада WB или из пункта приёма до продавца   - на обратную перевозку возвратов, которые не забрал продавец  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 60 запросов | 1 сек | 5 запросов | </div> 
+     * Метод возвращает [тарифы](https://seller.wildberries.ru/dynamic-product-categories/return-cost):   - на перевозку товаров со склада WB или из пункта приёма до продавца   - на обратную перевозку возвратов, которые не забрал продавец  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Сервисный | 1 мин | 60 запросов | 1 сек | 5 запросов | | Базовый | 1 ч | 1 запрос | 1 ч | 1 запрос | </div> 
      * Тарифы на возврат
      */
     async apiV1TariffsReturnGet(requestParameters: ApiV1TariffsReturnGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ReturnTariffsResponse> {

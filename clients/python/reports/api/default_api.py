@@ -2727,7 +2727,7 @@ class DefaultApi:
     ) -> ExciseReportResponse:
         """Получить отчёт
 
-        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
+        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Сервисный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -2806,7 +2806,7 @@ class DefaultApi:
     ) -> ApiResponse[ExciseReportResponse]:
         """Получить отчёт
 
-        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
+        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Сервисный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -2885,7 +2885,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить отчёт
 
-        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 5 ч | 10 запросов | 30 мин | 10 запросов | </div> 
+        Метод возвращает отчёт с [операциями по товарам с обязательной маркировкой](https://seller.wildberries.ru/analytics-reports/excise-report).<br><br>  Данный отчёт можно сохранить в [формате таблиц](https://dev.wildberries.ru/cases/1).  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Сервисный | 5 ч | 10 запросов | 30 мин | 10 запросов | | Базовый | 24 ч | 2 запроса | 12 ч | 1 запрос | </div> 
 
         :param date_from: Начало отчётного периода, `ГГГГ-ММ-ДД`  (required)
         :type date_from: str
@@ -6710,7 +6710,7 @@ class DefaultApi:
     ) -> GetDeductions200Response:
         """Подмены и неверные вложения
 
-        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -6801,7 +6801,7 @@ class DefaultApi:
     ) -> ApiResponse[GetDeductions200Response]:
         """Подмены и неверные вложения
 
-        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime
@@ -6892,7 +6892,7 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Подмены и неверные вложения
 
-        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 1 запрос | 1 мин | 1 запрос | </div> 
+        Метод возвращает отчёт об удержаниях за [подмены и неверные вложения](https://seller.wildberries.ru/analytics-reports/dimensions-penalties/retentions)  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Сервисный | 1 мин | 1 запрос | 1 мин | 1 запрос | | Базовый | 1 ч | 4 запроса | 15 мин | 1 запрос | </div> 
 
         :param date_to: Конец отчётного периода (required)
         :type date_to: datetime

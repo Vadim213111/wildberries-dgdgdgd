@@ -33,25 +33,30 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
     value?: string;
     /**
      * Статус проверки:
-     * - IMEI
+     * - `imei`
      *   - `pending` — Маркировка на проверке
      *   - `required` — Обязательная маркировка не заполнена
      *   - `imeiInvalidFormat` — Неверный формат маркировки
      *   - `imeiAlreadySold` — Товар с этим IMEI уже продан
-     * - UIN
+     * - `uin`
      *   - `required` — Обязательная маркировка не заполнена
      *   - `pending` — Маркировка на проверке
      *   - `required` — Маркировка обязательна, не заполнена
      *   - `uinInvalidFormat` — Неверный формат маркировки
-     *   - `uinNotFound` — Не найден в ГИС
      *   - `uinBadStatus` — Некорректный статус партии
      *   - `uinBadProcess` — Некорректная стадия обработки
      *   - `uinBadStatusAndBadProcess` — Некорректный статус партии. Некорректная стадия обработки
-     * - SGTIN
+     *   - `uinNotFound` — Не найден в [ГИИС](https://minfin.gov.ru/ru/perfomance/jewels/dmdk).
+     *     При получении этой ошибки убедитесь, что УИН:
+     *       - указан в загруженной спецификации с договором на поставку. Если спецификация загружена более 30 минут назад, [удалите УИН](./orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta/delete) из сборочного задания и [добавьте его](./orders-fbs#tag/Metadannye-FBS/paths/~1api~1v3~1orders~1%7BorderId%7D~1meta~1uin/put) заново
+     *       - зарегистрирован в ГИИС ДМДК
+     *       - указан корректно и считывается с бирки без ошибок
+     *       - находится в обороте
+     * - `sgtin`
      *   - `required` — Обязательная маркировка не заполнена
      *   - `pending` — Маркировка на проверке
      *   - `sgtinInvalidFormat` — Неверный формат маркировки
-     *   - `sgtinNotFound` — Маркировка не найдена в [Честном Знаке](https://chestnyznak.ru)
+     *   - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)
      *   - `sgtinEmitted` —  Маркировка эмитирована
      *   - `sgtinApplied` — Не пройдена процедура Ввод в оборот
      *   - `sgtinWrittenOff` — Списан
@@ -60,11 +65,11 @@ export interface Model409SupplyDeliverErrorDataOrdersInnerMetaDetailsInner {
      *   - `sgtinDisaggregation` — Расформирован
      *   - `sgtinDisaggregated` — Расформирован
      *   - `sgtinAppliedNotPaid` — Не оплачен
-     * - GTIN
+     * - `gtin`
      *   - `required` — Маркировка обязательна, не заполнена
-     * - Expiration
+     * - `expiration`
      *   - `required` — Маркировка обязательна, не заполнена
-     * - Customs declaration
+     * - `сustomsDeclaration`
      *   - `required` — Маркировка обязательна, не заполнена
      * 
      * @type {string}

@@ -349,7 +349,7 @@ pub async fn api_v1_supplies_post(configuration: &configuration::Configuration, 
     }
 }
 
-/// Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 10 запросов | </div> 
+/// Метод возвращает информацию о доступных транзитных направлениях.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 6 запросов | 10 сек | 10 запросов | | Сервисный | 1 мин | 6 запросов | 10 сек | 10 запросов | | Базовый | 12 ч | 1 запрос | 12 ч | 1 запрос | </div> 
 pub async fn api_v1_transit_tariffs_get(configuration: &configuration::Configuration, ) -> Result<Vec<models::ModelsTransitTariff>, Error<ApiV1TransitTariffsGetError>> {
 
     let uri_str = format!("{}/api/v1/transit-tariffs", configuration.base_path);
@@ -392,7 +392,7 @@ pub async fn api_v1_transit_tariffs_get(configuration: &configuration::Configura
     }
 }
 
-/// Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 6 запросов | 10 сек | 6 запросов | </div> 
+/// Метод возвращает список складов WB.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца:  | Тип | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | --- | | Персональный | 1 мин | 6 запросов | 10 сек | 6 запросов | | Сервисный | 1 мин | 6 запросов | 10 сек | 6 запросов | | Базовый | 12 ч | 1 запрос | 12 ч | 1 запрос | </div> 
 pub async fn api_v1_warehouses_get(configuration: &configuration::Configuration, ) -> Result<Vec<models::ModelsWarehousesResultItems>, Error<ApiV1WarehousesGetError>> {
 
     let uri_str = format!("{}/api/v1/warehouses", configuration.base_path);
