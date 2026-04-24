@@ -1,19 +1,19 @@
 version: 0.1
 
 specs:
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/01-general.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/02-products.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/03-orders-fbs.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/04-orders-dbw.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/05-orders-dbs.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/06-in-store-pickup.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/07-orders-fbw.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/08-promotion.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/09-communications.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/10-tariffs.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/11-analytics.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/12-reports.yaml
-  - https://dev.wildberries.ru/api/swagger/yaml/ru/13-finances.yaml
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/01-general.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/02-products.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/03-orders-fbs.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/04-orders-dbw.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/05-orders-dbs.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/06-in-store-pickup.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/07-orders-fbw.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/08-promotion.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/09-communications.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/10-tariffs.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/11-analytics.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/12-reports.yaml?region=ru
+  - https://dev.wildberries.ru/api/swagger/yaml/ru/13-finances.yaml?region=ru
 
 templates:
   base_dir: tools/templates

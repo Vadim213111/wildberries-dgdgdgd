@@ -2,58 +2,32 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-CONFIG_FILE="${ROOT_DIR}/generation.yaml"
-SPECS_DIR="${ROOT_DIR}/specs"
+SCRIPT_DIR="${ROOT_DIR}/scripts"
 
-if [[ ! -f "${CONFIG_FILE}" ]]; then
-  echo "Error: config not found: ${CONFIG_FILE}" >&2
+if ! command -v node >/dev/null 2>&1; then
+  echo "Error: node is required. The API source is behind an anti-bot challenge that only a real browser can solve, so we use Playwright + Chromium." >&2
   exit 1
 fi
 
-mkdir -p "${SPECS_DIR}"
-
-read_specs() {
-  awk '
-    $1=="specs:" {inside=1; next}
-    inside && $0 ~ /^[^[:space:]]/ {inside=0}
-    inside && $1=="-" {print $2}
-  ' "${CONFIG_FILE}"
-}
-
-download_spec() {
-  local url="$1"
-  local dest="$2"
-
-  if command -v curl >/dev/null 2>&1; then
-    curl -fsSL "${url}" -o "${dest}"
-    return
-  fi
-
-  if command -v wget >/dev/null 2>&1; then
-    wget -qO "${dest}" "${url}"
-    return
-  fi
-
-  echo "Error: need curl or wget to download specs." >&2
-  exit 1
-}
-
-specs=()
-while IFS= read -r spec; do
-  [[ -n "${spec}" ]] && specs+=("${spec}")
-done < <(read_specs)
-
-if [[ "${#specs[@]}" -eq 0 ]]; then
-  echo "Error: no specs found in ${CONFIG_FILE}" >&2
+if ! command -v npm >/dev/null 2>&1; then
+  echo "Error: npm is required to install Playwright." >&2
   exit 1
 fi
 
-for spec in "${specs[@]}"; do
-  if [[ "${spec}" =~ ^https?:// ]]; then
-    dest="${SPECS_DIR}/$(basename "${spec}")"
-    echo "Downloading $(basename "${spec}")"
-    download_spec "${spec}" "${dest}"
-  else
-    echo "Skipping non-URL spec: ${spec}"
-  fi
-done
+cd "${SCRIPT_DIR}"
+
+if [[ ! -d node_modules/playwright ]]; then
+  echo "Installing Playwright..."
+  npm install --silent --no-audit --no-fund --no-save \
+    playwright@^1.49.0 \
+    playwright-extra@^4.3.6 \
+    puppeteer-extra-plugin-stealth@^2.11.2
+fi
+
+export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-${SCRIPT_DIR}/.playwright-browsers}"
+
+# Idempotent — skips already-installed browsers.
+npx --no-install playwright install chromium >/dev/null
+
+cd "${ROOT_DIR}"
+node "${SCRIPT_DIR}/download-specs.mjs"
