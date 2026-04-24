@@ -2,10 +2,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium as _chromium } from 'playwright-extra';
-import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-_chromium.use(StealthPlugin());
-const chromium = _chromium;
+import { chromium } from 'patchright';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const rootDir = join(__dirname, '..');
@@ -34,14 +31,7 @@ if (urls.length === 0) {
 
 mkdirSync(specsDir, { recursive: true });
 
-const browser = await chromium.launch({
-  headless: true,
-  args: [
-    '--disable-blink-features=AutomationControlled',
-    '--disable-features=IsolateOrigins,site-per-process',
-    '--no-sandbox',
-  ],
-});
+const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({
   userAgent:
     'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
@@ -51,17 +41,10 @@ const context = await browser.newContext({
     'Accept-Language': 'ru-RU,ru;q=0.9,en;q=0.8',
   },
 });
-await context.addInitScript(() => {
-  Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
-  Object.defineProperty(navigator, 'languages', { get: () => ['ru-RU', 'ru', 'en'] });
-  Object.defineProperty(navigator, 'plugins', { get: () => [1, 2, 3, 4, 5] });
-  // Spoof chrome runtime presence.
-  window.chrome = window.chrome || { runtime: {} };
-});
 const page = await context.newPage();
 
 async function ensureAntibotPassed(probeUrl) {
-  const deadline = Date.now() + 240_000;
+  const deadline = Date.now() + 180_000;
   await page.goto(probeUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 });
   let lastHead = '';
   while (Date.now() < deadline) {
@@ -72,7 +55,7 @@ async function ensureAntibotPassed(probeUrl) {
         console.log(`  [antibot] ${head.replace(/\s+/g, ' ').slice(0, 80)}`);
         lastHead = head;
       }
-    } catch (e) {
+    } catch {
       // navigation in progress — ignore and retry
     }
     await page.waitForTimeout(2000);

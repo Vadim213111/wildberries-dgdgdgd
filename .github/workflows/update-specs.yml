@@ -15,22 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node (for Playwright fallback)
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Install Playwright + Chromium
-        working-directory: scripts
-        run: |
-          npm install --no-audit --no-fund --no-save \
-            playwright@^1.49.0 \
-            playwright-extra@^4.3.6 \
-            puppeteer-extra-plugin-stealth@^2.11.2
-          npx playwright install --with-deps chromium
-
       - name: Download specs
-        run: node scripts/download-specs.mjs
+        run: bash scripts/download-specs-from-config.sh
 
       - name: Check for spec changes
         id: check_changes
