@@ -36,7 +36,7 @@ class Supply(BaseModel):
     scan_dt: Optional[datetime] = Field(default=None, description="Дата скана поставки (RFC3339)", alias="scanDt")
     name: Optional[StrictStr] = Field(default=None, description="Наименование поставки")
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
-    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует ", alias="crossBorderType")
+    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует ", alias="crossBorderType")
     destination_office_id: Optional[StrictInt] = Field(default=None, description="ID склада назначения поставки. Если `null`, склад назначения не указан", alias="destinationOfficeId")
     __properties: ClassVar[List[str]] = ["id", "isB2b", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId"]
 

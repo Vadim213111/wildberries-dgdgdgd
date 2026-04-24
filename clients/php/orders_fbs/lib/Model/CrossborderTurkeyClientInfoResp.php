@@ -302,7 +302,7 @@ class CrossborderTurkeyClientInfoResp implements ModelInterface, ArrayAccess, \J
     /**
      * Sets orders
      *
-     * @param \Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfo[]|null $orders Информация по клиенту для кроссбордер-заказа из Турции
+     * @param \Wildberries\Sdk\OrdersFbs\Model\CrossborderTurkeyClientInfo[]|null $orders Информация по клиенту для трансграничных поставок из Турции
      *
      * @return self
      */

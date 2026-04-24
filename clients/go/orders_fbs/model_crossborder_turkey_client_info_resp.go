@@ -19,7 +19,7 @@ var _ MappedNullable = &CrossborderTurkeyClientInfoResp{}
 
 // CrossborderTurkeyClientInfoResp struct for CrossborderTurkeyClientInfoResp
 type CrossborderTurkeyClientInfoResp struct {
-	// Информация по клиенту для кроссбордер-заказа из Турции
+	// Информация по клиенту для трансграничных поставок из Турции
 	Orders []CrossborderTurkeyClientInfo `json:"orders,omitempty"`
 }
 

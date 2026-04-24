@@ -113,9 +113,9 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaImeiPut` — `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaSgtinPut` — `PUT /api/v3/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
 - `orders_fbs.FBSAPIService.ApiV3OrdersOrderIdMetaUinPut` — `PUT /api/v3/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН
-- `orders_fbs.FBSAPIService.ApiV3OrdersStatusHistoryPost` — `POST /api/v3/orders/status/history` — История статусов для сборочных заданий кроссбордера
+- `orders_fbs.FBSAPIService.ApiV3OrdersStatusHistoryPost` — `POST /api/v3/orders/status/history` — История статусов для сборочных заданий трансграничных поставок
 - `orders_fbs.FBSAPIService.ApiV3OrdersStatusPost` — `POST /api/v3/orders/status` — Получить статусы сборочных заданий
-- `orders_fbs.FBSAPIService.ApiV3OrdersStickersCrossBorderPost` — `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий кроссбордера
+- `orders_fbs.FBSAPIService.ApiV3OrdersStickersCrossBorderPost` — `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий трансграничных поставок
 - `orders_fbs.FBSAPIService.ApiV3OrdersStickersPost` — `POST /api/v3/orders/stickers` — Получить стикеры сборочных заданий
 - `orders_fbs.FBSAPIService.ApiV3PassesGet` — `GET /api/v3/passes` — Получить список пропусков
 - `orders_fbs.FBSAPIService.ApiV3PassesOfficesGet` — `GET /api/v3/passes/offices` — Получить список складов, для которых требуется пропуск

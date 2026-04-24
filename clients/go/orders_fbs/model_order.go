@@ -61,7 +61,7 @@ type Order struct {
 	ConvertedCurrencyCode *int32 `json:"convertedCurrencyCode,omitempty"`
 	// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
 	CargoType *int32 `json:"cargoType,omitempty"`
-	// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+	// Тип сборочного задания:   - `0` — внутренняя поставка   - `1` — трансграничная поставка 
 	CrossBorderType *int32 `json:"crossBorderType,omitempty"`
 	// Комментарий покупателя
 	Comment *string `json:"comment,omitempty"`

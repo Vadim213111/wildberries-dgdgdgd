@@ -1417,7 +1417,7 @@ class OrderNew implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cross_border_type
      *
-     * @param int|null $cross_border_type Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер
+     * @param int|null $cross_border_type Тип сборочного задания:   - `0` — внутренняя поставка   - `1` — трансграничная поставка
      *
      * @return self
      */

@@ -115,9 +115,9 @@
 - `POST /api/v3/orders/client` — Заказы с информацией по клиенту
 - `GET /api/v3/orders/new` — Получить список новых сборочных заданий
 - `POST /api/v3/orders/status` — Получить статусы сборочных заданий
-- `POST /api/v3/orders/status/history` — История статусов для сборочных заданий кроссбордера
+- `POST /api/v3/orders/status/history` — История статусов для сборочных заданий трансграничных поставок
 - `POST /api/v3/orders/stickers` — Получить стикеры сборочных заданий
-- `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий кроссбордера
+- `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий трансграничных поставок
 - `PATCH /api/v3/orders/{orderId}/cancel` — Отменить сборочное задание
 - `DELETE /api/v3/orders/{orderId}/meta` — Удалить метаданные сборочного задания
 - `PUT /api/v3/orders/{orderId}/meta/expiration` — Закрепить за сборочным заданием срок годности товара

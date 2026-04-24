@@ -125,9 +125,9 @@ print(feedbacks)
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_imei_put` — `PUT /api/v3/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_sgtin_put` — `PUT /api/v3/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
 - `orders_fbs.DefaultApi.api_v3_orders_order_id_meta_uin_put` — `PUT /api/v3/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН
-- `orders_fbs.DefaultApi.api_v3_orders_status_history_post` — `POST /api/v3/orders/status/history` — История статусов для сборочных заданий кроссбордера
+- `orders_fbs.DefaultApi.api_v3_orders_status_history_post` — `POST /api/v3/orders/status/history` — История статусов для сборочных заданий трансграничных поставок
 - `orders_fbs.DefaultApi.api_v3_orders_status_post` — `POST /api/v3/orders/status` — Получить статусы сборочных заданий
-- `orders_fbs.DefaultApi.api_v3_orders_stickers_cross_border_post` — `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий кроссбордера
+- `orders_fbs.DefaultApi.api_v3_orders_stickers_cross_border_post` — `POST /api/v3/orders/stickers/cross-border` — Получить стикеры сборочных заданий трансграничных поставок
 - `orders_fbs.DefaultApi.api_v3_orders_stickers_post` — `POST /api/v3/orders/stickers` — Получить стикеры сборочных заданий
 - `orders_fbs.DefaultApi.api_v3_passes_get` — `GET /api/v3/passes` — Получить список пропусков
 - `orders_fbs.DefaultApi.api_v3_passes_offices_get` — `GET /api/v3/passes/offices` — Получить список складов, для которых требуется пропуск

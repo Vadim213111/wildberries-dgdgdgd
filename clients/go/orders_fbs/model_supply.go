@@ -36,7 +36,7 @@ type Supply struct {
 	Name *string `json:"name,omitempty"`
 	// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
 	CargoType *int32 `json:"cargoType,omitempty"`
-	// Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует 
+	// Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует 
 	CrossBorderType NullableInt32 `json:"crossBorderType,omitempty"`
 	// ID склада назначения поставки. Если `null`, склад назначения не указан
 	DestinationOfficeId NullableInt64 `json:"destinationOfficeId,omitempty"`

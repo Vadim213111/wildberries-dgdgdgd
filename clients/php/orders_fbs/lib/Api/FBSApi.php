@@ -5359,7 +5359,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStatusHistoryPost
      *
-     * История статусов для сборочных заданий кроссбордера
+     * История статусов для сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5383,7 +5383,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStatusHistoryPostWithHttpInfo
      *
-     * История статусов для сборочных заданий кроссбордера
+     * История статусов для сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5544,7 +5544,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStatusHistoryPostAsync
      *
-     * История статусов для сборочных заданий кроссбордера
+     * История статусов для сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -5571,7 +5571,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStatusHistoryPostAsyncWithHttpInfo
      *
-     * История статусов для сборочных заданий кроссбордера
+     * История статусов для сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6145,7 +6145,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStickersCrossBorderPost
      *
-     * Получить стикеры сборочных заданий кроссбордера
+     * Получить стикеры сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6169,7 +6169,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStickersCrossBorderPostWithHttpInfo
      *
-     * Получить стикеры сборочных заданий кроссбордера
+     * Получить стикеры сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6330,7 +6330,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStickersCrossBorderPostAsync
      *
-     * Получить стикеры сборочных заданий кроссбордера
+     * Получить стикеры сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.
@@ -6357,7 +6357,7 @@ class FBSApi
     /**
      * Operation apiV3OrdersStickersCrossBorderPostAsyncWithHttpInfo
      *
-     * Получить стикеры сборочных заданий кроссбордера
+     * Получить стикеры сборочных заданий трансграничных поставок
      *
      * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
      * if needed, use the 'variables' parameter to pass variables to the host.

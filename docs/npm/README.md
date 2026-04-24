@@ -112,9 +112,9 @@ main().catch(console.error);
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaImeiPut` — Закрепить за сборочным заданием IMEI
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaSgtinPut` — Закрепить за сборочным заданием код маркировки товара
 - `orders_fbs.FBSApi.apiV3OrdersOrderIdMetaUinPut` — Закрепить за сборочным заданием УИН
-- `orders_fbs.FBSApi.apiV3OrdersStatusHistoryPost` — История статусов для сборочных заданий кроссбордера
+- `orders_fbs.FBSApi.apiV3OrdersStatusHistoryPost` — История статусов для сборочных заданий трансграничных поставок
 - `orders_fbs.FBSApi.apiV3OrdersStatusPost` — Получить статусы сборочных заданий
-- `orders_fbs.FBSApi.apiV3OrdersStickersCrossBorderPost` — Получить стикеры сборочных заданий кроссбордера
+- `orders_fbs.FBSApi.apiV3OrdersStickersCrossBorderPost` — Получить стикеры сборочных заданий трансграничных поставок
 - `orders_fbs.FBSApi.apiV3OrdersStickersPost` — Получить стикеры сборочных заданий
 - `orders_fbs.FBSApi.apiV3PassesGet` — Получить список пропусков
 - `orders_fbs.FBSApi.apiV3PassesOfficesGet` — Получить список складов, для которых требуется пропуск

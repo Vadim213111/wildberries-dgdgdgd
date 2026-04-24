@@ -77,7 +77,7 @@ pub struct Order {
     /// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
     #[serde(rename = "cargoType", skip_serializing_if = "Option::is_none")]
     pub cargo_type: Option<CargoType>,
-    /// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+    /// Тип сборочного задания:   - `0` — внутренняя поставка   - `1` — трансграничная поставка 
     #[serde(rename = "crossBorderType", skip_serializing_if = "Option::is_none")]
     pub cross_border_type: Option<CrossBorderType>,
     /// Комментарий покупателя
@@ -157,7 +157,7 @@ impl Default for CargoType {
         Self::Variant1
     }
 }
-/// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+/// Тип сборочного задания:   - `0` — внутренняя поставка   - `1` — трансграничная поставка 
 #[repr(i64)]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum CrossBorderType {

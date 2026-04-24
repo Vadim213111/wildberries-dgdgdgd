@@ -28,7 +28,7 @@ import {
  */
 export interface CrossborderTurkeyClientInfoResp {
     /**
-     * Информация по клиенту для кроссбордер-заказа из Турции
+     * Информация по клиенту для трансграничных поставок из Турции
      * @type {Array<CrossborderTurkeyClientInfo>}
      * @memberof CrossborderTurkeyClientInfoResp
      */

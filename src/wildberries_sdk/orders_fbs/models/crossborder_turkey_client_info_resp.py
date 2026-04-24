@@ -28,7 +28,7 @@ class CrossborderTurkeyClientInfoResp(BaseModel):
     """
     CrossborderTurkeyClientInfoResp
     """ # noqa: E501
-    orders: Optional[List[CrossborderTurkeyClientInfo]] = Field(default=None, description="Информация по клиенту для кроссбордер-заказа из Турции")
+    orders: Optional[List[CrossborderTurkeyClientInfo]] = Field(default=None, description="Информация по клиенту для трансграничных поставок из Турции")
     __properties: ClassVar[List[str]] = ["orders"]
 
     model_config = ConfigDict(

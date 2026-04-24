@@ -75,7 +75,7 @@ type OrderNew struct {
 	ConvertedCurrencyCode *int32 `json:"convertedCurrencyCode,omitempty"`
 	// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
 	CargoType *int32 `json:"cargoType,omitempty"`
-	// Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер 
+	// Тип сборочного задания:   - `0` — внутренняя поставка   - `1` — трансграничная поставка 
 	CrossBorderType *int32 `json:"crossBorderType,omitempty"`
 	// Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену 
 	IsZeroOrder *bool `json:"isZeroOrder,omitempty"`

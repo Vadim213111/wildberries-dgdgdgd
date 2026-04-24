@@ -52,7 +52,7 @@ class Order(BaseModel):
     currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты продажи", alias="currencyCode")
     converted_currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты страны продавца", alias="convertedCurrencyCode")
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
-    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип сборочного задания:   - `0` — не кроссбордер   - `1` — кроссбордер ", alias="crossBorderType")
+    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип сборочного задания:   - `0` — внутренняя поставка   - `1` — трансграничная поставка ", alias="crossBorderType")
     comment: Optional[Annotated[str, Field(strict=True, max_length=300)]] = Field(default=None, description="Комментарий покупателя")
     is_zero_order: Optional[StrictBool] = Field(default=None, description="Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком. Такой заказ можно отменить без штрафа за отмену ", alias="isZeroOrder")
     options: Optional[OrderOptions] = None

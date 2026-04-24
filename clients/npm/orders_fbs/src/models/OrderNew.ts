@@ -226,8 +226,8 @@ export interface OrderNew {
     cargoType?: OrderNewCargoTypeEnum;
     /**
      * Тип сборочного задания:
-     *   - `0` — не кроссбордер
-     *   - `1` — кроссбордер
+     *   - `0` — внутренняя поставка
+     *   - `1` — трансграничная поставка
      * 
      * @type {OrderNewCrossBorderTypeEnum}
      * @memberof OrderNew

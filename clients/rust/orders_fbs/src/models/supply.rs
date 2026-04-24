@@ -39,7 +39,7 @@ pub struct Supply {
     /// Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) 
     #[serde(rename = "cargoType", skip_serializing_if = "Option::is_none")]
     pub cargo_type: Option<CargoType>,
-    /// Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует 
+    /// Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует 
     #[serde(rename = "crossBorderType", default, with = "::serde_with::rust::double_option", skip_serializing_if = "Option::is_none")]
     pub cross_border_type: Option<Option<CrossBorderType>>,
     /// ID склада назначения поставки. Если `null`, склад назначения не указан
@@ -89,7 +89,7 @@ impl Default for CargoType {
         Self::Variant0
     }
 }
-/// Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует 
+/// Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует 
 #[repr(i64)]
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize_repr, Deserialize_repr)]
 pub enum CrossBorderType {

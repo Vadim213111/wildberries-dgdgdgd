@@ -664,7 +664,7 @@ class Supply implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets cross_border_type
      *
-     * @param int|null $cross_border_type Тип поставки:   - `0` — не кроссбордер   - `1` — кроссбордер   - `null` — значение отсутствует
+     * @param int|null $cross_border_type Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует
      *
      * @return self
      */
