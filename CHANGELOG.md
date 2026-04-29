@@ -1,6 +1,13 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.04.29)
+- Orders FBS: добавлен GET `/api/marketplace/v3/fbs/orders/archive` для получения списка архивных сборочных заданий (старше 3 месяцев) с пагинацией `year`+`month`+`next`+`limit` (limit 100–1000) и лимитом 300 req/min (200 мс, burst 20); добавлены схемы ответа `v3.ArchiveOrders`/`v3.ArchiveOrder` и новый формат ошибок `v3.APIErrorV2` (в т.ч. ответы `401-2`, `429-2`).
+- Orders DBW: добавлен batch-метод POST `/api/marketplace/v3/dbw/orders/meta/details` (тело `api.OrdersRequestV2.ordersIds` до 1000) для получения метаданных сборочных заданий и статусов их валидации; новый ответ `api.OrdersMetaDetailsResponse`, ошибки `api.BatchError`; лимит 300 req/min (200 мс, burst 20).
+- Orders DBW: GET `/api/v3/dbw/orders/{orderId}/meta` помечен как `deprecated` и будет удалён 27 июля (замена — новый batch endpoint).
+- Orders DBS: endpoint переименован/заменён с POST `/api/marketplace/v3/dbs/orders/meta/info` на POST `/api/marketplace/v3/dbs/orders/meta/details` с поддержкой статусов валидации; добавлены `api.OrdersRequestV2` и `api.OrdersMetaDetailsResponse`, ошибки `api.BatchError`.
+- Orders DBS: POST `/api/marketplace/v3/dbs/orders/meta/info` помечен как `deprecated` и будет удалён 27 июля; для нового `/meta/details` обновлён лимит до 300 req/min (200 мс, burst 20) вместо 150 req/min (400 мс), правило «409 считается как 10 запросов» сохранено.
+
 ### Changed (2026.04.28)
 - Products: в модели характеристик добавлено новое булево поле `isVariable` (признак меняющейся характеристики для различий вариантов товара); обновлён пример ответа с `isVariable: true`.
 - Orders FBS: исправлена опечатка в перечислении ключей обязательной маркировки — `сustomsDeclaration` → `customsDeclaration`.
