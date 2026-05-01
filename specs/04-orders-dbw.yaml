@@ -804,7 +804,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
           - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
 
           <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
@@ -932,7 +932,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
           - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
 
         Можно передать только один ключ.
 
@@ -997,13 +997,13 @@ paths:
         - HeaderApiKey: []
       tags:
         - Метаданные DBW
-      summary: Закрепить за сборочным заданием код маркировки товара
+      summary: Закрепить за сборочным заданием код маркировки Честного знака
       description: |
-        Метод позволяет закрепить за сборочным заданием код маркировки [Честный знак](https://честныйзнак.рф).
+        Метод позволяет закрепить за сборочным заданием код маркировки [Честного знака](https://честныйзнак.рф/).
         <br><br>
-        Закрепить код маркировки можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
+        Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
         <br><br>
-        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
+        Получить загруженные коды маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
@@ -1024,12 +1024,12 @@ paths:
               properties:
                 sgtins:
                   type: array
-                  description: Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки
+                  description: Массив кодов маркировки
                   minItems: 1
                   maxItems: 24
                   items:
                     type: string
-                    description: Код маркировки на упаковке. От 16 до 135 символов
+                    description: Код маркировки [Честного знака](https://честныйзнак.рф/) на упаковке. От 16 до 135 символов
                     example: '1234567890123456'
       responses:
         '204':
@@ -2180,4 +2180,4 @@ components:
               example:
                 - '123456789012345'
               nullable: true
-          description: Код маркировки Честного знака
+          description: Код маркировки [Честного знака](https://честныйзнак.рф/)

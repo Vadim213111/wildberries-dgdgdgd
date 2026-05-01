@@ -1505,7 +1505,7 @@ components:
           example: 2816993144
         kiz:
           type: string
-          description: Код маркировки
+          description: Код маркировки [Честного знака](https://честныйзнак.рф/)
           example: "0102900000376311210G2CIS?ehge)S\x1D91002A\x1D92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
         isB2b:
           type: boolean
@@ -2109,7 +2109,7 @@ components:
           example: "0102900000376311210G2CIS?ehge)S\x1D91002A\x1D92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
           type: string
           description: |
-            Код маркировки.<br>
+            Код маркировки [Честного знака](https://честныйзнак.рф/).<br>
             Поле будет в ответе при наличии значения
         srid:
           example: 0f1c3999172603062979867564654dac5b702849
