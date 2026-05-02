@@ -11,6 +11,7 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     permissions:
       contents: write
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -141,6 +142,49 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish --access public
+
+      - name: Publish npm package to GitHub Packages
+        if: steps.commit.outputs.did_commit == 'true'
+        working-directory: npm
+        continue-on-error: true
+        env:
+          GH_PACKAGES_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # GitHub Packages requires a scoped package name; use the repo owner.
+          npm pkg set name="@eslazarev/wildberries-sdk"
+          cat > .npmrc <<EOF
+          @eslazarev:registry=https://npm.pkg.github.com
+          //npm.pkg.github.com/:_authToken=${GH_PACKAGES_TOKEN}
+          always-auth=true
+          EOF
+          npm publish --access public
+          rm -f .npmrc
+          npm pkg set name="wildberries-sdk"
+
+      - name: Pack npm tarball for the GitHub Release
+        if: steps.commit.outputs.did_commit == 'true'
+        working-directory: npm
+        run: |
+          npm pack
+          mkdir -p ../dist
+          mv wildberries-sdk-*.tgz ../dist/
+
+      - name: Create GitHub Release with build artifacts
+        if: steps.commit.outputs.did_commit == 'true'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PACKAGE_VERSION: ${{ steps.bump.outputs.version }}
+        run: |
+          # Tag was pushed by `Tag release` step earlier; attach build artifacts.
+          assets=()
+          for f in dist/*.whl dist/*.tar.gz dist/*.tgz; do
+            [ -f "$f" ] && assets+=("$f")
+          done
+          gh release create "v${PACKAGE_VERSION}" \
+            --title "v${PACKAGE_VERSION}" \
+            --notes "Automated release. See [CHANGELOG.md](CHANGELOG.md) for spec changes in this revision." \
+            "${assets[@]}"
 
       - name: Update Packagist
         if: steps.commit.outputs.did_commit == 'true'
