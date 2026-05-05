@@ -27,9 +27,9 @@ class ContentV2ObjectParentAllGet200ResponseDataInner(BaseModel):
     """
     ContentV2ObjectParentAllGet200ResponseDataInner
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Название категории")
-    id: Optional[StrictInt] = Field(default=None, description="ID родительской категории")
-    is_visible: Optional[StrictBool] = Field(default=None, description="Виден на сайте", alias="isVisible")
+    name: Optional[StrictStr] = Field(default=None, description="Название категории", json_schema_extra={"examples": ["Электроника"]})
+    id: Optional[StrictInt] = Field(default=None, description="ID родительской категории", json_schema_extra={"examples": [479]})
+    is_visible: Optional[StrictBool] = Field(default=None, description="Виден на сайте", alias="isVisible", json_schema_extra={"examples": [True]})
     __properties: ClassVar[List[str]] = ["name", "id", "isVisible"]
 
     model_config = ConfigDict(

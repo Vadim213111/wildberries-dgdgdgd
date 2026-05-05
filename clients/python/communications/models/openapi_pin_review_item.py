@@ -27,9 +27,9 @@ class OpenapiPinReviewItem(BaseModel):
     """
     OpenapiPinReviewItem
     """ # noqa: E501
-    pin_method: StrictStr = Field(description="Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция ", alias="pinMethod")
-    pin_on: StrictStr = Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ", alias="pinOn")
-    feedback_id: StrictStr = Field(description="ID отзыва", alias="feedbackId")
+    pin_method: StrictStr = Field(description="Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция ", alias="pinMethod", json_schema_extra={"examples": ["subscription"]})
+    pin_on: StrictStr = Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ", alias="pinOn", json_schema_extra={"examples": ["imt"]})
+    feedback_id: StrictStr = Field(description="ID отзыва", alias="feedbackId", json_schema_extra={"examples": ["DibuRAImknLyiqgzvGcU"]})
     __properties: ClassVar[List[str]] = ["pinMethod", "pinOn", "feedbackId"]
 
     @field_validator('pin_method')

@@ -27,9 +27,9 @@ class TableSearchTextItemAllOfOrders(BaseModel):
     """
     Сколько раз товары из поиска заказали
     """ # noqa: E501
-    current: StrictInt = Field(description="Текущее количество")
-    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %")
-    percentile: StrictInt = Field(description="Процент, на который показатель заказов выше, чем у карточек конкурентов по поисковому запросу")
+    current: StrictInt = Field(description="Текущее количество", json_schema_extra={"examples": [5]})
+    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %", json_schema_extra={"examples": [50]})
+    percentile: StrictInt = Field(description="Процент, на который показатель заказов выше, чем у карточек конкурентов по поисковому запросу", json_schema_extra={"examples": [50]})
     __properties: ClassVar[List[str]] = ["current", "dynamics", "percentile"]
 
     model_config = ConfigDict(

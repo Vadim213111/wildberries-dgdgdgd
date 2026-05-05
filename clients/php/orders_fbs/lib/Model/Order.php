@@ -786,7 +786,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets created_at
      *
-     * @param \DateTime|null $created_at Дата создания сборочного задания (RFC3339)
+     * @param \DateTime|null $created_at Дата создания сборочного задания (RFC3339). Часовой пояс — UTC
      *
      * @return self
      */

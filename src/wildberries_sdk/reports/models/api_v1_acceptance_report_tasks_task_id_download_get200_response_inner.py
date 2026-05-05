@@ -28,13 +28,13 @@ class ApiV1AcceptanceReportTasksTaskIdDownloadGet200ResponseInner(BaseModel):
     """
     ApiV1AcceptanceReportTasksTaskIdDownloadGet200ResponseInner
     """ # noqa: E501
-    count: Optional[StrictInt] = Field(default=None, description="Количество товаров, шт.")
-    gi_create_date: Optional[date] = Field(default=None, description="Дата создания поставки", alias="giCreateDate")
-    income_id: Optional[StrictInt] = Field(default=None, description="Номер поставки", alias="incomeId")
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
-    shk_create_date: Optional[date] = Field(default=None, description="Дата приёмки", alias="shkCreateDate")
-    subject_name: Optional[StrictStr] = Field(default=None, description="Предмет", alias="subjectName")
-    total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Суммарная стоимость приёмки, ₽ с копейками")
+    count: Optional[StrictInt] = Field(default=None, description="Количество товаров, шт.", json_schema_extra={"examples": [40]})
+    gi_create_date: Optional[date] = Field(default=None, description="Дата создания поставки", alias="giCreateDate", json_schema_extra={"examples": ["2025-03-04"]})
+    income_id: Optional[StrictInt] = Field(default=None, description="Номер поставки", alias="incomeId", json_schema_extra={"examples": [11834106]})
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID", json_schema_extra={"examples": [123456789]})
+    shk_create_date: Optional[date] = Field(default=None, description="Дата приёмки", alias="shkCreateDate", json_schema_extra={"examples": ["2025-03-14"]})
+    subject_name: Optional[StrictStr] = Field(default=None, description="Предмет", alias="subjectName", json_schema_extra={"examples": ["Добавки пищевые"]})
+    total: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Суммарная стоимость приёмки, ₽ с копейками", json_schema_extra={"examples": [873.04]})
     __properties: ClassVar[List[str]] = ["count", "giCreateDate", "incomeId", "nmID", "shkCreateDate", "subjectName", "total"]
 
     model_config = ConfigDict(

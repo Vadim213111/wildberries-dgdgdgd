@@ -28,9 +28,9 @@ class ApiV1ClaimPatchRequest(BaseModel):
     """
     ApiV1ClaimPatchRequest
     """ # noqa: E501
-    id: StrictStr = Field(description="ID заявки")
-    action: StrictStr = Field(description="Действие с заявкой.<br>Используйте одно из значений массива `actions` — ответа [метода получения заявок](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)")
-    comment: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=1000)]] = Field(default=None, description="Комментарий.<br>Применимо только при `\"action\":\"rejectcustom\"` или `\"action\":\"approvecc1\"`. При `\"action\":\"rejectcustom\"` параметр обязателен")
+    id: StrictStr = Field(description="ID заявки", json_schema_extra={"examples": ["fe3e9337-e9f9-423c-8930-946a8ebef80"]})
+    action: StrictStr = Field(description="Действие с заявкой.<br>Используйте одно из значений массива `actions` — ответа [метода получения заявок](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)", json_schema_extra={"examples": ["rejectcustom"]})
+    comment: Optional[Annotated[str, Field(min_length=10, strict=True, max_length=1000)]] = Field(default=None, description="Комментарий.<br>Применимо только при `\"action\":\"rejectcustom\"` или `\"action\":\"approvecc1\"`. При `\"action\":\"rejectcustom\"` параметр обязателен", json_schema_extra={"examples": ["Фото не имеет отношения к товару в заявке"]})
     __properties: ClassVar[List[str]] = ["id", "action", "comment"]
 
     model_config = ConfigDict(

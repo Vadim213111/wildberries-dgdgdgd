@@ -27,9 +27,9 @@ class SizeGoodReq(BaseModel):
     """
     SizeGoodReq
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID")
-    size_id: StrictInt = Field(description="ID размера. Можно получить с помощью методов [Получить товары с ценами](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get) и [Получить товары с ценами по артикулам](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post), поле `sizeID`. В методах Контента это поле `chrtID`", alias="sizeID")
-    price: StrictInt = Field(description="Цена. Валюту можно получить с помощью методов [Получить товары с ценами](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get) и [Получить товары с ценами по артикулам](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post), поле `currencyIsoCode4217`")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID", json_schema_extra={"examples": [123]})
+    size_id: StrictInt = Field(description="ID размера. Можно получить с помощью методов [Получить товары с ценами](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get) и [Получить товары с ценами по артикулам](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post), поле `sizeID`. В методах Контента это поле `chrtID`", alias="sizeID", json_schema_extra={"examples": [98989887]})
+    price: StrictInt = Field(description="Цена. Валюту можно получить с помощью методов [Получить товары с ценами](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get) и [Получить товары с ценами по артикулам](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post), поле `currencyIsoCode4217`", json_schema_extra={"examples": [999]})
     __properties: ClassVar[List[str]] = ["nmID", "sizeID", "price"]
 
     model_config = ConfigDict(

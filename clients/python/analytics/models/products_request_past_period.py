@@ -28,8 +28,8 @@ class ProductsRequestPastPeriod(BaseModel):
     """
     ProductsRequestPastPeriod
     """ # noqa: E501
-    start: date = Field(description="Начало периода")
-    end: date = Field(description="Конец периода")
+    start: date = Field(description="Начало периода", json_schema_extra={"examples": ["2023-06-01"]})
+    end: date = Field(description="Конец периода", json_schema_extra={"examples": ["2024-03-01"]})
     __properties: ClassVar[List[str]] = ["start", "end"]
 
     model_config = ConfigDict(

@@ -35,13 +35,13 @@ class SearchReportTextReqParams(BaseModel):
     current_period: Period = Field(alias="currentPeriod")
     past_period: Optional[PastPeriod] = Field(default=None, alias="pastPeriod")
     nm_ids: Optional[Annotated[List[StrictStr], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB, по которым составить отчёт. Оставьте пустым, чтобы получить отчёт по всем товарам ", alias="nmIds")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
-    top_order_by: StrictStr = Field(description="Фильтрация по поисковым запросам, по которым больше всего:   - `openCard` — перешли в карточку   - `addToCart` — добавили в корзину   - `openToCart` — конверсия в корзину   - `orders` — заказали товаров   - `cartToOrder` — конверсия в заказ ", alias="topOrderBy")
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[64, 334]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["nike", "adidas"]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds", json_schema_extra={"examples": [[32, 53]]})
+    top_order_by: StrictStr = Field(description="Фильтрация по поисковым запросам, по которым больше всего:   - `openCard` — перешли в карточку   - `addToCart` — добавили в корзину   - `openToCart` — конверсия в корзину   - `orders` — заказали товаров   - `cartToOrder` — конверсия в заказ ", alias="topOrderBy", json_schema_extra={"examples": ["openToCart"]})
     order_by: OrderByGrTe = Field(alias="orderBy")
-    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs")
-    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts")
+    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs", json_schema_extra={"examples": [True]})
+    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts", json_schema_extra={"examples": [False]})
     limit: TextLimit
     __properties: ClassVar[List[str]] = ["currentPeriod", "pastPeriod", "nmIds", "subjectIds", "brandNames", "tagIds", "topOrderBy", "orderBy", "includeSubstitutedSKUs", "includeSearchTexts", "limit"]
 

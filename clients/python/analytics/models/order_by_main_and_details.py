@@ -27,8 +27,8 @@ class OrderByMainAndDetails(BaseModel):
     """
     Параметры сортировки
     """ # noqa: E501
-    var_field: StrictStr = Field(description="Поле для сортировки:   - `avgPosition` — по средней позиции   - `addToCart` — по добавлениям в корзину   - `openCard` — по открытию карточки (переход на страницу товара)   - `orders` — по количеству заказов   - `cartToOrder` — по конверсии в заказ из поиска   - `openToCart` — по конверсии в корзину из поиска   - `visibility` — по видимости товара   - `minPrice` — по минимальной цене   - `maxPrice` — по максимальной цене ", alias="field")
-    mode: StrictStr = Field(description="Порядок сортировки:   - `asc` — по возрастанию   - `desc` — по убыванию ")
+    var_field: StrictStr = Field(description="Поле для сортировки:   - `avgPosition` — по средней позиции   - `addToCart` — по добавлениям в корзину   - `openCard` — по открытию карточки (переход на страницу товара)   - `orders` — по количеству заказов   - `cartToOrder` — по конверсии в заказ из поиска   - `openToCart` — по конверсии в корзину из поиска   - `visibility` — по видимости товара   - `minPrice` — по минимальной цене   - `maxPrice` — по максимальной цене ", alias="field", json_schema_extra={"examples": ["avgPosition"]})
+    mode: StrictStr = Field(description="Порядок сортировки:   - `asc` — по возрастанию   - `desc` — по убыванию ", json_schema_extra={"examples": ["asc"]})
     __properties: ClassVar[List[str]] = ["field", "mode"]
 
     @field_validator('var_field')

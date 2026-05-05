@@ -28,7 +28,7 @@ class V3GetMetaMultiRequest(BaseModel):
     """
     ID сборочных заданий
     """ # noqa: E501
-    orders: Annotated[List[StrictInt], Field(max_length=100)]
+    orders: Annotated[List[StrictInt], Field(max_length=100)] = Field(json_schema_extra={"examples": [[123456, 234567, 345678]]})
     __properties: ClassVar[List[str]] = ["orders"]
 
     model_config = ConfigDict(

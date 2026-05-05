@@ -28,9 +28,9 @@ class FloatGraphByPeriodItem(BaseModel):
     """
     Среднее количество заказов за месяц
     """ # noqa: E501
-    start: date = Field(description="Начало месяца")
-    end: date = Field(description="Конец месяца")
-    value: Union[StrictFloat, StrictInt] = Field(description="Среднее количество заказов")
+    start: date = Field(description="Начало месяца", json_schema_extra={"examples": ["2025-01-01"]})
+    end: date = Field(description="Конец месяца", json_schema_extra={"examples": ["2025-01-31"]})
+    value: Union[StrictFloat, StrictInt] = Field(description="Среднее количество заказов", json_schema_extra={"examples": [25.55]})
     __properties: ClassVar[List[str]] = ["start", "end", "value"]
 
     model_config = ConfigDict(

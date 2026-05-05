@@ -29,7 +29,7 @@ class OrderCourierInfo(BaseModel):
     OrderCourierInfo
     """ # noqa: E501
     courier_info: Optional[CourierInfo] = Field(default=None, description="Информация о курьере", alias="courierInfo")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderID")
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderID", json_schema_extra={"examples": [2876979713]})
     __properties: ClassVar[List[str]] = ["courierInfo", "orderID"]
 
     model_config = ConfigDict(

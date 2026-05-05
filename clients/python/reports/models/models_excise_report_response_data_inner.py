@@ -27,18 +27,18 @@ class ModelsExciseReportResponseDataInner(BaseModel):
     """
     ModelsExciseReportResponseDataInner
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Страна покупателя")
-    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена товара, с НДС")
-    currency_name_short: Optional[StrictStr] = Field(default=None, description="Валюта")
-    excise_short: Optional[StrictStr] = Field(default=None, description="Код маркировки")
-    barcode: Optional[StrictStr] = Field(default=None, description="Баркод")
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB")
-    operation_type_id: Optional[StrictInt] = Field(default=None, description="Тип операции, если есть:    * `1` — вывод из оборота   * `2` — возврат в оборот ")
-    fiscal_doc_number: Optional[StrictInt] = Field(default=None, description="Номер фискального документа (чека полного расчёта), если есть")
-    fiscal_dt: Optional[StrictStr] = Field(default=None, description="Дата фискализации (дата в чеке), если есть, `ГГГГ-ММ-ДД`")
+    name: Optional[StrictStr] = Field(default=None, description="Страна покупателя", json_schema_extra={"examples": ["Россия"]})
+    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Цена товара, с НДС", json_schema_extra={"examples": [100]})
+    currency_name_short: Optional[StrictStr] = Field(default=None, description="Валюта", json_schema_extra={"examples": ["руб"]})
+    excise_short: Optional[StrictStr] = Field(default=None, description="Код маркировки", json_schema_extra={"examples": ["0102900254680370215_Re/=lSbNiGD"]})
+    barcode: Optional[StrictStr] = Field(default=None, description="Баркод", json_schema_extra={"examples": ["2038893425820"]})
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", json_schema_extra={"examples": [169085355]})
+    operation_type_id: Optional[StrictInt] = Field(default=None, description="Тип операции, если есть:    * `1` — вывод из оборота   * `2` — возврат в оборот ", json_schema_extra={"examples": [1]})
+    fiscal_doc_number: Optional[StrictInt] = Field(default=None, description="Номер фискального документа (чека полного расчёта), если есть", json_schema_extra={"examples": [12345678]})
+    fiscal_dt: Optional[StrictStr] = Field(default=None, description="Дата фискализации (дата в чеке), если есть, `ГГГГ-ММ-ДД`", json_schema_extra={"examples": ["2024-01-01"]})
     fiscal_drive_number: Optional[StrictStr] = Field(default=None, description="Номер фискального накопителя, если есть")
-    rid: Optional[StrictInt] = Field(default=None, description="`Rid` ")
-    srid: Optional[StrictStr] = Field(default=None, description="`Srid` ")
+    rid: Optional[StrictInt] = Field(default=None, description="`Rid` ", json_schema_extra={"examples": [606217433440]})
+    srid: Optional[StrictStr] = Field(default=None, description="`Srid` ", json_schema_extra={"examples": ["7513432034713632943.1.0"]})
     __properties: ClassVar[List[str]] = ["name", "price", "currency_name_short", "excise_short", "barcode", "nm_id", "operation_type_id", "fiscal_doc_number", "fiscal_dt", "fiscal_drive_number", "rid", "srid"]
 
     model_config = ConfigDict(

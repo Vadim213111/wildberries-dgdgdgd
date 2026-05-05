@@ -28,13 +28,13 @@ class ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner(BaseModel):
     """
     ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInner
     """ # noqa: E501
-    brand: Optional[StrictStr] = Field(default=None, description="Бренд")
-    subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName")
-    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
-    barcode: Optional[StrictStr] = Field(default=None, description="Баркод")
-    tech_size: Optional[StrictStr] = Field(default=None, description="Размер", alias="techSize")
-    volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Объём, л")
+    brand: Optional[StrictStr] = Field(default=None, description="Бренд", json_schema_extra={"examples": ["Wonderful"]})
+    subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName", json_schema_extra={"examples": ["Фотоальбомы"]})
+    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["41058/прозрачный"]})
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId", json_schema_extra={"examples": [183804172]})
+    barcode: Optional[StrictStr] = Field(default=None, description="Баркод", json_schema_extra={"examples": ["2037031652319"]})
+    tech_size: Optional[StrictStr] = Field(default=None, description="Размер", alias="techSize", json_schema_extra={"examples": ["0"]})
+    volume: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Объём, л", json_schema_extra={"examples": [1.33]})
     warehouses: Optional[List[ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner]] = Field(default=None, description="Остатки на складах и товары в пути. Будут в ответе только при ненулевом `quantity`")
     __properties: ClassVar[List[str]] = ["brand", "subjectName", "vendorCode", "nmId", "barcode", "techSize", "volume", "warehouses"]
 

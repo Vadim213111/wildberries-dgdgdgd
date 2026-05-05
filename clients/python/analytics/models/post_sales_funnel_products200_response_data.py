@@ -29,7 +29,7 @@ class PostSalesFunnelProducts200ResponseData(BaseModel):
     PostSalesFunnelProducts200ResponseData
     """ # noqa: E501
     products: List[ProductsResponseProductsInner] = Field(description="Список карточек товаров")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["products", "currency"]
 
     model_config = ConfigDict(

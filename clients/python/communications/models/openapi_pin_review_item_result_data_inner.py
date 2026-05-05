@@ -33,7 +33,7 @@ class OpenapiPinReviewItemResultDataInner(BaseModel):
     pin_method: StrictStr = Field(description="Метод закрепления:   - `subscription` — подписка Джем   - `tariff` — тарифная опция ", alias="pinMethod")
     pin_on: StrictStr = Field(description="Место закрепления отзыва:   - `nm` — карточка товара   - `imt` — группа [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек товаров ", alias="pinOn")
     is_errors: StrictBool = Field(description="Есть ли ошибки", alias="isErrors")
-    errors: Optional[List[OpenapiResultErr]] = Field(default=None, description="Детали ошибок")
+    errors: Optional[List[OpenapiResultErr]] = Field(default=None, description="Детали ошибок", json_schema_extra={"examples": [[{"status": "itemNotFound", "title": "item not found", "detail": "item not found or does not belong to seller", "requestId": "0414dс48df701618e0а3bfc414fe3136", "origin": "pin-open-api"}]]})
     __properties: ClassVar[List[str]] = ["feedbackId", "pinId", "pinMethod", "pinOn", "isErrors", "errors"]
 
     @field_validator('pin_method')

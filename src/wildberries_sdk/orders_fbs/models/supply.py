@@ -28,17 +28,17 @@ class Supply(BaseModel):
     """
     Supply
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="ID поставки")
+    id: Optional[StrictStr] = Field(default=None, description="ID поставки", json_schema_extra={"examples": ["WB-GI-1234567"]})
     is_b2b: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи:   - `true` — B2B-продажа   - `false` — не B2B-продажа   - `null` — признак отсутствует, сборочные задания не добавлены к поставке ", alias="isB2b")
     done: Optional[StrictBool] = Field(default=None, description="Флаг закрытия поставки:   - `true` — закрыта   - `false` — открыта ")
-    created_at: Optional[datetime] = Field(default=None, description="Дата создания поставки (RFC3339)", alias="createdAt")
-    closed_at: Optional[datetime] = Field(default=None, description="Дата закрытия поставки (RFC3339)", alias="closedAt")
-    scan_dt: Optional[datetime] = Field(default=None, description="Дата скана поставки (RFC3339)", alias="scanDt")
-    name: Optional[StrictStr] = Field(default=None, description="Наименование поставки")
+    created_at: Optional[datetime] = Field(default=None, description="Дата создания поставки (RFC3339)", alias="createdAt", json_schema_extra={"examples": ["2022-05-04T07:56:29Z"]})
+    closed_at: Optional[datetime] = Field(default=None, description="Дата закрытия поставки (RFC3339)", alias="closedAt", json_schema_extra={"examples": ["2022-05-04T07:56:29Z"]})
+    scan_dt: Optional[datetime] = Field(default=None, description="Дата скана поставки (RFC3339)", alias="scanDt", json_schema_extra={"examples": ["2022-05-04T07:56:29Z"]})
+    name: Optional[StrictStr] = Field(default=None, description="Наименование поставки", json_schema_extra={"examples": ["Тестовая поставка"]})
     cargo_type: Optional[StrictInt] = Field(default=None, description="Тип товара:   - `1` — малогабаритный товар (МГТ)   - `2` — сверхгабаритный товар (СГТ)   - `3` — крупногабаритный товар (КГТ+) ", alias="cargoType")
-    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует ", alias="crossBorderType")
-    destination_office_id: Optional[StrictInt] = Field(default=None, description="ID склада назначения поставки. Если `null`, склад назначения не указан", alias="destinationOfficeId")
-    recommended_wh_id: Optional[StrictInt] = Field(default=None, description="ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br> Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br> Если `0`, рекомендуемый склад не определён ", alias="recommendedWhId")
+    cross_border_type: Optional[StrictInt] = Field(default=None, description="Тип поставки:   - `0` — внутренняя поставка   - `1` — трансграничная поставка   - `null` — значение отсутствует ", alias="crossBorderType", json_schema_extra={"examples": [1]})
+    destination_office_id: Optional[StrictInt] = Field(default=None, description="ID склада назначения поставки. Если `null`, склад назначения не указан", alias="destinationOfficeId", json_schema_extra={"examples": [123]})
+    recommended_wh_id: Optional[StrictInt] = Field(default=None, description="ID рекомендуемого склада для приёмки поставки для Москвы и МО. <br> Рекомендуется ближайший к покупателям склад, который определяется автоматически при передаче поставки в доставку с учётом параметров всех сборочных заданий в поставке.<br> Если `0`, рекомендуемый склад не определён ", alias="recommendedWhId", json_schema_extra={"examples": [123569]})
     __properties: ClassVar[List[str]] = ["id", "isB2b", "done", "createdAt", "closedAt", "scanDt", "name", "cargoType", "crossBorderType", "destinationOfficeId", "recommendedWhId"]
 
     @field_validator('cargo_type')

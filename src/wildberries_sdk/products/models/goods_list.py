@@ -28,14 +28,14 @@ class GoodsList(BaseModel):
     """
     Размеры товара
     """ # noqa: E501
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
-    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID", json_schema_extra={"examples": [98486]})
+    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["07326060"]})
     sizes: Optional[List[GoodsListSizesInner]] = Field(default=None, description="Размер")
-    currency_iso_code4217: Optional[StrictStr] = Field(default=None, description="Валюта, по стандарту ISO 4217", alias="currencyIsoCode4217")
-    discount: Optional[StrictInt] = Field(default=None, description="Скидка, %")
-    club_discount: Optional[StrictInt] = Field(default=None, description="Скидка WB Клуба, %", alias="clubDiscount")
-    editable_size_price: Optional[StrictBool] = Field(default=None, description="Можно ли устанавливать цены отдельно для разных размеров (зависит от категории товара):   - `true` — можно   - `false` — нельзя ", alias="editableSizePrice")
-    is_bad_turnover: Optional[StrictBool] = Field(default=None, description="Признак неликвидного товара:   - `true` — неликвидный товар с [низким индексом остатка](https://seller.wildberries.ru/instructions/ru/ru/material/stocks-index?categoryId=e324ce0f-9a2a-4b8d-8fd1-72f751b09b3b&goBackOption=prevRoute#%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0)   - Поле отсутствует — ликвидный товар ", alias="isBadTurnover")
+    currency_iso_code4217: Optional[StrictStr] = Field(default=None, description="Валюта, по стандарту ISO 4217", alias="currencyIsoCode4217", json_schema_extra={"examples": ["RUB"]})
+    discount: Optional[StrictInt] = Field(default=None, description="Скидка, %", json_schema_extra={"examples": [30]})
+    club_discount: Optional[StrictInt] = Field(default=None, description="Скидка WB Клуба, %", alias="clubDiscount", json_schema_extra={"examples": [5]})
+    editable_size_price: Optional[StrictBool] = Field(default=None, description="Можно ли устанавливать цены отдельно для разных размеров (зависит от категории товара):   - `true` — можно   - `false` — нельзя ", alias="editableSizePrice", json_schema_extra={"examples": [True]})
+    is_bad_turnover: Optional[StrictBool] = Field(default=None, description="Признак неликвидного товара:   - `true` — неликвидный товар с [низким индексом остатка](https://seller.wildberries.ru/instructions/ru/ru/material/stocks-index?categoryId=e324ce0f-9a2a-4b8d-8fd1-72f751b09b3b&goBackOption=prevRoute#%D1%83%D1%80%D0%BE%D0%B2%D0%BD%D0%B8-%D0%B8%D0%BD%D0%B4%D0%B5%D0%BA%D1%81%D0%B0-%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%B0)   - Поле отсутствует — ликвидный товар ", alias="isBadTurnover", json_schema_extra={"examples": [True]})
     __properties: ClassVar[List[str]] = ["nmID", "vendorCode", "sizes", "currencyIsoCode4217", "discount", "clubDiscount", "editableSizePrice", "isBadTurnover"]
 
     model_config = ConfigDict(

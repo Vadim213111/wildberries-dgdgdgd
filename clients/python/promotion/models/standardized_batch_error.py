@@ -27,11 +27,11 @@ class StandardizedBatchError(BaseModel):
     """
     StandardizedBatchError
     """ # noqa: E501
-    detail: StrictStr = Field(description="Детали ошибки")
-    origin: StrictStr = Field(description="ID внутреннего сервиса WB")
-    request_id: StrictStr = Field(description="Уникальный ID запроса")
-    status: StrictInt = Field(description="HTTP статус-код")
-    title: StrictStr = Field(description="Заголовок ошибки")
+    detail: StrictStr = Field(description="Детали ошибки", json_schema_extra={"examples": ["some nms are not belong to advert"]})
+    origin: StrictStr = Field(description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["camp-api-public-cache"]})
+    request_id: StrictStr = Field(description="Уникальный ID запроса", json_schema_extra={"examples": ["123e4567-e89b-12d3-a456-426614174000"]})
+    status: StrictInt = Field(description="HTTP статус-код", json_schema_extra={"examples": [400]})
+    title: StrictStr = Field(description="Заголовок ошибки", json_schema_extra={"examples": ["Invalid Params"]})
     __properties: ClassVar[List[str]] = ["detail", "origin", "request_id", "status", "title"]
 
     model_config = ConfigDict(

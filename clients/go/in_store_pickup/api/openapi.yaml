@@ -2874,8 +2874,8 @@ components:
     Error:
       example:
         code: code
-        data: "{}"
         message: message
+        data: "{}"
       nullable: false
       properties:
         code:
@@ -2934,32 +2934,32 @@ components:
       type: object
     api.NewOrder:
       example:
-        cargoType: 2
-        warehouseAddress: warehouseAddress
         ddate: ddate
-        skus:
-        - skus
-        - skus
         salePrice: 504600
-        payMode: prepaid
-        nmId: 1
-        finalPrice: 5000
         requiredMeta:
         - requiredMeta
         - requiredMeta
-        rid: rid
         article: article
-        convertedFinalPrice: 5000
+        rid: rid
         createdAt: 2000-01-23T04:56:07.000+00:00
-        convertedPrice: 5000
-        isZeroOrder: true
-        warehouseId: 6
-        price: 5
+        warehouseAddress: warehouseAddress
         orderCode: orderCode
-        convertedCurrencyCode: 643
+        payMode: prepaid
+        skus:
+        - skus
+        - skus
         id: 0
+        warehouseId: 6
+        nmId: 1
         chrtId: 5
+        price: 5
+        finalPrice: 5000
+        convertedPrice: 5000
+        convertedFinalPrice: 5000
         currencyCode: 643
+        convertedCurrencyCode: 643
+        cargoType: 2
+        isZeroOrder: true
       properties:
         ddate:
           description: Планируемая дата доставки
@@ -3085,58 +3085,58 @@ components:
     api.NewOrders:
       example:
         orders:
-        - cargoType: 2
-          warehouseAddress: warehouseAddress
-          ddate: ddate
-          skus:
-          - skus
-          - skus
+        - ddate: ddate
           salePrice: 504600
-          payMode: prepaid
-          nmId: 1
-          finalPrice: 5000
           requiredMeta:
           - requiredMeta
           - requiredMeta
-          rid: rid
           article: article
-          convertedFinalPrice: 5000
+          rid: rid
           createdAt: 2000-01-23T04:56:07.000+00:00
-          convertedPrice: 5000
-          isZeroOrder: true
-          warehouseId: 6
-          price: 5
-          orderCode: orderCode
-          convertedCurrencyCode: 643
-          id: 0
-          chrtId: 5
-          currencyCode: 643
-        - cargoType: 2
           warehouseAddress: warehouseAddress
-          ddate: ddate
+          orderCode: orderCode
+          payMode: prepaid
           skus:
           - skus
           - skus
-          salePrice: 504600
-          payMode: prepaid
+          id: 0
+          warehouseId: 6
           nmId: 1
+          chrtId: 5
+          price: 5
           finalPrice: 5000
+          convertedPrice: 5000
+          convertedFinalPrice: 5000
+          currencyCode: 643
+          convertedCurrencyCode: 643
+          cargoType: 2
+          isZeroOrder: true
+        - ddate: ddate
+          salePrice: 504600
           requiredMeta:
           - requiredMeta
           - requiredMeta
-          rid: rid
           article: article
-          convertedFinalPrice: 5000
+          rid: rid
           createdAt: 2000-01-23T04:56:07.000+00:00
-          convertedPrice: 5000
-          isZeroOrder: true
-          warehouseId: 6
-          price: 5
+          warehouseAddress: warehouseAddress
           orderCode: orderCode
-          convertedCurrencyCode: 643
+          payMode: prepaid
+          skus:
+          - skus
+          - skus
           id: 0
+          warehouseId: 6
+          nmId: 1
           chrtId: 5
+          price: 5
+          finalPrice: 5000
+          convertedPrice: 5000
+          convertedFinalPrice: 5000
           currencyCode: 643
+          convertedCurrencyCode: 643
+          cargoType: 2
+          isZeroOrder: true
       properties:
         orders:
           description: Список сборочных заданий
@@ -3146,26 +3146,26 @@ components:
       type: object
     api.Order:
       example:
+        article: wb6scpbwvp
         cargoType: 1
-        warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+        chrtId: 12345676
+        createdAt: 2025-03-21T09:53:31Z
+        price: 5000
+        finalPrice: 5000
+        convertedPrice: 5000
+        convertedFinalPrice: 5000
+        currencyCode: 643
+        convertedCurrencyCode: 643
+        id: 123456789
+        isZeroOrder: false
+        nmId: 1234567898765
+        orderCode: 21117866-0006
+        payMode: prepaid
+        rid: 5044304527347733263.0.0
         skus:
         - "2043227963145"
-        payMode: prepaid
-        finalPrice: 5000
-        nmId: 1234567898765
-        rid: 5044304527347733263.0.0
-        article: wb6scpbwvp
-        convertedFinalPrice: 5000
-        createdAt: 2025-03-21T09:53:31Z
-        convertedPrice: 5000
-        isZeroOrder: false
+        warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
         warehouseId: 1162157
-        price: 5000
-        convertedCurrencyCode: 643
-        orderCode: 21117866-0006
-        id: 123456789
-        chrtId: 12345676
-        currencyCode: 643
       properties:
         article:
           description: Артикул продавца
@@ -3359,46 +3359,46 @@ components:
       example:
         next: 12345566
         orders:
-        - cargoType: 1
-          warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+        - article: wb6scpbwvp
+          cargoType: 1
+          chrtId: 12345676
+          createdAt: 2025-03-21T09:53:31Z
+          price: 5000
+          finalPrice: 5000
+          convertedPrice: 5000
+          convertedFinalPrice: 5000
+          currencyCode: 643
+          convertedCurrencyCode: 643
+          id: 123456789
+          isZeroOrder: false
+          nmId: 1234567898765
+          orderCode: 21117866-0006
+          payMode: prepaid
+          rid: 5044304527347733263.0.0
           skus:
           - "2043227963145"
-          payMode: prepaid
-          finalPrice: 5000
-          nmId: 1234567898765
-          rid: 5044304527347733263.0.0
-          article: wb6scpbwvp
-          convertedFinalPrice: 5000
-          createdAt: 2025-03-21T09:53:31Z
-          convertedPrice: 5000
-          isZeroOrder: false
-          warehouseId: 1162157
-          price: 5000
-          convertedCurrencyCode: 643
-          orderCode: 21117866-0006
-          id: 123456789
-          chrtId: 12345676
-          currencyCode: 643
-        - cargoType: 1
           warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
+          warehouseId: 1162157
+        - article: wb6scpbwvp
+          cargoType: 1
+          chrtId: 12345676
+          createdAt: 2025-03-21T09:53:31Z
+          price: 5000
+          finalPrice: 5000
+          convertedPrice: 5000
+          convertedFinalPrice: 5000
+          currencyCode: 643
+          convertedCurrencyCode: 643
+          id: 123456789
+          isZeroOrder: false
+          nmId: 1234567898765
+          orderCode: 21117866-0006
+          payMode: prepaid
+          rid: 5044304527347733263.0.0
           skus:
           - "2043227963145"
-          payMode: prepaid
-          finalPrice: 5000
-          nmId: 1234567898765
-          rid: 5044304527347733263.0.0
-          article: wb6scpbwvp
-          convertedFinalPrice: 5000
-          createdAt: 2025-03-21T09:53:31Z
-          convertedPrice: 5000
-          isZeroOrder: false
+          warehouseAddress: "Москва, район Якиманка, Софийская набережная, 4 с1"
           warehouseId: 1162157
-          price: 5000
-          convertedCurrencyCode: 643
-          orderCode: 21117866-0006
-          id: 123456789
-          chrtId: 12345676
-          currencyCode: 643
       properties:
         next:
           description: |
@@ -3575,9 +3575,9 @@ components:
       type: object
     api.BatchError:
       example:
-        requestId: f1787bd2d1fdс35d6f537316514у4a05
-        origin: market-public-api
         detail: {}
+        origin: market-public-api
+        requestId: f1787bd2d1fdс35d6f537316514у4a05
         title: IncorrectRequest
       properties:
         detail:
@@ -3830,22 +3830,22 @@ components:
     api.OrdersMetaResponse:
       example:
         meta:
-        - sgtin:
-          - "123456789012345"
-          - "123456789012345"
+        - error: ""
           gtin: "123456789012345"
-          orderId: 654321
           imei: "123456789012345"
+          orderId: 654321
+          sgtin:
+          - "123456789012345"
+          - "123456789012345"
           uin: "123456789012345"
-          error: ""
-        - sgtin:
-          - "123456789012345"
-          - "123456789012345"
+        - error: ""
           gtin: "123456789012345"
-          orderId: 654321
           imei: "123456789012345"
+          orderId: 654321
+          sgtin:
+          - "123456789012345"
+          - "123456789012345"
           uin: "123456789012345"
-          error: ""
       properties:
         meta:
           description: Метаданные сборочных заданий
@@ -3857,14 +3857,14 @@ components:
       type: object
     api.OrderMetaV2:
       example:
+        error: ""
+        gtin: "123456789012345"
+        imei: "123456789012345"
+        orderId: 654321
         sgtin:
         - "123456789012345"
         - "123456789012345"
-        gtin: "123456789012345"
-        orderId: 654321
-        imei: "123456789012345"
         uin: "123456789012345"
-        error: ""
       properties:
         error:
           description: |

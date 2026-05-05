@@ -27,8 +27,8 @@ class ApiV1SellerDownloadIdGet202Response(BaseModel):
     """
     ApiV1SellerDownloadIdGet202Response
     """ # noqa: E501
-    moderation_state: StrictStr = Field(description="Статус модерации", alias="moderationState")
-    retry_seconds: StrictInt = Field(description="Секунд до следующей попытки запроса файла", alias="retrySeconds")
+    moderation_state: StrictStr = Field(description="Статус модерации", alias="moderationState", json_schema_extra={"examples": ["pending"]})
+    retry_seconds: StrictInt = Field(description="Секунд до следующей попытки запроса файла", alias="retrySeconds", json_schema_extra={"examples": [30]})
     __properties: ClassVar[List[str]] = ["moderationState", "retrySeconds"]
 
     model_config = ConfigDict(

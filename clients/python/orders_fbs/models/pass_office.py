@@ -27,9 +27,9 @@ class PassOffice(BaseModel):
     """
     Данные о складе, для которого требуется пропуск
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Название")
-    address: Optional[StrictStr] = Field(default=None, description="Адрес")
-    id: Optional[StrictInt] = Field(default=None, description="ID")
+    name: Optional[StrictStr] = Field(default=None, description="Название", json_schema_extra={"examples": ["Коледино"]})
+    address: Optional[StrictStr] = Field(default=None, description="Адрес", json_schema_extra={"examples": ["г. Подольск, д. Коледино, ул. Троицкая"]})
+    id: Optional[StrictInt] = Field(default=None, description="ID", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["name", "address", "id"]
 
     model_config = ConfigDict(

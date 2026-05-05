@@ -34,14 +34,14 @@ class SearchReportProductReqParams(BaseModel):
     """ # noqa: E501
     current_period: Period = Field(alias="currentPeriod")
     past_period: Optional[PastPeriod] = Field(default=None, alias="pastPeriod")
-    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета. Используйте значение `0`, чтобы получить отчёт по всем предметам", alias="subjectId")
-    brand_name: Optional[StrictStr] = Field(default=None, description="Бренд", alias="brandName")
-    tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка. Чтобы получить отчёт по всем ярлыкам, укажите значение 0", alias="tagId")
+    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета. Используйте значение `0`, чтобы получить отчёт по всем предметам", alias="subjectId", json_schema_extra={"examples": [132]})
+    brand_name: Optional[StrictStr] = Field(default=None, description="Бренд", alias="brandName", json_schema_extra={"examples": ["Abikas"]})
+    tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка. Чтобы получить отчёт по всем ярлыкам, укажите значение 0", alias="tagId", json_schema_extra={"examples": [3]})
     nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB, по которым составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах ", alias="nmIds")
     position_cluster: PositionCluster = Field(alias="positionCluster")
     order_by: OrderBy = Field(alias="orderBy")
-    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs")
-    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts")
+    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs", json_schema_extra={"examples": [True]})
+    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["currentPeriod", "pastPeriod", "subjectId", "brandName", "tagId", "nmIds", "positionCluster", "orderBy", "includeSubstitutedSKUs", "includeSearchTexts"]
 
     model_config = ConfigDict(

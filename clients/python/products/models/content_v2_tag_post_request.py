@@ -27,8 +27,8 @@ class ContentV2TagPostRequest(BaseModel):
     """
     ContentV2TagPostRequest
     """ # noqa: E501
-    color: Optional[StrictStr] = Field(default=None, description="Цвет ярлыка.  Доступные цвета:   - `D1CFD7` — серый   - `FEE0E0` — красный   - `ECDAFF` — фиолетовый   - `E4EAFF` — синий   - `DEF1DD` — зеленый   - `FFECC7` — желтый ")
-    name: Optional[StrictStr] = Field(default=None, description="Имя ярлыка")
+    color: Optional[StrictStr] = Field(default=None, description="Цвет ярлыка.  Доступные цвета:   - `D1CFD7` — серый   - `FEE0E0` — красный   - `ECDAFF` — фиолетовый   - `E4EAFF` — синий   - `DEF1DD` — зеленый   - `FFECC7` — желтый ", json_schema_extra={"examples": ["D1CFD7"]})
+    name: Optional[StrictStr] = Field(default=None, description="Имя ярлыка", json_schema_extra={"examples": ["Sale"]})
     __properties: ClassVar[List[str]] = ["color", "name"]
 
     model_config = ConfigDict(

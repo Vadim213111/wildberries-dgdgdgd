@@ -27,9 +27,9 @@ class ApiV1ClaimsGet400Response(BaseModel):
     """
     ApiV1ClaimsGet400Response
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="ID ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="Описание ошибки")
-    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId")
+    title: Optional[StrictStr] = Field(default=None, description="ID ошибки", json_schema_extra={"examples": ["Invalid query params"]})
+    detail: Optional[StrictStr] = Field(default=None, description="Описание ошибки", json_schema_extra={"examples": ["Failed to deserialize query string: missing field `is_archive`"]})
+    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId", json_schema_extra={"examples": ["e0aedc10-9789-49c1-9a83-d8422b4703dc"]})
     __properties: ClassVar[List[str]] = ["title", "detail", "requestId"]
 
     model_config = ConfigDict(

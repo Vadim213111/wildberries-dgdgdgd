@@ -28,7 +28,7 @@ class ApiV3DbwOrdersOrderIdMetaImeiPutRequest(BaseModel):
     """
     ApiV3DbwOrdersOrderIdMetaImeiPutRequest
     """ # noqa: E501
-    imei: Annotated[str, Field(min_length=15, strict=True, max_length=15)] = Field(description="IMEI")
+    imei: Annotated[str, Field(min_length=15, strict=True, max_length=15)] = Field(description="IMEI", json_schema_extra={"examples": ["123456789012345"]})
     __properties: ClassVar[List[str]] = ["imei"]
 
     model_config = ConfigDict(

@@ -28,8 +28,8 @@ class ApiV3StocksWarehouseIdPutRequestStocksInner(BaseModel):
     """
     ApiV3StocksWarehouseIdPutRequestStocksInner
     """ # noqa: E501
-    chrt_id: Optional[StrictInt] = Field(default=None, description="ID размера товара", alias="chrtId")
-    amount: Optional[Annotated[int, Field(le=100000, strict=True)]] = Field(default=None, description="Остаток")
+    chrt_id: Optional[StrictInt] = Field(default=None, description="ID размера товара", alias="chrtId", json_schema_extra={"examples": [12345678]})
+    amount: Optional[Annotated[int, Field(le=100000, strict=True)]] = Field(default=None, description="Остаток", json_schema_extra={"examples": [10]})
     __properties: ClassVar[List[str]] = ["chrtId", "amount"]
 
     model_config = ConfigDict(

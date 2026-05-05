@@ -27,8 +27,8 @@ class TableCommonMetricsOfficeMissingTime(BaseModel):
     """
     Время отсутствия товара на складе. Особые случаи:   1. `\"hours\":-1` — бесконечная длительность   2. `\"hours\":-2` — нулевая длительность   3. `\"hours\":-3` — нерассчитанная длительность   4. `\"hours\":-4` — отсутствие в течение всего периода 
     """ # noqa: E501
-    days: StrictInt = Field(description="Количество дней")
-    hours: StrictInt = Field(description="Количество часов")
+    days: StrictInt = Field(description="Количество дней", json_schema_extra={"examples": [5]})
+    hours: StrictInt = Field(description="Количество часов", json_schema_extra={"examples": [15]})
     __properties: ClassVar[List[str]] = ["days", "hours"]
 
     model_config = ConfigDict(

@@ -33,24 +33,24 @@ class V3ArchiveOrder(BaseModel):
     """
     Архивное сборочное задание
     """ # noqa: E501
-    cargo_type: StrictStr = Field(description="Тип товара:   - `mgt` — малогабаритный товар (МГТ)   - `sgt` — сверхгабаритный товар (СГТ)   - `kgtPlus` — крупногабаритный товар (КГТ+) ", alias="cargoType")
-    color_code: Optional[StrictStr] = Field(description="Код цвета для колеруемых товаров", alias="colorCode")
-    created_at: StrictStr = Field(description="Дата создания заказа", alias="createdAt")
+    cargo_type: StrictStr = Field(description="Тип товара:   - `mgt` — малогабаритный товар (МГТ)   - `sgt` — сверхгабаритный товар (СГТ)   - `kgtPlus` — крупногабаритный товар (КГТ+) ", alias="cargoType", json_schema_extra={"examples": ["mgt"]})
+    color_code: Optional[StrictStr] = Field(description="Код цвета для колеруемых товаров", alias="colorCode", json_schema_extra={"examples": ["RAL 3017"]})
+    created_at: StrictStr = Field(description="Дата создания заказа", alias="createdAt", json_schema_extra={"examples": ["2022-05-04"]})
     cross_border: Optional[V3ArchiveOrderCrossBorder] = Field(alias="crossBorder")
-    cross_border_type: StrictStr = Field(description="Тип сборочного задания:   - `local` — внутренняя поставка   - `crossBorder` — трансграничная поставка ", alias="crossBorderType")
-    id: StrictInt = Field(description="ID сборочного задания")
-    is_zero_order: StrictBool = Field(description="Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком ", alias="isZeroOrder")
+    cross_border_type: StrictStr = Field(description="Тип сборочного задания:   - `local` — внутренняя поставка   - `crossBorder` — трансграничная поставка ", alias="crossBorderType", json_schema_extra={"examples": ["crossBorder"]})
+    id: StrictInt = Field(description="ID сборочного задания", json_schema_extra={"examples": [1234567890]})
+    is_zero_order: StrictBool = Field(description="Признак заказа товара с нулевым остатком:   - `false` — заказ сделан на товар с ненулевым остатком   - `true` — заказ сделан на товар с нулевым остатком ", alias="isZeroOrder", json_schema_extra={"examples": [False]})
     meta_details: List[MetaDetailsInner] = Field(description="Детали маркировки", alias="metaDetails")
     options: V3ArchiveOrderOptions
-    order_uid: StrictStr = Field(description="ID транзакции для группировки сборочных заданий. Сборочные задания в одной корзине покупателя будут иметь одинаковый `orderUid`", alias="orderUid")
+    order_uid: StrictStr = Field(description="ID транзакции для группировки сборочных заданий. Сборочные задания в одной корзине покупателя будут иметь одинаковый `orderUid`", alias="orderUid", json_schema_extra={"examples": ["165918930_629fbc924b984618a44354475ca58675"]})
     price_info: V3ArchiveOrderPriceInfo = Field(alias="priceInfo")
     product: V3ArchiveOrderProduct
-    rid: StrictStr = Field(description="Уникальный ID заказа. <br> Примечание: `rid` — это `srid` в ответах методов:   - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)   - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)   - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)   - [Отчёт о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)   - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1SalesReportsDetailedReportId)   - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1SalesReportsDetailed)   - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1AcquiringDetailedReportId)   - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1AcquiringDetailed) ")
-    scan_price: Optional[StrictInt] = Field(description="Цена приёмки заказа в копейках", alias="scanPrice")
+    rid: StrictStr = Field(description="Уникальный ID заказа. <br> Примечание: `rid` — это `srid` в ответах методов:   - [Заявки покупателей на возврат](./user-communication#tag/Vozvraty-pokupatelyami/paths/~1api~1v1~1claims/get)   - [Заказы](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1orders/get)   - [Продажи](./reports#tag/Osnovnye-otchyoty/paths/~1api~1v1~1supplier~1sales/get)   - [Отчёт о возвратах и перемещении товаров](./reports#tag/Otchyot-o-vozvratah-i-peremeshenii-tovarov)   - [Детализации к отчётам реализации по ID отчётов](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1SalesReportsDetailedReportId)   - [Детализации к отчётам реализации за период](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1SalesReportsDetailed)   - [Детализации к отчётам об издержках на приём платежей по ID отчётов](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1AcquiringDetailedReportId)   - [Детализации к отчётам об издержках на приём платежей за период](./financial-reports-and-accounting#tag/Finansovye-otchyoty/operation/postV1AcquiringDetailed) ", json_schema_extra={"examples": ["f884001e44e511edb8780242ac120002"]})
+    scan_price: Optional[StrictInt] = Field(description="Цена приёмки заказа в копейках", alias="scanPrice", json_schema_extra={"examples": [5200]})
     status: V3ArchiveOrderStatus
-    sticker_id: StrictInt = Field(description="ID стикера", alias="stickerId")
-    supply_id: Optional[StrictStr] = Field(description="ID поставки", alias="supplyId")
-    warehouse_id: StrictInt = Field(description="ID склада продавца, с которого был отгружен товар", alias="warehouseId")
+    sticker_id: StrictInt = Field(description="ID стикера", alias="stickerId", json_schema_extra={"examples": [33811984302]})
+    supply_id: Optional[StrictStr] = Field(description="ID поставки", alias="supplyId", json_schema_extra={"examples": ["WB-GI-1234588"]})
+    warehouse_id: StrictInt = Field(description="ID склада продавца, с которого был отгружен товар", alias="warehouseId", json_schema_extra={"examples": [55684681]})
     __properties: ClassVar[List[str]] = ["cargoType", "colorCode", "createdAt", "crossBorder", "crossBorderType", "id", "isZeroOrder", "metaDetails", "options", "orderUid", "priceInfo", "product", "rid", "scanPrice", "status", "stickerId", "supplyId", "warehouseId"]
 
     model_config = ConfigDict(

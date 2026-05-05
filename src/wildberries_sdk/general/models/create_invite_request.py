@@ -29,7 +29,7 @@ class CreateInviteRequest(BaseModel):
     """
     CreateInviteRequest
     """ # noqa: E501
-    access: Optional[List[AccessInner]] = Field(default=None, description="Настройки доступа к разделам профиля продавца")
+    access: Optional[List[AccessInner]] = Field(default=None, description="Настройки доступа к разделам профиля продавца", json_schema_extra={"examples": [[{"code": "balance", "disabled": False}, {"code": "pointsForReviews", "disabled": False}, {"code": "brands", "disabled": True}, {"code": "finance", "disabled": True}, {"code": "supply", "disabled": True}]]})
     invite: CreateInviteRequestInvite
     __properties: ClassVar[List[str]] = ["access", "invite"]
 

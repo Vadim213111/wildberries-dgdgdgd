@@ -27,8 +27,8 @@ class ContentV2TagIdPatchRequest(BaseModel):
     """
     ContentV2TagIdPatchRequest
     """ # noqa: E501
-    color: Optional[StrictStr] = Field(default=None, description="Цвет ярлыка")
-    name: Optional[StrictStr] = Field(default=None, description="Имя ярлыка")
+    color: Optional[StrictStr] = Field(default=None, description="Цвет ярлыка", json_schema_extra={"examples": ["D1CFD7"]})
+    name: Optional[StrictStr] = Field(default=None, description="Имя ярлыка", json_schema_extra={"examples": ["Sale"]})
     __properties: ClassVar[List[str]] = ["color", "name"]
 
     model_config = ConfigDict(

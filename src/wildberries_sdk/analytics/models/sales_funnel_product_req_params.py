@@ -30,9 +30,9 @@ class SalesFunnelProductReqParams(BaseModel):
     Параметры отчёта
     """ # noqa: E501
     nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB, по которым составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах ", alias="nmIDs")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[64, 334]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["nike", "adidas"]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds", json_schema_extra={"examples": [[32, 53]]})
     start_date: date = Field(description="Начало периода", alias="startDate")
     end_date: date = Field(description="Конец периода", alias="endDate")
     timezone: Optional[StrictStr] = Field(default=None, description="Временная зона, по умолчанию Europe/Moscow ")

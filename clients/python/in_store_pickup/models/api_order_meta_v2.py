@@ -27,12 +27,12 @@ class ApiOrderMetaV2(BaseModel):
     """
     ApiOrderMetaV2
     """ # noqa: E501
-    error: StrictStr = Field(description="Сообщение об ошибке. <br> - `\"\"` — нет ошибок - `NotFound` — сборочное задание не найдено ")
-    gtin: Optional[StrictStr] = Field(default=None, description="GTIN")
-    imei: Optional[StrictStr] = Field(default=None, description="IMEI")
-    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
+    error: StrictStr = Field(description="Сообщение об ошибке. <br> - `\"\"` — нет ошибок - `NotFound` — сборочное задание не найдено ", json_schema_extra={"examples": [""]})
+    gtin: Optional[StrictStr] = Field(default=None, description="GTIN", json_schema_extra={"examples": ["123456789012345"]})
+    imei: Optional[StrictStr] = Field(default=None, description="IMEI", json_schema_extra={"examples": ["123456789012345"]})
+    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [654321]})
     sgtin: Optional[List[StrictStr]] = Field(default=None, description="Код маркировки [Честного знака](https://честныйзнак.рф/)")
-    uin: Optional[StrictStr] = Field(default=None, description="УИН")
+    uin: Optional[StrictStr] = Field(default=None, description="УИН", json_schema_extra={"examples": ["123456789012345"]})
     __properties: ClassVar[List[str]] = ["error", "gtin", "imei", "orderId", "sgtin", "uin"]
 
     model_config = ConfigDict(

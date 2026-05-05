@@ -28,8 +28,8 @@ class ApiOrdersMetaDeleteRequest(BaseModel):
     """
     ApiOrdersMetaDeleteRequest
     """ # noqa: E501
-    key: StrictStr = Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение")
-    order_ids: Annotated[List[StrictInt], Field(max_length=1000)] = Field(description="Список ID сборочных заданий", alias="orderIds")
+    key: StrictStr = Field(description="Название метаданных для удаления (**imei**, **uin**, **gtin**, **sgtin**). Передаётся только одно значение", json_schema_extra={"examples": ["imei"]})
+    order_ids: Annotated[List[StrictInt], Field(max_length=1000)] = Field(description="Список ID сборочных заданий", alias="orderIds", json_schema_extra={"examples": [[123456, 234567]]})
     __properties: ClassVar[List[str]] = ["key", "orderIds"]
 
     model_config = ConfigDict(

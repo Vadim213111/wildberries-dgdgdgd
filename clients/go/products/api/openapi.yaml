@@ -6764,15 +6764,15 @@ components:
   schemas:
     BrandsResponse:
       example:
+        brands:
+        - id: 9007199254
+          logoUrl: logoUrl
+          name: Brand
+        - id: 9007199254
+          logoUrl: logoUrl
+          name: Brand
         next: 1212
         total: 344534
-        brands:
-        - name: Brand
-          id: 9007199254
-          logoUrl: logoUrl
-        - name: Brand
-          id: 9007199254
-          logoUrl: logoUrl
       properties:
         brands:
           items:
@@ -6820,16 +6820,16 @@ components:
       description: Контакты склада продавца
       example:
         contacts:
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
       properties:
         contacts:
           items:
@@ -6839,11 +6839,11 @@ components:
       type: object
     responseCardCreate:
       example:
-        errorText: errorText
         data: "{}"
+        error: true
+        errorText: errorText
         additionalErrors:
           string: string
-        error: true
       properties:
         data:
           description: Данные ответа
@@ -6906,10 +6906,10 @@ components:
       type: object
     responseBodyContentError400:
       example:
-        errorText: errorText
         data: "{}"
-        additionalErrors: "{}"
         error: true
+        errorText: errorText
+        additionalErrors: "{}"
       properties:
         data:
           description: Данные ошибки
@@ -6994,9 +6994,9 @@ components:
       type: object
     ResponseError:
       example:
-        errorText: errorText
         data: "{}"
         error: true
+        errorText: errorText
       properties:
         data:
           description: Данные ошибки
@@ -7011,11 +7011,11 @@ components:
       type: object
     RequestAlreadyExistsError:
       example:
-        errorText: errorText
         data:
           id: 6
           alreadyExists: true
         error: true
+        errorText: errorText
       properties:
         data:
           $ref: "#/components/schemas/RequestAlreadyExistsError_data"
@@ -7032,11 +7032,11 @@ components:
       type: array
     TaskCreated:
       example:
-        errorText: ""
         data:
           id: 0
           alreadyExists: false
         error: false
+        errorText: ""
       properties:
         data:
           $ref: "#/components/schemas/TaskCreated_data"
@@ -7135,24 +7135,24 @@ components:
     GoodsList:
       description: Размеры товара
       example:
-        clubDiscount: 5
+        nmID: 98486
+        vendorCode: "07326060"
         sizes:
         - sizeID: 3123515574
-          techSizeName: "42"
-          discountedPrice: 350
           price: 500
+          discountedPrice: 350
           clubDiscountedPrice: 332.5
+          techSizeName: "42"
         - sizeID: 3123515574
-          techSizeName: "42"
-          discountedPrice: 350
           price: 500
+          discountedPrice: 350
           clubDiscountedPrice: 332.5
-        editableSizePrice: true
-        nmID: 98486
-        discount: 30
-        isBadTurnover: true
+          techSizeName: "42"
         currencyIsoCode4217: RUB
-        vendorCode: "07326060"
+        discount: 30
+        clubDiscount: 5
+        editableSizePrice: true
+        isBadTurnover: true
       properties:
         nmID:
           description: Артикул WB
@@ -7197,18 +7197,18 @@ components:
     SizeGood:
       description: Информация о размере
       example:
-        sizeID: 98989887
-        techSizeName: "42"
-        clubDiscount: 5
-        discountedPrice: 700
-        price: 1000
-        editableSizePrice: true
         nmID: 123
-        discount: 30
-        isBadTurnover: true
-        clubDiscountedPrice: 665
-        currencyIsoCode4217: RUB
+        sizeID: 98989887
         vendorCode: "34552332"
+        price: 1000
+        currencyIsoCode4217: RUB
+        discountedPrice: 700
+        clubDiscountedPrice: 665
+        discount: 30
+        clubDiscount: 5
+        techSizeName: "42"
+        editableSizePrice: true
+        isBadTurnover: true
       properties:
         nmID:
           description: Артикул WB
@@ -7269,16 +7269,16 @@ components:
       type: object
     GoodBufferHistory:
       example:
-        sizeID: 54483342
-        errorText: errorText
-        techSizeName: XXL
-        clubDiscount: 5
-        price: 1500
         nmID: 544833232
-        discount: 25
-        currencyIsoCode4217: RUB
         vendorCode: "34552332"
+        sizeID: 54483342
+        techSizeName: XXL
+        price: 1500
+        currencyIsoCode4217: RUB
+        discount: 25
+        clubDiscount: 5
         status: 1
+        errorText: errorText
       properties:
         nmID:
           description: Артикул WB
@@ -7325,17 +7325,17 @@ components:
       type: object
     GoodHistory:
       example:
+        nmID: 544833232
+        vendorCode: "34552332"
         sizeID: 54483342
+        techSizeName: "42"
+        price: 1500
+        currencyIsoCode4217: RUB
+        discount: 25
+        clubDiscount: 5
+        status: 1
         errorText: You can't change the item price. Item was added to the Sale due
           to high inventory
-        techSizeName: "42"
-        clubDiscount: 5
-        price: 1500
-        nmID: 544833232
-        discount: 25
-        currencyIsoCode4217: RUB
-        vendorCode: "34552332"
-        status: 1
       properties:
         nmID:
           description: Артикул WB
@@ -7390,11 +7390,11 @@ components:
       description: Данные ответа
       example:
         uploadID: 395643565
-        uploadDate: 2022-08-21T22:00:13+02:00
-        successGoodsNumber: 6
-        overAllGoodsNumber: 0
-        activationDate: 2022-08-21T22:00:13+02:00
         status: 3
+        uploadDate: 2022-08-21T22:00:13+02:00
+        activationDate: 2022-08-21T22:00:13+02:00
+        overAllGoodsNumber: 0
+        successGoodsNumber: 6
       nullable: true
       properties:
         uploadID:
@@ -7431,11 +7431,11 @@ components:
       description: Данные ответа
       example:
         uploadID: 395643565
-        uploadDate: 2022-08-21T22:00:13+02:00
-        successGoodsNumber: 0
-        overAllGoodsNumber: 100
-        activationDate: 2022-08-21T22:00:13+02:00
         status: 1
+        uploadDate: 2022-08-21T22:00:13+02:00
+        activationDate: 2022-08-21T22:00:13+02:00
+        overAllGoodsNumber: 100
+        successGoodsNumber: 0
       nullable: true
       properties:
         uploadID:
@@ -7505,8 +7505,8 @@ components:
     Error:
       example:
         code: code
-        data: "{}"
         message: message
+        data: "{}"
       nullable: false
       properties:
         code:
@@ -7524,15 +7524,15 @@ components:
       type: object
     QuarantineGoods:
       example:
-        sizeID: 0
-        newDiscount: 25
-        techSizeName: ""
-        oldPrice: 4000
         nmID: 206025152
-        priceDiff: -2899.5
-        oldDiscount: 25
+        sizeID: 0
+        techSizeName: ""
         currencyIsoCode4217: RUB
         newPrice: 134
+        oldPrice: 4000
+        newDiscount: 25
+        oldDiscount: 25
+        priceDiff: -2899.5
       properties:
         nmID:
           description: Артикул WB
@@ -7579,16 +7579,16 @@ components:
     Office:
       description: Данные о складе WB
       example:
-        cargoType: 1
         address: "ул. Троицкая, Подольск, Московская обл."
-        federalDistrict: Центральный
-        city: Москва
-        latitude: 37.588898
         name: Коледино
-        deliveryType: 1
+        city: Москва
         id: 15
-        selected: true
         longitude: 55.386871
+        latitude: 37.588898
+        cargoType: 1
+        deliveryType: 1
+        federalDistrict: Центральный
+        selected: true
       properties:
         address:
           description: Адрес
@@ -7665,13 +7665,13 @@ components:
     Warehouse:
       description: Данные о складе продавца
       example:
-        cargoType: 1
-        isDeleting: false
-        officeId: 15
         name: "ул. Троицкая, Подольск, Московская обл."
-        deliveryType: 1
-        isProcessing: true
+        officeId: 15
         id: 1
+        cargoType: 1
+        deliveryType: 1
+        isDeleting: false
+        isProcessing: true
       properties:
         name:
           description: Название склада продавца
@@ -7741,49 +7741,49 @@ components:
       type: object
     responsePublicViewerPublicErrorsTableListV2:
       example:
-        errorText: errorText
         data:
+          items:
+          - batchUUID: batchUUID
+            subjects:
+              key:
+                id: 0.8008281904610115
+                name: name
+            brands:
+              key:
+                id: 6.027456183070403
+                name: name
+            vendorCodes:
+            - vendorCodes
+            - vendorCodes
+            errors:
+              key:
+              - errors
+              - errors
+            updatedAt: 2000-01-23T04:56:07.000+00:00
+          - batchUUID: batchUUID
+            subjects:
+              key:
+                id: 0.8008281904610115
+                name: name
+            brands:
+              key:
+                id: 6.027456183070403
+                name: name
+            vendorCodes:
+            - vendorCodes
+            - vendorCodes
+            errors:
+              key:
+              - errors
+              - errors
+            updatedAt: 2000-01-23T04:56:07.000+00:00
           cursor:
             next: true
-            batchUUID: batchUUID
             updatedAt: 2000-01-23T04:56:07.000+00:00
-          items:
-          - brands:
-              key:
-                name: name
-                id: 6.027456183070403
-            subjects:
-              key:
-                name: name
-                id: 0.8008281904610115
             batchUUID: batchUUID
-            errors:
-              key:
-              - errors
-              - errors
-            vendorCodes:
-            - vendorCodes
-            - vendorCodes
-            updatedAt: 2000-01-23T04:56:07.000+00:00
-          - brands:
-              key:
-                name: name
-                id: 6.027456183070403
-            subjects:
-              key:
-                name: name
-                id: 0.8008281904610115
-            batchUUID: batchUUID
-            errors:
-              key:
-              - errors
-              - errors
-            vendorCodes:
-            - vendorCodes
-            - vendorCodes
-            updatedAt: 2000-01-23T04:56:07.000+00:00
-        additionalErrors: "{}"
         error: true
+        errorText: errorText
+        additionalErrors: "{}"
       properties:
         data:
           $ref: "#/components/schemas/models.ErrorTableListPublicRespV2"
@@ -7806,45 +7806,45 @@ components:
     models.ErrorTableListPublicRespV2:
       description: Данные ответа
       example:
+        items:
+        - batchUUID: batchUUID
+          subjects:
+            key:
+              id: 0.8008281904610115
+              name: name
+          brands:
+            key:
+              id: 6.027456183070403
+              name: name
+          vendorCodes:
+          - vendorCodes
+          - vendorCodes
+          errors:
+            key:
+            - errors
+            - errors
+          updatedAt: 2000-01-23T04:56:07.000+00:00
+        - batchUUID: batchUUID
+          subjects:
+            key:
+              id: 0.8008281904610115
+              name: name
+          brands:
+            key:
+              id: 6.027456183070403
+              name: name
+          vendorCodes:
+          - vendorCodes
+          - vendorCodes
+          errors:
+            key:
+            - errors
+            - errors
+          updatedAt: 2000-01-23T04:56:07.000+00:00
         cursor:
           next: true
-          batchUUID: batchUUID
           updatedAt: 2000-01-23T04:56:07.000+00:00
-        items:
-        - brands:
-            key:
-              name: name
-              id: 6.027456183070403
-          subjects:
-            key:
-              name: name
-              id: 0.8008281904610115
           batchUUID: batchUUID
-          errors:
-            key:
-            - errors
-            - errors
-          vendorCodes:
-          - vendorCodes
-          - vendorCodes
-          updatedAt: 2000-01-23T04:56:07.000+00:00
-        - brands:
-            key:
-              name: name
-              id: 6.027456183070403
-          subjects:
-            key:
-              name: name
-              id: 0.8008281904610115
-          batchUUID: batchUUID
-          errors:
-            key:
-            - errors
-            - errors
-          vendorCodes:
-          - vendorCodes
-          - vendorCodes
-          updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         items:
           description: Пакеты данных
@@ -7859,22 +7859,22 @@ components:
       type: object
     models.ErrorTableListPublicRespV2Item:
       example:
-        brands:
-          key:
-            name: name
-            id: 6.027456183070403
+        batchUUID: batchUUID
         subjects:
           key:
-            name: name
             id: 0.8008281904610115
-        batchUUID: batchUUID
+            name: name
+        brands:
+          key:
+            id: 6.027456183070403
+            name: name
+        vendorCodes:
+        - vendorCodes
+        - vendorCodes
         errors:
           key:
           - errors
           - errors
-        vendorCodes:
-        - vendorCodes
-        - vendorCodes
         updatedAt: 2000-01-23T04:56:07.000+00:00
       properties:
         batchUUID:
@@ -7919,8 +7919,8 @@ components:
       description: Пагинатор
       example:
         next: true
-        batchUUID: batchUUID
         updatedAt: 2000-01-23T04:56:07.000+00:00
+        batchUUID: batchUUID
       properties:
         next:
           description: |
@@ -7943,8 +7943,8 @@ components:
       type: object
     models.ErrorSubject:
       example:
-        name: name
         id: 0.8008281904610115
+        name: name
       properties:
         id:
           description: ID предмета
@@ -7959,8 +7959,8 @@ components:
       type: object
     models.ErrorBrand:
       example:
-        name: name
         id: 6.027456183070403
+        name: name
       properties:
         id:
           description: ID бренда
@@ -8027,7 +8027,6 @@ components:
       type: object
     _content_v2_object_parent_all_get_200_response:
       example:
-        errorText: ""
         data:
         - name: Электроника
           id: 479
@@ -8035,8 +8034,9 @@ components:
         - name: Электроника
           id: 479
           isVisible: true
-        additionalErrors: ""
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           items:
@@ -8086,10 +8086,10 @@ components:
       type: object
     _content_v2_object_all_get_200_response_data_inner:
       example:
-        parentName: parentName
         subjectID: 0
         parentID: 6
         subjectName: subjectName
+        parentName: parentName
       properties:
         subjectID:
           description: ID предмета
@@ -8106,18 +8106,18 @@ components:
       type: object
     _content_v2_object_all_get_200_response:
       example:
-        errorText: errorText
         data:
-        - parentName: parentName
-          subjectID: 0
+        - subjectID: 0
           parentID: 6
           subjectName: subjectName
-        - parentName: parentName
-          subjectID: 0
+          parentName: parentName
+        - subjectID: 0
           parentID: 6
           subjectName: subjectName
-        additionalErrors: additionalErrors
+          parentName: parentName
         error: true
+        errorText: errorText
+        additionalErrors: additionalErrors
       properties:
         data:
           description: Предметы
@@ -8190,6 +8190,12 @@ components:
               -  `true` — варианты товара могут отличаться по этой характеристике
               -  `false` — варианты товара не могут отличаться по этой характеристике
           type: boolean
+        existNamedField:
+          description: |
+            Как передать характеристику в запросах на [cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post), [создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) и [редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:
+              -  `true` — в соответствующем параметре запроса
+              -  `false` — внутри массива `characteristics`
+          type: boolean
       type: object
     _content_v2_object_charcs__subjectId__get_200_response:
       example:
@@ -8205,6 +8211,7 @@ components:
           charcType: 4
           hasFilter: true
           isVariable: true
+          existNamedField: true
         error: false
         errorText: ""
         additionalErrors: null
@@ -8227,8 +8234,8 @@ components:
       type: object
     _content_v2_directory_colors_get_200_response_data_inner:
       example:
-        parentName: оранжевый
         name: персиковый мелок
+        parentName: оранжевый
       properties:
         name:
           description: Наименование цвета
@@ -8241,14 +8248,14 @@ components:
       type: object
     _content_v2_directory_colors_get_200_response:
       example:
-        errorText: ""
         data:
-        - parentName: оранжевый
-          name: персиковый мелок
-        - parentName: оранжевый
-          name: персиковый мелок
-        additionalErrors: ""
+        - name: персиковый мелок
+          parentName: оранжевый
+        - name: персиковый мелок
+          parentName: оранжевый
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           items:
@@ -8270,12 +8277,12 @@ components:
       type: object
     _content_v2_directory_kinds_get_200_response:
       example:
-        errorText: ""
         data:
         - Мужской
         - Мужской
-        additionalErrors: ""
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           description: Массив значений для хар-ки Пол
@@ -8299,9 +8306,9 @@ components:
       type: object
     _content_v2_directory_countries_get_200_response_data_inner:
       example:
+        id: 15000170
         name: Китай
         fullName: Китайская Народная Республика
-        id: 15000170
       properties:
         id:
           description: ID страны
@@ -8318,16 +8325,16 @@ components:
       type: object
     _content_v2_directory_countries_get_200_response:
       example:
-        errorText: ""
         data:
-        - name: Китай
+        - id: 15000170
+          name: Китай
           fullName: Китайская Народная Республика
-          id: 15000170
-        - name: Китай
+        - id: 15000170
+          name: Китай
           fullName: Китайская Народная Республика
-          id: 15000170
-        additionalErrors: ""
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           items:
@@ -8349,12 +8356,12 @@ components:
       type: object
     _content_v2_directory_seasons_get_200_response:
       example:
-        errorText: ""
         data:
         - демисезон
         - демисезон
-        additionalErrors: ""
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           description: Массив значений для хар-ки Сезон
@@ -8378,12 +8385,12 @@ components:
       type: object
     _content_v2_directory_vat_get_200_response:
       example:
-        errorText: errorText
         data:
         - data
         - data
-        additionalErrors: additionalErrors
         error: true
+        errorText: errorText
+        additionalErrors: additionalErrors
       properties:
         data:
           items:
@@ -8416,14 +8423,14 @@ components:
       type: object
     _content_v2_directory_tnved_get_200_response:
       example:
-        errorText: errorText
         data:
         - tnved: tnved
           isKiz: true
         - tnved: tnved
           isKiz: true
-        additionalErrors: additionalErrors
         error: false
+        errorText: errorText
+        additionalErrors: additionalErrors
       properties:
         data:
           description: Данные
@@ -8444,9 +8451,9 @@ components:
       type: object
     _content_v2_tags_get_200_response_data:
       example:
+        id: 0
         color: color
         name: name
-        id: 0
       properties:
         id:
           description: Числовой ID ярлыка
@@ -8459,13 +8466,13 @@ components:
           type: string
     _content_v2_tags_get_200_response:
       example:
-        errorText: ""
         data:
+          id: 0
           color: color
           name: name
-          id: 0
-        additionalErrors: ""
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           $ref: "#/components/schemas/_content_v2_tags_get_200_response_data"
@@ -8627,10 +8634,10 @@ components:
     _content_v2_get_cards_list_post_200_response_cards_inner_photos_inner:
       example:
         big: big
-        square: square
-        c516x688: c516x688
-        tm: tm
         c246x328: c246x328
+        c516x688: c516x688
+        square: square
+        tm: tm
       properties:
         big:
           description: URL фото `900x1200`
@@ -8651,8 +8658,8 @@ components:
     _content_v2_get_cards_list_post_200_response_cards_inner_wholesale:
       description: Оптовая продажа
       example:
-        quantum: 5.962133916683182
         enabled: true
+        quantum: 5.962133916683182
       properties:
         enabled:
           description: Предназначена ли карточка товара для оптовой продажи
@@ -8665,11 +8672,11 @@ components:
     _content_v2_get_cards_list_post_200_response_cards_inner_dimensions:
       description: "Габариты и вес товара c упаковкой, см и кг"
       example:
-        weightBrutto: 9.301444243932576
-        isValid: true
         length: 5
         width: 2
         height: 7
+        weightBrutto: 9.301444243932576
+        isValid: true
       properties:
         length:
           description: "Длина, см"
@@ -8694,8 +8701,8 @@ components:
       type: object
     _content_v2_get_cards_list_post_200_response_cards_inner_characteristics_inner:
       example:
-        name: name
         id: 3
+        name: name
         value: ""
       properties:
         id:
@@ -8709,12 +8716,12 @@ components:
       type: object
     _content_v2_get_cards_list_post_200_response_cards_inner_sizes_inner:
       example:
+        chrtID: 2
+        techSize: techSize
         wbSize: wbSize
         skus:
         - 12345Ejf5
         - 12345Ejf5
-        techSize: techSize
-        chrtID: 2
       properties:
         chrtID:
           description: Числовой ID размера для данного артикула WB
@@ -8734,9 +8741,9 @@ components:
       type: object
     _content_v2_get_cards_list_post_200_response_cards_inner_tags_inner:
       example:
-        color: color
-        name: name
         id: 4
+        name: name
+        color: color
       properties:
         id:
           description: ID ярлыка
@@ -8758,66 +8765,66 @@ components:
       type: object
     _content_v2_get_cards_list_post_200_response_cards_inner:
       example:
-        needKiz: true
-        characteristics:
-        - name: name
-          id: 3
-          value: ""
-        - name: name
-          id: 3
-          value: ""
-        nmUUID: nmUUID
         nmID: 0
-        description: description
-        video: video
+        imtID: 6
+        nmUUID: nmUUID
+        subjectID: 1
+        subjectName: subjectName
+        vendorCode: vendorCode
+        brand: brand
         title: title
+        description: description
+        needKiz: true
+        kizMarked: false
         photos:
         - big: big
-          square: square
-          c516x688: c516x688
-          tm: tm
           c246x328: c246x328
+          c516x688: c516x688
+          square: square
+          tm: tm
         - big: big
-          square: square
-          c516x688: c516x688
-          tm: tm
           c246x328: c246x328
-        subjectID: 1
-        vendorCode: vendorCode
-        tags:
-        - color: color
-          name: name
-          id: 4
-        - color: color
-          name: name
-          id: 4
-        imtID: 6
-        createdAt: createdAt
+          c516x688: c516x688
+          square: square
+          tm: tm
+        video: video
         wholesale:
-          quantum: 5.962133916683182
           enabled: true
-        sizes:
-        - wbSize: wbSize
-          skus:
-          - 12345Ejf5
-          - 12345Ejf5
-          techSize: techSize
-          chrtID: 2
-        - wbSize: wbSize
-          skus:
-          - 12345Ejf5
-          - 12345Ejf5
-          techSize: techSize
-          chrtID: 2
-        kizMarked: false
-        brand: brand
-        subjectName: subjectName
+          quantum: 5.962133916683182
         dimensions:
-          weightBrutto: 9.301444243932576
-          isValid: true
           length: 5
           width: 2
           height: 7
+          weightBrutto: 9.301444243932576
+          isValid: true
+        characteristics:
+        - id: 3
+          name: name
+          value: ""
+        - id: 3
+          name: name
+          value: ""
+        sizes:
+        - chrtID: 2
+          techSize: techSize
+          wbSize: wbSize
+          skus:
+          - 12345Ejf5
+          - 12345Ejf5
+        - chrtID: 2
+          techSize: techSize
+          wbSize: wbSize
+          skus:
+          - 12345Ejf5
+          - 12345Ejf5
+        tags:
+        - id: 4
+          name: name
+          color: color
+        - id: 4
+          name: name
+          color: color
+        createdAt: createdAt
         updatedAt: updatedAt
       properties:
         nmID:
@@ -8904,9 +8911,9 @@ components:
     _content_v2_get_cards_list_post_200_response_cursor:
       description: Пагинатор
       example:
-        total: 1
-        nmID: 7
         updatedAt: updatedAt
+        nmID: 7
+        total: 1
       properties:
         updatedAt:
           description: "Дата и время, с которых надо запрашивать следующий список\
@@ -8922,133 +8929,133 @@ components:
       type: object
     _content_v2_get_cards_list_post_200_response:
       example:
-        cursor:
-          total: 1
-          nmID: 7
-          updatedAt: updatedAt
         cards:
-        - needKiz: true
-          characteristics:
-          - name: name
-            id: 3
-            value: ""
-          - name: name
-            id: 3
-            value: ""
+        - nmID: 0
+          imtID: 6
           nmUUID: nmUUID
-          nmID: 0
-          description: description
-          video: video
+          subjectID: 1
+          subjectName: subjectName
+          vendorCode: vendorCode
+          brand: brand
           title: title
+          description: description
+          needKiz: true
+          kizMarked: false
           photos:
           - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
             c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
           - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
             c246x328: c246x328
-          subjectID: 1
-          vendorCode: vendorCode
-          tags:
-          - color: color
-            name: name
-            id: 4
-          - color: color
-            name: name
-            id: 4
-          imtID: 6
-          createdAt: createdAt
+            c516x688: c516x688
+            square: square
+            tm: tm
+          video: video
           wholesale:
-            quantum: 5.962133916683182
             enabled: true
-          sizes:
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 2
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 2
-          kizMarked: false
-          brand: brand
-          subjectName: subjectName
+            quantum: 5.962133916683182
           dimensions:
-            weightBrutto: 9.301444243932576
-            isValid: true
             length: 5
             width: 2
             height: 7
-          updatedAt: updatedAt
-        - needKiz: true
-          characteristics:
-          - name: name
-            id: 3
-            value: ""
-          - name: name
-            id: 3
-            value: ""
-          nmUUID: nmUUID
-          nmID: 0
-          description: description
-          video: video
-          title: title
-          photos:
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          subjectID: 1
-          vendorCode: vendorCode
-          tags:
-          - color: color
-            name: name
-            id: 4
-          - color: color
-            name: name
-            id: 4
-          imtID: 6
-          createdAt: createdAt
-          wholesale:
-            quantum: 5.962133916683182
-            enabled: true
-          sizes:
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 2
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 2
-          kizMarked: false
-          brand: brand
-          subjectName: subjectName
-          dimensions:
             weightBrutto: 9.301444243932576
             isValid: true
+          characteristics:
+          - id: 3
+            name: name
+            value: ""
+          - id: 3
+            name: name
+            value: ""
+          sizes:
+          - chrtID: 2
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          - chrtID: 2
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          tags:
+          - id: 4
+            name: name
+            color: color
+          - id: 4
+            name: name
+            color: color
+          createdAt: createdAt
+          updatedAt: updatedAt
+        - nmID: 0
+          imtID: 6
+          nmUUID: nmUUID
+          subjectID: 1
+          subjectName: subjectName
+          vendorCode: vendorCode
+          brand: brand
+          title: title
+          description: description
+          needKiz: true
+          kizMarked: false
+          photos:
+          - big: big
+            c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
+          - big: big
+            c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
+          video: video
+          wholesale:
+            enabled: true
+            quantum: 5.962133916683182
+          dimensions:
             length: 5
             width: 2
             height: 7
+            weightBrutto: 9.301444243932576
+            isValid: true
+          characteristics:
+          - id: 3
+            name: name
+            value: ""
+          - id: 3
+            name: name
+            value: ""
+          sizes:
+          - chrtID: 2
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          - chrtID: 2
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          tags:
+          - id: 4
+            name: name
+            color: color
+          - id: 4
+            name: name
+            color: color
+          createdAt: createdAt
           updatedAt: updatedAt
+        cursor:
+          updatedAt: updatedAt
+          nmID: 7
+          total: 1
       properties:
         cards:
           description: Список карточек товаров
@@ -9175,13 +9182,13 @@ components:
       type: object
     _content_v2_cards_update_post_413_response:
       example:
+        title: title
+        detail: detail
         code: code
         requestId: requestId
         origin: origin
-        statusText: statusText
-        detail: detail
-        title: title
         status: 0.8008281904610115
+        statusText: statusText
       properties:
         title:
           description: Заголовок ошибки
@@ -9225,10 +9232,10 @@ components:
       type: object
     _content_v2_cards_delete_trash_post_200_response:
       example:
-        errorText: errorText
         data: "{}"
-        additionalErrors: "{}"
         error: true
+        errorText: errorText
+        additionalErrors: "{}"
       properties:
         data:
           nullable: true
@@ -9295,12 +9302,12 @@ components:
       type: object
     _content_v2_get_cards_trash_post_200_response_cards_inner_sizes_inner:
       example:
+        chrtID: 1
+        techSize: techSize
         wbSize: wbSize
         skus:
         - 12345Ejf5
         - 12345Ejf5
-        techSize: techSize
-        chrtID: 1
       properties:
         chrtID:
           description: ID размера
@@ -9320,54 +9327,54 @@ components:
       type: object
     _content_v2_get_cards_trash_post_200_response_cards_inner:
       example:
-        trashedAt: trashedAt
-        characteristics:
-        - name: name
-          id: 3
-          value: ""
-        - name: name
-          id: 3
-          value: ""
         nmID: 0
-        video: video
+        vendorCode: vendorCode
+        kizMarked: false
+        subjectID: 6
+        subjectName: subjectName
         photos:
         - big: big
-          square: square
-          c516x688: c516x688
-          tm: tm
           c246x328: c246x328
+          c516x688: c516x688
+          square: square
+          tm: tm
         - big: big
-          square: square
-          c516x688: c516x688
-          tm: tm
           c246x328: c246x328
-        subjectID: 6
-        vendorCode: vendorCode
-        createdAt: createdAt
+          c516x688: c516x688
+          square: square
+          tm: tm
+        video: video
         wholesale:
-          quantum: 5.962133916683182
           enabled: true
+          quantum: 5.962133916683182
         sizes:
-        - wbSize: wbSize
+        - chrtID: 1
+          techSize: techSize
+          wbSize: wbSize
           skus:
           - 12345Ejf5
           - 12345Ejf5
+        - chrtID: 1
           techSize: techSize
-          chrtID: 1
-        - wbSize: wbSize
+          wbSize: wbSize
           skus:
           - 12345Ejf5
           - 12345Ejf5
-          techSize: techSize
-          chrtID: 1
-        kizMarked: false
-        subjectName: subjectName
         dimensions:
-          weightBrutto: 9.301444243932576
-          isValid: true
           length: 5
           width: 2
           height: 7
+          weightBrutto: 9.301444243932576
+          isValid: true
+        characteristics:
+        - id: 3
+          name: name
+          value: ""
+        - id: 3
+          name: name
+          value: ""
+        createdAt: createdAt
+        trashedAt: trashedAt
       properties:
         nmID:
           description: Артикул WB
@@ -9425,8 +9432,8 @@ components:
       description: Пагинатор
       example:
         trashedAt: trashedAt
-        total: 5
         nmID: 5
+        total: 5
       properties:
         trashedAt:
           description: "Дата и время, с которых надо запрашивать следующий список\
@@ -9442,107 +9449,107 @@ components:
       type: object
     _content_v2_get_cards_trash_post_200_response:
       example:
+        cards:
+        - nmID: 0
+          vendorCode: vendorCode
+          kizMarked: false
+          subjectID: 6
+          subjectName: subjectName
+          photos:
+          - big: big
+            c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
+          - big: big
+            c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
+          video: video
+          wholesale:
+            enabled: true
+            quantum: 5.962133916683182
+          sizes:
+          - chrtID: 1
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          - chrtID: 1
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          dimensions:
+            length: 5
+            width: 2
+            height: 7
+            weightBrutto: 9.301444243932576
+            isValid: true
+          characteristics:
+          - id: 3
+            name: name
+            value: ""
+          - id: 3
+            name: name
+            value: ""
+          createdAt: createdAt
+          trashedAt: trashedAt
+        - nmID: 0
+          vendorCode: vendorCode
+          kizMarked: false
+          subjectID: 6
+          subjectName: subjectName
+          photos:
+          - big: big
+            c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
+          - big: big
+            c246x328: c246x328
+            c516x688: c516x688
+            square: square
+            tm: tm
+          video: video
+          wholesale:
+            enabled: true
+            quantum: 5.962133916683182
+          sizes:
+          - chrtID: 1
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          - chrtID: 1
+            techSize: techSize
+            wbSize: wbSize
+            skus:
+            - 12345Ejf5
+            - 12345Ejf5
+          dimensions:
+            length: 5
+            width: 2
+            height: 7
+            weightBrutto: 9.301444243932576
+            isValid: true
+          characteristics:
+          - id: 3
+            name: name
+            value: ""
+          - id: 3
+            name: name
+            value: ""
+          createdAt: createdAt
+          trashedAt: trashedAt
         cursor:
           trashedAt: trashedAt
-          total: 5
           nmID: 5
-        cards:
-        - trashedAt: trashedAt
-          characteristics:
-          - name: name
-            id: 3
-            value: ""
-          - name: name
-            id: 3
-            value: ""
-          nmID: 0
-          video: video
-          photos:
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          subjectID: 6
-          vendorCode: vendorCode
-          createdAt: createdAt
-          wholesale:
-            quantum: 5.962133916683182
-            enabled: true
-          sizes:
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 1
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 1
-          kizMarked: false
-          subjectName: subjectName
-          dimensions:
-            weightBrutto: 9.301444243932576
-            isValid: true
-            length: 5
-            width: 2
-            height: 7
-        - trashedAt: trashedAt
-          characteristics:
-          - name: name
-            id: 3
-            value: ""
-          - name: name
-            id: 3
-            value: ""
-          nmID: 0
-          video: video
-          photos:
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          - big: big
-            square: square
-            c516x688: c516x688
-            tm: tm
-            c246x328: c246x328
-          subjectID: 6
-          vendorCode: vendorCode
-          createdAt: createdAt
-          wholesale:
-            quantum: 5.962133916683182
-            enabled: true
-          sizes:
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 1
-          - wbSize: wbSize
-            skus:
-            - 12345Ejf5
-            - 12345Ejf5
-            techSize: techSize
-            chrtID: 1
-          kizMarked: false
-          subjectName: subjectName
-          dimensions:
-            weightBrutto: 9.301444243932576
-            isValid: true
-            length: 5
-            width: 2
-            height: 7
+          total: 5
       properties:
         cards:
           description: Массив карточек товаров
@@ -9554,8 +9561,8 @@ components:
       type: object
     _content_v2_cards_limits_get_200_response_data:
       example:
-        paidLimits: 6
         freeLimits: 0
+        paidLimits: 6
       properties:
         freeLimits:
           description: Количество бесплатных лимитов
@@ -9566,12 +9573,12 @@ components:
       type: object
     _content_v2_cards_limits_get_200_response:
       example:
-        errorText: errorText
         data:
-          paidLimits: 6
           freeLimits: 0
-        additionalErrors: additionalErrors
+          paidLimits: 6
         error: true
+        errorText: errorText
+        additionalErrors: additionalErrors
       properties:
         data:
           $ref: "#/components/schemas/_content_v2_cards_limits_get_200_response_data"
@@ -9596,12 +9603,12 @@ components:
       type: object
     _content_v2_barcodes_post_200_response:
       example:
-        errorText: ""
         data:
         - "5032781145187"
         - "5032781145187"
-        additionalErrors: ""
         error: false
+        errorText: ""
+        additionalErrors: ""
       properties:
         data:
           description: Массив сгенерированных баркодов
@@ -9843,10 +9850,10 @@ components:
       type: object
     _content_v3_media_file_post_200_response:
       example:
-        errorText: errorText
         data: "{}"
-        additionalErrors: "{}"
         error: true
+        errorText: errorText
+        additionalErrors: "{}"
       properties:
         data:
           type: object
@@ -9914,15 +9921,15 @@ components:
       type: object
     _api_v2_history_tasks_get_200_response:
       example:
-        errorText: ""
         data:
           uploadID: 395643565
-          uploadDate: 2022-08-21T22:00:13+02:00
-          successGoodsNumber: 6
-          overAllGoodsNumber: 0
-          activationDate: 2022-08-21T22:00:13+02:00
           status: 3
+          uploadDate: 2022-08-21T22:00:13+02:00
+          activationDate: 2022-08-21T22:00:13+02:00
+          overAllGoodsNumber: 0
+          successGoodsNumber: 6
         error: false
+        errorText: ""
       properties:
         data:
           $ref: "#/components/schemas/SupplierTaskMetadata"
@@ -9940,28 +9947,28 @@ components:
       example:
         uploadID: 3235236546
         historyGoods:
-        - sizeID: 54483342
+        - nmID: 544833232
+          vendorCode: "34552332"
+          sizeID: 54483342
+          techSizeName: "42"
+          price: 1500
+          currencyIsoCode4217: RUB
+          discount: 25
+          clubDiscount: 5
+          status: 1
           errorText: You can't change the item price. Item was added to the Sale due
             to high inventory
-          techSizeName: "42"
-          clubDiscount: 5
-          price: 1500
-          nmID: 544833232
-          discount: 25
-          currencyIsoCode4217: RUB
+        - nmID: 544833232
           vendorCode: "34552332"
+          sizeID: 54483342
+          techSizeName: "42"
+          price: 1500
+          currencyIsoCode4217: RUB
+          discount: 25
+          clubDiscount: 5
           status: 1
-        - sizeID: 54483342
           errorText: You can't change the item price. Item was added to the Sale due
             to high inventory
-          techSizeName: "42"
-          clubDiscount: 5
-          price: 1500
-          nmID: 544833232
-          discount: 25
-          currencyIsoCode4217: RUB
-          vendorCode: "34552332"
-          status: 1
       properties:
         uploadID:
           description: ID загрузки
@@ -9978,43 +9985,43 @@ components:
         data:
           uploadID: 3235236546
           historyGoods:
-          - sizeID: 54483342
+          - nmID: 544833232
+            vendorCode: "34552332"
+            sizeID: 54483342
+            techSizeName: "42"
+            price: 1500
+            currencyIsoCode4217: RUB
+            discount: 25
+            clubDiscount: 5
+            status: 1
             errorText: You can't change the item price. Item was added to the Sale
               due to high inventory
-            techSizeName: "42"
-            clubDiscount: 5
-            price: 1500
-            nmID: 544833232
-            discount: 25
-            currencyIsoCode4217: RUB
+          - nmID: 544833232
             vendorCode: "34552332"
+            sizeID: 54483342
+            techSizeName: "42"
+            price: 1500
+            currencyIsoCode4217: RUB
+            discount: 25
+            clubDiscount: 5
             status: 1
-          - sizeID: 54483342
             errorText: You can't change the item price. Item was added to the Sale
               due to high inventory
-            techSizeName: "42"
-            clubDiscount: 5
-            price: 1500
-            nmID: 544833232
-            discount: 25
-            currencyIsoCode4217: RUB
-            vendorCode: "34552332"
-            status: 1
       properties:
         data:
           $ref: "#/components/schemas/_api_v2_history_goods_task_get_200_response_data"
       type: object
     _api_v2_buffer_tasks_get_200_response:
       example:
-        errorText: ""
         data:
           uploadID: 395643565
-          uploadDate: 2022-08-21T22:00:13+02:00
-          successGoodsNumber: 0
-          overAllGoodsNumber: 100
-          activationDate: 2022-08-21T22:00:13+02:00
           status: 1
+          uploadDate: 2022-08-21T22:00:13+02:00
+          activationDate: 2022-08-21T22:00:13+02:00
+          overAllGoodsNumber: 100
+          successGoodsNumber: 0
         error: false
+        errorText: ""
       properties:
         data:
           $ref: "#/components/schemas/SupplierTaskMetadataBuffer"
@@ -10032,26 +10039,26 @@ components:
       example:
         uploadID: 3235236546
         bufferGoods:
-        - sizeID: 54483342
-          errorText: errorText
-          techSizeName: XXL
-          clubDiscount: 5
-          price: 1500
-          nmID: 544833232
-          discount: 25
-          currencyIsoCode4217: RUB
+        - nmID: 544833232
           vendorCode: "34552332"
-          status: 1
-        - sizeID: 54483342
-          errorText: errorText
+          sizeID: 54483342
           techSizeName: XXL
-          clubDiscount: 5
           price: 1500
-          nmID: 544833232
-          discount: 25
           currencyIsoCode4217: RUB
-          vendorCode: "34552332"
+          discount: 25
+          clubDiscount: 5
           status: 1
+          errorText: errorText
+        - nmID: 544833232
+          vendorCode: "34552332"
+          sizeID: 54483342
+          techSizeName: XXL
+          price: 1500
+          currencyIsoCode4217: RUB
+          discount: 25
+          clubDiscount: 5
+          status: 1
+          errorText: errorText
       properties:
         uploadID:
           description: ID загрузки
@@ -10067,31 +10074,31 @@ components:
       type: object
     _api_v2_buffer_goods_task_get_200_response:
       example:
-        errorText: ""
         data:
           uploadID: 3235236546
           bufferGoods:
-          - sizeID: 54483342
-            errorText: errorText
-            techSizeName: XXL
-            clubDiscount: 5
-            price: 1500
-            nmID: 544833232
-            discount: 25
-            currencyIsoCode4217: RUB
+          - nmID: 544833232
             vendorCode: "34552332"
-            status: 1
-          - sizeID: 54483342
-            errorText: errorText
+            sizeID: 54483342
             techSizeName: XXL
-            clubDiscount: 5
             price: 1500
-            nmID: 544833232
-            discount: 25
             currencyIsoCode4217: RUB
-            vendorCode: "34552332"
+            discount: 25
+            clubDiscount: 5
             status: 1
+            errorText: errorText
+          - nmID: 544833232
+            vendorCode: "34552332"
+            sizeID: 54483342
+            techSizeName: XXL
+            price: 1500
+            currencyIsoCode4217: RUB
+            discount: 25
+            clubDiscount: 5
+            status: 1
+            errorText: errorText
         error: false
+        errorText: ""
       properties:
         data:
           $ref: "#/components/schemas/_api_v2_buffer_goods_task_get_200_response_data"
@@ -10108,42 +10115,42 @@ components:
       description: Данные ответа
       example:
         listGoods:
-        - clubDiscount: 5
+        - nmID: 98486
+          vendorCode: "07326060"
           sizes:
           - sizeID: 3123515574
-            techSizeName: "42"
-            discountedPrice: 350
             price: 500
+            discountedPrice: 350
             clubDiscountedPrice: 332.5
+            techSizeName: "42"
           - sizeID: 3123515574
-            techSizeName: "42"
-            discountedPrice: 350
             price: 500
+            discountedPrice: 350
             clubDiscountedPrice: 332.5
-          editableSizePrice: true
-          nmID: 98486
-          discount: 30
-          isBadTurnover: true
+            techSizeName: "42"
           currencyIsoCode4217: RUB
+          discount: 30
+          clubDiscount: 5
+          editableSizePrice: true
+          isBadTurnover: true
+        - nmID: 98486
           vendorCode: "07326060"
-        - clubDiscount: 5
           sizes:
           - sizeID: 3123515574
-            techSizeName: "42"
-            discountedPrice: 350
             price: 500
+            discountedPrice: 350
             clubDiscountedPrice: 332.5
+            techSizeName: "42"
           - sizeID: 3123515574
-            techSizeName: "42"
-            discountedPrice: 350
             price: 500
+            discountedPrice: 350
             clubDiscountedPrice: 332.5
-          editableSizePrice: true
-          nmID: 98486
-          discount: 30
-          isBadTurnover: true
+            techSizeName: "42"
           currencyIsoCode4217: RUB
-          vendorCode: "07326060"
+          discount: 30
+          clubDiscount: 5
+          editableSizePrice: true
+          isBadTurnover: true
       properties:
         listGoods:
           description: Информация о товарах
@@ -10155,46 +10162,46 @@ components:
       type: object
     _api_v2_list_goods_filter_get_200_response:
       example:
-        errorText: ""
         data:
           listGoods:
-          - clubDiscount: 5
+          - nmID: 98486
+            vendorCode: "07326060"
             sizes:
             - sizeID: 3123515574
-              techSizeName: "42"
-              discountedPrice: 350
               price: 500
+              discountedPrice: 350
               clubDiscountedPrice: 332.5
+              techSizeName: "42"
             - sizeID: 3123515574
-              techSizeName: "42"
-              discountedPrice: 350
               price: 500
+              discountedPrice: 350
               clubDiscountedPrice: 332.5
-            editableSizePrice: true
-            nmID: 98486
-            discount: 30
-            isBadTurnover: true
+              techSizeName: "42"
             currencyIsoCode4217: RUB
+            discount: 30
+            clubDiscount: 5
+            editableSizePrice: true
+            isBadTurnover: true
+          - nmID: 98486
             vendorCode: "07326060"
-          - clubDiscount: 5
             sizes:
             - sizeID: 3123515574
-              techSizeName: "42"
-              discountedPrice: 350
               price: 500
+              discountedPrice: 350
               clubDiscountedPrice: 332.5
+              techSizeName: "42"
             - sizeID: 3123515574
-              techSizeName: "42"
-              discountedPrice: 350
               price: 500
+              discountedPrice: 350
               clubDiscountedPrice: 332.5
-            editableSizePrice: true
-            nmID: 98486
-            discount: 30
-            isBadTurnover: true
+              techSizeName: "42"
             currencyIsoCode4217: RUB
-            vendorCode: "07326060"
+            discount: 30
+            clubDiscount: 5
+            editableSizePrice: true
+            isBadTurnover: true
         error: false
+        errorText: ""
       properties:
         data:
           $ref: "#/components/schemas/_api_v2_list_goods_filter_get_200_response_data"
@@ -10227,30 +10234,30 @@ components:
       description: Данные ответа
       example:
         listGoods:
-        - sizeID: 98989887
-          techSizeName: "42"
-          clubDiscount: 5
-          discountedPrice: 700
-          price: 1000
-          editableSizePrice: true
-          nmID: 123
-          discount: 30
-          isBadTurnover: true
-          clubDiscountedPrice: 665
-          currencyIsoCode4217: RUB
+        - nmID: 123
+          sizeID: 98989887
           vendorCode: "34552332"
-        - sizeID: 98989887
-          techSizeName: "42"
-          clubDiscount: 5
-          discountedPrice: 700
           price: 1000
-          editableSizePrice: true
-          nmID: 123
-          discount: 30
-          isBadTurnover: true
-          clubDiscountedPrice: 665
           currencyIsoCode4217: RUB
+          discountedPrice: 700
+          clubDiscountedPrice: 665
+          discount: 30
+          clubDiscount: 5
+          techSizeName: "42"
+          editableSizePrice: true
+          isBadTurnover: true
+        - nmID: 123
+          sizeID: 98989887
           vendorCode: "34552332"
+          price: 1000
+          currencyIsoCode4217: RUB
+          discountedPrice: 700
+          clubDiscountedPrice: 665
+          discount: 30
+          clubDiscount: 5
+          techSizeName: "42"
+          editableSizePrice: true
+          isBadTurnover: true
       properties:
         listGoods:
           description: Размеры товара
@@ -10261,34 +10268,34 @@ components:
       type: object
     _api_v2_list_goods_size_nm_get_200_response:
       example:
-        errorText: errorText
         data:
           listGoods:
-          - sizeID: 98989887
-            techSizeName: "42"
-            clubDiscount: 5
-            discountedPrice: 700
-            price: 1000
-            editableSizePrice: true
-            nmID: 123
-            discount: 30
-            isBadTurnover: true
-            clubDiscountedPrice: 665
-            currencyIsoCode4217: RUB
+          - nmID: 123
+            sizeID: 98989887
             vendorCode: "34552332"
-          - sizeID: 98989887
-            techSizeName: "42"
-            clubDiscount: 5
-            discountedPrice: 700
             price: 1000
-            editableSizePrice: true
-            nmID: 123
-            discount: 30
-            isBadTurnover: true
-            clubDiscountedPrice: 665
             currencyIsoCode4217: RUB
+            discountedPrice: 700
+            clubDiscountedPrice: 665
+            discount: 30
+            clubDiscount: 5
+            techSizeName: "42"
+            editableSizePrice: true
+            isBadTurnover: true
+          - nmID: 123
+            sizeID: 98989887
             vendorCode: "34552332"
+            price: 1000
+            currencyIsoCode4217: RUB
+            discountedPrice: 700
+            clubDiscountedPrice: 665
+            discount: 30
+            clubDiscount: 5
+            techSizeName: "42"
+            editableSizePrice: true
+            isBadTurnover: true
         error: false
+        errorText: errorText
       properties:
         data:
           $ref: "#/components/schemas/_api_v2_list_goods_size_nm_get_200_response_data"
@@ -10304,24 +10311,24 @@ components:
       description: Данные ответа
       example:
         quarantineGoods:
-        - sizeID: 0
-          newDiscount: 25
+        - nmID: 206025152
+          sizeID: 0
           techSizeName: ""
-          oldPrice: 4000
-          nmID: 206025152
-          priceDiff: -2899.5
-          oldDiscount: 25
           currencyIsoCode4217: RUB
           newPrice: 134
-        - sizeID: 0
-          newDiscount: 25
-          techSizeName: ""
           oldPrice: 4000
-          nmID: 206025152
-          priceDiff: -2899.5
+          newDiscount: 25
           oldDiscount: 25
+          priceDiff: -2899.5
+        - nmID: 206025152
+          sizeID: 0
+          techSizeName: ""
           currencyIsoCode4217: RUB
           newPrice: 134
+          oldPrice: 4000
+          newDiscount: 25
+          oldDiscount: 25
+          priceDiff: -2899.5
       nullable: true
       properties:
         quarantineGoods:
@@ -10332,28 +10339,28 @@ components:
       type: object
     _api_v2_quarantine_goods_get_200_response:
       example:
-        errorText: ""
         data:
           quarantineGoods:
-          - sizeID: 0
-            newDiscount: 25
+          - nmID: 206025152
+            sizeID: 0
             techSizeName: ""
-            oldPrice: 4000
-            nmID: 206025152
-            priceDiff: -2899.5
-            oldDiscount: 25
             currencyIsoCode4217: RUB
             newPrice: 134
-          - sizeID: 0
-            newDiscount: 25
-            techSizeName: ""
             oldPrice: 4000
-            nmID: 206025152
-            priceDiff: -2899.5
+            newDiscount: 25
             oldDiscount: 25
+            priceDiff: -2899.5
+          - nmID: 206025152
+            sizeID: 0
+            techSizeName: ""
             currencyIsoCode4217: RUB
             newPrice: 134
+            oldPrice: 4000
+            newDiscount: 25
+            oldDiscount: 25
+            priceDiff: -2899.5
         error: false
+        errorText: ""
       properties:
         data:
           $ref: "#/components/schemas/_api_v2_quarantine_goods_get_200_response_data"
@@ -10393,8 +10400,8 @@ components:
     _api_v3_stocks__warehouseId__put_406_response:
       example:
         code: StatusNotAcceptable
-        data: "{}"
         message: Обновление остатков заблокировано в связи с баном поставщика
+        data: "{}"
       properties:
         code:
           description: Код ошибки
@@ -10425,8 +10432,8 @@ components:
       type: object
     _api_v3_stocks__warehouseId__post_200_response_stocks_inner:
       example:
-        amount: 10
         chrtId: 12345678
+        amount: 10
       properties:
         chrtId:
           description: ID размера товара
@@ -10441,10 +10448,10 @@ components:
     _api_v3_stocks__warehouseId__post_200_response:
       example:
         stocks:
-        - amount: 10
-          chrtId: 12345678
-        - amount: 10
-          chrtId: 12345678
+        - chrtId: 12345678
+          amount: 10
+        - chrtId: 12345678
+          amount: 10
       properties:
         stocks:
           items:
@@ -10498,8 +10505,8 @@ components:
       type: object
     _api_v3_dbw_warehouses__warehouseId__contacts_get_200_response_contacts_inner:
       example:
-        phone: "+79998887766"
         comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+        phone: "+79998887766"
       properties:
         comment:
           description: Комментарий
@@ -10517,10 +10524,10 @@ components:
       description: Список контактов склада продавца
       example:
         contacts:
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
-        - phone: "+79998887766"
-          comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
+        - comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+          phone: "+79998887766"
       nullable: false
       properties:
         contacts:
@@ -10530,9 +10537,9 @@ components:
       type: object
     BrandsResponse_brands_inner:
       example:
-        name: Brand
         id: 9007199254
         logoUrl: logoUrl
+        name: Brand
       properties:
         id:
           description: ID бренда
@@ -10563,8 +10570,8 @@ components:
       type: object
     StoreContactRequestBody_contacts_inner:
       example:
-        phone: "+79998887766"
         comment: Иванов Иван Иванович. Звонить с 10 до 21 часа.
+        phone: "+79998887766"
       properties:
         comment:
           description: Комментарий
@@ -10622,9 +10629,9 @@ components:
       type: object
     StocksWarehouseError_inner_data_inner:
       example:
-        amount: 6
         sku: sku
         chrtId: 0
+        amount: 6
       properties:
         sku:
           description: Баркод
@@ -10638,14 +10645,14 @@ components:
       type: object
     StocksWarehouseError_inner:
       example:
-        code: code
         data:
-        - amount: 6
-          sku: sku
+        - sku: sku
           chrtId: 0
-        - amount: 6
-          sku: sku
+          amount: 6
+        - sku: sku
           chrtId: 0
+          amount: 6
+        code: code
         message: message
       properties:
         data:
@@ -10679,10 +10686,10 @@ components:
     GoodsList_sizes_inner:
       example:
         sizeID: 3123515574
-        techSizeName: "42"
-        discountedPrice: 350
         price: 500
+        discountedPrice: 350
         clubDiscountedPrice: 332.5
+        techSizeName: "42"
       properties:
         sizeID:
           description: ID размера. В методах Контента это поле `chrtID`

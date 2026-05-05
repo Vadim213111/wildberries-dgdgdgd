@@ -28,8 +28,8 @@ class ApiGTIN(BaseModel):
     """
     ApiGTIN
     """ # noqa: E501
-    gtin: Optional[Annotated[str, Field(min_length=13, strict=True, max_length=13)]] = Field(default=None, description="GTIN")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
+    gtin: Optional[Annotated[str, Field(min_length=13, strict=True, max_length=13)]] = Field(default=None, description="GTIN", json_schema_extra={"examples": ["1234567890123"]})
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
     __properties: ClassVar[List[str]] = ["gtin", "orderId"]
 
     model_config = ConfigDict(

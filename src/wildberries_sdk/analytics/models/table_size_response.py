@@ -31,7 +31,7 @@ class TableSizeResponse(BaseModel):
     """ # noqa: E501
     offices: Optional[List[TableOfficeItem]] = Field(default=None, description="Множество данных по складам")
     sizes: Optional[List[TableSizeResponseSizesInner]] = Field(default=None, description="Множество данных по размерам товара")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["offices", "sizes", "currency"]
 
     model_config = ConfigDict(

@@ -27,8 +27,8 @@ class ClubDiscReq(BaseModel):
     """
     ClubDiscReq
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID")
-    club_discount: StrictInt = Field(description="Скидка WB Клуба, %", alias="clubDiscount")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID", json_schema_extra={"examples": [123]})
+    club_discount: StrictInt = Field(description="Скидка WB Клуба, %", alias="clubDiscount", json_schema_extra={"examples": [5]})
     __properties: ClassVar[List[str]] = ["nmID", "clubDiscount"]
 
     model_config = ConfigDict(

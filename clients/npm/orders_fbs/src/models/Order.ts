@@ -95,7 +95,7 @@ export interface Order {
      */
     rid?: string;
     /**
-     * Дата создания сборочного задания (RFC3339)
+     * Дата создания сборочного задания (RFC3339). Часовой пояс — UTC
      * @type {Date}
      * @memberof Order
      */

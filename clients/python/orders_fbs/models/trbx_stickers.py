@@ -28,8 +28,8 @@ class TrbxStickers(BaseModel):
     """
     TrbxStickers
     """ # noqa: E501
-    barcode: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Закодированное значение стикера")
-    file: Optional[Union[Annotated[bytes, Field(min_length=1, strict=True)], Annotated[str, Field(min_length=1, strict=True)]]] = Field(default=None, description="Полное представление стикера в заданном формате (кодировка base64)")
+    barcode: Optional[Annotated[str, Field(min_length=1, strict=True)]] = Field(default=None, description="Закодированное значение стикера", json_schema_extra={"examples": ["$WBMP:1:123:1234567"]})
+    file: Optional[Union[Annotated[bytes, Field(min_length=1, strict=True)], Annotated[str, Field(min_length=1, strict=True)]]] = Field(default=None, description="Полное представление стикера в заданном формате (кодировка base64)", json_schema_extra={"examples": ["VTNkaFoyZGxjaUJ5YjJOcmN3PT0="]})
     __properties: ClassVar[List[str]] = ["barcode", "file"]
 
     model_config = ConfigDict(

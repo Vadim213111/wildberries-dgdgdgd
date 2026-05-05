@@ -28,14 +28,14 @@ class TableProductItemSt(BaseModel):
     """
     Данные по товару
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID")
-    is_deleted: StrictBool = Field(description="Является ли товар удалённым", alias="isDeleted")
-    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName")
-    name: StrictStr = Field(description="Название товара")
-    vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode")
-    brand_name: StrictStr = Field(description="Бренд", alias="brandName")
-    main_photo: StrictStr = Field(description="Ссылка на главное фото", alias="mainPhoto")
-    has_sizes: StrictBool = Field(description="Является ли товар размерным. Неразмерный товар имеет единственный размер, с `\"techSize\":\"0\"`", alias="hasSizes")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID", json_schema_extra={"examples": [123456789]})
+    is_deleted: StrictBool = Field(description="Является ли товар удалённым", alias="isDeleted", json_schema_extra={"examples": [False]})
+    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName", json_schema_extra={"examples": ["Принтеры"]})
+    name: StrictStr = Field(description="Название товара", json_schema_extra={"examples": ["Печатник 3000"]})
+    vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["pechatnik3000"]})
+    brand_name: StrictStr = Field(description="Бренд", alias="brandName", json_schema_extra={"examples": ["Компик"]})
+    main_photo: StrictStr = Field(description="Ссылка на главное фото", alias="mainPhoto", json_schema_extra={"examples": ["https://basket-12.wbbasket.ru/vol1788/part178840/178840836/images/c246x328/1.webp"]})
+    has_sizes: StrictBool = Field(description="Является ли товар размерным. Неразмерный товар имеет единственный размер, с `\"techSize\":\"0\"`", alias="hasSizes", json_schema_extra={"examples": [True]})
     metrics: TableProductItemStMetrics
     __properties: ClassVar[List[str]] = ["nmID", "isDeleted", "subjectName", "name", "vendorCode", "brandName", "mainPhoto", "hasSizes", "metrics"]
 

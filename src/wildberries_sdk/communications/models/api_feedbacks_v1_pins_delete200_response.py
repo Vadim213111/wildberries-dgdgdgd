@@ -27,7 +27,7 @@ class ApiFeedbacksV1PinsDelete200Response(BaseModel):
     """
     ApiFeedbacksV1PinsDelete200Response
     """ # noqa: E501
-    data: List[StrictInt] = Field(description="Список `pinId` — ID операций закрепления отзывов, которые были успешно откреплены")
+    data: List[StrictInt] = Field(description="Список `pinId` — ID операций закрепления отзывов, которые были успешно откреплены", json_schema_extra={"examples": [[123456, 234567, 345678]]})
     __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(

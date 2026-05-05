@@ -27,9 +27,9 @@ class OrderNewDBSAddress(BaseModel):
     """
     Адрес покупателя для доставки. При доставке заказов в ПВЗ указан адрес ПВЗ 
     """ # noqa: E501
-    full_address: Optional[StrictStr] = Field(default=None, description="Адрес доставки", alias="fullAddress")
-    longitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Долгота")
-    latitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Широта")
+    full_address: Optional[StrictStr] = Field(default=None, description="Адрес доставки", alias="fullAddress", json_schema_extra={"examples": ["Челябинская область, г. Челябинск, 51-я улица Арабкира, д. 10А, кв. 42"]})
+    longitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Долгота", json_schema_extra={"examples": [44.519068]})
+    latitude: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Широта", json_schema_extra={"examples": [40.20192]})
     __properties: ClassVar[List[str]] = ["fullAddress", "longitude", "latitude"]
 
     model_config = ConfigDict(

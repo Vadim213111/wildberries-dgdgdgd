@@ -29,7 +29,7 @@ class WHMData(BaseModel):
     Данные ответа
     """ # noqa: E501
     reports: List[WHMDataReportsInner] = Field(description="Замеры")
-    total: StrictInt = Field(description="Количество замеров в отчёте. Без учёта `limit` и `offset`")
+    total: StrictInt = Field(description="Количество замеров в отчёте. Без учёта `limit` и `offset`", json_schema_extra={"examples": [11]})
     __properties: ClassVar[List[str]] = ["reports", "total"]
 
     model_config = ConfigDict(

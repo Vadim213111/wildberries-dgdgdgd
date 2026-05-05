@@ -27,9 +27,9 @@ class ApiV1AccountBalanceGet200Response(BaseModel):
     """
     ApiV1AccountBalanceGet200Response
     """ # noqa: E501
-    currency: Optional[StrictStr] = Field(default=None, description="Валюта")
-    current: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Текущий баланс продавца")
-    for_withdraw: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Сумма, доступная к выводу")
+    currency: Optional[StrictStr] = Field(default=None, description="Валюта", json_schema_extra={"examples": ["RUB"]})
+    current: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Текущий баланс продавца", json_schema_extra={"examples": [10196.21]})
+    for_withdraw: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Сумма, доступная к выводу", json_schema_extra={"examples": [6395.8]})
     __properties: ClassVar[List[str]] = ["currency", "current", "for_withdraw"]
 
     model_config = ConfigDict(

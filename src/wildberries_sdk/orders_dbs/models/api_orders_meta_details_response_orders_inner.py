@@ -29,9 +29,9 @@ class ApiOrdersMetaDetailsResponseOrdersInner(BaseModel):
     """
     ApiOrdersMetaDetailsResponseOrdersInner
     """ # noqa: E501
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
-    is_error: StrictBool = Field(description="Есть ли ошибки", alias="isError")
-    errors: Optional[List[ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner]] = Field(default=None, description="Информация об ошибке")
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
+    is_error: StrictBool = Field(description="Есть ли ошибки", alias="isError", json_schema_extra={"examples": [False]})
+    errors: Optional[List[ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner]] = Field(default=None, description="Информация об ошибке", json_schema_extra={"examples": [[]]})
     meta_details: Optional[List[ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner]] = Field(default=None, description="Метаданные и статусы их валидации", alias="metaDetails")
     __properties: ClassVar[List[str]] = ["orderId", "isError", "errors", "metaDetails"]
 

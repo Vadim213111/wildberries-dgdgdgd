@@ -27,8 +27,8 @@ class ApiMetaErrorResponse(BaseModel):
     """
     ApiMetaErrorResponse
     """ # noqa: E501
-    code: StrictInt = Field(description="Код ошибки")
-    detail: StrictStr = Field(description="- `NotFound` — сборочное задание не найдено - `IncorrectRequestBody` — неправильный запрос - `IncorrectRequest` — передан некорректный параметр ")
+    code: StrictInt = Field(description="Код ошибки", json_schema_extra={"examples": [404]})
+    detail: StrictStr = Field(description="- `NotFound` — сборочное задание не найдено - `IncorrectRequestBody` — неправильный запрос - `IncorrectRequest` — передан некорректный параметр ", json_schema_extra={"examples": ["NotFound"]})
     __properties: ClassVar[List[str]] = ["code", "detail"]
 
     model_config = ConfigDict(

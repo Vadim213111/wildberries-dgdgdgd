@@ -28,7 +28,7 @@ class ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest(BaseModel):
     """
     ApiMarketplaceV3OrdersOrderIdMetaCustomsDeclarationPutRequest
     """ # noqa: E501
-    customs_declaration: Optional[Annotated[str, Field(min_length=17, strict=True, max_length=29)]] = Field(default=None, description="Номер ГТД", alias="customsDeclaration")
+    customs_declaration: Optional[Annotated[str, Field(min_length=17, strict=True, max_length=29)]] = Field(default=None, description="Номер ГТД", alias="customsDeclaration", json_schema_extra={"examples": ["10704010/010624/0000302"]})
     __properties: ClassVar[List[str]] = ["customsDeclaration"]
 
     model_config = ConfigDict(

@@ -971,9 +971,9 @@ components:
   schemas:
     models.TransitTariff:
       example:
-        palletTariff: 5
         transitWarehouseName: transitWarehouseName
         destinationWarehouseName: destinationWarehouseName
+        activeFrom: 2000-01-23T04:56:07.000+00:00
         boxTariff:
         - from: 0
           to: 6
@@ -981,7 +981,7 @@ components:
         - from: 0
           to: 6
           value: 1.4658129805029452
-        activeFrom: 2000-01-23T04:56:07.000+00:00
+        palletTariff: 5
       properties:
         transitWarehouseName:
           description: Транзитный склад
@@ -1329,16 +1329,16 @@ components:
       - UnloadedOnGate
     models.Supply:
       example:
-        statusID: 1
-        isBoxOnPallet: true
         phone: phone
-        boxTypeID: ""
         supplyID: 0
         preorderID: 6
-        supplyDate: supplyDate
-        updatedDate: updatedDate
-        factDate: factDate
         createDate: createDate
+        supplyDate: supplyDate
+        factDate: factDate
+        updatedDate: updatedDate
+        statusID: 1
+        boxTypeID: ""
+        isBoxOnPallet: true
       properties:
         phone:
           description: "Телефон пользователя, создавшего поставку"
@@ -1448,11 +1448,11 @@ components:
       type: object
     models.ErrorModel:
       example:
+        status: 6
+        title: title
+        detail: detail
         requestId: requestId
         origin: origin
-        detail: detail
-        title: title
-        status: 6
       properties:
         status:
           description: HTTP статус-код
@@ -1473,38 +1473,38 @@ components:
     models.OptionsResultModel:
       example:
         result:
-        - isError: true
-          warehouses:
-          - canBox: true
-            canMonopallet: true
-            isBoxOnPallet: true
-            warehouseID: 0
-            canSupersafe: true
-          - canBox: true
-            canMonopallet: true
-            isBoxOnPallet: true
-            warehouseID: 0
-            canSupersafe: true
+        - barcode: barcode
           error:
-            detail: detail
             title: title
-          barcode: barcode
-        - isError: true
+            detail: detail
+          isError: true
           warehouses:
-          - canBox: true
+          - warehouseID: 0
+            canBox: true
             canMonopallet: true
-            isBoxOnPallet: true
-            warehouseID: 0
             canSupersafe: true
-          - canBox: true
+            isBoxOnPallet: true
+          - warehouseID: 0
+            canBox: true
             canMonopallet: true
-            isBoxOnPallet: true
-            warehouseID: 0
             canSupersafe: true
+            isBoxOnPallet: true
+        - barcode: barcode
           error:
-            detail: detail
             title: title
-          barcode: barcode
+            detail: detail
+          isError: true
+          warehouses:
+          - warehouseID: 0
+            canBox: true
+            canMonopallet: true
+            canSupersafe: true
+            isBoxOnPallet: true
+          - warehouseID: 0
+            canBox: true
+            canMonopallet: true
+            canSupersafe: true
+            isBoxOnPallet: true
         requestId: requestId
       properties:
         result:
@@ -1556,8 +1556,8 @@ components:
     models_OptionsResultModel_result_inner_error:
       description: Данные ошибки. При наличии
       example:
-        detail: detail
         title: title
+        detail: detail
       properties:
         title:
           description: ID ошибки
@@ -1568,11 +1568,11 @@ components:
       type: object
     models_OptionsResultModel_result_inner_warehouses_inner:
       example:
+        warehouseID: 0
         canBox: true
         canMonopallet: true
-        isBoxOnPallet: true
-        warehouseID: 0
         canSupersafe: true
+        isBoxOnPallet: true
       properties:
         warehouseID:
           description: "ID склада. По нему можно получить [информацию о складе](./orders-fbw#tag/Informaciya-dlya-formirovaniya-postavok/paths/~1api~1v1~1warehouses/get)"
@@ -1604,22 +1604,22 @@ components:
       type: object
     models_OptionsResultModel_result_inner:
       example:
+        barcode: barcode
+        error:
+          title: title
+          detail: detail
         isError: true
         warehouses:
-        - canBox: true
+        - warehouseID: 0
+          canBox: true
           canMonopallet: true
-          isBoxOnPallet: true
-          warehouseID: 0
           canSupersafe: true
-        - canBox: true
+          isBoxOnPallet: true
+        - warehouseID: 0
+          canBox: true
           canMonopallet: true
-          isBoxOnPallet: true
-          warehouseID: 0
           canSupersafe: true
-        error:
-          detail: detail
-          title: title
-        barcode: barcode
+          isBoxOnPallet: true
       properties:
         barcode:
           description: Баркод из карточки товара

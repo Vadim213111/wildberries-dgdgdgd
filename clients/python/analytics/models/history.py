@@ -28,15 +28,15 @@ class History(BaseModel):
     """
     History
     """ # noqa: E501
-    var_date: date = Field(description="Дата сбора статистики", alias="date")
-    open_count: StrictInt = Field(description="Количество переходов в карточку товара", alias="openCount")
-    cart_count: StrictInt = Field(description="Положили в корзину, шт.", alias="cartCount")
-    order_count: StrictInt = Field(description="Заказали товаров, шт.", alias="orderCount")
-    order_sum: StrictInt = Field(description="Заказали на сумму", alias="orderSum")
-    buyout_count: StrictInt = Field(description="Выкупили товаров, шт.", alias="buyoutCount")
-    buyout_sum: StrictInt = Field(description="Выкупили на сумму", alias="buyoutSum")
-    buyout_percent: StrictInt = Field(description="Процент выкупа", alias="buyoutPercent")
-    add_to_cart_conversion: StrictInt = Field(description="Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %", alias="addToCartConversion")
+    var_date: date = Field(description="Дата сбора статистики", alias="date", json_schema_extra={"examples": ["2024-10-23"]})
+    open_count: StrictInt = Field(description="Количество переходов в карточку товара", alias="openCount", json_schema_extra={"examples": [45]})
+    cart_count: StrictInt = Field(description="Положили в корзину, шт.", alias="cartCount", json_schema_extra={"examples": [34]})
+    order_count: StrictInt = Field(description="Заказали товаров, шт.", alias="orderCount", json_schema_extra={"examples": [19]})
+    order_sum: StrictInt = Field(description="Заказали на сумму", alias="orderSum", json_schema_extra={"examples": [1262]})
+    buyout_count: StrictInt = Field(description="Выкупили товаров, шт.", alias="buyoutCount", json_schema_extra={"examples": [19]})
+    buyout_sum: StrictInt = Field(description="Выкупили на сумму", alias="buyoutSum", json_schema_extra={"examples": [1262]})
+    buyout_percent: StrictInt = Field(description="Процент выкупа", alias="buyoutPercent", json_schema_extra={"examples": [35]})
+    add_to_cart_conversion: StrictInt = Field(description="Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %", alias="addToCartConversion", json_schema_extra={"examples": [43]})
     cart_to_order_conversion: StrictInt = Field(description="Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ", alias="cartToOrderConversion")
     add_to_wishlist_count: StrictInt = Field(description="Количество добавлений товара в **Отложенные**", alias="addToWishlistCount")
     __properties: ClassVar[List[str]] = ["date", "openCount", "cartCount", "orderCount", "orderSum", "buyoutCount", "buyoutSum", "buyoutPercent", "addToCartConversion", "cartToOrderConversion", "addToWishlistCount"]

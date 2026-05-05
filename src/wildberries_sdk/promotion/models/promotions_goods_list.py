@@ -27,13 +27,13 @@ class PromotionsGoodsList(BaseModel):
     """
     PromotionsGoodsList
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="Артикул WB")
-    in_action: Optional[StrictBool] = Field(default=None, description="Участвует в акции:   - `true` — да   - `false` — нет ", alias="inAction")
-    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Текущая розничная цена")
-    currency_code: Optional[StrictStr] = Field(default=None, description="Валюта в формате ISO 4217", alias="currencyCode")
-    plan_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Плановая цена (цена во время акции)", alias="planPrice")
-    discount: Optional[StrictInt] = Field(default=None, description="Текущая скидка")
-    plan_discount: Optional[StrictInt] = Field(default=None, description="Рекомендуемая скидка для участия в акции", alias="planDiscount")
+    id: Optional[StrictInt] = Field(default=None, description="Артикул WB", json_schema_extra={"examples": [162579635]})
+    in_action: Optional[StrictBool] = Field(default=None, description="Участвует в акции:   - `true` — да   - `false` — нет ", alias="inAction", json_schema_extra={"examples": [True]})
+    price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Текущая розничная цена", json_schema_extra={"examples": [1500]})
+    currency_code: Optional[StrictStr] = Field(default=None, description="Валюта в формате ISO 4217", alias="currencyCode", json_schema_extra={"examples": ["RUB"]})
+    plan_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Плановая цена (цена во время акции)", alias="planPrice", json_schema_extra={"examples": [1000]})
+    discount: Optional[StrictInt] = Field(default=None, description="Текущая скидка", json_schema_extra={"examples": [15]})
+    plan_discount: Optional[StrictInt] = Field(default=None, description="Рекомендуемая скидка для участия в акции", alias="planDiscount", json_schema_extra={"examples": [34]})
     __properties: ClassVar[List[str]] = ["id", "inAction", "price", "currencyCode", "planPrice", "discount", "planDiscount"]
 
     model_config = ConfigDict(

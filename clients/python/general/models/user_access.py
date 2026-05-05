@@ -29,7 +29,7 @@ class UserAccess(BaseModel):
     UserAccess
     """ # noqa: E501
     user_id: Optional[StrictInt] = Field(default=None, description="ID пользователя", alias="userId")
-    access: Optional[List[AccessInner]] = Field(default=None, description="Настройки доступа к разделам профиля продавца")
+    access: Optional[List[AccessInner]] = Field(default=None, description="Настройки доступа к разделам профиля продавца", json_schema_extra={"examples": [[{"code": "balance", "disabled": False}, {"code": "pointsForReviews", "disabled": False}, {"code": "brands", "disabled": True}, {"code": "finance", "disabled": True}, {"code": "supply", "disabled": True}]]})
     __properties: ClassVar[List[str]] = ["userId", "access"]
 
     model_config = ConfigDict(

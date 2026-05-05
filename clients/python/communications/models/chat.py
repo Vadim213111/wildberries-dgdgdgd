@@ -29,9 +29,9 @@ class Chat(BaseModel):
     """
     Chat
     """ # noqa: E501
-    chat_id: Optional[StrictStr] = Field(default=None, description="ID чата", alias="chatID")
-    reply_sign: Optional[StrictStr] = Field(default=None, description="Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) ", alias="replySign")
-    client_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="clientName")
+    chat_id: Optional[StrictStr] = Field(default=None, description="ID чата", alias="chatID", json_schema_extra={"examples": ["1:4019cd7d-cca8-4e90-8b11-f78afbea42e3"]})
+    reply_sign: Optional[StrictStr] = Field(default=None, description="Подпись чата. Требуется при [отправке сообщения](./user-communication#tag/Chat-s-pokupatelyami/paths/~1api~1v1~1seller~1message/post) ", alias="replySign", json_schema_extra={"examples": ["1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e"]})
+    client_name: Optional[StrictStr] = Field(default=None, description="Имя покупателя", alias="clientName", json_schema_extra={"examples": ["Иван"]})
     good_card: Optional[GoodCard] = Field(default=None, alias="goodCard")
     last_message: Optional[LastMessage] = Field(default=None, description="Последнее сообщение в чате", alias="lastMessage")
     __properties: ClassVar[List[str]] = ["chatID", "replySign", "clientName", "goodCard", "lastMessage"]

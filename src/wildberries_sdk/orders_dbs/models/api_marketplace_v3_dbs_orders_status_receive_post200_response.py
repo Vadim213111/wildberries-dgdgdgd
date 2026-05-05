@@ -28,7 +28,7 @@ class ApiMarketplaceV3DbsOrdersStatusReceivePost200Response(BaseModel):
     """
     ApiMarketplaceV3DbsOrdersStatusReceivePost200Response
     """ # noqa: E501
-    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId")
+    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId", json_schema_extra={"examples": ["f1787bd2d1fdс35d6f537316514у4a05"]})
     results: Optional[List[ApiMarketplaceV3DbsOrdersStatusReceivePost200ResponseResultsInner]] = None
     __properties: ClassVar[List[str]] = ["requestId", "results"]
 

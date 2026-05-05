@@ -29,9 +29,9 @@ class OpenapiResultErr(BaseModel):
     """ # noqa: E501
     origin: StrictStr = Field(description="ID внутреннего сервиса WB")
     detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
-    request_id: StrictStr = Field(description="ID запроса", alias="requestId")
-    status: StrictStr = Field(description="Статус")
-    title: StrictStr = Field(description="Заголовок ошибки")
+    request_id: StrictStr = Field(description="ID запроса", alias="requestId", json_schema_extra={"examples": ["req-12345"]})
+    status: StrictStr = Field(description="Статус", json_schema_extra={"examples": ["feedbackNotFound"]})
+    title: StrictStr = Field(description="Заголовок ошибки", json_schema_extra={"examples": ["feedbackNotFound"]})
     __properties: ClassVar[List[str]] = ["origin", "detail", "requestId", "status", "title"]
 
     @field_validator('status')

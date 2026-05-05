@@ -27,11 +27,11 @@ class ApiV3OrdersStickersPost200ResponseStickersInner(BaseModel):
     """
     ApiV3OrdersStickersPost200ResponseStickersInner
     """ # noqa: E501
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
-    part_a: Optional[StrictStr] = Field(default=None, description="Первая часть ID стикера для печати подписи", alias="partA")
-    part_b: Optional[StrictStr] = Field(default=None, description="Вторая часть ID стикера для печати подписи", alias="partB")
-    barcode: Optional[StrictStr] = Field(default=None, description="Закодированное значение стикера")
-    file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Полное представление стикера в заданном формате (кодировка base64)")
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [5346346]})
+    part_a: Optional[StrictStr] = Field(default=None, description="Первая часть ID стикера для печати подписи", alias="partA", json_schema_extra={"examples": ["231648"]})
+    part_b: Optional[StrictStr] = Field(default=None, description="Вторая часть ID стикера для печати подписи", alias="partB", json_schema_extra={"examples": ["9753"]})
+    barcode: Optional[StrictStr] = Field(default=None, description="Закодированное значение стикера", json_schema_extra={"examples": ["!uKEtQZVx"]})
+    file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Полное представление стикера в заданном формате (кодировка base64)", json_schema_extra={"examples": ["aVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQVNJQUFBRWlBUUFBQUFCMXhlSWJBQUFCaUVsRVFWUjRuTzJZVVc2RE1BeUdiVURhSTBnOXdJNFNqZzVIMlEzSWV5WlB0aE5LVjAzdE5pVmR0ZjkvY0Z2WEF2UmhraCt6MEcydDNSMUZSS2dxQW9raWtDZ0NpU0tRZURRSnpobzh5WE1zbWZtaDEvVXZxb0tvTnJzTGRnTjZTOGh6WFAyVFY4WGM0N0tNeVRQbngrRHZYLzF6VmcxWG1jaDF6OWloNmd2MkhMWlR1cUlQWGpYN2Z0U2xQUkxKK3ByWG5PTkxGOWhYWkw5NnEvZkU0VzFRK084WHZRLzI5ZGpML2x2V2lUZy9CdDg5Vm9lcW4vajdPUTRlVExKWTd0ejhvRW9WU0ZDMjhhTjlKcUt3cWJYM2tQK1ZCZXdyc2cvS2VkRTNxbVhVbjNJTVlGL2Qzek9ObTM4VGlxY2tGS2V5RWFEdjYvVzk2TnVzOWIydFByYncyTE9BdnEvUGZwZm4vRmI0SG9BMXA5VWNVM1NISlRMSEV4aytwOFZlSzNKd04wUTJVTlBtUjkrM20yT3lEelBqb09GRk1MOXZPTWNVaW4waUhhaFIyQ2FHei9ta21vNlA1ekh0UWREM1RlZVk1TlkrKy9zS1oreFFkVWxpTlpzenFlUFJrRmQrdGZ2SHFodEMxUy9ubU9RaDdlSCtZM1dveWdLSklwQW9Bb2tpa0NocVQrSURJa2JiOC84T0xza0FBQUFBU1VWT1JLNUNZSUk9"]})
     __properties: ClassVar[List[str]] = ["orderId", "partA", "partB", "barcode", "file"]
 
     model_config = ConfigDict(

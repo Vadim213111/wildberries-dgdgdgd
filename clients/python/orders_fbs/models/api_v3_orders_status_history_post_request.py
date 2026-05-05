@@ -28,7 +28,7 @@ class ApiV3OrdersStatusHistoryPostRequest(BaseModel):
     """
     ApiV3OrdersStatusHistoryPostRequest
     """ # noqa: E501
-    orders: Optional[Annotated[List[StrictInt], Field(min_length=1, max_length=100)]] = Field(default=None, description="ID сборочных заданий")
+    orders: Optional[Annotated[List[StrictInt], Field(min_length=1, max_length=100)]] = Field(default=None, description="ID сборочных заданий", json_schema_extra={"examples": [[123456789, 987654321]]})
     __properties: ClassVar[List[str]] = ["orders"]
 
     model_config = ConfigDict(

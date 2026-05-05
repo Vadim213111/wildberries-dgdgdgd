@@ -29,13 +29,13 @@ class InventoryHistoryReportReqParams(BaseModel):
     """
     Параметры отчёта
     """ # noqa: E501
-    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIds")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
+    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIds", json_schema_extra={"examples": [[111222333, 444555666]]})
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[123, 456]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["Эрк", "Дент"]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds", json_schema_extra={"examples": [[3, 4, 5]]})
     current_period: PeriodInv = Field(alias="currentPeriod")
     stock_type: StockType = Field(alias="stockType")
-    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm")
+    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm", json_schema_extra={"examples": [True]})
     __properties: ClassVar[List[str]] = ["nmIds", "subjectIds", "brandNames", "tagIds", "currentPeriod", "stockType", "skipDeletedNm"]
 
     model_config = ConfigDict(

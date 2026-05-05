@@ -28,7 +28,7 @@ class ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestOrdersInner(Base
     """
     ApiMarketplaceV3DbsOrdersMetaCustomsDeclarationPostRequestOrdersInner
     """ # noqa: E501
-    customs_declaration: Annotated[str, Field(min_length=17, strict=True, max_length=29)] = Field(description="Номер ГТД", alias="customsDeclaration")
+    customs_declaration: Annotated[str, Field(min_length=17, strict=True, max_length=29)] = Field(description="Номер ГТД", alias="customsDeclaration", json_schema_extra={"examples": ["10704010/010624/0000302"]})
     order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
     __properties: ClassVar[List[str]] = ["customsDeclaration", "orderId"]
 

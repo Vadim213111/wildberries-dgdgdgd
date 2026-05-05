@@ -34,10 +34,10 @@ class ProductSearchTextsRequest(BaseModel):
     """ # noqa: E501
     current_period: Period = Field(alias="currentPeriod")
     past_period: Optional[PastPeriod] = Field(default=None, alias="pastPeriod")
-    nm_ids: Annotated[List[StrictInt], Field(max_length=50)] = Field(description="Список артикулов WB", alias="nmIds")
-    top_order_by: StrictStr = Field(description="Фильтрация по поисковым запросам, по которым больше всего:   - `openCard` — перешли в карточку   - `addToCart` — добавили в корзину   - `openToCart` — конверсия в корзину   - `orders` — заказали товаров   - `cartToOrder` — конверсия в заказ ", alias="topOrderBy")
-    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs")
-    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts")
+    nm_ids: Annotated[List[StrictInt], Field(max_length=50)] = Field(description="Список артикулов WB", alias="nmIds", json_schema_extra={"examples": [[162579635, 166699779]]})
+    top_order_by: StrictStr = Field(description="Фильтрация по поисковым запросам, по которым больше всего:   - `openCard` — перешли в карточку   - `addToCart` — добавили в корзину   - `openToCart` — конверсия в корзину   - `orders` — заказали товаров   - `cartToOrder` — конверсия в заказ ", alias="topOrderBy", json_schema_extra={"examples": ["openToCart"]})
+    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs", json_schema_extra={"examples": [True]})
+    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts", json_schema_extra={"examples": [False]})
     order_by: OrderByGrTe = Field(alias="orderBy")
     limit: TextLimit
     __properties: ClassVar[List[str]] = ["currentPeriod", "pastPeriod", "nmIds", "topOrderBy", "includeSubstitutedSKUs", "includeSearchTexts", "orderBy", "limit"]

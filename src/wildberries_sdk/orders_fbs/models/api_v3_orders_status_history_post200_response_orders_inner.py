@@ -31,7 +31,7 @@ class ApiV3OrdersStatusHistoryPost200ResponseOrdersInner(BaseModel):
     """ # noqa: E501
     delivery_date: Optional[datetime] = Field(default=None, description="Планируемая дата доставки, [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)", alias="deliveryDate")
     statuses: Optional[List[ApiV3OrdersStatusHistoryPost200ResponseOrdersInnerStatusesInner]] = Field(default=None, description="Статусы")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderID")
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderID", json_schema_extra={"examples": [123456789]})
     __properties: ClassVar[List[str]] = ["deliveryDate", "statuses", "orderID"]
 
     model_config = ConfigDict(

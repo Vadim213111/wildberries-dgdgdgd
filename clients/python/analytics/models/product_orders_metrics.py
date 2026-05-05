@@ -28,9 +28,9 @@ class ProductOrdersMetrics(BaseModel):
     """
     ProductOrdersMetrics
     """ # noqa: E501
-    dt: date = Field(description="Дата сбора статистики")
-    avg_position: StrictInt = Field(description="Средняя позиция товара в результатах поиска", alias="avgPosition")
-    orders: StrictInt = Field(description="Сколько раз товары из поиска заказали")
+    dt: date = Field(description="Дата сбора статистики", json_schema_extra={"examples": ["2024-02-10"]})
+    avg_position: StrictInt = Field(description="Средняя позиция товара в результатах поиска", alias="avgPosition", json_schema_extra={"examples": [10]})
+    orders: StrictInt = Field(description="Сколько раз товары из поиска заказали", json_schema_extra={"examples": [20]})
     __properties: ClassVar[List[str]] = ["dt", "avgPosition", "orders"]
 
     model_config = ConfigDict(

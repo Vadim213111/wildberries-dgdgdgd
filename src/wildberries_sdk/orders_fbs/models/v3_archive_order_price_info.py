@@ -27,10 +27,10 @@ class V3ArchiveOrderPriceInfo(BaseModel):
     """
     Информация о цене заказа
     """ # noqa: E501
-    converted_currency_code: StrictInt = Field(description="Код валюты страны продавца", alias="convertedCurrencyCode")
-    converted_price: StrictInt = Field(description="Цена в валюте страны продавца с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100", alias="convertedPrice")
-    currency_code: StrictInt = Field(description="Код валюты продажи", alias="currencyCode")
-    price: StrictInt = Field(description="Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100")
+    converted_currency_code: StrictInt = Field(description="Код валюты страны продавца", alias="convertedCurrencyCode", json_schema_extra={"examples": [643]})
+    converted_price: StrictInt = Field(description="Цена в валюте страны продавца с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100", alias="convertedPrice", json_schema_extra={"examples": [1020]})
+    currency_code: StrictInt = Field(description="Код валюты продажи", alias="currencyCode", json_schema_extra={"examples": [643]})
+    price: StrictInt = Field(description="Цена в валюте продажи с учетом всех скидок, кроме скидки по WB Кошельку, умноженная на 100", json_schema_extra={"examples": [1020]})
     __properties: ClassVar[List[str]] = ["convertedCurrencyCode", "convertedPrice", "currencyCode", "price"]
 
     model_config = ConfigDict(

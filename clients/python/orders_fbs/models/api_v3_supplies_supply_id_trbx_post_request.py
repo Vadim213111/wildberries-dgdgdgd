@@ -28,7 +28,7 @@ class ApiV3SuppliesSupplyIdTrbxPostRequest(BaseModel):
     """
     ApiV3SuppliesSupplyIdTrbxPostRequest
     """ # noqa: E501
-    amount: Annotated[int, Field(le=1000, strict=True, ge=1)] = Field(description="Количество грузомест, которые необходимо добавить к поставке")
+    amount: Annotated[int, Field(le=1000, strict=True, ge=1)] = Field(description="Количество грузомест, которые необходимо добавить к поставке", json_schema_extra={"examples": [4]})
     __properties: ClassVar[List[str]] = ["amount"]
 
     model_config = ConfigDict(

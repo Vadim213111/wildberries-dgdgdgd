@@ -27,8 +27,8 @@ class TableGroupItemMetricsVisibility(BaseModel):
     """
     Процент видимости товара в результатах поиска
     """ # noqa: E501
-    current: StrictInt = Field(description="Текущий процент видимости")
-    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %")
+    current: StrictInt = Field(description="Текущий процент видимости", json_schema_extra={"examples": [5]})
+    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %", json_schema_extra={"examples": [50]})
     __properties: ClassVar[List[str]] = ["current", "dynamics"]
 
     model_config = ConfigDict(

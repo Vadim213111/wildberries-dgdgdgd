@@ -27,11 +27,11 @@ class ApiV1AnalyticsBannedProductsBlockedGet200ResponseReportInner(BaseModel):
     """
     ApiV1AnalyticsBannedProductsBlockedGet200ResponseReportInner
     """ # noqa: E501
-    brand: Optional[StrictStr] = Field(default=None, description="Бренд")
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
-    title: Optional[StrictStr] = Field(default=None, description="Наименование товара")
-    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
-    reason: Optional[StrictStr] = Field(default=None, description="Причина блокировки")
+    brand: Optional[StrictStr] = Field(default=None, description="Бренд", json_schema_extra={"examples": ["Тест22"]})
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId", json_schema_extra={"examples": [82722944]})
+    title: Optional[StrictStr] = Field(default=None, description="Наименование товара", json_schema_extra={"examples": ["Гуминовые кислоты - биоактивный противовирусный комплекс на"]})
+    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["пкdeир76"]})
+    reason: Optional[StrictStr] = Field(default=None, description="Причина блокировки", json_schema_extra={"examples": ["Контактные данные Продавца и ссылки на иные сайты/группы/сообщества на фотографиях Товара"]})
     __properties: ClassVar[List[str]] = ["brand", "nmId", "title", "vendorCode", "reason"]
 
     model_config = ConfigDict(

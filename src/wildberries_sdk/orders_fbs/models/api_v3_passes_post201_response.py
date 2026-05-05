@@ -27,7 +27,7 @@ class ApiV3PassesPost201Response(BaseModel):
     """
     ApiV3PassesPost201Response
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="ID пропуска продавца")
+    id: Optional[StrictInt] = Field(default=None, description="ID пропуска продавца", json_schema_extra={"examples": [2]})
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

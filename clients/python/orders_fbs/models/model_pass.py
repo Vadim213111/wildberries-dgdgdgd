@@ -27,15 +27,15 @@ class ModelPass(BaseModel):
     """
     Данные о пропуске продавца
     """ # noqa: E501
-    first_name: Optional[StrictStr] = Field(default=None, description="Имя водителя", alias="firstName")
-    date_end: Optional[StrictStr] = Field(default=None, description="Дата окончания действия пропуска", alias="dateEnd")
-    last_name: Optional[StrictStr] = Field(default=None, description="Фамилия водителя", alias="lastName")
-    car_model: Optional[StrictStr] = Field(default=None, description="Марка машины", alias="carModel")
-    car_number: Optional[StrictStr] = Field(default=None, description="Номер машины", alias="carNumber")
-    office_name: Optional[StrictStr] = Field(default=None, description="Название склада", alias="officeName")
-    office_address: Optional[StrictStr] = Field(default=None, description="Адрес склада", alias="officeAddress")
-    office_id: Optional[StrictInt] = Field(default=None, description="ID склада", alias="officeId")
-    id: Optional[StrictInt] = Field(default=None, description="ID пропуска")
+    first_name: Optional[StrictStr] = Field(default=None, description="Имя водителя", alias="firstName", json_schema_extra={"examples": ["Александр"]})
+    date_end: Optional[StrictStr] = Field(default=None, description="Дата окончания действия пропуска", alias="dateEnd", json_schema_extra={"examples": ["2022-07-31 17:53:13+00:00"]})
+    last_name: Optional[StrictStr] = Field(default=None, description="Фамилия водителя", alias="lastName", json_schema_extra={"examples": ["Петров"]})
+    car_model: Optional[StrictStr] = Field(default=None, description="Марка машины", alias="carModel", json_schema_extra={"examples": ["Lamborghini"]})
+    car_number: Optional[StrictStr] = Field(default=None, description="Номер машины", alias="carNumber", json_schema_extra={"examples": ["A456BC123"]})
+    office_name: Optional[StrictStr] = Field(default=None, description="Название склада", alias="officeName", json_schema_extra={"examples": ["Коледино"]})
+    office_address: Optional[StrictStr] = Field(default=None, description="Адрес склада", alias="officeAddress", json_schema_extra={"examples": ["г. Подольск, д. Коледино, ул. Троицкая"]})
+    office_id: Optional[StrictInt] = Field(default=None, description="ID склада", alias="officeId", json_schema_extra={"examples": [15]})
+    id: Optional[StrictInt] = Field(default=None, description="ID пропуска", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["firstName", "dateEnd", "lastName", "carModel", "carNumber", "officeName", "officeAddress", "officeId", "id"]
 
     model_config = ConfigDict(

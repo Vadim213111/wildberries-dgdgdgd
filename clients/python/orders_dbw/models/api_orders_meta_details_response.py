@@ -28,7 +28,7 @@ class ApiOrdersMetaDetailsResponse(BaseModel):
     """
     ApiOrdersMetaDetailsResponse
     """ # noqa: E501
-    request_id: StrictStr = Field(description="Уникальный ID запроса", alias="requestId")
+    request_id: StrictStr = Field(description="Уникальный ID запроса", alias="requestId", json_schema_extra={"examples": ["f1787bd2d1fdс35d6f537316514у4a05"]})
     orders: Optional[List[ApiOrdersMetaDetailsResponseOrdersInner]] = Field(default=None, description="Метаданные сборочных заданий и статусы их валидации")
     __properties: ClassVar[List[str]] = ["requestId", "orders"]
 

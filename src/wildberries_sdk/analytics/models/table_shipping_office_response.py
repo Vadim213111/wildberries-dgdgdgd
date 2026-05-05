@@ -29,7 +29,7 @@ class TableShippingOfficeResponse(BaseModel):
     TableShippingOfficeResponse
     """ # noqa: E501
     regions: Optional[List[TableShippingOfficeItem]] = Field(default=None, description="Множество данных по регионам отгрузки")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["regions", "currency"]
 
     model_config = ConfigDict(

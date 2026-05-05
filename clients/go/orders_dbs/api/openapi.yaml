@@ -2196,8 +2196,8 @@ components:
     Error:
       example:
         code: code
-        data: "{}"
         message: message
+        data: "{}"
       nullable: false
       properties:
         code:
@@ -2252,40 +2252,40 @@ components:
       type: integer
     OrderNewDBS:
       example:
-        cargoType: 0
-        skus:
-        - "6665956397512"
-        - "6665956397512"
-        groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
-        nmId: 123456789
-        finalPrice: 1014
-        rid: f884001e44e511edb8780242ac120002
-        createdAt: 2022-05-04T07:56:29Z
-        isZeroOrder: false
-        price: 1014
+        salePrice: 504658
+        requiredMeta:
+        - uin
+        comment: "Упакуйте в пленку, пожалуйста"
         options:
           isB2b: true
-        convertedCurrencyCode: 643
-        id: 13833711
         address:
-          latitude: 40.20192
           fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д\
             . 10А, кв. 42"
           longitude: 44.519068
-        salePrice: 504658
-        deliveryType: dbs
-        requiredMeta:
-        - uin
+          latitude: 40.20192
+        orderUid: 165918930_629fbc924b984618a44354475ca58675
+        groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
         article: one-ring-7548
+        colorCode: RAL 3017
+        rid: f884001e44e511edb8780242ac120002
+        createdAt: 2022-05-04T07:56:29Z
+        deliveryType: dbs
+        skus:
+        - "6665956397512"
+        - "6665956397512"
+        id: 13833711
+        warehouseId: 658434
+        nmId: 123456789
+        chrtId: 987654321
+        price: 1014
+        finalPrice: 1014
         convertedFinalPrice: 1014
         convertedPrice: 1014
-        orderUid: 165918930_629fbc924b984618a44354475ca58675
-        warehouseId: 658434
-        comment: "Упакуйте в пленку, пожалуйста"
-        colorCode: RAL 3017
-        wbStickerId: 123456
-        chrtId: 987654321
         currencyCode: 643
+        convertedCurrencyCode: 643
+        cargoType: 0
+        isZeroOrder: false
+        wbStickerId: 123456
       properties:
         salePrice:
           description: |
@@ -2459,38 +2459,38 @@ components:
       type: object
     OrderDBS:
       example:
-        cargoType: 0
-        skus:
-        - "6665956397512"
-        - "6665956397512"
-        groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
-        nmId: 12345678
-        finalPrice: 1014
-        rid: f884001e44e511edb8780242ac120002
-        createdAt: 2022-05-04T07:56:29Z
-        isZeroOrder: false
-        price: 1014
-        options:
-          isB2b: true
-        convertedCurrencyCode: 643
-        id: 13833711
         address:
-          latitude: 40.20192
           fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д\
             . 10А, кв. 42"
           longitude: 44.519068
+          latitude: 40.20192
         deliveryType: deliveryType
-        scanPrice: 50
-        article: one-ring-7548
-        convertedFinalPrice: 1014
-        convertedPrice: 1014
+        options:
+          isB2b: true
         orderUid: 165918930_629fbc924b984618a44354475ca58675
-        warehouseId: 658434
+        groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+        article: one-ring-7548
         colorCode: RAL 3017
-        comment: "Упакуйте в пленку, пожалуйста"
-        wbStickerId: 123456
+        rid: f884001e44e511edb8780242ac120002
+        createdAt: 2022-05-04T07:56:29Z
+        skus:
+        - "6665956397512"
+        - "6665956397512"
+        id: 13833711
+        warehouseId: 658434
+        nmId: 12345678
         chrtId: 987654321
+        scanPrice: 50
+        price: 1014
+        convertedPrice: 1014
         currencyCode: 643
+        convertedCurrencyCode: 643
+        convertedFinalPrice: 1014
+        finalPrice: 1014
+        cargoType: 0
+        comment: "Упакуйте в пленку, пожалуйста"
+        isZeroOrder: false
+        wbStickerId: 123456
       properties:
         address:
           $ref: "#/components/schemas/OrderDBS_address"
@@ -2649,12 +2649,12 @@ components:
       type: object
     DbsOnlyClientInfo:
       example:
+        replacementPhone: "79871234567"
         firstName: firstName
+        fullName: Иван Иван Иванович
         orderID: 134567
         phone: "+79871234567"
-        fullName: Иван Иван Иванович
         phoneCode: 1234567
-        replacementPhone: "79871234567"
         additionalPhoneCodes:
         - "12345"
         - "65498"
@@ -2712,21 +2712,21 @@ components:
     DbsOnlyClientInfoResp:
       example:
         orders:
-        - firstName: firstName
+        - replacementPhone: "79871234567"
+          firstName: firstName
+          fullName: Иван Иван Иванович
           orderID: 134567
           phone: "+79871234567"
-          fullName: Иван Иван Иванович
           phoneCode: 1234567
-          replacementPhone: "79871234567"
           additionalPhoneCodes:
           - "12345"
           - "65498"
-        - firstName: firstName
+        - replacementPhone: "79871234567"
+          firstName: firstName
+          fullName: Иван Иван Иванович
           orderID: 134567
           phone: "+79871234567"
-          fullName: Иван Иван Иванович
           phoneCode: 1234567
-          replacementPhone: "79871234567"
           additionalPhoneCodes:
           - "12345"
           - "65498"
@@ -2740,20 +2740,20 @@ components:
     DeliveryDatesInfoResp:
       example:
         orders:
-        - dDateOld: 2025-01-28
-          dDate: 2025-02-20
-          dTimeFrom: 11:11
-          dTimeFromOld: 12:30
-          id: 1234567890
+        - dTimeFrom: 11:11
           dTimeTo: 22:22
-          dTimeToOld: 22:30
-        - dDateOld: 2025-01-28
-          dDate: 2025-02-20
-          dTimeFrom: 11:11
           dTimeFromOld: 12:30
-          id: 1234567890
-          dTimeTo: 22:22
           dTimeToOld: 22:30
+          dDateOld: 2025-01-28
+          dDate: 2025-02-20
+          id: 1234567890
+        - dTimeFrom: 11:11
+          dTimeTo: 22:22
+          dTimeFromOld: 12:30
+          dTimeToOld: 22:30
+          dDateOld: 2025-01-28
+          dDate: 2025-02-20
+          id: 1234567890
       properties:
         orders:
           items:
@@ -2930,26 +2930,26 @@ components:
       example:
         requestId: f1787bd2d1fdс35d6f537316514у4a05
         orders:
-        - metaDetails:
-          - decision: sgtinIntroduced
-            value: "123456789012345"
-            key: sgtin
-          - decision: sgtinIntroduced
-            value: "123456789012345"
-            key: sgtin
+        - orderId: 123456
           isError: false
-          orderId: 123456
           errors: []
-        - metaDetails:
-          - decision: sgtinIntroduced
+          metaDetails:
+          - key: sgtin
             value: "123456789012345"
-            key: sgtin
-          - decision: sgtinIntroduced
+            decision: sgtinIntroduced
+          - key: sgtin
             value: "123456789012345"
-            key: sgtin
+            decision: sgtinIntroduced
+        - orderId: 123456
           isError: false
-          orderId: 123456
           errors: []
+          metaDetails:
+          - key: sgtin
+            value: "123456789012345"
+            decision: sgtinIntroduced
+          - key: sgtin
+            value: "123456789012345"
+            decision: sgtinIntroduced
       properties:
         requestId:
           description: Уникальный ID запроса
@@ -2966,26 +2966,26 @@ components:
     api.OrdersMetaResponse:
       example:
         meta:
-        - sgtin:
-          - "123456789012345"
-          - "123456789012345"
+        - error: ""
           gtin: "123456789012345"
-          orderId: 654321
           imei: "123456789012345"
+          orderId: 654321
+          sgtin:
+          - "123456789012345"
+          - "123456789012345"
+          uin: "123456789012345"
           customsDeclaration:
             value: 10704010/010624/0000302
-          uin: "123456789012345"
-          error: ""
-        - sgtin:
-          - "123456789012345"
-          - "123456789012345"
+        - error: ""
           gtin: "123456789012345"
-          orderId: 654321
           imei: "123456789012345"
+          orderId: 654321
+          sgtin:
+          - "123456789012345"
+          - "123456789012345"
+          uin: "123456789012345"
           customsDeclaration:
             value: 10704010/010624/0000302
-          uin: "123456789012345"
-          error: ""
       properties:
         meta:
           description: Метаданные сборочных заданий
@@ -2995,16 +2995,16 @@ components:
       type: object
     api.OrderMetaV2:
       example:
+        error: ""
+        gtin: "123456789012345"
+        imei: "123456789012345"
+        orderId: 654321
         sgtin:
         - "123456789012345"
         - "123456789012345"
-        gtin: "123456789012345"
-        orderId: 654321
-        imei: "123456789012345"
+        uin: "123456789012345"
         customsDeclaration:
           value: 10704010/010624/0000302
-        uin: "123456789012345"
-        error: ""
       properties:
         error:
           description: |
@@ -3101,9 +3101,9 @@ components:
       type: object
     api.BatchError:
       example:
-        requestId: f1787bd2d1fdс35d6f537316514у4a05
-        origin: dbs-public-api
         detail: {}
+        origin: dbs-public-api
+        requestId: f1787bd2d1fdс35d6f537316514у4a05
         title: IncorrectRequest
       properties:
         detail:
@@ -3142,9 +3142,9 @@ components:
       type: object
     api.Error:
       example:
-        requestId: f1787bd2d1fdс35d6f537316514у4a05
-        origin: dbs-public-api
         detail: {}
+        origin: dbs-public-api
+        requestId: f1787bd2d1fdс35d6f537316514у4a05
         title: FailedToUpdateMeta
       properties:
         detail:
@@ -3227,74 +3227,74 @@ components:
     _api_v3_dbs_orders_new_get_200_response:
       example:
         orders:
-        - cargoType: 0
-          skus:
-          - "6665956397512"
-          - "6665956397512"
-          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
-          nmId: 123456789
-          finalPrice: 1014
-          rid: f884001e44e511edb8780242ac120002
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
-          price: 1014
+        - salePrice: 504658
+          requiredMeta:
+          - uin
+          comment: "Упакуйте в пленку, пожалуйста"
           options:
             isB2b: true
-          convertedCurrencyCode: 643
-          id: 13833711
           address:
-            latitude: 40.20192
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
-          salePrice: 504658
-          deliveryType: dbs
-          requiredMeta:
-          - uin
-          article: one-ring-7548
-          convertedFinalPrice: 1014
-          convertedPrice: 1014
+            latitude: 40.20192
           orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
-          comment: "Упакуйте в пленку, пожалуйста"
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          article: one-ring-7548
           colorCode: RAL 3017
-          wbStickerId: 123456
-          chrtId: 987654321
-          currencyCode: 643
-        - cargoType: 0
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
+          deliveryType: dbs
           skus:
           - "6665956397512"
           - "6665956397512"
-          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          id: 13833711
+          warehouseId: 658434
           nmId: 123456789
-          finalPrice: 1014
-          rid: f884001e44e511edb8780242ac120002
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
+          chrtId: 987654321
           price: 1014
+          finalPrice: 1014
+          convertedFinalPrice: 1014
+          convertedPrice: 1014
+          currencyCode: 643
+          convertedCurrencyCode: 643
+          cargoType: 0
+          isZeroOrder: false
+          wbStickerId: 123456
+        - salePrice: 504658
+          requiredMeta:
+          - uin
+          comment: "Упакуйте в пленку, пожалуйста"
           options:
             isB2b: true
-          convertedCurrencyCode: 643
-          id: 13833711
           address:
-            latitude: 40.20192
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
-          salePrice: 504658
-          deliveryType: dbs
-          requiredMeta:
-          - uin
+            latitude: 40.20192
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
           article: one-ring-7548
+          colorCode: RAL 3017
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
+          deliveryType: dbs
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          id: 13833711
+          warehouseId: 658434
+          nmId: 123456789
+          chrtId: 987654321
+          price: 1014
+          finalPrice: 1014
           convertedFinalPrice: 1014
           convertedPrice: 1014
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
-          comment: "Упакуйте в пленку, пожалуйста"
-          colorCode: RAL 3017
-          wbStickerId: 123456
-          chrtId: 987654321
           currencyCode: 643
+          convertedCurrencyCode: 643
+          cargoType: 0
+          isZeroOrder: false
+          wbStickerId: 123456
       nullable: false
       properties:
         orders:
@@ -3346,70 +3346,70 @@ components:
       example:
         next: 13833711
         orders:
-        - cargoType: 0
-          skus:
-          - "6665956397512"
-          - "6665956397512"
-          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
-          nmId: 12345678
-          finalPrice: 1014
-          rid: f884001e44e511edb8780242ac120002
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
-          price: 1014
-          options:
-            isB2b: true
-          convertedCurrencyCode: 643
-          id: 13833711
-          address:
-            latitude: 40.20192
+        - address:
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
+            latitude: 40.20192
           deliveryType: deliveryType
-          scanPrice: 50
-          article: one-ring-7548
-          convertedFinalPrice: 1014
-          convertedPrice: 1014
+          options:
+            isB2b: true
           orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          article: one-ring-7548
           colorCode: RAL 3017
-          comment: "Упакуйте в пленку, пожалуйста"
-          wbStickerId: 123456
-          chrtId: 987654321
-          currencyCode: 643
-        - cargoType: 0
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
           skus:
           - "6665956397512"
           - "6665956397512"
-          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
-          nmId: 12345678
-          finalPrice: 1014
-          rid: f884001e44e511edb8780242ac120002
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
-          price: 1014
-          options:
-            isB2b: true
-          convertedCurrencyCode: 643
           id: 13833711
-          address:
-            latitude: 40.20192
+          warehouseId: 658434
+          nmId: 12345678
+          chrtId: 987654321
+          scanPrice: 50
+          price: 1014
+          convertedPrice: 1014
+          currencyCode: 643
+          convertedCurrencyCode: 643
+          convertedFinalPrice: 1014
+          finalPrice: 1014
+          cargoType: 0
+          comment: "Упакуйте в пленку, пожалуйста"
+          isZeroOrder: false
+          wbStickerId: 123456
+        - address:
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
+            latitude: 40.20192
           deliveryType: deliveryType
-          scanPrice: 50
-          article: one-ring-7548
-          convertedFinalPrice: 1014
-          convertedPrice: 1014
+          options:
+            isB2b: true
           orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
+          groupId: 7a2c8810-1db2-4011-9682-5c7fa33afd83
+          article: one-ring-7548
           colorCode: RAL 3017
-          comment: "Упакуйте в пленку, пожалуйста"
-          wbStickerId: 123456
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          id: 13833711
+          warehouseId: 658434
+          nmId: 12345678
           chrtId: 987654321
+          scanPrice: 50
+          price: 1014
+          convertedPrice: 1014
           currencyCode: 643
+          convertedCurrencyCode: 643
+          convertedFinalPrice: 1014
+          finalPrice: 1014
+          cargoType: 0
+          comment: "Упакуйте в пленку, пожалуйста"
+          isZeroOrder: false
+          wbStickerId: 123456
       nullable: false
       properties:
         next:
@@ -3441,11 +3441,11 @@ components:
       type: object
     _api_marketplace_v3_dbs_orders_stickers_post_200_response_stickers_inner:
       example:
-        file: JVBER...ZWYKMTM5MQolJUVPRg==
         orderId: 5346346
         partA: "231648"
         partB: "9753"
         barcode: '!uKEtQZVx'
+        file: JVBER...ZWYKMTM5MQolJUVPRg==
       properties:
         orderId:
           description: ID сборочного задания
@@ -3483,16 +3483,16 @@ components:
     _api_marketplace_v3_dbs_orders_stickers_post_200_response:
       example:
         stickers:
-        - file: JVBER...ZWYKMTM5MQolJUVPRg==
-          orderId: 5346346
+        - orderId: 5346346
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
-        - file: JVBER...ZWYKMTM5MQolJUVPRg==
-          orderId: 5346346
+          file: JVBER...ZWYKMTM5MQolJUVPRg==
+        - orderId: 5346346
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
+          file: JVBER...ZWYKMTM5MQolJUVPRg==
       properties:
         stickers:
           description: Стикеры
@@ -3577,11 +3577,11 @@ components:
       type: object
     api_OrderGroup_inner:
       example:
-        convertedDeliveryCost: 29803
         groupID: 0596a30a-d11c-4210-a231-ee1c39d61fe4
-        convertedCurrencyCode: 643
-        currencyCode: 933
         deliveryCost: 1108
+        convertedDeliveryCost: 29803
+        currencyCode: 933
+        convertedCurrencyCode: 643
       properties:
         groupID:
           description: ID группы сборочных заданий
@@ -3624,10 +3624,10 @@ components:
       description: |
         Адрес покупателя для доставки. При доставке заказов в ПВЗ указан адрес ПВЗ
       example:
-        latitude: 40.20192
         fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д. 10А\
           , кв. 42"
         longitude: 44.519068
+        latitude: 40.20192
       nullable: false
       properties:
         fullAddress:
@@ -3652,10 +3652,10 @@ components:
       description: Адрес покупателя для доставки. При доставке заказов в ПВЗ указан
         адрес ПВЗ
       example:
-        latitude: 40.20192
         fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д. 10А\
           , кв. 42"
         longitude: 44.519068
+        latitude: 40.20192
       nullable: true
       properties:
         fullAddress:
@@ -3678,13 +3678,13 @@ components:
       type: object
     DeliveryDatesInfoResp_orders_inner:
       example:
+        dTimeFrom: 11:11
+        dTimeTo: 22:22
+        dTimeFromOld: 12:30
+        dTimeToOld: 22:30
         dDateOld: 2025-01-28
         dDate: 2025-02-20
-        dTimeFrom: 11:11
-        dTimeFromOld: 12:30
         id: 1234567890
-        dTimeTo: 22:22
-        dTimeToOld: 22:30
       properties:
         dTimeFrom:
           description: Актуальное время доставки "с"
@@ -3734,9 +3734,9 @@ components:
       type: object
     api_OrdersMetaDetailsResponse_orders_inner_metaDetails_inner:
       example:
-        decision: sgtinIntroduced
-        value: "123456789012345"
         key: sgtin
+        value: "123456789012345"
+        decision: sgtinIntroduced
       properties:
         key:
           description: Метаданные
@@ -3792,16 +3792,16 @@ components:
       type: object
     api_OrdersMetaDetailsResponse_orders_inner:
       example:
-        metaDetails:
-        - decision: sgtinIntroduced
-          value: "123456789012345"
-          key: sgtin
-        - decision: sgtinIntroduced
-          value: "123456789012345"
-          key: sgtin
-        isError: false
         orderId: 123456
+        isError: false
         errors: []
+        metaDetails:
+        - key: sgtin
+          value: "123456789012345"
+          decision: sgtinIntroduced
+        - key: sgtin
+          value: "123456789012345"
+          decision: sgtinIntroduced
       properties:
         orderId:
           description: ID сборочного задания

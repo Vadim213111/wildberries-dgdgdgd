@@ -27,7 +27,7 @@ class V3ArchiveOrderOptions(BaseModel):
     """
     Опции заказа
     """ # noqa: E501
-    is_b2_b: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи:   - `false` — не B2B-продажа   - `true` — B2B-продажа ", alias="isB2B")
+    is_b2_b: Optional[StrictBool] = Field(default=None, description="Признак B2B-продажи:   - `false` — не B2B-продажа   - `true` — B2B-продажа ", alias="isB2B", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["isB2B"]
 
     model_config = ConfigDict(

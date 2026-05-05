@@ -29,7 +29,7 @@ class GetDeductions200ResponseData(BaseModel):
     Данные ответа
     """ # noqa: E501
     reports: List[GetDeductions200ResponseDataReportsInner] = Field(description="Удержания")
-    total: StrictInt = Field(description="Количество удержаний в отчёте. Без учёта `limit` и `offset`")
+    total: StrictInt = Field(description="Количество удержаний в отчёте. Без учёта `limit` и `offset`", json_schema_extra={"examples": [11]})
     __properties: ClassVar[List[str]] = ["reports", "total"]
 
     model_config = ConfigDict(

@@ -27,8 +27,8 @@ class TableProductItemAllOfPrice(BaseModel):
     """
     Цена
     """ # noqa: E501
-    min_price: StrictInt = Field(description="Минимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)", alias="minPrice")
-    max_price: StrictInt = Field(description="Максимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)", alias="maxPrice")
+    min_price: StrictInt = Field(description="Минимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)", alias="minPrice", json_schema_extra={"examples": [150]})
+    max_price: StrictInt = Field(description="Максимальная цена продавца со скидкой продавца (без учёта скидки WB Клуба)", alias="maxPrice", json_schema_extra={"examples": [300]})
     __properties: ClassVar[List[str]] = ["minPrice", "maxPrice"]
 
     model_config = ConfigDict(

@@ -28,7 +28,7 @@ class NmReportRetryReportRequest(BaseModel):
     """
     NmReportRetryReportRequest
     """ # noqa: E501
-    download_id: Optional[UUID] = Field(default=None, description="ID отчёта", alias="downloadId")
+    download_id: Optional[UUID] = Field(default=None, description="ID отчёта", alias="downloadId", json_schema_extra={"examples": ["06eea887-9d9f-491f-b16a-bb1766fcb8d2"]})
     __properties: ClassVar[List[str]] = ["downloadId"]
 
     model_config = ConfigDict(

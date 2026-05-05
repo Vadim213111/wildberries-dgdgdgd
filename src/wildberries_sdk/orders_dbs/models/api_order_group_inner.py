@@ -27,11 +27,11 @@ class ApiOrderGroupInner(BaseModel):
     """
     ApiOrderGroupInner
     """ # noqa: E501
-    group_id: Optional[StrictStr] = Field(default=None, description="ID группы сборочных заданий", alias="groupID")
-    delivery_cost: Optional[StrictInt] = Field(default=None, description="Стоимость платной доставки в валюте продажи, умноженная на 100", alias="deliveryCost")
-    converted_delivery_cost: Optional[StrictInt] = Field(default=None, description="Стоимость платной доставки в валюте страны продавца, умноженная на 100. Предоставляется в информационных целях.", alias="convertedDeliveryCost")
-    currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты продажи", alias="currencyCode")
-    converted_currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты страны продавца", alias="convertedCurrencyCode")
+    group_id: Optional[StrictStr] = Field(default=None, description="ID группы сборочных заданий", alias="groupID", json_schema_extra={"examples": ["0596a30a-d11c-4210-a231-ee1c39d61fe4"]})
+    delivery_cost: Optional[StrictInt] = Field(default=None, description="Стоимость платной доставки в валюте продажи, умноженная на 100", alias="deliveryCost", json_schema_extra={"examples": [1108]})
+    converted_delivery_cost: Optional[StrictInt] = Field(default=None, description="Стоимость платной доставки в валюте страны продавца, умноженная на 100. Предоставляется в информационных целях.", alias="convertedDeliveryCost", json_schema_extra={"examples": [29803]})
+    currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты продажи", alias="currencyCode", json_schema_extra={"examples": [933]})
+    converted_currency_code: Optional[StrictInt] = Field(default=None, description="Код валюты страны продавца", alias="convertedCurrencyCode", json_schema_extra={"examples": [643]})
     __properties: ClassVar[List[str]] = ["groupID", "deliveryCost", "convertedDeliveryCost", "currencyCode", "convertedCurrencyCode"]
 
     model_config = ConfigDict(

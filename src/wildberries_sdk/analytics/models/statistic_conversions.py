@@ -27,8 +27,8 @@ class StatisticConversions(BaseModel):
     """
     StatisticConversions
     """ # noqa: E501
-    add_to_cart_percent: StrictInt = Field(description="Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %", alias="addToCartPercent")
-    cart_to_order_percent: StrictInt = Field(description="Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ, %", alias="cartToOrderPercent")
+    add_to_cart_percent: StrictInt = Field(description="Конверсия в корзину. Какой процент посетителей, открывших карточку товара, добавили товар в корзину, %", alias="addToCartPercent", json_schema_extra={"examples": [19]})
+    cart_to_order_percent: StrictInt = Field(description="Конверсия в заказ. Какой процент посетителей, добавивших товар в корзину, сделали заказ, %", alias="cartToOrderPercent", json_schema_extra={"examples": [65]})
     buyout_percent: StrictInt = Field(description="Процент выкупа. Какой процент посетителей, заказавших товар, его выкупили. Без учёта товаров, которые еще доставляются покупателю, %", alias="buyoutPercent")
     __properties: ClassVar[List[str]] = ["addToCartPercent", "cartToOrderPercent", "buyoutPercent"]
 

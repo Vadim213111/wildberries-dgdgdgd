@@ -31,8 +31,8 @@ class ApiB2bClientInfoResponse(BaseModel):
     """ # noqa: E501
     data: Optional[ApiB2bClientInfo] = None
     errors: Optional[List[ApiB2bClientInfoResponseErrorsInner]] = Field(default=None, description="Детали ошибки")
-    is_error: StrictBool = Field(description="Есть ли ошибки", alias="isError")
-    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
+    is_error: StrictBool = Field(description="Есть ли ошибки", alias="isError", json_schema_extra={"examples": [True]})
+    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
     __properties: ClassVar[List[str]] = ["data", "errors", "isError", "orderId"]
 
     model_config = ConfigDict(

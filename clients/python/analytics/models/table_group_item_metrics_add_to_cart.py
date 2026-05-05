@@ -27,8 +27,8 @@ class TableGroupItemMetricsAddToCart(BaseModel):
     """
     Сколько раз товар из поиска добавили в корзину
     """ # noqa: E501
-    current: StrictInt = Field(description="Текущее количество")
-    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %")
+    current: StrictInt = Field(description="Текущее количество", json_schema_extra={"examples": [5]})
+    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %", json_schema_extra={"examples": [50]})
     __properties: ClassVar[List[str]] = ["current", "dynamics"]
 
     model_config = ConfigDict(

@@ -29,13 +29,13 @@ class CommonShippingOfficeFilters(BaseModel):
     """
     Общие фильтры по регионам отгрузки
     """ # noqa: E501
-    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIDs")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIDs")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIDs")
+    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIDs", json_schema_extra={"examples": [[111222333, 444555666]]})
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIDs", json_schema_extra={"examples": [[123, 456]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["Эшк", "ЗлатА", "ОТК", "арк"]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIDs", json_schema_extra={"examples": [[123, 456, 789]]})
     current_period: PeriodInv = Field(alias="currentPeriod")
     stock_type: StockType = Field(alias="stockType")
-    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm")
+    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["nmIDs", "subjectIDs", "brandNames", "tagIDs", "currentPeriod", "stockType", "skipDeletedNm"]
 
     model_config = ConfigDict(

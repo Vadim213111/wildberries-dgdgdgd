@@ -27,11 +27,11 @@ class PostV1SalesReportsList400Response(BaseModel):
     """
     PostV1SalesReportsList400Response
     """ # noqa: E501
-    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код")
-    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
-    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId")
-    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB")
+    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код", json_schema_extra={"examples": [400]})
+    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки", json_schema_extra={"examples": ["GetReportDetailByPeriodNB decode error"]})
+    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки", json_schema_extra={"examples": ["GetReportDetailByPeriodNB decode error: missing dateTo params"]})
+    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId", json_schema_extra={"examples": ["b065c204-c5f7-431b-b12c-d4c2cc6347ec"]})
+    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["open-api-finreports"]})
     __properties: ClassVar[List[str]] = ["status", "title", "detail", "requestId", "origin"]
 
     model_config = ConfigDict(

@@ -28,8 +28,8 @@ class ApiUIN(BaseModel):
     """
     ApiUIN
     """ # noqa: E501
-    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
-    uin: Annotated[str, Field(min_length=16, strict=True, max_length=16)] = Field(description="УИН")
+    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
+    uin: Annotated[str, Field(min_length=16, strict=True, max_length=16)] = Field(description="УИН", json_schema_extra={"examples": ["1234568909091232"]})
     __properties: ClassVar[List[str]] = ["orderId", "uin"]
 
     model_config = ConfigDict(

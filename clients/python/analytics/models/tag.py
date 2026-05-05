@@ -27,8 +27,8 @@ class Tag(BaseModel):
     """
     Ярлык
     """ # noqa: E501
-    id: StrictInt = Field(description="ID ярлыка")
-    name: StrictStr = Field(description="Название ярлыка")
+    id: StrictInt = Field(description="ID ярлыка", json_schema_extra={"examples": [1]})
+    name: StrictStr = Field(description="Название ярлыка", json_schema_extra={"examples": ["Обувь"]})
     __properties: ClassVar[List[str]] = ["id", "name"]
 
     model_config = ConfigDict(

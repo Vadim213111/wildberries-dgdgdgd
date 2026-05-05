@@ -1903,8 +1903,8 @@ class DefaultApi:
         self,
         limit: Annotated[int, Field(le=1000, strict=True, ge=1, description="Параметр пагинации. Устанавливает предельное количество возвращаемых данных.")],
         next: Annotated[StrictInt, Field(description="Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе.")],
-        date_from: Annotated[Optional[StrictInt], Field(description="Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса ")] = None,
-        date_to: Annotated[Optional[StrictInt], Field(description="Дата конца периода в формате Unix timestamp")] = None,
+        date_from: Annotated[Optional[StrictInt], Field(description="Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC ")] = None,
+        date_to: Annotated[Optional[StrictInt], Field(description="Дата конца периода в формате Unix timestamp. Часовой пояс — UTC")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1920,15 +1920,15 @@ class DefaultApi:
     ) -> ApiV3OrdersGet200Response:
         """Получить информацию о сборочных заданиях
 
-        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).  Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).  Чтобы получить данные за период, укажите в запросе даты начала и окончания периода. Максимум 30 календарных дней одним запросом. В ответе метода будут сборочные задания, созданные в указанный период.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param limit: Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
         :type limit: int
         :param next: Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
         :type next: int
-        :param date_from: Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса 
+        :param date_from: Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC 
         :type date_from: int
-        :param date_to: Дата конца периода в формате Unix timestamp
+        :param date_to: Дата конца периода в формате Unix timestamp. Часовой пояс — UTC
         :type date_to: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1987,8 +1987,8 @@ class DefaultApi:
         self,
         limit: Annotated[int, Field(le=1000, strict=True, ge=1, description="Параметр пагинации. Устанавливает предельное количество возвращаемых данных.")],
         next: Annotated[StrictInt, Field(description="Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе.")],
-        date_from: Annotated[Optional[StrictInt], Field(description="Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса ")] = None,
-        date_to: Annotated[Optional[StrictInt], Field(description="Дата конца периода в формате Unix timestamp")] = None,
+        date_from: Annotated[Optional[StrictInt], Field(description="Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC ")] = None,
+        date_to: Annotated[Optional[StrictInt], Field(description="Дата конца периода в формате Unix timestamp. Часовой пояс — UTC")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2004,15 +2004,15 @@ class DefaultApi:
     ) -> ApiResponse[ApiV3OrdersGet200Response]:
         """Получить информацию о сборочных заданиях
 
-        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).  Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).  Чтобы получить данные за период, укажите в запросе даты начала и окончания периода. Максимум 30 календарных дней одним запросом. В ответе метода будут сборочные задания, созданные в указанный период.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param limit: Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
         :type limit: int
         :param next: Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
         :type next: int
-        :param date_from: Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса 
+        :param date_from: Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC 
         :type date_from: int
-        :param date_to: Дата конца периода в формате Unix timestamp
+        :param date_to: Дата конца периода в формате Unix timestamp. Часовой пояс — UTC
         :type date_to: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -2071,8 +2071,8 @@ class DefaultApi:
         self,
         limit: Annotated[int, Field(le=1000, strict=True, ge=1, description="Параметр пагинации. Устанавливает предельное количество возвращаемых данных.")],
         next: Annotated[StrictInt, Field(description="Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе.")],
-        date_from: Annotated[Optional[StrictInt], Field(description="Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса ")] = None,
-        date_to: Annotated[Optional[StrictInt], Field(description="Дата конца периода в формате Unix timestamp")] = None,
+        date_from: Annotated[Optional[StrictInt], Field(description="Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC ")] = None,
+        date_to: Annotated[Optional[StrictInt], Field(description="Дата конца периода в формате Unix timestamp. Часовой пояс — UTC")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2088,15 +2088,15 @@ class DefaultApi:
     ) -> RESTResponseType:
         """Получить информацию о сборочных заданиях
 
-        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).  Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.  <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
+        Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).  Чтобы получить данные за период, укажите в запросе даты начала и окончания периода. Максимум 30 календарных дней одним запросом. В ответе метода будут сборочные задания, созданные в указанный период.   <div class=\"description_limit\"> <a href=\"/openapi/api-information#tag/Vvedenie/Limity-zaprosov\">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:  | Период | Лимит | Интервал | Всплеск | | --- | --- | --- | --- | | 1 мин | 300 запросов | 200 мс | 20 запросов |  Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов </div> 
 
         :param limit: Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
         :type limit: int
         :param next: Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен `0` в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
         :type next: int
-        :param date_from: Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса 
+        :param date_from: Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC 
         :type date_from: int
-        :param date_to: Дата конца периода в формате Unix timestamp
+        :param date_to: Дата конца периода в формате Unix timestamp. Часовой пояс — UTC
         :type date_to: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

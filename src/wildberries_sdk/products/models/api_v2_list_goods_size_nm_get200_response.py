@@ -29,7 +29,7 @@ class ApiV2ListGoodsSizeNmGet200Response(BaseModel):
     ApiV2ListGoodsSizeNmGet200Response
     """ # noqa: E501
     data: Optional[ApiV2ListGoodsSizeNmGet200ResponseData] = None
-    error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки")
+    error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки", json_schema_extra={"examples": [False]})
     error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText")
     __properties: ClassVar[List[str]] = ["data", "error", "errorText"]
 

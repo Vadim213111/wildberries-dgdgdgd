@@ -29,8 +29,8 @@ class TableSizeResponseSizesInner(BaseModel):
     """
     TableSizeResponseSizesInner
     """ # noqa: E501
-    name: StrictStr = Field(description="Название размера")
-    chrt_id: StrictInt = Field(description="ID размера", alias="chrtID")
+    name: StrictStr = Field(description="Название размера", json_schema_extra={"examples": ["50"]})
+    chrt_id: StrictInt = Field(description="ID размера", alias="chrtID", json_schema_extra={"examples": [123321]})
     offices: Optional[List[TableOfficeItem]] = Field(default=None, description="Склады")
     metrics: TableSizeResponseSizesInnerMetrics
     __properties: ClassVar[List[str]] = ["name", "chrtID", "offices", "metrics"]

@@ -27,7 +27,7 @@ class V3SupplyOrderIDsAPI(BaseModel):
     """
     V3SupplyOrderIDsAPI
     """ # noqa: E501
-    order_ids: Optional[List[StrictInt]] = Field(default=None, description="ID сборочных заданий", alias="orderIds")
+    order_ids: Optional[List[StrictInt]] = Field(default=None, description="ID сборочных заданий", alias="orderIds", json_schema_extra={"examples": [[132334, 203984, 403543, 598349]]})
     __properties: ClassVar[List[str]] = ["orderIds"]
 
     model_config = ConfigDict(

@@ -67,7 +67,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'popular' => 'bool',
         'charc_type' => 'int',
         'has_filter' => 'bool',
-        'is_variable' => 'bool'
+        'is_variable' => 'bool',
+        'exist_named_field' => 'bool'
     ];
 
     /**
@@ -88,7 +89,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'popular' => null,
         'charc_type' => null,
         'has_filter' => null,
-        'is_variable' => null
+        'is_variable' => null,
+        'exist_named_field' => null
     ];
 
     /**
@@ -107,7 +109,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'popular' => false,
         'charc_type' => false,
         'has_filter' => false,
-        'is_variable' => false
+        'is_variable' => false,
+        'exist_named_field' => false
     ];
 
     /**
@@ -206,7 +209,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'popular' => 'popular',
         'charc_type' => 'charcType',
         'has_filter' => 'hasFilter',
-        'is_variable' => 'isVariable'
+        'is_variable' => 'isVariable',
+        'exist_named_field' => 'existNamedField'
     ];
 
     /**
@@ -225,7 +229,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'popular' => 'setPopular',
         'charc_type' => 'setCharcType',
         'has_filter' => 'setHasFilter',
-        'is_variable' => 'setIsVariable'
+        'is_variable' => 'setIsVariable',
+        'exist_named_field' => 'setExistNamedField'
     ];
 
     /**
@@ -244,7 +249,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         'popular' => 'getPopular',
         'charc_type' => 'getCharcType',
         'has_filter' => 'getHasFilter',
-        'is_variable' => 'getIsVariable'
+        'is_variable' => 'getIsVariable',
+        'exist_named_field' => 'getExistNamedField'
     ];
 
     /**
@@ -315,6 +321,7 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
         $this->setIfExists('charc_type', $data ?? [], null);
         $this->setIfExists('has_filter', $data ?? [], null);
         $this->setIfExists('is_variable', $data ?? [], null);
+        $this->setIfExists('exist_named_field', $data ?? [], null);
     }
 
     /**
@@ -652,6 +659,33 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner implements ModelInte
             throw new \InvalidArgumentException('non-nullable is_variable cannot be null');
         }
         $this->container['is_variable'] = $is_variable;
+
+        return $this;
+    }
+
+    /**
+     * Gets exist_named_field
+     *
+     * @return bool|null
+     */
+    public function getExistNamedField()
+    {
+        return $this->container['exist_named_field'];
+    }
+
+    /**
+     * Sets exist_named_field
+     *
+     * @param bool|null $exist_named_field Как передать характеристику в запросах на [cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post), [создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) и [редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:   -  `true` — в соответствующем параметре запроса   -  `false` — внутри массива `characteristics`
+     *
+     * @return self
+     */
+    public function setExistNamedField($exist_named_field)
+    {
+        if (is_null($exist_named_field)) {
+            throw new \InvalidArgumentException('non-nullable exist_named_field cannot be null');
+        }
+        $this->container['exist_named_field'] = $exist_named_field;
 
         return $this;
     }

@@ -27,11 +27,11 @@ class GoodsListSizesInner(BaseModel):
     """
     GoodsListSizesInner
     """ # noqa: E501
-    size_id: StrictInt = Field(description="ID размера. В методах Контента это поле `chrtID`", alias="sizeID")
-    price: StrictInt = Field(description="Цена")
-    discounted_price: Union[StrictFloat, StrictInt] = Field(description="Цена со скидкой", alias="discountedPrice")
-    club_discounted_price: Union[StrictFloat, StrictInt] = Field(description="Цена со скидкой, включая скидку WB Клуба", alias="clubDiscountedPrice")
-    tech_size_name: StrictStr = Field(description="Размер товара", alias="techSizeName")
+    size_id: StrictInt = Field(description="ID размера. В методах Контента это поле `chrtID`", alias="sizeID", json_schema_extra={"examples": [3123515574]})
+    price: StrictInt = Field(description="Цена", json_schema_extra={"examples": [500]})
+    discounted_price: Union[StrictFloat, StrictInt] = Field(description="Цена со скидкой", alias="discountedPrice", json_schema_extra={"examples": [350]})
+    club_discounted_price: Union[StrictFloat, StrictInt] = Field(description="Цена со скидкой, включая скидку WB Клуба", alias="clubDiscountedPrice", json_schema_extra={"examples": [332.5]})
+    tech_size_name: StrictStr = Field(description="Размер товара", alias="techSizeName", json_schema_extra={"examples": ["42"]})
     __properties: ClassVar[List[str]] = ["sizeID", "price", "discountedPrice", "clubDiscountedPrice", "techSizeName"]
 
     model_config = ConfigDict(

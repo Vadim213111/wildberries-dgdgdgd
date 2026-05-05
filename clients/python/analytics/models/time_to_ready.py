@@ -27,9 +27,9 @@ class TimeToReady(BaseModel):
     """
     TimeToReady
     """ # noqa: E501
-    days: StrictInt = Field(description="Дни")
-    hours: StrictInt = Field(description="Часы")
-    mins: StrictInt = Field(description="Минуты")
+    days: StrictInt = Field(description="Дни", json_schema_extra={"examples": [1]})
+    hours: StrictInt = Field(description="Часы", json_schema_extra={"examples": [8]})
+    mins: StrictInt = Field(description="Минуты", json_schema_extra={"examples": [34]})
     __properties: ClassVar[List[str]] = ["days", "hours", "mins"]
 
     model_config = ConfigDict(

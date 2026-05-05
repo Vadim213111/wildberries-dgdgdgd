@@ -29,11 +29,11 @@ class TableGroupItemSt(BaseModel):
     """
     Данные по группе
     """ # noqa: E501
-    subject_id: StrictInt = Field(description="ID предмета", alias="subjectID")
-    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName")
-    brand_name: StrictStr = Field(description="Бренд", alias="brandName")
-    tag_id: StrictInt = Field(description="ID ярлыка", alias="tagID")
-    tag_name: StrictStr = Field(description="Название ярлыка", alias="tagName")
+    subject_id: StrictInt = Field(description="ID предмета", alias="subjectID", json_schema_extra={"examples": [123456789]})
+    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName", json_schema_extra={"examples": ["Кружка"]})
+    brand_name: StrictStr = Field(description="Бренд", alias="brandName", json_schema_extra={"examples": ["Крутая посуда"]})
+    tag_id: StrictInt = Field(description="ID ярлыка", alias="tagID", json_schema_extra={"examples": [12345]})
+    tag_name: StrictStr = Field(description="Название ярлыка", alias="tagName", json_schema_extra={"examples": ["Человек-Паук"]})
     metrics: TableCommonMetrics = Field(description="Метрики группы")
     items: List[TableProductItemSt] = Field(description="Товары группы")
     __properties: ClassVar[List[str]] = ["subjectID", "subjectName", "brandName", "tagID", "tagName", "metrics", "items"]

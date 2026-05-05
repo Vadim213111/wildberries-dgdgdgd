@@ -27,15 +27,15 @@ class ApiV1AnalyticsRegionSaleGet200ResponseReportInner(BaseModel):
     """
     ApiV1AnalyticsRegionSaleGet200ResponseReportInner
     """ # noqa: E501
-    city_name: Optional[StrictStr] = Field(default=None, description="Населённый пункт", alias="cityName")
-    country_name: Optional[StrictStr] = Field(default=None, description="Страна", alias="countryName")
-    fo_name: Optional[StrictStr] = Field(default=None, description="Федеральный округ", alias="foName")
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
-    region_name: Optional[StrictStr] = Field(default=None, description="Регион", alias="regionName")
-    sa: Optional[StrictStr] = Field(default=None, description="Артикул продавца")
-    sale_invoice_cost_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="К перечислению за товар, ₽", alias="saleInvoiceCostPrice")
-    sale_invoice_cost_price_perc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Доля, %", alias="saleInvoiceCostPricePerc")
-    sale_item_invoice_qty: Optional[StrictInt] = Field(default=None, description="Выкупили, шт.", alias="saleItemInvoiceQty")
+    city_name: Optional[StrictStr] = Field(default=None, description="Населённый пункт", alias="cityName", json_schema_extra={"examples": ["деревня Суханово"]})
+    country_name: Optional[StrictStr] = Field(default=None, description="Страна", alias="countryName", json_schema_extra={"examples": ["Россия"]})
+    fo_name: Optional[StrictStr] = Field(default=None, description="Федеральный округ", alias="foName", json_schema_extra={"examples": ["Центральный федеральный округ"]})
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID", json_schema_extra={"examples": [177974431]})
+    region_name: Optional[StrictStr] = Field(default=None, description="Регион", alias="regionName", json_schema_extra={"examples": ["Московская область"]})
+    sa: Optional[StrictStr] = Field(default=None, description="Артикул продавца", json_schema_extra={"examples": ["112233445566778899"]})
+    sale_invoice_cost_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="К перечислению за товар, ₽", alias="saleInvoiceCostPrice", json_schema_extra={"examples": [592.11]})
+    sale_invoice_cost_price_perc: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Доля, %", alias="saleInvoiceCostPricePerc", json_schema_extra={"examples": [43.0547333297454]})
+    sale_item_invoice_qty: Optional[StrictInt] = Field(default=None, description="Выкупили, шт.", alias="saleItemInvoiceQty", json_schema_extra={"examples": [4]})
     __properties: ClassVar[List[str]] = ["cityName", "countryName", "foName", "nmID", "regionName", "sa", "saleInvoiceCostPrice", "saleInvoiceCostPricePerc", "saleItemInvoiceQty"]
 
     model_config = ConfigDict(

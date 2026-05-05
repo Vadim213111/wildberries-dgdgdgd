@@ -27,8 +27,8 @@ class ApiV3DbwOrdersStatusPost200ResponseOrdersInner(BaseModel):
     """
     ApiV3DbwOrdersStatusPost200ResponseOrdersInner
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания")
-    supplier_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания, установленный продавцом", alias="supplierStatus")
+    id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", json_schema_extra={"examples": [5632423]})
+    supplier_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания, установленный продавцом", alias="supplierStatus", json_schema_extra={"examples": ["new"]})
     wb_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания в системе Wildberries", alias="wbStatus")
     __properties: ClassVar[List[str]] = ["id", "supplierStatus", "wbStatus"]
 

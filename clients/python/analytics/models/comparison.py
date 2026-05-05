@@ -30,20 +30,20 @@ class Comparison(BaseModel):
     """
     Comparison
     """ # noqa: E501
-    open_count_dynamic: StrictInt = Field(description="Динамика переходов в карточку товара", alias="openCountDynamic")
-    cart_count_dynamic: StrictInt = Field(description="Динамика добавлений в корзину", alias="cartCountDynamic")
-    order_count_dynamic: StrictInt = Field(description="Динамика количества заказов", alias="orderCountDynamic")
-    order_sum_dynamic: StrictInt = Field(description="Динамика суммы заказов", alias="orderSumDynamic")
-    buyout_count_dynamic: StrictInt = Field(description="Динамика выкупов", alias="buyoutCountDynamic")
-    buyout_sum_dynamic: StrictInt = Field(description="Динамика суммы выкупов", alias="buyoutSumDynamic")
-    cancel_count_dynamic: StrictInt = Field(description="Динамика отмен и возвратов товаров", alias="cancelCountDynamic")
-    cancel_sum_dynamic: StrictInt = Field(description="Динамика сумм отмен и возвратов товаров", alias="cancelSumDynamic")
-    avg_orders_count_per_day_dynamic: StrictInt = Field(description="Динамика среднего количества заказов в день", alias="avgOrdersCountPerDayDynamic")
-    avg_price_dynamic: StrictInt = Field(description="Динамика средней цены на товары. Учитываются скидки для акций", alias="avgPriceDynamic")
-    share_order_percent_dynamic: StrictInt = Field(description="Динамика доли в выручке", alias="shareOrderPercentDynamic")
-    add_to_wishlist_dynamic: StrictInt = Field(description="Динамика добавлений товара в избранное", alias="addToWishlistDynamic")
+    open_count_dynamic: StrictInt = Field(description="Динамика переходов в карточку товара", alias="openCountDynamic", json_schema_extra={"examples": [10]})
+    cart_count_dynamic: StrictInt = Field(description="Динамика добавлений в корзину", alias="cartCountDynamic", json_schema_extra={"examples": [30]})
+    order_count_dynamic: StrictInt = Field(description="Динамика количества заказов", alias="orderCountDynamic", json_schema_extra={"examples": [-100]})
+    order_sum_dynamic: StrictInt = Field(description="Динамика суммы заказов", alias="orderSumDynamic", json_schema_extra={"examples": [-100]})
+    buyout_count_dynamic: StrictInt = Field(description="Динамика выкупов", alias="buyoutCountDynamic", json_schema_extra={"examples": [-100]})
+    buyout_sum_dynamic: StrictInt = Field(description="Динамика суммы выкупов", alias="buyoutSumDynamic", json_schema_extra={"examples": [-100]})
+    cancel_count_dynamic: StrictInt = Field(description="Динамика отмен и возвратов товаров", alias="cancelCountDynamic", json_schema_extra={"examples": [0]})
+    cancel_sum_dynamic: StrictInt = Field(description="Динамика сумм отмен и возвратов товаров", alias="cancelSumDynamic", json_schema_extra={"examples": [0]})
+    avg_orders_count_per_day_dynamic: StrictInt = Field(description="Динамика среднего количества заказов в день", alias="avgOrdersCountPerDayDynamic", json_schema_extra={"examples": [0]})
+    avg_price_dynamic: StrictInt = Field(description="Динамика средней цены на товары. Учитываются скидки для акций", alias="avgPriceDynamic", json_schema_extra={"examples": [-100]})
+    share_order_percent_dynamic: StrictInt = Field(description="Динамика доли в выручке", alias="shareOrderPercentDynamic", json_schema_extra={"examples": [-80]})
+    add_to_wishlist_dynamic: StrictInt = Field(description="Динамика добавлений товара в избранное", alias="addToWishlistDynamic", json_schema_extra={"examples": [60]})
     time_to_ready_dynamic: ComparisonTimeToReadyDynamic = Field(alias="timeToReadyDynamic")
-    localization_percent_dynamic: StrictInt = Field(description="Динамика локальных заказов в рамках одного региона", alias="localizationPercentDynamic")
+    localization_percent_dynamic: StrictInt = Field(description="Динамика локальных заказов в рамках одного региона", alias="localizationPercentDynamic", json_schema_extra={"examples": [46]})
     wb_club_dynamic: ComparisonWbClubDynamic = Field(alias="wbClubDynamic")
     conversions: StatisticConversions
     __properties: ClassVar[List[str]] = ["openCountDynamic", "cartCountDynamic", "orderCountDynamic", "orderSumDynamic", "buyoutCountDynamic", "buyoutSumDynamic", "cancelCountDynamic", "cancelSumDynamic", "avgOrdersCountPerDayDynamic", "avgPriceDynamic", "shareOrderPercentDynamic", "addToWishlistDynamic", "timeToReadyDynamic", "localizationPercentDynamic", "wbClubDynamic", "conversions"]

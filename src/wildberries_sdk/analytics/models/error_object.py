@@ -27,10 +27,10 @@ class ErrorObject(BaseModel):
     """
     ErrorObject
     """ # noqa: E501
-    title: StrictStr = Field(description="Заголовок ошибки")
-    detail: StrictStr = Field(description="Детали ошибки")
-    request_id: StrictStr = Field(description="Уникальный ID запроса", alias="requestId")
-    origin: StrictStr = Field(description="ID внутреннего сервиса WB")
+    title: StrictStr = Field(description="Заголовок ошибки", json_schema_extra={"examples": ["SKU not found"]})
+    detail: StrictStr = Field(description="Детали ошибки", json_schema_extra={"examples": ["SKU xxx doesn't exist"]})
+    request_id: StrictStr = Field(description="Уникальный ID запроса", alias="requestId", json_schema_extra={"examples": ["fb25c9e9-cae8-52db-b68e-736c1466a3f5"]})
+    origin: StrictStr = Field(description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["analytic-open-api"]})
     __properties: ClassVar[List[str]] = ["title", "detail", "requestId", "origin"]
 
     model_config = ConfigDict(

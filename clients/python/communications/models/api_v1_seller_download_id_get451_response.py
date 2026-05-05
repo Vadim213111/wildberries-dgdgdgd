@@ -27,11 +27,11 @@ class ApiV1SellerDownloadIdGet451Response(BaseModel):
     """
     ApiV1SellerDownloadIdGet451Response
     """ # noqa: E501
-    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код")
-    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
-    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB")
-    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
-    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId")
+    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код", json_schema_extra={"examples": [451]})
+    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки", json_schema_extra={"examples": ["Unavailable for Legal Reasons"]})
+    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["proxy-chats"]})
+    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки", json_schema_extra={"examples": ["moderation error"]})
+    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId", json_schema_extra={"examples": ["62f59a4ce21064f20b1bbc28c85f38d8"]})
     __properties: ClassVar[List[str]] = ["status", "title", "origin", "detail", "requestId"]
 
     model_config = ConfigDict(

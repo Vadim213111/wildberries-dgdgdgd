@@ -27,7 +27,7 @@ class V3ArchiveOrderCrossBorder(BaseModel):
     """
     Информация о заказе по модели кроссбордер
     """ # noqa: E501
-    parcel: Optional[StrictStr] = Field(default=None, description="ID посылки")
+    parcel: Optional[StrictStr] = Field(default=None, description="ID посылки", json_schema_extra={"examples": ["1Z999AA10123456784"]})
     __properties: ClassVar[List[str]] = ["parcel"]
 
     model_config = ConfigDict(

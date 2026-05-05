@@ -28,7 +28,7 @@ class ApiV3DbsOrdersGet200Response(BaseModel):
     """
     ApiV3DbsOrdersGet200Response
     """ # noqa: E501
-    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных")
+    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных", json_schema_extra={"examples": [13833711]})
     orders: Optional[List[OrderDBS]] = None
     __properties: ClassVar[List[str]] = ["next", "orders"]
 

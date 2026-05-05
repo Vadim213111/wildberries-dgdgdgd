@@ -28,7 +28,7 @@ class ApiV3SuppliesPostRequest(BaseModel):
     """
     ApiV3SuppliesPostRequest
     """ # noqa: E501
-    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=128)]] = Field(default=None, description="Наименование поставки")
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=128)]] = Field(default=None, description="Наименование поставки", json_schema_extra={"examples": ["Тестовая поставка"]})
     __properties: ClassVar[List[str]] = ["name"]
 
     model_config = ConfigDict(

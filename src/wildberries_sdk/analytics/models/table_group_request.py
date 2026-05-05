@@ -34,16 +34,16 @@ class TableGroupRequest(BaseModel):
     """ # noqa: E501
     current_period: Period = Field(alias="currentPeriod")
     past_period: Optional[PastPeriod] = Field(default=None, alias="pastPeriod")
-    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIds")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
+    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIds", json_schema_extra={"examples": [[162579635, 166699779]]})
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[64, 334]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["nikkle", "abikas"]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds", json_schema_extra={"examples": [[32, 53]]})
     order_by: OrderByGrTe = Field(alias="orderBy")
     position_cluster: PositionCluster = Field(alias="positionCluster")
-    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs")
-    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts")
-    limit: Annotated[int, Field(le=1000, strict=True)] = Field(description="Количество групп товаров в ответе")
-    offset: StrictInt = Field(description="После какого элемента выдавать данные")
+    include_substituted_skus: Optional[StrictBool] = Field(default=True, description="Показать данные по прямым запросам с [подменным артикулом](https://seller.wildberries.ru/help-center/article/A-524)", alias="includeSubstitutedSKUs", json_schema_extra={"examples": [True]})
+    include_search_texts: Optional[StrictBool] = Field(default=True, description="Показать данные по поисковым запросам без учёта подменного артикула", alias="includeSearchTexts", json_schema_extra={"examples": [False]})
+    limit: Annotated[int, Field(le=1000, strict=True)] = Field(description="Количество групп товаров в ответе", json_schema_extra={"examples": [130]})
+    offset: StrictInt = Field(description="После какого элемента выдавать данные", json_schema_extra={"examples": [50]})
     __properties: ClassVar[List[str]] = ["currentPeriod", "pastPeriod", "nmIds", "subjectIds", "brandNames", "tagIds", "orderBy", "positionCluster", "includeSubstitutedSKUs", "includeSearchTexts", "limit", "offset"]
 
     model_config = ConfigDict(

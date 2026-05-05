@@ -27,7 +27,7 @@ class ApiV3SuppliesPost201Response(BaseModel):
     """
     ApiV3SuppliesPost201Response
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="ID поставки")
+    id: Optional[StrictStr] = Field(default=None, description="ID поставки", json_schema_extra={"examples": ["WB-GI-1234567"]})
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

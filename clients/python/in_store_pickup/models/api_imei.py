@@ -28,8 +28,8 @@ class ApiIMEI(BaseModel):
     """
     ApiIMEI
     """ # noqa: E501
-    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
-    imei: Annotated[str, Field(min_length=15, strict=True, max_length=15)] = Field(description="IMEI")
+    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
+    imei: Annotated[str, Field(min_length=15, strict=True, max_length=15)] = Field(description="IMEI", json_schema_extra={"examples": ["654321741987258"]})
     __properties: ClassVar[List[str]] = ["orderId", "imei"]
 
     model_config = ConfigDict(

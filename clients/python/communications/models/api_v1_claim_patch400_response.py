@@ -27,9 +27,9 @@ class ApiV1ClaimPatch400Response(BaseModel):
     """
     ApiV1ClaimPatch400Response
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="ID ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="Описание ошибки")
-    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId")
+    title: Optional[StrictStr] = Field(default=None, description="ID ошибки", json_schema_extra={"examples": ["Validation error"]})
+    detail: Optional[StrictStr] = Field(default=None, description="Описание ошибки", json_schema_extra={"examples": ["Input model is not valid; Details: The Action field is required."]})
+    request_id: Optional[StrictStr] = Field(default=None, description="ID запроса", alias="requestId", json_schema_extra={"examples": ["0HN3PI6JUGFSL:00000004"]})
     __properties: ClassVar[List[str]] = ["title", "detail", "requestId"]
 
     model_config = ConfigDict(

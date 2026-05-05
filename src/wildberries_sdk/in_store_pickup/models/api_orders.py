@@ -28,7 +28,7 @@ class ApiOrders(BaseModel):
     """
     ApiOrders
     """ # noqa: E501
-    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных ")
+    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных ", json_schema_extra={"examples": [12345566]})
     orders: Optional[List[ApiOrder]] = Field(default=None, description="Список сборочных заданий")
     __properties: ClassVar[List[str]] = ["next", "orders"]
 

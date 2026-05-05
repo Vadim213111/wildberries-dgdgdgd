@@ -27,11 +27,11 @@ class OpenapiSellerLimit(BaseModel):
     """
     OpenapiSellerLimit
     """ # noqa: E501
-    per_unit_limit: StrictInt = Field(description="Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек", alias="perUnitLimit")
-    remaining: StrictInt = Field(description="Сколько ещё отзывов можно закрепить")
-    total_limit: StrictInt = Field(description="Общий лимит закреплений", alias="totalLimit")
-    unlimited: StrictBool = Field(description="Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет ")
-    used: StrictInt = Field(description="Текущее количество закреплённых отзывов")
+    per_unit_limit: StrictInt = Field(description="Максимальное количество закреплённых отзывов в одной карточке товара или в группе [объединённых](https://dev.wildberries.ru/knowledge-base/articles/019d49a4-1320-71bb-9dac-8ba07e7177ce/rabota-s-tovarami#obuedinenie-i-razuedinenie-kartochek-tovarov) карточек", alias="perUnitLimit", json_schema_extra={"examples": [2]})
+    remaining: StrictInt = Field(description="Сколько ещё отзывов можно закрепить", json_schema_extra={"examples": [5]})
+    total_limit: StrictInt = Field(description="Общий лимит закреплений", alias="totalLimit", json_schema_extra={"examples": [15]})
+    unlimited: StrictBool = Field(description="Количество закреплённых отзывов не ограничено:   - `true` — да   - `false` — нет ", json_schema_extra={"examples": [False]})
+    used: StrictInt = Field(description="Текущее количество закреплённых отзывов", json_schema_extra={"examples": [10]})
     __properties: ClassVar[List[str]] = ["perUnitLimit", "remaining", "totalLimit", "unlimited", "used"]
 
     model_config = ConfigDict(

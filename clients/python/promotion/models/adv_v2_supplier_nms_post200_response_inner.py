@@ -27,9 +27,9 @@ class AdvV2SupplierNmsPost200ResponseInner(BaseModel):
     """
     AdvV2SupplierNmsPost200ResponseInner
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="Название товара")
-    nm: Optional[StrictInt] = Field(default=None, description="Артикул WB")
-    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectId")
+    title: Optional[StrictStr] = Field(default=None, description="Название товара", json_schema_extra={"examples": ["Плед"]})
+    nm: Optional[StrictInt] = Field(default=None, description="Артикул WB", json_schema_extra={"examples": [146168367]})
+    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectId", json_schema_extra={"examples": [765]})
     __properties: ClassVar[List[str]] = ["title", "nm", "subjectId"]
 
     model_config = ConfigDict(

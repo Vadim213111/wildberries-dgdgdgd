@@ -28,8 +28,8 @@ class ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner(BaseModel
     """
     ApiV3DbwWarehousesWarehouseIdContactsGet200ResponseContactsInner
     """ # noqa: E501
-    comment: Optional[Annotated[str, Field(strict=True, max_length=1000)]] = Field(default=None, description="Комментарий")
-    phone: Optional[StrictStr] = Field(default=None, description="Номер телефона")
+    comment: Optional[Annotated[str, Field(strict=True, max_length=1000)]] = Field(default=None, description="Комментарий", json_schema_extra={"examples": ["Иванов Иван Иванович. Звонить с 10 до 21 часа."]})
+    phone: Optional[StrictStr] = Field(default=None, description="Номер телефона", json_schema_extra={"examples": ["+79998887766"]})
     __properties: ClassVar[List[str]] = ["comment", "phone"]
 
     model_config = ConfigDict(

@@ -28,10 +28,10 @@ class ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner(BaseModel):
     """
     ApiV1CalendarPromotionsGet200ResponseDataPromotionsInner
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="ID акции")
-    name: Optional[StrictStr] = Field(default=None, description="Название акции")
-    start_date_time: Optional[datetime] = Field(default=None, description="Начало акции", alias="startDateTime")
-    end_date_time: Optional[datetime] = Field(default=None, description="Конец акции", alias="endDateTime")
+    id: Optional[StrictInt] = Field(default=None, description="ID акции", json_schema_extra={"examples": [123]})
+    name: Optional[StrictStr] = Field(default=None, description="Название акции", json_schema_extra={"examples": ["скидки"]})
+    start_date_time: Optional[datetime] = Field(default=None, description="Начало акции", alias="startDateTime", json_schema_extra={"examples": ["2023-06-05T21:00:00Z"]})
+    end_date_time: Optional[datetime] = Field(default=None, description="Конец акции", alias="endDateTime", json_schema_extra={"examples": ["2023-06-05T21:00:00Z"]})
     type: Optional[StrictStr] = Field(default=None, description="Тип акции:   - `regular` — акция   - `auto` — автоакция ")
     __properties: ClassVar[List[str]] = ["id", "name", "startDateTime", "endDateTime", "type"]
 

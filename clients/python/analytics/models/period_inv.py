@@ -28,8 +28,8 @@ class PeriodInv(BaseModel):
     """
     Период
     """ # noqa: E501
-    start: date = Field(description="Дата начала периода. Не позднее `end`. Не ранее 3 месяцев от текущей даты")
-    end: date = Field(description="Дата окончания периода. Не ранее 3 месяцев от текущей даты")
+    start: date = Field(description="Дата начала периода. Не позднее `end`. Не ранее 3 месяцев от текущей даты", json_schema_extra={"examples": ["2024-02-10"]})
+    end: date = Field(description="Дата окончания периода. Не ранее 3 месяцев от текущей даты", json_schema_extra={"examples": ["2024-02-10"]})
     __properties: ClassVar[List[str]] = ["start", "end"]
 
     model_config = ConfigDict(

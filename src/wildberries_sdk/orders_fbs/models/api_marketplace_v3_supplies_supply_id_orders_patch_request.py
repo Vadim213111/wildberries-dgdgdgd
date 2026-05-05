@@ -28,7 +28,7 @@ class ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest(BaseModel):
     """
     ApiMarketplaceV3SuppliesSupplyIdOrdersPatchRequest
     """ # noqa: E501
-    orders: Optional[Annotated[List[StrictInt], Field(min_length=1, max_length=100)]] = Field(default=None, description="ID сборочных заданий")
+    orders: Optional[Annotated[List[StrictInt], Field(min_length=1, max_length=100)]] = Field(default=None, description="ID сборочных заданий", json_schema_extra={"examples": [[5632423, 3453452, 7654533, 4529544]]})
     __properties: ClassVar[List[str]] = ["orders"]
 
     model_config = ConfigDict(

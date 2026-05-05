@@ -2608,8 +2608,8 @@ class FBSApi
      *
      * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
      * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен &#x60;0&#x60; в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
-     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса (optional)
-     * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
+     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC (optional)
+     * @param  int|null $date_to Дата конца периода в формате Unix timestamp. Часовой пояс — UTC (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation
@@ -2635,8 +2635,8 @@ class FBSApi
      *
      * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
      * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен &#x60;0&#x60; в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
-     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса (optional)
-     * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
+     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC (optional)
+     * @param  int|null $date_to Дата конца периода в формате Unix timestamp. Часовой пояс — UTC (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation
@@ -2799,8 +2799,8 @@ class FBSApi
      *
      * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
      * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен &#x60;0&#x60; в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
-     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса (optional)
-     * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
+     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC (optional)
+     * @param  int|null $date_to Дата конца периода в формате Unix timestamp. Часовой пояс — UTC (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation
@@ -2829,8 +2829,8 @@ class FBSApi
      *
      * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
      * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен &#x60;0&#x60; в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
-     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса (optional)
-     * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
+     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC (optional)
+     * @param  int|null $date_to Дата конца периода в формате Unix timestamp. Часовой пояс — UTC (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation
@@ -2888,8 +2888,8 @@ class FBSApi
      *
      * @param  int $limit Параметр пагинации. Устанавливает предельное количество возвращаемых данных. (required)
      * @param  int $next Параметр пагинации. Устанавливает значение, с которого надо получить следующий пакет данных. Для получения полного списка данных должен быть равен &#x60;0&#x60; в первом запросе. Для следующих запросов необходимо брать значения из одноимённого поля в ответе. (required)
-     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса (optional)
-     * @param  int|null $date_to Дата конца периода в формате Unix timestamp (optional)
+     * @param  int|null $date_from Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC (optional)
+     * @param  int|null $date_to Дата конца периода в формате Unix timestamp. Часовой пояс — UTC (optional)
      * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
      * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['apiV3OrdersGet'] to see the possible values for this operation

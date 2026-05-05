@@ -28,9 +28,9 @@ class ContentV2BarcodesPost200Response(BaseModel):
     ContentV2BarcodesPost200Response
     """ # noqa: E501
     data: Optional[List[StrictStr]] = Field(default=None, description="Массив сгенерированных баркодов")
-    error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки")
-    error_text: Optional[StrictStr] = Field(default=None, description="Описание ошибки", alias="errorText")
-    additional_errors: Optional[StrictStr] = Field(default=None, description="Дополнительные ошибки", alias="additionalErrors")
+    error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки", json_schema_extra={"examples": [False]})
+    error_text: Optional[StrictStr] = Field(default=None, description="Описание ошибки", alias="errorText", json_schema_extra={"examples": [""]})
+    additional_errors: Optional[StrictStr] = Field(default=None, description="Дополнительные ошибки", alias="additionalErrors", json_schema_extra={"examples": [""]})
     __properties: ClassVar[List[str]] = ["data", "error", "errorText", "additionalErrors"]
 
     model_config = ConfigDict(

@@ -27,8 +27,8 @@ class ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner
     """
     ApiV1WarehouseRemainsTasksTaskIdDownloadGet200ResponseInnerWarehousesInner
     """ # noqa: E501
-    warehouse_name: Optional[StrictStr] = Field(default=None, description="Название склада", alias="warehouseName")
-    quantity: Optional[StrictInt] = Field(default=None, description="Количество, шт. ")
+    warehouse_name: Optional[StrictStr] = Field(default=None, description="Название склада", alias="warehouseName", json_schema_extra={"examples": ["Невинномысск"]})
+    quantity: Optional[StrictInt] = Field(default=None, description="Количество, шт. ", json_schema_extra={"examples": [134]})
     __properties: ClassVar[List[str]] = ["warehouseName", "quantity"]
 
     model_config = ConfigDict(

@@ -29,9 +29,9 @@ class TextLimit(BaseModel):
     TextLimit
     """
     # data type: int
-    oneof_schema_1_validator: Optional[Annotated[int, Field(le=30, strict=True, ge=1)]] = Field(default=None, description="Количество поисковых запросов по товару для [стандартного](https://seller.wildberries.ru/monetization/tariffs) тарифа")
+    oneof_schema_1_validator: Optional[Annotated[int, Field(le=30, strict=True, ge=1)]] = Field(default=None, description="Количество поисковых запросов по товару для [стандартного](https://seller.wildberries.ru/monetization/tariffs) тарифа", json_schema_extra={"examples": [20]})
     # data type: int
-    oneof_schema_2_validator: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = Field(default=None, description="Количество поисковых запросов по товару для [продвинутого](https://seller.wildberries.ru/monetization/tariffs) тарифа")
+    oneof_schema_2_validator: Optional[Annotated[int, Field(le=100, strict=True, ge=1)]] = Field(default=None, description="Количество поисковых запросов по товару для [продвинутого](https://seller.wildberries.ru/monetization/tariffs) тарифа", json_schema_extra={"examples": [50]})
     actual_instance: Optional[Union[int]] = None
     one_of_schemas: Set[str] = { "int" }
 

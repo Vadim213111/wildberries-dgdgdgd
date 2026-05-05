@@ -41,6 +41,8 @@ type ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner struct {
 	HasFilter *bool `json:"hasFilter,omitempty"`
 	// Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:   -  `true` — варианты товара могут отличаться по этой характеристике   -  `false` — варианты товара не могут отличаться по этой характеристике 
 	IsVariable *bool `json:"isVariable,omitempty"`
+	// Как передать характеристику в запросах на [cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post), [создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) и [редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:   -  `true` — в соответствующем параметре запроса   -  `false` — внутри массива `characteristics` 
+	ExistNamedField *bool `json:"existNamedField,omitempty"`
 }
 
 // NewContentV2ObjectCharcsSubjectIdGet200ResponseDataInner instantiates a new ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner object
@@ -412,6 +414,38 @@ func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) SetIsVariable(v 
 	o.IsVariable = &v
 }
 
+// GetExistNamedField returns the ExistNamedField field value if set, zero value otherwise.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) GetExistNamedField() bool {
+	if o == nil || IsNil(o.ExistNamedField) {
+		var ret bool
+		return ret
+	}
+	return *o.ExistNamedField
+}
+
+// GetExistNamedFieldOk returns a tuple with the ExistNamedField field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) GetExistNamedFieldOk() (*bool, bool) {
+	if o == nil || IsNil(o.ExistNamedField) {
+		return nil, false
+	}
+	return o.ExistNamedField, true
+}
+
+// HasExistNamedField returns a boolean if a field has been set.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) HasExistNamedField() bool {
+	if o != nil && !IsNil(o.ExistNamedField) {
+		return true
+	}
+
+	return false
+}
+
+// SetExistNamedField gets a reference to the given bool and assigns it to the ExistNamedField field.
+func (o *ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) SetExistNamedField(v bool) {
+	o.ExistNamedField = &v
+}
+
 func (o ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -454,6 +488,9 @@ func (o ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner) ToMap() (map[stri
 	}
 	if !IsNil(o.IsVariable) {
 		toSerialize["isVariable"] = o.IsVariable
+	}
+	if !IsNil(o.ExistNamedField) {
+		toSerialize["existNamedField"] = o.ExistNamedField
 	}
 	return toSerialize, nil
 }

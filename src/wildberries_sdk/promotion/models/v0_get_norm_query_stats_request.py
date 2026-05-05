@@ -30,8 +30,8 @@ class V0GetNormQueryStatsRequest(BaseModel):
     """
     V0GetNormQueryStatsRequest
     """ # noqa: E501
-    var_from: date = Field(description="Дата начала периода", alias="from")
-    to: date = Field(description="Дата окончания периода")
+    var_from: date = Field(description="Дата начала периода", alias="from", json_schema_extra={"examples": ["2025-10-07"]})
+    to: date = Field(description="Дата окончания периода", json_schema_extra={"examples": ["2025-10-08"]})
     items: Annotated[List[V0GetNormQueryStatsRequestItemsInner], Field(max_length=100)]
     __properties: ClassVar[List[str]] = ["from", "to", "items"]
 

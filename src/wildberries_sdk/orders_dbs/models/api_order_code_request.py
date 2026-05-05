@@ -27,8 +27,8 @@ class ApiOrderCodeRequest(BaseModel):
     """
     ApiOrderCodeRequest
     """ # noqa: E501
-    code: Optional[StrictStr] = Field(default=None, description="Код подтверждения. <br> Отображается у покупателя на сайте и в приложении Wildberries")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
+    code: Optional[StrictStr] = Field(default=None, description="Код подтверждения. <br> Отображается у покупателя на сайте и в приложении Wildberries", json_schema_extra={"examples": ["741852"]})
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
     __properties: ClassVar[List[str]] = ["code", "orderId"]
 
     model_config = ConfigDict(

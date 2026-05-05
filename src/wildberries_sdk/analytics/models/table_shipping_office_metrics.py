@@ -28,11 +28,11 @@ class TableShippingOfficeMetrics(BaseModel):
     """
     Общие метрики по регионам/складам отгрузки
     """ # noqa: E501
-    stock_count: StrictInt = Field(description="Остатки на текущий день, шт.", alias="stockCount")
-    stock_sum: StrictInt = Field(description="Остатки на текущий день, сумма", alias="stockSum")
+    stock_count: StrictInt = Field(description="Остатки на текущий день, шт.", alias="stockCount", json_schema_extra={"examples": [20]})
+    stock_sum: StrictInt = Field(description="Остатки на текущий день, сумма", alias="stockSum", json_schema_extra={"examples": [20000]})
     sale_rate: TableCommonMetricsSaleRate = Field(alias="saleRate")
-    to_client_count: StrictInt = Field(description="В пути к клиенту, шт.", alias="toClientCount")
-    from_client_count: StrictInt = Field(description="В пути от клиента, шт.", alias="fromClientCount")
+    to_client_count: StrictInt = Field(description="В пути к клиенту, шт.", alias="toClientCount", json_schema_extra={"examples": [30]})
+    from_client_count: StrictInt = Field(description="В пути от клиента, шт.", alias="fromClientCount", json_schema_extra={"examples": [40]})
     __properties: ClassVar[List[str]] = ["stockCount", "stockSum", "saleRate", "toClientCount", "fromClientCount"]
 
     model_config = ConfigDict(

@@ -30,15 +30,15 @@ class CommonProductFilters(BaseModel):
     """
     Общие фильтры по товару
     """ # noqa: E501
-    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIDs")
-    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectID")
-    brand_name: Optional[StrictStr] = Field(default=None, description="Бренд", alias="brandName")
-    tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка", alias="tagID")
+    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIDs", json_schema_extra={"examples": [[111222333, 444555666]]})
+    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectID", json_schema_extra={"examples": [123456]})
+    brand_name: Optional[StrictStr] = Field(default=None, description="Бренд", alias="brandName", json_schema_extra={"examples": ["Спортик"]})
+    tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка", alias="tagID", json_schema_extra={"examples": [25345]})
     current_period: PeriodInv = Field(alias="currentPeriod")
     stock_type: StockType = Field(alias="stockType")
-    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm")
+    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm", json_schema_extra={"examples": [True]})
     order_by: TableOrderBy = Field(alias="orderBy")
-    availability_filters: List[StrictStr] = Field(description="Доступность товара:   - `deficient` — Дефицит   - `actual` — Актуальный   - `balanced` — Баланс   - `nonActual` — Неактуальный   - `nonLiquid` — Неликвид   - `invalidData` — Не рассчитано ", alias="availabilityFilters")
+    availability_filters: List[StrictStr] = Field(description="Доступность товара:   - `deficient` — Дефицит   - `actual` — Актуальный   - `balanced` — Баланс   - `nonActual` — Неактуальный   - `nonLiquid` — Неликвид   - `invalidData` — Не рассчитано ", alias="availabilityFilters", json_schema_extra={"examples": [["deficient", "balanced"]]})
     __properties: ClassVar[List[str]] = ["nmIDs", "subjectID", "brandName", "tagID", "currentPeriod", "stockType", "skipDeletedNm", "orderBy", "availabilityFilters"]
 
     @field_validator('availability_filters')

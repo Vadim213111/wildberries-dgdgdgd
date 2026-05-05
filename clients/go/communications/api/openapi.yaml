@@ -3329,10 +3329,10 @@ components:
   schemas:
     standardizedFQError:
       example:
+        title: title
         requestId: requestId
         origin: origin
         detail: detail
-        title: title
       properties:
         title:
           description: Заголовок ошибки
@@ -3349,13 +3349,13 @@ components:
       type: object
     responsefeedbackErr:
       example:
-        errorText: errorText
         data: "{}"
+        error: true
+        errorText: errorText
         additionalErrors:
         - additionalErrors
         - additionalErrors
         requestId: requestId
-        error: true
       properties:
         data:
           nullable: true
@@ -3383,17 +3383,17 @@ components:
       type: array
     Chat:
       example:
-        replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
         chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
+        replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
         clientName: Иван
-        lastMessage: ""
         goodCard:
           date: date
-          priceCurrency: priceCurrency
-          size: size
-          price: 6
           nmID: 0
+          price: 6
+          priceCurrency: priceCurrency
           rid: rid
+          size: size
+        lastMessage: ""
       properties:
         chatID:
           description: ID чата
@@ -3418,28 +3418,28 @@ components:
     ChatsResponse:
       example:
         result:
-        - replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
-          chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
+        - chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
+          replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
           clientName: Иван
-          lastMessage: ""
           goodCard:
             date: date
-            priceCurrency: priceCurrency
-            size: size
-            price: 6
             nmID: 0
+            price: 6
+            priceCurrency: priceCurrency
             rid: rid
-        - replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
-          chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
-          clientName: Иван
+            size: size
           lastMessage: ""
+        - chatID: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3
+          replySign: 1:4019cd7d-cca8-4e90-8b11-f78afbea42e3:54828159:bc3a4c04079f5956cff170b25e73523aa1208b5c0bd7aea1e520a64ae3e212b1ebae6712661f3afd27520fa785fa3042254e8a3100ce00644322054ae7cfcd0e
+          clientName: Иван
           goodCard:
             date: date
-            priceCurrency: priceCurrency
-            size: size
-            price: 6
             nmID: 0
+            price: 6
+            priceCurrency: priceCurrency
             rid: rid
+            size: size
+          lastMessage: ""
         errors:
         - errors
         - errors
@@ -3458,18 +3458,32 @@ components:
       type: object
     Event:
       example:
-        eventID: eventID
-        replySign: replySign
         chatID: chatID
-        addTime: addTime
-        addTimestamp: 5
-        sender: client
-        clientName: clientName
+        eventID: eventID
         eventType: message
         isNewChat: true
-        source: source
         message:
           attachments:
+            goodCard:
+              date: date
+              nmID: 0
+              price: 6
+              priceCurrency: priceCurrency
+              rid: rid
+              size: size
+            files:
+            - contentType: contentType
+              date: date
+              downloadID: downloadID
+              name: name
+              url: url
+              size: 1
+            - contentType: contentType
+              date: date
+              downloadID: downloadID
+              name: name
+              url: url
+              size: 1
             images:
             - date: date
               downloadID: downloadID
@@ -3477,27 +3491,13 @@ components:
             - date: date
               downloadID: downloadID
               url: url
-            files:
-            - date: date
-              size: 1
-              name: name
-              downloadID: downloadID
-              contentType: contentType
-              url: url
-            - date: date
-              size: 1
-              name: name
-              downloadID: downloadID
-              contentType: contentType
-              url: url
-            goodCard:
-              date: date
-              priceCurrency: priceCurrency
-              size: size
-              price: 6
-              nmID: 0
-              rid: rid
           text: text
+        source: source
+        addTimestamp: 5
+        addTime: addTime
+        replySign: replySign
+        sender: client
+        clientName: clientName
       properties:
         chatID:
           description: ID чата
@@ -3544,6 +3544,26 @@ components:
     EventAttachments:
       description: Вложения
       example:
+        goodCard:
+          date: date
+          nmID: 0
+          price: 6
+          priceCurrency: priceCurrency
+          rid: rid
+          size: size
+        files:
+        - contentType: contentType
+          date: date
+          downloadID: downloadID
+          name: name
+          url: url
+          size: 1
+        - contentType: contentType
+          date: date
+          downloadID: downloadID
+          name: name
+          url: url
+          size: 1
         images:
         - date: date
           downloadID: downloadID
@@ -3551,26 +3571,6 @@ components:
         - date: date
           downloadID: downloadID
           url: url
-        files:
-        - date: date
-          size: 1
-          name: name
-          downloadID: downloadID
-          contentType: contentType
-          url: url
-        - date: date
-          size: 1
-          name: name
-          downloadID: downloadID
-          contentType: contentType
-          url: url
-        goodCard:
-          date: date
-          priceCurrency: priceCurrency
-          size: size
-          price: 6
-          nmID: 0
-          rid: rid
       properties:
         goodCard:
           $ref: "#/components/schemas/GoodCard"
@@ -3594,12 +3594,12 @@ components:
       type: string
     File:
       example:
-        date: date
-        size: 1
-        name: name
-        downloadID: downloadID
         contentType: contentType
+        date: date
+        downloadID: downloadID
+        name: name
         url: url
+        size: 1
       properties:
         contentType:
           description: Тип файла
@@ -3625,11 +3625,11 @@ components:
       description: Информация о заказе
       example:
         date: date
-        priceCurrency: priceCurrency
-        size: size
-        price: 6
         nmID: 0
+        price: 6
+        priceCurrency: priceCurrency
         rid: rid
+        size: size
       properties:
         date:
           description: Дата заказа
@@ -3688,13 +3688,13 @@ components:
       type: object
     MessageResponse:
       example:
+        errors:
+        - errors
+        - errors
         result:
           addTime: 0
           chatID: chatID
           sign: sign
-        errors:
-        - errors
-        - errors
       properties:
         errors:
           description: "Ошибки загрузки файлов, если есть"
@@ -3719,22 +3719,36 @@ components:
       example:
         result:
           next: 0
+          newestEventTime: 2000-01-23T04:56:07.000+00:00
           oldestEventTime: 2000-01-23T04:56:07.000+00:00
           totalEvents: 6
-          newestEventTime: 2000-01-23T04:56:07.000+00:00
           events:
-          - eventID: eventID
-            replySign: replySign
-            chatID: chatID
-            addTime: addTime
-            addTimestamp: 5
-            sender: client
-            clientName: clientName
+          - chatID: chatID
+            eventID: eventID
             eventType: message
             isNewChat: true
-            source: source
             message:
               attachments:
+                goodCard:
+                  date: date
+                  nmID: 0
+                  price: 6
+                  priceCurrency: priceCurrency
+                  rid: rid
+                  size: size
+                files:
+                - contentType: contentType
+                  date: date
+                  downloadID: downloadID
+                  name: name
+                  url: url
+                  size: 1
+                - contentType: contentType
+                  date: date
+                  downloadID: downloadID
+                  name: name
+                  url: url
+                  size: 1
                 images:
                 - date: date
                   downloadID: downloadID
@@ -3742,39 +3756,39 @@ components:
                 - date: date
                   downloadID: downloadID
                   url: url
-                files:
-                - date: date
-                  size: 1
-                  name: name
-                  downloadID: downloadID
-                  contentType: contentType
-                  url: url
-                - date: date
-                  size: 1
-                  name: name
-                  downloadID: downloadID
-                  contentType: contentType
-                  url: url
-                goodCard:
-                  date: date
-                  priceCurrency: priceCurrency
-                  size: size
-                  price: 6
-                  nmID: 0
-                  rid: rid
               text: text
-          - eventID: eventID
-            replySign: replySign
-            chatID: chatID
-            addTime: addTime
+            source: source
             addTimestamp: 5
+            addTime: addTime
+            replySign: replySign
             sender: client
             clientName: clientName
+          - chatID: chatID
+            eventID: eventID
             eventType: message
             isNewChat: true
-            source: source
             message:
               attachments:
+                goodCard:
+                  date: date
+                  nmID: 0
+                  price: 6
+                  priceCurrency: priceCurrency
+                  rid: rid
+                  size: size
+                files:
+                - contentType: contentType
+                  date: date
+                  downloadID: downloadID
+                  name: name
+                  url: url
+                  size: 1
+                - contentType: contentType
+                  date: date
+                  downloadID: downloadID
+                  name: name
+                  url: url
+                  size: 1
                 images:
                 - date: date
                   downloadID: downloadID
@@ -3782,27 +3796,13 @@ components:
                 - date: date
                   downloadID: downloadID
                   url: url
-                files:
-                - date: date
-                  size: 1
-                  name: name
-                  downloadID: downloadID
-                  contentType: contentType
-                  url: url
-                - date: date
-                  size: 1
-                  name: name
-                  downloadID: downloadID
-                  contentType: contentType
-                  url: url
-                goodCard:
-                  date: date
-                  priceCurrency: priceCurrency
-                  size: size
-                  price: 6
-                  nmID: 0
-                  rid: rid
               text: text
+            source: source
+            addTimestamp: 5
+            addTime: addTime
+            replySign: replySign
+            sender: client
+            clientName: clientName
         errors:
         - errors
         - errors
@@ -3819,22 +3819,36 @@ components:
     EventsResult:
       example:
         next: 0
+        newestEventTime: 2000-01-23T04:56:07.000+00:00
         oldestEventTime: 2000-01-23T04:56:07.000+00:00
         totalEvents: 6
-        newestEventTime: 2000-01-23T04:56:07.000+00:00
         events:
-        - eventID: eventID
-          replySign: replySign
-          chatID: chatID
-          addTime: addTime
-          addTimestamp: 5
-          sender: client
-          clientName: clientName
+        - chatID: chatID
+          eventID: eventID
           eventType: message
           isNewChat: true
-          source: source
           message:
             attachments:
+              goodCard:
+                date: date
+                nmID: 0
+                price: 6
+                priceCurrency: priceCurrency
+                rid: rid
+                size: size
+              files:
+              - contentType: contentType
+                date: date
+                downloadID: downloadID
+                name: name
+                url: url
+                size: 1
+              - contentType: contentType
+                date: date
+                downloadID: downloadID
+                name: name
+                url: url
+                size: 1
               images:
               - date: date
                 downloadID: downloadID
@@ -3842,39 +3856,39 @@ components:
               - date: date
                 downloadID: downloadID
                 url: url
-              files:
-              - date: date
-                size: 1
-                name: name
-                downloadID: downloadID
-                contentType: contentType
-                url: url
-              - date: date
-                size: 1
-                name: name
-                downloadID: downloadID
-                contentType: contentType
-                url: url
-              goodCard:
-                date: date
-                priceCurrency: priceCurrency
-                size: size
-                price: 6
-                nmID: 0
-                rid: rid
             text: text
-        - eventID: eventID
-          replySign: replySign
-          chatID: chatID
-          addTime: addTime
+          source: source
           addTimestamp: 5
+          addTime: addTime
+          replySign: replySign
           sender: client
           clientName: clientName
+        - chatID: chatID
+          eventID: eventID
           eventType: message
           isNewChat: true
-          source: source
           message:
             attachments:
+              goodCard:
+                date: date
+                nmID: 0
+                price: 6
+                priceCurrency: priceCurrency
+                rid: rid
+                size: size
+              files:
+              - contentType: contentType
+                date: date
+                downloadID: downloadID
+                name: name
+                url: url
+                size: 1
+              - contentType: contentType
+                date: date
+                downloadID: downloadID
+                name: name
+                url: url
+                size: 1
               images:
               - date: date
                 downloadID: downloadID
@@ -3882,27 +3896,13 @@ components:
               - date: date
                 downloadID: downloadID
                 url: url
-              files:
-              - date: date
-                size: 1
-                name: name
-                downloadID: downloadID
-                contentType: contentType
-                url: url
-              - date: date
-                size: 1
-                name: name
-                downloadID: downloadID
-                contentType: contentType
-                url: url
-              goodCard:
-                date: date
-                priceCurrency: priceCurrency
-                size: size
-                price: 6
-                nmID: 0
-                rid: rid
             text: text
+          source: source
+          addTimestamp: 5
+          addTime: addTime
+          replySign: replySign
+          sender: client
+          clientName: clientName
       properties:
         next:
           description: Пагинатор. Значение поля необходимо указать в запросе для получения
@@ -4006,15 +4006,15 @@ components:
       type: object
     openapi.PinnedReviewItemResult:
       example:
-        imtId: 256971531
-        pinMethod: subscription
         changeStateAt: 2020-01-01T15:04:05Z
+        imtId: 256971531
         nmId: 177974151
-        feedbackId: DibuRAImknLyiqgzvGcU
         pinId: 1857762
+        pinMethod: subscription
+        pinOn: imt
+        feedbackId: DibuRAImknLyiqgzvGcU
         state: unpinned
         unpinnedCause: sysTariffUnpinned
-        pinOn: imt
       properties:
         changeStateAt:
           description: Дата и время закрепления или открепления
@@ -4168,11 +4168,11 @@ components:
       type: object
     respond.ResultErr:
       example:
-        requestId: requestId
-        origin: origin
         detail: detail
-        title: title
+        origin: origin
+        requestId: requestId
         status: 0
+        title: title
       properties:
         detail:
           description: Детали ошибки
@@ -4204,8 +4204,8 @@ components:
       type: object
     _api_v1_new_feedbacks_questions_get_200_response_data:
       example:
-        hasNewFeedbacks: false
         hasNewQuestions: true
+        hasNewFeedbacks: false
       properties:
         hasNewQuestions:
           description: |
@@ -4224,14 +4224,14 @@ components:
       type: object
     _api_v1_new_feedbacks_questions_get_200_response:
       example:
-        errorText: ""
         data:
-          hasNewFeedbacks: false
           hasNewQuestions: true
+          hasNewFeedbacks: false
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_new_feedbacks_questions_get_200_response_data"
@@ -4291,8 +4291,8 @@ components:
       type: object
     _api_v1_questions_count_unanswered_get_200_response_data:
       example:
-        countUnansweredToday: 0
         countUnanswered: 24
+        countUnansweredToday: 0
       properties:
         countUnanswered:
           description: Количество неотвеченных вопросов
@@ -4305,14 +4305,14 @@ components:
       type: object
     _api_v1_questions_count_unanswered_get_200_response:
       example:
-        errorText: ""
         data:
-          countUnansweredToday: 0
           countUnanswered: 24
+          countUnansweredToday: 0
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_questions_count_unanswered_get_200_response_data"
@@ -4334,12 +4334,12 @@ components:
       type: object
     _api_v1_questions_count_get_200_response:
       example:
-        errorText: ""
         data: 77
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           description: Количество вопросов
@@ -4364,8 +4364,8 @@ components:
     _api_v1_questions_get_200_response_data_questions_inner_answer:
       description: Структура ответа
       example:
-        editable: true
         text: text
+        editable: true
         createDate: 2000-01-23T04:56:07.000+00:00
       nullable: true
       properties:
@@ -4384,12 +4384,12 @@ components:
     _api_v1_questions_get_200_response_data_questions_inner_productDetails:
       description: Информация о товаре
       example:
-        supplierName: supplierName
-        imtId: 5
-        supplierArticle: supplierArticle
-        brandName: brandName
         nmId: 1
+        imtId: 5
         productName: productName
+        supplierArticle: supplierArticle
+        supplierName: supplierName
+        brandName: brandName
       properties:
         nmId:
           description: Артикул WB
@@ -4413,23 +4413,23 @@ components:
       type: object
     _api_v1_questions_get_200_response_data_questions_inner:
       example:
-        createdDate: 2000-01-23T04:56:07.000+00:00
-        answer:
-          editable: true
-          text: text
-          createDate: 2000-01-23T04:56:07.000+00:00
-        isWarned: true
         id: id
         text: text
+        createdDate: 2000-01-23T04:56:07.000+00:00
         state: state
-        wasViewed: true
+        answer:
+          text: text
+          editable: true
+          createDate: 2000-01-23T04:56:07.000+00:00
         productDetails:
-          supplierName: supplierName
-          imtId: 5
-          supplierArticle: supplierArticle
-          brandName: brandName
           nmId: 1
+          imtId: 5
           productName: productName
+          supplierArticle: supplierArticle
+          supplierName: supplierName
+          brandName: brandName
+        wasViewed: true
+        isWarned: true
       properties:
         id:
           description: id вопроса
@@ -4464,42 +4464,42 @@ components:
     _api_v1_questions_get_200_response_data:
       example:
         countUnanswered: 0
-        questions:
-        - createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            createDate: 2000-01-23T04:56:07.000+00:00
-          isWarned: true
-          id: id
-          text: text
-          state: state
-          wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 5
-            supplierArticle: supplierArticle
-            brandName: brandName
-            nmId: 1
-            productName: productName
-        - createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            createDate: 2000-01-23T04:56:07.000+00:00
-          isWarned: true
-          id: id
-          text: text
-          state: state
-          wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 5
-            supplierArticle: supplierArticle
-            brandName: brandName
-            nmId: 1
-            productName: productName
         countArchive: 6
+        questions:
+        - id: id
+          text: text
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          state: state
+          answer:
+            text: text
+            editable: true
+            createDate: 2000-01-23T04:56:07.000+00:00
+          productDetails:
+            nmId: 1
+            imtId: 5
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+          wasViewed: true
+          isWarned: true
+        - id: id
+          text: text
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          state: state
+          answer:
+            text: text
+            editable: true
+            createDate: 2000-01-23T04:56:07.000+00:00
+          productDetails:
+            nmId: 1
+            imtId: 5
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+          wasViewed: true
+          isWarned: true
       properties:
         countUnanswered:
           description: Количество неотвеченных вопросов
@@ -4515,49 +4515,49 @@ components:
       type: object
     _api_v1_questions_get_200_response:
       example:
-        errorText: ""
         data:
           countUnanswered: 0
-          questions:
-          - createdDate: 2000-01-23T04:56:07.000+00:00
-            answer:
-              editable: true
-              text: text
-              createDate: 2000-01-23T04:56:07.000+00:00
-            isWarned: true
-            id: id
-            text: text
-            state: state
-            wasViewed: true
-            productDetails:
-              supplierName: supplierName
-              imtId: 5
-              supplierArticle: supplierArticle
-              brandName: brandName
-              nmId: 1
-              productName: productName
-          - createdDate: 2000-01-23T04:56:07.000+00:00
-            answer:
-              editable: true
-              text: text
-              createDate: 2000-01-23T04:56:07.000+00:00
-            isWarned: true
-            id: id
-            text: text
-            state: state
-            wasViewed: true
-            productDetails:
-              supplierName: supplierName
-              imtId: 5
-              supplierArticle: supplierArticle
-              brandName: brandName
-              nmId: 1
-              productName: productName
           countArchive: 6
+          questions:
+          - id: id
+            text: text
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            state: state
+            answer:
+              text: text
+              editable: true
+              createDate: 2000-01-23T04:56:07.000+00:00
+            productDetails:
+              nmId: 1
+              imtId: 5
+              productName: productName
+              supplierArticle: supplierArticle
+              supplierName: supplierName
+              brandName: brandName
+            wasViewed: true
+            isWarned: true
+          - id: id
+            text: text
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            state: state
+            answer:
+              text: text
+              editable: true
+              createDate: 2000-01-23T04:56:07.000+00:00
+            productDetails:
+              nmId: 1
+              imtId: 5
+              productName: productName
+              supplierArticle: supplierArticle
+              supplierName: supplierName
+              brandName: brandName
+            wasViewed: true
+            isWarned: true
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_questions_get_200_response_data"
@@ -4624,12 +4624,12 @@ components:
       - $ref: "#/components/schemas/_api_v1_questions_patch_request_oneOf_1"
     _api_v1_questions_patch_200_response:
       example:
-        errorText: errorText
         data: "{}"
+        error: true
+        errorText: errorText
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: true
       properties:
         data:
           nullable: true
@@ -4650,8 +4650,8 @@ components:
     _api_v1_question_get_200_response_data_answer:
       description: Ответ
       example:
-        editable: true
         text: text
+        editable: true
         createDate: 2000-01-23T04:56:07.000+00:00
       nullable: true
       properties:
@@ -4670,12 +4670,12 @@ components:
     _api_v1_question_get_200_response_data_productDetails:
       description: Product information
       example:
-        supplierName: supplierName
-        imtId: 6
-        supplierArticle: supplierArticle
-        brandName: brandName
         nmId: 0
+        imtId: 6
         productName: productName
+        supplierArticle: supplierArticle
+        supplierName: supplierName
+        brandName: brandName
       properties:
         nmId:
           description: Артикул WB
@@ -4699,23 +4699,23 @@ components:
       type: object
     _api_v1_question_get_200_response_data:
       example:
-        createdDate: 2000-01-23T04:56:07.000+00:00
-        answer:
-          editable: true
-          text: text
-          createDate: 2000-01-23T04:56:07.000+00:00
-        isWarned: true
         id: id
         text: text
+        createdDate: 2000-01-23T04:56:07.000+00:00
         state: state
-        wasViewed: true
+        answer:
+          text: text
+          editable: true
+          createDate: 2000-01-23T04:56:07.000+00:00
         productDetails:
-          supplierName: supplierName
-          imtId: 6
-          supplierArticle: supplierArticle
-          brandName: brandName
           nmId: 0
+          imtId: 6
           productName: productName
+          supplierArticle: supplierArticle
+          supplierName: supplierName
+          brandName: brandName
+        wasViewed: true
+        isWarned: true
       properties:
         id:
           description: ID вопроса
@@ -4749,29 +4749,29 @@ components:
       type: object
     _api_v1_question_get_200_response:
       example:
-        errorText: ""
         data:
-          createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            createDate: 2000-01-23T04:56:07.000+00:00
-          isWarned: true
           id: id
           text: text
+          createdDate: 2000-01-23T04:56:07.000+00:00
           state: state
-          wasViewed: true
+          answer:
+            text: text
+            editable: true
+            createDate: 2000-01-23T04:56:07.000+00:00
           productDetails:
-            supplierName: supplierName
-            imtId: 6
-            supplierArticle: supplierArticle
-            brandName: brandName
             nmId: 0
+            imtId: 6
             productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+          wasViewed: true
+          isWarned: true
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_question_get_200_response_data"
@@ -4793,8 +4793,8 @@ components:
       type: object
     _api_v1_feedbacks_count_unanswered_get_200_response_data:
       example:
-        countUnansweredToday: 0
         countUnanswered: 1
+        countUnansweredToday: 0
       properties:
         countUnanswered:
           description: Количество необработанных отзывов
@@ -4807,14 +4807,14 @@ components:
       type: object
     _api_v1_feedbacks_count_unanswered_get_200_response:
       example:
-        errorText: ""
         data:
-          countUnansweredToday: 0
           countUnanswered: 1
+          countUnansweredToday: 0
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_feedbacks_count_unanswered_get_200_response_data"
@@ -4836,12 +4836,12 @@ components:
       type: object
     _api_v1_feedbacks_count_get_200_response:
       example:
-        errorText: ""
         data: 724583
+        error: false
+        errorText: ""
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: false
       properties:
         data:
           description: Количество отзывов
@@ -4866,104 +4866,104 @@ components:
     _api_v1_feedbacks_get_200_response_data:
       example:
         countUnanswered: 0
-        feedbacks:
-        - color: color
-          photoLinks:
-          - fullSize: fullSize
-            miniSize: miniSize
-          - fullSize: fullSize
-            miniSize: miniSize
-          orderStatus: orderStatus
-          video:
-            link: link
-            durationSec: 2
-            previewImage: previewImage
-          wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 5
-            supplierArticle: supplierArticle
-            brandName: brandName
-            size: size
-            nmId: 5
-            productName: productName
-          subjectId: 2
-          pros: pros
-          lastOrderCreatedAt: lastOrderCreatedAt
-          id: id
-          text: text
-          state: state
-          cons: cons
-          subjectName: subjectName
-          isAbleSupplierFeedbackValuation: true
-          matchingSize: matchingSize
-          lastOrderShkId: 3
-          childFeedbackId: childFeedbackId
-          supplierProductValuation: 9
-          userName: userName
-          isAbleReturnProductOrders: true
-          returnProductOrdersDate: returnProductOrdersDate
-          parentFeedbackId: parentFeedbackId
-          createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            state: state
-          isAbleSupplierProductValuation: true
-          bables:
-          - bables
-          - bables
-          supplierFeedbackValuation: 7
-          productValuation: 1
-        - color: color
-          photoLinks:
-          - fullSize: fullSize
-            miniSize: miniSize
-          - fullSize: fullSize
-            miniSize: miniSize
-          orderStatus: orderStatus
-          video:
-            link: link
-            durationSec: 2
-            previewImage: previewImage
-          wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 5
-            supplierArticle: supplierArticle
-            brandName: brandName
-            size: size
-            nmId: 5
-            productName: productName
-          subjectId: 2
-          pros: pros
-          lastOrderCreatedAt: lastOrderCreatedAt
-          id: id
-          text: text
-          state: state
-          cons: cons
-          subjectName: subjectName
-          isAbleSupplierFeedbackValuation: true
-          matchingSize: matchingSize
-          lastOrderShkId: 3
-          childFeedbackId: childFeedbackId
-          supplierProductValuation: 9
-          userName: userName
-          isAbleReturnProductOrders: true
-          returnProductOrdersDate: returnProductOrdersDate
-          parentFeedbackId: parentFeedbackId
-          createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            state: state
-          isAbleSupplierProductValuation: true
-          bables:
-          - bables
-          - bables
-          supplierFeedbackValuation: 7
-          productValuation: 1
         countArchive: 6
+        feedbacks:
+        - id: id
+          text: text
+          pros: pros
+          cons: cons
+          productValuation: 1
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          answer:
+            text: text
+            state: state
+            editable: true
+          state: state
+          productDetails:
+            nmId: 5
+            imtId: 5
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+            size: size
+          photoLinks:
+          - fullSize: fullSize
+            miniSize: miniSize
+          - fullSize: fullSize
+            miniSize: miniSize
+          video:
+            previewImage: previewImage
+            link: link
+            durationSec: 2
+          wasViewed: true
+          userName: userName
+          orderStatus: orderStatus
+          matchingSize: matchingSize
+          isAbleSupplierFeedbackValuation: true
+          supplierFeedbackValuation: 7
+          isAbleSupplierProductValuation: true
+          supplierProductValuation: 9
+          isAbleReturnProductOrders: true
+          returnProductOrdersDate: returnProductOrdersDate
+          bables:
+          - bables
+          - bables
+          lastOrderShkId: 3
+          lastOrderCreatedAt: lastOrderCreatedAt
+          color: color
+          subjectId: 2
+          subjectName: subjectName
+          parentFeedbackId: parentFeedbackId
+          childFeedbackId: childFeedbackId
+        - id: id
+          text: text
+          pros: pros
+          cons: cons
+          productValuation: 1
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          answer:
+            text: text
+            state: state
+            editable: true
+          state: state
+          productDetails:
+            nmId: 5
+            imtId: 5
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+            size: size
+          photoLinks:
+          - fullSize: fullSize
+            miniSize: miniSize
+          - fullSize: fullSize
+            miniSize: miniSize
+          video:
+            previewImage: previewImage
+            link: link
+            durationSec: 2
+          wasViewed: true
+          userName: userName
+          orderStatus: orderStatus
+          matchingSize: matchingSize
+          isAbleSupplierFeedbackValuation: true
+          supplierFeedbackValuation: 7
+          isAbleSupplierProductValuation: true
+          supplierProductValuation: 9
+          isAbleReturnProductOrders: true
+          returnProductOrdersDate: returnProductOrdersDate
+          bables:
+          - bables
+          - bables
+          lastOrderShkId: 3
+          lastOrderCreatedAt: lastOrderCreatedAt
+          color: color
+          subjectId: 2
+          subjectName: subjectName
+          parentFeedbackId: parentFeedbackId
+          childFeedbackId: childFeedbackId
       properties:
         countUnanswered:
           description: Количество необработанных отзывов
@@ -4979,111 +4979,111 @@ components:
       type: object
     _api_v1_feedbacks_get_200_response:
       example:
-        errorText: errorText
         data:
           countUnanswered: 0
-          feedbacks:
-          - color: color
-            photoLinks:
-            - fullSize: fullSize
-              miniSize: miniSize
-            - fullSize: fullSize
-              miniSize: miniSize
-            orderStatus: orderStatus
-            video:
-              link: link
-              durationSec: 2
-              previewImage: previewImage
-            wasViewed: true
-            productDetails:
-              supplierName: supplierName
-              imtId: 5
-              supplierArticle: supplierArticle
-              brandName: brandName
-              size: size
-              nmId: 5
-              productName: productName
-            subjectId: 2
-            pros: pros
-            lastOrderCreatedAt: lastOrderCreatedAt
-            id: id
-            text: text
-            state: state
-            cons: cons
-            subjectName: subjectName
-            isAbleSupplierFeedbackValuation: true
-            matchingSize: matchingSize
-            lastOrderShkId: 3
-            childFeedbackId: childFeedbackId
-            supplierProductValuation: 9
-            userName: userName
-            isAbleReturnProductOrders: true
-            returnProductOrdersDate: returnProductOrdersDate
-            parentFeedbackId: parentFeedbackId
-            createdDate: 2000-01-23T04:56:07.000+00:00
-            answer:
-              editable: true
-              text: text
-              state: state
-            isAbleSupplierProductValuation: true
-            bables:
-            - bables
-            - bables
-            supplierFeedbackValuation: 7
-            productValuation: 1
-          - color: color
-            photoLinks:
-            - fullSize: fullSize
-              miniSize: miniSize
-            - fullSize: fullSize
-              miniSize: miniSize
-            orderStatus: orderStatus
-            video:
-              link: link
-              durationSec: 2
-              previewImage: previewImage
-            wasViewed: true
-            productDetails:
-              supplierName: supplierName
-              imtId: 5
-              supplierArticle: supplierArticle
-              brandName: brandName
-              size: size
-              nmId: 5
-              productName: productName
-            subjectId: 2
-            pros: pros
-            lastOrderCreatedAt: lastOrderCreatedAt
-            id: id
-            text: text
-            state: state
-            cons: cons
-            subjectName: subjectName
-            isAbleSupplierFeedbackValuation: true
-            matchingSize: matchingSize
-            lastOrderShkId: 3
-            childFeedbackId: childFeedbackId
-            supplierProductValuation: 9
-            userName: userName
-            isAbleReturnProductOrders: true
-            returnProductOrdersDate: returnProductOrdersDate
-            parentFeedbackId: parentFeedbackId
-            createdDate: 2000-01-23T04:56:07.000+00:00
-            answer:
-              editable: true
-              text: text
-              state: state
-            isAbleSupplierProductValuation: true
-            bables:
-            - bables
-            - bables
-            supplierFeedbackValuation: 7
-            productValuation: 1
           countArchive: 6
+          feedbacks:
+          - id: id
+            text: text
+            pros: pros
+            cons: cons
+            productValuation: 1
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            answer:
+              text: text
+              state: state
+              editable: true
+            state: state
+            productDetails:
+              nmId: 5
+              imtId: 5
+              productName: productName
+              supplierArticle: supplierArticle
+              supplierName: supplierName
+              brandName: brandName
+              size: size
+            photoLinks:
+            - fullSize: fullSize
+              miniSize: miniSize
+            - fullSize: fullSize
+              miniSize: miniSize
+            video:
+              previewImage: previewImage
+              link: link
+              durationSec: 2
+            wasViewed: true
+            userName: userName
+            orderStatus: orderStatus
+            matchingSize: matchingSize
+            isAbleSupplierFeedbackValuation: true
+            supplierFeedbackValuation: 7
+            isAbleSupplierProductValuation: true
+            supplierProductValuation: 9
+            isAbleReturnProductOrders: true
+            returnProductOrdersDate: returnProductOrdersDate
+            bables:
+            - bables
+            - bables
+            lastOrderShkId: 3
+            lastOrderCreatedAt: lastOrderCreatedAt
+            color: color
+            subjectId: 2
+            subjectName: subjectName
+            parentFeedbackId: parentFeedbackId
+            childFeedbackId: childFeedbackId
+          - id: id
+            text: text
+            pros: pros
+            cons: cons
+            productValuation: 1
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            answer:
+              text: text
+              state: state
+              editable: true
+            state: state
+            productDetails:
+              nmId: 5
+              imtId: 5
+              productName: productName
+              supplierArticle: supplierArticle
+              supplierName: supplierName
+              brandName: brandName
+              size: size
+            photoLinks:
+            - fullSize: fullSize
+              miniSize: miniSize
+            - fullSize: fullSize
+              miniSize: miniSize
+            video:
+              previewImage: previewImage
+              link: link
+              durationSec: 2
+            wasViewed: true
+            userName: userName
+            orderStatus: orderStatus
+            matchingSize: matchingSize
+            isAbleSupplierFeedbackValuation: true
+            supplierFeedbackValuation: 7
+            isAbleSupplierProductValuation: true
+            supplierProductValuation: 9
+            isAbleReturnProductOrders: true
+            returnProductOrdersDate: returnProductOrdersDate
+            bables:
+            - bables
+            - bables
+            lastOrderShkId: 3
+            lastOrderCreatedAt: lastOrderCreatedAt
+            color: color
+            subjectId: 2
+            subjectName: subjectName
+            parentFeedbackId: parentFeedbackId
+            childFeedbackId: childFeedbackId
+        error: true
+        errorText: errorText
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: true
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_feedbacks_get_200_response_data"
@@ -5141,9 +5141,9 @@ components:
     _api_v1_feedback_get_200_response_data_answer:
       description: Структура ответа
       example:
-        editable: true
         text: text
         state: state
+        editable: true
       nullable: true
       properties:
         text:
@@ -5167,13 +5167,13 @@ components:
     _api_v1_feedback_get_200_response_data_productDetails:
       description: Product information
       example:
-        supplierName: supplierName
+        nmId: 6
         imtId: 1
+        productName: productName
         supplierArticle: supplierArticle
+        supplierName: supplierName
         brandName: brandName
         size: size
-        nmId: 6
-        productName: productName
       properties:
         nmId:
           description: Артикул WB
@@ -5216,9 +5216,9 @@ components:
     _api_v1_feedback_get_200_response_data_video:
       description: Структура видео
       example:
+        previewImage: previewImage
         link: link
         durationSec: 5
-        previewImage: previewImage
       nullable: true
       properties:
         previewImage:
@@ -5233,54 +5233,54 @@ components:
       type: object
     _api_v1_feedback_get_200_response_data:
       example:
-        color: color
+        id: id
+        text: text
+        pros: pros
+        cons: cons
+        matchingSize: matchingSize
+        productValuation: 0
+        createdDate: 2000-01-23T04:56:07.000+00:00
+        answer:
+          text: text
+          state: state
+          editable: true
+        state: state
+        productDetails:
+          nmId: 6
+          imtId: 1
+          productName: productName
+          supplierArticle: supplierArticle
+          supplierName: supplierName
+          brandName: brandName
+          size: size
         photoLinks:
         - fullSize: fullSize
           miniSize: miniSize
         - fullSize: fullSize
           miniSize: miniSize
+        userName: userName
         orderStatus: orderStatus
         video:
+          previewImage: previewImage
           link: link
           durationSec: 5
-          previewImage: previewImage
         wasViewed: true
-        productDetails:
-          supplierName: supplierName
-          imtId: 1
-          supplierArticle: supplierArticle
-          brandName: brandName
-          size: size
-          nmId: 6
-          productName: productName
-        subjectId: 9
-        pros: pros
-        lastOrderCreatedAt: lastOrderCreatedAt
-        id: id
-        text: text
-        state: state
-        cons: cons
-        subjectName: subjectName
         isAbleSupplierFeedbackValuation: true
-        matchingSize: matchingSize
-        lastOrderShkId: 7
-        childFeedbackId: childFeedbackId
+        supplierFeedbackValuation: 5
+        isAbleSupplierProductValuation: true
         supplierProductValuation: 2
-        userName: userName
         isAbleReturnProductOrders: true
         returnProductOrdersDate: returnProductOrdersDate
-        parentFeedbackId: parentFeedbackId
-        createdDate: 2000-01-23T04:56:07.000+00:00
-        answer:
-          editable: true
-          text: text
-          state: state
-        isAbleSupplierProductValuation: true
         bables:
         - bables
         - bables
-        supplierFeedbackValuation: 5
-        productValuation: 0
+        lastOrderShkId: 7
+        lastOrderCreatedAt: lastOrderCreatedAt
+        color: color
+        subjectId: 9
+        subjectName: subjectName
+        parentFeedbackId: parentFeedbackId
+        childFeedbackId: childFeedbackId
       properties:
         id:
           description: ID отзыва
@@ -5408,60 +5408,60 @@ components:
       type: object
     _api_v1_feedback_get_200_response:
       example:
-        errorText: errorText
         data:
-          color: color
+          id: id
+          text: text
+          pros: pros
+          cons: cons
+          matchingSize: matchingSize
+          productValuation: 0
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          answer:
+            text: text
+            state: state
+            editable: true
+          state: state
+          productDetails:
+            nmId: 6
+            imtId: 1
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+            size: size
           photoLinks:
           - fullSize: fullSize
             miniSize: miniSize
           - fullSize: fullSize
             miniSize: miniSize
+          userName: userName
           orderStatus: orderStatus
           video:
+            previewImage: previewImage
             link: link
             durationSec: 5
-            previewImage: previewImage
           wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 1
-            supplierArticle: supplierArticle
-            brandName: brandName
-            size: size
-            nmId: 6
-            productName: productName
-          subjectId: 9
-          pros: pros
-          lastOrderCreatedAt: lastOrderCreatedAt
-          id: id
-          text: text
-          state: state
-          cons: cons
-          subjectName: subjectName
           isAbleSupplierFeedbackValuation: true
-          matchingSize: matchingSize
-          lastOrderShkId: 7
-          childFeedbackId: childFeedbackId
+          supplierFeedbackValuation: 5
+          isAbleSupplierProductValuation: true
           supplierProductValuation: 2
-          userName: userName
           isAbleReturnProductOrders: true
           returnProductOrdersDate: returnProductOrdersDate
-          parentFeedbackId: parentFeedbackId
-          createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            state: state
-          isAbleSupplierProductValuation: true
           bables:
           - bables
           - bables
-          supplierFeedbackValuation: 5
-          productValuation: 0
+          lastOrderShkId: 7
+          lastOrderCreatedAt: lastOrderCreatedAt
+          color: color
+          subjectId: 9
+          subjectName: subjectName
+          parentFeedbackId: parentFeedbackId
+          childFeedbackId: childFeedbackId
+        error: true
+        errorText: errorText
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: true
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_feedback_get_200_response_data"
@@ -5481,102 +5481,102 @@ components:
     _api_v1_feedbacks_archive_get_200_response_data:
       example:
         feedbacks:
-        - color: color
+        - id: id
+          text: text
+          pros: pros
+          cons: cons
+          productValuation: 1
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          answer:
+            text: text
+            state: state
+            editable: true
+          state: state
+          productDetails:
+            nmId: 5
+            imtId: 5
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+            size: size
           photoLinks:
           - fullSize: fullSize
             miniSize: miniSize
           - fullSize: fullSize
             miniSize: miniSize
-          orderStatus: orderStatus
           video:
+            previewImage: previewImage
             link: link
             durationSec: 2
-            previewImage: previewImage
           wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 5
-            supplierArticle: supplierArticle
-            brandName: brandName
-            size: size
-            nmId: 5
-            productName: productName
-          subjectId: 2
-          pros: pros
-          lastOrderCreatedAt: lastOrderCreatedAt
-          id: id
-          text: text
-          state: state
-          cons: cons
-          subjectName: subjectName
-          isAbleSupplierFeedbackValuation: true
-          matchingSize: matchingSize
-          lastOrderShkId: 3
-          childFeedbackId: childFeedbackId
-          supplierProductValuation: 9
           userName: userName
+          orderStatus: orderStatus
+          matchingSize: matchingSize
+          isAbleSupplierFeedbackValuation: true
+          supplierFeedbackValuation: 7
+          isAbleSupplierProductValuation: true
+          supplierProductValuation: 9
           isAbleReturnProductOrders: true
           returnProductOrdersDate: returnProductOrdersDate
-          parentFeedbackId: parentFeedbackId
-          createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            state: state
-          isAbleSupplierProductValuation: true
           bables:
           - bables
           - bables
-          supplierFeedbackValuation: 7
+          lastOrderShkId: 3
+          lastOrderCreatedAt: lastOrderCreatedAt
+          color: color
+          subjectId: 2
+          subjectName: subjectName
+          parentFeedbackId: parentFeedbackId
+          childFeedbackId: childFeedbackId
+        - id: id
+          text: text
+          pros: pros
+          cons: cons
           productValuation: 1
-        - color: color
+          createdDate: 2000-01-23T04:56:07.000+00:00
+          answer:
+            text: text
+            state: state
+            editable: true
+          state: state
+          productDetails:
+            nmId: 5
+            imtId: 5
+            productName: productName
+            supplierArticle: supplierArticle
+            supplierName: supplierName
+            brandName: brandName
+            size: size
           photoLinks:
           - fullSize: fullSize
             miniSize: miniSize
           - fullSize: fullSize
             miniSize: miniSize
-          orderStatus: orderStatus
           video:
+            previewImage: previewImage
             link: link
             durationSec: 2
-            previewImage: previewImage
           wasViewed: true
-          productDetails:
-            supplierName: supplierName
-            imtId: 5
-            supplierArticle: supplierArticle
-            brandName: brandName
-            size: size
-            nmId: 5
-            productName: productName
-          subjectId: 2
-          pros: pros
-          lastOrderCreatedAt: lastOrderCreatedAt
-          id: id
-          text: text
-          state: state
-          cons: cons
-          subjectName: subjectName
-          isAbleSupplierFeedbackValuation: true
-          matchingSize: matchingSize
-          lastOrderShkId: 3
-          childFeedbackId: childFeedbackId
-          supplierProductValuation: 9
           userName: userName
+          orderStatus: orderStatus
+          matchingSize: matchingSize
+          isAbleSupplierFeedbackValuation: true
+          supplierFeedbackValuation: 7
+          isAbleSupplierProductValuation: true
+          supplierProductValuation: 9
           isAbleReturnProductOrders: true
           returnProductOrdersDate: returnProductOrdersDate
-          parentFeedbackId: parentFeedbackId
-          createdDate: 2000-01-23T04:56:07.000+00:00
-          answer:
-            editable: true
-            text: text
-            state: state
-          isAbleSupplierProductValuation: true
           bables:
           - bables
           - bables
-          supplierFeedbackValuation: 7
-          productValuation: 1
+          lastOrderShkId: 3
+          lastOrderCreatedAt: lastOrderCreatedAt
+          color: color
+          subjectId: 2
+          subjectName: subjectName
+          parentFeedbackId: parentFeedbackId
+          childFeedbackId: childFeedbackId
       properties:
         feedbacks:
           description: Массив отзывов
@@ -5586,109 +5586,109 @@ components:
       type: object
     _api_v1_feedbacks_archive_get_200_response:
       example:
-        errorText: errorText
         data:
           feedbacks:
-          - color: color
+          - id: id
+            text: text
+            pros: pros
+            cons: cons
+            productValuation: 1
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            answer:
+              text: text
+              state: state
+              editable: true
+            state: state
+            productDetails:
+              nmId: 5
+              imtId: 5
+              productName: productName
+              supplierArticle: supplierArticle
+              supplierName: supplierName
+              brandName: brandName
+              size: size
             photoLinks:
             - fullSize: fullSize
               miniSize: miniSize
             - fullSize: fullSize
               miniSize: miniSize
-            orderStatus: orderStatus
             video:
+              previewImage: previewImage
               link: link
               durationSec: 2
-              previewImage: previewImage
             wasViewed: true
-            productDetails:
-              supplierName: supplierName
-              imtId: 5
-              supplierArticle: supplierArticle
-              brandName: brandName
-              size: size
-              nmId: 5
-              productName: productName
-            subjectId: 2
-            pros: pros
-            lastOrderCreatedAt: lastOrderCreatedAt
-            id: id
-            text: text
-            state: state
-            cons: cons
-            subjectName: subjectName
-            isAbleSupplierFeedbackValuation: true
-            matchingSize: matchingSize
-            lastOrderShkId: 3
-            childFeedbackId: childFeedbackId
-            supplierProductValuation: 9
             userName: userName
+            orderStatus: orderStatus
+            matchingSize: matchingSize
+            isAbleSupplierFeedbackValuation: true
+            supplierFeedbackValuation: 7
+            isAbleSupplierProductValuation: true
+            supplierProductValuation: 9
             isAbleReturnProductOrders: true
             returnProductOrdersDate: returnProductOrdersDate
-            parentFeedbackId: parentFeedbackId
-            createdDate: 2000-01-23T04:56:07.000+00:00
-            answer:
-              editable: true
-              text: text
-              state: state
-            isAbleSupplierProductValuation: true
             bables:
             - bables
             - bables
-            supplierFeedbackValuation: 7
+            lastOrderShkId: 3
+            lastOrderCreatedAt: lastOrderCreatedAt
+            color: color
+            subjectId: 2
+            subjectName: subjectName
+            parentFeedbackId: parentFeedbackId
+            childFeedbackId: childFeedbackId
+          - id: id
+            text: text
+            pros: pros
+            cons: cons
             productValuation: 1
-          - color: color
+            createdDate: 2000-01-23T04:56:07.000+00:00
+            answer:
+              text: text
+              state: state
+              editable: true
+            state: state
+            productDetails:
+              nmId: 5
+              imtId: 5
+              productName: productName
+              supplierArticle: supplierArticle
+              supplierName: supplierName
+              brandName: brandName
+              size: size
             photoLinks:
             - fullSize: fullSize
               miniSize: miniSize
             - fullSize: fullSize
               miniSize: miniSize
-            orderStatus: orderStatus
             video:
+              previewImage: previewImage
               link: link
               durationSec: 2
-              previewImage: previewImage
             wasViewed: true
-            productDetails:
-              supplierName: supplierName
-              imtId: 5
-              supplierArticle: supplierArticle
-              brandName: brandName
-              size: size
-              nmId: 5
-              productName: productName
-            subjectId: 2
-            pros: pros
-            lastOrderCreatedAt: lastOrderCreatedAt
-            id: id
-            text: text
-            state: state
-            cons: cons
-            subjectName: subjectName
-            isAbleSupplierFeedbackValuation: true
-            matchingSize: matchingSize
-            lastOrderShkId: 3
-            childFeedbackId: childFeedbackId
-            supplierProductValuation: 9
             userName: userName
+            orderStatus: orderStatus
+            matchingSize: matchingSize
+            isAbleSupplierFeedbackValuation: true
+            supplierFeedbackValuation: 7
+            isAbleSupplierProductValuation: true
+            supplierProductValuation: 9
             isAbleReturnProductOrders: true
             returnProductOrdersDate: returnProductOrdersDate
-            parentFeedbackId: parentFeedbackId
-            createdDate: 2000-01-23T04:56:07.000+00:00
-            answer:
-              editable: true
-              text: text
-              state: state
-            isAbleSupplierProductValuation: true
             bables:
             - bables
             - bables
-            supplierFeedbackValuation: 7
-            productValuation: 1
+            lastOrderShkId: 3
+            lastOrderCreatedAt: lastOrderCreatedAt
+            color: color
+            subjectId: 2
+            subjectName: subjectName
+            parentFeedbackId: parentFeedbackId
+            childFeedbackId: childFeedbackId
+        error: true
+        errorText: errorText
         additionalErrors:
         - additionalErrors
         - additionalErrors
-        error: true
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_feedbacks_archive_get_200_response_data"
@@ -5721,54 +5721,54 @@ components:
             type: integer
         type: object
       example:
-        next: 200
         data:
-        - imtId: 256971531
-          pinMethod: subscription
-          changeStateAt: 2020-01-01T15:04:05Z
+        - changeStateAt: 2020-01-01T15:04:05Z
+          imtId: 256971531
           nmId: 177974151
-          feedbackId: DibuRAImknLyiqgzvGcU
           pinId: 1857762
+          pinMethod: subscription
+          pinOn: imt
+          feedbackId: DibuRAImknLyiqgzvGcU
           state: unpinned
           unpinnedCause: sysTariffUnpinned
-          pinOn: imt
-        - imtId: 256971531
-          pinMethod: subscription
-          changeStateAt: 2020-01-01T15:04:05Z
+        - changeStateAt: 2020-01-01T15:04:05Z
+          imtId: 256971531
           nmId: 177974151
-          feedbackId: DibuRAImknLyiqgzvGcU
           pinId: 1857762
+          pinMethod: subscription
+          pinOn: imt
+          feedbackId: DibuRAImknLyiqgzvGcU
           state: unpinned
           unpinnedCause: sysTariffUnpinned
-          pinOn: imt
+        next: 200
     _api_feedbacks_v1_pins_post_200_response:
       allOf:
       - $ref: "#/components/schemas/respond.SuccessResponse"
       - $ref: "#/components/schemas/openapi.PinReviewItemResult"
       example:
         data:
-        - pinMethod: tariff
-          isErrors: true
-          feedbackId: feedbackId
+        - feedbackId: feedbackId
           pinId: 0
+          pinMethod: tariff
+          pinOn: nm
+          isErrors: true
           errors:
           - status: itemNotFound
             title: item not found
             detail: item not found or does not belong to seller
             requestId: 0414dс48df701618e0а3bfc414fe3136
             origin: pin-open-api
-          pinOn: nm
-        - pinMethod: tariff
-          isErrors: true
-          feedbackId: feedbackId
+        - feedbackId: feedbackId
           pinId: 0
+          pinMethod: tariff
+          pinOn: nm
+          isErrors: true
           errors:
           - status: itemNotFound
             title: item not found
             detail: item not found or does not belong to seller
             requestId: 0414dс48df701618e0а3bfc414fe3136
             origin: pin-open-api
-          pinOn: nm
     _api_feedbacks_v1_pins_delete_200_response:
       allOf:
       - $ref: "#/components/schemas/respond.SuccessResponse"
@@ -5805,16 +5805,16 @@ components:
       - $ref: "#/components/schemas/openapi.SellerLimitsResponse"
       example:
         data:
-          tariff: "{}"
           subscription: "{}"
+          tariff: "{}"
     _api_v1_seller_events_get_400_response:
       example:
-        requestId: requestId
+        status: 5.637376656633329
+        title: title
         origin: origin
         detail: detail
-        title: title
+        requestId: requestId
         error: error
-        status: 5.637376656633329
       properties:
         status:
           description: HTTP статус-код
@@ -5858,8 +5858,8 @@ components:
       type: object
     _api_v1_seller_download__id__get_202_response:
       example:
-        retrySeconds: 30
         moderationState: pending
+        retrySeconds: 30
       properties:
         moderationState:
           description: Статус модерации
@@ -6089,9 +6089,9 @@ components:
       type: object
     _api_v1_claim_patch_400_response:
       example:
-        requestId: 0HN3PI6JUGFSL:00000004
-        detail: "Input model is not valid; Details: The Action field is required."
         title: Validation error
+        detail: "Input model is not valid; Details: The Action field is required."
+        requestId: 0HN3PI6JUGFSL:00000004
       properties:
         title:
           description: ID ошибки
@@ -6109,9 +6109,9 @@ components:
     responseFeedback_inner_answer:
       description: Структура ответа
       example:
-        editable: true
         text: text
         state: state
+        editable: true
       nullable: true
       properties:
         text:
@@ -6135,13 +6135,13 @@ components:
     responseFeedback_inner_productDetails:
       description: Информация о товаре
       example:
-        supplierName: supplierName
+        nmId: 5
         imtId: 5
+        productName: productName
         supplierArticle: supplierArticle
+        supplierName: supplierName
         brandName: brandName
         size: size
-        nmId: 5
-        productName: productName
       properties:
         nmId:
           description: Артикул WB
@@ -6172,9 +6172,9 @@ components:
     responseFeedback_inner_video:
       description: Структура видео
       example:
+        previewImage: previewImage
         link: link
         durationSec: 2
-        previewImage: previewImage
       nullable: true
       properties:
         previewImage:
@@ -6189,54 +6189,54 @@ components:
       type: object
     responseFeedback_inner:
       example:
-        color: color
+        id: id
+        text: text
+        pros: pros
+        cons: cons
+        productValuation: 1
+        createdDate: 2000-01-23T04:56:07.000+00:00
+        answer:
+          text: text
+          state: state
+          editable: true
+        state: state
+        productDetails:
+          nmId: 5
+          imtId: 5
+          productName: productName
+          supplierArticle: supplierArticle
+          supplierName: supplierName
+          brandName: brandName
+          size: size
         photoLinks:
         - fullSize: fullSize
           miniSize: miniSize
         - fullSize: fullSize
           miniSize: miniSize
-        orderStatus: orderStatus
         video:
+          previewImage: previewImage
           link: link
           durationSec: 2
-          previewImage: previewImage
         wasViewed: true
-        productDetails:
-          supplierName: supplierName
-          imtId: 5
-          supplierArticle: supplierArticle
-          brandName: brandName
-          size: size
-          nmId: 5
-          productName: productName
-        subjectId: 2
-        pros: pros
-        lastOrderCreatedAt: lastOrderCreatedAt
-        id: id
-        text: text
-        state: state
-        cons: cons
-        subjectName: subjectName
-        isAbleSupplierFeedbackValuation: true
-        matchingSize: matchingSize
-        lastOrderShkId: 3
-        childFeedbackId: childFeedbackId
-        supplierProductValuation: 9
         userName: userName
+        orderStatus: orderStatus
+        matchingSize: matchingSize
+        isAbleSupplierFeedbackValuation: true
+        supplierFeedbackValuation: 7
+        isAbleSupplierProductValuation: true
+        supplierProductValuation: 9
         isAbleReturnProductOrders: true
         returnProductOrdersDate: returnProductOrdersDate
-        parentFeedbackId: parentFeedbackId
-        createdDate: 2000-01-23T04:56:07.000+00:00
-        answer:
-          editable: true
-          text: text
-          state: state
-        isAbleSupplierProductValuation: true
         bables:
         - bables
         - bables
-        supplierFeedbackValuation: 7
-        productValuation: 1
+        lastOrderShkId: 3
+        lastOrderCreatedAt: lastOrderCreatedAt
+        color: color
+        subjectId: 2
+        subjectName: subjectName
+        parentFeedbackId: parentFeedbackId
+        childFeedbackId: childFeedbackId
       properties:
         id:
           description: ID отзыва
@@ -6366,6 +6366,26 @@ components:
       description: Данные сообщения
       example:
         attachments:
+          goodCard:
+            date: date
+            nmID: 0
+            price: 6
+            priceCurrency: priceCurrency
+            rid: rid
+            size: size
+          files:
+          - contentType: contentType
+            date: date
+            downloadID: downloadID
+            name: name
+            url: url
+            size: 1
+          - contentType: contentType
+            date: date
+            downloadID: downloadID
+            name: name
+            url: url
+            size: 1
           images:
           - date: date
             downloadID: downloadID
@@ -6373,26 +6393,6 @@ components:
           - date: date
             downloadID: downloadID
             url: url
-          files:
-          - date: date
-            size: 1
-            name: name
-            downloadID: downloadID
-            contentType: contentType
-            url: url
-          - date: date
-            size: 1
-            name: name
-            downloadID: downloadID
-            contentType: contentType
-            url: url
-          goodCard:
-            date: date
-            priceCurrency: priceCurrency
-            size: size
-            price: 6
-            nmID: 0
-            rid: rid
         text: text
       properties:
         attachments:
@@ -6420,17 +6420,17 @@ components:
       type: object
     openapi_PinReviewItemResult_data_inner:
       example:
-        pinMethod: tariff
-        isErrors: true
         feedbackId: feedbackId
         pinId: 0
+        pinMethod: tariff
+        pinOn: nm
+        isErrors: true
         errors:
         - status: itemNotFound
           title: item not found
           detail: item not found or does not belong to seller
           requestId: 0414dс48df701618e0а3bfc414fe3136
           origin: pin-open-api
-        pinOn: nm
       properties:
         feedbackId:
           description: ID отзыва
@@ -6479,8 +6479,8 @@ components:
       type: object
     openapi_SellerLimitsResponse_data:
       example:
-        tariff: "{}"
         subscription: "{}"
+        tariff: "{}"
       properties:
         subscription:
           allOf:

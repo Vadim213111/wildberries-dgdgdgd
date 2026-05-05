@@ -29,7 +29,7 @@ class ContentV2DirectoryTnvedGet200Response(BaseModel):
     ContentV2DirectoryTnvedGet200Response
     """ # noqa: E501
     data: Optional[List[ContentV2DirectoryTnvedGet200ResponseDataInner]] = Field(default=None, description="Данные")
-    error: Optional[StrictBool] = Field(default=None, description="Флаг наличия ошибки")
+    error: Optional[StrictBool] = Field(default=None, description="Флаг наличия ошибки", json_schema_extra={"examples": [False]})
     error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText")
     additional_errors: Optional[StrictStr] = Field(default=None, description="Дополнительные ошибки", alias="additionalErrors")
     __properties: ClassVar[List[str]] = ["data", "error", "errorText", "additionalErrors"]

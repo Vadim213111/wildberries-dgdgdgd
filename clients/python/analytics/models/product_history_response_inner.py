@@ -31,7 +31,7 @@ class ProductHistoryResponseInner(BaseModel):
     """ # noqa: E501
     product: ProductHistoryResponseInnerProduct
     history: List[History] = Field(description="Статистика за период")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["product", "history", "currency"]
 
     model_config = ConfigDict(

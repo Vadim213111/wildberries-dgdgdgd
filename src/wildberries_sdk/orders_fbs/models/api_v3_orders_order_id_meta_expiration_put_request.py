@@ -27,7 +27,7 @@ class ApiV3OrdersOrderIdMetaExpirationPutRequest(BaseModel):
     """
     ApiV3OrdersOrderIdMetaExpirationPutRequest
     """ # noqa: E501
-    expiration: Optional[StrictStr] = Field(default=None, description="Дата, до которой годен товар. Не менее 30 дней с текущей даты")
+    expiration: Optional[StrictStr] = Field(default=None, description="Дата, до которой годен товар. Не менее 30 дней с текущей даты", json_schema_extra={"examples": ["12.09.2030"]})
     __properties: ClassVar[List[str]] = ["expiration"]
 
     model_config = ConfigDict(

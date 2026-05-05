@@ -28,12 +28,12 @@ class ApiOrderMetaV2(BaseModel):
     """
     ApiOrderMetaV2
     """ # noqa: E501
-    error: Optional[StrictStr] = Field(default=None, description="Сообщение об ошибке. <br> Если `error: not found`, сборочное задание не найдено ")
-    gtin: Optional[StrictStr] = Field(default=None, description="GTIN")
-    imei: Optional[StrictStr] = Field(default=None, description="IMEI")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
+    error: Optional[StrictStr] = Field(default=None, description="Сообщение об ошибке. <br> Если `error: not found`, сборочное задание не найдено ", json_schema_extra={"examples": [""]})
+    gtin: Optional[StrictStr] = Field(default=None, description="GTIN", json_schema_extra={"examples": ["123456789012345"]})
+    imei: Optional[StrictStr] = Field(default=None, description="IMEI", json_schema_extra={"examples": ["123456789012345"]})
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [654321]})
     sgtin: Optional[List[StrictStr]] = Field(default=None, description="Код маркировки [Честного знака](https://честныйзнак.рф/)")
-    uin: Optional[StrictStr] = Field(default=None, description="УИН")
+    uin: Optional[StrictStr] = Field(default=None, description="УИН", json_schema_extra={"examples": ["123456789012345"]})
     customs_declaration: Optional[ApiOrderMetaV2CustomsDeclaration] = Field(default=None, alias="customsDeclaration")
     __properties: ClassVar[List[str]] = ["error", "gtin", "imei", "orderId", "sgtin", "uin", "customsDeclaration"]
 

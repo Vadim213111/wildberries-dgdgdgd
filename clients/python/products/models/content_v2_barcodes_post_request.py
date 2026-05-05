@@ -27,7 +27,7 @@ class ContentV2BarcodesPostRequest(BaseModel):
     """
     ContentV2BarcodesPostRequest
     """ # noqa: E501
-    count: Optional[StrictInt] = Field(default=None, description="Кол-во баркодов которые надо сгенерировать, максимальное доступное количество баркодов для генерации - `5 000`")
+    count: Optional[StrictInt] = Field(default=None, description="Кол-во баркодов которые надо сгенерировать, максимальное доступное количество баркодов для генерации - `5 000`", json_schema_extra={"examples": [100]})
     __properties: ClassVar[List[str]] = ["count"]
 
     model_config = ConfigDict(

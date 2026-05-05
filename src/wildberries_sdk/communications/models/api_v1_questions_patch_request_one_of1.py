@@ -28,7 +28,7 @@ class ApiV1QuestionsPatchRequestOneOf1(BaseModel):
     """
     ApiV1QuestionsPatchRequestOneOf1
     """ # noqa: E501
-    id: StrictStr = Field(description="Id вопроса")
+    id: StrictStr = Field(description="Id вопроса", json_schema_extra={"examples": ["n5um6IUBQOOSTxXoo0gV"]})
     answer: ApiV1QuestionsPatchRequestOneOf1Answer
     state: StrictStr = Field(description="Статус вопроса:   - `none` - вопрос отклонён продавцом (такой вопрос не отображается на портале покупателей)   - `wbRu` - ответ предоставлен, вопрос отображается на сайте покупателей. ")
     __properties: ClassVar[List[str]] = ["id", "answer", "state"]

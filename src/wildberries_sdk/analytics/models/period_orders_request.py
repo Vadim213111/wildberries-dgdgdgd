@@ -28,8 +28,8 @@ class PeriodOrdersRequest(BaseModel):
     """
     Текущий период. Максимум 7 суток
     """ # noqa: E501
-    start: date = Field(description="Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня")
-    end: date = Field(description="Дата окончания периода. Не ранее 365 суток от сегодня")
+    start: date = Field(description="Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня", json_schema_extra={"examples": ["2024-02-10"]})
+    end: date = Field(description="Дата окончания периода. Не ранее 365 суток от сегодня", json_schema_extra={"examples": ["2024-02-10"]})
     __properties: ClassVar[List[str]] = ["start", "end"]
 
     model_config = ConfigDict(

@@ -27,9 +27,9 @@ class ContentV2DirectoryCountriesGet200ResponseDataInner(BaseModel):
     """
     ContentV2DirectoryCountriesGet200ResponseDataInner
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="ID страны")
-    name: Optional[StrictStr] = Field(default=None, description="Значение характеристики Страны")
-    full_name: Optional[StrictStr] = Field(default=None, description="Полное название страны", alias="fullName")
+    id: Optional[StrictInt] = Field(default=None, description="ID страны", json_schema_extra={"examples": [15000170]})
+    name: Optional[StrictStr] = Field(default=None, description="Значение характеристики Страны", json_schema_extra={"examples": ["Китай"]})
+    full_name: Optional[StrictStr] = Field(default=None, description="Полное название страны", alias="fullName", json_schema_extra={"examples": ["Китайская Народная Республика"]})
     __properties: ClassVar[List[str]] = ["id", "name", "fullName"]
 
     model_config = ConfigDict(

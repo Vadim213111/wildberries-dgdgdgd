@@ -27,12 +27,12 @@ class GetListDataDocumentsInner(BaseModel):
     """
     GetListDataDocumentsInner
     """ # noqa: E501
-    service_name: Optional[StrictStr] = Field(default=None, description="Уникальный ID документа", alias="serviceName")
-    name: Optional[StrictStr] = Field(default=None, description="Название документа")
-    category: Optional[StrictStr] = Field(default=None, description="Название [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля ответа `title`")
+    service_name: Optional[StrictStr] = Field(default=None, description="Уникальный ID документа", alias="serviceName", json_schema_extra={"examples": ["redeem-notification-44841941"]})
+    name: Optional[StrictStr] = Field(default=None, description="Название документа", json_schema_extra={"examples": ["redeem-notification"]})
+    category: Optional[StrictStr] = Field(default=None, description="Название [категории документов](./financial-reports-and-accounting#tag/Dokumenty/paths/~1api~1v1~1documents~1categories/get) из поля ответа `title`", json_schema_extra={"examples": ["Уведомление о выкупе"]})
     extensions: Optional[List[StrictStr]] = Field(default=None, description="Форматы документа")
-    creation_time: Optional[StrictStr] = Field(default=None, description="Дата и время создания документа", alias="creationTime")
-    viewed: Optional[StrictBool] = Field(default=None, description="Выгружен ли документ в личном кабинете")
+    creation_time: Optional[StrictStr] = Field(default=None, description="Дата и время создания документа", alias="creationTime", json_schema_extra={"examples": ["2023-10-03T00:18:06.879Z"]})
+    viewed: Optional[StrictBool] = Field(default=None, description="Выгружен ли документ в личном кабинете", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["serviceName", "name", "category", "extensions", "creationTime", "viewed"]
 
     model_config = ConfigDict(

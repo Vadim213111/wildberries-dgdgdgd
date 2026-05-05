@@ -28,8 +28,8 @@ class ModelsWarehousesBoxRates(BaseModel):
     """
     ModelsWarehousesBoxRates
     """ # noqa: E501
-    dt_next_box: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа", alias="dtNextBox")
-    dt_till_max: Optional[StrictStr] = Field(default=None, description="Дата окончания последнего установленного тарифа", alias="dtTillMax")
+    dt_next_box: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа", alias="dtNextBox", json_schema_extra={"examples": ["2024-02-01"]})
+    dt_till_max: Optional[StrictStr] = Field(default=None, description="Дата окончания последнего установленного тарифа", alias="dtTillMax", json_schema_extra={"examples": ["2024-03-31"]})
     warehouse_list: Optional[List[ModelsWarehouseBoxRates]] = Field(default=None, description="Тарифы для коробов, сгруппированные по складам", alias="warehouseList")
     __properties: ClassVar[List[str]] = ["dtNextBox", "dtTillMax", "warehouseList"]
 

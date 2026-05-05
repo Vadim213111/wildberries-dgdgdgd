@@ -27,16 +27,16 @@ class GoodHistory(BaseModel):
     """
     GoodHistory
     """ # noqa: E501
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
-    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
-    size_id: Optional[StrictInt] = Field(default=None, description="ID размера. В методах Контента это поле `chrtID`", alias="sizeID")
-    tech_size_name: Optional[StrictStr] = Field(default=None, description="Размер", alias="techSizeName")
-    price: Optional[StrictInt] = Field(default=None, description="Цена")
-    currency_iso_code4217: Optional[StrictStr] = Field(default=None, description="Валюта, по стандарту ISO 4217", alias="currencyIsoCode4217")
-    discount: Optional[StrictInt] = Field(default=None, description="Скидка, %")
-    club_discount: Optional[StrictInt] = Field(default=None, description="Скидка WB Клуба, %", alias="clubDiscount")
-    status: Optional[StrictInt] = Field(default=None, description="Статус товара:   * `2` — товар без ошибок, цена и/или скидка обновилась   * `3` — есть ошибки, данные не обновились ")
-    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки. Например:   - `You can't change the item price. Item was added to the Sale due to high inventory` — ошибка возникает, если товар попал под распродажу по [индексу остатка](https://seller.wildberries.ru/instructions/ru/ru/material/A-1159).   - `The new price is several times lower than the current price. Item has been moved to Price Quarantine` — ошибка возникает, если новая цена со скидкой хотя бы в 3 раза меньше старой. Вы можете изменить цену или скидку с помощью API либо вывести товар из карантина в [личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine). ", alias="errorText")
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID", json_schema_extra={"examples": [544833232]})
+    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["34552332"]})
+    size_id: Optional[StrictInt] = Field(default=None, description="ID размера. В методах Контента это поле `chrtID`", alias="sizeID", json_schema_extra={"examples": [54483342]})
+    tech_size_name: Optional[StrictStr] = Field(default=None, description="Размер", alias="techSizeName", json_schema_extra={"examples": ["42"]})
+    price: Optional[StrictInt] = Field(default=None, description="Цена", json_schema_extra={"examples": [1500]})
+    currency_iso_code4217: Optional[StrictStr] = Field(default=None, description="Валюта, по стандарту ISO 4217", alias="currencyIsoCode4217", json_schema_extra={"examples": ["RUB"]})
+    discount: Optional[StrictInt] = Field(default=None, description="Скидка, %", json_schema_extra={"examples": [25]})
+    club_discount: Optional[StrictInt] = Field(default=None, description="Скидка WB Клуба, %", alias="clubDiscount", json_schema_extra={"examples": [5]})
+    status: Optional[StrictInt] = Field(default=None, description="Статус товара:   * `2` — товар без ошибок, цена и/или скидка обновилась   * `3` — есть ошибки, данные не обновились ", json_schema_extra={"examples": [1]})
+    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки. Например:   - `You can't change the item price. Item was added to the Sale due to high inventory` — ошибка возникает, если товар попал под распродажу по [индексу остатка](https://seller.wildberries.ru/instructions/ru/ru/material/A-1159).   - `The new price is several times lower than the current price. Item has been moved to Price Quarantine` — ошибка возникает, если новая цена со скидкой хотя бы в 3 раза меньше старой. Вы можете изменить цену или скидку с помощью API либо вывести товар из карантина в [личном кабинете](https://seller.wildberries.ru/discount-and-prices/quarantine). ", alias="errorText", json_schema_extra={"examples": ["You can't change the item price. Item was added to the Sale due to high inventory"]})
     __properties: ClassVar[List[str]] = ["nmID", "vendorCode", "sizeID", "techSizeName", "price", "currencyIsoCode4217", "discount", "clubDiscount", "status", "errorText"]
 
     model_config = ConfigDict(

@@ -591,7 +591,8 @@ paths:
       description: |
         Метод возвращает информацию о сборочных заданиях без их актуального [статуса](/openapi/orders-fbs#tag/Sborochnye-zadaniya-FBS/paths/~1api~1v3~1orders~1status/post).
 
-        Можно получить данные за заданный период, максимум 30 календарных дней одним запросом.
+        Чтобы получить данные за период, укажите в запросе даты начала и окончания периода. Максимум 30 календарных дней одним запросом. В ответе метода будут сборочные задания, созданные в указанный период.
+
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для методов <strong>сборочных заданий, поставок и пропусков FBS</strong>:
@@ -627,7 +628,7 @@ paths:
           type: integer
         style: form
       - description: |
-          Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса
+          Дата начала периода в формате Unix timestamp. По умолчанию — дата за 30 дней до запроса. Часовой пояс — UTC
         explode: true
         in: query
         name: dateFrom
@@ -635,7 +636,7 @@ paths:
         schema:
           type: integer
         style: form
-      - description: Дата конца периода в формате Unix timestamp
+      - description: Дата конца периода в формате Unix timestamp. Часовой пояс — UTC
         explode: true
         in: query
         name: dateTo
@@ -4253,83 +4254,83 @@ components:
         next: 0
         orders:
         - cargoType: mgt
+          colorCode: RAL 3017
+          createdAt: 2022-05-04
+          crossBorder:
+            parcel: 1Z999AA10123456784
+          crossBorderType: crossBorder
+          id: 1234567890
+          isZeroOrder: false
           metaDetails:
-          - decision: uinMaySell
+          - key: uin
             value: value
-            key: uin
-          - decision: uinMaySell
+            decision: uinMaySell
+          - key: uin
             value: value
-            key: uin
+            decision: uinMaySell
+          options:
+            isB2B: false
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          priceInfo:
+            convertedCurrencyCode: 643
+            convertedPrice: 1020
+            currencyCode: 643
+            price: 1020
           product:
+            article: wv1702fyjh
+            chrtId: 12345678
+            nmId: 370870300
             skus:
             - 12345Ejf5
             - 12345Ejf6
             - 12345Ejf7
-            nmId: 370870300
-            chrtId: 12345678
-            article: wv1702fyjh
-          crossBorderType: crossBorder
           rid: f884001e44e511edb8780242ac120002
           scanPrice: 5200
-          stickerId: 33811984302
-          createdAt: 2022-05-04
-          priceInfo:
-            convertedPrice: 1020
-            price: 1020
-            convertedCurrencyCode: 643
-            currencyCode: 643
-          isZeroOrder: false
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 55684681
-          supplyId: WB-GI-1234588
-          options:
-            isB2B: false
-          colorCode: RAL 3017
-          crossBorder:
-            parcel: 1Z999AA10123456784
-          id: 1234567890
           status:
             supplierStatus: complete
             wbStatus: sent_to_carrier
+          stickerId: 33811984302
+          supplyId: WB-GI-1234588
+          warehouseId: 55684681
         - cargoType: mgt
+          colorCode: RAL 3017
+          createdAt: 2022-05-04
+          crossBorder:
+            parcel: 1Z999AA10123456784
+          crossBorderType: crossBorder
+          id: 1234567890
+          isZeroOrder: false
           metaDetails:
-          - decision: uinMaySell
+          - key: uin
             value: value
-            key: uin
-          - decision: uinMaySell
+            decision: uinMaySell
+          - key: uin
             value: value
-            key: uin
+            decision: uinMaySell
+          options:
+            isB2B: false
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          priceInfo:
+            convertedCurrencyCode: 643
+            convertedPrice: 1020
+            currencyCode: 643
+            price: 1020
           product:
+            article: wv1702fyjh
+            chrtId: 12345678
+            nmId: 370870300
             skus:
             - 12345Ejf5
             - 12345Ejf6
             - 12345Ejf7
-            nmId: 370870300
-            chrtId: 12345678
-            article: wv1702fyjh
-          crossBorderType: crossBorder
           rid: f884001e44e511edb8780242ac120002
           scanPrice: 5200
-          stickerId: 33811984302
-          createdAt: 2022-05-04
-          priceInfo:
-            convertedPrice: 1020
-            price: 1020
-            convertedCurrencyCode: 643
-            currencyCode: 643
-          isZeroOrder: false
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 55684681
-          supplyId: WB-GI-1234588
-          options:
-            isB2B: false
-          colorCode: RAL 3017
-          crossBorder:
-            parcel: 1Z999AA10123456784
-          id: 1234567890
           status:
             supplierStatus: complete
             wbStatus: sent_to_carrier
+          stickerId: 33811984302
+          supplyId: WB-GI-1234588
+          warehouseId: 55684681
       properties:
         next:
           description: "Параметр пагинации. Содержит значение, которое необходимо\
@@ -4350,44 +4351,44 @@ components:
       description: Архивное сборочное задание
       example:
         cargoType: mgt
+        colorCode: RAL 3017
+        createdAt: 2022-05-04
+        crossBorder:
+          parcel: 1Z999AA10123456784
+        crossBorderType: crossBorder
+        id: 1234567890
+        isZeroOrder: false
         metaDetails:
-        - decision: uinMaySell
+        - key: uin
           value: value
-          key: uin
-        - decision: uinMaySell
+          decision: uinMaySell
+        - key: uin
           value: value
-          key: uin
+          decision: uinMaySell
+        options:
+          isB2B: false
+        orderUid: 165918930_629fbc924b984618a44354475ca58675
+        priceInfo:
+          convertedCurrencyCode: 643
+          convertedPrice: 1020
+          currencyCode: 643
+          price: 1020
         product:
+          article: wv1702fyjh
+          chrtId: 12345678
+          nmId: 370870300
           skus:
           - 12345Ejf5
           - 12345Ejf6
           - 12345Ejf7
-          nmId: 370870300
-          chrtId: 12345678
-          article: wv1702fyjh
-        crossBorderType: crossBorder
         rid: f884001e44e511edb8780242ac120002
         scanPrice: 5200
-        stickerId: 33811984302
-        createdAt: 2022-05-04
-        priceInfo:
-          convertedPrice: 1020
-          price: 1020
-          convertedCurrencyCode: 643
-          currencyCode: 643
-        isZeroOrder: false
-        orderUid: 165918930_629fbc924b984618a44354475ca58675
-        warehouseId: 55684681
-        supplyId: WB-GI-1234588
-        options:
-          isB2B: false
-        colorCode: RAL 3017
-        crossBorder:
-          parcel: 1Z999AA10123456784
-        id: 1234567890
         status:
           supplierStatus: complete
           wbStatus: sent_to_carrier
+        stickerId: 33811984302
+        supplyId: WB-GI-1234588
+        warehouseId: 55684681
       properties:
         cargoType:
           description: |
@@ -4518,8 +4519,8 @@ components:
     PassOffice:
       description: "Данные о складе, для которого требуется пропуск"
       example:
-        address: "г. Подольск, д. Коледино, ул. Троицкая"
         name: Коледино
+        address: "г. Подольск, д. Коледино, ул. Троицкая"
         id: 1
       properties:
         name:
@@ -4542,8 +4543,8 @@ components:
     Error:
       example:
         code: code
-        data: "{}"
         message: message
+        data: "{}"
       nullable: false
       properties:
         code:
@@ -4590,25 +4591,25 @@ components:
     "409SupplyDeliverError":
       example:
         code: code
+        message: message
         data:
           orders:
-          - metaDetails:
-            - decision: decision
+          - id: 0
+            metaDetails:
+            - key: key
               value: value
-              key: key
-            - decision: decision
+              decision: decision
+            - key: key
               value: value
-              key: key
-            id: 0
-          - metaDetails:
-            - decision: decision
+              decision: decision
+          - id: 0
+            metaDetails:
+            - key: key
               value: value
-              key: key
-            - decision: decision
+              decision: decision
+            - key: key
               value: value
-              key: key
-            id: 0
-        message: message
+              decision: decision
       nullable: false
       properties:
         code:
@@ -4631,40 +4632,40 @@ components:
       type: integer
     Order:
       example:
-        cargoType: 0
-        skus:
-        - "6665956397512"
-        - "6665956397512"
-        offices:
-        - Калуга
-        - Калуга
-        nmId: 12345678
-        rid: f884001e44e511edb8780242ac120002
-        createdAt: 2022-05-04T07:56:29Z
-        isZeroOrder: false
-        officeId: 123
-        price: 1014
-        options:
-          isB2B: true
-        convertedCurrencyCode: 643
-        id: 13833711
         address:
-          latitude: 40.20192
           fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д\
             . 10А, кв. 42"
           longitude: 44.519068
-        deliveryType: fbs
-        crossBorderType: 1
+          latitude: 40.20192
         scanPrice: 1500
-        article: one-ring-7548
-        convertedPrice: 28322
-        orderUid: 165918930_629fbc924b984618a44354475ca58675
-        warehouseId: 658434
+        deliveryType: fbs
         supplyId: WB-GI-92937123
+        orderUid: 165918930_629fbc924b984618a44354475ca58675
+        article: one-ring-7548
         colorCode: RAL 3017
-        comment: "Упакуйте в плёнку, пожалуйста"
+        rid: f884001e44e511edb8780242ac120002
+        createdAt: 2022-05-04T07:56:29Z
+        offices:
+        - Калуга
+        - Калуга
+        skus:
+        - "6665956397512"
+        - "6665956397512"
+        id: 13833711
+        warehouseId: 658434
+        officeId: 123
+        nmId: 12345678
         chrtId: 987654321
+        price: 1014
+        convertedPrice: 28322
         currencyCode: 933
+        convertedCurrencyCode: 643
+        cargoType: 0
+        crossBorderType: 1
+        comment: "Упакуйте в плёнку, пожалуйста"
+        isZeroOrder: false
+        options:
+          isB2B: true
       properties:
         address:
           $ref: "#/components/schemas/Order_address"
@@ -4719,7 +4720,8 @@ components:
           nullable: false
           type: string
         createdAt:
-          description: Дата создания сборочного задания (RFC3339)
+          description: Дата создания сборочного задания (RFC3339). Часовой пояс —
+            UTC
           example: 2022-05-04T07:56:29Z
           format: date-time
           nullable: false
@@ -4832,17 +4834,17 @@ components:
       type: object
     Supply:
       example:
-        cargoType: 0
-        createdAt: 2022-05-04T07:56:29Z
-        scanDt: 2022-05-04T07:56:29Z
-        isB2b: true
-        recommendedWhId: 123569
-        name: Тестовая поставка
-        destinationOfficeId: 123
-        crossBorderType: 1
         id: WB-GI-1234567
-        closedAt: 2022-05-04T07:56:29Z
+        isB2b: true
         done: true
+        createdAt: 2022-05-04T07:56:29Z
+        closedAt: 2022-05-04T07:56:29Z
+        scanDt: 2022-05-04T07:56:29Z
+        name: Тестовая поставка
+        cargoType: 0
+        crossBorderType: 1
+        destinationOfficeId: 123
+        recommendedWhId: 123569
       properties:
         id:
           description: ID поставки
@@ -4931,48 +4933,48 @@ components:
       type: object
     OrderNew:
       example:
-        cargoType: 6
-        skus:
-        - "6665956397512"
-        - "6665956397512"
-        offices:
-        - Калуга
-        - Калуга
-        nmId: 123456789
-        finalPrice: 1014
-        rid: f884001e44e511edb8780242ac120002
-        sellerDate: 02.06.2025
-        createdAt: 2022-05-04T07:56:29Z
-        isZeroOrder: false
-        officeId: 123
-        price: 1014
-        options:
-          isB2B: true
-        convertedCurrencyCode: 643
-        id: 13833711
-        optionalMeta:
-        - sgtin
-        ddate: 17.05.2024
         address:
-          latitude: 40.20192
           fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д\
             . 10А, кв. 42"
           longitude: 44.519068
+          latitude: 40.20192
+        ddate: 17.05.2024
+        sellerDate: 02.06.2025
         salePrice: 504600
-        deliveryType: fbs
-        crossBorderType: 1
         requiredMeta:
         - uin
-        scanPrice: 0.8008281904610115
-        article: one-ring-7548
-        convertedFinalPrice: 1014
-        convertedPrice: 28322
-        orderUid: 165918930_629fbc924b984618a44354475ca58675
-        warehouseId: 658434
+        optionalMeta:
+        - sgtin
+        deliveryType: fbs
         comment: "Упакуйте в плёнку, пожалуйста"
+        scanPrice: 0.8008281904610115
+        orderUid: 165918930_629fbc924b984618a44354475ca58675
+        article: one-ring-7548
         colorCode: RAL 3017
+        rid: f884001e44e511edb8780242ac120002
+        createdAt: 2022-05-04T07:56:29Z
+        offices:
+        - Калуга
+        - Калуга
+        skus:
+        - "6665956397512"
+        - "6665956397512"
+        id: 13833711
+        warehouseId: 658434
+        officeId: 123
+        nmId: 123456789
         chrtId: 987654321
+        price: 1014
+        finalPrice: 1014
+        convertedPrice: 28322
+        convertedFinalPrice: 1014
         currencyCode: 933
+        convertedCurrencyCode: 643
+        cargoType: 6
+        crossBorderType: 1
+        isZeroOrder: false
+        options:
+          isB2B: true
       properties:
         address:
           $ref: "#/components/schemas/Order_address"
@@ -5196,8 +5198,8 @@ components:
       type: object
     TrbxStickers:
       example:
-        file: U3dhZ2dlciByb2Nrcw==
         barcode: $WBMP:1:123:1234567
+        file: U3dhZ2dlciByb2Nrcw==
       properties:
         barcode:
           description: Закодированное значение стикера
@@ -5215,19 +5217,19 @@ components:
     Meta:
       description: "Устарело. [Будет отключено 30 апреля](https://dev.wildberries.ru/release-notes?id=500)"
       example:
+        imei:
+          value: "123456789012345"
+        uin:
+          value: "123456789012345"
+        gtin:
+          value: "123456789012345"
         sgtin:
           value:
           - "123456789012345"
-        gtin:
-          value: "123456789012345"
-        imei:
-          value: "123456789012345"
         expiration:
           value: 12.09.2030
         customsDeclaration:
           value: 10704010/010624/0000302
-        uin:
-          value: "123456789012345"
       properties:
         imei:
           $ref: "#/components/schemas/Meta_imei"
@@ -5265,50 +5267,50 @@ components:
     v3.OrdersMetaAPI:
       example:
         orders:
-        - metaDetails:
-          - decision: uinMaySell
+        - id: 0
+          metaDetails:
+          - key: uin
             value: value
-            key: uin
-          - decision: uinMaySell
+            decision: uinMaySell
+          - key: uin
             value: value
-            key: uin
+            decision: uinMaySell
           meta:
+            imei:
+              value: "123456789012345"
+            uin:
+              value: "123456789012345"
+            gtin:
+              value: "123456789012345"
             sgtin:
               value:
               - "123456789012345"
-            gtin:
-              value: "123456789012345"
-            imei:
-              value: "123456789012345"
             expiration:
               value: 12.09.2030
             customsDeclaration:
               value: 10704010/010624/0000302
+        - id: 0
+          metaDetails:
+          - key: uin
+            value: value
+            decision: uinMaySell
+          - key: uin
+            value: value
+            decision: uinMaySell
+          meta:
+            imei:
+              value: "123456789012345"
             uin:
               value: "123456789012345"
-          id: 0
-        - metaDetails:
-          - decision: uinMaySell
-            value: value
-            key: uin
-          - decision: uinMaySell
-            value: value
-            key: uin
-          meta:
+            gtin:
+              value: "123456789012345"
             sgtin:
               value:
               - "123456789012345"
-            gtin:
-              value: "123456789012345"
-            imei:
-              value: "123456789012345"
             expiration:
               value: 12.09.2030
             customsDeclaration:
               value: 10704010/010624/0000302
-            uin:
-              value: "123456789012345"
-          id: 0
       properties:
         orders:
           items:
@@ -5317,28 +5319,28 @@ components:
       type: object
     v3.OrderMetaAPI:
       example:
+        id: 0
         metaDetails:
-        - decision: uinMaySell
+        - key: uin
           value: value
-          key: uin
-        - decision: uinMaySell
+          decision: uinMaySell
+        - key: uin
           value: value
-          key: uin
+          decision: uinMaySell
         meta:
+          imei:
+            value: "123456789012345"
+          uin:
+            value: "123456789012345"
+          gtin:
+            value: "123456789012345"
           sgtin:
             value:
             - "123456789012345"
-          gtin:
-            value: "123456789012345"
-          imei:
-            value: "123456789012345"
           expiration:
             value: 12.09.2030
           customsDeclaration:
             value: 10704010/010624/0000302
-          uin:
-            value: "123456789012345"
-        id: 0
       properties:
         id:
           description: ID сборочного задания
@@ -5354,15 +5356,15 @@ components:
     Pass:
       description: Данные о пропуске продавца
       example:
-        carNumber: A456BC123
         firstName: Александр
-        lastName: Петров
-        officeName: Коледино
-        officeId: 15
         dateEnd: 2022-07-31 17:53:13+00:00
-        id: 1
-        officeAddress: "г. Подольск, д. Коледино, ул. Троицкая"
+        lastName: Петров
         carModel: Lamborghini
+        carNumber: A456BC123
+        officeName: Коледино
+        officeAddress: "г. Подольск, д. Коледино, ул. Троицкая"
+        officeId: 15
+        id: 1
       properties:
         firstName:
           description: Имя водителя
@@ -5415,12 +5417,12 @@ components:
     CrossborderTurkeyClientInfo:
       example:
         firstName: Иван
+        fullName: Андреев Иван Васильевич
         lastName: Андреев
+        middleName: Васильевич
         orderID: 134567
         phone: "79871234567"
-        fullName: Андреев Иван Васильевич
         phoneCode: "0"
-        middleName: Васильевич
       properties:
         firstName:
           description: Имя клиента
@@ -5454,19 +5456,19 @@ components:
       example:
         orders:
         - firstName: Иван
+          fullName: Андреев Иван Васильевич
           lastName: Андреев
+          middleName: Васильевич
           orderID: 134567
           phone: "79871234567"
-          fullName: Андреев Иван Васильевич
           phoneCode: "0"
-          middleName: Васильевич
         - firstName: Иван
+          fullName: Андреев Иван Васильевич
           lastName: Андреев
+          middleName: Васильевич
           orderID: 134567
           phone: "79871234567"
-          fullName: Андреев Иван Васильевич
           phoneCode: "0"
-          middleName: Васильевич
       properties:
         orders:
           description: Информация по клиенту для трансграничных поставок из Турции
@@ -5489,8 +5491,8 @@ components:
     v3.APIError:
       example:
         code: code
-        data: "{}"
         message: message
+        data: "{}"
       properties:
         code:
           description: Код ошибки
@@ -5504,13 +5506,13 @@ components:
       type: object
     _api_v3_passes_offices_get_401_response:
       example:
+        title: title
+        detail: detail
         code: code
         requestId: requestId
         origin: origin
-        statusText: statusText
-        detail: detail
-        title: title
         status: 0.8008281904610115
+        statusText: statusText
         timestamp: 2000-01-23T04:56:07.000+00:00
       properties:
         title:
@@ -5646,90 +5648,90 @@ components:
     _api_v3_orders_new_get_200_response:
       example:
         orders:
-        - cargoType: 6
-          skus:
-          - "6665956397512"
-          - "6665956397512"
-          offices:
-          - Калуга
-          - Калуга
-          nmId: 123456789
-          finalPrice: 1014
-          rid: f884001e44e511edb8780242ac120002
-          sellerDate: 02.06.2025
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
-          officeId: 123
-          price: 1014
-          options:
-            isB2B: true
-          convertedCurrencyCode: 643
-          id: 13833711
-          optionalMeta:
-          - sgtin
-          ddate: 17.05.2024
-          address:
-            latitude: 40.20192
+        - address:
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
+            latitude: 40.20192
+          ddate: 17.05.2024
+          sellerDate: 02.06.2025
           salePrice: 504600
-          deliveryType: fbs
-          crossBorderType: 1
           requiredMeta:
           - uin
-          scanPrice: 0.8008281904610115
-          article: one-ring-7548
-          convertedFinalPrice: 1014
-          convertedPrice: 28322
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
+          optionalMeta:
+          - sgtin
+          deliveryType: fbs
           comment: "Упакуйте в плёнку, пожалуйста"
+          scanPrice: 0.8008281904610115
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          article: one-ring-7548
           colorCode: RAL 3017
-          chrtId: 987654321
-          currencyCode: 933
-        - cargoType: 6
-          skus:
-          - "6665956397512"
-          - "6665956397512"
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
           offices:
           - Калуга
           - Калуга
-          nmId: 123456789
-          finalPrice: 1014
-          rid: f884001e44e511edb8780242ac120002
-          sellerDate: 02.06.2025
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          id: 13833711
+          warehouseId: 658434
           officeId: 123
+          nmId: 123456789
+          chrtId: 987654321
           price: 1014
+          finalPrice: 1014
+          convertedPrice: 28322
+          convertedFinalPrice: 1014
+          currencyCode: 933
+          convertedCurrencyCode: 643
+          cargoType: 6
+          crossBorderType: 1
+          isZeroOrder: false
           options:
             isB2B: true
-          convertedCurrencyCode: 643
-          id: 13833711
-          optionalMeta:
-          - sgtin
-          ddate: 17.05.2024
-          address:
-            latitude: 40.20192
+        - address:
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
+            latitude: 40.20192
+          ddate: 17.05.2024
+          sellerDate: 02.06.2025
           salePrice: 504600
-          deliveryType: fbs
-          crossBorderType: 1
           requiredMeta:
           - uin
-          scanPrice: 0.8008281904610115
-          article: one-ring-7548
-          convertedFinalPrice: 1014
-          convertedPrice: 28322
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
+          optionalMeta:
+          - sgtin
+          deliveryType: fbs
           comment: "Упакуйте в плёнку, пожалуйста"
+          scanPrice: 0.8008281904610115
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          article: one-ring-7548
           colorCode: RAL 3017
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
+          offices:
+          - Калуга
+          - Калуга
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          id: 13833711
+          warehouseId: 658434
+          officeId: 123
+          nmId: 123456789
           chrtId: 987654321
+          price: 1014
+          finalPrice: 1014
+          convertedPrice: 28322
+          convertedFinalPrice: 1014
           currencyCode: 933
+          convertedCurrencyCode: 643
+          cargoType: 6
+          crossBorderType: 1
+          isZeroOrder: false
+          options:
+            isB2B: true
       nullable: false
       properties:
         orders:
@@ -5743,74 +5745,74 @@ components:
       example:
         next: 13833711
         orders:
-        - cargoType: 0
-          skus:
-          - "6665956397512"
-          - "6665956397512"
-          offices:
-          - Калуга
-          - Калуга
-          nmId: 12345678
-          rid: f884001e44e511edb8780242ac120002
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
-          officeId: 123
-          price: 1014
-          options:
-            isB2B: true
-          convertedCurrencyCode: 643
-          id: 13833711
-          address:
-            latitude: 40.20192
+        - address:
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
-          deliveryType: fbs
-          crossBorderType: 1
+            latitude: 40.20192
           scanPrice: 1500
-          article: one-ring-7548
-          convertedPrice: 28322
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
+          deliveryType: fbs
           supplyId: WB-GI-92937123
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          article: one-ring-7548
           colorCode: RAL 3017
-          comment: "Упакуйте в плёнку, пожалуйста"
-          chrtId: 987654321
-          currencyCode: 933
-        - cargoType: 0
-          skus:
-          - "6665956397512"
-          - "6665956397512"
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
           offices:
           - Калуга
           - Калуга
-          nmId: 12345678
-          rid: f884001e44e511edb8780242ac120002
-          createdAt: 2022-05-04T07:56:29Z
-          isZeroOrder: false
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          id: 13833711
+          warehouseId: 658434
           officeId: 123
+          nmId: 12345678
+          chrtId: 987654321
           price: 1014
+          convertedPrice: 28322
+          currencyCode: 933
+          convertedCurrencyCode: 643
+          cargoType: 0
+          crossBorderType: 1
+          comment: "Упакуйте в плёнку, пожалуйста"
+          isZeroOrder: false
           options:
             isB2B: true
-          convertedCurrencyCode: 643
-          id: 13833711
-          address:
-            latitude: 40.20192
+        - address:
             fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира,\
               \ д. 10А, кв. 42"
             longitude: 44.519068
-          deliveryType: fbs
-          crossBorderType: 1
+            latitude: 40.20192
           scanPrice: 1500
-          article: one-ring-7548
-          convertedPrice: 28322
-          orderUid: 165918930_629fbc924b984618a44354475ca58675
-          warehouseId: 658434
+          deliveryType: fbs
           supplyId: WB-GI-92937123
+          orderUid: 165918930_629fbc924b984618a44354475ca58675
+          article: one-ring-7548
           colorCode: RAL 3017
-          comment: "Упакуйте в плёнку, пожалуйста"
+          rid: f884001e44e511edb8780242ac120002
+          createdAt: 2022-05-04T07:56:29Z
+          offices:
+          - Калуга
+          - Калуга
+          skus:
+          - "6665956397512"
+          - "6665956397512"
+          id: 13833711
+          warehouseId: 658434
+          officeId: 123
+          nmId: 12345678
           chrtId: 987654321
+          price: 1014
+          convertedPrice: 28322
           currencyCode: 933
+          convertedCurrencyCode: 643
+          cargoType: 0
+          crossBorderType: 1
+          comment: "Упакуйте в плёнку, пожалуйста"
+          isZeroOrder: false
+          options:
+            isB2B: true
       nullable: false
       properties:
         next:
@@ -5842,8 +5844,8 @@ components:
       type: object
     _api_v3_orders_status_post_200_response_orders_inner:
       example:
-        supplierStatus: new
         id: 5632423
+        supplierStatus: new
         wbStatus: waiting
       properties:
         id:
@@ -5882,11 +5884,11 @@ components:
     _api_v3_orders_status_post_200_response:
       example:
         orders:
-        - supplierStatus: new
-          id: 5632423
+        - id: 5632423
+          supplierStatus: new
           wbStatus: waiting
-        - supplierStatus: new
-          id: 5632423
+        - id: 5632423
+          supplierStatus: new
           wbStatus: waiting
       properties:
         orders:
@@ -5897,8 +5899,8 @@ components:
       type: object
     _api_v3_supplies_orders_reshipment_get_200_response_orders_inner:
       example:
-        orderID: ""
         supplyID: ""
+        orderID: ""
       properties:
         supplyID:
           description: ID поставки
@@ -5908,10 +5910,10 @@ components:
     _api_v3_supplies_orders_reshipment_get_200_response:
       example:
         orders:
-        - orderID: ""
-          supplyID: ""
-        - orderID: ""
-          supplyID: ""
+        - supplyID: ""
+          orderID: ""
+        - supplyID: ""
+          orderID: ""
       properties:
         orders:
           description: Список сборочных заданий
@@ -5933,11 +5935,11 @@ components:
       type: object
     _api_v3_orders_stickers_post_200_response_stickers_inner:
       example:
-        file: iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAABiElEQVR4nO2YUW6DMAyGbUDaI0g9wI4Sjg5H2Q3IeyZPthNKV03tNiVdtf9/cFvXAvRhkh+z0G2t3R1FRKgqAokikCgCiSKQeDQJzho8yXMsmfmh1/UvqoKoNrsLdgN6S8hzXP2TV8Xc47KMyTPnx+DvX/1zVg1Xmch1z9ih6gv2HLZTuqIPXjX7ftSlPRLJ+prXnONLF9hXZL96q/fE4W1Q+O8XvQ/29djL/lvWiTg/Bt89Voeqn/j7OQ4eTLJY7tz8oEoVSFC28aN9JqKwqbX3kP+VBewrsg/KedE3qmXUn3IMYF/d3zONm38TiqckFKeyEaDv6/W96Nus9b2tPrbw2LOAvq/Pfpfn/Fb4HoA1p9UcU3SHJTLHExk+p8VeK3JwN0Q2UNPmR9+3m2OyDzPjoOFFML9vOMcUin0iHahR2CaGz/mkmo6P5zHtQdD3TeeY5NY++/sKZ+xQdUliNZszqePRkFd+tfvHqhtC1S/nmOQh7eH+Y3WoygKJIpAoAokikChqT+IDIkbb8/8OLskAAAAASUVORK5CYII=
         orderId: 5346346
         partA: "231648"
         partB: "9753"
         barcode: '!uKEtQZVx'
+        file: iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAABiElEQVR4nO2YUW6DMAyGbUDaI0g9wI4Sjg5H2Q3IeyZPthNKV03tNiVdtf9/cFvXAvRhkh+z0G2t3R1FRKgqAokikCgCiSKQeDQJzho8yXMsmfmh1/UvqoKoNrsLdgN6S8hzXP2TV8Xc47KMyTPnx+DvX/1zVg1Xmch1z9ih6gv2HLZTuqIPXjX7ftSlPRLJ+prXnONLF9hXZL96q/fE4W1Q+O8XvQ/29djL/lvWiTg/Bt89Voeqn/j7OQ4eTLJY7tz8oEoVSFC28aN9JqKwqbX3kP+VBewrsg/KedE3qmXUn3IMYF/d3zONm38TiqckFKeyEaDv6/W96Nus9b2tPrbw2LOAvq/Pfpfn/Fb4HoA1p9UcU3SHJTLHExk+p8VeK3JwN0Q2UNPmR9+3m2OyDzPjoOFFML9vOMcUin0iHahR2CaGz/mkmo6P5zHtQdD3TeeY5NY++/sKZ+xQdUliNZszqePRkFd+tfvHqhtC1S/nmOQh7eH+Y3WoygKJIpAoAokikChqT+IDIkbb8/8OLskAAAAASUVORK5CYII=
       properties:
         orderId:
           description: ID сборочного задания
@@ -5971,16 +5973,16 @@ components:
     _api_v3_orders_stickers_post_200_response:
       example:
         stickers:
-        - file: iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAABiElEQVR4nO2YUW6DMAyGbUDaI0g9wI4Sjg5H2Q3IeyZPthNKV03tNiVdtf9/cFvXAvRhkh+z0G2t3R1FRKgqAokikCgCiSKQeDQJzho8yXMsmfmh1/UvqoKoNrsLdgN6S8hzXP2TV8Xc47KMyTPnx+DvX/1zVg1Xmch1z9ih6gv2HLZTuqIPXjX7ftSlPRLJ+prXnONLF9hXZL96q/fE4W1Q+O8XvQ/29djL/lvWiTg/Bt89Voeqn/j7OQ4eTLJY7tz8oEoVSFC28aN9JqKwqbX3kP+VBewrsg/KedE3qmXUn3IMYF/d3zONm38TiqckFKeyEaDv6/W96Nus9b2tPrbw2LOAvq/Pfpfn/Fb4HoA1p9UcU3SHJTLHExk+p8VeK3JwN0Q2UNPmR9+3m2OyDzPjoOFFML9vOMcUin0iHahR2CaGz/mkmo6P5zHtQdD3TeeY5NY++/sKZ+xQdUliNZszqePRkFd+tfvHqhtC1S/nmOQh7eH+Y3WoygKJIpAoAokikChqT+IDIkbb8/8OLskAAAAASUVORK5CYII=
-          orderId: 5346346
+        - orderId: 5346346
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
-        - file: iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAABiElEQVR4nO2YUW6DMAyGbUDaI0g9wI4Sjg5H2Q3IeyZPthNKV03tNiVdtf9/cFvXAvRhkh+z0G2t3R1FRKgqAokikCgCiSKQeDQJzho8yXMsmfmh1/UvqoKoNrsLdgN6S8hzXP2TV8Xc47KMyTPnx+DvX/1zVg1Xmch1z9ih6gv2HLZTuqIPXjX7ftSlPRLJ+prXnONLF9hXZL96q/fE4W1Q+O8XvQ/29djL/lvWiTg/Bt89Voeqn/j7OQ4eTLJY7tz8oEoVSFC28aN9JqKwqbX3kP+VBewrsg/KedE3qmXUn3IMYF/d3zONm38TiqckFKeyEaDv6/W96Nus9b2tPrbw2LOAvq/Pfpfn/Fb4HoA1p9UcU3SHJTLHExk+p8VeK3JwN0Q2UNPmR9+3m2OyDzPjoOFFML9vOMcUin0iHahR2CaGz/mkmo6P5zHtQdD3TeeY5NY++/sKZ+xQdUliNZszqePRkFd+tfvHqhtC1S/nmOQh7eH+Y3WoygKJIpAoAokikChqT+IDIkbb8/8OLskAAAAASUVORK5CYII=
-          orderId: 5346346
+          file: iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAABiElEQVR4nO2YUW6DMAyGbUDaI0g9wI4Sjg5H2Q3IeyZPthNKV03tNiVdtf9/cFvXAvRhkh+z0G2t3R1FRKgqAokikCgCiSKQeDQJzho8yXMsmfmh1/UvqoKoNrsLdgN6S8hzXP2TV8Xc47KMyTPnx+DvX/1zVg1Xmch1z9ih6gv2HLZTuqIPXjX7ftSlPRLJ+prXnONLF9hXZL96q/fE4W1Q+O8XvQ/29djL/lvWiTg/Bt89Voeqn/j7OQ4eTLJY7tz8oEoVSFC28aN9JqKwqbX3kP+VBewrsg/KedE3qmXUn3IMYF/d3zONm38TiqckFKeyEaDv6/W96Nus9b2tPrbw2LOAvq/Pfpfn/Fb4HoA1p9UcU3SHJTLHExk+p8VeK3JwN0Q2UNPmR9+3m2OyDzPjoOFFML9vOMcUin0iHahR2CaGz/mkmo6P5zHtQdD3TeeY5NY++/sKZ+xQdUliNZszqePRkFd+tfvHqhtC1S/nmOQh7eH+Y3WoygKJIpAoAokikChqT+IDIkbb8/8OLskAAAAASUVORK5CYII=
+        - orderId: 5346346
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
+          file: iVBORw0KGgoAAAANSUhEUgAAASIAAAEiAQAAAAB1xeIbAAABiElEQVR4nO2YUW6DMAyGbUDaI0g9wI4Sjg5H2Q3IeyZPthNKV03tNiVdtf9/cFvXAvRhkh+z0G2t3R1FRKgqAokikCgCiSKQeDQJzho8yXMsmfmh1/UvqoKoNrsLdgN6S8hzXP2TV8Xc47KMyTPnx+DvX/1zVg1Xmch1z9ih6gv2HLZTuqIPXjX7ftSlPRLJ+prXnONLF9hXZL96q/fE4W1Q+O8XvQ/29djL/lvWiTg/Bt89Voeqn/j7OQ4eTLJY7tz8oEoVSFC28aN9JqKwqbX3kP+VBewrsg/KedE3qmXUn3IMYF/d3zONm38TiqckFKeyEaDv6/W96Nus9b2tPrbw2LOAvq/Pfpfn/Fb4HoA1p9UcU3SHJTLHExk+p8VeK3JwN0Q2UNPmR9+3m2OyDzPjoOFFML9vOMcUin0iHahR2CaGz/mkmo6P5zHtQdD3TeeY5NY++/sKZ+xQdUliNZszqePRkFd+tfvHqhtC1S/nmOQh7eH+Y3WoygKJIpAoAokikChqT+IDIkbb8/8OLskAAAAASUVORK5CYII=
       properties:
         stickers:
           items:
@@ -6066,13 +6068,13 @@ components:
       type: object
     _api_v3_orders_stickers_cross_border_post_200_response_stickers_inner:
       example:
-        file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
         orderId: 3869227998
+        status: ready
+        parcelId: WB0000000001
+        file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
         partA: "231648"
         partB: "9753"
         barcode: '!uKEtQZVx'
-        status: ready
-        parcelId: WB0000000001
       properties:
         orderId:
           description: ID сборочного задания
@@ -6119,20 +6121,20 @@ components:
     _api_v3_orders_stickers_cross_border_post_200_response:
       example:
         stickers:
-        - file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
-          orderId: 3869227998
+        - orderId: 3869227998
+          status: ready
+          parcelId: WB0000000001
+          file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
+        - orderId: 3869227998
           status: ready
           parcelId: WB0000000001
-        - file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
-          orderId: 3869227998
+          file: JVBERi0xLjQKJSBjcmVhdGVkIGJ5IFBpbGxvdyBQREYgZHJpdmVyCjQgMCBvYmo8PAovVHlwZSAvQ2F0YWxvZwovUGFnZXMgNSAwIFIKPj5lbmRvYmoKNSAwIG9iajw8Ci9UeXBlIC9QYWdlcwovQ291bnQgMQovS2lkcyBbIDIgMCBSIF0KPj5lbmRvYmoKMSAwIG9iajw8Ci9UeXBlIC9YT2JqZWN0Ci9TdWJ0eXBlIC9JbWFnZQovV2lkdGggMjkwCi9IZWlnaHQgMjkwCi9GaWx0ZXIgWyAvQ0NJVFRGYXhEZWNvZGUgXQovRGVjb2RlUGFybXMgWyA8PAovSyAtMQovQmxhY2tJczEgdHJ1ZQovQ29sdW1ucyAyOTAKL1Jvd3MgMjkwCj4+IF0KL0JpdHNQZXJDb21wb25lbnQgMQovQ29sb3JTcGFjZSAvRGV2aWNlR3JheQovTGVuZ3RoIDY2Ngo+PnN0cmVhbQomoLYaX////////////8g2b4gpHITff///////////8nBSkIB8nBS/////////////////////+QgHkNB/IQD////////////////////////////+P//////////////////////////IQ5CHIQ////////////////////////////////jkNB/H/////////////////////4yEOQh+P//////////////////EhoKR//////yDYchDkIchDyBg2E4aCcFL////////////////////////IgFIiAhODQTg0f/////////////////+ThCICEQGgnDQTg0E4NBODZ////////////////////////4k4NESEOJCCP/////////////////8gpHIQ5CCCEEENB8hDyBg2f//////////////////////////xEZKQhOEJwhOB5f//////////////yDZviDQIjkDBS///////////////ycFLEnCCThP//////////////////kIB5CHkQEEnCEQEJwbP///////////////////////////4ycGgnBoIgFL/////////////////////+QhxIQ4kIcg0H////////////////////////8cSEOJCHEhAP//////////////////jIQDIQ+Qh5OE////////////////////////4iIiI/////////////wAQAQJAAABAwABAAAAIgEAAAEBAwABAAAAIgEAAAIBAwABAAAAAQAAAAMBAwABAAAABAAAAAYBAwABAAAAAQAAABEBBAABAAAACAAAABYBAwABAAAAIgEAABcBBAABAAAAKAIAABwBAwABAAAAAQAAAAAAAAAKZW5kc3RyZWFtCmVuZG9iagoyIDAgb2JqPDwKL1Jlc291cmNlcyA8PAovUHJvY1NldCBbIC9QREYgL0ltYWdlQiBdCi9YT2JqZWN0IDw8Ci9pbWFnZSAxIDAgUgo+Pgo+PgovTWVkaWFCb3ggWyAwIDAgMjkwLjAgMjkwLjAgXQovQ29udGVudHMgMyAwIFIKL1R5cGUgL1BhZ2UKL1BhcmVudCA1IDAgUgo+PmVuZG9iagozIDAgb2JqPDwKL0xlbmd0aCA0Nwo+PnN0cmVhbQpxIDI5MC4wMDAwMDAgMCAwIDI5MC4wMDAwMDAgMCAwIGNtIC9pbWFnZSBEbyBRCgplbmRzdHJlYW0KZW5kb2JqCjYgMCBvYmo8PAovQ3JlYXRpb25EYXRlIChEOjIwMjUxMTA3MTMzNTE1WikKL01vZERhdGUgKEQ6MjAyNTExMDcxMzM1MTVaKQo+PmVuZG9iagp4cmVmCjAgNwowMDAwMDAwMDAwIDY1NTM2IGYgCjAwMDAwMDAxNDQgMDAwMDAgbiAKMDAwMDAwMTA1MiAwMDAwMCBuIAowMDAwMDAxMjE0IDAwMDAwIG4gCjAwMDAwMDAwNDAgMDAwMDAgbiAKMDAwMDAwMDA4NyAwMDAwMCBuIAowMDAwMDAxMzA5IDAwMDAwIG4gCnRyYWlsZXIKPDwKL1Jvb3QgNCAwIFIKL1NpemUgNwovSW5mbyA2IDAgUgo+PgpzdGFydHhyZWYKMTM5MQolJUVPRg==
           partA: "231648"
           partB: "9753"
           barcode: '!uKEtQZVx'
-          status: ready
-          parcelId: WB0000000001
       properties:
         stickers:
           items:
@@ -6218,13 +6220,13 @@ components:
       type: object
     _api_v3_orders_status_history_post_200_response_orders_inner:
       example:
-        orderID: 123456789
+        deliveryDate: 2000-01-23T04:56:07.000+00:00
         statuses:
         - date: date
           code: SORTED
         - date: date
           code: SORTED
-        deliveryDate: 2000-01-23T04:56:07.000+00:00
+        orderID: 123456789
       properties:
         deliveryDate:
           description: "Планируемая дата доставки, [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)"
@@ -6243,20 +6245,20 @@ components:
     _api_v3_orders_status_history_post_200_response:
       example:
         orders:
-        - orderID: 123456789
+        - deliveryDate: 2000-01-23T04:56:07.000+00:00
           statuses:
           - date: date
             code: SORTED
           - date: date
             code: SORTED
-          deliveryDate: 2000-01-23T04:56:07.000+00:00
-        - orderID: 123456789
+          orderID: 123456789
+        - deliveryDate: 2000-01-23T04:56:07.000+00:00
           statuses:
           - date: date
             code: SORTED
           - date: date
             code: SORTED
-          deliveryDate: 2000-01-23T04:56:07.000+00:00
+          orderID: 123456789
       properties:
         orders:
           description: Список сборочных заданий
@@ -6268,28 +6270,28 @@ components:
       example:
         next: 13833711
         supplies:
-        - cargoType: 0
-          createdAt: 2022-05-04T07:56:29Z
-          scanDt: 2022-05-04T07:56:29Z
+        - id: WB-GI-1234567
           isB2b: true
-          recommendedWhId: 123569
-          name: Тестовая поставка
-          destinationOfficeId: 123
-          crossBorderType: 1
-          id: WB-GI-1234567
-          closedAt: 2022-05-04T07:56:29Z
           done: true
-        - cargoType: 0
           createdAt: 2022-05-04T07:56:29Z
-          scanDt: 2022-05-04T07:56:29Z
-          isB2b: true
-          recommendedWhId: 123569
-          name: Тестовая поставка
-          destinationOfficeId: 123
-          crossBorderType: 1
-          id: WB-GI-1234567
           closedAt: 2022-05-04T07:56:29Z
+          scanDt: 2022-05-04T07:56:29Z
+          name: Тестовая поставка
+          cargoType: 0
+          crossBorderType: 1
+          destinationOfficeId: 123
+          recommendedWhId: 123569
+        - id: WB-GI-1234567
+          isB2b: true
           done: true
+          createdAt: 2022-05-04T07:56:29Z
+          closedAt: 2022-05-04T07:56:29Z
+          scanDt: 2022-05-04T07:56:29Z
+          name: Тестовая поставка
+          cargoType: 0
+          crossBorderType: 1
+          destinationOfficeId: 123
+          recommendedWhId: 123569
       nullable: false
       properties:
         next:
@@ -6342,8 +6344,8 @@ components:
       type: object
     _api_v3_supplies__supplyId__barcode_get_200_response:
       example:
-        file: U3dhZ2dlciByb2Nrcw==
         barcode: WB-GI-12345678
+        file: U3dhZ2dlciByb2Nrcw==
       nullable: false
       properties:
         barcode:
@@ -6421,10 +6423,10 @@ components:
     _api_v3_supplies__supplyId__trbx_stickers_post_200_response:
       example:
         stickers:
-        - file: U3dhZ2dlciByb2Nrcw==
-          barcode: $WBMP:1:123:1234567
-        - file: U3dhZ2dlciByb2Nrcw==
-          barcode: $WBMP:1:123:1234567
+        - barcode: $WBMP:1:123:1234567
+          file: U3dhZ2dlciByb2Nrcw==
+        - barcode: $WBMP:1:123:1234567
+          file: U3dhZ2dlciByb2Nrcw==
       nullable: false
       properties:
         stickers:
@@ -6460,10 +6462,10 @@ components:
     v3_ArchiveOrder_priceInfo:
       description: Информация о цене заказа
       example:
-        convertedPrice: 1020
-        price: 1020
         convertedCurrencyCode: 643
+        convertedPrice: 1020
         currencyCode: 643
+        price: 1020
       properties:
         convertedCurrencyCode:
           description: Код валюты страны продавца
@@ -6492,13 +6494,13 @@ components:
     v3_ArchiveOrder_product:
       description: Информация о товаре
       example:
+        article: wv1702fyjh
+        chrtId: 12345678
+        nmId: 370870300
         skus:
         - 12345Ejf5
         - 12345Ejf6
         - 12345Ejf7
-        nmId: 370870300
-        chrtId: 12345678
-        article: wv1702fyjh
       properties:
         article:
           description: Артикул продавца
@@ -6558,9 +6560,9 @@ components:
       type: object
     _409SupplyDeliverError_data_orders_inner_metaDetails_inner:
       example:
-        decision: decision
-        value: value
         key: key
+        value: value
+        decision: decision
       properties:
         key:
           description: Метаданные
@@ -6613,14 +6615,14 @@ components:
       type: object
     _409SupplyDeliverError_data_orders_inner:
       example:
-        metaDetails:
-        - decision: decision
-          value: value
-          key: key
-        - decision: decision
-          value: value
-          key: key
         id: 0
+        metaDetails:
+        - key: key
+          value: value
+          decision: decision
+        - key: key
+          value: value
+          decision: decision
       properties:
         id:
           description: ID сборочного задания
@@ -6635,22 +6637,22 @@ components:
       description: Дополнительные данные ошибки
       example:
         orders:
-        - metaDetails:
-          - decision: decision
+        - id: 0
+          metaDetails:
+          - key: key
             value: value
-            key: key
-          - decision: decision
+            decision: decision
+          - key: key
             value: value
-            key: key
-          id: 0
-        - metaDetails:
-          - decision: decision
+            decision: decision
+        - id: 0
+          metaDetails:
+          - key: key
             value: value
-            key: key
-          - decision: decision
+            decision: decision
+          - key: key
             value: value
-            key: key
-          id: 0
+            decision: decision
       nullable: true
       properties:
         orders:
@@ -6664,10 +6666,10 @@ components:
       description: "Точный адрес покупателя для доставки, если применимо. Из-за ос\
         обенностей адреса некоторые поля могут быть пустыми"
       example:
-        latitude: 40.20192
         fullAddress: "Челябинская область, г. Челябинск, 51-я улица Арабкира, д. 10А\
           , кв. 42"
         longitude: 44.519068
+        latitude: 40.20192
       nullable: true
       properties:
         fullAddress:
@@ -6767,9 +6769,9 @@ components:
       type: object
     MetaDetails_inner:
       example:
-        decision: uinMaySell
-        value: value
         key: uin
+        value: value
+        decision: uinMaySell
       properties:
         key:
           description: Маркировка

@@ -104,6 +104,15 @@ export interface ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
      * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
      */
     isVariable?: boolean;
+    /**
+     * Как передать характеристику в запросах на [cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post), [создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) и [редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:
+     *   -  `true` — в соответствующем параметре запроса
+     *   -  `false` — внутри массива `characteristics`
+     * 
+     * @type {boolean}
+     * @memberof ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner
+     */
+    existNamedField?: boolean;
 }
 
 /**
@@ -134,6 +143,7 @@ export function ContentV2ObjectCharcsSubjectIdGet200ResponseDataInnerFromJSONTyp
         'charcType': json['charcType'] == null ? undefined : json['charcType'],
         'hasFilter': json['hasFilter'] == null ? undefined : json['hasFilter'],
         'isVariable': json['isVariable'] == null ? undefined : json['isVariable'],
+        'existNamedField': json['existNamedField'] == null ? undefined : json['existNamedField'],
     };
 }
 
@@ -159,6 +169,7 @@ export function ContentV2ObjectCharcsSubjectIdGet200ResponseDataInnerToJSONTyped
         'charcType': value['charcType'],
         'hasFilter': value['hasFilter'],
         'isVariable': value['isVariable'],
+        'existNamedField': value['existNamedField'],
     };
 }
 

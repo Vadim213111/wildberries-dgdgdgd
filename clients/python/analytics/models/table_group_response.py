@@ -29,7 +29,7 @@ class TableGroupResponse(BaseModel):
     TableGroupResponse
     """ # noqa: E501
     groups: List[TableGroupItem] = Field(description="Список групп товаров для таблицы ")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["groups", "currency"]
 
     model_config = ConfigDict(

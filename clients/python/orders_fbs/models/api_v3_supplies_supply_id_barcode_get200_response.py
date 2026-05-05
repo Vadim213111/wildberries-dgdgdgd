@@ -27,8 +27,8 @@ class ApiV3SuppliesSupplyIdBarcodeGet200Response(BaseModel):
     """
     ApiV3SuppliesSupplyIdBarcodeGet200Response
     """ # noqa: E501
-    barcode: Optional[StrictStr] = Field(default=None, description="Закодированное значение стикера (ID поставки)")
-    file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Полное представление стикера в заданном формате (кодировка base64)")
+    barcode: Optional[StrictStr] = Field(default=None, description="Закодированное значение стикера (ID поставки)", json_schema_extra={"examples": ["WB-GI-12345678"]})
+    file: Optional[Union[StrictBytes, StrictStr]] = Field(default=None, description="Полное представление стикера в заданном формате (кодировка base64)", json_schema_extra={"examples": ["VTNkaFoyZGxjaUJ5YjJOcmN3PT0="]})
     __properties: ClassVar[List[str]] = ["barcode", "file"]
 
     model_config = ConfigDict(

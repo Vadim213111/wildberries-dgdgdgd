@@ -27,8 +27,8 @@ class V3ArchiveOrderStatus(BaseModel):
     """
     Последние статусы сборочного задания
     """ # noqa: E501
-    supplier_status: StrictStr = Field(description="Статус сборочного задания, установленный продавцом", alias="supplierStatus")
-    wb_status: StrictStr = Field(description="Статус сборочного задания в системе Wildberries", alias="wbStatus")
+    supplier_status: StrictStr = Field(description="Статус сборочного задания, установленный продавцом", alias="supplierStatus", json_schema_extra={"examples": ["complete"]})
+    wb_status: StrictStr = Field(description="Статус сборочного задания в системе Wildberries", alias="wbStatus", json_schema_extra={"examples": ["sent_to_carrier"]})
     __properties: ClassVar[List[str]] = ["supplierStatus", "wbStatus"]
 
     model_config = ConfigDict(

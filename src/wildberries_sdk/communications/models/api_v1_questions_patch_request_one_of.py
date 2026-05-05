@@ -27,8 +27,8 @@ class ApiV1QuestionsPatchRequestOneOf(BaseModel):
     """
     ApiV1QuestionsPatchRequestOneOf
     """ # noqa: E501
-    id: StrictStr = Field(description="Id вопроса")
-    was_viewed: StrictBool = Field(description="Просмотрен ли вопрос", alias="wasViewed")
+    id: StrictStr = Field(description="Id вопроса", json_schema_extra={"examples": ["n5um6IUBQOOSTxXoo0gV"]})
+    was_viewed: StrictBool = Field(description="Просмотрен ли вопрос", alias="wasViewed", json_schema_extra={"examples": [True]})
     __properties: ClassVar[List[str]] = ["id", "wasViewed"]
 
     model_config = ConfigDict(

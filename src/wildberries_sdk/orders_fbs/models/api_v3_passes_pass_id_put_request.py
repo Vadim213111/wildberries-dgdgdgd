@@ -28,11 +28,11 @@ class ApiV3PassesPassIdPutRequest(BaseModel):
     """
     ApiV3PassesPassIdPutRequest
     """ # noqa: E501
-    first_name: Annotated[str, Field(min_length=1, strict=True)] = Field(description="Имя водителя", alias="firstName")
-    last_name: Annotated[str, Field(min_length=6, strict=True)] = Field(description="Фамилия водителя", alias="lastName")
-    car_model: Annotated[str, Field(min_length=1, strict=True, max_length=100)] = Field(description="Марка машины", alias="carModel")
-    car_number: Annotated[str, Field(min_length=6, strict=True, max_length=9)] = Field(description="Номер машины", alias="carNumber")
-    office_id: Annotated[int, Field(strict=True, ge=1)] = Field(description="ID склада", alias="officeId")
+    first_name: Annotated[str, Field(min_length=1, strict=True)] = Field(description="Имя водителя", alias="firstName", json_schema_extra={"examples": ["Александр"]})
+    last_name: Annotated[str, Field(min_length=6, strict=True)] = Field(description="Фамилия водителя", alias="lastName", json_schema_extra={"examples": ["Петров"]})
+    car_model: Annotated[str, Field(min_length=1, strict=True, max_length=100)] = Field(description="Марка машины", alias="carModel", json_schema_extra={"examples": ["Lamborghini"]})
+    car_number: Annotated[str, Field(min_length=6, strict=True, max_length=9)] = Field(description="Номер машины", alias="carNumber", json_schema_extra={"examples": ["A456BC123"]})
+    office_id: Annotated[int, Field(strict=True, ge=1)] = Field(description="ID склада", alias="officeId", json_schema_extra={"examples": [15]})
     __properties: ClassVar[List[str]] = ["firstName", "lastName", "carModel", "carNumber", "officeId"]
 
     model_config = ConfigDict(

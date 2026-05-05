@@ -27,9 +27,9 @@ class BrandsResponseBrandsInner(BaseModel):
     """
     BrandsResponseBrandsInner
     """ # noqa: E501
-    id: StrictInt = Field(description="ID бренда")
+    id: StrictInt = Field(description="ID бренда", json_schema_extra={"examples": [9007199254]})
     logo_url: StrictStr = Field(description="URL логотипа бренда", alias="logoUrl")
-    name: StrictStr = Field(description="Название бренда")
+    name: StrictStr = Field(description="Название бренда", json_schema_extra={"examples": ["Brand"]})
     __properties: ClassVar[List[str]] = ["id", "logoUrl", "name"]
 
     model_config = ConfigDict(

@@ -667,62 +667,62 @@ components:
     models.TariffsBoxResponse:
       example:
         data:
-          warehouseList:
-          - boxDeliveryMarketplaceCoefExpr: "125"
-            geoName: Центральный федеральный округ
-            boxDeliveryLiter: "11,2"
-            boxStorageLiter: "0,07"
-            boxDeliveryMarketplaceLiter: "11"
-            boxStorageBase: "0,14"
-            boxDeliveryBase: "48"
-            boxDeliveryCoefExpr: "160"
-            boxDeliveryMarketplaceBase: "40"
-            warehouseName: Коледино
-            boxStorageCoefExpr: "115"
-          - boxDeliveryMarketplaceCoefExpr: "125"
-            geoName: Центральный федеральный округ
-            boxDeliveryLiter: "11,2"
-            boxStorageLiter: "0,07"
-            boxDeliveryMarketplaceLiter: "11"
-            boxStorageBase: "0,14"
-            boxDeliveryBase: "48"
-            boxDeliveryCoefExpr: "160"
-            boxDeliveryMarketplaceBase: "40"
-            warehouseName: Коледино
-            boxStorageCoefExpr: "115"
           dtNextBox: 2024-02-01
           dtTillMax: 2024-03-31
+          warehouseList:
+          - boxDeliveryBase: "48"
+            boxDeliveryCoefExpr: "160"
+            boxDeliveryLiter: "11,2"
+            boxDeliveryMarketplaceBase: "40"
+            boxDeliveryMarketplaceCoefExpr: "125"
+            boxDeliveryMarketplaceLiter: "11"
+            boxStorageBase: "0,14"
+            boxStorageCoefExpr: "115"
+            boxStorageLiter: "0,07"
+            geoName: Центральный федеральный округ
+            warehouseName: Коледино
+          - boxDeliveryBase: "48"
+            boxDeliveryCoefExpr: "160"
+            boxDeliveryLiter: "11,2"
+            boxDeliveryMarketplaceBase: "40"
+            boxDeliveryMarketplaceCoefExpr: "125"
+            boxDeliveryMarketplaceLiter: "11"
+            boxStorageBase: "0,14"
+            boxStorageCoefExpr: "115"
+            boxStorageLiter: "0,07"
+            geoName: Центральный федеральный округ
+            warehouseName: Коледино
       properties:
         data:
           $ref: "#/components/schemas/models.WarehousesBoxRates"
       type: object
     models.WarehousesBoxRates:
       example:
-        warehouseList:
-        - boxDeliveryMarketplaceCoefExpr: "125"
-          geoName: Центральный федеральный округ
-          boxDeliveryLiter: "11,2"
-          boxStorageLiter: "0,07"
-          boxDeliveryMarketplaceLiter: "11"
-          boxStorageBase: "0,14"
-          boxDeliveryBase: "48"
-          boxDeliveryCoefExpr: "160"
-          boxDeliveryMarketplaceBase: "40"
-          warehouseName: Коледино
-          boxStorageCoefExpr: "115"
-        - boxDeliveryMarketplaceCoefExpr: "125"
-          geoName: Центральный федеральный округ
-          boxDeliveryLiter: "11,2"
-          boxStorageLiter: "0,07"
-          boxDeliveryMarketplaceLiter: "11"
-          boxStorageBase: "0,14"
-          boxDeliveryBase: "48"
-          boxDeliveryCoefExpr: "160"
-          boxDeliveryMarketplaceBase: "40"
-          warehouseName: Коледино
-          boxStorageCoefExpr: "115"
         dtNextBox: 2024-02-01
         dtTillMax: 2024-03-31
+        warehouseList:
+        - boxDeliveryBase: "48"
+          boxDeliveryCoefExpr: "160"
+          boxDeliveryLiter: "11,2"
+          boxDeliveryMarketplaceBase: "40"
+          boxDeliveryMarketplaceCoefExpr: "125"
+          boxDeliveryMarketplaceLiter: "11"
+          boxStorageBase: "0,14"
+          boxStorageCoefExpr: "115"
+          boxStorageLiter: "0,07"
+          geoName: Центральный федеральный округ
+          warehouseName: Коледино
+        - boxDeliveryBase: "48"
+          boxDeliveryCoefExpr: "160"
+          boxDeliveryLiter: "11,2"
+          boxDeliveryMarketplaceBase: "40"
+          boxDeliveryMarketplaceCoefExpr: "125"
+          boxDeliveryMarketplaceLiter: "11"
+          boxStorageBase: "0,14"
+          boxStorageCoefExpr: "115"
+          boxStorageLiter: "0,07"
+          geoName: Центральный федеральный округ
+          warehouseName: Коледино
       properties:
         dtNextBox:
           description: Дата начала следующего тарифа
@@ -741,17 +741,17 @@ components:
       type: object
     models.WarehouseBoxRates:
       example:
-        boxDeliveryMarketplaceCoefExpr: "125"
-        geoName: Центральный федеральный округ
-        boxDeliveryLiter: "11,2"
-        boxStorageLiter: "0,07"
-        boxDeliveryMarketplaceLiter: "11"
-        boxStorageBase: "0,14"
         boxDeliveryBase: "48"
         boxDeliveryCoefExpr: "160"
+        boxDeliveryLiter: "11,2"
         boxDeliveryMarketplaceBase: "40"
-        warehouseName: Коледино
+        boxDeliveryMarketplaceCoefExpr: "125"
+        boxDeliveryMarketplaceLiter: "11"
+        boxStorageBase: "0,14"
         boxStorageCoefExpr: "115"
+        boxStorageLiter: "0,07"
+        geoName: Центральный федеральный округ
+        warehouseName: Коледино
       properties:
         boxDeliveryBase:
           description: "Логистика, первый литр,\_₽"
@@ -805,20 +805,20 @@ components:
       example:
         data:
           dtNextPallet: 2024-02-01
-          warehouseList:
-          - palletDeliveryValueLiter: "11,9"
-            palletStorageExpr: "155"
-            palletDeliveryExpr: "170"
-            palletDeliveryValueBase: "51"
-            warehouseName: Коледино
-            palletStorageValueExpr: "35.65"
-          - palletDeliveryValueLiter: "11,9"
-            palletStorageExpr: "155"
-            palletDeliveryExpr: "170"
-            palletDeliveryValueBase: "51"
-            warehouseName: Коледино
-            palletStorageValueExpr: "35.65"
           dtTillMax: 2024-03-31
+          warehouseList:
+          - palletDeliveryExpr: "170"
+            palletDeliveryValueBase: "51"
+            palletDeliveryValueLiter: "11,9"
+            palletStorageExpr: "155"
+            palletStorageValueExpr: "35.65"
+            warehouseName: Коледино
+          - palletDeliveryExpr: "170"
+            palletDeliveryValueBase: "51"
+            palletDeliveryValueLiter: "11,9"
+            palletStorageExpr: "155"
+            palletStorageValueExpr: "35.65"
+            warehouseName: Коледино
       properties:
         data:
           $ref: "#/components/schemas/models.WarehousesPalletRates"
@@ -826,20 +826,20 @@ components:
     models.WarehousesPalletRates:
       example:
         dtNextPallet: 2024-02-01
-        warehouseList:
-        - palletDeliveryValueLiter: "11,9"
-          palletStorageExpr: "155"
-          palletDeliveryExpr: "170"
-          palletDeliveryValueBase: "51"
-          warehouseName: Коледино
-          palletStorageValueExpr: "35.65"
-        - palletDeliveryValueLiter: "11,9"
-          palletStorageExpr: "155"
-          palletDeliveryExpr: "170"
-          palletDeliveryValueBase: "51"
-          warehouseName: Коледино
-          palletStorageValueExpr: "35.65"
         dtTillMax: 2024-03-31
+        warehouseList:
+        - palletDeliveryExpr: "170"
+          palletDeliveryValueBase: "51"
+          palletDeliveryValueLiter: "11,9"
+          palletStorageExpr: "155"
+          palletStorageValueExpr: "35.65"
+          warehouseName: Коледино
+        - palletDeliveryExpr: "170"
+          palletDeliveryValueBase: "51"
+          palletDeliveryValueLiter: "11,9"
+          palletStorageExpr: "155"
+          palletStorageValueExpr: "35.65"
+          warehouseName: Коледино
       properties:
         dtNextPallet:
           description: Дата начала следующего тарифа
@@ -858,12 +858,12 @@ components:
       type: object
     models.WarehousePalletRates:
       example:
-        palletDeliveryValueLiter: "11,9"
-        palletStorageExpr: "155"
         palletDeliveryExpr: "170"
         palletDeliveryValueBase: "51"
-        warehouseName: Коледино
+        palletDeliveryValueLiter: "11,9"
+        palletStorageExpr: "155"
         palletStorageValueExpr: "35.65"
+        warehouseName: Коледино
       properties:
         palletDeliveryExpr:
           description: "Коэффициент доставки, %. На него умножается стоимость дост\
@@ -895,64 +895,64 @@ components:
     models.ReturnTariffsResponse:
       example:
         data:
+          dtNextDeliveryDumpKgt: 2024-02-01
+          dtNextDeliveryDumpSrg: 2024-02-01
           dtNextDeliveryDumpSup: 2024-02-01
           warehouseList:
           - deliveryDumpKgtOfficeBase: 1 039
-            deliveryDumpSrgReturnExpr: "170"
-            deliveryDumpSupOfficeLiter: "9,1"
-            deliveryDumpSupCourierLiter: "9,1"
             deliveryDumpKgtOfficeLiter: "9,1"
-            deliveryDumpSupOfficeBase: "129"
+            deliveryDumpKgtReturnExpr: 1 050
             deliveryDumpSrgOfficeExpr: "170"
+            deliveryDumpSrgReturnExpr: "170"
             deliveryDumpSupCourierBase: "229"
+            deliveryDumpSupCourierLiter: "9,1"
+            deliveryDumpSupOfficeBase: "129"
+            deliveryDumpSupOfficeLiter: "9,1"
             deliveryDumpSupReturnExpr: "250"
             warehouseName: Электросталь
-            deliveryDumpKgtReturnExpr: 1 050
           - deliveryDumpKgtOfficeBase: 1 039
-            deliveryDumpSrgReturnExpr: "170"
-            deliveryDumpSupOfficeLiter: "9,1"
-            deliveryDumpSupCourierLiter: "9,1"
             deliveryDumpKgtOfficeLiter: "9,1"
-            deliveryDumpSupOfficeBase: "129"
+            deliveryDumpKgtReturnExpr: 1 050
             deliveryDumpSrgOfficeExpr: "170"
+            deliveryDumpSrgReturnExpr: "170"
             deliveryDumpSupCourierBase: "229"
+            deliveryDumpSupCourierLiter: "9,1"
+            deliveryDumpSupOfficeBase: "129"
+            deliveryDumpSupOfficeLiter: "9,1"
             deliveryDumpSupReturnExpr: "250"
             warehouseName: Электросталь
-            deliveryDumpKgtReturnExpr: 1 050
-          dtNextDeliveryDumpKgt: 2024-02-01
-          dtNextDeliveryDumpSrg: 2024-02-01
       properties:
         data:
           $ref: "#/components/schemas/models.WarehousesReturnRates"
       type: object
     models.WarehousesReturnRates:
       example:
+        dtNextDeliveryDumpKgt: 2024-02-01
+        dtNextDeliveryDumpSrg: 2024-02-01
         dtNextDeliveryDumpSup: 2024-02-01
         warehouseList:
         - deliveryDumpKgtOfficeBase: 1 039
-          deliveryDumpSrgReturnExpr: "170"
-          deliveryDumpSupOfficeLiter: "9,1"
-          deliveryDumpSupCourierLiter: "9,1"
           deliveryDumpKgtOfficeLiter: "9,1"
-          deliveryDumpSupOfficeBase: "129"
+          deliveryDumpKgtReturnExpr: 1 050
           deliveryDumpSrgOfficeExpr: "170"
+          deliveryDumpSrgReturnExpr: "170"
           deliveryDumpSupCourierBase: "229"
+          deliveryDumpSupCourierLiter: "9,1"
+          deliveryDumpSupOfficeBase: "129"
+          deliveryDumpSupOfficeLiter: "9,1"
           deliveryDumpSupReturnExpr: "250"
           warehouseName: Электросталь
-          deliveryDumpKgtReturnExpr: 1 050
         - deliveryDumpKgtOfficeBase: 1 039
-          deliveryDumpSrgReturnExpr: "170"
-          deliveryDumpSupOfficeLiter: "9,1"
-          deliveryDumpSupCourierLiter: "9,1"
           deliveryDumpKgtOfficeLiter: "9,1"
-          deliveryDumpSupOfficeBase: "129"
+          deliveryDumpKgtReturnExpr: 1 050
           deliveryDumpSrgOfficeExpr: "170"
+          deliveryDumpSrgReturnExpr: "170"
           deliveryDumpSupCourierBase: "229"
+          deliveryDumpSupCourierLiter: "9,1"
+          deliveryDumpSupOfficeBase: "129"
+          deliveryDumpSupOfficeLiter: "9,1"
           deliveryDumpSupReturnExpr: "250"
           warehouseName: Электросталь
-          deliveryDumpKgtReturnExpr: 1 050
-        dtNextDeliveryDumpKgt: 2024-02-01
-        dtNextDeliveryDumpSrg: 2024-02-01
       properties:
         dtNextDeliveryDumpKgt:
           description: Дата начала следующего тарифа при грузовой доставке
@@ -982,16 +982,16 @@ components:
     models.WarehouseReturnRates:
       example:
         deliveryDumpKgtOfficeBase: 1 039
-        deliveryDumpSrgReturnExpr: "170"
-        deliveryDumpSupOfficeLiter: "9,1"
-        deliveryDumpSupCourierLiter: "9,1"
         deliveryDumpKgtOfficeLiter: "9,1"
-        deliveryDumpSupOfficeBase: "129"
+        deliveryDumpKgtReturnExpr: 1 050
         deliveryDumpSrgOfficeExpr: "170"
+        deliveryDumpSrgReturnExpr: "170"
         deliveryDumpSupCourierBase: "229"
+        deliveryDumpSupCourierLiter: "9,1"
+        deliveryDumpSupOfficeBase: "129"
+        deliveryDumpSupOfficeLiter: "9,1"
         deliveryDumpSupReturnExpr: "250"
         warehouseName: Электросталь
-        deliveryDumpKgtReturnExpr: 1 050
       properties:
         deliveryDumpKgtOfficeBase:
           description: |
@@ -1077,11 +1077,11 @@ components:
       type: object
     models.ErrorModel:
       example:
+        status: 5
+        title: title
+        detail: detail
         requestId: requestId
         origin: origin
-        detail: detail
-        title: title
-        status: 5
       properties:
         status:
           description: HTTP статус-код
@@ -1102,18 +1102,18 @@ components:
     models.AcceptanceCoefficient:
       example:
         date: date
-        isSortingCenter: true
-        deliveryBaseLiter: deliveryBaseLiter
-        storageCoef: storageCoef
-        warehouseName: warehouseName
-        storageAdditionalLiter: storageAdditionalLiter
-        warehouseID: 6
-        boxTypeID: 1
         coefficient: 0.8008281904610115
-        storageBaseLiter: storageBaseLiter
-        deliveryAdditionalLiter: deliveryAdditionalLiter
+        warehouseID: 6
+        warehouseName: warehouseName
         allowUnload: true
+        boxTypeID: 1
+        storageCoef: storageCoef
         deliveryCoef: deliveryCoef
+        deliveryBaseLiter: deliveryBaseLiter
+        deliveryAdditionalLiter: deliveryAdditionalLiter
+        storageBaseLiter: storageBaseLiter
+        storageAdditionalLiter: storageAdditionalLiter
+        isSortingCenter: true
       properties:
         date:
           description: Дата начала действия коэффициента
@@ -1188,31 +1188,31 @@ components:
       example:
         response:
           data:
-            warehouseList:
-            - boxDeliveryMarketplaceCoefExpr: "125"
-              geoName: Центральный федеральный округ
-              boxDeliveryLiter: "11,2"
-              boxStorageLiter: "0,07"
-              boxDeliveryMarketplaceLiter: "11"
-              boxStorageBase: "0,14"
-              boxDeliveryBase: "48"
-              boxDeliveryCoefExpr: "160"
-              boxDeliveryMarketplaceBase: "40"
-              warehouseName: Коледино
-              boxStorageCoefExpr: "115"
-            - boxDeliveryMarketplaceCoefExpr: "125"
-              geoName: Центральный федеральный округ
-              boxDeliveryLiter: "11,2"
-              boxStorageLiter: "0,07"
-              boxDeliveryMarketplaceLiter: "11"
-              boxStorageBase: "0,14"
-              boxDeliveryBase: "48"
-              boxDeliveryCoefExpr: "160"
-              boxDeliveryMarketplaceBase: "40"
-              warehouseName: Коледино
-              boxStorageCoefExpr: "115"
             dtNextBox: 2024-02-01
             dtTillMax: 2024-03-31
+            warehouseList:
+            - boxDeliveryBase: "48"
+              boxDeliveryCoefExpr: "160"
+              boxDeliveryLiter: "11,2"
+              boxDeliveryMarketplaceBase: "40"
+              boxDeliveryMarketplaceCoefExpr: "125"
+              boxDeliveryMarketplaceLiter: "11"
+              boxStorageBase: "0,14"
+              boxStorageCoefExpr: "115"
+              boxStorageLiter: "0,07"
+              geoName: Центральный федеральный округ
+              warehouseName: Коледино
+            - boxDeliveryBase: "48"
+              boxDeliveryCoefExpr: "160"
+              boxDeliveryLiter: "11,2"
+              boxDeliveryMarketplaceBase: "40"
+              boxDeliveryMarketplaceCoefExpr: "125"
+              boxDeliveryMarketplaceLiter: "11"
+              boxStorageBase: "0,14"
+              boxStorageCoefExpr: "115"
+              boxStorageLiter: "0,07"
+              geoName: Центральный федеральный округ
+              warehouseName: Коледино
       properties:
         response:
           $ref: "#/components/schemas/models.TariffsBoxResponse"
@@ -1222,20 +1222,20 @@ components:
         response:
           data:
             dtNextPallet: 2024-02-01
-            warehouseList:
-            - palletDeliveryValueLiter: "11,9"
-              palletStorageExpr: "155"
-              palletDeliveryExpr: "170"
-              palletDeliveryValueBase: "51"
-              warehouseName: Коледино
-              palletStorageValueExpr: "35.65"
-            - palletDeliveryValueLiter: "11,9"
-              palletStorageExpr: "155"
-              palletDeliveryExpr: "170"
-              palletDeliveryValueBase: "51"
-              warehouseName: Коледино
-              palletStorageValueExpr: "35.65"
             dtTillMax: 2024-03-31
+            warehouseList:
+            - palletDeliveryExpr: "170"
+              palletDeliveryValueBase: "51"
+              palletDeliveryValueLiter: "11,9"
+              palletStorageExpr: "155"
+              palletStorageValueExpr: "35.65"
+              warehouseName: Коледино
+            - palletDeliveryExpr: "170"
+              palletDeliveryValueBase: "51"
+              palletDeliveryValueLiter: "11,9"
+              palletStorageExpr: "155"
+              palletStorageValueExpr: "35.65"
+              warehouseName: Коледино
       properties:
         response:
           $ref: "#/components/schemas/models.TariffsPalletResponse"
@@ -1244,32 +1244,32 @@ components:
       example:
         response:
           data:
+            dtNextDeliveryDumpKgt: 2024-02-01
+            dtNextDeliveryDumpSrg: 2024-02-01
             dtNextDeliveryDumpSup: 2024-02-01
             warehouseList:
             - deliveryDumpKgtOfficeBase: 1 039
-              deliveryDumpSrgReturnExpr: "170"
-              deliveryDumpSupOfficeLiter: "9,1"
-              deliveryDumpSupCourierLiter: "9,1"
               deliveryDumpKgtOfficeLiter: "9,1"
-              deliveryDumpSupOfficeBase: "129"
+              deliveryDumpKgtReturnExpr: 1 050
               deliveryDumpSrgOfficeExpr: "170"
+              deliveryDumpSrgReturnExpr: "170"
               deliveryDumpSupCourierBase: "229"
+              deliveryDumpSupCourierLiter: "9,1"
+              deliveryDumpSupOfficeBase: "129"
+              deliveryDumpSupOfficeLiter: "9,1"
               deliveryDumpSupReturnExpr: "250"
               warehouseName: Электросталь
-              deliveryDumpKgtReturnExpr: 1 050
             - deliveryDumpKgtOfficeBase: 1 039
-              deliveryDumpSrgReturnExpr: "170"
-              deliveryDumpSupOfficeLiter: "9,1"
-              deliveryDumpSupCourierLiter: "9,1"
               deliveryDumpKgtOfficeLiter: "9,1"
-              deliveryDumpSupOfficeBase: "129"
+              deliveryDumpKgtReturnExpr: 1 050
               deliveryDumpSrgOfficeExpr: "170"
+              deliveryDumpSrgReturnExpr: "170"
               deliveryDumpSupCourierBase: "229"
+              deliveryDumpSupCourierLiter: "9,1"
+              deliveryDumpSupOfficeBase: "129"
+              deliveryDumpSupOfficeLiter: "9,1"
               deliveryDumpSupReturnExpr: "250"
               warehouseName: Электросталь
-              deliveryDumpKgtReturnExpr: 1 050
-            dtNextDeliveryDumpKgt: 2024-02-01
-            dtNextDeliveryDumpSrg: 2024-02-01
       properties:
         response:
           $ref: "#/components/schemas/models.ReturnTariffsResponse"
@@ -1278,24 +1278,24 @@ components:
       additionalProperties: false
       example:
         report:
-        - parentName: parentName
-          kgvpBooking: 0.8008281904610115
-          kgvpSupplier: 5.962133916683182
-          paidStorageKgvp: 2.3021358869347655
-          kgvpPickup: 1.4658129805029452
-          kgvpSupplierExpress: 5.637376656633329
+        - kgvpBooking: 0.8008281904610115
           kgvpMarketplace: 6.027456183070403
+          kgvpPickup: 1.4658129805029452
+          kgvpSupplier: 5.962133916683182
+          kgvpSupplierExpress: 5.637376656633329
+          paidStorageKgvp: 2.3021358869347655
           parentID: 7
+          parentName: parentName
           subjectID: 9
           subjectName: subjectName
-        - parentName: parentName
-          kgvpBooking: 0.8008281904610115
-          kgvpSupplier: 5.962133916683182
-          paidStorageKgvp: 2.3021358869347655
-          kgvpPickup: 1.4658129805029452
-          kgvpSupplierExpress: 5.637376656633329
+        - kgvpBooking: 0.8008281904610115
           kgvpMarketplace: 6.027456183070403
+          kgvpPickup: 1.4658129805029452
+          kgvpSupplier: 5.962133916683182
+          kgvpSupplierExpress: 5.637376656633329
+          paidStorageKgvp: 2.3021358869347655
           parentID: 7
+          parentName: parentName
           subjectID: 9
           subjectName: subjectName
       properties:
@@ -1399,14 +1399,14 @@ components:
       type: object
     Commission_report_inner:
       example:
-        parentName: parentName
         kgvpBooking: 0.8008281904610115
-        kgvpSupplier: 5.962133916683182
-        paidStorageKgvp: 2.3021358869347655
-        kgvpPickup: 1.4658129805029452
-        kgvpSupplierExpress: 5.637376656633329
         kgvpMarketplace: 6.027456183070403
+        kgvpPickup: 1.4658129805029452
+        kgvpSupplier: 5.962133916683182
+        kgvpSupplierExpress: 5.637376656633329
+        paidStorageKgvp: 2.3021358869347655
         parentID: 7
+        parentName: parentName
         subjectID: 9
         subjectName: subjectName
       properties:

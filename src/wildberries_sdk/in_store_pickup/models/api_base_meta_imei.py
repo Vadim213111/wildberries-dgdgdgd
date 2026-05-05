@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class ApiBaseMetaImei(BaseModel):
     """
     IMEI
     """ # noqa: E501
-    value: Optional[StrictStr] = None
+    value: Optional[StrictStr] = Field(default=None, json_schema_extra={"examples": ["123456789012345"]})
     __properties: ClassVar[List[str]] = ["value"]
 
     model_config = ConfigDict(

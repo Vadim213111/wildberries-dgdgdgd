@@ -27,7 +27,7 @@ class ApiV1CalendarPromotionsUploadPost422Response(BaseModel):
     """
     ApiV1CalendarPromotionsUploadPost422Response
     """ # noqa: E501
-    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText")
+    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText", json_schema_extra={"examples": ["Unprocessable entity"]})
     __properties: ClassVar[List[str]] = ["errorText"]
 
     model_config = ConfigDict(

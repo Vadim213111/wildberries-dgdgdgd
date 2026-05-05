@@ -28,7 +28,7 @@ class ApiV2BufferGoodsTaskGet200ResponseData(BaseModel):
     """
     Данные ответа
     """ # noqa: E501
-    upload_id: Optional[StrictInt] = Field(default=None, description="ID загрузки", alias="uploadID")
+    upload_id: Optional[StrictInt] = Field(default=None, description="ID загрузки", alias="uploadID", json_schema_extra={"examples": [3235236546]})
     buffer_goods: Optional[List[GoodBufferHistory]] = Field(default=None, description="Информация о товарах в загрузке", alias="bufferGoods")
     __properties: ClassVar[List[str]] = ["uploadID", "bufferGoods"]
 

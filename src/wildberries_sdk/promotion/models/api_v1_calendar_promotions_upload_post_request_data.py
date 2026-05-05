@@ -28,9 +28,9 @@ class ApiV1CalendarPromotionsUploadPostRequestData(BaseModel):
     """
     Данные запроса
     """ # noqa: E501
-    promotion_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="ID акции", alias="promotionID")
-    upload_now: Optional[StrictBool] = Field(default=None, description="Установить скидку:   - `true` — сейчас   - `false` — в момент старта акции ", alias="uploadNow")
-    nomenclatures: Optional[Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=1000)]] = Field(default=None, description="Артикулы WB, которые можно добавить в акцию")
+    promotion_id: Optional[Annotated[int, Field(strict=True, ge=1)]] = Field(default=None, description="ID акции", alias="promotionID", json_schema_extra={"examples": [1]})
+    upload_now: Optional[StrictBool] = Field(default=None, description="Установить скидку:   - `true` — сейчас   - `false` — в момент старта акции ", alias="uploadNow", json_schema_extra={"examples": [True]})
+    nomenclatures: Optional[Annotated[List[Annotated[int, Field(strict=True, ge=1)]], Field(min_length=1, max_length=1000)]] = Field(default=None, description="Артикулы WB, которые можно добавить в акцию", json_schema_extra={"examples": [[75632091, 31322455, 642080796]]})
     __properties: ClassVar[List[str]] = ["promotionID", "uploadNow", "nomenclatures"]
 
     model_config = ConfigDict(

@@ -28,8 +28,8 @@ class PastPeriod(BaseModel):
     """
     Прошлый период для сравнения. Количество дней — меньше или равно `currentPeriod`
     """ # noqa: E501
-    start: date = Field(description="Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня")
-    end: date = Field(description="Дата окончания периода. Не позднее даты перед датой начала `currentPeriod`. Не ранее 365 суток от сегодня")
+    start: date = Field(description="Дата начала периода. Не позднее `end`. Не ранее 365 суток от сегодня", json_schema_extra={"examples": ["2024-02-08"]})
+    end: date = Field(description="Дата окончания периода. Не позднее даты перед датой начала `currentPeriod`. Не ранее 365 суток от сегодня", json_schema_extra={"examples": ["2024-02-08"]})
     __properties: ClassVar[List[str]] = ["start", "end"]
 
     model_config = ConfigDict(

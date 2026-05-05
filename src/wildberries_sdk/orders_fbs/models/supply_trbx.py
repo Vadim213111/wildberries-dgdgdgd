@@ -27,7 +27,7 @@ class SupplyTrbx(BaseModel):
     """
     SupplyTrbx
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="ID грузоместа")
+    id: Optional[StrictStr] = Field(default=None, description="ID грузоместа", json_schema_extra={"examples": ["WB-TRBX-1234567"]})
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

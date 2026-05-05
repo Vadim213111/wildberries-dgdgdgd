@@ -41,7 +41,7 @@ class GetUsersResponseUsersInner(BaseModel):
     goods_return: StrictBool = Field(description="Может ли пользователь одобрять возвраты товаров", alias="goodsReturn")
     is_invitee: StrictBool = Field(description="Приглашён ли пользователь", alias="isInvitee")
     invitee_info: Optional[GetUsersResponseUsersInnerInviteeInfo] = Field(alias="inviteeInfo")
-    access: List[AccessInner] = Field(description="Настройки доступа к разделам профиля продавца")
+    access: List[AccessInner] = Field(description="Настройки доступа к разделам профиля продавца", json_schema_extra={"examples": [[{"code": "balance", "disabled": False}, {"code": "pointsForReviews", "disabled": False}, {"code": "brands", "disabled": True}, {"code": "finance", "disabled": True}, {"code": "supply", "disabled": True}]]})
     __properties: ClassVar[List[str]] = ["id", "role", "position", "phone", "email", "isOwner", "firstName", "secondName", "patronymic", "goodsReturn", "isInvitee", "inviteeInfo", "access"]
 
     @field_validator('role')

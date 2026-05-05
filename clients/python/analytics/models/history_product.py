@@ -27,12 +27,12 @@ class HistoryProduct(BaseModel):
     """
     HistoryProduct
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId")
-    title: StrictStr = Field(description="Название карточки товара")
-    vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode")
-    brand_name: StrictStr = Field(description="Бренд", alias="brandName")
-    subject_id: StrictInt = Field(description="ID предмета", alias="subjectId")
-    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId", json_schema_extra={"examples": [268913787]})
+    title: StrictStr = Field(description="Название карточки товара", json_schema_extra={"examples": ["Кроссовки для бега"]})
+    vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["12345456"]})
+    brand_name: StrictStr = Field(description="Бренд", alias="brandName", json_schema_extra={"examples": ["Demix"]})
+    subject_id: StrictInt = Field(description="ID предмета", alias="subjectId", json_schema_extra={"examples": [105]})
+    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName", json_schema_extra={"examples": ["Кроссовки"]})
     __properties: ClassVar[List[str]] = ["nmId", "title", "vendorCode", "brandName", "subjectId", "subjectName"]
 
     model_config = ConfigDict(

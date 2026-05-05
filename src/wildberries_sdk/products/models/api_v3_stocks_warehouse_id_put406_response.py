@@ -27,8 +27,8 @@ class ApiV3StocksWarehouseIdPut406Response(BaseModel):
     """
     ApiV3StocksWarehouseIdPut406Response
     """ # noqa: E501
-    code: Optional[StrictStr] = Field(default=None, description="Код ошибки")
-    message: Optional[StrictStr] = Field(default=None, description="Описание ошибки")
+    code: Optional[StrictStr] = Field(default=None, description="Код ошибки", json_schema_extra={"examples": ["StatusNotAcceptable"]})
+    message: Optional[StrictStr] = Field(default=None, description="Описание ошибки", json_schema_extra={"examples": ["Обновление остатков заблокировано в связи с баном поставщика"]})
     data: Optional[Dict[str, Any]] = Field(default=None, description="Дополнительные данные ошибки")
     __properties: ClassVar[List[str]] = ["code", "message", "data"]
 

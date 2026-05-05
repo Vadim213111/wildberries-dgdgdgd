@@ -29,7 +29,7 @@ class TableShippingOfficeItem(BaseModel):
     """
     Данные по региону отгрузки
     """ # noqa: E501
-    region_name: StrictStr = Field(description="Регион отгрузки", alias="regionName")
+    region_name: StrictStr = Field(description="Регион отгрузки", alias="regionName", json_schema_extra={"examples": ["Центральный"]})
     metrics: TableShippingOfficeMetrics = Field(description="Метрики по региону")
     offices: List[TableShippingOfficeItemOfficesInner] = Field(description="Данные по складам")
     __properties: ClassVar[List[str]] = ["regionName", "metrics", "offices"]

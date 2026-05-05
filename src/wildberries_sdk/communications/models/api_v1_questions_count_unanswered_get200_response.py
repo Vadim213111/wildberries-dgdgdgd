@@ -29,8 +29,8 @@ class ApiV1QuestionsCountUnansweredGet200Response(BaseModel):
     ApiV1QuestionsCountUnansweredGet200Response
     """ # noqa: E501
     data: Optional[ApiV1QuestionsCountUnansweredGet200ResponseData] = None
-    error: Optional[StrictBool] = Field(default=None, description="Есть ли ошибка")
-    error_text: Optional[StrictStr] = Field(default=None, description="Описание ошибки", alias="errorText")
+    error: Optional[StrictBool] = Field(default=None, description="Есть ли ошибка", json_schema_extra={"examples": [False]})
+    error_text: Optional[StrictStr] = Field(default=None, description="Описание ошибки", alias="errorText", json_schema_extra={"examples": [""]})
     additional_errors: Optional[List[StrictStr]] = Field(default=None, description="Дополнительные ошибки", alias="additionalErrors")
     __properties: ClassVar[List[str]] = ["data", "error", "errorText", "additionalErrors"]
 

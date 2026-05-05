@@ -28,7 +28,7 @@ class ApiV3DbwOrdersOrderIdMetaGtinPutRequest(BaseModel):
     """
     ApiV3DbwOrdersOrderIdMetaGtinPutRequest
     """ # noqa: E501
-    gtin: Annotated[str, Field(min_length=13, strict=True, max_length=13)] = Field(description="GTIN")
+    gtin: Annotated[str, Field(min_length=13, strict=True, max_length=13)] = Field(description="GTIN", json_schema_extra={"examples": ["1234567890123"]})
     __properties: ClassVar[List[str]] = ["gtin"]
 
     model_config = ConfigDict(

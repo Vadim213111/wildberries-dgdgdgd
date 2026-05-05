@@ -27,7 +27,7 @@ class ApiV1CalendarPromotionsGet400Response(BaseModel):
     """
     ApiV1CalendarPromotionsGet400Response
     """ # noqa: E501
-    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText")
+    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText", json_schema_extra={"examples": ["Failed to parse data"]})
     __properties: ClassVar[List[str]] = ["errorText"]
 
     model_config = ConfigDict(

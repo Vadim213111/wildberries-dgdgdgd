@@ -28,10 +28,10 @@ class Response400(BaseModel):
     Response400
     """ # noqa: E501
     detail: StrictStr = Field(description="Детали ошибки")
-    origin: StrictStr = Field(description="ID внутреннего сервиса WB")
-    request_id: StrictStr = Field(description="Уникальный ID запроса")
-    status: StrictInt = Field(description="HTTP статус-код")
-    title: StrictStr = Field(description="Заголовок ошибки")
+    origin: StrictStr = Field(description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["camp-api-public-cache"]})
+    request_id: StrictStr = Field(description="Уникальный ID запроса", json_schema_extra={"examples": ["6023d2950af564838f9b44a279d2140c"]})
+    status: StrictInt = Field(description="HTTP статус-код", json_schema_extra={"examples": [400]})
+    title: StrictStr = Field(description="Заголовок ошибки", json_schema_extra={"examples": ["invalid payload"]})
     __properties: ClassVar[List[str]] = ["detail", "origin", "request_id", "status", "title"]
 
     model_config = ConfigDict(

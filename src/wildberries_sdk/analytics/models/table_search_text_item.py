@@ -37,18 +37,18 @@ class TableSearchTextItem(BaseModel):
     """
     TableSearchTextItem
     """ # noqa: E501
-    text: StrictStr = Field(description="Текст поискового запроса")
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId")
-    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName")
-    brand_name: StrictStr = Field(description="Бренд", alias="brandName")
-    vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode")
-    name: StrictStr = Field(description="Название товара")
-    is_card_rated: StrictBool = Field(description="Есть ли рейтинг у карточки товара", alias="isCardRated")
-    rating: Union[StrictFloat, StrictInt] = Field(description="Рейтинг карточки товара")
-    feedback_rating: Union[StrictFloat, StrictInt] = Field(description="Рейтинг по отзывам", alias="feedbackRating")
+    text: StrictStr = Field(description="Текст поискового запроса", json_schema_extra={"examples": ["костюм"]})
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId", json_schema_extra={"examples": [211131895]})
+    subject_name: StrictStr = Field(description="Название предмета", alias="subjectName", json_schema_extra={"examples": ["Phones"]})
+    brand_name: StrictStr = Field(description="Бренд", alias="brandName", json_schema_extra={"examples": ["Apple"]})
+    vendor_code: StrictStr = Field(description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["wb3ha2668w"]})
+    name: StrictStr = Field(description="Название товара", json_schema_extra={"examples": ["iPhone 13 256 ГБ Серебристый"]})
+    is_card_rated: StrictBool = Field(description="Есть ли рейтинг у карточки товара", alias="isCardRated", json_schema_extra={"examples": [True]})
+    rating: Union[StrictFloat, StrictInt] = Field(description="Рейтинг карточки товара", json_schema_extra={"examples": [6]})
+    feedback_rating: Union[StrictFloat, StrictInt] = Field(description="Рейтинг по отзывам", alias="feedbackRating", json_schema_extra={"examples": [1]})
     price: TableProductItemAllOfPrice
     frequency: TableSearchTextItemAllOfFrequency
-    week_frequency: StrictInt = Field(description="Количество обращений с поисковым запросом за неделю", alias="weekFrequency")
+    week_frequency: StrictInt = Field(description="Количество обращений с поисковым запросом за неделю", alias="weekFrequency", json_schema_extra={"examples": [140]})
     median_position: TableSearchTextItemAllOfMedianPosition = Field(alias="medianPosition")
     avg_position: TableGroupItemMetricsAvgPosition = Field(alias="avgPosition")
     open_card: TableSearchTextItemAllOfOpenCard = Field(alias="openCard")

@@ -27,10 +27,10 @@ class V3ArchiveOrderProduct(BaseModel):
     """
     Информация о товаре
     """ # noqa: E501
-    article: StrictStr = Field(description="Артикул продавца")
-    chrt_id: StrictInt = Field(description="ID размера товара в системе WB", alias="chrtId")
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId")
-    skus: List[StrictStr] = Field(description="Список баркодов")
+    article: StrictStr = Field(description="Артикул продавца", json_schema_extra={"examples": ["wv1702fyjh"]})
+    chrt_id: StrictInt = Field(description="ID размера товара в системе WB", alias="chrtId", json_schema_extra={"examples": [12345678]})
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId", json_schema_extra={"examples": [370870300]})
+    skus: List[StrictStr] = Field(description="Список баркодов", json_schema_extra={"examples": [["12345Ejf5", "12345Ejf6", "12345Ejf7"]]})
     __properties: ClassVar[List[str]] = ["article", "chrtId", "nmId", "skus"]
 
     model_config = ConfigDict(

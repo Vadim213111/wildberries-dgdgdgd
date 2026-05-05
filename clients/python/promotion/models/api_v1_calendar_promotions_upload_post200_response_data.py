@@ -27,8 +27,8 @@ class ApiV1CalendarPromotionsUploadPost200ResponseData(BaseModel):
     """
     Данные ответа
     """ # noqa: E501
-    already_exists: Optional[StrictBool] = Field(default=None, description="Загрузка с такими данными уже существует", alias="alreadyExists")
-    upload_id: Optional[StrictInt] = Field(default=None, description="ID загрузки", alias="uploadID")
+    already_exists: Optional[StrictBool] = Field(default=None, description="Загрузка с такими данными уже существует", alias="alreadyExists", json_schema_extra={"examples": [False]})
+    upload_id: Optional[StrictInt] = Field(default=None, description="ID загрузки", alias="uploadID", json_schema_extra={"examples": [11]})
     __properties: ClassVar[List[str]] = ["alreadyExists", "uploadID"]
 
     model_config = ConfigDict(

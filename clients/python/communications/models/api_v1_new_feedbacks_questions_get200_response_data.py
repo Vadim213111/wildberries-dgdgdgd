@@ -27,8 +27,8 @@ class ApiV1NewFeedbacksQuestionsGet200ResponseData(BaseModel):
     """
     ApiV1NewFeedbacksQuestionsGet200ResponseData
     """ # noqa: E501
-    has_new_questions: Optional[StrictBool] = Field(default=None, description="Есть ли непросмотренные вопросы:    - `true` — да    - `false` — нет ", alias="hasNewQuestions")
-    has_new_feedbacks: Optional[StrictBool] = Field(default=None, description="Есть ли непросмотренные отзывы:  - `true` — да  - `false` — нет ", alias="hasNewFeedbacks")
+    has_new_questions: Optional[StrictBool] = Field(default=None, description="Есть ли непросмотренные вопросы:    - `true` — да    - `false` — нет ", alias="hasNewQuestions", json_schema_extra={"examples": [True]})
+    has_new_feedbacks: Optional[StrictBool] = Field(default=None, description="Есть ли непросмотренные отзывы:  - `true` — да  - `false` — нет ", alias="hasNewFeedbacks", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["hasNewQuestions", "hasNewFeedbacks"]
 
     model_config = ConfigDict(

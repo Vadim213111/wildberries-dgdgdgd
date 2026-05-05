@@ -29,8 +29,8 @@ class ApiV2ListGoodsFilterGet200Response(BaseModel):
     ApiV2ListGoodsFilterGet200Response
     """ # noqa: E501
     data: ApiV2ListGoodsFilterGet200ResponseData
-    error: StrictBool = Field(description="Флаг ошибки")
-    error_text: StrictStr = Field(description="Текст ошибки", alias="errorText")
+    error: StrictBool = Field(description="Флаг ошибки", json_schema_extra={"examples": [False]})
+    error_text: StrictStr = Field(description="Текст ошибки", alias="errorText", json_schema_extra={"examples": [""]})
     __properties: ClassVar[List[str]] = ["data", "error", "errorText"]
 
     model_config = ConfigDict(

@@ -27,7 +27,7 @@ class ApiV1AnalyticsBrandShareBrandsGet200Response(BaseModel):
     """
     ApiV1AnalyticsBrandShareBrandsGet200Response
     """ # noqa: E501
-    data: Optional[List[StrictStr]] = Field(default=None, description="Список брендов")
+    data: Optional[List[StrictStr]] = Field(default=None, description="Список брендов", json_schema_extra={"examples": [["1000 | Каталог", "1000 Каталог", "AndBerries", "H&M", "Mirtex", "PlayToday", "Test1", "WOW", "[\"Colambetta\"]", "dubs", "test", "Бест Трикотаж", "Тест"]]})
     __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(

@@ -30,11 +30,11 @@ class CommonSizeFilters(BaseModel):
     """
     Общие фильтры по размеру
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID", json_schema_extra={"examples": [123456789]})
     current_period: PeriodInv = Field(alias="currentPeriod")
     stock_type: StockType = Field(alias="stockType")
     order_by: TableOrderBy = Field(alias="orderBy")
-    include_office: StrictBool = Field(description="Включить детализацию по складам", alias="includeOffice")
+    include_office: StrictBool = Field(description="Включить детализацию по складам", alias="includeOffice", json_schema_extra={"examples": [True]})
     __properties: ClassVar[List[str]] = ["nmID", "currentPeriod", "stockType", "orderBy", "includeOffice"]
 
     model_config = ConfigDict(

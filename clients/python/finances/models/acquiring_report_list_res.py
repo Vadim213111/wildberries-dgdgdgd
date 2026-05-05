@@ -28,14 +28,14 @@ class AcquiringReportListRes(BaseModel):
     """
     Список отчётов об издержках на приём платежей
     """ # noqa: E501
-    report_id: StrictInt = Field(description="ID отчёта", alias="reportId")
-    seller_finance_name: StrictStr = Field(description="Наименование продавца", alias="sellerFinanceName")
-    date_from: date = Field(description="Дата начала отчётного периода", alias="dateFrom")
-    date_to: date = Field(description="Дата конца отчётного периода", alias="dateTo")
-    create_date: date = Field(description="Дата формирования отчёта", alias="createDate")
-    currency: StrictStr = Field(description="Валюта отчёта")
-    acquiring_fee_sum: StrictStr = Field(description="Сумма издержек по эквайрингу", alias="acquiringFeeSum")
-    acquiring_fee_vat_sum: StrictStr = Field(description="В том числе НДС", alias="acquiringFeeVatSum")
+    report_id: StrictInt = Field(description="ID отчёта", alias="reportId", json_schema_extra={"examples": [307401554]})
+    seller_finance_name: StrictStr = Field(description="Наименование продавца", alias="sellerFinanceName", json_schema_extra={"examples": ["ИП Кружинин В. Р."]})
+    date_from: date = Field(description="Дата начала отчётного периода", alias="dateFrom", json_schema_extra={"examples": ["2026-03-16"]})
+    date_to: date = Field(description="Дата конца отчётного периода", alias="dateTo", json_schema_extra={"examples": ["2026-03-22"]})
+    create_date: date = Field(description="Дата формирования отчёта", alias="createDate", json_schema_extra={"examples": ["2026-03-31"]})
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
+    acquiring_fee_sum: StrictStr = Field(description="Сумма издержек по эквайрингу", alias="acquiringFeeSum", json_schema_extra={"examples": ["258"]})
+    acquiring_fee_vat_sum: StrictStr = Field(description="В том числе НДС", alias="acquiringFeeVatSum", json_schema_extra={"examples": ["83.79"]})
     __properties: ClassVar[List[str]] = ["reportId", "sellerFinanceName", "dateFrom", "dateTo", "createDate", "currency", "acquiringFeeSum", "acquiringFeeVatSum"]
 
     model_config = ConfigDict(

@@ -1100,7 +1100,23 @@ components:
         total: 0
         countInResponse: 6
         users:
-        - role: user
+        - id: 1
+          role: user
+          position: position
+          phone: phone
+          email: email
+          isOwner: true
+          firstName: firstName
+          secondName: secondName
+          patronymic: patronymic
+          goodsReturn: true
+          isInvitee: true
+          inviteeInfo:
+            phoneNumber: phoneNumber
+            position: position
+            inviteUuid: inviteUuid
+            expiredAt: 2000-01-23T04:56:07.000+00:00
+            isActive: true
           access:
           - code: balance
             disabled: false
@@ -1112,23 +1128,23 @@ components:
             disabled: true
           - code: supply
             disabled: true
+        - id: 1
+          role: user
+          position: position
+          phone: phone
+          email: email
+          isOwner: true
+          firstName: firstName
+          secondName: secondName
+          patronymic: patronymic
+          goodsReturn: true
+          isInvitee: true
           inviteeInfo:
-            expiredAt: 2000-01-23T04:56:07.000+00:00
             phoneNumber: phoneNumber
             position: position
-            isActive: true
             inviteUuid: inviteUuid
-          firstName: firstName
-          patronymic: patronymic
-          phone: phone
-          isOwner: true
-          isInvitee: true
-          id: 1
-          position: position
-          goodsReturn: true
-          email: email
-          secondName: secondName
-        - role: user
+            expiredAt: 2000-01-23T04:56:07.000+00:00
+            isActive: true
           access:
           - code: balance
             disabled: false
@@ -1140,22 +1156,6 @@ components:
             disabled: true
           - code: supply
             disabled: true
-          inviteeInfo:
-            expiredAt: 2000-01-23T04:56:07.000+00:00
-            phoneNumber: phoneNumber
-            position: position
-            isActive: true
-            inviteUuid: inviteUuid
-          firstName: firstName
-          patronymic: patronymic
-          phone: phone
-          isOwner: true
-          isInvitee: true
-          id: 1
-          position: position
-          goodsReturn: true
-          email: email
-          secondName: secondName
       properties:
         total:
           description: Общее количество активных или приглашённых пользователей
@@ -1325,8 +1325,8 @@ components:
       type: object
     SupplierRatingModel:
       example:
-        valuation: 4.55
         feedbackCount: 12355
+        valuation: 4.55
       properties:
         feedbackCount:
           description: Количество отзывов
@@ -1341,11 +1341,11 @@ components:
     SubscriptionsJamInfo:
       description: Информация о подписке Джем
       example:
-        till: 2026-04-25T14:44:28.393587Z
+        state: active
         activationSource: jam
         level: premium
-        state: active
         since: 2026-03-16T08:38:08.056406Z
+        till: 2026-04-25T14:44:28.393587Z
       properties:
         state:
           description: |
@@ -1399,8 +1399,8 @@ components:
       type: object
     _ping_get_200_response:
       example:
-        Status: OK
         TS: TS
+        Status: OK
       properties:
         TS:
           description: Timestamp запроса
@@ -1441,8 +1441,8 @@ components:
       type: object
     _api_communications_v2_news_get_200_response_data_inner_types_inner:
       example:
-        name: name
         id: 6
+        name: name
       properties:
         id:
           description: ID тега
@@ -1453,15 +1453,15 @@ components:
       type: object
     _api_communications_v2_news_get_200_response_data_inner:
       example:
+        content: content
         date: 2000-01-23T04:56:07.000+00:00
-        types:
-        - name: name
-          id: 6
-        - name: name
-          id: 6
         header: header
         id: 0
-        content: content
+        types:
+        - id: 6
+          name: name
+        - id: 6
+          name: name
       properties:
         content:
           description: Текст новости
@@ -1486,24 +1486,24 @@ components:
     _api_communications_v2_news_get_200_response:
       example:
         data:
-        - date: 2000-01-23T04:56:07.000+00:00
-          types:
-          - name: name
-            id: 6
-          - name: name
-            id: 6
+        - content: content
+          date: 2000-01-23T04:56:07.000+00:00
           header: header
           id: 0
-          content: content
-        - date: 2000-01-23T04:56:07.000+00:00
           types:
-          - name: name
-            id: 6
-          - name: name
-            id: 6
+          - id: 6
+            name: name
+          - id: 6
+            name: name
+        - content: content
+          date: 2000-01-23T04:56:07.000+00:00
           header: header
           id: 0
-          content: content
+          types:
+          - id: 6
+            name: name
+          - id: 6
+            name: name
       properties:
         data:
           description: Новости
@@ -1514,9 +1514,9 @@ components:
     _api_v1_seller_info_get_200_response:
       example:
         name: name
+        sid: sid
         tin: tin
         tradeMark: tradeMark
-        sid: sid
       properties:
         name:
           description: Наименование продавца
@@ -1594,11 +1594,11 @@ components:
     getUsersResponse_users_inner_inviteeInfo:
       description: "Информация о приглашении, если пользователь приглашён"
       example:
-        expiredAt: 2000-01-23T04:56:07.000+00:00
         phoneNumber: phoneNumber
         position: position
-        isActive: true
         inviteUuid: inviteUuid
+        expiredAt: 2000-01-23T04:56:07.000+00:00
+        isActive: true
       nullable: true
       properties:
         phoneNumber:
@@ -1623,7 +1623,23 @@ components:
       type: object
     getUsersResponse_users_inner:
       example:
+        id: 1
         role: user
+        position: position
+        phone: phone
+        email: email
+        isOwner: true
+        firstName: firstName
+        secondName: secondName
+        patronymic: patronymic
+        goodsReturn: true
+        isInvitee: true
+        inviteeInfo:
+          phoneNumber: phoneNumber
+          position: position
+          inviteUuid: inviteUuid
+          expiredAt: 2000-01-23T04:56:07.000+00:00
+          isActive: true
         access:
         - code: balance
           disabled: false
@@ -1635,22 +1651,6 @@ components:
           disabled: true
         - code: supply
           disabled: true
-        inviteeInfo:
-          expiredAt: 2000-01-23T04:56:07.000+00:00
-          phoneNumber: phoneNumber
-          position: position
-          isActive: true
-          inviteUuid: inviteUuid
-        firstName: firstName
-        patronymic: patronymic
-        phone: phone
-        isOwner: true
-        isInvitee: true
-        id: 1
-        position: position
-        goodsReturn: true
-        email: email
-        secondName: secondName
       properties:
         id:
           description: ID пользователя

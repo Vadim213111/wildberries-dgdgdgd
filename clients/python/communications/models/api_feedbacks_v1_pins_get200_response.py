@@ -29,7 +29,7 @@ class ApiFeedbacksV1PinsGet200Response(BaseModel):
     ApiFeedbacksV1PinsGet200Response
     """ # noqa: E501
     data: List[OpenapiPinnedReviewItemResult]
-    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Укажите это значение в запросе, чтобы получить следующий пакет данных. Если поле отсутствует, вы получили все данные")
+    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Укажите это значение в запросе, чтобы получить следующий пакет данных. Если поле отсутствует, вы получили все данные", json_schema_extra={"examples": [200]})
     __properties: ClassVar[List[str]] = ["data", "next"]
 
     model_config = ConfigDict(

@@ -27,10 +27,10 @@ class ApiBatchError(BaseModel):
     """
     ApiBatchError
     """ # noqa: E501
-    detail: Optional[Dict[str, Any]] = Field(default=None, description="Детали ошибки")
-    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB")
-    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId")
-    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
+    detail: Optional[Dict[str, Any]] = Field(default=None, description="Детали ошибки", json_schema_extra={"examples": [{}]})
+    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["dbs-public-api"]})
+    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId", json_schema_extra={"examples": ["f1787bd2d1fdс35d6f537316514у4a05"]})
+    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки", json_schema_extra={"examples": ["IncorrectRequest"]})
     __properties: ClassVar[List[str]] = ["detail", "origin", "requestId", "title"]
 
     model_config = ConfigDict(

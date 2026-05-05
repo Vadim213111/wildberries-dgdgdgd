@@ -38,7 +38,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner(BaseModel):
     charc_type: Optional[StrictInt] = Field(default=None, description="Тип данных характеристики, который необходимо использовать при [создании](./work-with-products#tag/Sozdanie-kartochek-tovarov) или [редактировании](./work-with-products#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товаров:   -  `1` — массив строк   -  `4` — число (целое либо с десятичной дробью)   -  `0` — характеристика не используется ", alias="charcType")
     has_filter: Optional[StrictBool] = Field(default=None, description="Ключевая характеристика. Является ли характеристика значимой для покупателей:   - `true` — да   - `false` — нет ", alias="hasFilter")
     is_variable: Optional[StrictBool] = Field(default=None, description="Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:   -  `true` — варианты товара могут отличаться по этой характеристике   -  `false` — варианты товара не могут отличаться по этой характеристике ", alias="isVariable")
-    __properties: ClassVar[List[str]] = ["charcID", "subjectName", "subjectID", "name", "required", "unitName", "maxCount", "popular", "charcType", "hasFilter", "isVariable"]
+    exist_named_field: Optional[StrictBool] = Field(default=None, description="Как передать характеристику в запросах на [cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post), [создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) и [редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:   -  `true` — в соответствующем параметре запроса   -  `false` — внутри массива `characteristics` ", alias="existNamedField")
+    __properties: ClassVar[List[str]] = ["charcID", "subjectName", "subjectID", "name", "required", "unitName", "maxCount", "popular", "charcType", "hasFilter", "isVariable", "existNamedField"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -101,7 +102,8 @@ class ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner(BaseModel):
             "popular": obj.get("popular"),
             "charcType": obj.get("charcType"),
             "hasFilter": obj.get("hasFilter"),
-            "isVariable": obj.get("isVariable")
+            "isVariable": obj.get("isVariable"),
+            "existNamedField": obj.get("existNamedField")
         })
         return _obj
 

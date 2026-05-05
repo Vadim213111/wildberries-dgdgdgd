@@ -27,14 +27,14 @@ class InventoryWbResponseItemsInner(BaseModel):
     """
     InventoryWbResponseItemsInner
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId")
-    chrt_id: StrictInt = Field(description="ID размера", alias="chrtId")
-    warehouse_id: StrictInt = Field(description="ID склада", alias="warehouseId")
-    warehouse_name: StrictStr = Field(description="Название склада", alias="warehouseName")
-    region_name: StrictStr = Field(description="Регион отгрузки", alias="regionName")
-    quantity: StrictInt = Field(description="Количество товара на складе, доступное клиентам для добавления в корзину")
-    in_way_to_client: StrictInt = Field(description="В пути к клиенту", alias="inWayToClient")
-    in_way_from_client: StrictInt = Field(description="В пути от клиента", alias="inWayFromClient")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmId", json_schema_extra={"examples": [47254354]})
+    chrt_id: StrictInt = Field(description="ID размера", alias="chrtId", json_schema_extra={"examples": [91663228]})
+    warehouse_id: StrictInt = Field(description="ID склада", alias="warehouseId", json_schema_extra={"examples": [507]})
+    warehouse_name: StrictStr = Field(description="Название склада", alias="warehouseName", json_schema_extra={"examples": ["Коледино"]})
+    region_name: StrictStr = Field(description="Регион отгрузки", alias="regionName", json_schema_extra={"examples": ["Центральный"]})
+    quantity: StrictInt = Field(description="Количество товара на складе, доступное клиентам для добавления в корзину", json_schema_extra={"examples": [43]})
+    in_way_to_client: StrictInt = Field(description="В пути к клиенту", alias="inWayToClient", json_schema_extra={"examples": [14]})
+    in_way_from_client: StrictInt = Field(description="В пути от клиента", alias="inWayFromClient", json_schema_extra={"examples": [11]})
     __properties: ClassVar[List[str]] = ["nmId", "chrtId", "warehouseId", "warehouseName", "regionName", "quantity", "inWayToClient", "inWayFromClient"]
 
     model_config = ConfigDict(

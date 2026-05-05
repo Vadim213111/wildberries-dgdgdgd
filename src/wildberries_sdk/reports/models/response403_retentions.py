@@ -27,11 +27,11 @@ class Response403Retentions(BaseModel):
     """
     Response403Retentions
     """ # noqa: E501
-    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки")
-    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код")
-    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки")
-    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId")
-    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB")
+    title: Optional[StrictStr] = Field(default=None, description="Заголовок ошибки", json_schema_extra={"examples": ["access denied"]})
+    status: Optional[StrictInt] = Field(default=None, description="HTTP статус-код", json_schema_extra={"examples": [403]})
+    detail: Optional[StrictStr] = Field(default=None, description="Детали ошибки", json_schema_extra={"examples": ["abac: access denied"]})
+    request_id: Optional[StrictStr] = Field(default=None, description="Уникальный ID запроса", alias="requestId", json_schema_extra={"examples": ["31db50b5-14c0-4f4e-965e-6e1f9607ee78"]})
+    origin: Optional[StrictStr] = Field(default=None, description="ID внутреннего сервиса WB", json_schema_extra={"examples": ["dimension-penalty"]})
     __properties: ClassVar[List[str]] = ["title", "status", "detail", "requestId", "origin"]
 
     model_config = ConfigDict(

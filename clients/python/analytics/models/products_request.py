@@ -33,14 +33,14 @@ class ProductsRequest(BaseModel):
     """ # noqa: E501
     selected_period: ProductsRequestSelectedPeriod = Field(alias="selectedPeriod")
     past_period: Optional[ProductsRequestPastPeriod] = Field(default=None, alias="pastPeriod")
-    nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB, по которым нужно составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах ", alias="nmIds")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
-    skip_deleted_nm: Optional[StrictBool] = Field(default=None, description="Скрыть удалённые товары", alias="skipDeletedNm")
+    nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB, по которым нужно составить отчёт. Оставьте пустым, чтобы получить отчёт обо всех товарах ", alias="nmIds", json_schema_extra={"examples": [[1234567]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["nike", "adidas"]]})
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[64, 334]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds", json_schema_extra={"examples": [[32, 53]]})
+    skip_deleted_nm: Optional[StrictBool] = Field(default=None, description="Скрыть удалённые товары", alias="skipDeletedNm", json_schema_extra={"examples": [False]})
     order_by: Optional[OrderBy] = Field(default=None, alias="orderBy")
-    limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = Field(default=50, description="Количество карточек товара в ответе")
-    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")
+    limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = Field(default=50, description="Количество карточек товара в ответе", json_schema_extra={"examples": [231]})
+    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента", json_schema_extra={"examples": [10]})
     __properties: ClassVar[List[str]] = ["selectedPeriod", "pastPeriod", "nmIds", "brandNames", "subjectIds", "tagIds", "skipDeletedNm", "orderBy", "limit", "offset"]
 
     model_config = ConfigDict(

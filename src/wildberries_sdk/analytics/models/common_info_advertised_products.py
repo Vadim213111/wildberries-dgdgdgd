@@ -27,8 +27,8 @@ class CommonInfoAdvertisedProducts(BaseModel):
     """
     Количество товаров в рекламе
     """ # noqa: E501
-    current: StrictInt = Field(description="Текущее количество товаров в рекламе")
-    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %")
+    current: StrictInt = Field(description="Текущее количество товаров в рекламе", json_schema_extra={"examples": [5]})
+    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %", json_schema_extra={"examples": [50]})
     __properties: ClassVar[List[str]] = ["current", "dynamics"]
 
     model_config = ConfigDict(

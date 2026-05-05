@@ -28,8 +28,8 @@ class ApiMetaSetResponse(BaseModel):
     """
     ApiMetaSetResponse
     """ # noqa: E501
-    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
-    is_error: StrictBool = Field(description="Есть ли ошибки", alias="isError")
+    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
+    is_error: StrictBool = Field(description="Есть ли ошибки", alias="isError", json_schema_extra={"examples": [True]})
     errors: Optional[List[ApiMetaErrorResponse]] = Field(default=None, description="Детали ошибки")
     __properties: ClassVar[List[str]] = ["orderId", "isError", "errors"]
 

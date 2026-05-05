@@ -27,8 +27,8 @@ class ContentV2DirectoryColorsGet200ResponseDataInner(BaseModel):
     """
     ContentV2DirectoryColorsGet200ResponseDataInner
     """ # noqa: E501
-    name: Optional[StrictStr] = Field(default=None, description="Наименование цвета")
-    parent_name: Optional[StrictStr] = Field(default=None, description="Наименование родительского цвета", alias="parentName")
+    name: Optional[StrictStr] = Field(default=None, description="Наименование цвета", json_schema_extra={"examples": ["персиковый мелок"]})
+    parent_name: Optional[StrictStr] = Field(default=None, description="Наименование родительского цвета", alias="parentName", json_schema_extra={"examples": ["оранжевый"]})
     __properties: ClassVar[List[str]] = ["name", "parentName"]
 
     model_config = ConfigDict(

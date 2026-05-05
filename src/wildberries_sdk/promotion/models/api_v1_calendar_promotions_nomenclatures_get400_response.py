@@ -27,7 +27,7 @@ class ApiV1CalendarPromotionsNomenclaturesGet400Response(BaseModel):
     """
     ApiV1CalendarPromotionsNomenclaturesGet400Response
     """ # noqa: E501
-    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText")
+    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText", json_schema_extra={"examples": ["Invalid query params"]})
     __properties: ClassVar[List[str]] = ["errorText"]
 
     model_config = ConfigDict(

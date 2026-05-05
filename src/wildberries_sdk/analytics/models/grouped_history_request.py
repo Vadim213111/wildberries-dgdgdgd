@@ -30,10 +30,10 @@ class GroupedHistoryRequest(BaseModel):
     GroupedHistoryRequest
     """ # noqa: E501
     selected_period: ProductsRequestSelectedPeriod = Field(alias="selectedPeriod")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds")
-    skip_deleted_nm: Optional[StrictBool] = Field(default=None, description="Скрыть удалённые товары", alias="skipDeletedNm")
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["nike", "adidas"]]})
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIds", json_schema_extra={"examples": [[64, 334]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIds", json_schema_extra={"examples": [[32, 53]]})
+    skip_deleted_nm: Optional[StrictBool] = Field(default=None, description="Скрыть удалённые товары", alias="skipDeletedNm", json_schema_extra={"examples": [False]})
     aggregation_level: Optional[Level] = Field(default=Level.DAY, alias="aggregationLevel")
     __properties: ClassVar[List[str]] = ["selectedPeriod", "brandNames", "subjectIds", "tagIds", "skipDeletedNm", "aggregationLevel"]
 

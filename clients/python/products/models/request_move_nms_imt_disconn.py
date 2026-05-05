@@ -27,7 +27,7 @@ class RequestMoveNmsImtDisconn(BaseModel):
     """
     RequestMoveNmsImtDisconn
     """ # noqa: E501
-    nm_ids: List[StrictInt] = Field(description="`nmID`, которые необходимо разъединить ", alias="nmIDs")
+    nm_ids: List[StrictInt] = Field(description="`nmID`, которые необходимо разъединить ", alias="nmIDs", json_schema_extra={"examples": [[837459235, 828572090]]})
     __properties: ClassVar[List[str]] = ["nmIDs"]
 
     model_config = ConfigDict(

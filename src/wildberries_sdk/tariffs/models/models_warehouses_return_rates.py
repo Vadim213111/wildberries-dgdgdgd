@@ -28,9 +28,9 @@ class ModelsWarehousesReturnRates(BaseModel):
     """
     ModelsWarehousesReturnRates
     """ # noqa: E501
-    dt_next_delivery_dump_kgt: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа при грузовой доставке", alias="dtNextDeliveryDumpKgt")
-    dt_next_delivery_dump_srg: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа для неопознанных товаров", alias="dtNextDeliveryDumpSrg")
-    dt_next_delivery_dump_sup: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа при обычной доставке", alias="dtNextDeliveryDumpSup")
+    dt_next_delivery_dump_kgt: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа при грузовой доставке", alias="dtNextDeliveryDumpKgt", json_schema_extra={"examples": ["2024-02-01"]})
+    dt_next_delivery_dump_srg: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа для неопознанных товаров", alias="dtNextDeliveryDumpSrg", json_schema_extra={"examples": ["2024-02-01"]})
+    dt_next_delivery_dump_sup: Optional[StrictStr] = Field(default=None, description="Дата начала следующего тарифа при обычной доставке", alias="dtNextDeliveryDumpSup", json_schema_extra={"examples": ["2024-02-01"]})
     warehouse_list: Optional[List[ModelsWarehouseReturnRates]] = Field(default=None, description="Тарифы на возврат, сгруппированные по складам:   - стоимость возврата брака и возврата по инициативе продавца при грузовой доставке.   - стоимость возврата неопознанного складом товара.   - стоимость возврата брака, возврата по инициативе продавца и автовозвратов Маркетплейс (в пункт выдачи и обратно).  Можно получить стоимость возврата в пункт выдачи (ПВЗ) и обратной логистики — если продавец не забрал товары из пункта выдачи за 7 дней. ", alias="warehouseList")
     __properties: ClassVar[List[str]] = ["dtNextDeliveryDumpKgt", "dtNextDeliveryDumpSrg", "dtNextDeliveryDumpSup", "warehouseList"]
 

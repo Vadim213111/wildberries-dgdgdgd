@@ -27,9 +27,9 @@ class Good(BaseModel):
     """
     Good
     """ # noqa: E501
-    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID")
-    price: Optional[StrictInt] = Field(default=None, description="Цена. Валюту можно получить с помощью методов [Получить товары с ценами](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get) и [Получить товары с ценами по артикулам](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post), поле `currencyIsoCode4217`")
-    discount: Optional[StrictInt] = Field(default=None, description="Скидка, %")
+    nm_id: StrictInt = Field(description="Артикул WB", alias="nmID", json_schema_extra={"examples": [123]})
+    price: Optional[StrictInt] = Field(default=None, description="Цена. Валюту можно получить с помощью методов [Получить товары с ценами](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/get) и [Получить товары с ценами по артикулам](./work-with-products#tag/Ceny-i-skidki/paths/~1api~1v2~1list~1goods~1filter/post), поле `currencyIsoCode4217`", json_schema_extra={"examples": [999]})
+    discount: Optional[StrictInt] = Field(default=None, description="Скидка, %", json_schema_extra={"examples": [30]})
     __properties: ClassVar[List[str]] = ["nmID", "price", "discount"]
 
     model_config = ConfigDict(

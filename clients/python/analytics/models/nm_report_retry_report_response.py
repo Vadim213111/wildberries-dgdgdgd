@@ -27,7 +27,7 @@ class NmReportRetryReportResponse(BaseModel):
     """
     NmReportRetryReportResponse
     """ # noqa: E501
-    data: StrictStr = Field(description="Уведомление, что началась повторная генерация отчёта")
+    data: StrictStr = Field(description="Уведомление, что началась повторная генерация отчёта", json_schema_extra={"examples": ["Retry"]})
     __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(

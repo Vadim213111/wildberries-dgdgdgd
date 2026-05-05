@@ -27,7 +27,7 @@ class NmReportCreateReportResponse(BaseModel):
     """
     NmReportCreateReportResponse
     """ # noqa: E501
-    data: StrictStr = Field(description="Уведомление, что началась генерация отчёта")
+    data: StrictStr = Field(description="Уведомление, что началась генерация отчёта", json_schema_extra={"examples": ["Началось формирование файла/отчета"]})
     __properties: ClassVar[List[str]] = ["data"]
 
     model_config = ConfigDict(

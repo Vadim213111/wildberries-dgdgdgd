@@ -29,9 +29,9 @@ class ContentV2ObjectParentAllGet200Response(BaseModel):
     ContentV2ObjectParentAllGet200Response
     """ # noqa: E501
     data: Optional[List[ContentV2ObjectParentAllGet200ResponseDataInner]] = None
-    error: Optional[StrictBool] = Field(default=None, description="Флаг наличия ошибки")
-    error_text: Optional[StrictStr] = Field(default=None, description="Описание ошибки", alias="errorText")
-    additional_errors: Optional[StrictStr] = Field(default=None, description="Дополнительные ошибки", alias="additionalErrors")
+    error: Optional[StrictBool] = Field(default=None, description="Флаг наличия ошибки", json_schema_extra={"examples": [False]})
+    error_text: Optional[StrictStr] = Field(default=None, description="Описание ошибки", alias="errorText", json_schema_extra={"examples": [""]})
+    additional_errors: Optional[StrictStr] = Field(default=None, description="Дополнительные ошибки", alias="additionalErrors", json_schema_extra={"examples": [""]})
     __properties: ClassVar[List[str]] = ["data", "error", "errorText", "additionalErrors"]
 
     model_config = ConfigDict(

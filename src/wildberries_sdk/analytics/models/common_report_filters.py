@@ -30,14 +30,14 @@ class CommonReportFilters(BaseModel):
     """
     Общие фильтры по отчёту
     """ # noqa: E501
-    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIDs")
-    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIDs")
-    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames")
-    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIDs")
+    nm_ids: Optional[List[StrictInt]] = Field(default=None, description="Список артикулов WB для фильтрации", alias="nmIDs", json_schema_extra={"examples": [[111222333, 444555666]]})
+    subject_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID предметов для фильтрации", alias="subjectIDs", json_schema_extra={"examples": [[123, 456]]})
+    brand_names: Optional[List[StrictStr]] = Field(default=None, description="Список брендов для фильтрации", alias="brandNames", json_schema_extra={"examples": [["Эрк", "Дент"]]})
+    tag_ids: Optional[List[StrictInt]] = Field(default=None, description="Список ID ярлыков для фильтрации", alias="tagIDs", json_schema_extra={"examples": [[3, 4, 5]]})
     current_period: PeriodInv = Field(alias="currentPeriod")
     stock_type: StockType = Field(alias="stockType")
-    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm")
-    availability_filters: List[StrictStr] = Field(description="Доступность товара:   - `deficient` — Дефицит   - `actual` — Актуальный   - `balanced` — Баланс   - `nonActual` — Неактуальный   - `nonLiquid` — Неликвид   - `invalidData` — Не рассчитано ", alias="availabilityFilters")
+    skip_deleted_nm: StrictBool = Field(description="Скрыть удалённые товары", alias="skipDeletedNm", json_schema_extra={"examples": [True]})
+    availability_filters: List[StrictStr] = Field(description="Доступность товара:   - `deficient` — Дефицит   - `actual` — Актуальный   - `balanced` — Баланс   - `nonActual` — Неактуальный   - `nonLiquid` — Неликвид   - `invalidData` — Не рассчитано ", alias="availabilityFilters", json_schema_extra={"examples": [["deficient", "balanced"]]})
     order_by: TableOrderBy = Field(alias="orderBy")
     __properties: ClassVar[List[str]] = ["nmIDs", "subjectIDs", "brandNames", "tagIDs", "currentPeriod", "stockType", "skipDeletedNm", "availabilityFilters", "orderBy"]
 

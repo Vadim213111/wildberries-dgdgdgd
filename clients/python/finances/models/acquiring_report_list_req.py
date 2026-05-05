@@ -28,10 +28,10 @@ class AcquiringReportListReq(BaseModel):
     """
     Параметры запроса
     """ # noqa: E501
-    date_from: StrictStr = Field(description="Начальная дата отчёта.<br>Можно передать дату или дату со временем. Время можно указывать с точностью до секунд или миллисекунд.<br>Дата передаётся в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339), время — в часовом поясе Москва `UTC+3`.<br>Примеры:   - `2025-06-20`   - `2025-06-20T23:59:59`   - `2025-06-20T00:00:00.12345`   - `2025-06-20T00:00:00` ", alias="dateFrom")
-    date_to: StrictStr = Field(description="Конечная дата отчёта.<br>Дата в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339). Можно передать дату или дату со временем. Время можно указывать с точностью до секунд или миллисекунд.<br>Время передаётся в часовом поясе Москва `UTC+3`.<br>Примеры:   - `2025-06-20`   - `2025-06-20T23:59:59`   - `2025-06-20T00:00:00.12345`   - `2025-06-20T00:00:00` ", alias="dateTo")
-    limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = Field(default=1000, description="Количество отчётов в ответе")
-    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")
+    date_from: StrictStr = Field(description="Начальная дата отчёта.<br>Можно передать дату или дату со временем. Время можно указывать с точностью до секунд или миллисекунд.<br>Дата передаётся в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339), время — в часовом поясе Москва `UTC+3`.<br>Примеры:   - `2025-06-20`   - `2025-06-20T23:59:59`   - `2025-06-20T00:00:00.12345`   - `2025-06-20T00:00:00` ", alias="dateFrom", json_schema_extra={"examples": ["2026-03-17"]})
+    date_to: StrictStr = Field(description="Конечная дата отчёта.<br>Дата в формате [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339). Можно передать дату или дату со временем. Время можно указывать с точностью до секунд или миллисекунд.<br>Время передаётся в часовом поясе Москва `UTC+3`.<br>Примеры:   - `2025-06-20`   - `2025-06-20T23:59:59`   - `2025-06-20T00:00:00.12345`   - `2025-06-20T00:00:00` ", alias="dateTo", json_schema_extra={"examples": ["2026-03-20"]})
+    limit: Optional[Annotated[int, Field(le=1000, strict=True)]] = Field(default=1000, description="Количество отчётов в ответе", json_schema_extra={"examples": [211]})
+    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента", json_schema_extra={"examples": [345]})
     __properties: ClassVar[List[str]] = ["dateFrom", "dateTo", "limit", "offset"]
 
     model_config = ConfigDict(

@@ -27,15 +27,15 @@ class WbClubMetrics(BaseModel):
     """
     WbClubMetrics
     """ # noqa: E501
-    order_count: StrictInt = Field(description="Заказали товаров с WB Клубом, шт.", alias="orderCount")
-    order_sum: StrictInt = Field(description="Заказали с WB Клубом на сумму", alias="orderSum")
-    buyout_sum: StrictInt = Field(description="Выкупили с WB Клубом на сумму", alias="buyoutSum")
-    buyout_count: StrictInt = Field(description="Выкупили товаров с WB Клубом, шт.", alias="buyoutCount")
-    cancel_sum: StrictInt = Field(description="Отменили и вернули с WB Клубом на сумму", alias="cancelSum")
-    cancel_count: StrictInt = Field(description="Отменили и вернули товаров с WB Клубом, шт.", alias="cancelCount")
-    avg_price: StrictInt = Field(description="Средняя цена с WB Клубом", alias="avgPrice")
-    buyout_percent: StrictInt = Field(description="Процент выкупа с WB Клубом", alias="buyoutPercent")
-    avg_order_count_per_day: Union[StrictFloat, StrictInt] = Field(description="Среднее количество заказов с WB Клубом в день, шт.", alias="avgOrderCountPerDay")
+    order_count: StrictInt = Field(description="Заказали товаров с WB Клубом, шт.", alias="orderCount", json_schema_extra={"examples": [19]})
+    order_sum: StrictInt = Field(description="Заказали с WB Клубом на сумму", alias="orderSum", json_schema_extra={"examples": [1262]})
+    buyout_sum: StrictInt = Field(description="Выкупили с WB Клубом на сумму", alias="buyoutSum", json_schema_extra={"examples": [1262]})
+    buyout_count: StrictInt = Field(description="Выкупили товаров с WB Клубом, шт.", alias="buyoutCount", json_schema_extra={"examples": [19]})
+    cancel_sum: StrictInt = Field(description="Отменили и вернули с WB Клубом на сумму", alias="cancelSum", json_schema_extra={"examples": [0]})
+    cancel_count: StrictInt = Field(description="Отменили и вернули товаров с WB Клубом, шт.", alias="cancelCount", json_schema_extra={"examples": [0]})
+    avg_price: StrictInt = Field(description="Средняя цена с WB Клубом", alias="avgPrice", json_schema_extra={"examples": [1262]})
+    buyout_percent: StrictInt = Field(description="Процент выкупа с WB Клубом", alias="buyoutPercent", json_schema_extra={"examples": [43]})
+    avg_order_count_per_day: Union[StrictFloat, StrictInt] = Field(description="Среднее количество заказов с WB Клубом в день, шт.", alias="avgOrderCountPerDay", json_schema_extra={"examples": [0.04]})
     __properties: ClassVar[List[str]] = ["orderCount", "orderSum", "buyoutSum", "buyoutCount", "cancelSum", "cancelCount", "avgPrice", "buyoutPercent", "avgOrderCountPerDay"]
 
     model_config = ConfigDict(

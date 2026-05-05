@@ -28,10 +28,10 @@ class InventoryRequest(BaseModel):
     """
     Параметры запроса текущих остатков на складах WB
     """ # noqa: E501
-    nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB", alias="nmIds")
-    chrt_ids: Optional[List[StrictInt]] = Field(default=None, description="ID размеров. Используется только для указанных в массиве `nmIds` артикулов", alias="chrtIds")
-    limit: Optional[Annotated[int, Field(le=250000, strict=True)]] = Field(default=250000, description="Количество строк в ответе")
-    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента")
+    nm_ids: Optional[Annotated[List[StrictInt], Field(min_length=0, max_length=1000)]] = Field(default=None, description="Артикулы WB", alias="nmIds", json_schema_extra={"examples": [[111222333, 47254354]]})
+    chrt_ids: Optional[List[StrictInt]] = Field(default=None, description="ID размеров. Используется только для указанных в массиве `nmIds` артикулов", alias="chrtIds", json_schema_extra={"examples": [[111222333, 91663228]]})
+    limit: Optional[Annotated[int, Field(le=250000, strict=True)]] = Field(default=250000, description="Количество строк в ответе", json_schema_extra={"examples": [250000]})
+    offset: Optional[StrictInt] = Field(default=0, description="Сколько элементов пропустить. Например, для значения `10` ответ начнётся с 11 элемента", json_schema_extra={"examples": [500000]})
     __properties: ClassVar[List[str]] = ["nmIds", "chrtIds", "limit", "offset"]
 
     model_config = ConfigDict(

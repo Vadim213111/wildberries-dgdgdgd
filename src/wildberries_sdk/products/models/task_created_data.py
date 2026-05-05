@@ -28,7 +28,7 @@ class TaskCreatedData(BaseModel):
     Данные ответа
     """ # noqa: E501
     id: Optional[StrictInt] = Field(default=None, description="ID загрузки")
-    already_exists: Optional[StrictBool] = Field(default=None, description="Флаг дублирования загрузки: `true` — такая загрузка уже есть ", alias="alreadyExists")
+    already_exists: Optional[StrictBool] = Field(default=None, description="Флаг дублирования загрузки: `true` — такая загрузка уже есть ", alias="alreadyExists", json_schema_extra={"examples": [False]})
     __properties: ClassVar[List[str]] = ["id", "alreadyExists"]
 
     model_config = ConfigDict(

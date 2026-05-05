@@ -27,8 +27,8 @@ class ApiV1FeedbacksCountUnansweredGet200ResponseData(BaseModel):
     """
     ApiV1FeedbacksCountUnansweredGet200ResponseData
     """ # noqa: E501
-    count_unanswered: Optional[StrictInt] = Field(default=None, description="Количество необработанных отзывов", alias="countUnanswered")
-    count_unanswered_today: Optional[StrictInt] = Field(default=None, description="Количество необработанных отзывов за сегодня", alias="countUnansweredToday")
+    count_unanswered: Optional[StrictInt] = Field(default=None, description="Количество необработанных отзывов", alias="countUnanswered", json_schema_extra={"examples": [1]})
+    count_unanswered_today: Optional[StrictInt] = Field(default=None, description="Количество необработанных отзывов за сегодня", alias="countUnansweredToday", json_schema_extra={"examples": [0]})
     __properties: ClassVar[List[str]] = ["countUnanswered", "countUnansweredToday"]
 
     model_config = ConfigDict(

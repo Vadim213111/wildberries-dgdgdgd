@@ -27,8 +27,8 @@ class SupplierRatingModel(BaseModel):
     """
     SupplierRatingModel
     """ # noqa: E501
-    feedback_count: Optional[StrictInt] = Field(default=None, description="Количество отзывов", alias="feedbackCount")
-    valuation: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Рейтинг продавца")
+    feedback_count: Optional[StrictInt] = Field(default=None, description="Количество отзывов", alias="feedbackCount", json_schema_extra={"examples": [12355]})
+    valuation: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Рейтинг продавца", json_schema_extra={"examples": [4.55]})
     __properties: ClassVar[List[str]] = ["feedbackCount", "valuation"]
 
     model_config = ConfigDict(

@@ -28,8 +28,8 @@ class ApiV1FeedbacksAnswerPatchRequest(BaseModel):
     """
     ApiV1FeedbacksAnswerPatchRequest
     """ # noqa: E501
-    id: StrictStr = Field(description="ID отзыва")
-    text: Annotated[str, Field(strict=True)] = Field(description="Текст ответа")
+    id: StrictStr = Field(description="ID отзыва", json_schema_extra={"examples": ["J2FMRjUj6hwvwCElqssz"]})
+    text: Annotated[str, Field(strict=True)] = Field(description="Текст ответа", json_schema_extra={"examples": ["Спасибо за Ваш отзыв, он очень важен для нас!"]})
     __properties: ClassVar[List[str]] = ["id", "text"]
 
     model_config = ConfigDict(

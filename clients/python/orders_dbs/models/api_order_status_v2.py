@@ -29,9 +29,9 @@ class ApiOrderStatusV2(BaseModel):
     ApiOrderStatusV2
     """ # noqa: E501
     errors: Optional[List[ApiBatchErrorResponse]] = Field(default=None, description="Информация об ошибке")
-    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId")
-    supplier_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания, установленный продавцом", alias="supplierStatus")
-    wb_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания в системе Wildberries", alias="wbStatus")
+    order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
+    supplier_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания, установленный продавцом", alias="supplierStatus", json_schema_extra={"examples": ["deliver"]})
+    wb_status: Optional[StrictStr] = Field(default=None, description="Статус сборочного задания в системе Wildberries", alias="wbStatus", json_schema_extra={"examples": ["waiting"]})
     __properties: ClassVar[List[str]] = ["errors", "orderId", "supplierStatus", "wbStatus"]
 
     model_config = ConfigDict(

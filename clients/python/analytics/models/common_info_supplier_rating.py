@@ -27,8 +27,8 @@ class CommonInfoSupplierRating(BaseModel):
     """
     Рейтинг продавца
     """ # noqa: E501
-    current: Union[StrictFloat, StrictInt] = Field(description="Текущий рейтинг продавца")
-    dynamics: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %")
+    current: Union[StrictFloat, StrictInt] = Field(description="Текущий рейтинг продавца", json_schema_extra={"examples": [5.3]})
+    dynamics: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %", json_schema_extra={"examples": [5.4]})
     __properties: ClassVar[List[str]] = ["current", "dynamics"]
 
     model_config = ConfigDict(

@@ -28,11 +28,11 @@ class SubscriptionsJamInfo(BaseModel):
     """
     Информация о подписке Джем
     """ # noqa: E501
-    state: StrictStr = Field(description="Статус подписки:   - `active` — активна   - `inactive` — истекла или отменена ")
-    activation_source: StrictStr = Field(description="Источник подключения подписки:   - `constructor` — покупка через раздел **Конструктор тарифов**   - `jam` — покупка через раздел **Подписка «Джем»** ", alias="activationSource")
-    level: StrictStr = Field(description="Уровень подписки:   - `standard`   - `advanced`   - `premium` ")
-    since: datetime = Field(description="Дата и время первой активации подписки. Не меняется при продлении или повторной активации")
-    till: datetime = Field(description="Дата и время окончания подписки")
+    state: StrictStr = Field(description="Статус подписки:   - `active` — активна   - `inactive` — истекла или отменена ", json_schema_extra={"examples": ["active"]})
+    activation_source: StrictStr = Field(description="Источник подключения подписки:   - `constructor` — покупка через раздел **Конструктор тарифов**   - `jam` — покупка через раздел **Подписка «Джем»** ", alias="activationSource", json_schema_extra={"examples": ["jam"]})
+    level: StrictStr = Field(description="Уровень подписки:   - `standard`   - `advanced`   - `premium` ", json_schema_extra={"examples": ["premium"]})
+    since: datetime = Field(description="Дата и время первой активации подписки. Не меняется при продлении или повторной активации", json_schema_extra={"examples": ["2026-03-16T08:38:08.056406Z"]})
+    till: datetime = Field(description="Дата и время окончания подписки", json_schema_extra={"examples": ["2026-04-25T14:44:28.393587Z"]})
     __properties: ClassVar[List[str]] = ["state", "activationSource", "level", "since", "till"]
 
     @field_validator('state')

@@ -31,7 +31,7 @@ class CommonInfo(BaseModel):
     """ # noqa: E501
     supplier_rating: CommonInfoSupplierRating = Field(alias="supplierRating")
     advertised_products: CommonInfoAdvertisedProducts = Field(alias="advertisedProducts")
-    total_products: StrictInt = Field(description="Общее количество товаров", alias="totalProducts")
+    total_products: StrictInt = Field(description="Общее количество товаров", alias="totalProducts", json_schema_extra={"examples": [150]})
     __properties: ClassVar[List[str]] = ["supplierRating", "advertisedProducts", "totalProducts"]
 
     model_config = ConfigDict(

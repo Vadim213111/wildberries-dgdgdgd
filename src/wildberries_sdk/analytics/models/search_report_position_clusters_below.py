@@ -27,8 +27,8 @@ class SearchReportPositionClustersBelow(BaseModel):
     """
     от 201 и ниже
     """ # noqa: E501
-    current: StrictInt = Field(description="Текущее количество товаров")
-    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %")
+    current: StrictInt = Field(description="Текущее количество товаров", json_schema_extra={"examples": [5]})
+    dynamics: Optional[StrictInt] = Field(default=None, description="Динамика по сравнению с предыдущим периодом, %", json_schema_extra={"examples": [50]})
     __properties: ClassVar[List[str]] = ["current", "dynamics"]
 
     model_config = ConfigDict(

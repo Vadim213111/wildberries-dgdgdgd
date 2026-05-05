@@ -27,11 +27,11 @@ class ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner(BaseModel):
     """
     ApiV1AnalyticsBannedProductsShadowedGet200ResponseReportInner
     """ # noqa: E501
-    brand: Optional[StrictStr] = Field(default=None, description="Бренд")
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId")
-    title: Optional[StrictStr] = Field(default=None, description="Наименование товара")
-    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode")
-    nm_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Рейтинг товара", alias="nmRating")
+    brand: Optional[StrictStr] = Field(default=None, description="Бренд", json_schema_extra={"examples": ["Трикотаж"]})
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmId", json_schema_extra={"examples": [166658151]})
+    title: Optional[StrictStr] = Field(default=None, description="Наименование товара", json_schema_extra={"examples": ["ВАЗ"]})
+    vendor_code: Optional[StrictStr] = Field(default=None, description="Артикул продавца", alias="vendorCode", json_schema_extra={"examples": ["DP02/черный"]})
+    nm_rating: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Рейтинг товара", alias="nmRating", json_schema_extra={"examples": [3.1]})
     __properties: ClassVar[List[str]] = ["brand", "nmId", "title", "vendorCode", "nmRating"]
 
     model_config = ConfigDict(

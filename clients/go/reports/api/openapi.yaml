@@ -3622,24 +3622,24 @@ components:
   schemas:
     StocksItem:
       example:
-        supplierArticle: supplierArticle
-        isRealization: true
-        quantity: 6
-        Discount: 7.061401241503109
-        quantityFull: 5
-        subject: subject
         lastChangeDate: lastChangeDate
-        nmId: 0
         warehouseName: warehouseName
-        SCCode: SCCode
-        inWayFromClient: 5
-        Price: 2.3021358869347655
-        inWayToClient: 1
-        isSupply: true
-        techSize: techSize
-        category: category
+        supplierArticle: supplierArticle
+        nmId: 0
         barcode: barcode
+        quantity: 6
+        inWayToClient: 1
+        inWayFromClient: 5
+        quantityFull: 5
+        category: category
+        subject: subject
         brand: brand
+        techSize: techSize
+        Price: 2.3021358869347655
+        Discount: 7.061401241503109
+        isSupply: true
+        isRealization: true
+        SCCode: SCCode
       properties:
         lastChangeDate:
           description: "Дата и время обновления информации в сервисе. Это поле соо\
@@ -3711,32 +3711,32 @@ components:
     OrdersItem:
       example:
         date: date
-        cancelDate: cancelDate
-        incomeID: 6
-        totalPrice: 1.4658129805029452
-        subject: subject
-        regionName: regionName
-        priceWithDisc: 7.061401241503109
-        nmId: 0
-        warehouseName: warehouseName
-        gNumber: gNumber
-        srid: srid
-        techSize: techSize
-        barcode: barcode
-        brand: brand
-        supplierArticle: supplierArticle
-        isRealization: true
-        discountPercent: 5
-        isCancel: true
         lastChangeDate: lastChangeDate
-        sticker: sticker
-        spp: 5.637376656633329
-        finishedPrice: 2.3021358869347655
-        oblastOkrugName: oblastOkrugName
-        isSupply: true
+        warehouseName: warehouseName
         warehouseType: Склад WB
         countryName: countryName
+        oblastOkrugName: oblastOkrugName
+        regionName: regionName
+        supplierArticle: supplierArticle
+        nmId: 0
+        barcode: barcode
         category: category
+        subject: subject
+        brand: brand
+        techSize: techSize
+        incomeID: 6
+        isSupply: true
+        isRealization: true
+        totalPrice: 1.4658129805029452
+        discountPercent: 5
+        spp: 5.637376656633329
+        finishedPrice: 2.3021358869347655
+        priceWithDisc: 7.061401241503109
+        isCancel: true
+        cancelDate: cancelDate
+        sticker: sticker
+        gNumber: gNumber
+        srid: srid
       properties:
         date:
           description: "Дата и время заказа. Это поле соответствует параметру `dateFrom`\
@@ -3849,33 +3849,33 @@ components:
     SalesItem:
       example:
         date: date
-        forPay: 7.061401241503109
-        incomeID: 6
-        totalPrice: 1.4658129805029452
-        subject: subject
-        regionName: regionName
-        priceWithDisc: 3.616076749251911
-        nmId: 0
-        warehouseName: warehouseName
-        gNumber: gNumber
-        srid: srid
-        techSize: techSize
-        barcode: barcode
-        brand: brand
-        supplierArticle: supplierArticle
-        isRealization: true
-        discountPercent: 5
-        saleID: saleID
         lastChangeDate: lastChangeDate
-        sticker: sticker
-        spp: 5.637376656633329
-        finishedPrice: 9.301444243932576
-        oblastOkrugName: oblastOkrugName
-        isSupply: true
-        paymentSaleAmount: 2
+        warehouseName: warehouseName
         warehouseType: Склад WB
         countryName: countryName
+        oblastOkrugName: oblastOkrugName
+        regionName: regionName
+        supplierArticle: supplierArticle
+        nmId: 0
+        barcode: barcode
         category: category
+        subject: subject
+        brand: brand
+        techSize: techSize
+        incomeID: 6
+        isSupply: true
+        isRealization: true
+        totalPrice: 1.4658129805029452
+        discountPercent: 5
+        spp: 5.637376656633329
+        paymentSaleAmount: 2
+        forPay: 7.061401241503109
+        finishedPrice: 9.301444243932576
+        priceWithDisc: 3.616076749251911
+        saleID: saleID
+        sticker: sticker
+        gNumber: gNumber
+        srid: srid
       properties:
         date:
           description: "Дата и время продажи. Это поле соответствует параметру `dateFrom`\
@@ -4035,29 +4035,29 @@ components:
       example:
         response:
           data:
-          - fiscal_dt: 2024-01-01
-            fiscal_drive_number: fiscal_drive_number
+          - name: Россия
             price: 100
-            fiscal_doc_number: 12345678
-            name: Россия
-            excise_short: 0102900254680370215_Re/=lSbNiGD
             currency_name_short: руб
-            nm_id: 169085355
-            rid: 606217433440
+            excise_short: 0102900254680370215_Re/=lSbNiGD
             barcode: "2038893425820"
+            nm_id: 169085355
             operation_type_id: 1
+            fiscal_doc_number: 12345678
+            fiscal_dt: 2024-01-01
+            fiscal_drive_number: fiscal_drive_number
+            rid: 606217433440
             srid: 7513432034713632943.1.0
-          - fiscal_dt: 2024-01-01
-            fiscal_drive_number: fiscal_drive_number
+          - name: Россия
             price: 100
-            fiscal_doc_number: 12345678
-            name: Россия
-            excise_short: 0102900254680370215_Re/=lSbNiGD
             currency_name_short: руб
-            nm_id: 169085355
-            rid: 606217433440
+            excise_short: 0102900254680370215_Re/=lSbNiGD
             barcode: "2038893425820"
+            nm_id: 169085355
             operation_type_id: 1
+            fiscal_doc_number: 12345678
+            fiscal_dt: 2024-01-01
+            fiscal_drive_number: fiscal_drive_number
+            rid: 606217433440
             srid: 7513432034713632943.1.0
       properties:
         response:
@@ -4066,29 +4066,29 @@ components:
     models.ExciseReportResponse:
       example:
         data:
-        - fiscal_dt: 2024-01-01
-          fiscal_drive_number: fiscal_drive_number
+        - name: Россия
           price: 100
-          fiscal_doc_number: 12345678
-          name: Россия
-          excise_short: 0102900254680370215_Re/=lSbNiGD
           currency_name_short: руб
-          nm_id: 169085355
-          rid: 606217433440
+          excise_short: 0102900254680370215_Re/=lSbNiGD
           barcode: "2038893425820"
+          nm_id: 169085355
           operation_type_id: 1
+          fiscal_doc_number: 12345678
+          fiscal_dt: 2024-01-01
+          fiscal_drive_number: fiscal_drive_number
+          rid: 606217433440
           srid: 7513432034713632943.1.0
-        - fiscal_dt: 2024-01-01
-          fiscal_drive_number: fiscal_drive_number
+        - name: Россия
           price: 100
-          fiscal_doc_number: 12345678
-          name: Россия
-          excise_short: 0102900254680370215_Re/=lSbNiGD
           currency_name_short: руб
-          nm_id: 169085355
-          rid: 606217433440
+          excise_short: 0102900254680370215_Re/=lSbNiGD
           barcode: "2038893425820"
+          nm_id: 169085355
           operation_type_id: 1
+          fiscal_doc_number: 12345678
+          fiscal_dt: 2024-01-01
+          fiscal_drive_number: fiscal_drive_number
+          rid: 606217433440
           srid: 7513432034713632943.1.0
       properties:
         data:
@@ -4104,48 +4104,48 @@ components:
       example:
         data:
           reports:
-          - heightSup: 33
+          - nmId: 123456789
+            subjectName: Костюмы спортивные
+            dimId: 123456789
+            prcOver: 130.71
+            volume: 6.47
+            width: 7
+            length: 28
+            height: 33
+            volumeSup: 4.95
+            widthSup: 8
+            lengthSup: 33
+            heightSup: 33
             photoUrls:
             - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
             - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
             - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
+            dtBonus: 2025-06-02T00:00:00Z
             isValid: true
-            length: 28
-            nmId: 123456789
+            isValidDt: 2025-05-29T13:35:57Z
+            reversalAmount: 0
+            penaltyAmount: 449.83
+          - nmId: 123456789
+            subjectName: Костюмы спортивные
+            dimId: 123456789
             prcOver: 130.71
             volume: 6.47
-            volumeSup: 4.95
-            reversalAmount: 0
-            dimId: 123456789
-            lengthSup: 33
             width: 7
-            dtBonus: 2025-06-02T00:00:00Z
-            widthSup: 8
-            isValidDt: 2025-05-29T13:35:57Z
-            penaltyAmount: 449.83
-            subjectName: Костюмы спортивные
+            length: 28
             height: 33
-          - heightSup: 33
+            volumeSup: 4.95
+            widthSup: 8
+            lengthSup: 33
+            heightSup: 33
             photoUrls:
             - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
             - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
             - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-            isValid: true
-            length: 28
-            nmId: 123456789
-            prcOver: 130.71
-            volume: 6.47
-            volumeSup: 4.95
-            reversalAmount: 0
-            dimId: 123456789
-            lengthSup: 33
-            width: 7
             dtBonus: 2025-06-02T00:00:00Z
-            widthSup: 8
+            isValid: true
             isValidDt: 2025-05-29T13:35:57Z
+            reversalAmount: 0
             penaltyAmount: 449.83
-            subjectName: Костюмы спортивные
-            height: 33
           total: 11
       properties:
         data:
@@ -4157,30 +4157,30 @@ components:
       example:
         data:
           reports:
-          - volume: 0.8008281904610115
-            dt: 2025-04-01T00:06:00Z
+          - nmId: 123456789
+            subjectName: ""
             dimId: 123456789
+            volume: 0.8008281904610115
+            width: 66
+            length: 54
+            height: 11
             photoUrls:
             - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ed6-737c-a9e731250fb0.jpg
             - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
             - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
+            dt: 2025-04-01T00:06:00Z
+          - nmId: 123456789
+            subjectName: ""
+            dimId: 123456789
+            volume: 0.8008281904610115
             width: 66
             length: 54
-            nmId: 123456789
-            subjectName: ""
             height: 11
-          - volume: 0.8008281904610115
-            dt: 2025-04-01T00:06:00Z
-            dimId: 123456789
             photoUrls:
             - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ed6-737c-a9e731250fb0.jpg
             - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
             - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
-            width: 66
-            length: 54
-            nmId: 123456789
-            subjectName: ""
-            height: 11
+            dt: 2025-04-01T00:06:00Z
           total: 11
       properties:
         data:
@@ -4190,11 +4190,11 @@ components:
       type: object
     Response400Retentions:
       example:
-        requestId: 31db50b5-14c0-4f4e-965e-6e1f9607ee78
-        origin: dimension-penalty
-        detail: "invalid parameter: dateTo"
         title: bad request
         status: 400
+        detail: "invalid parameter: dateTo"
+        requestId: 31db50b5-14c0-4f4e-965e-6e1f9607ee78
+        origin: dimension-penalty
       properties:
         title:
           description: Заголовок ошибки
@@ -4219,11 +4219,11 @@ components:
       type: object
     Response403Retentions:
       example:
-        requestId: 31db50b5-14c0-4f4e-965e-6e1f9607ee78
-        origin: dimension-penalty
-        detail: "abac: access denied"
         title: access denied
         status: 403
+        detail: "abac: access denied"
+        requestId: 31db50b5-14c0-4f4e-965e-6e1f9607ee78
+        origin: dimension-penalty
       properties:
         title:
           description: Заголовок ошибки
@@ -4319,9 +4319,9 @@ components:
       type: object
     "4xxResponse":
       example:
-        requestId: requestId
-        origin: origin
         detail: detail
+        origin: origin
+        requestId: requestId
         title: title
       properties:
         detail:
@@ -4381,8 +4381,8 @@ components:
       type: object
     _api_v1_warehouse_remains_tasks__task_id__download_get_200_response_inner_warehouses_inner:
       example:
-        quantity: 134
         warehouseName: Невинномысск
+        quantity: 134
       properties:
         warehouseName:
           description: Название склада
@@ -4396,18 +4396,18 @@ components:
       type: object
     _api_v1_warehouse_remains_tasks__task_id__download_get_200_response_inner:
       example:
-        volume: 1.33
-        warehouses:
-        - quantity: 134
-          warehouseName: Невинномысск
-        - quantity: 134
-          warehouseName: Невинномысск
-        nmId: 183804172
-        techSize: "0"
         brand: Wonderful
-        barcode: "2037031652319"
         subjectName: Фотоальбомы
         vendorCode: 41058/прозрачный
+        nmId: 183804172
+        barcode: "2037031652319"
+        techSize: "0"
+        volume: 1.33
+        warehouses:
+        - warehouseName: Невинномысск
+          quantity: 134
+        - warehouseName: Невинномысск
+          quantity: 134
       properties:
         brand:
           description: Бренд
@@ -4446,23 +4446,23 @@ components:
       type: object
     getDeductions_200_response_data_reports_inner:
       example:
+        dtBonus: 2025-06-02T00:00:00Z
+        nmId: 544454
         oldShkId: 26624352356
+        oldColor: "темно-синий,голубой"
+        oldSize: A
+        oldSku: "54532562"
+        oldVendorCode: 23535 Стемпинг 500
+        newShkId: 123333223
+        newColor: "темно-синий,голубой"
+        newSize: A
+        newSku: "12323332223"
+        newVendorCode: wh-service-podmena
+        bonusSumm: 247.5
+        bonusType: Подмена FBW
         photoUrls:
         - https://static-basket-03.wb.ru/vol49/change_characteristics/19189882946-2023-12-15T10:18:21.125Z-1.webp
         - https://static-basket-03.wb.ru/vol49/change_characteristics/19189052946-2023-12-15T10:18:35.249Z-2.webp
-        bonusSumm: 247.5
-        newSku: "12323332223"
-        newColor: "темно-синий,голубой"
-        nmId: 544454
-        newVendorCode: wh-service-podmena
-        oldSize: A
-        oldColor: "темно-синий,голубой"
-        dtBonus: 2025-06-02T00:00:00Z
-        oldVendorCode: 23535 Стемпинг 500
-        newShkId: 123333223
-        newSize: A
-        oldSku: "54532562"
-        bonusType: Подмена FBW
       properties:
         dtBonus:
           description: Дата и время удержания
@@ -4534,40 +4534,40 @@ components:
       description: Данные ответа
       example:
         reports:
-        - oldShkId: 26624352356
+        - dtBonus: 2025-06-02T00:00:00Z
+          nmId: 544454
+          oldShkId: 26624352356
+          oldColor: "темно-синий,голубой"
+          oldSize: A
+          oldSku: "54532562"
+          oldVendorCode: 23535 Стемпинг 500
+          newShkId: 123333223
+          newColor: "темно-синий,голубой"
+          newSize: A
+          newSku: "12323332223"
+          newVendorCode: wh-service-podmena
+          bonusSumm: 247.5
+          bonusType: Подмена FBW
           photoUrls:
           - https://static-basket-03.wb.ru/vol49/change_characteristics/19189882946-2023-12-15T10:18:21.125Z-1.webp
           - https://static-basket-03.wb.ru/vol49/change_characteristics/19189052946-2023-12-15T10:18:35.249Z-2.webp
-          bonusSumm: 247.5
-          newSku: "12323332223"
-          newColor: "темно-синий,голубой"
+        - dtBonus: 2025-06-02T00:00:00Z
           nmId: 544454
-          newVendorCode: wh-service-podmena
-          oldSize: A
+          oldShkId: 26624352356
           oldColor: "темно-синий,голубой"
-          dtBonus: 2025-06-02T00:00:00Z
+          oldSize: A
+          oldSku: "54532562"
           oldVendorCode: 23535 Стемпинг 500
           newShkId: 123333223
+          newColor: "темно-синий,голубой"
           newSize: A
-          oldSku: "54532562"
+          newSku: "12323332223"
+          newVendorCode: wh-service-podmena
+          bonusSumm: 247.5
           bonusType: Подмена FBW
-        - oldShkId: 26624352356
           photoUrls:
           - https://static-basket-03.wb.ru/vol49/change_characteristics/19189882946-2023-12-15T10:18:21.125Z-1.webp
           - https://static-basket-03.wb.ru/vol49/change_characteristics/19189052946-2023-12-15T10:18:35.249Z-2.webp
-          bonusSumm: 247.5
-          newSku: "12323332223"
-          newColor: "темно-синий,голубой"
-          nmId: 544454
-          newVendorCode: wh-service-podmena
-          oldSize: A
-          oldColor: "темно-синий,голубой"
-          dtBonus: 2025-06-02T00:00:00Z
-          oldVendorCode: 23535 Стемпинг 500
-          newShkId: 123333223
-          newSize: A
-          oldSku: "54532562"
-          bonusType: Подмена FBW
         total: 11
       properties:
         reports:
@@ -4587,40 +4587,40 @@ components:
       example:
         data:
           reports:
-          - oldShkId: 26624352356
+          - dtBonus: 2025-06-02T00:00:00Z
+            nmId: 544454
+            oldShkId: 26624352356
+            oldColor: "темно-синий,голубой"
+            oldSize: A
+            oldSku: "54532562"
+            oldVendorCode: 23535 Стемпинг 500
+            newShkId: 123333223
+            newColor: "темно-синий,голубой"
+            newSize: A
+            newSku: "12323332223"
+            newVendorCode: wh-service-podmena
+            bonusSumm: 247.5
+            bonusType: Подмена FBW
             photoUrls:
             - https://static-basket-03.wb.ru/vol49/change_characteristics/19189882946-2023-12-15T10:18:21.125Z-1.webp
             - https://static-basket-03.wb.ru/vol49/change_characteristics/19189052946-2023-12-15T10:18:35.249Z-2.webp
-            bonusSumm: 247.5
-            newSku: "12323332223"
-            newColor: "темно-синий,голубой"
+          - dtBonus: 2025-06-02T00:00:00Z
             nmId: 544454
-            newVendorCode: wh-service-podmena
-            oldSize: A
+            oldShkId: 26624352356
             oldColor: "темно-синий,голубой"
-            dtBonus: 2025-06-02T00:00:00Z
+            oldSize: A
+            oldSku: "54532562"
             oldVendorCode: 23535 Стемпинг 500
             newShkId: 123333223
+            newColor: "темно-синий,голубой"
             newSize: A
-            oldSku: "54532562"
+            newSku: "12323332223"
+            newVendorCode: wh-service-podmena
+            bonusSumm: 247.5
             bonusType: Подмена FBW
-          - oldShkId: 26624352356
             photoUrls:
             - https://static-basket-03.wb.ru/vol49/change_characteristics/19189882946-2023-12-15T10:18:21.125Z-1.webp
             - https://static-basket-03.wb.ru/vol49/change_characteristics/19189052946-2023-12-15T10:18:35.249Z-2.webp
-            bonusSumm: 247.5
-            newSku: "12323332223"
-            newColor: "темно-синий,голубой"
-            nmId: 544454
-            newVendorCode: wh-service-podmena
-            oldSize: A
-            oldColor: "темно-синий,голубой"
-            dtBonus: 2025-06-02T00:00:00Z
-            oldVendorCode: 23535 Стемпинг 500
-            newShkId: 123333223
-            newSize: A
-            oldSku: "54532562"
-            bonusType: Подмена FBW
           total: 11
       properties:
         data:
@@ -4630,11 +4630,11 @@ components:
       type: object
     _api_v1_analytics_antifraud_details_get_200_response_details_inner:
       example:
-        dateTo: 2023-08-29
         nmID: 123456789
         sum: 3540
         currency: RUB
         dateFrom: 2023-08-23
+        dateTo: 2023-08-29
       properties:
         nmID:
           description: Артикул WB
@@ -4660,16 +4660,16 @@ components:
     _api_v1_analytics_antifraud_details_get_200_response:
       example:
         details:
-        - dateTo: 2023-08-29
-          nmID: 123456789
+        - nmID: 123456789
           sum: 3540
           currency: RUB
           dateFrom: 2023-08-23
-        - dateTo: 2023-08-29
-          nmID: 123456789
+          dateTo: 2023-08-29
+        - nmID: 123456789
           sum: 3540
           currency: RUB
           dateFrom: 2023-08-23
+          dateTo: 2023-08-29
       properties:
         details:
           items:
@@ -4678,14 +4678,14 @@ components:
       type: object
     _api_v1_analytics_goods_labeling_get_200_response_report_inner:
       example:
-        date: 2000-01-23T04:56:07.000+00:00
         amount: 0.8008281904610115
+        date: 2000-01-23T04:56:07.000+00:00
         incomeId: 6
+        nmID: 1
         photoUrls:
         - photoUrls
         - photoUrls
         shkID: 5
-        nmID: 1
         sku: sku
       properties:
         amount:
@@ -4716,23 +4716,23 @@ components:
     _api_v1_analytics_goods_labeling_get_200_response:
       example:
         report:
-        - date: 2000-01-23T04:56:07.000+00:00
-          amount: 0.8008281904610115
+        - amount: 0.8008281904610115
+          date: 2000-01-23T04:56:07.000+00:00
           incomeId: 6
+          nmID: 1
           photoUrls:
           - photoUrls
           - photoUrls
           shkID: 5
-          nmID: 1
           sku: sku
-        - date: 2000-01-23T04:56:07.000+00:00
-          amount: 0.8008281904610115
+        - amount: 0.8008281904610115
+          date: 2000-01-23T04:56:07.000+00:00
           incomeId: 6
+          nmID: 1
           photoUrls:
           - photoUrls
           - photoUrls
           shkID: 5
-          nmID: 1
           sku: sku
       properties:
         report:
@@ -4742,13 +4742,13 @@ components:
       type: object
     _api_v1_acceptance_report_tasks__task_id__download_get_200_response_inner:
       example:
-        giCreateDate: 2025-03-04
-        total: 873.04
-        incomeId: 11834106
-        shkCreateDate: 2025-03-14
         count: 40
+        giCreateDate: 2025-03-04
+        incomeId: 11834106
         nmID: 123456789
+        shkCreateDate: 2025-03-14
         subjectName: Добавки пищевые
+        total: 873.04
       properties:
         count:
           description: "Количество товаров, шт."
@@ -4784,14 +4784,14 @@ components:
     _api_v1_analytics_region_sale_get_200_response_report_inner:
       example:
         cityName: деревня Суханово
-        regionName: Московская область
-        nmID: 177974431
-        saleItemInvoiceQty: 4
         countryName: Россия
         foName: Центральный федеральный округ
-        saleInvoiceCostPrice: 592.11
+        nmID: 177974431
+        regionName: Московская область
         sa: "112233445566778899"
+        saleInvoiceCostPrice: 592.11
         saleInvoiceCostPricePerc: 43.0547333297454
+        saleItemInvoiceQty: 4
       properties:
         cityName:
           description: Населённый пункт
@@ -4836,23 +4836,23 @@ components:
       example:
         report:
         - cityName: деревня Суханово
-          regionName: Московская область
-          nmID: 177974431
-          saleItemInvoiceQty: 4
           countryName: Россия
           foName: Центральный федеральный округ
-          saleInvoiceCostPrice: 592.11
+          nmID: 177974431
+          regionName: Московская область
           sa: "112233445566778899"
+          saleInvoiceCostPrice: 592.11
           saleInvoiceCostPricePerc: 43.0547333297454
+          saleItemInvoiceQty: 4
         - cityName: деревня Суханово
-          regionName: Московская область
-          nmID: 177974431
-          saleItemInvoiceQty: 4
           countryName: Россия
           foName: Центральный федеральный округ
-          saleInvoiceCostPrice: 592.11
+          nmID: 177974431
+          regionName: Московская область
           sa: "112233445566778899"
+          saleInvoiceCostPrice: 592.11
           saleInvoiceCostPricePerc: 43.0547333297454
+          saleItemInvoiceQty: 4
       properties:
         report:
           items:
@@ -4898,8 +4898,8 @@ components:
       type: object
     _api_v1_analytics_brand_share_parent_subjects_get_200_response_data_inner:
       example:
-        parentName: parentName
         parentId: 0
+        parentName: parentName
       properties:
         parentId:
           description: ID родительской категории
@@ -4911,10 +4911,10 @@ components:
     _api_v1_analytics_brand_share_parent_subjects_get_200_response:
       example:
         data:
-        - parentName: parentName
-          parentId: 0
-        - parentName: parentName
-          parentId: 0
+        - parentId: 0
+          parentName: parentName
+        - parentId: 0
+          parentName: parentName
       properties:
         data:
           description: Категории бренда
@@ -4924,10 +4924,10 @@ components:
       type: object
     _api_v1_analytics_brand_share_get_200_response_report_inner:
       example:
-        pricePercent: 6.0274563
-        qtyPercent: 1.4658129
         applyDate: applyDate
         brandRating: 0
+        pricePercent: 6.0274563
+        qtyPercent: 1.4658129
       properties:
         applyDate:
           description: Дата
@@ -4948,14 +4948,14 @@ components:
     _api_v1_analytics_brand_share_get_200_response:
       example:
         report:
-        - pricePercent: 6.0274563
-          qtyPercent: 1.4658129
-          applyDate: applyDate
+        - applyDate: applyDate
           brandRating: 0
-        - pricePercent: 6.0274563
+          pricePercent: 6.0274563
           qtyPercent: 1.4658129
-          applyDate: applyDate
+        - applyDate: applyDate
           brandRating: 0
+          pricePercent: 6.0274563
+          qtyPercent: 1.4658129
       properties:
         report:
           description: Отчёт
@@ -4965,12 +4965,12 @@ components:
       type: object
     _api_v1_analytics_banned_products_blocked_get_200_response_report_inner:
       example:
-        reason: Контактные данные Продавца и ссылки на иные сайты/группы/сообщества
-          на фотографиях Товара
+        brand: Тест22
         nmId: 82722944
         title: Гуминовые кислоты - биоактивный противовирусный комплекс на
-        brand: Тест22
         vendorCode: пкdeир76
+        reason: Контактные данные Продавца и ссылки на иные сайты/группы/сообщества
+          на фотографиях Товара
       properties:
         brand:
           description: Бренд
@@ -4997,18 +4997,18 @@ components:
     _api_v1_analytics_banned_products_blocked_get_200_response:
       example:
         report:
-        - reason: Контактные данные Продавца и ссылки на иные сайты/группы/сообщества
-            на фотографиях Товара
+        - brand: Тест22
           nmId: 82722944
           title: Гуминовые кислоты - биоактивный противовирусный комплекс на
-          brand: Тест22
           vendorCode: пкdeир76
-        - reason: Контактные данные Продавца и ссылки на иные сайты/группы/сообщества
+          reason: Контактные данные Продавца и ссылки на иные сайты/группы/сообщества
             на фотографиях Товара
+        - brand: Тест22
           nmId: 82722944
           title: Гуминовые кислоты - биоактивный противовирусный комплекс на
-          brand: Тест22
           vendorCode: пкdeир76
+          reason: Контактные данные Продавца и ссылки на иные сайты/группы/сообщества
+            на фотографиях Товара
       properties:
         report:
           description: Отчёт
@@ -5018,11 +5018,11 @@ components:
       type: object
     _api_v1_analytics_banned_products_blocked_get_400_response:
       example:
-        requestId: requestId
-        origin: origin
-        detail: detail
         title: title
         status: 0.8008281904610115
+        detail: detail
+        requestId: requestId
+        origin: origin
       properties:
         title:
           description: Заголовок ошибки
@@ -5042,9 +5042,9 @@ components:
       type: object
     _api_v1_analytics_banned_products_shadowed_get_200_response_report_inner:
       example:
+        brand: Трикотаж
         nmId: 166658151
         title: ВАЗ
-        brand: Трикотаж
         vendorCode: DP02/черный
         nmRating: 3.1
       properties:
@@ -5072,14 +5072,14 @@ components:
     _api_v1_analytics_banned_products_shadowed_get_200_response:
       example:
         report:
-        - nmId: 166658151
+        - brand: Трикотаж
+          nmId: 166658151
           title: ВАЗ
-          brand: Трикотаж
           vendorCode: DP02/черный
           nmRating: 3.1
-        - nmId: 166658151
+        - brand: Трикотаж
+          nmId: 166658151
           title: ВАЗ
-          brand: Трикотаж
           vendorCode: DP02/черный
           nmRating: 3.1
       properties:
@@ -5091,25 +5091,25 @@ components:
       type: object
     _api_v1_analytics_goods_return_get_200_response_report_inner:
       example:
-        reason: Цвет
-        orderId: 2034240826
-        completedDt: 2025-03-31T11:33:53
-        nmId: 12862181
-        dstOfficeAddress: Жуковский Улица Маяковского 19
-        dstOfficeId: 310105
-        isStatusActive: 0
-        srid: ad3817664d3046c5a8d55054d8be96d6
-        stickerId: "33811984302"
-        orderDt: 2024-08-26
-        shkId: 23411783472
-        readyToReturnDt: 2025-01-31T08:33:50
-        techSize: "0"
-        expiredDt: 2025-03-31T11:33:53
         barcode: "1680063403480"
         brand: dub
+        completedDt: 2025-03-31T11:33:53
+        dstOfficeAddress: Жуковский Улица Маяковского 19
+        dstOfficeId: 310105
+        expiredDt: 2025-03-31T11:33:53
+        isStatusActive: 0
+        nmId: 12862181
+        orderDt: 2024-08-26
+        orderId: 2034240826
+        readyToReturnDt: 2025-01-31T08:33:50
+        reason: Цвет
         returnType: Возврат заблокированного товара
+        shkId: 23411783472
+        srid: ad3817664d3046c5a8d55054d8be96d6
         status: В пути в пвз
+        stickerId: "33811984302"
         subjectName: Багажные бирки
+        techSize: "0"
       properties:
         barcode:
           description: Баркод
@@ -5202,44 +5202,44 @@ components:
     _api_v1_analytics_goods_return_get_200_response:
       example:
         report:
-        - reason: Цвет
-          orderId: 2034240826
+        - barcode: "1680063403480"
+          brand: dub
           completedDt: 2025-03-31T11:33:53
-          nmId: 12862181
           dstOfficeAddress: Жуковский Улица Маяковского 19
           dstOfficeId: 310105
-          isStatusActive: 0
-          srid: ad3817664d3046c5a8d55054d8be96d6
-          stickerId: "33811984302"
-          orderDt: 2024-08-26
-          shkId: 23411783472
-          readyToReturnDt: 2025-01-31T08:33:50
-          techSize: "0"
           expiredDt: 2025-03-31T11:33:53
-          barcode: "1680063403480"
-          brand: dub
-          returnType: Возврат заблокированного товара
-          status: В пути в пвз
-          subjectName: Багажные бирки
-        - reason: Цвет
-          orderId: 2034240826
-          completedDt: 2025-03-31T11:33:53
+          isStatusActive: 0
           nmId: 12862181
+          orderDt: 2024-08-26
+          orderId: 2034240826
+          readyToReturnDt: 2025-01-31T08:33:50
+          reason: Цвет
+          returnType: Возврат заблокированного товара
+          shkId: 23411783472
+          srid: ad3817664d3046c5a8d55054d8be96d6
+          status: В пути в пвз
+          stickerId: "33811984302"
+          subjectName: Багажные бирки
+          techSize: "0"
+        - barcode: "1680063403480"
+          brand: dub
+          completedDt: 2025-03-31T11:33:53
           dstOfficeAddress: Жуковский Улица Маяковского 19
           dstOfficeId: 310105
-          isStatusActive: 0
-          srid: ad3817664d3046c5a8d55054d8be96d6
-          stickerId: "33811984302"
-          orderDt: 2024-08-26
-          shkId: 23411783472
-          readyToReturnDt: 2025-01-31T08:33:50
-          techSize: "0"
           expiredDt: 2025-03-31T11:33:53
-          barcode: "1680063403480"
-          brand: dub
+          isStatusActive: 0
+          nmId: 12862181
+          orderDt: 2024-08-26
+          orderId: 2034240826
+          readyToReturnDt: 2025-01-31T08:33:50
+          reason: Цвет
           returnType: Возврат заблокированного товара
+          shkId: 23411783472
+          srid: ad3817664d3046c5a8d55054d8be96d6
           status: В пути в пвз
+          stickerId: "33811984302"
           subjectName: Багажные бирки
+          techSize: "0"
       properties:
         report:
           description: Отчёт
@@ -5249,17 +5249,17 @@ components:
       type: object
     models_ExciseReportResponseData_inner:
       example:
+        name: Россия
+        price: 100
+        currency_name_short: руб
+        excise_short: 0102900254680370215_Re/=lSbNiGD
+        barcode: "2038893425820"
+        nm_id: 169085355
+        operation_type_id: 1
+        fiscal_doc_number: 12345678
         fiscal_dt: 2024-01-01
         fiscal_drive_number: fiscal_drive_number
-        price: 100
-        fiscal_doc_number: 12345678
-        name: Россия
-        excise_short: 0102900254680370215_Re/=lSbNiGD
-        currency_name_short: руб
-        nm_id: 169085355
         rid: 606217433440
-        barcode: "2038893425820"
-        operation_type_id: 1
         srid: 7513432034713632943.1.0
       properties:
         name:
@@ -5319,27 +5319,27 @@ components:
       type: object
     MeasurementPenalties_data_reports_inner:
       example:
+        nmId: 123456789
+        subjectName: Костюмы спортивные
+        dimId: 123456789
+        prcOver: 130.71
+        volume: 6.47
+        width: 7
+        length: 28
+        height: 33
+        volumeSup: 4.95
+        widthSup: 8
+        lengthSup: 33
         heightSup: 33
         photoUrls:
         - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
         - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
         - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-        isValid: true
-        length: 28
-        nmId: 123456789
-        prcOver: 130.71
-        volume: 6.47
-        volumeSup: 4.95
-        reversalAmount: 0
-        dimId: 123456789
-        lengthSup: 33
-        width: 7
         dtBonus: 2025-06-02T00:00:00Z
-        widthSup: 8
+        isValid: true
         isValidDt: 2025-05-29T13:35:57Z
+        reversalAmount: 0
         penaltyAmount: 449.83
-        subjectName: Костюмы спортивные
-        height: 33
       properties:
         nmId:
           description: Артикул WB
@@ -5428,48 +5428,48 @@ components:
       description: Данные ответа
       example:
         reports:
-        - heightSup: 33
+        - nmId: 123456789
+          subjectName: Костюмы спортивные
+          dimId: 123456789
+          prcOver: 130.71
+          volume: 6.47
+          width: 7
+          length: 28
+          height: 33
+          volumeSup: 4.95
+          widthSup: 8
+          lengthSup: 33
+          heightSup: 33
           photoUrls:
           - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
           - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
           - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
+          dtBonus: 2025-06-02T00:00:00Z
           isValid: true
-          length: 28
-          nmId: 123456789
+          isValidDt: 2025-05-29T13:35:57Z
+          reversalAmount: 0
+          penaltyAmount: 449.83
+        - nmId: 123456789
+          subjectName: Костюмы спортивные
+          dimId: 123456789
           prcOver: 130.71
           volume: 6.47
-          volumeSup: 4.95
-          reversalAmount: 0
-          dimId: 123456789
-          lengthSup: 33
           width: 7
-          dtBonus: 2025-06-02T00:00:00Z
-          widthSup: 8
-          isValidDt: 2025-05-29T13:35:57Z
-          penaltyAmount: 449.83
-          subjectName: Костюмы спортивные
+          length: 28
           height: 33
-        - heightSup: 33
+          volumeSup: 4.95
+          widthSup: 8
+          lengthSup: 33
+          heightSup: 33
           photoUrls:
           - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35154094220_em907759_n1_b2eaa5ed-bf21-4c58-b419-b5b5ec6f29ee.webp
           - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35159094420_em907759_n2_040407b0-7752-4ae7-a4a4-7ec016e86511.webp
           - https://static-basket-09.wbbasket.ru/vol184/obmer-tovarov/measurement_on_table/wbs35189094220_em904757_n3_9f502e24-3b3e-4efd-9hac-802813046ac3.webp
-          isValid: true
-          length: 28
-          nmId: 123456789
-          prcOver: 130.71
-          volume: 6.47
-          volumeSup: 4.95
-          reversalAmount: 0
-          dimId: 123456789
-          lengthSup: 33
-          width: 7
           dtBonus: 2025-06-02T00:00:00Z
-          widthSup: 8
+          isValid: true
           isValidDt: 2025-05-29T13:35:57Z
+          reversalAmount: 0
           penaltyAmount: 449.83
-          subjectName: Костюмы спортивные
-          height: 33
         total: 11
       properties:
         reports:
@@ -5487,18 +5487,18 @@ components:
       type: object
     WHM_data_reports_inner:
       example:
-        volume: 0.8008281904610115
-        dt: 2025-04-01T00:06:00Z
+        nmId: 123456789
+        subjectName: ""
         dimId: 123456789
+        volume: 0.8008281904610115
+        width: 66
+        length: 54
+        height: 11
         photoUrls:
         - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ed6-737c-a9e731250fb0.jpg
         - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
         - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
-        width: 66
-        length: 54
-        nmId: 123456789
-        subjectName: ""
-        height: 11
+        dt: 2025-04-01T00:06:00Z
       properties:
         nmId:
           description: Артикул WB
@@ -5546,30 +5546,30 @@ components:
       description: Данные ответа
       example:
         reports:
-        - volume: 0.8008281904610115
-          dt: 2025-04-01T00:06:00Z
+        - nmId: 123456789
+          subjectName: ""
           dimId: 123456789
+          volume: 0.8008281904610115
+          width: 66
+          length: 54
+          height: 11
           photoUrls:
           - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ed6-737c-a9e731250fb0.jpg
           - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
           - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
+          dt: 2025-04-01T00:06:00Z
+        - nmId: 123456789
+          subjectName: ""
+          dimId: 123456789
+          volume: 0.8008281904610115
           width: 66
           length: 54
-          nmId: 123456789
-          subjectName: ""
           height: 11
-        - volume: 0.8008281904610115
-          dt: 2025-04-01T00:06:00Z
-          dimId: 123456789
           photoUrls:
           - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_a9f839da-c3b7-4ed6-737c-a9e731250fb0.jpg
           - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_2aac23b7-c8f9-42db-74e9-b4a9c916017c.jpg
           - https://static-basket-03.wb.ru/vol54/handheld-goods-measurements-photo/8906416_ff93b7c4-19d6-e0a2-4dba-7c2f09f06b3.jpg
-          width: 66
-          length: 54
-          nmId: 123456789
-          subjectName: ""
-          height: 11
+          dt: 2025-04-01T00:06:00Z
         total: 11
       properties:
         reports:

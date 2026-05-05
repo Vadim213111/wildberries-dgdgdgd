@@ -28,12 +28,12 @@ class SupplierTaskMetadataBuffer(BaseModel):
     """
     Данные ответа
     """ # noqa: E501
-    upload_id: Optional[StrictInt] = Field(default=None, description="ID загрузки", alias="uploadID")
-    status: Optional[StrictInt] = Field(default=None, description="Статус загрузки: `1` — в обработке ")
-    upload_date: Optional[datetime] = Field(default=None, description="Дата и время, когда загрузка создана", alias="uploadDate")
-    activation_date: Optional[datetime] = Field(default=None, description="Дата и время, когда загрузка отправляется в обработку", alias="activationDate")
-    over_all_goods_number: Optional[StrictInt] = Field(default=None, description="Всего товаров", alias="overAllGoodsNumber")
-    success_goods_number: Optional[StrictInt] = Field(default=None, description="Товаров без ошибок (0, потому что загрузка в обработке)", alias="successGoodsNumber")
+    upload_id: Optional[StrictInt] = Field(default=None, description="ID загрузки", alias="uploadID", json_schema_extra={"examples": [395643565]})
+    status: Optional[StrictInt] = Field(default=None, description="Статус загрузки: `1` — в обработке ", json_schema_extra={"examples": [1]})
+    upload_date: Optional[datetime] = Field(default=None, description="Дата и время, когда загрузка создана", alias="uploadDate", json_schema_extra={"examples": ["2022-08-21T22:00:13+02:00"]})
+    activation_date: Optional[datetime] = Field(default=None, description="Дата и время, когда загрузка отправляется в обработку", alias="activationDate", json_schema_extra={"examples": ["2022-08-21T22:00:13+02:00"]})
+    over_all_goods_number: Optional[StrictInt] = Field(default=None, description="Всего товаров", alias="overAllGoodsNumber", json_schema_extra={"examples": [100]})
+    success_goods_number: Optional[StrictInt] = Field(default=None, description="Товаров без ошибок (0, потому что загрузка в обработке)", alias="successGoodsNumber", json_schema_extra={"examples": [0]})
     __properties: ClassVar[List[str]] = ["uploadID", "status", "uploadDate", "activationDate", "overAllGoodsNumber", "successGoodsNumber"]
 
     model_config = ConfigDict(

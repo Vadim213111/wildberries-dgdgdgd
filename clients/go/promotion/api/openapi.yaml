@@ -4829,36 +4829,36 @@ components:
   schemas:
     V0BidsRecommendationsResponse:
       example:
+        advertId: 0
+        base:
+          competitiveBid:
+            bidKopecks: 6
+          leadersBid:
+            bidKopecks: 1
+          top2:
+            bidKopecks: 5
+        nmId: 5
         normQueries:
         - normQuery: normQuery
           reachMax:
+            bidKopecks: 2
             bidKopecksMin: 7
-            bidKopecks: 2
           reachMedium:
-            bidKopecksMin: 3
             bidKopecks: 9
+            bidKopecksMin: 3
           reachMin:
-            bidKopecksMin: 4
             bidKopecks: 2
+            bidKopecksMin: 4
         - normQuery: normQuery
           reachMax:
+            bidKopecks: 2
             bidKopecksMin: 7
-            bidKopecks: 2
           reachMedium:
-            bidKopecksMin: 3
             bidKopecks: 9
+            bidKopecksMin: 3
           reachMin:
-            bidKopecksMin: 4
             bidKopecks: 2
-        nmId: 5
-        advertId: 0
-        base:
-          leadersBid:
-            bidKopecks: 1
-          competitiveBid:
-            bidKopecks: 6
-          top2:
-            bidKopecks: 5
+            bidKopecksMin: 4
       properties:
         advertId:
           description: ID кампании
@@ -4879,10 +4879,10 @@ components:
     V0BidRecommendationBase:
       description: Рекомендуемые ставки для карточек товаров
       example:
-        leadersBid:
-          bidKopecks: 1
         competitiveBid:
           bidKopecks: 6
+        leadersBid:
+          bidKopecks: 1
         top2:
           bidKopecks: 5
       properties:
@@ -4929,14 +4929,14 @@ components:
       example:
         normQuery: normQuery
         reachMax:
+          bidKopecks: 2
           bidKopecksMin: 7
-          bidKopecks: 2
         reachMedium:
-          bidKopecksMin: 3
           bidKopecks: 9
+          bidKopecksMin: 3
         reachMin:
-          bidKopecksMin: 4
           bidKopecks: 2
+          bidKopecksMin: 4
       properties:
         normQuery:
           description: Поисковый кластер
@@ -4952,8 +4952,8 @@ components:
       description: |
         Максимальный охват: 76-100%
       example:
-        bidKopecksMin: 7
         bidKopecks: 2
+        bidKopecksMin: 7
       properties:
         bidKopecks:
           description: Рекомендуемая ставка в копейках
@@ -4966,8 +4966,8 @@ components:
       description: |
         Средний охват: 61-75%
       example:
-        bidKopecksMin: 3
         bidKopecks: 9
+        bidKopecksMin: 3
       properties:
         bidKopecks:
           description: Рекомендуемая ставка в копейках
@@ -4980,8 +4980,8 @@ components:
       description: |
         Минимальный охват: 50-60%
       example:
-        bidKopecksMin: 4
         bidKopecks: 2
+        bidKopecksMin: 4
       properties:
         bidKopecks:
           description: Рекомендуемая ставка в копейках
@@ -4993,16 +4993,16 @@ components:
     V0GetNormQueryListRequest:
       example:
         items:
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
       properties:
         items:
           items:
@@ -5014,8 +5014,8 @@ components:
       type: object
     V0GetNormQueryListRequestItem:
       example:
-        nmId: 6
         advertId: 0
+        nmId: 6
       properties:
         advertId:
           description: ID кампании
@@ -5032,24 +5032,24 @@ components:
     V0GetNormQueryListResponse:
       example:
         items:
-        - normQueries:
-            excluded:
-            - excluded
-            - excluded
+        - advertId: 0
+          nmId: 6
+          normQueries:
             active:
             - active
             - active
-          nmId: 6
-          advertId: 0
-        - normQueries:
             excluded:
             - excluded
             - excluded
+        - advertId: 0
+          nmId: 6
+          normQueries:
             active:
             - active
             - active
-          nmId: 6
-          advertId: 0
+            excluded:
+            - excluded
+            - excluded
       properties:
         items:
           items:
@@ -5061,15 +5061,15 @@ components:
       type: object
     V0GetNormQueryListResponseItem:
       example:
+        advertId: 0
+        nmId: 6
         normQueries:
-          excluded:
-          - excluded
-          - excluded
           active:
           - active
           - active
-        nmId: 6
-        advertId: 0
+          excluded:
+          - excluded
+          - excluded
       properties:
         advertId:
           description: ID кампании
@@ -5085,12 +5085,12 @@ components:
     V0GetNormQueryListResponseItemNormQueries:
       description: Поисковые кластеры
       example:
-        excluded:
-        - excluded
-        - excluded
         active:
         - active
         - active
+        excluded:
+        - excluded
+        - excluded
       properties:
         active:
           description: Активные поисковые кластеры
@@ -5110,16 +5110,16 @@ components:
         from: 2025-01-01
         to: 2025-01-31
         items:
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
-        - nmId: 6
-          advertId: 0
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
+        - advertId: 0
+          nmId: 6
       properties:
         from:
           description: Дата начала периода
@@ -5144,64 +5144,64 @@ components:
     V1GetNormQueryStatsResponse:
       example:
         items:
-        - nmId: 6
+        - advertId: 0
+          nmId: 6
           dailyStats:
           - date: 2000-01-23
             stat:
               normQuery: normQuery
-              ctr: 7.0614014
-              cpm: 3.6160767
-              avgPos: 2.027123
-              cpc: 9.301444
-              spend: 7.386281948385884
-              shks: 4
+              views: 1
               clicks: 5
               atbs: 5
               orders: 2
-              views: 1
+              ctr: 7.0614014
+              cpc: 9.301444
+              cpm: 3.6160767
+              avgPos: 2.027123
+              shks: 4
+              spend: 7.386281948385884
           - date: 2000-01-23
             stat:
               normQuery: normQuery
-              ctr: 7.0614014
-              cpm: 3.6160767
-              avgPos: 2.027123
-              cpc: 9.301444
-              spend: 7.386281948385884
-              shks: 4
+              views: 1
               clicks: 5
               atbs: 5
               orders: 2
-              views: 1
-          advertId: 0
-        - nmId: 6
+              ctr: 7.0614014
+              cpc: 9.301444
+              cpm: 3.6160767
+              avgPos: 2.027123
+              shks: 4
+              spend: 7.386281948385884
+        - advertId: 0
+          nmId: 6
           dailyStats:
           - date: 2000-01-23
             stat:
               normQuery: normQuery
-              ctr: 7.0614014
-              cpm: 3.6160767
-              avgPos: 2.027123
-              cpc: 9.301444
-              spend: 7.386281948385884
-              shks: 4
+              views: 1
               clicks: 5
               atbs: 5
               orders: 2
-              views: 1
+              ctr: 7.0614014
+              cpc: 9.301444
+              cpm: 3.6160767
+              avgPos: 2.027123
+              shks: 4
+              spend: 7.386281948385884
           - date: 2000-01-23
             stat:
               normQuery: normQuery
-              ctr: 7.0614014
-              cpm: 3.6160767
-              avgPos: 2.027123
-              cpc: 9.301444
-              spend: 7.386281948385884
-              shks: 4
+              views: 1
               clicks: 5
               atbs: 5
               orders: 2
-              views: 1
-          advertId: 0
+              ctr: 7.0614014
+              cpc: 9.301444
+              cpm: 3.6160767
+              avgPos: 2.027123
+              shks: 4
+              spend: 7.386281948385884
       properties:
         items:
           items:
@@ -5212,35 +5212,35 @@ components:
       type: object
     V1GetNormQueryStatsResponseItem:
       example:
+        advertId: 0
         nmId: 6
         dailyStats:
         - date: 2000-01-23
           stat:
             normQuery: normQuery
-            ctr: 7.0614014
-            cpm: 3.6160767
-            avgPos: 2.027123
-            cpc: 9.301444
-            spend: 7.386281948385884
-            shks: 4
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
+            ctr: 7.0614014
+            cpc: 9.301444
+            cpm: 3.6160767
+            avgPos: 2.027123
+            shks: 4
+            spend: 7.386281948385884
         - date: 2000-01-23
           stat:
             normQuery: normQuery
-            ctr: 7.0614014
-            cpm: 3.6160767
-            avgPos: 2.027123
-            cpc: 9.301444
-            spend: 7.386281948385884
-            shks: 4
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
-        advertId: 0
+            ctr: 7.0614014
+            cpc: 9.301444
+            cpm: 3.6160767
+            avgPos: 2.027123
+            shks: 4
+            spend: 7.386281948385884
       properties:
         advertId:
           description: ID кампании
@@ -5264,16 +5264,16 @@ components:
         date: 2000-01-23
         stat:
           normQuery: normQuery
-          ctr: 7.0614014
-          cpm: 3.6160767
-          avgPos: 2.027123
-          cpc: 9.301444
-          spend: 7.386281948385884
-          shks: 4
+          views: 1
           clicks: 5
           atbs: 5
           orders: 2
-          views: 1
+          ctr: 7.0614014
+          cpc: 9.301444
+          cpm: 3.6160767
+          avgPos: 2.027123
+          shks: 4
+          spend: 7.386281948385884
       properties:
         date:
           description: Дата
@@ -5287,16 +5287,16 @@ components:
     V1GetNormQueryStatsResponseItemStat:
       example:
         normQuery: normQuery
-        ctr: 7.0614014
-        cpm: 3.6160767
-        avgPos: 2.027123
-        cpc: 9.301444
-        spend: 7.386281948385884
-        shks: 4
+        views: 1
         clicks: 5
         atbs: 5
         orders: 2
-        views: 1
+        ctr: 7.0614014
+        cpc: 9.301444
+        cpm: 3.6160767
+        avgPos: 2.027123
+        shks: 4
+        spend: 7.386281948385884
       properties:
         normQuery:
           description: Поисковый кластер
@@ -5373,16 +5373,16 @@ components:
         from: 2025-10-07
         to: 2025-10-08
         items:
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
       properties:
         from:
           description: Дата начала периода
@@ -5406,64 +5406,64 @@ components:
       type: object
     V0GetNormQueryStatsItem:
       example:
-        stats:
-        - ctr: 7.061401241503109
-          cpm: 3.616076749251911
-          norm_query: norm_query
-          cpc: 9.301444243932576
-          avg_pos: 2.027123023002322
-          spend: 7.386281948385884
-          shks: 4
-          clicks: 5
-          atbs: 5
-          orders: 2
-          views: 1
-        - ctr: 7.061401241503109
-          cpm: 3.616076749251911
-          norm_query: norm_query
-          cpc: 9.301444243932576
-          avg_pos: 2.027123023002322
-          spend: 7.386281948385884
-          shks: 4
-          clicks: 5
-          atbs: 5
-          orders: 2
-          views: 1
-        - ctr: 7.061401241503109
-          cpm: 3.616076749251911
-          norm_query: norm_query
-          cpc: 9.301444243932576
-          avg_pos: 2.027123023002322
-          spend: 7.386281948385884
-          shks: 4
-          clicks: 5
-          atbs: 5
-          orders: 2
-          views: 1
-        - ctr: 7.061401241503109
-          cpm: 3.616076749251911
-          norm_query: norm_query
-          cpc: 9.301444243932576
-          avg_pos: 2.027123023002322
-          spend: 7.386281948385884
-          shks: 4
-          clicks: 5
-          atbs: 5
-          orders: 2
-          views: 1
-        - ctr: 7.061401241503109
-          cpm: 3.616076749251911
-          norm_query: norm_query
-          cpc: 9.301444243932576
-          avg_pos: 2.027123023002322
-          spend: 7.386281948385884
-          shks: 4
-          clicks: 5
-          atbs: 5
-          orders: 2
-          views: 1
-        nm_id: 6
         advert_id: 0
+        nm_id: 6
+        stats:
+        - norm_query: norm_query
+          views: 1
+          clicks: 5
+          atbs: 5
+          orders: 2
+          ctr: 7.061401241503109
+          cpc: 9.301444243932576
+          cpm: 3.616076749251911
+          avg_pos: 2.027123023002322
+          shks: 4
+          spend: 7.386281948385884
+        - norm_query: norm_query
+          views: 1
+          clicks: 5
+          atbs: 5
+          orders: 2
+          ctr: 7.061401241503109
+          cpc: 9.301444243932576
+          cpm: 3.616076749251911
+          avg_pos: 2.027123023002322
+          shks: 4
+          spend: 7.386281948385884
+        - norm_query: norm_query
+          views: 1
+          clicks: 5
+          atbs: 5
+          orders: 2
+          ctr: 7.061401241503109
+          cpc: 9.301444243932576
+          cpm: 3.616076749251911
+          avg_pos: 2.027123023002322
+          shks: 4
+          spend: 7.386281948385884
+        - norm_query: norm_query
+          views: 1
+          clicks: 5
+          atbs: 5
+          orders: 2
+          ctr: 7.061401241503109
+          cpc: 9.301444243932576
+          cpm: 3.616076749251911
+          avg_pos: 2.027123023002322
+          shks: 4
+          spend: 7.386281948385884
+        - norm_query: norm_query
+          views: 1
+          clicks: 5
+          atbs: 5
+          orders: 2
+          ctr: 7.061401241503109
+          cpc: 9.301444243932576
+          cpm: 3.616076749251911
+          avg_pos: 2.027123023002322
+          shks: 4
+          spend: 7.386281948385884
       properties:
         advert_id:
           description: ID кампании
@@ -5482,17 +5482,17 @@ components:
       type: object
     V0GetNormQueryStatsItemStat:
       example:
-        ctr: 7.061401241503109
-        cpm: 3.616076749251911
         norm_query: norm_query
-        cpc: 9.301444243932576
-        avg_pos: 2.027123023002322
-        spend: 7.386281948385884
-        shks: 4
+        views: 1
         clicks: 5
         atbs: 5
         orders: 2
-        views: 1
+        ctr: 7.061401241503109
+        cpc: 9.301444243932576
+        cpm: 3.616076749251911
+        avg_pos: 2.027123023002322
+        shks: 4
+        spend: 7.386281948385884
       properties:
         norm_query:
           description: Поисковый кластер
@@ -5550,122 +5550,122 @@ components:
       description: Статистика по поисковым кластерам
       example:
         stats:
-        - stats:
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
-            cpc: 9.301444243932576
-            avg_pos: 2.027123023002322
-            spend: 7.386281948385884
-            shks: 4
-            clicks: 5
-            atbs: 5
-            orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
-            cpc: 9.301444243932576
-            avg_pos: 2.027123023002322
-            spend: 7.386281948385884
-            shks: 4
-            clicks: 5
-            atbs: 5
-            orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
-            cpc: 9.301444243932576
-            avg_pos: 2.027123023002322
-            spend: 7.386281948385884
-            shks: 4
-            clicks: 5
-            atbs: 5
-            orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
-            cpc: 9.301444243932576
-            avg_pos: 2.027123023002322
-            spend: 7.386281948385884
-            shks: 4
-            clicks: 5
-            atbs: 5
-            orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
-            cpc: 9.301444243932576
-            avg_pos: 2.027123023002322
-            spend: 7.386281948385884
-            shks: 4
-            clicks: 5
-            atbs: 5
-            orders: 2
-            views: 1
+        - advert_id: 0
           nm_id: 6
-          advert_id: 0
-        - stats:
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
-            cpc: 9.301444243932576
-            avg_pos: 2.027123023002322
-            spend: 7.386281948385884
-            shks: 4
+          stats:
+          - norm_query: norm_query
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
+            ctr: 7.061401241503109
             cpc: 9.301444243932576
+            cpm: 3.616076749251911
             avg_pos: 2.027123023002322
-            spend: 7.386281948385884
             shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
+            ctr: 7.061401241503109
             cpc: 9.301444243932576
+            cpm: 3.616076749251911
             avg_pos: 2.027123023002322
-            spend: 7.386281948385884
             shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
+            ctr: 7.061401241503109
             cpc: 9.301444243932576
+            cpm: 3.616076749251911
             avg_pos: 2.027123023002322
-            spend: 7.386281948385884
             shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
-          - ctr: 7.061401241503109
-            cpm: 3.616076749251911
-            norm_query: norm_query
+            ctr: 7.061401241503109
             cpc: 9.301444243932576
+            cpm: 3.616076749251911
             avg_pos: 2.027123023002322
-            spend: 7.386281948385884
             shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
             clicks: 5
             atbs: 5
             orders: 2
-            views: 1
+            ctr: 7.061401241503109
+            cpc: 9.301444243932576
+            cpm: 3.616076749251911
+            avg_pos: 2.027123023002322
+            shks: 4
+            spend: 7.386281948385884
+        - advert_id: 0
           nm_id: 6
-          advert_id: 0
+          stats:
+          - norm_query: norm_query
+            views: 1
+            clicks: 5
+            atbs: 5
+            orders: 2
+            ctr: 7.061401241503109
+            cpc: 9.301444243932576
+            cpm: 3.616076749251911
+            avg_pos: 2.027123023002322
+            shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
+            clicks: 5
+            atbs: 5
+            orders: 2
+            ctr: 7.061401241503109
+            cpc: 9.301444243932576
+            cpm: 3.616076749251911
+            avg_pos: 2.027123023002322
+            shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
+            clicks: 5
+            atbs: 5
+            orders: 2
+            ctr: 7.061401241503109
+            cpc: 9.301444243932576
+            cpm: 3.616076749251911
+            avg_pos: 2.027123023002322
+            shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
+            clicks: 5
+            atbs: 5
+            orders: 2
+            ctr: 7.061401241503109
+            cpc: 9.301444243932576
+            cpm: 3.616076749251911
+            avg_pos: 2.027123023002322
+            shks: 4
+            spend: 7.386281948385884
+          - norm_query: norm_query
+            views: 1
+            clicks: 5
+            atbs: 5
+            orders: 2
+            ctr: 7.061401241503109
+            cpc: 9.301444243932576
+            cpm: 3.616076749251911
+            avg_pos: 2.027123023002322
+            shks: 4
+            spend: 7.386281948385884
       properties:
         stats:
           items:
@@ -5676,10 +5676,10 @@ components:
       type: object
     V0SetNormQueryBidsRequestItem:
       example:
-        norm_query: norm_query
-        nm_id: 6
-        bid: 1
         advert_id: 0
+        nm_id: 6
+        norm_query: norm_query
+        bid: 1
       properties:
         advert_id:
           description: ID кампании
@@ -5702,26 +5702,26 @@ components:
     V0SetNormQueryBidsRequest:
       example:
         bids:
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
       properties:
         bids:
           items:
@@ -5733,14 +5733,14 @@ components:
       type: object
     V0SetMinusNormQueryRequest:
       example:
+        advert_id: 0
+        nm_id: 6
         norm_queries:
         - norm_queries
         - norm_queries
         - norm_queries
         - norm_queries
         - norm_queries
-        nm_id: 6
-        advert_id: 0
       properties:
         advert_id:
           description: ID кампании
@@ -5761,8 +5761,8 @@ components:
       type: object
     V0GetNormQueryBidsRequestItem:
       example:
-        nm_id: 6
         advert_id: 0
+        nm_id: 6
       properties:
         advert_id:
           description: ID кампании
@@ -5777,16 +5777,16 @@ components:
     V0GetNormQueryBidsRequest:
       example:
         items:
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
       properties:
         items:
           items:
@@ -5798,10 +5798,10 @@ components:
       type: object
     V0GetNormQueryBidsItem:
       example:
-        norm_query: norm_query
-        nm_id: 6
-        bid: 1
         advert_id: 0
+        nm_id: 6
+        norm_query: norm_query
+        bid: 1
       properties:
         advert_id:
           description: ID кампании
@@ -5824,14 +5824,14 @@ components:
     V0GetNormQueryBidsResponse:
       example:
         bids:
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
-        - norm_query: norm_query
+        - advert_id: 0
           nm_id: 6
+          norm_query: norm_query
           bid: 1
-          advert_id: 0
       properties:
         bids:
           items:
@@ -5842,8 +5842,8 @@ components:
       type: object
     V0GetNormQueryMinusRequestItem:
       example:
-        nm_id: 6
         advert_id: 0
+        nm_id: 6
       properties:
         advert_id:
           description: ID кампании
@@ -5858,16 +5858,16 @@ components:
     V0GetNormQueryMinusRequest:
       example:
         items:
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
-        - nm_id: 6
-          advert_id: 0
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
+        - advert_id: 0
+          nm_id: 6
       properties:
         items:
           items:
@@ -5879,11 +5879,11 @@ components:
       type: object
     V0GetNormQueryMinusResponseItem:
       example:
+        advert_id: 0
+        nm_id: 6
         norm_queries:
         - norm_queries
         - norm_queries
-        nm_id: 6
-        advert_id: 0
       properties:
         advert_id:
           description: ID кампании
@@ -5900,16 +5900,16 @@ components:
     V0GetNormQueryMinusResponse:
       example:
         items:
-        - norm_queries:
-          - norm_queries
-          - norm_queries
+        - advert_id: 0
           nm_id: 6
-          advert_id: 0
-        - norm_queries:
+          norm_queries:
           - norm_queries
           - norm_queries
+        - advert_id: 0
           nm_id: 6
-          advert_id: 0
+          norm_queries:
+          - norm_queries
+          - norm_queries
       properties:
         items:
           items:
@@ -5918,11 +5918,11 @@ components:
       type: object
     StandardizedBatchError:
       example:
-        origin: camp-api-public-cache
         detail: some nms are not belong to advert
-        title: Invalid Params
+        origin: camp-api-public-cache
         request_id: 123e4567-e89b-12d3-a456-426614174000
         status: 400
+        title: Invalid Params
       properties:
         detail:
           description: Детали ошибки
@@ -5968,13 +5968,13 @@ components:
       type: object
     PromotionsGoodsList:
       example:
+        id: 162579635
         inAction: true
         price: 1500
-        planDiscount: 34
-        discount: 15
-        id: 162579635
         currencyCode: RUB
         planPrice: 1000
+        discount: 15
+        planDiscount: 34
       properties:
         id:
           description: Артикул WB
@@ -6013,64 +6013,64 @@ components:
     GetAdverts:
       example:
         adverts:
-        - settings:
-            payment_type: cpm
-            name: name
-            placements:
-              search: true
-              recommendations: true
+        - bid_type: bid_type
+          id: 0
           nm_settings:
           - bids_kopecks:
               search: 6
               recommendations: 1
             subject:
-              name: name
               id: 5
+              name: name
             nm_id: 5
           - bids_kopecks:
               search: 6
               recommendations: 1
             subject:
-              name: name
               id: 5
+              name: name
             nm_id: 5
-          timestamps:
-            deleted: 2000-01-23T04:56:07.000+00:00
-            created: 2000-01-23T04:56:07.000+00:00
-            started: 2000-01-23T04:56:07.000+00:00
-            updated: 2000-01-23T04:56:07.000+00:00
-          bid_type: bid_type
-          id: 0
-          status: 2
-        - settings:
+          settings:
             payment_type: cpm
             name: name
             placements:
               search: true
               recommendations: true
+          status: 2
+          timestamps:
+            created: 2000-01-23T04:56:07.000+00:00
+            updated: 2000-01-23T04:56:07.000+00:00
+            started: 2000-01-23T04:56:07.000+00:00
+            deleted: 2000-01-23T04:56:07.000+00:00
+        - bid_type: bid_type
+          id: 0
           nm_settings:
           - bids_kopecks:
               search: 6
               recommendations: 1
             subject:
-              name: name
               id: 5
+              name: name
             nm_id: 5
           - bids_kopecks:
               search: 6
               recommendations: 1
             subject:
-              name: name
               id: 5
+              name: name
             nm_id: 5
-          timestamps:
-            deleted: 2000-01-23T04:56:07.000+00:00
-            created: 2000-01-23T04:56:07.000+00:00
-            started: 2000-01-23T04:56:07.000+00:00
-            updated: 2000-01-23T04:56:07.000+00:00
-          bid_type: bid_type
-          id: 0
+          settings:
+            payment_type: cpm
+            name: name
+            placements:
+              search: true
+              recommendations: true
           status: 2
+          timestamps:
+            created: 2000-01-23T04:56:07.000+00:00
+            updated: 2000-01-23T04:56:07.000+00:00
+            started: 2000-01-23T04:56:07.000+00:00
+            deleted: 2000-01-23T04:56:07.000+00:00
       properties:
         adverts:
           description: Кампании
@@ -6086,8 +6086,8 @@ components:
           search: 6
           recommendations: 1
         subject:
-          name: name
           id: 5
+          name: name
         nm_id: 5
       properties:
         bids_kopecks:
@@ -6106,8 +6106,8 @@ components:
     AdvertSubject:
       description: Предмет
       example:
-        name: name
         id: 5
+        name: name
       properties:
         id:
           description: ID предмета
@@ -6168,10 +6168,10 @@ components:
     Timestamps:
       description: Временные отметки
       example:
-        deleted: 2000-01-23T04:56:07.000+00:00
         created: 2000-01-23T04:56:07.000+00:00
-        started: 2000-01-23T04:56:07.000+00:00
         updated: 2000-01-23T04:56:07.000+00:00
+        started: 2000-01-23T04:56:07.000+00:00
+        deleted: 2000-01-23T04:56:07.000+00:00
       properties:
         created:
           description: Время создания кампании
@@ -6199,11 +6199,11 @@ components:
       type: object
     response400:
       example:
-        origin: camp-api-public-cache
         detail: detail
-        title: invalid payload
+        origin: camp-api-public-cache
         request_id: 6023d2950af564838f9b44a279d2140c
         status: 400
+        title: invalid payload
       properties:
         detail:
           description: Детали ошибки
@@ -6234,140 +6234,140 @@ components:
     StatInterval:
       additionalProperties: false
       example:
-        stats:
-        - ctr: 7.061401241503109
-          cr2: 5
-          category_name: category_name
-          cr1: 4.965218492984954
-          item_id: 0
-          advert_type: 6
-          atbs: 9
-          item_name: item_name
-          daily_stats:
-          - date: 2000-01-23T04:56:07.000+00:00
-            app_type_stats:
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-          - date: 2000-01-23T04:56:07.000+00:00
-            app_type_stats:
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-          date_to: 2000-01-23T04:56:07.000+00:00
-          cr: 2.3021358869347655
-          price: 2.027123023002322
-          cpc: 4.145608029883936
-          subject_name: subject_name
-          clicks: 5
-          orders: 3
-          place: 1
-          views: 5
-          date_from: 2000-01-23T04:56:07.000+00:00
-          status: 7
-          expenses: 1.1730742509559433
-        - ctr: 7.061401241503109
-          cr2: 5
-          category_name: category_name
-          cr1: 4.965218492984954
-          item_id: 0
-          advert_type: 6
-          atbs: 9
-          item_name: item_name
-          daily_stats:
-          - date: 2000-01-23T04:56:07.000+00:00
-            app_type_stats:
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-          - date: 2000-01-23T04:56:07.000+00:00
-            app_type_stats:
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-            - app_type: 1
-              stats:
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-              - ctr: 7.457744773683766
-                clicks: 1
-                atbs: 6
-                views: 1
-          date_to: 2000-01-23T04:56:07.000+00:00
-          cr: 2.3021358869347655
-          price: 2.027123023002322
-          cpc: 4.145608029883936
-          subject_name: subject_name
-          clicks: 5
-          orders: 3
-          place: 1
-          views: 5
-          date_from: 2000-01-23T04:56:07.000+00:00
-          status: 7
-          expenses: 1.1730742509559433
         interval:
-          end: 2000-01-23
           begin: 2000-01-23
+          end: 2000-01-23
+        stats:
+        - item_id: 0
+          item_name: item_name
+          category_name: category_name
+          advert_type: 6
+          place: 1
+          views: 5
+          clicks: 5
+          cr: 2.3021358869347655
+          ctr: 7.061401241503109
+          date_from: 2000-01-23T04:56:07.000+00:00
+          date_to: 2000-01-23T04:56:07.000+00:00
+          subject_name: subject_name
+          atbs: 9
+          orders: 3
+          price: 2.027123023002322
+          cpc: 4.145608029883936
+          status: 7
+          daily_stats:
+          - date: 2000-01-23T04:56:07.000+00:00
+            app_type_stats:
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+          - date: 2000-01-23T04:56:07.000+00:00
+            app_type_stats:
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+          expenses: 1.1730742509559433
+          cr1: 4.965218492984954
+          cr2: 5
+        - item_id: 0
+          item_name: item_name
+          category_name: category_name
+          advert_type: 6
+          place: 1
+          views: 5
+          clicks: 5
+          cr: 2.3021358869347655
+          ctr: 7.061401241503109
+          date_from: 2000-01-23T04:56:07.000+00:00
+          date_to: 2000-01-23T04:56:07.000+00:00
+          subject_name: subject_name
+          atbs: 9
+          orders: 3
+          price: 2.027123023002322
+          cpc: 4.145608029883936
+          status: 7
+          daily_stats:
+          - date: 2000-01-23T04:56:07.000+00:00
+            app_type_stats:
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+          - date: 2000-01-23T04:56:07.000+00:00
+            app_type_stats:
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+            - app_type: 1
+              stats:
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+              - views: 1
+                clicks: 1
+                atbs: 6
+                ctr: 7.457744773683766
+          expenses: 1.1730742509559433
+          cr1: 4.965218492984954
+          cr2: 5
       properties:
         interval:
           $ref: "#/components/schemas/StatInterval_interval"
@@ -6407,71 +6407,71 @@ components:
       type: object
     StatsBlok1:
       example:
-        ctr: 7.061401241503109
-        cr2: 5
-        category_name: category_name
-        cr1: 4.965218492984954
         item_id: 0
-        advert_type: 6
-        atbs: 9
         item_name: item_name
+        category_name: category_name
+        advert_type: 6
+        place: 1
+        views: 5
+        clicks: 5
+        cr: 2.3021358869347655
+        ctr: 7.061401241503109
+        date_from: 2000-01-23T04:56:07.000+00:00
+        date_to: 2000-01-23T04:56:07.000+00:00
+        subject_name: subject_name
+        atbs: 9
+        orders: 3
+        price: 2.027123023002322
+        cpc: 4.145608029883936
+        status: 7
         daily_stats:
         - date: 2000-01-23T04:56:07.000+00:00
           app_type_stats:
           - app_type: 1
             stats:
-            - ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
-            - ctr: 7.457744773683766
+              ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
+              ctr: 7.457744773683766
           - app_type: 1
             stats:
-            - ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
-            - ctr: 7.457744773683766
+              ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
+              ctr: 7.457744773683766
         - date: 2000-01-23T04:56:07.000+00:00
           app_type_stats:
           - app_type: 1
             stats:
-            - ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
-            - ctr: 7.457744773683766
+              ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
+              ctr: 7.457744773683766
           - app_type: 1
             stats:
-            - ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
-            - ctr: 7.457744773683766
+              ctr: 7.457744773683766
+            - views: 1
               clicks: 1
               atbs: 6
-              views: 1
-        date_to: 2000-01-23T04:56:07.000+00:00
-        cr: 2.3021358869347655
-        price: 2.027123023002322
-        cpc: 4.145608029883936
-        subject_name: subject_name
-        clicks: 5
-        orders: 3
-        place: 1
-        views: 5
-        date_from: 2000-01-23T04:56:07.000+00:00
-        status: 7
+              ctr: 7.457744773683766
         expenses: 1.1730742509559433
+        cr1: 4.965218492984954
+        cr2: 5
       properties:
         item_id:
           description: ID баннера
@@ -6680,208 +6680,208 @@ components:
       description: "Статистика по одной кампании за период, указанный в запросе. П\
         о всем артикулам WB и платформам"
       example:
-        ctr: 3.616076749251911
-        boosterStats:
-        - date: 2000-01-23
-          avg_position: 1
-          nm: 5
-        - date: 2000-01-23
-          avg_position: 1
-          nm: 5
-        shks: 3
-        atbs: 6
-        sum: 7.04836565559697
         advertId: 0
-        cr: 9.301444243932576
+        atbs: 6
+        boosterStats:
+        - avg_position: 1
+          date: 2000-01-23
+          nm: 5
+        - avg_position: 1
+          date: 2000-01-23
+          nm: 5
         canceled: 5
-        cpc: 7.061401241503109
         clicks: 2
+        cpc: 7.061401241503109
+        cr: 9.301444243932576
+        ctr: 3.616076749251911
         days:
-        - date: 2000-01-23T04:56:07.000+00:00
-          ctr: 7.058770351582356
-          shks: 0
+        - apps:
+          - appType: 2
+            atbs: 4
+            canceled: 7
+            clicks: 1
+            cpc: 1.0246457001441578
+            cr: 1.4894159098541704
+            ctr: 6.84685269835264
+            nms:
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            orders: 1
+            shks: 2
+            sum: 6.778324963048013
+            sum_price: 6.878052220127876
+            views: 5
+          - appType: 2
+            atbs: 4
+            canceled: 7
+            clicks: 1
+            cpc: 1.0246457001441578
+            cr: 1.4894159098541704
+            ctr: 6.84685269835264
+            nms:
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            orders: 1
+            shks: 2
+            sum: 6.778324963048013
+            sum_price: 6.878052220127876
+            views: 5
           atbs: 6
-          sum: 4.652396432933246
-          cr: 0.8851374739011653
           canceled: 3
-          cpc: 7.143538047012306
+          date: 2000-01-23T04:56:07.000+00:00
           clicks: 3
-          orders: 6
-          views: 7
-          apps:
-          - ctr: 6.84685269835264
-            shks: 2
-            atbs: 4
-            sum: 6.778324963048013
-            cr: 1.4894159098541704
-            canceled: 7
-            nms:
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            appType: 2
-            cpc: 1.0246457001441578
-            clicks: 1
-            orders: 1
-            views: 5
-            sum_price: 6.878052220127876
-          - ctr: 6.84685269835264
-            shks: 2
-            atbs: 4
-            sum: 6.778324963048013
-            cr: 1.4894159098541704
-            canceled: 7
-            nms:
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            appType: 2
-            cpc: 1.0246457001441578
-            clicks: 1
-            orders: 1
-            views: 5
-            sum_price: 6.878052220127876
-          sum_price: 8.969578798196912
-        - date: 2000-01-23T04:56:07.000+00:00
+          cpc: 7.143538047012306
+          cr: 0.8851374739011653
           ctr: 7.058770351582356
-          shks: 0
-          atbs: 6
-          sum: 4.652396432933246
-          cr: 0.8851374739011653
-          canceled: 3
-          cpc: 7.143538047012306
-          clicks: 3
           orders: 6
-          views: 7
-          apps:
-          - ctr: 6.84685269835264
-            shks: 2
-            atbs: 4
-            sum: 6.778324963048013
-            cr: 1.4894159098541704
-            canceled: 7
-            nms:
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            appType: 2
-            cpc: 1.0246457001441578
-            clicks: 1
-            orders: 1
-            views: 5
-            sum_price: 6.878052220127876
-          - ctr: 6.84685269835264
-            shks: 2
-            atbs: 4
-            sum: 6.778324963048013
-            cr: 1.4894159098541704
-            canceled: 7
-            nms:
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            - ctr: 9.369310271410669
-              shks: 9
-              atbs: 7
-              nmId: 6
-              sum: 6.438423552598547
-              cr: 9.965781217890562
-              canceled: 1
-              cpc: 5.025004791520295
-              name: name
-              clicks: 4
-              orders: 8
-              views: 6
-              sum_price: 3.5571952270680973
-            appType: 2
-            cpc: 1.0246457001441578
-            clicks: 1
-            orders: 1
-            views: 5
-            sum_price: 6.878052220127876
+          shks: 0
+          sum: 4.652396432933246
           sum_price: 8.969578798196912
+          views: 7
+        - apps:
+          - appType: 2
+            atbs: 4
+            canceled: 7
+            clicks: 1
+            cpc: 1.0246457001441578
+            cr: 1.4894159098541704
+            ctr: 6.84685269835264
+            nms:
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            orders: 1
+            shks: 2
+            sum: 6.778324963048013
+            sum_price: 6.878052220127876
+            views: 5
+          - appType: 2
+            atbs: 4
+            canceled: 7
+            clicks: 1
+            cpc: 1.0246457001441578
+            cr: 1.4894159098541704
+            ctr: 6.84685269835264
+            nms:
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            - atbs: 7
+              canceled: 1
+              clicks: 4
+              cpc: 5.025004791520295
+              cr: 9.965781217890562
+              ctr: 9.369310271410669
+              name: name
+              nmId: 6
+              orders: 8
+              shks: 9
+              sum: 6.438423552598547
+              sum_price: 3.5571952270680973
+              views: 6
+            orders: 1
+            shks: 2
+            sum: 6.778324963048013
+            sum_price: 6.878052220127876
+            views: 5
+          atbs: 6
+          canceled: 3
+          date: 2000-01-23T04:56:07.000+00:00
+          clicks: 3
+          cpc: 7.143538047012306
+          cr: 0.8851374739011653
+          ctr: 7.058770351582356
+          orders: 6
+          shks: 0
+          sum: 4.652396432933246
+          sum_price: 8.969578798196912
+          views: 7
         orders: 3
-        views: 3
+        shks: 3
+        sum: 7.04836565559697
         sum_price: 5.533258397034986
+        views: 3
       properties:
         advertId:
           description: ID кампании
@@ -6965,11 +6965,11 @@ components:
     FullStatsError:
       description: Ошибка
       example:
-        origin: origin
         detail: detail
-        title: title
+        origin: origin
         request_id: request_id
         status: 4
+        title: title
       properties:
         detail:
           description: Детали ошибки
@@ -6995,8 +6995,8 @@ components:
       type: object
     _adv_v1_promotion_count_get_200_response_adverts_inner_advert_list_inner:
       example:
-        changeTime: 2000-01-23T04:56:07.000+00:00
         advertId: 5
+        changeTime: 2000-01-23T04:56:07.000+00:00
       properties:
         advertId:
           description: ID кампании
@@ -7008,14 +7008,14 @@ components:
       type: object
     _adv_v1_promotion_count_get_200_response_adverts_inner:
       example:
-        advert_list:
-        - changeTime: 2000-01-23T04:56:07.000+00:00
-          advertId: 5
-        - changeTime: 2000-01-23T04:56:07.000+00:00
-          advertId: 5
-        count: 1
         type: 0
         status: 6
+        count: 1
+        advert_list:
+        - advertId: 5
+          changeTime: 2000-01-23T04:56:07.000+00:00
+        - advertId: 5
+          changeTime: 2000-01-23T04:56:07.000+00:00
       properties:
         type:
           description: |
@@ -7038,22 +7038,22 @@ components:
     _adv_v1_promotion_count_get_200_response:
       example:
         adverts:
-        - advert_list:
-          - changeTime: 2000-01-23T04:56:07.000+00:00
-            advertId: 5
-          - changeTime: 2000-01-23T04:56:07.000+00:00
-            advertId: 5
-          count: 1
-          type: 0
+        - type: 0
           status: 6
-        - advert_list:
-          - changeTime: 2000-01-23T04:56:07.000+00:00
-            advertId: 5
-          - changeTime: 2000-01-23T04:56:07.000+00:00
-            advertId: 5
           count: 1
-          type: 0
+          advert_list:
+          - advertId: 5
+            changeTime: 2000-01-23T04:56:07.000+00:00
+          - advertId: 5
+            changeTime: 2000-01-23T04:56:07.000+00:00
+        - type: 0
           status: 6
+          count: 1
+          advert_list:
+          - advertId: 5
+            changeTime: 2000-01-23T04:56:07.000+00:00
+          - advertId: 5
+            changeTime: 2000-01-23T04:56:07.000+00:00
         all: 5
       properties:
         adverts:
@@ -7246,9 +7246,9 @@ components:
       type: object
     _adv_v1_supplier_subjects_get_200_response_inner:
       example:
+        id: 0
         name: name
         count: 6
-        id: 0
       properties:
         id:
           description: ID предмета
@@ -7263,8 +7263,8 @@ components:
     _adv_v2_supplier_nms_post_200_response_inner:
       example:
         title: Плед
-        subjectId: 765
         nm: 146168367
+        subjectId: 765
       properties:
         title:
           description: Название товара
@@ -7391,8 +7391,8 @@ components:
       type: object
     _api_advert_v1_bids_patch_200_response_bids_inner_nm_bids_inner:
       example:
-        bid_kopecks: 1
         nm_id: 6
+        bid_kopecks: 1
         placement: placement
       properties:
         nm_id:
@@ -7416,14 +7416,14 @@ components:
       type: object
     _api_advert_v1_bids_patch_200_response_bids_inner:
       example:
-        nm_bids:
-        - bid_kopecks: 1
-          nm_id: 6
-          placement: placement
-        - bid_kopecks: 1
-          nm_id: 6
-          placement: placement
         advert_id: 0
+        nm_bids:
+        - nm_id: 6
+          bid_kopecks: 1
+          placement: placement
+        - nm_id: 6
+          bid_kopecks: 1
+          placement: placement
       properties:
         advert_id:
           description: ID кампании
@@ -7441,22 +7441,22 @@ components:
     _api_advert_v1_bids_patch_200_response:
       example:
         bids:
-        - nm_bids:
-          - bid_kopecks: 1
-            nm_id: 6
+        - advert_id: 0
+          nm_bids:
+          - nm_id: 6
+            bid_kopecks: 1
             placement: placement
-          - bid_kopecks: 1
-            nm_id: 6
+          - nm_id: 6
+            bid_kopecks: 1
             placement: placement
-          advert_id: 0
-        - nm_bids:
-          - bid_kopecks: 1
-            nm_id: 6
+        - advert_id: 0
+          nm_bids:
+          - nm_id: 6
+            bid_kopecks: 1
             placement: placement
-          - bid_kopecks: 1
-            nm_id: 6
+          - nm_id: 6
+            bid_kopecks: 1
             placement: placement
-          advert_id: 0
       properties:
         bids:
           description: Результат отработки запроса
@@ -7469,8 +7469,8 @@ components:
     _adv_v1_balance_get_200_response_cashbacks_inner:
       example:
         sum: 5
-        expiration_date: expiration_date
         percent: 5
+        expiration_date: expiration_date
       properties:
         sum:
           description: "Промо-бонусы, ₽"
@@ -7487,15 +7487,15 @@ components:
     _adv_v1_balance_get_200_response:
       example:
         balance: 0
+        net: 6
         bonus: 1
         cashbacks:
         - sum: 5
-          expiration_date: expiration_date
           percent: 5
+          expiration_date: expiration_date
         - sum: 5
-          expiration_date: expiration_date
           percent: 5
-        net: 6
+          expiration_date: expiration_date
       properties:
         balance:
           description: "Счёт, ₽"
@@ -7514,9 +7514,9 @@ components:
       type: object
     _adv_v1_budget_get_200_response:
       example:
-        total: 1
-        netting: 6
         cash: 0
+        netting: 6
+        total: 1
       properties:
         cash:
           description: Поле не используется. Значение всегда 0.
@@ -7583,13 +7583,13 @@ components:
     _adv_v1_upd_get_200_response_inner:
       example:
         updNum: 0
-        updSum: 6
         updTime: updTime
+        updSum: 6
+        advertId: 1
         campName: campName
         advertType: 5
-        advertStatus: 5
-        advertId: 1
         paymentType: paymentType
+        advertStatus: 5
       properties:
         updNum:
           description: Номер выставленного документа
@@ -7632,11 +7632,11 @@ components:
       type: object
     _adv_v1_payments_get_200_response_inner:
       example:
-        date: date
-        statusId: 5
-        sum: 6
         id: 0
+        date: date
+        sum: 6
         type: 1
+        statusId: 5
         cardStatus: cardStatus
       properties:
         id:
@@ -7711,12 +7711,12 @@ components:
     _adv_v0_auction_nms_patch_200_response_nms_inner_nms:
       description: Карточки товаров
       example:
-        deleted:
-        - 1
-        - 1
         added:
         - 6
         - 6
+        deleted:
+        - 1
+        - 1
       properties:
         added:
           description: Добавленные карточки товаров
@@ -7734,14 +7734,14 @@ components:
       type: object
     _adv_v0_auction_nms_patch_200_response_nms_inner:
       example:
+        advert_id: 0
         nms:
-          deleted:
-          - 1
-          - 1
           added:
           - 6
           - 6
-        advert_id: 0
+          deleted:
+          - 1
+          - 1
       properties:
         advert_id:
           description: ID кампании
@@ -7756,22 +7756,22 @@ components:
     _adv_v0_auction_nms_patch_200_response:
       example:
         nms:
-        - nms:
-            deleted:
-            - 1
-            - 1
+        - advert_id: 0
+          nms:
             added:
             - 6
             - 6
-          advert_id: 0
-        - nms:
             deleted:
             - 1
             - 1
+        - advert_id: 0
+          nms:
             added:
             - 6
             - 6
-          advert_id: 0
+            deleted:
+            - 1
+            - 1
       properties:
         nms:
           description: Результат отработки запроса
@@ -7783,9 +7783,9 @@ components:
       type: object
     _adv_v1_count_get_200_response_adverts:
       example:
-        count: 5
         type: 6
         status: 1
+        count: 5
       properties:
         type:
           description: |
@@ -7816,9 +7816,9 @@ components:
       example:
         all: 0
         adverts:
-          count: 5
           type: 6
           status: 1
+          count: 5
       properties:
         all:
           description: Общее количество медиакампаний всех статусов и типов
@@ -7828,13 +7828,13 @@ components:
       type: object
     _adv_v1_adverts_get_200_response_inner:
       example:
-        createTime: 2000-01-23T04:56:07.000+00:00
-        name: name
-        endTime: 2000-01-23T04:56:07.000+00:00
-        type: 6
-        brand: brand
         advertId: 0
+        name: name
+        brand: brand
+        type: 6
         status: 1
+        createTime: 2000-01-23T04:56:07.000+00:00
+        endTime: 2000-01-23T04:56:07.000+00:00
       properties:
         advertId:
           description: ID медиакампании
@@ -8131,9 +8131,9 @@ components:
       - $ref: "#/components/schemas/Stat"
     _api_v1_calendar_promotions_get_200_response_data_promotions_inner:
       example:
-        startDateTime: 2023-06-05T21:00:00Z
-        name: скидки
         id: 123
+        name: скидки
+        startDateTime: 2023-06-05T21:00:00Z
         endDateTime: 2023-06-05T21:00:00Z
         type: regular
       properties:
@@ -8169,14 +8169,14 @@ components:
       description: Данные ответа
       example:
         promotions:
-        - startDateTime: 2023-06-05T21:00:00Z
+        - id: 123
           name: скидки
-          id: 123
+          startDateTime: 2023-06-05T21:00:00Z
           endDateTime: 2023-06-05T21:00:00Z
           type: regular
-        - startDateTime: 2023-06-05T21:00:00Z
+        - id: 123
           name: скидки
-          id: 123
+          startDateTime: 2023-06-05T21:00:00Z
           endDateTime: 2023-06-05T21:00:00Z
           type: regular
       properties:
@@ -8190,14 +8190,14 @@ components:
       example:
         data:
           promotions:
-          - startDateTime: 2023-06-05T21:00:00Z
+          - id: 123
             name: скидки
-            id: 123
+            startDateTime: 2023-06-05T21:00:00Z
             endDateTime: 2023-06-05T21:00:00Z
             type: regular
-          - startDateTime: 2023-06-05T21:00:00Z
+          - id: 123
             name: скидки
-            id: 123
+            startDateTime: 2023-06-05T21:00:00Z
             endDateTime: 2023-06-05T21:00:00Z
             type: regular
       properties:
@@ -8246,16 +8246,26 @@ components:
       type: object
     _api_v1_calendar_promotions_details_get_200_response_data_promotions_inner:
       example:
-        inPromoActionLeftovers: 45
+        id: 123
+        name: ХИТЫ ГОДА
         description: "В акции принимают участие самые популярные товары 2023 года\
           . Карточки товаров будут выделены плашкой «ХИТ ГОДА», чтобы покупатели з\
           амечали эти товары среди других. Также они будут размещены под баннерами\
           \ на главной странице и примут участие в PUSH-уведомлениях. С ценами для\
           \ вступления в акцию вы можете ознакомиться ниже."
-        notInPromoActionLeftovers: 3
+        advantages:
+        - Плашка
+        - Баннер
+        - Топ выдачи товаров
+        startDateTime: 2023-06-05T21:00:00Z
         endDateTime: 2023-06-05T21:00:00Z
-        type: auto
+        inPromoActionLeftovers: 45
         inPromoActionTotal: 123
+        notInPromoActionLeftovers: 3
+        notInPromoActionTotal: 10
+        participationPercentage: 10
+        type: auto
+        exceptionProductsCount: 10
         ranging:
         - condition: productsInPromotion
           participationRate: 10
@@ -8266,16 +8276,6 @@ components:
         - condition: allProducts
           participationRate: 35
           boost: 30
-        advantages:
-        - Плашка
-        - Баннер
-        - Топ выдачи товаров
-        startDateTime: 2023-06-05T21:00:00Z
-        exceptionProductsCount: 10
-        name: ХИТЫ ГОДА
-        id: 123
-        participationPercentage: 10
-        notInPromoActionTotal: 10
       properties:
         id:
           description: ID акции
@@ -8368,16 +8368,26 @@ components:
       description: Данные ответа
       example:
         promotions:
-        - inPromoActionLeftovers: 45
+        - id: 123
+          name: ХИТЫ ГОДА
           description: "В акции принимают участие самые популярные товары 2023 год\
             а. Карточки товаров будут выделены плашкой «ХИТ ГОДА», чтобы покупател\
             и замечали эти товары среди других. Также они будут размещены под банн\
             ерами на главной странице и примут участие в PUSH-уведомлениях. С цена\
             ми для вступления в акцию вы можете ознакомиться ниже."
-          notInPromoActionLeftovers: 3
+          advantages:
+          - Плашка
+          - Баннер
+          - Топ выдачи товаров
+          startDateTime: 2023-06-05T21:00:00Z
           endDateTime: 2023-06-05T21:00:00Z
-          type: auto
+          inPromoActionLeftovers: 45
           inPromoActionTotal: 123
+          notInPromoActionLeftovers: 3
+          notInPromoActionTotal: 10
+          participationPercentage: 10
+          type: auto
+          exceptionProductsCount: 10
           ranging:
           - condition: productsInPromotion
             participationRate: 10
@@ -8388,26 +8398,26 @@ components:
           - condition: allProducts
             participationRate: 35
             boost: 30
-          advantages:
-          - Плашка
-          - Баннер
-          - Топ выдачи товаров
-          startDateTime: 2023-06-05T21:00:00Z
-          exceptionProductsCount: 10
+        - id: 123
           name: ХИТЫ ГОДА
-          id: 123
-          participationPercentage: 10
-          notInPromoActionTotal: 10
-        - inPromoActionLeftovers: 45
           description: "В акции принимают участие самые популярные товары 2023 год\
             а. Карточки товаров будут выделены плашкой «ХИТ ГОДА», чтобы покупател\
             и замечали эти товары среди других. Также они будут размещены под банн\
             ерами на главной странице и примут участие в PUSH-уведомлениях. С цена\
             ми для вступления в акцию вы можете ознакомиться ниже."
-          notInPromoActionLeftovers: 3
+          advantages:
+          - Плашка
+          - Баннер
+          - Топ выдачи товаров
+          startDateTime: 2023-06-05T21:00:00Z
           endDateTime: 2023-06-05T21:00:00Z
-          type: auto
+          inPromoActionLeftovers: 45
           inPromoActionTotal: 123
+          notInPromoActionLeftovers: 3
+          notInPromoActionTotal: 10
+          participationPercentage: 10
+          type: auto
+          exceptionProductsCount: 10
           ranging:
           - condition: productsInPromotion
             participationRate: 10
@@ -8418,16 +8428,6 @@ components:
           - condition: allProducts
             participationRate: 35
             boost: 30
-          advantages:
-          - Плашка
-          - Баннер
-          - Топ выдачи товаров
-          startDateTime: 2023-06-05T21:00:00Z
-          exceptionProductsCount: 10
-          name: ХИТЫ ГОДА
-          id: 123
-          participationPercentage: 10
-          notInPromoActionTotal: 10
       properties:
         promotions:
           description: Список акций
@@ -8439,16 +8439,26 @@ components:
       example:
         data:
           promotions:
-          - inPromoActionLeftovers: 45
+          - id: 123
+            name: ХИТЫ ГОДА
             description: "В акции принимают участие самые популярные товары 2023 г\
               ода. Карточки товаров будут выделены плашкой «ХИТ ГОДА», чтобы покуп\
               атели замечали эти товары среди других. Также они будут размещены по\
               д баннерами на главной странице и примут участие в PUSH-уведомлениях\
               . С ценами для вступления в акцию вы можете ознакомиться ниже."
-            notInPromoActionLeftovers: 3
+            advantages:
+            - Плашка
+            - Баннер
+            - Топ выдачи товаров
+            startDateTime: 2023-06-05T21:00:00Z
             endDateTime: 2023-06-05T21:00:00Z
-            type: auto
+            inPromoActionLeftovers: 45
             inPromoActionTotal: 123
+            notInPromoActionLeftovers: 3
+            notInPromoActionTotal: 10
+            participationPercentage: 10
+            type: auto
+            exceptionProductsCount: 10
             ranging:
             - condition: productsInPromotion
               participationRate: 10
@@ -8459,26 +8469,26 @@ components:
             - condition: allProducts
               participationRate: 35
               boost: 30
-            advantages:
-            - Плашка
-            - Баннер
-            - Топ выдачи товаров
-            startDateTime: 2023-06-05T21:00:00Z
-            exceptionProductsCount: 10
+          - id: 123
             name: ХИТЫ ГОДА
-            id: 123
-            participationPercentage: 10
-            notInPromoActionTotal: 10
-          - inPromoActionLeftovers: 45
             description: "В акции принимают участие самые популярные товары 2023 г\
               ода. Карточки товаров будут выделены плашкой «ХИТ ГОДА», чтобы покуп\
               атели замечали эти товары среди других. Также они будут размещены по\
               д баннерами на главной странице и примут участие в PUSH-уведомлениях\
               . С ценами для вступления в акцию вы можете ознакомиться ниже."
-            notInPromoActionLeftovers: 3
+            advantages:
+            - Плашка
+            - Баннер
+            - Топ выдачи товаров
+            startDateTime: 2023-06-05T21:00:00Z
             endDateTime: 2023-06-05T21:00:00Z
-            type: auto
+            inPromoActionLeftovers: 45
             inPromoActionTotal: 123
+            notInPromoActionLeftovers: 3
+            notInPromoActionTotal: 10
+            participationPercentage: 10
+            type: auto
+            exceptionProductsCount: 10
             ranging:
             - condition: productsInPromotion
               participationRate: 10
@@ -8489,16 +8499,6 @@ components:
             - condition: allProducts
               participationRate: 35
               boost: 30
-            advantages:
-            - Плашка
-            - Баннер
-            - Топ выдачи товаров
-            startDateTime: 2023-06-05T21:00:00Z
-            exceptionProductsCount: 10
-            name: ХИТЫ ГОДА
-            id: 123
-            participationPercentage: 10
-            notInPromoActionTotal: 10
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_calendar_promotions_details_get_200_response_data"
@@ -8507,20 +8507,20 @@ components:
       description: Данные ответа
       example:
         nomenclatures:
-        - inAction: true
+        - id: 162579635
+          inAction: true
           price: 1500
-          planDiscount: 34
-          discount: 15
-          id: 162579635
           currencyCode: RUB
           planPrice: 1000
-        - inAction: true
-          price: 1500
-          planDiscount: 34
           discount: 15
-          id: 162579635
+          planDiscount: 34
+        - id: 162579635
+          inAction: true
+          price: 1500
           currencyCode: RUB
           planPrice: 1000
+          discount: 15
+          planDiscount: 34
       properties:
         nomenclatures:
           description: Список товаров
@@ -8532,20 +8532,20 @@ components:
       example:
         data:
           nomenclatures:
-          - inAction: true
+          - id: 162579635
+            inAction: true
             price: 1500
-            planDiscount: 34
-            discount: 15
-            id: 162579635
             currencyCode: RUB
             planPrice: 1000
-          - inAction: true
-            price: 1500
-            planDiscount: 34
             discount: 15
-            id: 162579635
+            planDiscount: 34
+          - id: 162579635
+            inAction: true
+            price: 1500
             currencyCode: RUB
             planPrice: 1000
+            discount: 15
+            planDiscount: 34
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_calendar_promotions_nomenclatures_get_200_response_data"
@@ -8604,8 +8604,8 @@ components:
     _api_v1_calendar_promotions_upload_post_200_response_data:
       description: Данные ответа
       example:
-        uploadID: 11
         alreadyExists: false
+        uploadID: 11
       properties:
         alreadyExists:
           description: Загрузка с такими данными уже существует
@@ -8619,8 +8619,8 @@ components:
     _api_v1_calendar_promotions_upload_post_200_response:
       example:
         data:
-          uploadID: 11
           alreadyExists: false
+          uploadID: 11
       properties:
         data:
           $ref: "#/components/schemas/_api_v1_calendar_promotions_upload_post_200_response_data"
@@ -8636,8 +8636,8 @@ components:
       type: object
     V1GetNormQueryStatsRequest_items_inner:
       example:
-        nmId: 6
         advertId: 0
+        nmId: 6
       properties:
         advertId:
           description: ID кампании
@@ -8653,8 +8653,8 @@ components:
       type: object
     V0GetNormQueryStatsRequest_items_inner:
       example:
-        nm_id: 6
         advert_id: 0
+        nm_id: 6
       properties:
         advert_id:
           description: ID кампании
@@ -8668,35 +8668,35 @@ components:
       type: object
     GetAdverts_adverts_inner:
       example:
+        bid_type: bid_type
+        id: 0
+        nm_settings:
+        - bids_kopecks:
+            search: 6
+            recommendations: 1
+          subject:
+            id: 5
+            name: name
+          nm_id: 5
+        - bids_kopecks:
+            search: 6
+            recommendations: 1
+          subject:
+            id: 5
+            name: name
+          nm_id: 5
         settings:
           payment_type: cpm
           name: name
           placements:
             search: true
             recommendations: true
-        nm_settings:
-        - bids_kopecks:
-            search: 6
-            recommendations: 1
-          subject:
-            name: name
-            id: 5
-          nm_id: 5
-        - bids_kopecks:
-            search: 6
-            recommendations: 1
-          subject:
-            name: name
-            id: 5
-          nm_id: 5
-        timestamps:
-          deleted: 2000-01-23T04:56:07.000+00:00
-          created: 2000-01-23T04:56:07.000+00:00
-          started: 2000-01-23T04:56:07.000+00:00
-          updated: 2000-01-23T04:56:07.000+00:00
-        bid_type: bid_type
-        id: 0
         status: 2
+        timestamps:
+          created: 2000-01-23T04:56:07.000+00:00
+          updated: 2000-01-23T04:56:07.000+00:00
+          started: 2000-01-23T04:56:07.000+00:00
+          deleted: 2000-01-23T04:56:07.000+00:00
       properties:
         bid_type:
           description: |
@@ -8745,8 +8745,8 @@ components:
     StatInterval_interval:
       description: Период
       example:
-        end: 2000-01-23
         begin: 2000-01-23
+        end: 2000-01-23
       properties:
         begin:
           description: Начало периода
@@ -8761,14 +8761,14 @@ components:
       example:
         app_type: 1
         stats:
-        - ctr: 7.457744773683766
+        - views: 1
           clicks: 1
           atbs: 6
-          views: 1
-        - ctr: 7.457744773683766
+          ctr: 7.457744773683766
+        - views: 1
           clicks: 1
           atbs: 6
-          views: 1
+          ctr: 7.457744773683766
       properties:
         app_type:
           description: |
@@ -8788,24 +8788,24 @@ components:
         app_type_stats:
         - app_type: 1
           stats:
-          - ctr: 7.457744773683766
+          - views: 1
             clicks: 1
             atbs: 6
-            views: 1
-          - ctr: 7.457744773683766
+            ctr: 7.457744773683766
+          - views: 1
             clicks: 1
             atbs: 6
-            views: 1
+            ctr: 7.457744773683766
         - app_type: 1
           stats:
-          - ctr: 7.457744773683766
+          - views: 1
             clicks: 1
             atbs: 6
-            views: 1
-          - ctr: 7.457744773683766
+            ctr: 7.457744773683766
+          - views: 1
             clicks: 1
             atbs: 6
-            views: 1
+            ctr: 7.457744773683766
       properties:
         date:
           description: Дата
@@ -8819,10 +8819,10 @@ components:
       type: object
     Stats1_inner:
       example:
-        ctr: 7.457744773683766
+        views: 1
         clicks: 1
         atbs: 6
-        views: 1
+        ctr: 7.457744773683766
       properties:
         views:
           description: Количество просмотров
@@ -8901,19 +8901,19 @@ components:
       type: object
     DaysV3_inner_apps_inner_nms_inner:
       example:
-        ctr: 9.369310271410669
-        shks: 9
         atbs: 7
-        nmId: 6
-        sum: 6.438423552598547
-        cr: 9.965781217890562
         canceled: 1
-        cpc: 5.025004791520295
-        name: name
         clicks: 4
+        cpc: 5.025004791520295
+        cr: 9.965781217890562
+        ctr: 9.369310271410669
+        name: name
+        nmId: 6
         orders: 8
-        views: 6
+        shks: 9
+        sum: 6.438423552598547
         sum_price: 3.5571952270680973
+        views: 6
       properties:
         atbs:
           description: Количество добавлений товаров в корзину
@@ -8973,45 +8973,45 @@ components:
       type: object
     DaysV3_inner_apps_inner:
       example:
-        ctr: 6.84685269835264
-        shks: 2
-        atbs: 4
-        sum: 6.778324963048013
-        cr: 1.4894159098541704
-        canceled: 7
-        nms:
-        - ctr: 9.369310271410669
-          shks: 9
-          atbs: 7
-          nmId: 6
-          sum: 6.438423552598547
-          cr: 9.965781217890562
-          canceled: 1
-          cpc: 5.025004791520295
-          name: name
-          clicks: 4
-          orders: 8
-          views: 6
-          sum_price: 3.5571952270680973
-        - ctr: 9.369310271410669
-          shks: 9
-          atbs: 7
-          nmId: 6
-          sum: 6.438423552598547
-          cr: 9.965781217890562
-          canceled: 1
-          cpc: 5.025004791520295
-          name: name
-          clicks: 4
-          orders: 8
-          views: 6
-          sum_price: 3.5571952270680973
         appType: 2
-        cpc: 1.0246457001441578
+        atbs: 4
+        canceled: 7
         clicks: 1
+        cpc: 1.0246457001441578
+        cr: 1.4894159098541704
+        ctr: 6.84685269835264
+        nms:
+        - atbs: 7
+          canceled: 1
+          clicks: 4
+          cpc: 5.025004791520295
+          cr: 9.965781217890562
+          ctr: 9.369310271410669
+          name: name
+          nmId: 6
+          orders: 8
+          shks: 9
+          sum: 6.438423552598547
+          sum_price: 3.5571952270680973
+          views: 6
+        - atbs: 7
+          canceled: 1
+          clicks: 4
+          cpc: 5.025004791520295
+          cr: 9.965781217890562
+          ctr: 9.369310271410669
+          name: name
+          nmId: 6
+          orders: 8
+          shks: 9
+          sum: 6.438423552598547
+          sum_price: 3.5571952270680973
+          views: 6
         orders: 1
-        views: 5
+        shks: 2
+        sum: 6.778324963048013
         sum_price: 6.878052220127876
+        views: 5
       properties:
         appType:
           description: |
@@ -9081,97 +9081,97 @@ components:
       type: object
     DaysV3_inner:
       example:
-        date: 2000-01-23T04:56:07.000+00:00
-        ctr: 7.058770351582356
-        shks: 0
-        atbs: 6
-        sum: 4.652396432933246
-        cr: 0.8851374739011653
-        canceled: 3
-        cpc: 7.143538047012306
-        clicks: 3
-        orders: 6
-        views: 7
         apps:
-        - ctr: 6.84685269835264
-          shks: 2
+        - appType: 2
           atbs: 4
-          sum: 6.778324963048013
-          cr: 1.4894159098541704
           canceled: 7
-          nms:
-          - ctr: 9.369310271410669
-            shks: 9
-            atbs: 7
-            nmId: 6
-            sum: 6.438423552598547
-            cr: 9.965781217890562
-            canceled: 1
-            cpc: 5.025004791520295
-            name: name
-            clicks: 4
-            orders: 8
-            views: 6
-            sum_price: 3.5571952270680973
-          - ctr: 9.369310271410669
-            shks: 9
-            atbs: 7
-            nmId: 6
-            sum: 6.438423552598547
-            cr: 9.965781217890562
-            canceled: 1
-            cpc: 5.025004791520295
-            name: name
-            clicks: 4
-            orders: 8
-            views: 6
-            sum_price: 3.5571952270680973
-          appType: 2
-          cpc: 1.0246457001441578
           clicks: 1
+          cpc: 1.0246457001441578
+          cr: 1.4894159098541704
+          ctr: 6.84685269835264
+          nms:
+          - atbs: 7
+            canceled: 1
+            clicks: 4
+            cpc: 5.025004791520295
+            cr: 9.965781217890562
+            ctr: 9.369310271410669
+            name: name
+            nmId: 6
+            orders: 8
+            shks: 9
+            sum: 6.438423552598547
+            sum_price: 3.5571952270680973
+            views: 6
+          - atbs: 7
+            canceled: 1
+            clicks: 4
+            cpc: 5.025004791520295
+            cr: 9.965781217890562
+            ctr: 9.369310271410669
+            name: name
+            nmId: 6
+            orders: 8
+            shks: 9
+            sum: 6.438423552598547
+            sum_price: 3.5571952270680973
+            views: 6
           orders: 1
-          views: 5
-          sum_price: 6.878052220127876
-        - ctr: 6.84685269835264
           shks: 2
-          atbs: 4
           sum: 6.778324963048013
-          cr: 1.4894159098541704
-          canceled: 7
-          nms:
-          - ctr: 9.369310271410669
-            shks: 9
-            atbs: 7
-            nmId: 6
-            sum: 6.438423552598547
-            cr: 9.965781217890562
-            canceled: 1
-            cpc: 5.025004791520295
-            name: name
-            clicks: 4
-            orders: 8
-            views: 6
-            sum_price: 3.5571952270680973
-          - ctr: 9.369310271410669
-            shks: 9
-            atbs: 7
-            nmId: 6
-            sum: 6.438423552598547
-            cr: 9.965781217890562
-            canceled: 1
-            cpc: 5.025004791520295
-            name: name
-            clicks: 4
-            orders: 8
-            views: 6
-            sum_price: 3.5571952270680973
-          appType: 2
-          cpc: 1.0246457001441578
-          clicks: 1
-          orders: 1
-          views: 5
           sum_price: 6.878052220127876
+          views: 5
+        - appType: 2
+          atbs: 4
+          canceled: 7
+          clicks: 1
+          cpc: 1.0246457001441578
+          cr: 1.4894159098541704
+          ctr: 6.84685269835264
+          nms:
+          - atbs: 7
+            canceled: 1
+            clicks: 4
+            cpc: 5.025004791520295
+            cr: 9.965781217890562
+            ctr: 9.369310271410669
+            name: name
+            nmId: 6
+            orders: 8
+            shks: 9
+            sum: 6.438423552598547
+            sum_price: 3.5571952270680973
+            views: 6
+          - atbs: 7
+            canceled: 1
+            clicks: 4
+            cpc: 5.025004791520295
+            cr: 9.965781217890562
+            ctr: 9.369310271410669
+            name: name
+            nmId: 6
+            orders: 8
+            shks: 9
+            sum: 6.438423552598547
+            sum_price: 3.5571952270680973
+            views: 6
+          orders: 1
+          shks: 2
+          sum: 6.778324963048013
+          sum_price: 6.878052220127876
+          views: 5
+        atbs: 6
+        canceled: 3
+        date: 2000-01-23T04:56:07.000+00:00
+        clicks: 3
+        cpc: 7.143538047012306
+        cr: 0.8851374739011653
+        ctr: 7.058770351582356
+        orders: 6
+        shks: 0
+        sum: 4.652396432933246
         sum_price: 8.969578798196912
+        views: 7
       properties:
         apps:
           description: Блок информации о платформе
@@ -9234,8 +9234,8 @@ components:
       type: object
     BoosterStatsV3_inner:
       example:
-        date: 2000-01-23
         avg_position: 1
+        date: 2000-01-23
         nm: 5
       properties:
         avg_position:

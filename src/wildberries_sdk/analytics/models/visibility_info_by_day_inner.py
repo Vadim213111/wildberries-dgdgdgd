@@ -28,9 +28,9 @@ class VisibilityInfoByDayInner(BaseModel):
     """
     VisibilityInfoByDayInner
     """ # noqa: E501
-    dt: date = Field(description="Дата")
-    visibility: StrictInt = Field(description="Видимость карточки в результатах поиска, %")
-    open: StrictInt = Field(description="Количество переходов в карточку")
+    dt: date = Field(description="Дата", json_schema_extra={"examples": ["2024-02-10"]})
+    visibility: StrictInt = Field(description="Видимость карточки в результатах поиска, %", json_schema_extra={"examples": [100]})
+    open: StrictInt = Field(description="Количество переходов в карточку", json_schema_extra={"examples": [124]})
     __properties: ClassVar[List[str]] = ["dt", "visibility", "open"]
 
     model_config = ConfigDict(

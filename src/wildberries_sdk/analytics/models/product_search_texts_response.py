@@ -29,7 +29,7 @@ class ProductSearchTextsResponse(BaseModel):
     ProductSearchTextsResponse
     """ # noqa: E501
     items: List[TableSearchTextItem] = Field(description="Элементы таблицы")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["items", "currency"]
 
     model_config = ConfigDict(

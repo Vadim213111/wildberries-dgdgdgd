@@ -1414,22 +1414,22 @@ components:
       example:
         data:
           documents:
-          - extensions:
+          - serviceName: redeem-notification-44841941
+            name: redeem-notification
+            category: Уведомление о выкупе
+            extensions:
             - zip
             - zip
             creationTime: 2023-10-03T00:18:06.879Z
             viewed: false
+          - serviceName: redeem-notification-44841941
             name: redeem-notification
-            serviceName: redeem-notification-44841941
             category: Уведомление о выкупе
-          - extensions:
+            extensions:
             - zip
             - zip
             creationTime: 2023-10-03T00:18:06.879Z
             viewed: false
-            name: redeem-notification
-            serviceName: redeem-notification-44841941
-            category: Уведомление о выкупе
       properties:
         data:
           $ref: "#/components/schemas/GetList_data"
@@ -1454,11 +1454,11 @@ components:
     SalesReportListReq:
       description: Параметры запроса
       example:
-        period: daily
-        offset: 345
+        dateFrom: 2026-03-17
         dateTo: 2026-03-20
         limit: 211
-        dateFrom: 2026-03-17
+        offset: 345
+        period: daily
       properties:
         dateFrom:
           description: |
@@ -1508,27 +1508,27 @@ components:
     SalesReportListRes:
       description: Список отчётов реализации
       example:
-        cashbackAmountSum: "2"
         reportId: 307401554
-        deliveryServiceSum: "2558.47"
-        paidStorageSum: "626.84"
-        penaltySum: "1457.61"
+        sellerFinanceName: ИП Кружинин В. Р.
         dateFrom: 2026-03-16
-        bankPaymentSum: "5172.94"
-        paidAcceptanceSum: "243.81"
-        cashbackDiscountSum: "19"
+        dateTo: 2026-03-22
+        createDate: 2026-03-23
+        currency: RUB
         reportType: 1
+        retailAmountSum: "258"
         forPaySum: "183.79"
         avgSalePercent: 0
-        cashbackCommissionChangeSum: "0.2"
-        dateTo: 2026-03-22
-        paymentSchedule: "-1"
-        currency: RUB
-        additionalPaymentSum: "9509.71"
-        sellerFinanceName: ИП Кружинин В. Р.
-        retailAmountSum: "258"
-        createDate: 2026-03-23
+        deliveryServiceSum: "2558.47"
+        paidStorageSum: "626.84"
+        paidAcceptanceSum: "243.81"
         deductionSum: "150"
+        penaltySum: "1457.61"
+        additionalPaymentSum: "9509.71"
+        cashbackAmountSum: "2"
+        cashbackDiscountSum: "19"
+        cashbackCommissionChangeSum: "0.2"
+        paymentSchedule: "-1"
+        bankPaymentSum: "5172.94"
       properties:
         reportId:
           description: ID отчёта
@@ -1653,8 +1653,8 @@ components:
     FinancialReportsDetailedReportIdReq:
       description: Параметры запроса
       example:
-        rrdId: 0
         limit: 21100
+        rrdId: 0
         fields:
         - rrdId
         - nmId
@@ -1691,11 +1691,11 @@ components:
     SalesReportsDetailedReq:
       description: Параметры запроса
       example:
-        period: daily
-        rrdId: 0
+        dateFrom: 2026-03-17
         dateTo: 2026-03-20
         limit: 21100
-        dateFrom: 2026-03-17
+        rrdId: 0
+        period: daily
         fields:
         - rrdId
         - nmId
@@ -1764,96 +1764,96 @@ components:
     SalesReportsDetailedRes:
       description: Детализации к отчётам реализации
       example:
-        deliveryService: "0"
-        loyaltyId: 0
-        officeName: Коледино
-        supRatingUp: 0.8008281904610115
-        country: Россия
-        declarationNumber: ""
-        srvDbs: true
-        ppvzSupplierName: ИП Жасмин
-        orderId: 2816993144
-        cashbackAmount: "2"
-        nmId: 1234567
-        vendorCode: MAB123
-        stickerId: "1964038895"
-        srid: 0f1c3999172603062979867564654dac5b702849
+        reportId: 1234567
+        dateFrom: 2026-03-16
+        dateTo: 2026-03-22
+        createDate: 2026-03-23
+        currency: RUB
         reportType: 1
-        docTypeName: Продажа
-        loyaltyDiscount: 0
-        paymentSchedule: "-1"
+        rrdId: 1232610467
+        giId: 123456
+        dlvPrc: 1.8
+        fixTariffDateFrom: 2026-03-18
+        fixTariffDateTo: 2026-03-19
+        subjectName: Мини-печи
+        nmId: 1234567
+        brandName: BlahBlah
+        vendorCode: MAB123
+        title: ДС тарелка
         techSize: "0"
         sku: "1231312352310"
+        docTypeName: Продажа
+        quantity: 1
+        retailPrice: "1249"
         retailAmount: "367"
-        retailPriceWithDisc: "399.68"
-        rebillLogisticOrg: ИП Иванов Иван Иванович(123456789012)
-        dlvPrc: 1.8
-        returnAmount: 0
-        kvwBase: 24.15
-        ppvzOfficeId: 105383
-        brandName: BlahBlah
-        rrdId: 1232610467
-        installmentCofinancingAmount: "0"
-        dateFrom: 2026-03-16
-        giId: 123456
-        spp: 25.31
-        cashbackCommissionChange: "0.2"
-        orderUid: id375f16c4bec295d9995393af803ff7b
-        deduction: "6354"
-        isB2b: false
-        productDiscountForReport: 0
-        sellerOperName: Продажа
-        ppvzOfficeName: Москва Москва Очаковское шоссе 6к2
+        salePercent: 0
         commissionPercent: 24
-        forPay: "376.99"
-        rebillLogisticCost: "1.349"
-        vw: "22.25"
-        ppvzSalesCommission: "23.74"
-        deliveryMethod: "FBS, (МГТ)"
-        penalty: "231.35"
+        officeName: Коледино
+        sellerOperName: Продажа
+        orderDt: 2026-03-14T00:00:00Z
+        saleDt: 2026-03-21T00:00:00Z
+        rrDate: 2025-10-20
+        shkId: 1239159661
+        retailPriceWithDisc: "399.68"
         deliveryAmount: 0
-        ppvzSupplierInn: "010101010101"
-        vwNds: "4.45"
-        title: ДС тарелка
+        returnAmount: 0
+        deliveryService: "0"
+        giBoxTypeName: Монопаллета
+        productDiscountForReport: 0
+        sellerPromo: "0"
+        spp: 25.31
+        kvwBase: 24.15
+        kvw: 1.81
+        supRatingUp: 0.8008281904610115
+        isKgvpV2: 6.027456183070403
+        ppvzSalesCommission: "23.74"
+        forPay: "376.99"
+        ppvzReward: "0"
         acquiringFee: "14.89"
         acquiringPercent: 4.06
-        acquiringBank: Тинькофф
-        cashbackDiscount: "19"
-        fixTariffDateTo: 2026-03-19
-        fixTariffDateFrom: 2026-03-18
-        paidAcceptance: "865"
-        uuidPromocode: ""
-        agencyVat: 0
-        currency: RUB
-        isKgvpV2: 6.027456183070403
-        ppvzReward: "0"
-        sellerPromoDiscount: 3
-        wibesDiscountPercent: 1
-        kiz: "0102900000376311210G2CIS?ehge)S\x1d91002A\x1d92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
-        sellerPromo: "0"
-        paidStorage: "12647.29"
-        createDate: 2026-03-23
-        subjectName: Мини-печи
-        salePricePromocodeDiscountPrc: 0
-        rrDate: 2025-10-20
-        quantity: 1
-        reportId: 1234567
         paymentProcessing: Комиссия за организацию платежа с НДС
-        additionalPayment: "0"
-        trbxId: WB-TRBX-1234567
-        articleSubstitution: ""
-        salePriceWholesaleDiscountPrc: 0
-        kvw: 1.81
+        acquiringBank: Тинькофф
+        vw: "22.25"
+        vwNds: "4.45"
+        ppvzOfficeName: Москва Москва Очаковское шоссе 6к2
+        ppvzOfficeId: 105383
+        ppvzSupplierName: ИП Жасмин
+        ppvzSupplierInn: "010101010101"
+        declarationNumber: ""
         bonusTypeName: Штраф МП. Невыполненный заказ (отмена клиентом после недовоза)
-        giBoxTypeName: Монопаллета
-        saleDt: 2026-03-21T00:00:00Z
-        orderDt: 2026-03-14T00:00:00Z
+        stickerId: "1964038895"
+        country: Россия
+        srvDbs: true
+        penalty: "231.35"
+        additionalPayment: "0"
+        rebillLogisticCost: "1.349"
+        rebillLogisticOrg: ИП Иванов Иван Иванович(123456789012)
+        paidStorage: "12647.29"
+        deduction: "6354"
+        paidAcceptance: "865"
+        orderId: 2816993144
+        kiz: "0102900000376311210G2CIS?ehge)S\x1d91002A\x1d92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
+        isB2b: false
+        trbxId: WB-TRBX-1234567
+        installmentCofinancingAmount: "0"
+        wibesDiscountPercent: 1
+        cashbackAmount: "2"
+        cashbackDiscount: "19"
+        cashbackCommissionChange: "0.2"
+        paymentSchedule: "-1"
+        deliveryMethod: "FBS, (МГТ)"
         sellerPromoId: 14350
-        shkId: 1239159661
+        sellerPromoDiscount: 3
+        loyaltyId: 0
+        loyaltyDiscount: 0
+        uuidPromocode: ""
+        salePricePromocodeDiscountPrc: 0
+        articleSubstitution: ""
         salePriceAffiliatedDiscountPrc: 0
-        dateTo: 2026-03-22
-        salePercent: 0
-        retailPrice: "1249"
+        agencyVat: 0
+        salePriceWholesaleDiscountPrc: 0
+        orderUid: id375f16c4bec295d9995393af803ff7b
+        srid: 0f1c3999172603062979867564654dac5b702849
       properties:
         reportId:
           description: ID отчёта
@@ -2330,10 +2330,10 @@ components:
     AcquiringReportListReq:
       description: Параметры запроса
       example:
-        offset: 345
+        dateFrom: 2026-03-17
         dateTo: 2026-03-20
         limit: 211
-        dateFrom: 2026-03-17
+        offset: 345
       properties:
         dateFrom:
           description: |
@@ -2373,13 +2373,13 @@ components:
       description: Список отчётов об издержках на приём платежей
       example:
         reportId: 307401554
-        acquiringFeeVatSum: "83.79"
-        dateTo: 2026-03-22
-        currency: RUB
         sellerFinanceName: ИП Кружинин В. Р.
         dateFrom: 2026-03-16
-        acquiringFeeSum: "258"
+        dateTo: 2026-03-22
         createDate: 2026-03-31
+        currency: RUB
+        acquiringFeeSum: "258"
+        acquiringFeeVatSum: "83.79"
       properties:
         reportId:
           description: ID отчёта
@@ -2430,10 +2430,10 @@ components:
     AcquiringReportsDetailedReq:
       description: Параметры запроса
       example:
-        rrdId: 0
+        dateFrom: 2026-03-17
         dateTo: 2026-03-20
         limit: 21100
-        dateFrom: 2026-03-17
+        rrdId: 0
         fields:
         - rrdId
         - nmId
@@ -2491,23 +2491,23 @@ components:
     AcquiringReportsDetailedRes:
       description: Детализации к отчётам об издержках на приём платежей
       example:
-        acquiringFeeVat: "4.06"
         rrdId: 1232610467
         reportId: 1234567
-        nmId: 1234567
-        saleDate: 2026-03-21
-        acquiringFee: "14.89"
-        invoiceDate: 2026-03-20
+        acqDate: 2026-03-21
         acquiringBank: Тинькофф
+        tin: "010101010101"
+        taxRegistrationReasonCode: "7701123301"
+        saleDate: 2026-03-21
         srid: D0.r3f80c3eec6f845c6840128b4c19986f9.0.0
         docTypeName: Продажа
-        taxRegistrationReasonCode: "7701123301"
-        shkId: 1239159661
-        tin: "010101010101"
-        invoiceNumber: С/Ф 123
-        acqDate: 2026-03-21
-        currency: RUB
+        nmId: 1234567
         retailAmount: "367"
+        acquiringFee: "14.89"
+        acquiringFeeVat: "4.06"
+        invoiceNumber: С/Ф 123
+        invoiceDate: 2026-03-20
+        shkId: 1239159661
+        currency: RUB
       properties:
         rrdId:
           description: ID строки
@@ -2600,97 +2600,97 @@ components:
       type: object
     DetailReportItem:
       example:
-        ppvz_sales_commission: 23.74
-        sale_price_promocode_discount_prc: 0
-        loyalty_discount: 0
-        agency_vat: 0
-        retail_amount: 367
-        ppvz_vw: 22.25
-        loyalty_id: 0
-        declaration_number: ""
-        retail_price: 1249
-        payment_processing: Комиссия за организацию платежа с НДС
-        srid: 0f1c3999172603062979867564654dac5b702849
-        ppvz_kvw_prc_base: 24.15
-        ppvz_inn: "010101010101"
-        rr_dt: 2022-10-20
-        cashback_amount: 0
-        site_country: Россия
-        sup_rating_prc_up: 0.8008281904610115
-        create_dt: 2022-10-24
-        product_discount_for_report: 0
-        sale_dt: 2022-10-20T00:00:00Z
-        barcode: "1231312352310"
-        delivery_rub: 0
-        trbx_id: WB-TRBX-1234567
-        seller_promo_discount: 3
-        ppvz_office_id: 105383
-        brand_name: BlahBlah
+        realizationreport_id: 1234567
+        date_from: 2022-10-17
         date_to: 2022-10-23
-        report_type: 1
+        create_dt: 2022-10-24
+        currency_name: руб
+        suppliercontract_code: "{}"
+        rrd_id: 1232610467
+        gi_id: 123456
+        dlv_prc: 1.8
+        fix_tariff_date_from: 2024-10-23
+        fix_tariff_date_to: 2024-11-18
+        subject_name: Мини-печи
+        nm_id: 1234567
+        brand_name: BlahBlah
+        sa_name: MAB123
+        ts_name: "0"
+        barcode: "1231312352310"
+        doc_type_name: Продажа
+        quantity: 1
+        retail_price: 1249
+        retail_amount: 367
+        sale_percent: 0
         commission_percent: 24
-        is_kgvp_v2: 6.027456183070403
-        cashback_discount: 0
+        office_name: Коледино
+        supplier_oper_name: Продажа
         order_dt: 2022-10-13T00:00:00Z
-        payment_schedule: 0
-        cashback_commission_change: 0
+        sale_dt: 2022-10-20T00:00:00Z
+        rr_dt: 2022-10-20
+        shk_id: 1239159661
+        retail_price_withdisc_rub: 399.68
+        delivery_amount: 0
+        return_amount: 0
+        delivery_rub: 0
+        gi_box_type_name: Монопаллета
+        product_discount_for_report: 0
+        supplier_promo: 0
+        ppvz_spp_prc: 25.31
+        ppvz_kvw_prc_base: 24.15
+        ppvz_kvw_prc: 1.81
+        sup_rating_prc_up: 0.8008281904610115
+        is_kgvp_v2: 6.027456183070403
+        ppvz_sales_commission: 23.74
+        ppvz_for_pay: 376.99
+        ppvz_reward: 0
+        acquiring_fee: 14.89
+        acquiring_percent: 4.06
+        payment_processing: Комиссия за организацию платежа с НДС
+        acquiring_bank: Тинькофф
+        ppvz_vw: 22.25
+        ppvz_vw_nds: 4.45
+        ppvz_office_name: Пункт самовывоза (ПВЗ)
+        ppvz_office_id: 105383
+        ppvz_supplier_id: 186465
+        ppvz_supplier_name: ИП Жасмин
+        ppvz_inn: "010101010101"
+        declaration_number: ""
+        bonus_type_name: Штраф МП. Невыполненный заказ (отмена клиентом после недовоза)
+        sticker_id: "1964038895"
+        site_country: Россия
+        srv_dbs: true
+        penalty: 231.35
+        additional_payment: 0
         rebill_logistic_cost: 1.349
-        assembly_id: 2816993144
+        rebill_logistic_org: ИП Иванов Иван Иванович(123456789012)
+        storage_fee: 12647.29
         deduction: 6354
         acceptance: 865
-        ts_name: "0"
-        ppvz_spp_prc: 25.31
-        dlv_prc: 1.8
-        subject_name: Мини-печи
-        sa_name: MAB123
-        date_from: 2022-10-17
-        fix_tariff_date_to: 2024-11-18
-        return_amount: 0
-        ppvz_reward: 0
-        gi_id: 123456
-        sale_percent: 0
-        bonus_type_name: Штраф МП. Невыполненный заказ (отмена клиентом после недовоза)
-        penalty: 231.35
-        ppvz_supplier_id: 186465
-        acquiring_percent: 4.06
-        realizationreport_id: 1234567
-        delivery_amount: 0
-        gi_box_type_name: Монопаллета
-        srv_dbs: true
-        ppvz_kvw_prc: 1.81
-        seller_promo_id: 14350
-        ppvz_for_pay: 376.99
-        sale_price_affiliated_discount_prc: 0
-        ppvz_vw_nds: 4.45
-        wibes_wb_discount_percent: 1
-        delivery_method: "FBS, (МГТ)"
-        nm_id: 1234567
-        supplier_oper_name: Продажа
-        acquiring_bank: Тинькофф
+        assembly_id: 2816993144
         kiz: "0102900000376311210G2CIS?ehge)S\x1d91002A\x1d92F9Qof4FDo/31Icm14kmtuVYQzLypxm3HWkC1vQ/+pVVjm1dNAth1laFMoAGn7yEMWlTjxIe7lQnJqZ7TRZhlHQ=="
-        rebill_logistic_org: ИП Иванов Иван Иванович(123456789012)
-        ppvz_supplier_name: ИП Жасмин
-        sticker_id: "1964038895"
-        currency_name: руб
-        quantity: 1
-        suppliercontract_code: "{}"
-        article_substitution: ""
-        rrd_id: 1232610467
-        shk_id: 1239159661
-        supplier_promo: 0
+        srid: 0f1c3999172603062979867564654dac5b702849
+        report_type: 1
         is_legal_entity: false
-        additional_payment: 0
-        doc_type_name: Продажа
-        uuid_promocode: ""
-        sale_price_wholesale_discount_prc: 0
-        order_uid: id375f16c4bec295d9995393af803ff7b
-        office_name: Коледино
-        retail_price_withdisc_rub: 399.68
-        storage_fee: 12647.29
-        acquiring_fee: 14.89
+        trbx_id: WB-TRBX-1234567
         installment_cofinancing_amount: 0
-        ppvz_office_name: Пункт самовывоза (ПВЗ)
-        fix_tariff_date_from: 2024-10-23
+        wibes_wb_discount_percent: 1
+        cashback_amount: 0
+        cashback_discount: 0
+        cashback_commission_change: 0
+        order_uid: id375f16c4bec295d9995393af803ff7b
+        payment_schedule: 0
+        delivery_method: "FBS, (МГТ)"
+        seller_promo_id: 14350
+        seller_promo_discount: 3
+        loyalty_id: 0
+        loyalty_discount: 0
+        uuid_promocode: ""
+        sale_price_promocode_discount_prc: 0
+        article_substitution: ""
+        sale_price_affiliated_discount_prc: 0
+        agency_vat: 0
+        sale_price_wholesale_discount_prc: 0
       properties:
         realizationreport_id:
           description: Номер отчёта
@@ -3095,9 +3095,9 @@ components:
       type: object
     _api_v1_account_balance_get_200_response:
       example:
-        for_withdraw: 6395.8
-        current: 10196.21
         currency: RUB
+        current: 10196.21
+        for_withdraw: 6395.8
       properties:
         currency:
           description: Валюта
@@ -3175,11 +3175,11 @@ components:
       type: object
     _api_v1_documents_list_get_400_response:
       example:
-        requestId: requestId
-        origin: origin
-        detail: detail
         title: title
         status: 0.8008281904610115
+        detail: detail
+        requestId: requestId
+        origin: origin
       properties:
         title:
           description: Заголовок ошибки
@@ -3238,14 +3238,14 @@ components:
       type: object
     GetList_data_documents_inner:
       example:
+        serviceName: redeem-notification-44841941
+        name: redeem-notification
+        category: Уведомление о выкупе
         extensions:
         - zip
         - zip
         creationTime: 2023-10-03T00:18:06.879Z
         viewed: false
-        name: redeem-notification
-        serviceName: redeem-notification-44841941
-        category: Уведомление о выкупе
       properties:
         serviceName:
           description: Уникальный ID документа
@@ -3278,22 +3278,22 @@ components:
     GetList_data:
       example:
         documents:
-        - extensions:
+        - serviceName: redeem-notification-44841941
+          name: redeem-notification
+          category: Уведомление о выкупе
+          extensions:
           - zip
           - zip
           creationTime: 2023-10-03T00:18:06.879Z
           viewed: false
+        - serviceName: redeem-notification-44841941
           name: redeem-notification
-          serviceName: redeem-notification-44841941
           category: Уведомление о выкупе
-        - extensions:
+          extensions:
           - zip
           - zip
           creationTime: 2023-10-03T00:18:06.879Z
           viewed: false
-          name: redeem-notification
-          serviceName: redeem-notification-44841941
-          category: Уведомление о выкупе
       properties:
         documents:
           description: Категории документов

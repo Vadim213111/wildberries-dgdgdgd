@@ -27,13 +27,13 @@ class CrossborderTurkeyClientInfo(BaseModel):
     """
     CrossborderTurkeyClientInfo
     """ # noqa: E501
-    first_name: Optional[StrictStr] = Field(default=None, description="Имя клиента", alias="firstName")
-    full_name: Optional[StrictStr] = Field(default=None, description="Фамилия, Имя, Отчество", alias="fullName")
-    last_name: Optional[StrictStr] = Field(default=None, description="Фамилия клиента", alias="lastName")
-    middle_name: Optional[StrictStr] = Field(default=None, description="Отчество клиента", alias="middleName")
-    order_id: Optional[StrictInt] = Field(default=None, description="Номер заказа", alias="orderID")
-    phone: Optional[StrictStr] = Field(default=None, description="Телефон для связи с клиентом")
-    phone_code: Optional[StrictStr] = Field(default=None, description="Не используется", alias="phoneCode")
+    first_name: Optional[StrictStr] = Field(default=None, description="Имя клиента", alias="firstName", json_schema_extra={"examples": ["Иван"]})
+    full_name: Optional[StrictStr] = Field(default=None, description="Фамилия, Имя, Отчество", alias="fullName", json_schema_extra={"examples": ["Андреев Иван Васильевич"]})
+    last_name: Optional[StrictStr] = Field(default=None, description="Фамилия клиента", alias="lastName", json_schema_extra={"examples": ["Андреев"]})
+    middle_name: Optional[StrictStr] = Field(default=None, description="Отчество клиента", alias="middleName", json_schema_extra={"examples": ["Васильевич"]})
+    order_id: Optional[StrictInt] = Field(default=None, description="Номер заказа", alias="orderID", json_schema_extra={"examples": [134567]})
+    phone: Optional[StrictStr] = Field(default=None, description="Телефон для связи с клиентом", json_schema_extra={"examples": ["79871234567"]})
+    phone_code: Optional[StrictStr] = Field(default=None, description="Не используется", alias="phoneCode", json_schema_extra={"examples": ["0"]})
     __properties: ClassVar[List[str]] = ["firstName", "fullName", "lastName", "middleName", "orderID", "phone", "phoneCode"]
 
     model_config = ConfigDict(

@@ -46,6 +46,9 @@ pub struct ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
     /// Признак меняющейся характеристики. Значение размечает характеристики, по которым варианты отличаются друг от друга:   -  `true` — варианты товара могут отличаться по этой характеристике   -  `false` — варианты товара не могут отличаться по этой характеристике 
     #[serde(rename = "isVariable", skip_serializing_if = "Option::is_none")]
     pub is_variable: Option<bool>,
+    /// Как передать характеристику в запросах на [cоздание](./work-with-products#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload/post), [создание с присоединением](./work-with-products/#tag/Sozdanie-kartochek-tovarov/paths/~1content~1v2~1cards~1upload~1add/post) и [редактирование](./work-with-products/#tag/Kartochki-tovarov/paths/~1content~1v2~1cards~1update/post) карточек товара:   -  `true` — в соответствующем параметре запроса   -  `false` — внутри массива `characteristics` 
+    #[serde(rename = "existNamedField", skip_serializing_if = "Option::is_none")]
+    pub exist_named_field: Option<bool>,
 }
 
 impl ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
@@ -62,6 +65,7 @@ impl ContentV2ObjectCharcsSubjectIdGet200ResponseDataInner {
             charc_type: None,
             has_filter: None,
             is_variable: None,
+            exist_named_field: None,
         }
     }
 }

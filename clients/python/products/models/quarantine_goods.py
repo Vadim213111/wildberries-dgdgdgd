@@ -27,15 +27,15 @@ class QuarantineGoods(BaseModel):
     """
     QuarantineGoods
     """ # noqa: E501
-    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID")
+    nm_id: Optional[StrictInt] = Field(default=None, description="Артикул WB", alias="nmID", json_schema_extra={"examples": [206025152]})
     size_id: Optional[StrictInt] = Field(default=None, description="Не используется", alias="sizeID")
-    tech_size_name: Optional[StrictStr] = Field(default=None, description="Не используется", alias="techSizeName")
-    currency_iso_code4217: Optional[StrictStr] = Field(default=None, description="Валюта по стандарту ISO 4217", alias="currencyIsoCode4217")
-    new_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Новая цена продавца до скидки", alias="newPrice")
-    old_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Текущая цена продавца до скидки", alias="oldPrice")
-    new_discount: Optional[StrictInt] = Field(default=None, description="Новая скидка продавца, %", alias="newDiscount")
-    old_discount: Optional[StrictInt] = Field(default=None, description="Текущая скидка продавца, %", alias="oldDiscount")
-    price_diff: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Разница: `newPrice` * (1 - `newDiscount` / 100) - `oldPrice` * (1 - `oldDiscount` / 100)", alias="priceDiff")
+    tech_size_name: Optional[StrictStr] = Field(default=None, description="Не используется", alias="techSizeName", json_schema_extra={"examples": [""]})
+    currency_iso_code4217: Optional[StrictStr] = Field(default=None, description="Валюта по стандарту ISO 4217", alias="currencyIsoCode4217", json_schema_extra={"examples": ["RUB"]})
+    new_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Новая цена продавца до скидки", alias="newPrice", json_schema_extra={"examples": [134]})
+    old_price: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Текущая цена продавца до скидки", alias="oldPrice", json_schema_extra={"examples": [4000]})
+    new_discount: Optional[StrictInt] = Field(default=None, description="Новая скидка продавца, %", alias="newDiscount", json_schema_extra={"examples": [25]})
+    old_discount: Optional[StrictInt] = Field(default=None, description="Текущая скидка продавца, %", alias="oldDiscount", json_schema_extra={"examples": [25]})
+    price_diff: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Разница: `newPrice` * (1 - `newDiscount` / 100) - `oldPrice` * (1 - `oldDiscount` / 100)", alias="priceDiff", json_schema_extra={"examples": [-2899.5]})
     __properties: ClassVar[List[str]] = ["nmID", "sizeID", "techSizeName", "currencyIsoCode4217", "newPrice", "oldPrice", "newDiscount", "oldDiscount", "priceDiff"]
 
     model_config = ConfigDict(

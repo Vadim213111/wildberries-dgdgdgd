@@ -28,9 +28,9 @@ class TableOfficeItem(BaseModel):
     """
     Данные по складу
     """ # noqa: E501
-    region_name: StrictStr = Field(description="Регион отгрузки", alias="regionName")
-    office_id: StrictInt = Field(description="ID склада", alias="officeID")
-    office_name: StrictStr = Field(description="Название склада", alias="officeName")
+    region_name: StrictStr = Field(description="Регион отгрузки", alias="regionName", json_schema_extra={"examples": ["Центральный"]})
+    office_id: StrictInt = Field(description="ID склада", alias="officeID", json_schema_extra={"examples": [123456]})
+    office_name: StrictStr = Field(description="Название склада", alias="officeName", json_schema_extra={"examples": ["Коледино"]})
     metrics: TableCommonMetrics = Field(description="Метрики склада")
     __properties: ClassVar[List[str]] = ["regionName", "officeID", "officeName", "metrics"]
 

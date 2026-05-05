@@ -35,7 +35,7 @@ class MainResponse(BaseModel):
     position_info: PositionInfo = Field(alias="positionInfo")
     visibility_info: VisibilityInfo = Field(alias="visibilityInfo")
     groups: Optional[List[TableGroupItem]] = Field(default=None, description="Список элементов таблицы ")
-    currency: StrictStr = Field(description="Валюта отчёта")
+    currency: StrictStr = Field(description="Валюта отчёта", json_schema_extra={"examples": ["RUB"]})
     __properties: ClassVar[List[str]] = ["commonInfo", "positionInfo", "visibilityInfo", "groups", "currency"]
 
     model_config = ConfigDict(

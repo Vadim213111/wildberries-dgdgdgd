@@ -27,17 +27,17 @@ class ModelsWarehouseBoxRates(BaseModel):
     """
     ModelsWarehouseBoxRates
     """ # noqa: E501
-    box_delivery_base: Optional[StrictStr] = Field(default=None, description="Логистика, первый литр, ₽", alias="boxDeliveryBase")
-    box_delivery_coef_expr: Optional[StrictStr] = Field(default=None, description="Коэффициент **Логистика**, %. На него умножается стоимость логистики. Уже учтён в тарифах", alias="boxDeliveryCoefExpr")
-    box_delivery_liter: Optional[StrictStr] = Field(default=None, description="Логистика, дополнительный литр, ₽", alias="boxDeliveryLiter")
-    box_delivery_marketplace_base: Optional[StrictStr] = Field(default=None, description="Логистика FBS, первый литр, ₽", alias="boxDeliveryMarketplaceBase")
-    box_delivery_marketplace_coef_expr: Optional[StrictStr] = Field(default=None, description="Коэффициент **FBS**, %. На него умножается стоимость логистики FBS. Уже учтён в тарифах", alias="boxDeliveryMarketplaceCoefExpr")
-    box_delivery_marketplace_liter: Optional[StrictStr] = Field(default=None, description="Логистика FBS, дополнительный литр, ₽", alias="boxDeliveryMarketplaceLiter")
-    box_storage_base: Optional[StrictStr] = Field(default=None, description="Хранение в день, первый литр, ₽", alias="boxStorageBase")
-    box_storage_coef_expr: Optional[StrictStr] = Field(default=None, description="Коэффициент **Хранение**, %. На него умножается стоимость хранения в день. Уже учтён в тарифах", alias="boxStorageCoefExpr")
-    box_storage_liter: Optional[StrictStr] = Field(default=None, description="Хранение в день, дополнительный литр, ₽", alias="boxStorageLiter")
-    geo_name: Optional[StrictStr] = Field(default=None, description="Страна, для РФ — округ", alias="geoName")
-    warehouse_name: Optional[StrictStr] = Field(default=None, description="Название склада", alias="warehouseName")
+    box_delivery_base: Optional[StrictStr] = Field(default=None, description="Логистика, первый литр, ₽", alias="boxDeliveryBase", json_schema_extra={"examples": ["48"]})
+    box_delivery_coef_expr: Optional[StrictStr] = Field(default=None, description="Коэффициент **Логистика**, %. На него умножается стоимость логистики. Уже учтён в тарифах", alias="boxDeliveryCoefExpr", json_schema_extra={"examples": ["160"]})
+    box_delivery_liter: Optional[StrictStr] = Field(default=None, description="Логистика, дополнительный литр, ₽", alias="boxDeliveryLiter", json_schema_extra={"examples": ["11,2"]})
+    box_delivery_marketplace_base: Optional[StrictStr] = Field(default=None, description="Логистика FBS, первый литр, ₽", alias="boxDeliveryMarketplaceBase", json_schema_extra={"examples": ["40"]})
+    box_delivery_marketplace_coef_expr: Optional[StrictStr] = Field(default=None, description="Коэффициент **FBS**, %. На него умножается стоимость логистики FBS. Уже учтён в тарифах", alias="boxDeliveryMarketplaceCoefExpr", json_schema_extra={"examples": ["125"]})
+    box_delivery_marketplace_liter: Optional[StrictStr] = Field(default=None, description="Логистика FBS, дополнительный литр, ₽", alias="boxDeliveryMarketplaceLiter", json_schema_extra={"examples": ["11"]})
+    box_storage_base: Optional[StrictStr] = Field(default=None, description="Хранение в день, первый литр, ₽", alias="boxStorageBase", json_schema_extra={"examples": ["0,14"]})
+    box_storage_coef_expr: Optional[StrictStr] = Field(default=None, description="Коэффициент **Хранение**, %. На него умножается стоимость хранения в день. Уже учтён в тарифах", alias="boxStorageCoefExpr", json_schema_extra={"examples": ["115"]})
+    box_storage_liter: Optional[StrictStr] = Field(default=None, description="Хранение в день, дополнительный литр, ₽", alias="boxStorageLiter", json_schema_extra={"examples": ["0,07"]})
+    geo_name: Optional[StrictStr] = Field(default=None, description="Страна, для РФ — округ", alias="geoName", json_schema_extra={"examples": ["Центральный федеральный округ"]})
+    warehouse_name: Optional[StrictStr] = Field(default=None, description="Название склада", alias="warehouseName", json_schema_extra={"examples": ["Коледино"]})
     __properties: ClassVar[List[str]] = ["boxDeliveryBase", "boxDeliveryCoefExpr", "boxDeliveryLiter", "boxDeliveryMarketplaceBase", "boxDeliveryMarketplaceCoefExpr", "boxDeliveryMarketplaceLiter", "boxStorageBase", "boxStorageCoefExpr", "boxStorageLiter", "geoName", "warehouseName"]
 
     model_config = ConfigDict(

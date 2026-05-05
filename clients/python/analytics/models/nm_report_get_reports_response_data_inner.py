@@ -29,13 +29,13 @@ class NmReportGetReportsResponseDataInner(BaseModel):
     """
     NmReportGetReportsResponseDataInner
     """ # noqa: E501
-    id: UUID = Field(description="ID отчёта")
-    created_at: StrictStr = Field(description="Дата и время завершения генерации", alias="createdAt")
-    status: StrictStr = Field(description="Статус отчёта:  * `WAITING` — в очереди на обработку * `PROCESSING` — генерируется * `SUCCESS —` готов * `RETRY` — ожидает повторной обработки * `FAILED` — не получилось сгенерировать, сгенерируйте повторно ")
-    name: StrictStr = Field(description="Название отчёта")
-    size: StrictInt = Field(description="Размер отчёта, Б")
-    start_date: date = Field(description="Начало периода", alias="startDate")
-    end_date: date = Field(description="Конец периода", alias="endDate")
+    id: UUID = Field(description="ID отчёта", json_schema_extra={"examples": ["06eae887-9d9f-491f-b16a-bb1766fcb8d2"]})
+    created_at: StrictStr = Field(description="Дата и время завершения генерации", alias="createdAt", json_schema_extra={"examples": ["2024-06-26 20:05:32"]})
+    status: StrictStr = Field(description="Статус отчёта:  * `WAITING` — в очереди на обработку * `PROCESSING` — генерируется * `SUCCESS —` готов * `RETRY` — ожидает повторной обработки * `FAILED` — не получилось сгенерировать, сгенерируйте повторно ", json_schema_extra={"examples": ["SUCCESS"]})
+    name: StrictStr = Field(description="Название отчёта", json_schema_extra={"examples": ["Card report"]})
+    size: StrictInt = Field(description="Размер отчёта, Б", json_schema_extra={"examples": [123]})
+    start_date: date = Field(description="Начало периода", alias="startDate", json_schema_extra={"examples": ["2024-06-21"]})
+    end_date: date = Field(description="Конец периода", alias="endDate", json_schema_extra={"examples": ["2024-06-23"]})
     __properties: ClassVar[List[str]] = ["id", "createdAt", "status", "name", "size", "startDate", "endDate"]
 
     model_config = ConfigDict(

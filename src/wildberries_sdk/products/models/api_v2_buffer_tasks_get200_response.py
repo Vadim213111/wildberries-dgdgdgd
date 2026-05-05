@@ -29,8 +29,8 @@ class ApiV2BufferTasksGet200Response(BaseModel):
     ApiV2BufferTasksGet200Response
     """ # noqa: E501
     data: Optional[SupplierTaskMetadataBuffer] = None
-    error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки")
-    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText")
+    error: Optional[StrictBool] = Field(default=None, description="Флаг ошибки", json_schema_extra={"examples": [False]})
+    error_text: Optional[StrictStr] = Field(default=None, description="Текст ошибки", alias="errorText", json_schema_extra={"examples": [""]})
     __properties: ClassVar[List[str]] = ["data", "error", "errorText"]
 
     model_config = ConfigDict(

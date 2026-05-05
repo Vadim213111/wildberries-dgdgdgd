@@ -27,7 +27,7 @@ class ApiV1QuestionsPatchRequestOneOf1Answer(BaseModel):
     """
     ApiV1QuestionsPatchRequestOneOf1Answer
     """ # noqa: E501
-    text: StrictStr = Field(description="Текст ответа")
+    text: StrictStr = Field(description="Текст ответа", json_schema_extra={"examples": ["текст ответа"]})
     __properties: ClassVar[List[str]] = ["text"]
 
     model_config = ConfigDict(

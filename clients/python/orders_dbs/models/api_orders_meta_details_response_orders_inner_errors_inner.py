@@ -27,8 +27,8 @@ class ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner(BaseModel):
     """
     ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner
     """ # noqa: E501
-    code: Optional[StrictInt] = Field(default=None, description="Код ошибки")
-    detail: Optional[StrictStr] = Field(default=None, description="Дополнительная информация об ошибке")
+    code: Optional[StrictInt] = Field(default=None, description="Код ошибки", json_schema_extra={"examples": [404]})
+    detail: Optional[StrictStr] = Field(default=None, description="Дополнительная информация об ошибке", json_schema_extra={"examples": ["NotFound"]})
     __properties: ClassVar[List[str]] = ["code", "detail"]
 
     model_config = ConfigDict(

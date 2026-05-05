@@ -28,7 +28,7 @@ class ApiV3OrdersOrderIdMetaUinPutRequest(BaseModel):
     """
     ApiV3OrdersOrderIdMetaUinPutRequest
     """ # noqa: E501
-    uin: Annotated[str, Field(min_length=16, strict=True, max_length=16)] = Field(description="УИН")
+    uin: Annotated[str, Field(min_length=16, strict=True, max_length=16)] = Field(description="УИН", json_schema_extra={"examples": ["1234567890123456"]})
     __properties: ClassVar[List[str]] = ["uin"]
 
     model_config = ConfigDict(

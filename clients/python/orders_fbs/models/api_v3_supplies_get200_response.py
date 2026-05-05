@@ -28,7 +28,7 @@ class ApiV3SuppliesGet200Response(BaseModel):
     """
     ApiV3SuppliesGet200Response
     """ # noqa: E501
-    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных")
+    next: Optional[StrictInt] = Field(default=None, description="Параметр пагинации. Содержит значение, которое необходимо указать в запросе для получения следующего пакета данных", json_schema_extra={"examples": [13833711]})
     supplies: Optional[List[Supply]] = Field(default=None, description="Список поставок")
     __properties: ClassVar[List[str]] = ["next", "supplies"]
 

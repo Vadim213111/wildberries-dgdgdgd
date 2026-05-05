@@ -27,9 +27,9 @@ class SearchReportPositionChartItem(BaseModel):
     """
     SearchReportPositionChartItem
     """ # noqa: E501
-    dt: StrictStr = Field(description="Дата")
-    average: StrictInt = Field(description="Средняя позиция товара в результатах поиска")
-    median: StrictInt = Field(description="Медианная позиция товара в результатах поиска")
+    dt: StrictStr = Field(description="Дата", json_schema_extra={"examples": ["2024-10-19"]})
+    average: StrictInt = Field(description="Средняя позиция товара в результатах поиска", json_schema_extra={"examples": [1]})
+    median: StrictInt = Field(description="Медианная позиция товара в результатах поиска", json_schema_extra={"examples": [1]})
     __properties: ClassVar[List[str]] = ["dt", "average", "median"]
 
     model_config = ConfigDict(

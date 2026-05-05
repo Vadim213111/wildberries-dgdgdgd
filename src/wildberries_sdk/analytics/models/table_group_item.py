@@ -29,11 +29,11 @@ class TableGroupItem(BaseModel):
     """
     К группе товаров относятся все карточки, подходящие хотя бы по одному из параметров:   - `subjectName` — название предмета   - `brandName` — бренд   - `tagName` — название ярлыка 
     """ # noqa: E501
-    subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName")
-    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectId")
-    brand_name: Optional[StrictStr] = Field(default=None, description="Бренд", alias="brandName")
-    tag_name: Optional[StrictStr] = Field(default=None, description="Название ярлыка", alias="tagName")
-    tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка", alias="tagId")
+    subject_name: Optional[StrictStr] = Field(default=None, description="Название предмета", alias="subjectName", json_schema_extra={"examples": ["Phones"]})
+    subject_id: Optional[StrictInt] = Field(default=None, description="ID предмета", alias="subjectId", json_schema_extra={"examples": [50]})
+    brand_name: Optional[StrictStr] = Field(default=None, description="Бренд", alias="brandName", json_schema_extra={"examples": ["Apple"]})
+    tag_name: Optional[StrictStr] = Field(default=None, description="Название ярлыка", alias="tagName", json_schema_extra={"examples": ["phones"]})
+    tag_id: Optional[StrictInt] = Field(default=None, description="ID ярлыка", alias="tagId", json_schema_extra={"examples": [65]})
     metrics: TableGroupItemMetrics
     items: List[TableProductItem] = Field(description="Массив товаров группы")
     __properties: ClassVar[List[str]] = ["subjectName", "subjectId", "brandName", "tagName", "tagId", "metrics", "items"]

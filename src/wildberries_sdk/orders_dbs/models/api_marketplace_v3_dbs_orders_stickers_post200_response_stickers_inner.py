@@ -27,11 +27,11 @@ class ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner(BaseModel):
     """
     ApiMarketplaceV3DbsOrdersStickersPost200ResponseStickersInner
     """ # noqa: E501
-    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId")
-    part_a: StrictStr = Field(description="Первая часть ID стикера", alias="partA")
-    part_b: StrictStr = Field(description="Вторая часть ID стикера", alias="partB")
-    barcode: StrictStr = Field(description="Закодированное значение стикера")
-    file: StrictStr = Field(description="Полное представление стикера, кодировка base64")
+    order_id: StrictInt = Field(description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [5346346]})
+    part_a: StrictStr = Field(description="Первая часть ID стикера", alias="partA", json_schema_extra={"examples": ["231648"]})
+    part_b: StrictStr = Field(description="Вторая часть ID стикера", alias="partB", json_schema_extra={"examples": ["9753"]})
+    barcode: StrictStr = Field(description="Закодированное значение стикера", json_schema_extra={"examples": ["!uKEtQZVx"]})
+    file: StrictStr = Field(description="Полное представление стикера, кодировка base64", json_schema_extra={"examples": ["JVBER...ZWYKMTM5MQolJUVPRg=="]})
     __properties: ClassVar[List[str]] = ["orderId", "partA", "partB", "barcode", "file"]
 
     model_config = ConfigDict(
