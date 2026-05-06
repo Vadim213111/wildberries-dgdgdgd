@@ -416,7 +416,7 @@ ApiMarketplaceV3DbsOrdersMetaDeletePost Удалить метаданные сб
   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+  - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
   - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
 <div class="description_limit">
@@ -609,10 +609,10 @@ ApiMarketplaceV3DbsOrdersMetaDetailsPost Получить метаданные �
   - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
   - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
   - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+  - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
   - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
-Если ответ вернулся с пустой структурой `metaDetails`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
+Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
 <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
 
@@ -1478,17 +1478,6 @@ func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersMetaSgtinPostExecute(r ApiApiMa
 					newErr.model = v
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 409 {
-			var v ApiError
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		if localVarHTTPResponse.StatusCode == 429 {
 			var v ApiV3DbsOrdersNewGet401Response
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -2060,7 +2049,7 @@ func (r ApiApiMarketplaceV3DbsOrdersStatusDeliverPostRequest) ApiOrdersRequestV2
 	return r
 }
 
-func (r ApiApiMarketplaceV3DbsOrdersStatusDeliverPostRequest) Execute() (*ApiStatusSetResponses, *http.Response, error) {
+func (r ApiApiMarketplaceV3DbsOrdersStatusDeliverPostRequest) Execute() (*ApiStatusSetDeliverResponses, *http.Response, error) {
 	return r.ApiService.ApiMarketplaceV3DbsOrdersStatusDeliverPostExecute(r)
 }
 
@@ -2089,13 +2078,13 @@ func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersStatusDeliverPost(ctx context.C
 }
 
 // Execute executes the request
-//  @return ApiStatusSetResponses
-func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersStatusDeliverPostExecute(r ApiApiMarketplaceV3DbsOrdersStatusDeliverPostRequest) (*ApiStatusSetResponses, *http.Response, error) {
+//  @return ApiStatusSetDeliverResponses
+func (a *DBSAPIService) ApiMarketplaceV3DbsOrdersStatusDeliverPostExecute(r ApiApiMarketplaceV3DbsOrdersStatusDeliverPostRequest) (*ApiStatusSetDeliverResponses, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiStatusSetResponses
+		localVarReturnValue  *ApiStatusSetDeliverResponses
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DBSAPIService.ApiMarketplaceV3DbsOrdersStatusDeliverPost")

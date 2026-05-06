@@ -25,7 +25,7 @@ from pydantic_core import to_jsonable_python
 
 class MetaSgtin(BaseModel):
     """
-    Код маркировки [Честного знака](https://честныйзнак.рф/)
+    Код маркировки Честного знака
     """ # noqa: E501
     value: Optional[List[StrictStr]] = Field(default=None, json_schema_extra={"examples": [["123456789012345"]]})
     __properties: ClassVar[List[str]] = ["value"]

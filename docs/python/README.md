@@ -149,19 +149,22 @@ print(feedbacks)
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_client_post` — `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
+- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_delete_post` — `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить метаданные сборочных заданий
 - `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_details_post` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
+- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_meta_sgtin_post` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
+- `orders_dbw.DefaultApi.api_marketplace_v3_dbw_orders_status_deliver_post` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_courier_post` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_delivery_date_post` — `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_get` — `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_new_get` — `GET /api/v3/dbw/orders/new` — Получить список новых сборочных заданий
-- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_assemble_patch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — Перевести в доставку
+- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_assemble_patch` — `PATCH /api/v3/dbw/orders/{orderId}/assemble` — (Deprecated) Перевести в доставку
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_cancel_patch` — `PATCH /api/v3/dbw/orders/{orderId}/cancel` — Отменить сборочное задание
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_confirm_patch` — `PATCH /api/v3/dbw/orders/{orderId}/confirm` — Перевести на сборку
-- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_delete` — `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить метаданные сборочного задания
+- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_delete` — `DELETE /api/v3/dbw/orders/{orderId}/meta` — (Deprecated) Удалить метаданные сборочного задания
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_get` — `GET /api/v3/dbw/orders/{orderId}/meta` — (Deprecated) Получить метаданные сборочного задания
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_gtin_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_imei_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_sgtin_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
+- `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_sgtin_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — (Deprecated) Закрепить за сборочным заданием код маркировки товара
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_order_id_meta_uin_put` — `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_status_post` — `POST /api/v3/dbw/orders/status` — Получить статусы сборочных заданий
 - `orders_dbw.DefaultApi.api_v3_dbw_orders_stickers_post` — `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий

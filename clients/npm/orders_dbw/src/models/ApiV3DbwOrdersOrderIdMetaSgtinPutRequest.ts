@@ -20,7 +20,7 @@ import { mapValues } from '../runtime';
  */
 export interface ApiV3DbwOrdersOrderIdMetaSgtinPutRequest {
     /**
-     * Массив кодов маркировки
+     * Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки
      * @type {Array<string>}
      * @memberof ApiV3DbwOrdersOrderIdMetaSgtinPutRequest
      */

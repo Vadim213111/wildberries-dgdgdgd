@@ -206,6 +206,196 @@ func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersClientPostExecute(r ApiApiMarke
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest struct {
+	ctx context.Context
+	ApiService *DBWAPIService
+	apiOrdersMetaDleteRequestV2 *ApiOrdersMetaDleteRequestV2
+}
+
+func (r ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest) ApiOrdersMetaDleteRequestV2(apiOrdersMetaDleteRequestV2 ApiOrdersMetaDleteRequestV2) ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest {
+	r.apiOrdersMetaDleteRequestV2 = &apiOrdersMetaDleteRequestV2
+	return r
+}
+
+func (r ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest) Execute() (*ApiMetaDeleteResponses, *http.Response, error) {
+	return r.ApiService.ApiMarketplaceV3DbwOrdersMetaDeletePostExecute(r)
+}
+
+/*
+ApiMarketplaceV3DbwOrdersMetaDeletePost Удалить метаданные сборочных заданий
+
+Метод удаляет значение указанных [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) для переданного ключа.
+<br><br>
+В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:
+  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
+  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+  - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
+
+Можно передать только один ключ.
+
+  <div class="description_limit">
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
+<ul>
+    <li>получение и обновление списка контактов</li>
+    <li>получение и удаление метаданных</li>
+    <li>методы сборочных заданий</li>
+</ul> 
+
+| Период | Лимит | Интервал | Всплеск |
+| --- | --- | --- | --- |
+| 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+</div>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest
+*/
+func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersMetaDeletePost(ctx context.Context) ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest {
+	return ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ApiMetaDeleteResponses
+func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersMetaDeletePostExecute(r ApiApiMarketplaceV3DbwOrdersMetaDeletePostRequest) (*ApiMetaDeleteResponses, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ApiMetaDeleteResponses
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDeletePost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/marketplace/v3/dbw/orders/meta/delete"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.apiOrdersMetaDleteRequestV2 == nil {
+		return localVarReturnValue, nil, reportError("apiOrdersMetaDleteRequestV2 is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.apiOrdersMetaDleteRequestV2
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["HeaderApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v ApiV3DbwOrdersNewGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v ApiV3DbwOrdersNewGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiApiMarketplaceV3DbwOrdersMetaDetailsPostRequest struct {
 	ctx context.Context
 	ApiService *DBWAPIService
@@ -232,7 +422,7 @@ ApiMarketplaceV3DbwOrdersMetaDetailsPost Получить метаданные �
   - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
   - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
   - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
 
   <div class="description_limit">
 <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
@@ -359,6 +549,378 @@ func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersMetaDetailsPostExecute(r ApiApi
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
 			var v ApiBatchError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v ApiV3DbwOrdersNewGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest struct {
+	ctx context.Context
+	ApiService *DBWAPIService
+	apiOrdersSGTINsSetRequest *ApiOrdersSGTINsSetRequest
+}
+
+func (r ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest) ApiOrdersSGTINsSetRequest(apiOrdersSGTINsSetRequest ApiOrdersSGTINsSetRequest) ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest {
+	r.apiOrdersSGTINsSetRequest = &apiOrdersSGTINsSetRequest
+	return r
+}
+
+func (r ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest) Execute() (*ApiStatusSetResponses, *http.Response, error) {
+	return r.ApiService.ApiMarketplaceV3DbwOrdersMetaSgtinPostExecute(r)
+}
+
+/*
+ApiMarketplaceV3DbwOrdersMetaSgtinPost Закрепить коды маркировки Честного знака за сборочными заданиями
+
+Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` — на сборке.
+<br><br>
+Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
+
+<div class="description_limit">
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
+<ul>
+    <li>получение и обновление списка контактов</li>
+    <li>получение и удаление метаданных</li>
+    <li>методы сборочных заданий</li>
+</ul> 
+
+| Период | Лимит | Интервал | Всплеск |
+| --- | --- | --- | --- |
+| 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+</div>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest
+*/
+func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersMetaSgtinPost(ctx context.Context) ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest {
+	return ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ApiStatusSetResponses
+func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersMetaSgtinPostExecute(r ApiApiMarketplaceV3DbwOrdersMetaSgtinPostRequest) (*ApiStatusSetResponses, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ApiStatusSetResponses
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DBWAPIService.ApiMarketplaceV3DbwOrdersMetaSgtinPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/marketplace/v3/dbw/orders/meta/sgtin"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.apiOrdersSGTINsSetRequest == nil {
+		return localVarReturnValue, nil, reportError("apiOrdersSGTINsSetRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.apiOrdersSGTINsSetRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["HeaderApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v ApiV3DbwOrdersNewGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v ApiV3DbwOrdersNewGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest struct {
+	ctx context.Context
+	ApiService *DBWAPIService
+	apiOrdersRequestV2 *ApiOrdersRequestV2
+}
+
+func (r ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest) ApiOrdersRequestV2(apiOrdersRequestV2 ApiOrdersRequestV2) ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest {
+	r.apiOrdersRequestV2 = &apiOrdersRequestV2
+	return r
+}
+
+func (r ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest) Execute() (*ApiStatusSetResponses, *http.Response, error) {
+	return r.ApiService.ApiMarketplaceV3DbwOrdersStatusDeliverPostExecute(r)
+}
+
+/*
+ApiMarketplaceV3DbwOrdersStatusDeliverPost Перевести сборочные задания в доставку
+
+Метод переводит [сборочные задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) из [статуса](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` в статус `complete` — в доставке.
+
+<div class="description_important">
+Проверяйте ответ метода. Сборочные задания, переведённые в доставку, вернутся с признаком `"isError":false`. Для остальных сборочных заданий смотрите причину ошибки в массиве `errors`
+</div>
+
+<div class="description_limit">
+<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
+<ul>
+    <li>получение и обновление списка контактов</li>
+    <li>получение и удаление метаданных</li>
+    <li>методы сборочных заданий</li>
+</ul> 
+
+| Период | Лимит | Интервал | Всплеск |
+| --- | --- | --- | --- |
+| 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
+</div>
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest
+*/
+func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersStatusDeliverPost(ctx context.Context) ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest {
+	return ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+//  @return ApiStatusSetResponses
+func (a *DBWAPIService) ApiMarketplaceV3DbwOrdersStatusDeliverPostExecute(r ApiApiMarketplaceV3DbwOrdersStatusDeliverPostRequest) (*ApiStatusSetResponses, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ApiStatusSetResponses
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DBWAPIService.ApiMarketplaceV3DbwOrdersStatusDeliverPost")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/marketplace/v3/dbw/orders/status/deliver"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.apiOrdersRequestV2 == nil {
+		return localVarReturnValue, nil, reportError("apiOrdersRequestV2 is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.apiOrdersRequestV2
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["HeaderApiKey"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v Error
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v ApiV3DbwOrdersNewGet401Response
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
+					newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1200,27 +1762,14 @@ func (r ApiApiV3DbwOrdersOrderIdAssemblePatchRequest) Execute() (*http.Response,
 /*
 ApiV3DbwOrdersOrderIdAssemblePatch Перевести в доставку
 
-Метод переводит [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `complete` — в доставке.
-
-<div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
-<ul>
-    <li>получение и обновление списка контактов</li>
-    <li>получение и удаление метаданных</li>
-    <li>методы сборочных заданий</li>
-</ul> 
-
-| Период | Лимит | Интервал | Всплеск |
-| --- | --- | --- | --- |
-| 1 мин | 300 запросов | 200 мс | 20 запросов |
-
-Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-</div>
+Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId ID сборочного задания
  @return ApiApiV3DbwOrdersOrderIdAssemblePatchRequest
+
+Deprecated
 */
 func (a *DBWAPIService) ApiV3DbwOrdersOrderIdAssemblePatch(ctx context.Context, orderId int64) ApiApiV3DbwOrdersOrderIdAssemblePatchRequest {
 	return ApiApiV3DbwOrdersOrderIdAssemblePatchRequest{
@@ -1231,6 +1780,7 @@ func (a *DBWAPIService) ApiV3DbwOrdersOrderIdAssemblePatch(ctx context.Context, 
 }
 
 // Execute executes the request
+// Deprecated
 func (a *DBWAPIService) ApiV3DbwOrdersOrderIdAssemblePatchExecute(r ApiApiV3DbwOrdersOrderIdAssemblePatchRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPatch
@@ -1791,7 +2341,7 @@ type ApiApiV3DbwOrdersOrderIdMetaDeleteRequest struct {
 	key *string
 }
 
-// Название метаданных для удаления (&#x60;imei&#x60;, &#x60;uin&#x60;, &#x60;gtin&#x60;, &#x60;sgtin&#x60;). Передается только одно значение
+// Название метаданных для удаления (&#x60;imei&#x60;, &#x60;uin&#x60;, &#x60;gtin&#x60;, &#x60;sgtin&#x60;). Передаётся только одно значение
 func (r ApiApiV3DbwOrdersOrderIdMetaDeleteRequest) Key(key string) ApiApiV3DbwOrdersOrderIdMetaDeleteRequest {
 	r.key = &key
 	return r
@@ -1804,34 +2354,14 @@ func (r ApiApiV3DbwOrdersOrderIdMetaDeleteRequest) Execute() (*http.Response, er
 /*
 ApiV3DbwOrdersOrderIdMetaDelete Удалить метаданные сборочного задания
 
-Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) для переданного ключа.
-<br><br>
-Возможные метаданные:
-  - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-  - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
-  - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-  - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
-
-Можно передать только один ключ.
-
-<div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
-<ul>
-    <li>получение и обновление списка контактов</li>
-    <li>получение и удаление метаданных</li>
-    <li>методы сборочных заданий</li>
-</ul> 
-
-| Период | Лимит | Интервал | Всплеск |
-| --- | --- | --- | --- |
-| 1 мин | 300 запросов | 200 мс | 20 запросов |
-
-</div>
+Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId ID сборочного задания
  @return ApiApiV3DbwOrdersOrderIdMetaDeleteRequest
+
+Deprecated
 */
 func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaDelete(ctx context.Context, orderId int64) ApiApiV3DbwOrdersOrderIdMetaDeleteRequest {
 	return ApiApiV3DbwOrdersOrderIdMetaDeleteRequest{
@@ -1842,6 +2372,7 @@ func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaDelete(ctx context.Context, ord
 }
 
 // Execute executes the request
+// Deprecated
 func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaDeleteExecute(r ApiApiV3DbwOrdersOrderIdMetaDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -2207,7 +2738,7 @@ func (r ApiApiV3DbwOrdersOrderIdMetaGtinPutRequest) Execute() (*http.Response, e
 /*
 ApiV3DbwOrdersOrderIdMetaGtinPut Закрепить за сборочным заданием GTIN
 
-Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси.
+Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный ID товара в Беларуси.
 <br><br>
 У одного сборочного задания может быть только один GTIN.
 
@@ -2412,7 +2943,7 @@ func (r ApiApiV3DbwOrdersOrderIdMetaImeiPutRequest) Execute() (*http.Response, e
 /*
 ApiV3DbwOrdersOrderIdMetaImeiPut Закрепить за сборочным заданием IMEI
 
-Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
+Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
 <br><br>
 У одного сборочного задания может быть только один IMEI.
 
@@ -2615,28 +3146,16 @@ func (r ApiApiV3DbwOrdersOrderIdMetaSgtinPutRequest) Execute() (*http.Response, 
 }
 
 /*
-ApiV3DbwOrdersOrderIdMetaSgtinPut Закрепить за сборочным заданием код маркировки Честного знака
+ApiV3DbwOrdersOrderIdMetaSgtinPut Закрепить за сборочным заданием код маркировки товара
 
-Метод позволяет закрепить за сборочным заданием код маркировки [Честного знака](https://честныйзнак.рф/).
-<br><br>
-Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
-<br><br>
-Получить загруженные коды маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
-
-<div class="description_limit">
-<a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
-
-| Период | Лимит | Интервал | Всплеск |
-| --- | --- | --- | --- |
-| 1 мин | 1000 запросов | 60 мс | 20 запросов |
-
-Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-</div>
+Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId ID сборочного задания
  @return ApiApiV3DbwOrdersOrderIdMetaSgtinPutRequest
+
+Deprecated
 */
 func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaSgtinPut(ctx context.Context, orderId int64) ApiApiV3DbwOrdersOrderIdMetaSgtinPutRequest {
 	return ApiApiV3DbwOrdersOrderIdMetaSgtinPutRequest{
@@ -2647,6 +3166,7 @@ func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaSgtinPut(ctx context.Context, o
 }
 
 // Execute executes the request
+// Deprecated
 func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaSgtinPutExecute(r ApiApiV3DbwOrdersOrderIdMetaSgtinPutRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
@@ -2743,17 +3263,6 @@ func (a *DBWAPIService) ApiV3DbwOrdersOrderIdMetaSgtinPutExecute(r ApiApiV3DbwOr
 					newErr.model = v
 			return localVarHTTPResponse, newErr
 		}
-		if localVarHTTPResponse.StatusCode == 402 {
-			var v ApiV3DbwOrdersNewGet402Response
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarHTTPResponse, newErr
-			}
-					newErr.error = formatErrorMessage(localVarHTTPResponse.Status, &v)
-					newErr.model = v
-			return localVarHTTPResponse, newErr
-		}
 		if localVarHTTPResponse.StatusCode == 403 {
 			var v Error
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
@@ -2822,7 +3331,7 @@ func (r ApiApiV3DbwOrdersOrderIdMetaUinPutRequest) Execute() (*http.Response, er
 /*
 ApiV3DbwOrdersOrderIdMetaUinPut Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
-Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер.
+Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный идентификационный номер.
 <br><br>
 У одного сборочного задания может быть только один УИН.
 
@@ -3036,7 +3545,7 @@ ApiV3DbwOrdersStatusPost Получить статусы сборочных за
 | -------  | ---------           | --------------------------------------|
 | `new`      | **Новое сборочное задание** | |
 | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1confirm/patch)
-| `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1assemble/patch) |
+| `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1status~1assemble/post) |
 | `receive`  | **Получено покупателем**|  Переводится курьером
 | `reject`   | **Отказ покупателя при получении**| Переводится курьером
 | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1cancel/patch)

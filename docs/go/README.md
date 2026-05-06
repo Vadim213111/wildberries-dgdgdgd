@@ -137,7 +137,10 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersClientPost` — `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
+- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDeletePost` — `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить метаданные сборочных заданий
 - `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaDetailsPost` — `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
+- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersMetaSgtinPost` — `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
+- `orders_dbw.DBWAPIService.ApiMarketplaceV3DbwOrdersStatusDeliverPost` — `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersCourierPost` — `POST /api/v3/dbw/orders/courier` — Информация о курьере
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersDeliveryDatePost` — `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersGet` — `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
@@ -149,7 +152,7 @@ go get github.com/eslazarev/wildberries-sdk/clients/go/orders_fbs
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaGet` — `GET /api/v3/dbw/orders/{orderId}/meta` — Получить метаданные сборочного задания
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaGtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaImeiPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
+- `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaSgtinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersOrderIdMetaUinPut` — `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersStatusPost` — `POST /api/v3/dbw/orders/status` — Получить статусы сборочных заданий
 - `orders_dbw.DBWAPIService.ApiV3DbwOrdersStickersPost` — `POST /api/v3/dbw/orders/stickers` — Получить стикеры сборочных заданий

@@ -35,7 +35,7 @@ use \Wildberries\Sdk\OrdersDbw\ObjectSerializer;
  * MetaSgtin Class Doc Comment
  *
  * @category Class
- * @description Код маркировки [Честного знака](https://честныйзнак.рф/)
+ * @description Код маркировки Честного знака
  * @package  Wildberries\Sdk\OrdersDbw
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech

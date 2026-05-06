@@ -16,7 +16,7 @@ pub struct ApiSgtins {
     /// ID сборочного задания
     #[serde(rename = "orderId", skip_serializing_if = "Option::is_none")]
     pub order_id: Option<i32>,
-    /// Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки
+    /// Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки
     #[serde(rename = "sgtins", skip_serializing_if = "Option::is_none")]
     pub sgtins: Option<Vec<String>>,
 }

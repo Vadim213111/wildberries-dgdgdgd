@@ -14,7 +14,7 @@
 
 import { mapValues } from '../runtime';
 /**
- * Код маркировки [Честного знака](https://честныйзнак.рф/)
+ * Код маркировки Честного знака
  * @export
  * @interface MetaSgtin
  */

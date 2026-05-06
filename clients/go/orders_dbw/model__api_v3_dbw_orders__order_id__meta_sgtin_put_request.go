@@ -19,7 +19,7 @@ var _ MappedNullable = &ApiV3DbwOrdersOrderIdMetaSgtinPutRequest{}
 
 // ApiV3DbwOrdersOrderIdMetaSgtinPutRequest struct for ApiV3DbwOrdersOrderIdMetaSgtinPutRequest
 type ApiV3DbwOrdersOrderIdMetaSgtinPutRequest struct {
-	// Массив кодов маркировки
+	// Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки
 	Sgtins []string `json:"sgtins,omitempty"`
 }
 

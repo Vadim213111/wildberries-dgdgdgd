@@ -29,7 +29,7 @@ class ApiSGTINs(BaseModel):
     ApiSGTINs
     """ # noqa: E501
     order_id: Optional[StrictInt] = Field(default=None, description="ID сборочного задания", alias="orderId", json_schema_extra={"examples": [123456]})
-    sgtins: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=24)]] = Field(default=None, description="Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки", json_schema_extra={"examples": [["123456789012345678", "1234567890123456"]]})
+    sgtins: Optional[Annotated[List[StrictStr], Field(min_length=1, max_length=24)]] = Field(default=None, description="Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки", json_schema_extra={"examples": [["123456789012345678", "1234567890123456"]]})
     __properties: ClassVar[List[str]] = ["orderId", "sgtins"]
 
     model_config = ConfigDict(

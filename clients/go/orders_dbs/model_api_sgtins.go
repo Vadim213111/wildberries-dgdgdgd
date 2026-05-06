@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiSGTINs{}
 type ApiSGTINs struct {
 	// ID сборочного задания
 	OrderId *int32 `json:"orderId,omitempty"`
-	// Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки
+	// Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки
 	Sgtins []string `json:"sgtins,omitempty"`
 }
 

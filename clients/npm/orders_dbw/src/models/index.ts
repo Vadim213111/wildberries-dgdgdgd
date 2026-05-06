@@ -1,11 +1,21 @@
 /* tslint:disable */
 /* eslint-disable */
 export * from './ApiBatchError';
+export * from './ApiBatchErrorResponse';
+export * from './ApiBatchErrorResponseMetaDetailsInner';
+export * from './ApiMetaDeleteResponses';
+export * from './ApiMetaDeleteResponsesResultsInner';
+export * from './ApiMetaDeleteResponsesResultsInnerErrorsInner';
 export * from './ApiOrdersMetaDetailsResponse';
 export * from './ApiOrdersMetaDetailsResponseOrdersInner';
 export * from './ApiOrdersMetaDetailsResponseOrdersInnerErrorsInner';
 export * from './ApiOrdersMetaDetailsResponseOrdersInnerMetaDetailsInner';
+export * from './ApiOrdersMetaDleteRequestV2';
 export * from './ApiOrdersRequestV2';
+export * from './ApiOrdersSGTINsSetRequest';
+export * from './ApiSGTINs';
+export * from './ApiStatusSetResponse';
+export * from './ApiStatusSetResponses';
 export * from './ApiV3DbwOrdersGet200Response';
 export * from './ApiV3DbwOrdersNewGet200Response';
 export * from './ApiV3DbwOrdersNewGet401Response';

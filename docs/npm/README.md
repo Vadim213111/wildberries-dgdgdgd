@@ -136,7 +136,10 @@ main().catch(console.error);
 
 ### orders_dbw (`orders_dbw`)
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersClientPost` — Информация о покупателе
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDeletePost` — Удалить метаданные сборочных заданий
 - `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaDetailsPost` — Получить метаданные сборочных заданий
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersMetaSgtinPost` — Закрепить коды маркировки Честного знака за сборочными заданиями
+- `orders_dbw.DBWApi.apiMarketplaceV3DbwOrdersStatusDeliverPost` — Перевести сборочные задания в доставку
 - `orders_dbw.DBWApi.apiV3DbwOrdersCourierPost` — Информация о курьере
 - `orders_dbw.DBWApi.apiV3DbwOrdersDeliveryDatePost` — Дата и время доставки
 - `orders_dbw.DBWApi.apiV3DbwOrdersGet` — Получить информацию о завершенных сборочных заданиях
@@ -148,7 +151,7 @@ main().catch(console.error);
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGet` — Получить метаданные сборочного задания
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaGtinPut` — Закрепить за сборочным заданием GTIN
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaImeiPut` — Закрепить за сборочным заданием IMEI
-- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaSgtinPut` — Закрепить за сборочным заданием код маркировки Честного знака
+- `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaSgtinPut` — Закрепить за сборочным заданием код маркировки товара
 - `orders_dbw.DBWApi.apiV3DbwOrdersOrderIdMetaUinPut` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 - `orders_dbw.DBWApi.apiV3DbwOrdersStatusPost` — Получить статусы сборочных заданий
 - `orders_dbw.DBWApi.apiV3DbwOrdersStickersPost` — Получить стикеры сборочных заданий

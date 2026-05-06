@@ -344,7 +344,7 @@ class ApiSGTINs implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets sgtins
      *
-     * @param string[]|null $sgtins Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки
+     * @param string[]|null $sgtins Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки
      *
      * @return self
      */

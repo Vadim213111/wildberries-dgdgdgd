@@ -1043,7 +1043,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/api.StatusSetResponses"
+                $ref: "#/components/schemas/api.StatusSetDeliverResponses"
           description: Успешно
         "400":
           content:
@@ -1288,10 +1288,10 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
           - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
           - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
           - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
-        Если ответ вернулся с пустой структурой `metaDetails`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
+        Если ответ вернулся с пустой структурой `meta`, значит у сборочного задания нет метаданных и добавить их нельзя.<br>
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>получения и удаления метаданных DBS</strong>:
 
@@ -1473,7 +1473,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1imei/post)
           - `uin` — [УИН](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1uin/post)
           - `gtin` — [GTIN](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1gtin/post)
-          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
+          - `sgtin` — [код маркировки](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post)
           - `customsDeclaration` — [номер ГТД](/openapi/orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1meta~1customs-declaration/post)
 
         <div class="description_limit">
@@ -1635,12 +1635,6 @@ paths:
               schema:
                 $ref: "#/components/schemas/api.BatchError"
           description: Доступ запрещён
-        "409":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/api.Error"
-          description: Ошибка обновления метаданных
         "429":
           content:
             application/problem+json:
@@ -2843,8 +2837,8 @@ components:
           example: 123456
           type: integer
         sgtins:
-          description: Массив кодов маркировки. Допускается от 16 до 135 символов
-            для кода одной маркировки
+          description: Массив кодов маркировки Честного знака. Допускается от 16 до
+            135 символов для кода одной маркировки
           example:
           - "123456789012345678"
           - "1234567890123456"
@@ -2916,6 +2910,52 @@ components:
           description: Детали ошибки
           items:
             $ref: "#/components/schemas/api.BatchErrorResponse"
+          type: array
+        isError:
+          description: Есть ли ошибки
+          example: true
+          type: boolean
+        orderId:
+          description: ID сборочного задания с успешно обновлёнными данными
+          example: 123456
+          type: integer
+      type: object
+    api.StatusSetDeliverResponses:
+      example:
+        requestId: 03615778-eb9e-4f55-b4Of-fd3ac0fad2сc
+        results:
+        - orderId: 4299281547
+          isError: true
+          errors:
+          - code: 404
+            detail: NotFound
+        - orderId: 1234567890
+          isError: true
+          errors:
+          - code: 409
+            detail: MetaValidationFail
+            metaDetails:
+            - key: sgtin
+              value: 0102900304495480215KE
+              decision: sgtinInvalidFormat
+        - orderId: 4279781545
+          isError: false
+      properties:
+        requestId:
+          description: Уникальный ID запроса
+          example: f1787bd2d1fdс35d6f537316514у4a05
+          type: string
+        results:
+          items:
+            $ref: "#/components/schemas/api.StatusSetDeliverResponse"
+          type: array
+      type: object
+    api.StatusSetDeliverResponse:
+      properties:
+        errors:
+          description: Детали ошибки
+          items:
+            $ref: "#/components/schemas/api.BatchErrorDeliverResponse"
           type: array
         isError:
           description: Есть ли ошибки
@@ -3025,7 +3065,7 @@ components:
           example: 654321
           type: integer
         sgtin:
-          description: "Код маркировки [Честного знака](https://честныйзнак.рф/)"
+          description: Код маркировки Честного знака
           items:
             example: "123456789012345"
             type: string
@@ -3122,6 +3162,29 @@ components:
           description: Заголовок ошибки
           example: IncorrectRequest
           type: string
+      type: object
+    api.BatchErrorDeliverResponse:
+      properties:
+        code:
+          description: |
+            Код ошибки:
+              - `404`
+              - `409`
+          example: 404
+          type: integer
+        detail:
+          description: |
+            - `NotFound` — сборочное задание не найдено
+            - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
+            - `ImeiIsNotFilled` — не заполнен IMEI
+            - `MetaValidationFail` — ошибки валидации метаданных
+          example: MetaValidationFail
+          type: string
+        metaDetails:
+          description: Детали ошибки валидации метаданных
+          items:
+            $ref: "#/components/schemas/api_BatchErrorDeliverResponse_metaDetails_inner"
+          type: array
       type: object
     api.BatchErrorResponse:
       properties:
@@ -3511,7 +3574,7 @@ components:
           description: |
             - `NotFound` — сборочное задание не найдено
             - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
-            - `SGTINIsNotFilled` — обязательный [код маркировки Честного знака](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
+            - `SGTINIsNotFilled` — обязательный [код маркировки](./orders-dbs#tag/Metadannye-DBS/paths/~1api~1marketplace~1v3~1dbs~1orders~1meta~1sgtin/post) не указан
           example: NotFound
           type: string
       type: object
@@ -3833,6 +3896,34 @@ components:
         value:
           example: 10704010/010624/0000302
           nullable: true
+          type: string
+      type: object
+    api_BatchErrorDeliverResponse_metaDetails_inner:
+      properties:
+        key:
+          description: Метаданные
+          example: sgtin
+          type: string
+        value:
+          description: Значение метаданных
+          example: "1234567890"
+          type: string
+        decision:
+          description: |
+            Статус проверки:
+            - `sgtin`
+              - `sgtinInvalidFormat` — Неверный формат маркировки
+              - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)
+              - `sgtinEmitted` —  Маркировка эмитирована
+              - `sgtinApplied` — Не пройдена процедура Ввод в оборот
+              - `sgtinWrittenOff` — Списан
+              - `sgtinRetired` — Выбыл
+              - `sgtinWithdrawn` — Выбыл
+              - `sgtinDisaggregation` — Расформирован
+              - `sgtinDisaggregated` — Расформирован
+              - `sgtinAppliedNotPaid` — Не оплачен
+              - `pending` — Маркировка на проверке
+          example: sgtinEmitted
           type: string
       type: object
     api_B2bClientInfoResponse_errors_inner:

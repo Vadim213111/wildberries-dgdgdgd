@@ -158,7 +158,10 @@
 
 ### Заказы DBW (`04-orders-dbw.yaml`)
 - `POST /api/marketplace/v3/dbw/orders/client` — Информация о покупателе
+- `POST /api/marketplace/v3/dbw/orders/meta/delete` — Удалить метаданные сборочных заданий
 - `POST /api/marketplace/v3/dbw/orders/meta/details` — Получить метаданные сборочных заданий
+- `POST /api/marketplace/v3/dbw/orders/meta/sgtin` — Закрепить коды маркировки Честного знака за сборочными заданиями
+- `POST /api/marketplace/v3/dbw/orders/status/deliver` — Перевести сборочные задания в доставку
 - `GET /api/v3/dbw/orders` — Получить информацию о завершенных сборочных заданиях
 - `POST /api/v3/dbw/orders/courier` — Информация о курьере
 - `POST /api/v3/dbw/orders/delivery-date` — Дата и время доставки
@@ -172,7 +175,7 @@
 - `DELETE /api/v3/dbw/orders/{orderId}/meta` — Удалить метаданные сборочного задания
 - `PUT /api/v3/dbw/orders/{orderId}/meta/gtin` — Закрепить за сборочным заданием GTIN
 - `PUT /api/v3/dbw/orders/{orderId}/meta/imei` — Закрепить за сборочным заданием IMEI
-- `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки Честного знака
+- `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` — Закрепить за сборочным заданием код маркировки товара
 - `PUT /api/v3/dbw/orders/{orderId}/meta/uin` — Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
 
 ### Заказы DBS (`05-orders-dbs.yaml`)
