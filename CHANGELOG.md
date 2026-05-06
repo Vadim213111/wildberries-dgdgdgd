@@ -1,6 +1,19 @@
 # Changelog
 
 ## Unreleased
+### Changed (2026.05.06)
+- Orders DBW: добавлен batch-эндпоинт перевода в доставку `POST /api/marketplace/v3/dbw/orders/status/deliver` (из `confirm` в `complete`) с телом `api.OrdersRequestV2(ordersIds[])` и ответом `200 api.StatusSetResponses` (постатусно: `isError`, `errors`, `metaDetails`); обновлена ссылка для статуса `complete` на новый метод
+- Orders DBW: `PATCH /api/v3/dbw/orders/{orderId}/assemble` помечен как `deprecated` и будет удалён 5 июня (старый одиночный перевод в доставку, ответ `204`)
+- Orders DBW / Метаданные: добавлен batch-эндпоинт удаления метаданных `POST /api/marketplace/v3/dbw/orders/meta/delete` с телом `api.OrdersMetaDleteRequestV2(key, ordersIds[])` и ответом `200 api.MetaDeleteResponses` (постатусно по orderId)
+- Orders DBW / Метаданные: добавлен batch-эндпоинт закрепления маркировок `POST /api/marketplace/v3/dbw/orders/meta/sgtin` (несколько заказов, `api.OrdersSGTINsSetRequest`) с ответом `200 api.StatusSetResponses`; лимит для метода изменён до 300/мин (200 мс, всплеск 20) вместо 1000/мин (60 мс)
+- Orders DBW / Метаданные: `DELETE /api/v3/dbw/orders/{orderId}/meta` помечен как `deprecated` и будет удалён 5 июня (удаление метаданных по `key` в query)
+- Orders DBW / Метаданные: `PUT /api/v3/dbw/orders/{orderId}/meta/sgtin` помечен как `deprecated` и будет удалён 5 июня; уточнены ограничения для `sgtins[]` (16–135 символов на код)
+- Orders DBW: добавлены схемы для batch-операций и ошибок: `api.StatusSetResponses`, `api.BatchErrorResponse` (в т.ч. `MetaValidationFail` с `metaDetails.decision`), `api.MetaDeleteResponses`, `api.OrdersSGTINsSetRequest`, `api.OrdersMetaDleteRequestV2`; `api.OrdersRequestV2` перенесена/актуализирована (max 1000 id)
+- Orders DBS: для ответа перевода в доставку заменена схема `api.StatusSetResponses` → `api.StatusSetDeliverResponses` (добавлена детализация `MetaValidationFail` с `metaDetails`); добавлены схемы `api.StatusSetDeliverResponses`, `api.BatchErrorDeliverResponse`
+- Orders DBS / Метаданные: в описаниях заменено “код маркировки Честного знака” → “код маркировки”; уточнение: если `meta` пустой, метаданных нет и добавить нельзя (ранее упоминался `metaDetails`); удалён ответ `409` “Ошибка обновления метаданных” для одного из методов метаданных
+- Analytics: обновлено описание rate limit — добавлено разбиение по типам токена (Персональный/Сервисный: 3/мин; Базовый: 2/час)
+- Finances: обновлено описание rate limit — добавлено разбиение по типам токена (Персональный/Сервисный: 1/мин; Базовый: 2/24ч)
+
 ### Changed (2026.05.05)
 - Products: в модели характеристики добавлено поле `existNamedField: boolean` — указывает, как передавать характеристику в запросах создания/создания с присоединением/редактирования карточек (`true` — отдельным параметром запроса, `false` — внутри массива `characteristics`); обновлён пример ответа (добавлено `existNamedField: true`).
 - Orders FBS: уточнена логика выборки сборочных заданий по периоду — в ответ попадают задания, **созданные** в указанном интервале `dateFrom`–`dateTo` (макс. 30 дней).

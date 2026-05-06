@@ -289,7 +289,7 @@ paths:
         | -------  | ---------           | --------------------------------------|
         | `new`      | **Новое сборочное задание** | |
         | `confirm`  | **На сборке**      |  [Перевести сборочное задание на сборку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1confirm/patch)
-        | `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1assemble/patch) |
+        | `complete` | **В доставке**  | [Перевести сборочное задание в доставку](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1status~1assemble/post) |
         | `receive`  | **Получено покупателем**|  Переводится курьером
         | `reject`   | **Отказ покупателя при получении**| Переводится курьером
         | `cancel`   | **Отменено продавцом**   |  [Отменить сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1{orderId}~1cancel/patch)
@@ -600,19 +600,21 @@ paths:
           $ref: '#/components/responses/AccessDenied'
         '429':
           $ref: '#/components/responses/429'
-  /api/v3/dbw/orders/{orderId}/assemble:
+  /api/marketplace/v3/dbw/orders/status/deliver:
     servers:
       - url: https://marketplace-api.wildberries.ru
-    patch:
+    post:
       x-readonly-method: false
       x-category: marketplace
-      security:
-        - HeaderApiKey: []
       tags:
         - Сборочные задания DBW
-      summary: Перевести в доставку
+      summary: Перевести сборочные задания в доставку
       description: |
-        Метод переводит [сборочное задание](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) в [статус](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `complete` — в доставке.
+        Метод переводит [сборочные задания](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders/get) из [статуса](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` в статус `complete` — в доставке.
+
+        <div class="description_important">
+        Проверяйте ответ метода. Сборочные задания, переведённые в доставку, вернутся с признаком `"isError":false`. Для остальных сборочных заданий смотрите причину ошибки в массиве `errors`
+        </div>
 
         <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
@@ -628,11 +630,33 @@ paths:
 
         Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
         </div>
-      parameters:
-        - $ref: '#/components/parameters/Order'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/api.OrdersRequestV2'
       responses:
-        '204':
-          description: Подтверждено
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.StatusSetResponses'
+              example:
+                requestId: 03615778-eb9e-4f55-b4Of-fd3ac0fad2сc
+                results:
+                  - orderId: 42131238
+                    isError: true
+                    errors:
+                      - code: 409
+                        detail: MetaValidationFail
+                        metaDetails:
+                          - key: sgtin
+                            value: '1234567890123'
+                            decision: sgtinInvalidFormat
+                  - orderId: 4279781545
+                    isError: false
         '400':
           description: Неправильный запрос
           content:
@@ -642,23 +666,14 @@ paths:
               examples:
                 IncorrectParameter:
                   $ref: '#/components/examples/IncorrectParameter'
+                IncorrectRequestBody:
+                  $ref: '#/components/examples/IncorrectRequestBody'
+                IncorrectRequest:
+                  $ref: '#/components/examples/IncorrectRequest'
         '401':
           $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '409':
-          description: Ошибка обновления статуса
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              examples:
-                StatusMismatch:
-                  $ref: '#/components/examples/StatusMismatch'
         '429':
           $ref: '#/components/responses/429'
   /api/v3/dbw/orders/courier:
@@ -784,6 +799,53 @@ paths:
                   $ref: '#/components/examples/StatusMismatch'
         '429':
           $ref: '#/components/responses/429'
+  /api/v3/dbw/orders/{orderId}/assemble:
+    servers:
+      - url: https://marketplace-api.wildberries.ru
+    patch:
+      x-readonly-method: false
+      x-category: marketplace
+      security:
+        - HeaderApiKey: []
+      tags:
+        - Сборочные задания DBW
+      summary: Перевести в доставку
+      deprecated: true
+      description: |
+        Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
+      parameters:
+        - $ref: '#/components/parameters/Order'
+      responses:
+        '204':
+          description: Подтверждено
+        '400':
+          description: Неправильный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                IncorrectParameter:
+                  $ref: '#/components/examples/IncorrectParameter'
+        '401':
+          $ref: '#/components/responses/401'
+        '402':
+          $ref: '#/components/responses/402'
+        '403':
+          $ref: '#/components/responses/AccessDenied'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '409':
+          description: Ошибка обновления статуса
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                StatusMismatch:
+                  $ref: '#/components/examples/StatusMismatch'
+        '429':
+          $ref: '#/components/responses/429'
   /api/marketplace/v3/dbw/orders/meta/details:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -804,7 +866,7 @@ paths:
           - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
           - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
           - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
+          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
 
           <div class="description_limit">
         <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
@@ -855,6 +917,81 @@ paths:
                 origin: dbs-public-api
                 requestId: f1787bd2d1fdс35d6f537316514у4a05
                 title: AccessDenied
+        '429':
+          $ref: '#/components/responses/429'
+  /api/marketplace/v3/dbw/orders/meta/delete:
+    servers:
+      - url: https://marketplace-api.wildberries.ru
+    post:
+      x-readonly-method: false
+      x-category: marketplace
+      tags:
+        - Метаданные DBW
+      summary: Удалить метаданные сборочных заданий
+      description: |
+        Метод удаляет значение указанных [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) для переданного ключа.
+        <br><br>
+        В одном запросе можно удалить метаданные только одного типа. Укажите тип метаданных в запросе:
+          - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
+          - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
+          - `sgtin` — [код маркировки](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1sgtin/post)
+
+        Можно передать только один ключ.
+
+          <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
+        <ul>
+            <li>получение и обновление списка контактов</li>
+            <li>получение и удаление метаданных</li>
+            <li>методы сборочных заданий</li>
+        </ul> 
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+        </div>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/api.OrdersMetaDleteRequestV2'
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.MetaDeleteResponses'
+                example:
+                  requestId: 03615778-eb9e-4f55-b4Of-fd3ac0fad2сc
+                  results:
+                    - orderId: 42131238
+                      isError: true
+                      errors:
+                        - code: 409
+                          detail: FailedToUpdateMeta
+                    - orderId: 4279781545
+                      isError: false
+        '400':
+          description: Неправильный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                IncorrectParameter:
+                  $ref: '#/components/examples/IncorrectParameter'
+                IncorrectRequestBody:
+                  $ref: '#/components/examples/IncorrectRequestBody'
+                IncorrectRequest:
+                  $ref: '#/components/examples/IncorrectRequest'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/AccessDenied'
         '429':
           $ref: '#/components/responses/429'
   /api/v3/dbw/orders/{orderId}/meta:
@@ -924,38 +1061,17 @@ paths:
         - HeaderApiKey: []
       tags:
         - Метаданные DBW
+      deprecated: true
       summary: Удалить метаданные сборочного задания
       description: |
-        Метод удаляет значение [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) для переданного ключа.
-        <br><br>
-        Возможные метаданные:
-          - `imei` — [IMEI](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1imei/put)
-          - `uin` — [УИН](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1uin/put)
-          - `gtin` — [GTIN](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1gtin/put)
-          - `sgtin` — [код маркировки Честного знака](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta~1sgtin/put)
-
-        Можно передать только один ключ.
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
-        <ul>
-            <li>получение и обновление списка контактов</li>
-            <li>получение и удаление метаданных</li>
-            <li>методы сборочных заданий</li>
-        </ul> 
-
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 1 мин | 300 запросов | 200 мс | 20 запросов |
-
-        </div>
+        Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
       parameters:
         - $ref: '#/components/parameters/Order'
         - name: key
           in: query
           schema:
             type: string
-          description: Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`). Передается только одно значение
+          description: Название метаданных для удаления (`imei`, `uin`, `gtin`, `sgtin`). Передаётся только одно значение
       responses:
         '204':
           description: Удалено
@@ -987,6 +1103,76 @@ paths:
                   $ref: '#/components/examples/FailedToUpdateMeta'
         '429':
           $ref: '#/components/responses/429'
+  /api/marketplace/v3/dbw/orders/meta/sgtin:
+    servers:
+      - url: https://marketplace-api.wildberries.ru
+    post:
+      x-readonly-method: false
+      x-category: marketplace
+      tags:
+        - Метаданные DBW
+      summary: Закрепить коды маркировки Честного знака за сборочными заданиями
+      description: |
+        Метод обновляет код маркировки [Честного знака](https://честныйзнак.рф/) в [метаданных](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) нескольких сборочных заданий.<br>
+        Закрепить код маркировки можно, только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm` — на сборке.
+        <br><br>
+        Получить загруженные маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
+
+        <div class="description_limit">
+        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для следующих методов DBW:
+        <ul>
+            <li>получение и обновление списка контактов</li>
+            <li>получение и удаление метаданных</li>
+            <li>методы сборочных заданий</li>
+        </ul> 
+
+        | Период | Лимит | Интервал | Всплеск |
+        | --- | --- | --- | --- |
+        | 1 мин | 300 запросов | 200 мс | 20 запросов |
+
+        </div>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/api.OrdersSGTINsSetRequest'
+      responses:
+        '200':
+          description: Успешно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/api.StatusSetResponses'
+              example:
+                requestId: 03615778-eb9e-4f55-b4Of-fd3ac0fad2сc
+                results:
+                  - orderId: 42131238
+                    isError: true
+                    errors:
+                      - code: 409
+                        detail: FailedToUpdateMeta
+                  - orderId: 4279781545
+                    isError: false
+        '400':
+          description: Неправильный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              examples:
+                IncorrectParameter:
+                  $ref: '#/components/examples/IncorrectParameter'
+                IncorrectRequestBody:
+                  $ref: '#/components/examples/IncorrectRequestBody'
+                IncorrectRequest:
+                  $ref: '#/components/examples/IncorrectRequest'
+        '401':
+          $ref: '#/components/responses/401'
+        '403':
+          $ref: '#/components/responses/AccessDenied'
+        '429':
+          $ref: '#/components/responses/429'
   /api/v3/dbw/orders/{orderId}/meta/sgtin:
     servers:
       - url: https://marketplace-api.wildberries.ru
@@ -997,23 +1183,10 @@ paths:
         - HeaderApiKey: []
       tags:
         - Метаданные DBW
-      summary: Закрепить за сборочным заданием код маркировки Честного знака
+      deprecated: true
+      summary: Закрепить за сборочным заданием код маркировки товара
       description: |
-        Метод позволяет закрепить за сборочным заданием код маркировки [Честного знака](https://честныйзнак.рф/).
-        <br><br>
-        Закрепить код маркировки Честного знака можно только если в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) есть поле `sgtin`, а сборочное задание находится в [статусе](/openapi/orders-dbw#tag/Sborochnye-zadaniya-DBW/paths/~1api~1v3~1dbw~1orders~1status/post) `confirm`.
-        <br><br>
-        Получить загруженные коды маркировки можно в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
-
-        <div class="description_limit">
-        <a href="/openapi/api-information#tag/Vvedenie/Limity-zaprosov">Лимит запросов</a> на один аккаунт продавца для всех методов <strong>закрепления метаданных DBW</strong>:
-
-        | Период | Лимит | Интервал | Всплеск |
-        | --- | --- | --- | --- |
-        | 1 мин | 1000 запросов | 60 мс | 20 запросов |
-
-        Один запрос с кодом ответа <code>409</code> учитывается как 10 запросов
-        </div>
+        Данный метод устарел. Он будет удалён [5 июня](https://dev.wildberries.ru/release-notes?id=517)
       parameters:
         - $ref: '#/components/parameters/Order'
       requestBody:
@@ -1024,12 +1197,12 @@ paths:
               properties:
                 sgtins:
                   type: array
-                  description: Массив кодов маркировки
+                  description: Массив кодов маркировки Честного знака. Допускается от 16 до 135 символов для кода одной маркировки
                   minItems: 1
                   maxItems: 24
                   items:
                     type: string
-                    description: Код маркировки [Честного знака](https://честныйзнак.рф/) на упаковке. От 16 до 135 символов
+                    description: Код маркировки на упаковке. От 16 до 135 символов
                     example: '1234567890123456'
       responses:
         '204':
@@ -1049,8 +1222,6 @@ paths:
                   $ref: '#/components/examples/IncorrectParameter'
         '401':
           $ref: '#/components/responses/401'
-        '402':
-          $ref: '#/components/responses/402'
         '403':
           $ref: '#/components/responses/AccessDenied'
         '404':
@@ -1078,7 +1249,7 @@ paths:
         - Метаданные DBW
       summary: Закрепить за сборочным заданием УИН (уникальный идентификационный номер)
       description: |
-        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) — уникальный идентификационный номер.
+        Метод обновляет УИН в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный идентификационный номер.
         <br><br>
         У одного сборочного задания может быть только один УИН.
 
@@ -1156,7 +1327,7 @@ paths:
         - Метаданные DBW
       summary: Закрепить за сборочным заданием IMEI
       description: |
-        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get).
+        Метод обновляет IMEI в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post).
         <br><br>
         У одного сборочного задания может быть только один IMEI.
 
@@ -1234,7 +1405,7 @@ paths:
         - Метаданные DBW
       summary: Закрепить за сборочным заданием GTIN
       description: |
-        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1v3~1dbw~1orders~1%7BorderId%7D~1meta/get) — уникальный ID товара в Беларуси.
+        Метод обновляет GTIN в [метаданных сборочного задания](/openapi/orders-dbw#tag/Metadannye-DBW/paths/~1api~1marketplace~1v3~1dbw~1orders~1meta~1details/post) — уникальный ID товара в Беларуси.
         <br><br>
         У одного сборочного задания может быть только один GTIN.
 
@@ -1479,6 +1650,199 @@ components:
             code: AccessDenied
             message: ''
   schemas:
+    api.OrdersSGTINsSetRequest:
+      type: object
+      required:
+        - orders
+      properties:
+        orders:
+          type: array
+          maxItems: 1000
+          items:
+            $ref: '#/components/schemas/api.SGTINs'
+    api.SGTINs:
+      type: object
+      properties:
+        orderId:
+          description: ID сборочного задания
+          type: integer
+          example: 123456
+        sgtins:
+          type: array
+          minItems: 1
+          maxItems: 24
+          description: Массив кодов маркировки. Допускается от 16 до 135 символов для кода одной маркировки
+          example:
+            - '123456789012345678'
+            - '1234567890123456'
+          items:
+            type: string
+    api.StatusSetResponses:
+      type: object
+      required:
+        - results
+      example:
+        requestId: 03615778-eb9e-4f55-b4Of-fd3ac0fad2сc
+        results:
+          - orderId: 4299281547
+            isError: true
+            errors:
+              - code: 404
+                detail: NotFound
+          - orderId: 4279781545
+            isError: false
+      properties:
+        requestId:
+          type: string
+          description: Уникальный ID запроса, содержащего ошибки.
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/api.StatusSetResponse'
+    api.StatusSetResponse:
+      type: object
+      required:
+        - isError
+        - orderId
+      properties:
+        errors:
+          items:
+            $ref: '#/components/schemas/api.BatchErrorResponse'
+          type: array
+          description: Детали ошибки
+        isError:
+          type: boolean
+          description: Есть ли ошибки
+          example: true
+        orderId:
+          type: integer
+          description: ID сборочного задания с успешно обновлёнными данными
+          example: 123456
+    api.BatchErrorResponse:
+      required:
+        - code
+        - detail
+      properties:
+        code:
+          type: integer
+          description: |
+            Код ошибки:
+              - `404`
+              - `409`
+          example: 404
+        detail:
+          type: string
+          description: |
+            - `NotFound` — сборочное задание не найдено
+            - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
+            - `ImeiIsNotFilled` — не заполнен IMEI
+            - `MetaValidationFail` — ошибки валидации метаданных
+          example: NotFound
+        metaDetails:
+          type: array
+          description: Детали ошибки валидации метаданных
+          items:
+            type: object
+            required:
+              - decision
+              - key
+            properties:
+              key:
+                type: string
+                description: Метаданные
+                example: sgtin
+              value:
+                type: string
+                nullable: true
+                description: Значение метаданных
+                example: '1234567890'
+              decision:
+                type: string
+                description: |
+                  Статус проверки:
+                  - `sgtin`
+                    - `sgtinInvalidFormat` — Неверный формат маркировки
+                    - `sgtinNotFound` — Маркировка не найдена в [Честном знаке](https://chestnyznak.ru)
+                    - `sgtinEmitted` —  Маркировка эмитирована
+                    - `sgtinApplied` — Не пройдена процедура Ввод в оборот
+                    - `sgtinWrittenOff` — Списан
+                    - `sgtinRetired` — Выбыл
+                    - `sgtinWithdrawn` — Выбыл
+                    - `sgtinDisaggregation` — Расформирован
+                    - `sgtinDisaggregated` — Расформирован
+                    - `sgtinAppliedNotPaid` — Не оплачен
+                    - `pending` — Маркировка на проверке
+                example: sgtinEmitted
+      type: object
+    api.MetaDeleteResponses:
+      type: object
+      required:
+        - results
+      properties:
+        requestId:
+          type: string
+          description: Уникальный ID запроса. Отображается для ответов с ошибками
+        results:
+          type: array
+          items:
+            type: object
+            required:
+              - isError
+              - orderId
+            properties:
+              errors:
+                items:
+                  type: object
+                  required:
+                    - code
+                    - detail
+                  properties:
+                    code:
+                      type: integer
+                      description: |
+                        Код ошибки:
+                          - `404`
+                          - `409`
+                    detail:
+                      type: string
+                      description: |
+                        - `NotFound` — сборочное задание не найдено
+                        - `StatusMismatch` — операция невозможна для этого статуса сборочного задания
+                        - `ImeiIsNotFilled` — не заполнен IMEI
+                type: array
+                description: Детали ошибки
+              isError:
+                type: boolean
+                description: Есть ли ошибки
+              orderId:
+                type: integer
+                description: ID сборочного задания с успешно обновлёнными данными
+    api.OrdersRequestV2:
+      type: object
+      properties:
+        ordersIds:
+          type: array
+          maxItems: 1000
+          example:
+            - 1234678898
+          items:
+            type: integer
+          description: Список ID сборочных заданий
+    api.OrdersMetaDleteRequestV2:
+      type: object
+      properties:
+        key:
+          type: string
+          description: Название метаданных для удаления (imei, uin, gtin, sgtin). Передаётся только одно значение
+          example: sgtin
+        ordersIds:
+          type: array
+          maxItems: 1000
+          items:
+            type: integer
+          description: Список ID сборочных заданий
+          example:
+            - 123456789
     ClientInfo:
       properties:
         replacementPhone:
@@ -2129,18 +2493,6 @@ components:
                 type: integer
                 description: ID сборочного задания
                 example: 1234567890
-    api.OrdersRequestV2:
-      type: object
-      properties:
-        ordersIds:
-          description: Список ID сборочных заданий
-          example:
-            - 123456
-            - 234567
-          maxItems: 1000
-          type: array
-          items:
-            type: integer
     Meta:
       type: object
       description: Метаданные сборочного задания
@@ -2180,4 +2532,4 @@ components:
               example:
                 - '123456789012345'
               nullable: true
-          description: Код маркировки [Честного знака](https://честныйзнак.рф/)
+          description: Код маркировки Честного знака
