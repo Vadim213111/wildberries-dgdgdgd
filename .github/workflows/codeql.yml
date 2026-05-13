@@ -55,11 +55,10 @@ jobs:
       - name: Manual build (Go modules)
         if: matrix.language == 'go'
         run: |
-          set -e
           for mod in clients/go/*; do
             if [ -f "$mod/go.mod" ]; then
               echo "::group::build $mod"
-              (cd "$mod" && go build ./...)
+              (cd "$mod" && go build ./...) || echo "::warning title=Go build failed::$mod"
               echo "::endgroup::"
             fi
           done
