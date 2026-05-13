@@ -680,6 +680,14 @@ paths:
                         disabled: false
                       - code: marketplace
                         disabled: false
+                      - code: brandsFlow
+                        disabled: false
+                      - code: copyrightComplaints
+                        disabled: false
+                      - code: pretrialClaims
+                        disabled: false
+                      - code: sellersChat
+                        disabled: false
                     - id: 0
                       role: ""
                       position: ""
@@ -729,6 +737,14 @@ paths:
                       - code: oldAnalyticsReports
                         disabled: false
                       - code: marketplace
+                        disabled: false
+                      - code: brandsFlow
+                        disabled: false
+                      - code: copyrightComplaints
+                        disabled: false
+                      - code: pretrialClaims
+                        disabled: false
+                      - code: sellersChat
                         disabled: false
                 usersOnly:
                   description: Список активных пользователей
@@ -782,6 +798,14 @@ paths:
                         disabled: false
                       - code: marketplace
                         disabled: false
+                      - code: brandsFlow
+                        disabled: false
+                      - code: copyrightComplaints
+                        disabled: false
+                      - code: pretrialClaims
+                        disabled: false
+                      - code: sellersChat
+                        disabled: false
                     - id: 1002
                       role: user
                       position: Менеджер
@@ -831,6 +855,14 @@ paths:
                       - code: oldAnalyticsReports
                         disabled: false
                       - code: marketplace
+                        disabled: false
+                      - code: brandsFlow
+                        disabled: false
+                      - code: copyrightComplaints
+                        disabled: false
+                      - code: pretrialClaims
+                        disabled: false
+                      - code: sellersChat
                         disabled: false
               schema:
                 $ref: "#/components/schemas/getUsersResponse"
@@ -1564,6 +1596,10 @@ components:
             * `wbPoint` — WB Point
             * `oldAnalyticsReports` — Отчёты
             * `marketplace` — Свой склад
+            * `brandsFlow` — Мои бренды
+            * `copyrightComplaints` — Обращения правообладателей
+            * `pretrialClaims` — Досудебные претензии
+            * `sellersChat` — Чат с покупателями
           enum:
           - balance
           - brands
@@ -1581,6 +1617,10 @@ components:
           - wbPoint
           - oldAnalyticsReports
           - marketplace
+          - brandsFlow
+          - copyrightComplaints
+          - pretrialClaims
+          - sellersChat
           type: string
         disabled:
           description: |

@@ -37,6 +37,10 @@ export interface AccessInner {
      * * `wbPoint` — WB Point
      * * `oldAnalyticsReports` — Отчёты
      * * `marketplace` — Свой склад
+     * * `brandsFlow` — Мои бренды
+     * * `copyrightComplaints` — Обращения правообладателей
+     * * `pretrialClaims` — Досудебные претензии
+     * * `sellersChat` — Чат с покупателями
      * 
      * @type {AccessInnerCodeEnum}
      * @memberof AccessInner
@@ -72,7 +76,11 @@ export const AccessInnerCodeEnum = {
     Feedbacks: 'feedbacks',
     WbPoint: 'wbPoint',
     OldAnalyticsReports: 'oldAnalyticsReports',
-    Marketplace: 'marketplace'
+    Marketplace: 'marketplace',
+    BrandsFlow: 'brandsFlow',
+    CopyrightComplaints: 'copyrightComplaints',
+    PretrialClaims: 'pretrialClaims',
+    SellersChat: 'sellersChat'
 } as const;
 export type AccessInnerCodeEnum = typeof AccessInnerCodeEnum[keyof typeof AccessInnerCodeEnum];
 

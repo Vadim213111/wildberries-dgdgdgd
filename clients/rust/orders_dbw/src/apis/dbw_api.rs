@@ -219,6 +219,7 @@ pub enum ApiV3DbwOrdersOrderIdMetaImeiPutError {
 pub enum ApiV3DbwOrdersOrderIdMetaSgtinPutError {
     Status400(models::Error),
     Status401(models::ApiV3DbwOrdersNewGet401Response),
+    Status402(models::ApiV3DbwOrdersNewGet402Response),
     Status403(models::Error),
     Status404(models::Error),
     Status409(models::Error),
