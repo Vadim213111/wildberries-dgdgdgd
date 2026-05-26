@@ -1076,13 +1076,20 @@ paths:
               properties:
                 sgtins:
                   type: array
-                  description: Массив кодов маркировки
+                  example:
+                    - "0104630568317423215EirD_orEif7X\x1D91EE12\x1D92VygELprJ87wrc/qF/Vq/KEFUVpZm4vDPQt2kqUw308Y="
+                  description: |
+                    Массив кодов маркировки [Честного знака](https://честныйзнак.рф/). <br>
+                    Вы [можете передать](https://seller.wildberries.ru/instructions/ru/ru/material/kiz-common-errors#bfd5fce8-e0fd-4f15-9d8b-e616fac02c2e) коды маркировки:
+                      - полностью — с GS-разделителями и кодом проверки подлинности (криптохвостом)
+                      - в коротком формате — с GS-разделителями без кода проверки подлинности (криптохвоста)
+
+                      GS-разделители необходимо передавать в кодировке Unicode с экранированием — `\u001D`
                   minItems: 1
                   maxItems: 100
                   items:
                     type: string
                     description: Код маркировки [Честного знака](https://честныйзнак.рф/) на упаковке. От 16 до 135 символов
-                    example: '1234567890123456'
       responses:
         '204':
           description: Отправлено
