@@ -310,7 +310,7 @@ paths:
       x-category: marketplace
       security:
         - HeaderApiKey: []
-      summary: Дата и время доставки
+      summary: Получить дату и время доставки
       description: |
         Метод возвращает информацию о выбранных покупателем дате и времени доставки сборочных заданий.
         <br>
