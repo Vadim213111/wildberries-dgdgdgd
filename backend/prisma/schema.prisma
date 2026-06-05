@@ -1,0 +1,122 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String     @id @default(cuid())
+  email     String     @unique
+  password  String
+  name      String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  stores    Store[]
+  sessions  Session[]
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+}
+
+model Store {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  name        String
+  wbToken     String   // Encrypted
+  wbSellerID  String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  products    Product[]
+  orders      Order[]
+  reviews     Review[]
+  analytics   Analytics[]
+
+  @@unique([userId, wbSellerID])
+  @@index([userId])
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  storeId     String
+  store       Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  wbArticleID Int      @unique
+  name        String
+  description String?  @db.Text
+  price       Int
+  discount    Int      @default(0)
+  stock       Int
+  rating      Float?
+  reviews     Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  orders      Order[]
+  reviews     Review[]
+
+  @@index([storeId])
+  @@index([wbArticleID])
+}
+
+model Order {
+  id          String   @id @default(cuid())
+  storeId     String
+  store       Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  wbOrderID   String   @unique
+  productId   String?
+  product     Product? @relation(fields: [productId], references: [id])
+  status      String   // pending, assembled, shipped, delivered, cancelled
+  price       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([storeId])
+  @@index([wbOrderID])
+  @@index([status])
+}
+
+model Review {
+  id        String   @id @default(cuid())
+  storeId   String
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  wbReviewID String  @unique
+  rating    Int
+  text      String?  @db.Text
+  response  String?  @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([storeId])
+  @@index([productId])
+}
+
+model Analytics {
+  id        String   @id @default(cuid())
+  storeId   String
+  store     Store    @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  date      DateTime
+  views     Int      @default(0)
+  clicks    Int      @default(0)
+  orders    Int      @default(0)
+  revenue   Int      @default(0)
+  createdAt DateTime @default(now())
+
+  @@unique([storeId, date])
+  @@index([storeId])
+  @@index([date])
+}
